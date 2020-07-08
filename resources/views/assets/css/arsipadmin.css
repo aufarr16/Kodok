@@ -1,0 +1,113 @@
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  /* float: left;*/
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: -500px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+/* Darker background on mouse-over */
+.button-detail:hover {
+  /*background-color: RoyalBlue;*/
+  background-color: #4682B4 !important;
+}
+
+.btn-detail {
+  /*background-color: DodgerBlue; /* Blue background */
+  background-color: white;
+  border: 2px solid orange; /* Remove borders */
+  color: orange; /* White text */
+  padding: 3px 10px; /* Some padding */
+  margin: 1px 1px 1px 1px;
+  cursor: pointer; /* Mouse pointer on hover */
+  font-size: 12px;
+  font-weight: bolder;
+  border-radius: 5px;
+  position: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-detail:hover{
+	background-color: orange;
+	border: 2px solid orange; /* Remove borders */
+	color: white; /* White text */
+	padding: 3px 10px; /* Some padding */
+	margin: 1px 1px 1px 1px;
+	cursor: pointer; /* Mouse pointer on hover */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btn-ok{
+  background-color: teal;
+  border: teal;
+  color: white;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 14px;
+  /* border-radius: 5px; */
+  font-weight: bolder;
+  height: 37px;
+  margin-top: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  float: left;
+}
+
+.btn-ok:hover {
+	background-color: white;	
+	border: 2px solid teal; /* Remove borders */
+	color: teal; /* White text */
+	font-weight: bolder;
+}
+
+.custom-select {
+   display: inline-block;
+    width: 80%;
+	padding: 0px 5px;
+    color: #495057;
+    vertical-align: middle;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+	background-position: right 5px center;
+    border: 1px solid #ced4da;
+    float: left;
+    margin: 5px 0 5px 7px;
+}
+
+.note_status{
+  margin-left: 7px;
+  margin-right: 0;
+  float: left;
+}
+
+.force-overflow
+{
+  max-height: 400px;
+  min-height: 200px;
+}
+
+.modal a.close1 {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: grey;
+    cursor: pointer;
+}
+.modal a.close1:hover {
+  color: black;
+}

@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('testcss');
 });
+
+##LOGIN
+Route::get('/login', 'controller_login@openPage');
+
+##ADMIN 
+Route::get('/admin/archive', 'controller_adminarchivedocuments@openPage');
+Route::get('/admin/products', 'controller_adminproducts@openPage');
+Route::get('/admin/searchdocs', 'controller_adminsearchdocuments@openPage');
+Route::get('/admin/users', 'controller_adminusers@openPage');
+
+##MANAGER
+
+
+##ENGINEER
+
+
+##GUEST
+Route::get('/guest/searchdocs', 'controller_guestsearchdocuments@openPage');
