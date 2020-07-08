@@ -20,8 +20,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
   <link rel="stylesheet" type="text/css" href="bootstrap-select.min.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -32,17 +32,17 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="style.css" type="text/css" rel="stylesheet">
-  <link href="../assets/css/home.css" rel="stylesheet" />
-  <link href="../assets/css/assign.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
+  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/assign.css" rel="stylesheet" />
   <!-- Select 2 -->
-  <link href="../assets/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
-  <link href="../assets/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
+  <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
  
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
 </head>
 
   <body>
@@ -227,20 +227,20 @@ The above copyright notice and this permission notice shall be included in all c
   </footer>
     
   <!--   Core JS Files  -->
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
+  <script src="{{ url('') }}/js/core/popper.min.js"></script>
+  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
+  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
+  <script src="{{ url('') }}/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
@@ -261,7 +261,7 @@ $(document).ready(function () {
         });
 </script>
 <!-- Select 2 -->
-<script src="../assets/css/Plugin/Select2/select2.min.js"></script>
+<script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
 <script>
      $("#PIC").select2({
           allowClear: true
