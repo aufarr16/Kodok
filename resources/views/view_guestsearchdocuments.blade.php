@@ -67,7 +67,7 @@ The above copyright notice and this permission notice shall be included in all c
 
       <ul class="list-unstyled components mb-5">
 		  <li class="active ">
-            <a href="./view_guestsearchdocuments.html">
+            <a href="/guest/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>

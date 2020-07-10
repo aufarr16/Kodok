@@ -46,7 +46,7 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.min.css" rel="stylesheet">-->
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
+  <!--<link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />-->
 </head>
 
 <body>
@@ -71,27 +71,27 @@ The above copyright notice and this permission notice shall be included in all c
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
           <li>
-            <a href="./view_managerhome.html">
+            <a href="/manager/home">
            <span class="fa fa-home mr-2"></span>Home
             </a>
           </li>
           <li>
-            <a href="./view_managerlistprojects.html">
+            <a href="/manager/projects">
              <span class="fas fa-clipboard-list mr-2"></span>List Projects
             </a>
           </li>
           <li>
-            <a href="./view_managerassignprojects.html">
+            <a href="/manager/assign">
              <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
             </a>
           </li>    
           <li class="active">
-            <a href="./view_managerapprovalprojects.html">
+            <a href="/manager/approval">
               <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
             </a>
           </li>
           <li>
-            <a href="./view_managersearchdocuments.html">
+            <a href="/manager/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>

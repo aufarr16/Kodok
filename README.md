@@ -9,7 +9,7 @@ Pada Website ini terdapat beberapa level user yaitu
 - Engineer
 - Guest
 
-Website ini diharapkan dapat mempermudah proses assign projek dan dokumentasi projek dari awal projek diterima oleh manager hingga projek selesai
+Website ini diharapkan dapat mempermudah proses assign projek dan dokumentasi projek dari awal projek diterima oleh manager hingga projek selesai.
 
 ## Source Code
 

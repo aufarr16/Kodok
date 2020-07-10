@@ -72,7 +72,7 @@ The above copyright notice and this permission notice shall be included in all c
 
       <ul class="list-unstyled components mb-5">
       	<li>
-            <a href="./view_engineerdocumentstools.html">
+            <a href="/engineer/doctools">
               <span class="fas fa-file-alt mr-2"></span>Documents & Tools
             </a>
           </li>
@@ -87,18 +87,18 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
             <!-- Submenu content -->
             <div id='submenu1' class="collapse sidebar-submenu">
-              <a href="./view_engineeryourprojects.html" class="list-group-item list-group-item-action">
+              <a href="/engineer/projects" class="list-group-item list-group-item-action">
                 <span class="fas fa-tasks mr-1" style="margin-left: 13px"></span>
                   <span class="menu-collapsed" style="font-size: 14px">Your Projects</span>
               </a>
-              <a href="./view_engineerhandoverprojects.html" class="list-group-item list-group-item-action">
+              <a href="/engineer/handover" class="list-group-item list-group-item-action">
                 <span class="fas fa-stream mr-1" style="margin-left: 13px"></span>
                 <span class="menu-collapsed" style="font-size: 14px">Handover Projects</span>
               </a>
             </div>  
           </li>
           <li>
-            <a href="./view_engineersearchdocuments.html">
+            <a href="/engineer/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>

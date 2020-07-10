@@ -30,7 +30,7 @@ Route::get('/admin/users', 'controller_adminusers@openPage');
 Route::get('/manager/approval', 'controller_managerapprovalprojects@openPage');
 Route::get('/manager/assign', 'controller_managerassignprojects@openPage');
 Route::get('/manager/home', 'controller_managerhome@openPage');
-Route::get('/manager/listprojects', 'controller_managerlistprojects@openPage');
+Route::get('/manager/projects', 'controller_managerlistprojects@openPage');
 Route::get('/manager/searchdocs', 'controller_managersearchdocuments@openPage');
 
 ##ENGINEER

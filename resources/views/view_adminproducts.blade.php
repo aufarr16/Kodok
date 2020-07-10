@@ -68,12 +68,12 @@ The above copyright notice and this permission notice shall be included in all c
  
       <ul class="list-unstyled components mb-5">
         <li>
-				<a href="./view_adminarchivedocuments.html">
+				<a href="/admin/archive">
 					<span class="fa fa-book mr-2"></span>Archive Documents
 				</a>
 			</li>
 			<li>
-            <a href="./view_adminsearchdocuments.html">
+            <a href="/admin/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>
@@ -83,12 +83,12 @@ The above copyright notice and this permission notice shall be included in all c
 				</a>
 			</li> -->
           <li>
-			<a href="./view_adminusers.html">
+			<a href="/admin/users">
 				<span class="fas fa-users mr-2"></span>Users
 			</a>
 			</li>
           <li class="active">
-            <a href="./view_adminproducts.html">
+            <a href="/admin/produts">
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>
