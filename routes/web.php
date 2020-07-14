@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+##ROUTING PAGE
+##LOGIN
+Route::get('/', 'controller_login@openPage');
+
+##ADMIN 
+Route::get('/admin/archive', 'controller_adminarchivedocuments@openPage');
+Route::get('/admin/products', 'controller_adminproducts@openPage');
+Route::get('/admin/searchdocs', 'controller_adminsearchdocuments@openPage');
+Route::get('/admin/users', 'controller_adminusers@openPage');
+
+##MANAGER
+Route::get('/manager/approval', 'controller_managerapprovalprojects@openPage');
+Route::get('/manager/assign', 'controller_managerassignprojects@openPage');
+Route::get('/manager/home', 'controller_managerhome@openPage');
+Route::get('/manager/projects', 'controller_managerlistprojects@openPage');
+Route::get('/manager/searchdocs', 'controller_managersearchdocuments@openPage');
+
+##ENGINEER
+Route::get('/engineer/doctools', 'controller_engineerdocumentstools@openPage');
+Route::get('/engineer/handover', 'controller_engineerhandoverprojects@openPage');
+Route::get('/engineer/searchdocs', 'controller_engineersearchdocuments@openPage');
+Route::get('/engineer/projects', 'controller_engineeryourprojects@openPage');
+
+##GUEST
+Route::get('/guest/searchdocs', 'controller_guestsearchdocuments@openPage');
+
+?>
