@@ -88,7 +88,7 @@ The above copyright notice and this permission notice shall be included in all c
 			</a>
 			</li>
           <li class="active">
-            <a href="/admin/produts">
+            <a href="/admin/products">
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>

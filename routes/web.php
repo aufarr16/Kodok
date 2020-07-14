@@ -13,12 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('testcss');
-});
-
+##ROUTING PAGE
 ##LOGIN
-Route::get('/login', 'controller_login@openPage');
+Route::get('/', 'controller_login@openPage');
 
 ##ADMIN 
 Route::get('/admin/archive', 'controller_adminarchivedocuments@openPage');
@@ -41,3 +38,5 @@ Route::get('/engineer/projects', 'controller_engineeryourprojects@openPage');
 
 ##GUEST
 Route::get('/guest/searchdocs', 'controller_guestsearchdocuments@openPage');
+
+?>
