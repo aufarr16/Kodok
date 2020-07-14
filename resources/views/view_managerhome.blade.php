@@ -1,30 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en" style="overflow-x: hidden">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Sistem Dokumentasi
+    | {Manager} Home
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -92,8 +74,90 @@ The above copyright notice and this permission notice shall be included in all c
   <div class="container-fluid">
 	<div class="content">
 	  <h2 style="margin-top:10px; margin-bottom: 10px">Home</h2>
-     
-        <div class="row" style="margin-top: 20px; margin-bottom: 20px">
+      
+      <div col-md-3>
+      <div class="tile done">
+        <div class="body">
+          <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
+        </div>
+        <div class="header">
+            <div class="count">100</div>
+            <div class="title">Projects</div>
+          <div class="progress">
+            <div class="bar" style="width:40%">
+              <p class="percent">40%</p>
+            <!-- bar done -->
+            </div>
+          <!-- progress done -->
+          </div>
+        <!-- header done -->
+        </div>
+        <!-- tile done -->
+      </div>
+
+      <div class="tile onprogress">
+        <div class="body">
+          <div class="title"><i class="fa fa-hourglass-half fa-lg"></i> &nbsp; On Progress</div>
+        </div>
+        <div class="header">
+            <div class="count">160</div>
+            <div class="title">Projects</div>
+          <div class="progress">
+            <div class="bar" style="width:60%">
+              <p class="percent">60%</p>
+            <!-- bar on progress -->
+            </div>
+          <!-- progress on progress -->
+          </div>
+        <!-- header on progress -->
+        </div>
+        <!-- tile on progress -->
+      </div>
+  
+      <div class="tile hold">
+        <div class="body">
+          <div class="title"><i class="fa fa-history fa-lg"></i> &nbsp; Hold</div>
+        </div>
+        <div class="header">
+            <div class="count">80</div>
+            <div class="title">Projects</div>
+          <div class="progress">
+            <div class="bar" style="width:25%">
+              <p class="percent">25%</p>
+            <!-- bar hold -->
+            </div>
+          <!-- progress hold -->
+          </div>
+        <!-- header hold -->
+        </div>
+        <!-- tile hold -->
+      </div>
+  
+      <div class="tile drop">
+        <div class="body">
+          <div class="title"><i class="fa fa-times fa-lg"></i> &nbsp; Drop</div>
+        </div>
+        <div class="header">
+            <div class="count">20</div>
+            <div class="title">Projects</div>
+          <div class="progress">
+            <div class="bar" style="width:5%">
+              <p class="percent">5%</p>
+            <!-- bar drop -->
+            </div>
+          <!-- progress drop -->
+          </div>
+        <!-- header drop -->
+        </div>
+        <!-- tile drop -->
+      </div>
+
+    <!-- Col -->
+    </div>
+
+    <br>
+    <br>
+        <div class="row" style="margin-top: 60px; margin-bottom: 20px">
           <div class="col-md-6" >
             <div class="card card-chart">
               <div class="card-body ">

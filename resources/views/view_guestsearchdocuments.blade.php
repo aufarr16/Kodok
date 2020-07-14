@@ -1,30 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    | {Guest} Search Documents
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -96,12 +78,12 @@ The above copyright notice and this permission notice shall be included in all c
 			<td>1</td>
 			<td>Bank Nagari</td>
 			<td>Implementasi ATMB Debit Bank Nagari &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal">
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal1">
 						<i class="fa fa-search fa-lg"></i>
 					</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px;">
+				<div class="modal" id="modal1" role="dialog">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
@@ -112,41 +94,40 @@ The above copyright notice and this permission notice shall be included in all c
 						<div class = "modal-body">
 							<div class = "input-group">
 								<br>
-							<table class="table1">
+							<table class="table1" id="search1">
 								<thead>
 									<tr class="filters">
 										<th>No</th>
 										<th>Dokumen</th>
-                    					<th>Tanggal Dokumen</th>
 										<th>No.Dokumen</th>
-										<th>Action</th>
+										<th>Softcopy</th>
 										<th>Hardcopy</th>
 									</tr>
 								</thead>
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-                    					<td>5 Januari 2020</td>
 										<td><button class="btn-doc" title="Preview dokumen">400/ND/117/2020</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>	
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-                    <td>5 Februari 2020</td>
 										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-                    <td>5 Februari 2020</td>
 										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>	
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>
 									</tr>
@@ -163,16 +144,15 @@ The above copyright notice and this permission notice shall be included in all c
 			<td>2</td>
 			<td>Bank Artos</td>
 			<td>Implementasi ATMB Bank Artos &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal2">
 						<i class="fa fa-search fa-lg"></i>
 					</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="model" role="dialog" style="padding-left:17px;">
+				<div class="modal" id="modal2" role="dialog" style="padding-left:17px; padding-right: 17px">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
-						
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Implementasi ATMB Bank Artos</h2>
@@ -180,41 +160,40 @@ The above copyright notice and this permission notice shall be included in all c
 						<div class = "modal-body">
 							<div class = "input-group">
 								<br>
-							<table class="table1">
+							<table class="table1" id="search2">
 								<thead>
 									<tr class="filters">
 										<th>No</th>
 										<th>Dokumen</th>
-                    					<th>Tanggal Dokumen</th>
 										<th>No.Dokumen</th>
-										<th>Action</th>
+										<th>Softcopy</th>
 										<th>Hardcopy</th>
 									</tr>
 								</thead>
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-                    <td>10 Februari 2019</td>
 										<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>	
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-                    <td>15 Maret 2020</td>
 										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>	
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2019 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-                    <td>15 Maret 2020</td>
 										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-										<td><button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										<td>	
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2019 (BAE)</td>
 									</tr>
@@ -280,6 +259,30 @@ $(document).ready(function() {
          "paging": true, 
          "info": false,         
          "lengthChange":false
+           } );
+
+    $('#search1').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+
+    $('#search2').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+
+    $('#search3').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
            } );
 } );
 </script>

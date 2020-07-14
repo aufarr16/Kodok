@@ -1,30 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    | {Admin} Products
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -88,8 +70,13 @@ The above copyright notice and this permission notice shall be included in all c
 			</a>
 			</li>
           <li class="active">
-            <a href="/admin/produts">
+            <a href="/admin/products">
             <span class="fas fa-random mr-2"></span>Products
+            </a>
+          </li>
+          <li>
+            <a href="/admin/mitra">
+            <span class="fas fa-university mr-2"></span>Mitra
             </a>
           </li>
         </ul>
@@ -102,7 +89,7 @@ The above copyright notice and this permission notice shall be included in all c
 			<div class="form-group">
 
 				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
-					<span>Add Products &nbsp<i class="fas fa-plus-square fa-lg"></i><span>
+					<span>Add Products &nbsp<i class="fas fa-plus fa-lg"></i><span>
 				</button>
     
 				<!-- <input id="myInput" name="search" placeholder="Search" type="text" style="margin-top:-10px; border:2px solid #ccc; border-radius:5px; font-size: 15px; width: 180px; float:right"> -->
@@ -124,7 +111,7 @@ The above copyright notice and this permission notice shall be included in all c
 							</div>
 								<input type="text" id="namaproduct" name="namaproduct" placeholder=" ">
 						</div>
-						
+						<br>
 					<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
 					
 					</div>
@@ -149,7 +136,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>1</td>
 				<td>ATM Bersama</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal1" role="dialog">
 						
@@ -167,14 +154,14 @@ The above copyright notice and this permission notice shall be included in all c
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
 							
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 						
 				</td>
 				<td>IDE</td>
@@ -184,7 +171,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>2</td>
 				<td>ATMB Debit</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal2" role="dialog">
 						
@@ -202,14 +189,14 @@ The above copyright notice and this permission notice shall be included in all c
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
 							
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>DMR</td>
 				<td>IDE</td>
@@ -218,7 +205,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>3</td>
 				<td>Payment</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal3"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal3"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal3" role="dialog">
 						
@@ -238,12 +225,12 @@ The above copyright notice and this permission notice shall be included in all c
 							</div>
 								
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
+							<br>
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>RAS</td>
 				<td>AUF</td>
@@ -252,7 +239,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>4</td>
 				<td>Remittance</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal4"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal4" role="dialog">
 						
@@ -270,13 +257,13 @@ The above copyright notice and this permission notice shall be included in all c
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>AUF</td>
 				<td>RAS</td>
@@ -285,7 +272,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>5</td>
 				<td>Disbursement</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal5"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal5"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal5" role="dialog">
 						
@@ -305,12 +292,12 @@ The above copyright notice and this permission notice shall be included in all c
 							</div>
 								
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
+							<br>
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>
@@ -319,7 +306,7 @@ The above copyright notice and this permission notice shall be included in all c
 				<td>6</td>
 				<td>QR Payment</td>
 				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal6"><i class="fas fa-edit fa-lg"></i></i></button>
+					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal6"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
 						<!-- The Modal -->
 						<div class="modal" id="modal6" role="dialog">
 						
@@ -339,12 +326,12 @@ The above copyright notice and this permission notice shall be included in all c
 							</div>
 								
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
+							<br>
 							</div>
 						</div>
 						</div>
 						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-window-close fa-lg"></i></button>
+						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>

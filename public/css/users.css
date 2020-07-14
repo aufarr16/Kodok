@@ -59,14 +59,14 @@
 	color: #19569A;
 	padding: 3px 3px;
 	width: 25%;
-	margin: 5px 5px 10px;
+	margin: 5px 10px 10px;
 	border-radius: 15px;
 	cursor: pointer;
 	font-weight: bolder;
 	border: 2px solid #19569A;
 	font-size: 16px;
 	height: 35px;
-  display: inline-block;
+  display: inherit;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -187,10 +187,10 @@
 
 .modal a.close1 {
     position: absolute;
-    top: 0px;
-    right: 15px;
+    top: -10px;
+    right: 6px;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     text-decoration: none;
     color: grey;
@@ -212,7 +212,7 @@ input[type=text], select, textarea{
 input[type=text], select{
   width: 100%;
   padding: 5px 5px;
-  margin: 10px 10px;
+  margin: 0px 10px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;

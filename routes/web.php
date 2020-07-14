@@ -22,6 +22,7 @@ Route::get('/admin/archive', 'controller_adminarchivedocuments@openPage');
 Route::get('/admin/products', 'controller_adminproducts@openPage');
 Route::get('/admin/searchdocs', 'controller_adminsearchdocuments@openPage');
 Route::get('/admin/users', 'controller_adminusers@openPage');
+Route::get('/admin/mitra', 'controller_adminmitra@openPage');
 
 ##MANAGER
 Route::get('/manager/approval', 'controller_managerapprovalprojects@openPage');

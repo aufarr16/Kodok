@@ -1,31 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <link rel="stylesheet" href="css/bootstrap.css"/>
   <title>
-    Paper Dashboard 2 by Creative Tim
+    | {Admin} Archive Documents
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -94,6 +75,11 @@ The above copyright notice and this permission notice shall be included in all c
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>
+          <li>
+            <a href="/admin/mitra">
+            <span class="fas fa-university mr-2"></span>Mitra
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -118,10 +104,10 @@ The above copyright notice and this permission notice shall be included in all c
 			<td>Sertifikasi</td>
 			<td>Implementasi ATM Bersama Bank Artos</td>
 			<td>
-				<button type="button" class="btn-detail" data-toggle="modal" data-target="#model">Details</button>
+				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal1">Details</button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="model" role="dialog" style="left:20%; margin-top:50px">
+				<div class="modal" id="modal1" role="dialog" style="left:20%; margin-top:50px">
 				
 				<!-- Modal content -->
 					<div class="modal-content" style="width:50%">
@@ -143,18 +129,18 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>1</td>
 											<td>Nodin Penugasan</td>
 											<td>	
-												<select class="custom-select" id="status_select"> 
-													<option value="collected">Collected</option>
-													<option value="notcollected">Not Collected</option>
-													<option value="postponed">Postponed</option>
+												<select class="custom-select" id="status_select1"> 
+													<option value="collected1">Collected</option>
+													<option value="notcollected1">Not Collected</option>
+													<option value="postponed1">Postponed</option>
 												</select>
 												
 												<button class="btn-ok" type="button">OK</button>
 													
 												<div class ="output">
-													<div id="collected" class="status_docs"></div>
-													<div id="notcollected" class="status_docs"></div>
-													<div id="postponed" class="status_docs">
+													<div id="collected1" class="status_docs1"></div>
+													<div id="notcollected1" class="status_docs1"></div>
+													<div id="postponed1" class="status_docs1">
 														<br>
 													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
@@ -165,20 +151,20 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>2</td>
 											<td>BAKO</td>
 											<td>	
-												<select class="custom-select" id="status_select2"> 
-													<option value="collected2">Collected</option>
-													<option value="notcollected2">Not Collected</option>
-													<option value="postponed2">Postponed</option>
+												<select class="custom-select" id="status_select1_2"> 
+													<option value="collected1_2">Collected</option>
+													<option value="notcollected1_2">Not Collected</option>
+													<option value="postponed1_2">Postponed</option>
 												</select>
 												
 												<button class="btn-ok" type="button">OK</button>
 													
 												<div class ="output">
-													<div id="collected2" class="status_docs2"></div>
-													<div id="notcollected2" class="status_docs2"></div>
-													<div id="postponed2" class="status_docs2">
+													<div id="collected1_2" class="status_docs1_2"></div>
+													<div id="notcollected1_2" class="status_docs1_2"></div>
+													<div id="postponed1_2" class="status_docs1_2">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text2" cols="36" class="note_status" role="textbox"></textarea>
+													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -187,18 +173,18 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>3</td>
 											<td>BAE</td>
 											<td>	
-												<select class="custom-select" id="status_select3"> 
-													<option value="collected3">Collected</option>
-													<option value="notcollected3">Not Collected</option>
-													<option value="postponed3">Postponed</option>
+												<select class="custom-select" id="status_select1_3"> 
+													<option value="collected1_3">Collected</option>
+													<option value="notcollected1_3">Not Collected</option>
+													<option value="postponed1_3">Postponed</option>
 												</select>
 												
 												<button class="btn-ok" type="button">OK</button>
 													
 												<div class ="output">
-													<div id="collected3" class="status_docs3"></div>
-													<div id="notcollected3" class="status_docs3"></div>
-													<div id="postponed3" class="status_docs3">
+													<div id="collected1_3" class="status_docs1_3"></div>
+													<div id="notcollected1_3" class="status_docs1_3"></div>
+													<div id="postponed1_3" class="status_docs1_3">
 														<br>
 													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
@@ -209,18 +195,18 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>4</td>
 											<td>BATO</td>
 											<td>	
-												<select class="custom-select" id="status_select4"> 
-													<option value="collected4">Collected</option>
-													<option value="notcollected4">Not Collected</option>
-													<option value="postponed4">Postponed</option>
+												<select class="custom-select" id="status_select1_4"> 
+													<option value="collected1_4">Collected</option>
+													<option value="notcollected1_4">Not Collected</option>
+													<option value="postponed1_4">Postponed</option>
 												</select>
 												
 												<button class="btn-ok" type="button">OK</button>
 													
 												<div class ="output">
-													<div id="collected4" class="status_docs4"></div>
-													<div id="notcollected4" class="status_docs4"></div>
-													<div id="postponed4" class="status_docs4">
+													<div id="collected1_4" class="status_docs1_4"></div>
+													<div id="notcollected1_4" class="status_docs1_4"></div>
+													<div id="postponed1_4" class="status_docs1_4">
 														<br>
 													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
@@ -231,18 +217,18 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>5</td>
 											<td>BATO</td>
 											<td>	
-												<select class="custom-select" id="status_select5"> 
-													<option value="collected5">Collected</option>
-													<option value="notcollected5">Not Collected</option>
-													<option value="postponed5">Postponed</option>
+												<select class="custom-select" id="status_select1_5"> 
+													<option value="collected1_5">Collected</option>
+													<option value="notcollected1_5">Not Collected</option>
+													<option value="postponed1_5">Postponed</option>
 												</select>
 												
 												<button class="btn-ok" type="button">OK</button>
 													
 												<div class ="output">
-													<div id="collected5" class="status_docs5"></div>
-													<div id="notcollected5" class="status_docs5"></div>
-													<div id="postponed5" class="status_docs5">
+													<div id="collected1_5" class="status_docs1_5"></div>
+													<div id="notcollected1_5" class="status_docs1_5"></div>
+													<div id="postponed1_5" class="status_docs1_5">
 														<br>
 													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
@@ -264,21 +250,22 @@ The above copyright notice and this permission notice shall be included in all c
 			<td>Internal Test</td>
 			<td>Implementasi ATM Bersama Bank Nagari</td>
 			<td>
-				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal">Details</button>
+				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal2">Details</button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top:100px">
+				<div class="modal" id="modal2" role="dialog" style="left:20%; margin-top:50px">
 				
 				<!-- Modal content -->
-					<div class="modal-content" style="width:80%">
+					<div class="modal-content" style="width:50%">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Implementasi ATM Bersama Bank Nagari</h2>
 					</div>	
-						<div class = "modal-body">
+						<div class = "modal-body" id="style-7">
+							<div class="force-overflow">
 							<div class = "input-group">
 								<br>
-									<table class="table1">
+									<table class="table1 fixedHeader" style="margin:-20px 10px -20px 10px">
 										<tr>
 											<th>No</th>	
 											<th>Dokumen</th>
@@ -288,33 +275,51 @@ The above copyright notice and this permission notice shall be included in all c
 											<td>1</td>
 											<td>Nodin Penugasan</td>
 											<td>	
-												<select class="custom-select" style="margin-top:10px" style="padding:0px 2px 0px 2px" id="inputGroupSelect">
-													<option value="1">Collected</option>
-													<option value="2">Not Collected</option>
+												<select class="custom-select" id="status_select2_1"> 
+													<option value="collected2_1">Collected</option>
+													<option value="notcollected2_1">Not Collected</option>
+													<option value="postponed2_1">Postponed</option>
 												</select>
 												
-												<button class="btn-ok" type="button" style="margin-top:0px">OK</button>
+												<button class="btn-ok" type="button">OK</button>
+													
+												<div class ="output">
+													<div id="collected2_1" class="status_docs2_1"></div>
+													<div id="notcollected2_1" class="status_docs2_1"></div>
+													<div id="postponed2_1" class="status_docs2_1">
+														<br>
+													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+													</div>
+												</div>
 											</td>
 										</tr>
 										<tr>
 											<td>2</td>
 											<td>BAKO</td>
 											<td>	
-												<select class="custom-select" style="margin-top:10px" style="padding:0px 2px 0px 2px" id="inputGroupSelect">
-													<option value="1">Collected</option>
-													<option value="2">Not Collected</option>
+												<select class="custom-select" id="status_select2_2"> 
+													<option value="collected2_2">Collected</option>
+													<option value="notcollected2_2">Not Collected</option>
+													<option value="postponed2_2">Postponed</option>
 												</select>
 												
-												<button class="btn-ok" type="button" style="margin-top:0px">OK</button>
+												<button class="btn-ok" type="button">OK</button>
+													
+												<div class ="output">
+													<div id="collected2_2" class="status_docs2_2"></div>
+													<div id="notcollected2_2" class="status_docs2_2"></div>
+													<div id="postponed2_2" class="status_docs2_2">
+														<br>
+													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+													</div>
+												</div>
 											</td>
 										</tr>
 									</table>
 								</br>
-							<!-- ./input group -->
 							</div>
-						<!-- ./modal body -->
+							</div>
 						</div>
-					<!-- ./modal content -->
 					</div>	
 				<!-- ./the modal -->
 				</div>	
@@ -386,66 +391,91 @@ $(document).ready(function () {
 </script>
 <script>
 	$(document).ready(function(){
-	// Baris 1
+	// 1 - Baris 1
   //hides dropdown content
-  $(".status_docs").hide();
+  $(".status_docs1").hide();
   
   //listen to dropdown for change
-  $("#status_select").change(function(){
+  $("#status_select1").change(function(){
     //rehide content on change
-    $('.status_docs').hide();
-    //unhides current item
-    $('#'+$(this).val()).show();
-  });
-  
-  	// Baris 2
-  //hides dropdown content
-  $(".status_docs2").hide();
-
-  //listen to dropdown for change
-  $("#status_select2").change(function(){
-    //rehide content on change
-    $('.status_docs2').hide();
-    //unhides current item
-    $('#'+$(this).val()).show();
-  });
-
-  // Baris 3
-  //hides dropdown content
-  $(".status_docs3").hide();
-
-  //listen to dropdown for change
-  $("#status_select3").change(function(){
-    //rehide content on change
-    $('.status_docs3').hide();
-    //unhides current item
-    $('#'+$(this).val()).show();
-  });
-
-  // Baris 4
-  //hides dropdown content
-  $(".status_docs4").hide();
-
-  //listen to dropdown for change
-  $("#status_select4").change(function(){
-    //rehide content on change
-    $('.status_docs4').hide();
-    //unhides current item
-    $('#'+$(this).val()).show();
-  });
-
-  // Baris 5
-  //hides dropdown content
-  $(".status_docs5").hide();
-
-  //listen to dropdown for change
-  $("#status_select5").change(function(){
-    //rehide content on change
-    $('.status_docs5').hide();
+    $('.status_docs1').hide();
     //unhides current item
     $('#'+$(this).val()).show();
   });
   
+  	// 1 - Baris 2
+  //hides dropdown content
+  $(".status_docs1_2").hide();
+
+  //listen to dropdown for change
+  $("#status_select1_2").change(function(){
+    //rehide content on change
+    $('.status_docs1_2').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+  // 1 - Baris 3
+  //hides dropdown content
+  $(".status_docs1_3").hide();
+
+  //listen to dropdown for change
+  $("#status_select1_3").change(function(){
+    //rehide content on change
+    $('.status_docs1_3').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+  // 1 - Baris 4
+  //hides dropdown content
+  $(".status_docs1_4").hide();
+
+  //listen to dropdown for change
+  $("#status_select1_4").change(function(){
+    //rehide content on change
+    $('.status_docs1_4').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+  // 1 - Baris 5
+  //hides dropdown content
+  $(".status_docs1_5").hide();
+
+  //listen to dropdown for change
+  $("#status_select1_5").change(function(){
+    //rehide content on change
+    $('.status_docs1_5').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+  // 2 - Baris 1
+  //hides dropdown content
+  $(".status_docs2_1").hide();
+
+  //listen to dropdown for change
+  $("#status_select2_1").change(function(){
+    //rehide content on change
+    $('.status_docs2_1').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+   // 2 - Baris 2
+  //hides dropdown content
+  $(".status_docs2_2").hide();
+
+  //listen to dropdown for change
+  $("#status_select2_2").change(function(){
+    //rehide content on change
+    $('.status_docs2_2').hide();
+    //unhides current item
+    $('#'+$(this).val()).show();
+  });
+
+
 });
 </script>
 </body>

@@ -1,30 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    | {Manager} List Projects
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -32,7 +14,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
   <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="{{ url('') }}/css/paper-dashboard.css" rel="stylesheet" />
   <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
@@ -99,7 +81,7 @@ The above copyright notice and this permission notice shall be included in all c
     <div class="container-fluid">
     <div class="content">
        
-	  <h2 style="margin-top:10px">List Projects</h2>
+	  <h4 style="margin-top:10px">List Projects</h4>
     
         <table class="table1"  id="table1">
       		<thead>
@@ -135,7 +117,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal" aria-label="close">&times;</a>
-                      <h2 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</h2>
+                      <h4 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -193,7 +175,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal">&times;</a>
-                      <h2 class="modal-title1">Internal Test Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</h2>
+                      <h4 class="modal-title1">Internal Test Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -214,6 +196,12 @@ The above copyright notice and this permission notice shall be included in all c
                         <span class="circle">IDE</span>
                         <div class="tile">
                               <p>12 Oktober 2019 - 15 Oktober 2019</p> 
+                          </div>
+                      </div>
+                      <div class="tile-outer">
+                        <span class="circle">AUF</span>
+                        <div class="tile">
+                              <p>16 Oktober 2019 - 17 Oktober 2019</p> 
                           </div>
                       </div>
                       <div class="tile-outer">
@@ -250,7 +238,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal">&times;</a>
-                      <h2 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank QNB</h2>
+                      <h4 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank QNB</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -307,7 +295,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal">&times;</a>
-                      <h2 class="modal-title1">Implementasi ATM Bersama Channel Mobile Banking Bank DKI</h2>
+                      <h4 class="modal-title1">Implementasi ATM Bersama Channel Mobile Banking Bank DKI</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -364,7 +352,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal">&times;</a>
-                      <h2 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h2>
+                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">

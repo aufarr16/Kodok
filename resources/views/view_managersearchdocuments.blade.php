@@ -1,30 +1,12 @@
-<!--
-=========================================================
- Paper Dashboard 2 - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard-2
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url('') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    | {Manager} Search Documents
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -119,282 +101,212 @@ The above copyright notice and this permission notice shall be included in all c
 			
 			<tbody>
 			<tr>
-				<td>1</td>
-				<td>Bank Nagari</td>
-				<td>Implementasi ATMB Debit Bank Nagari &nbsp;
-					<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal1">
-							<i class="fa fa-search fa-lg"></i>
-						</button>
-						
-						<!-- The Modal -->
-					<div class="modal" id="modal1" role="dialog" style="padding-left:17px;">
+			<td>1</td>
+			<td>Bank Nagari</td>
+			<td>Implementasi ATMB Debit Bank Nagari &nbsp;
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal1">
+						<i class="fa fa-search fa-lg"></i>
+					</button>
 					
-					<!-- Modal content -->
-						<div class="modal-content">
-						<div class="modal-header">
-							<a class="close1" data-dismiss="modal">&times;</a>
-							<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
-						</div>	
-							<div class = "modal-body">
-								<div class = "input-group">
-									<br>
-								<table class="table1">
-									<thead>
-										<tr class="filters">
-											<th>No</th>
-											<th>Dokumen</th>
-											<th>No.Dokumen</th>
-											<th>Softcopy</th>
-											<th>Hardcopy</th>
-										</tr>
-									</thead>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-											<td><button class="btn-doc" title="Preview dokumen">400/ND/117/2020</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>-</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2020 (BAKO)</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>BAE</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2020 (BAE)</td>
-										</tr>
-									
+					<!-- The Modal -->
+				<div class="modal" id="modal1" role="dialog">
+				
+				<!-- Modal content -->
+					<div class="modal-content">
+					<div class="modal-header">
+						<a class="close1" data-dismiss="modal">&times;</a>
+						<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
+					</div>	
+						<div class = "modal-body">
+							<div class = "input-group">
+								<br>
+							<table class="table1" id="search1">
+								<thead>
+									<tr class="filters">
+										<th>No</th>
+										<th>Dokumen</th>
+										<th>No.Dokumen</th>
+										<th>Softcopy</th>
+										<th>Hardcopy</th>
+									</tr>
+								</thead>
+									<tr>
+										<td>1</td>
+										<td>Nodin Penugasan</td>
+										<td><button class="btn-doc" title="Preview dokumen">400/ND/117/2020</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>BAKO</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2020 (BAKO)</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>BAE</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2020 (BAE)</td>
+									</tr>
+								
+							</table>
+						</div>
+					</div>
+					</div>
+				</div>
+			</td>
+			<td>IDE</td>
+			<td>2020</td>
+		<tr>
+			<td>2</td>
+			<td>Bank Artos</td>
+			<td>Implementasi ATMB Bank Artos &nbsp;
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal2">
+						<i class="fa fa-search fa-lg"></i>
+					</button>
+					
+					<!-- The Modal -->
+				<div class="modal" id="modal2" role="dialog" style="padding-left:17px; padding-right: 17px">
+				
+				<!-- Modal content -->
+					<div class="modal-content">
+					<div class="modal-header">
+						<a class="close1" data-dismiss="modal">&times;</a>
+						<h2 class="modal-title">Implementasi ATMB Bank Artos</h2>
+					</div>	
+						<div class = "modal-body">
+							<div class = "input-group">
+								<br>
+							<table class="table1" id="search2">
+								<thead>
+									<tr class="filters">
+										<th>No</th>
+										<th>Dokumen</th>
+										<th>No.Dokumen</th>
+										<th>Softcopy</th>
+										<th>Hardcopy</th>
+									</tr>
+								</thead>
+									<tr>
+										<td>1</td>
+										<td>Nodin Penugasan</td>
+										<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>BAKO</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2019 (BAKO)</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>BAE</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2019 (BAE)</td>
+									</tr>
 								</table>
 							</div>
 						</div>
-						</div>
 					</div>
-				</td>
-				<td>IDE</td>
-				<td>2020</td>
-			<tr>
-				<td>2</td>
-				<td>Bank Artos</td>
-				<td>Implementasi ATMB Bank Artos &nbsp;
-					<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal2">
-							<i class="fa fa-search fa-lg"></i>
-						</button>
-						
-						<!-- The Modal -->
-					<div class="modal" id="modal2" role="dialog" style="padding-left:17px;">
+				</div>
+			</td>
+			<td>DMR</td>
+			<td>2019</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Bank Artos</td>
+			<td>Implmentasi Indosat pada Bank DKI Channel Internet Banking &nbsp;
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal3">
+						<i class="fa fa-search fa-lg"></i>
+					</button>
 					
-					<!-- Modal content -->
-						<div class="modal-content">
-						<div class="modal-header">
-							<a class="close1" data-dismiss="modal">&times;</a>
-							<h2 class="modal-title">Implementasi ATMB Bank Artos</h2>
-						</div>	
-							<div class = "modal-body">
-								<div class = "input-group">
-									<br>
-								<table class="table1">
-									<thead>
-										<tr class="filters">
-											<th>No</th>
-											<th>Dokumen</th>
-											<th>No.Dokumen</th>
-											<th>Softcopy</th>
-											<th>Hardcopy</th>
-										</tr>
-									</thead>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-											<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>-</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAKO)</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>BAE</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAE)</td>
-										</tr>
-									</table>
-								</div>
+					<!-- The Modal -->
+				<div class="modal" id="modal3" role="dialog" style="padding-left:17px; padding-right: 17px">
+				
+				<!-- Modal content -->
+					<div class="modal-content">
+					<div class="modal-header">
+						<a class="close1" data-dismiss="modal">&times;</a>
+						<h2 class="modal-title">Implmentasi Indosat pada Bank DKI Channel Internet Banking</h2>
+					</div>	
+						<div class = "modal-body">
+							<div class = "input-group">
+								<br>
+							<table class="table1" id="search3">
+								<thead>
+									<tr class="filters">
+										<th>No</th>
+										<th>Dokumen</th>
+										<th>No.Dokumen</th>
+										<th>Softcopy</th>
+										<th>Hardcopy</th>
+									</tr>
+								</thead>
+									<tr>
+										<td>1</td>
+										<td>Nodin Penugasan</td>
+										<td><button class="btn-doc" title="Preview dokumen">442/ND/145/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>BAKO</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/227/III/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2019 (BAKO)</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>BAE</td>
+										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/233/III/2019</button></td>
+										<td>	
+											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+										</td>
+										<td>Bantex tahun 2019 (BAE)</td>
+									</tr>
+								</table>
 							</div>
 						</div>
 					</div>
-				</td>
-				<td>DMR</td>
-				<td>2019</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Bank BNIS</td>
-				<td>Implementasi Indosat Postpaid dan Prepaid Channel PPOB Bank BNIS &nbsp;
-					<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal3">
-							<i class="fa fa-search fa-lg"></i>
-						</button>
-						
-						<!-- The Modal -->
-					<div class="modal" id="modal3" role="dialog" style="padding-left:17px;">
-					
-					<!-- Modal content -->
-						<div class="modal-content">
-						<div class="modal-header">
-							<a class="close1" data-dismiss="modal">&times;</a>
-							<h2 class="modal-title">Implementasi Indosat Postpaid dan Prepaid Channel PPOB Bank BNIS</h2>
-						</div>	
-							<div class = "modal-body">
-								<div class = "input-group">
-									<br>
-								<table class="table1">
-									<thead>
-										<tr class="filters">
-											<th>No</th>
-											<th>Dokumen</th>
-											<th>No.Dokumen</th>
-											<th>Softcopy</th>
-											<th>Hardcopy</th>
-										</tr>
-									</thead>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-											<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>-</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAKO)</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>BAE</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAE)</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</td>
-				<td>IDE</td>
-				<td>2019</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Bank DKI</td>
-				<td>Implementasi ATMB Bank DKI &nbsp;
-					<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal4">
-							<i class="fa fa-search fa-lg"></i>
-						</button>
-						
-						<!-- The Modal -->
-					<div class="modal" id="modal4" role="dialog" style="padding-left:17px;">
-					
-					<!-- Modal content -->
-						<div class="modal-content">
-						<div class="modal-header">
-							<a class="close1" data-dismiss="modal">&times;</a>
-							<h2 class="modal-title">Implementasi ATMB Bank DKI</h2>
-						</div>	
-							<div class = "modal-body">
-								<div class = "input-group">
-									<br>
-								<table class="table1">
-									<thead>
-										<tr class="filters">
-											<th>No</th>
-											<th>Dokumen</th>
-											<th>No.Dokumen</th>
-											<th>Softcopy</th>
-											<th>Hardcopy</th>
-										</tr>
-									</thead>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-											<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>-</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAKO)</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>BAE</td>
-											<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-											<td>	
-												<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg"></i></button>
-												<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
-											</td>
-											<td>Bantex tahun 2019 (BAE)</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</td>
-				<td>DMR</td>
-				<td>2019</td>
-			</tr>
-		
+				</div>
+			</td>
+			<td>DMR</td>
+			<td>2019</td>
+		</tr>
 		</tbody>
 	</table> 
    
@@ -457,6 +369,30 @@ $(document).ready(function() {
          "paging": true,
          "info": false,         
          "lengthChange":false
+           } );
+
+   $('#search1').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+
+    $('#search2').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+
+    $('#search3').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
            } );
 } );
 </script>

@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+ <meta charset="utf-8" />
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    | {Admin} Users
+    | {Admin} Mitra
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,11 +21,11 @@
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
-<!--   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" /> -->
+<!--   <link href="{{ url('') }}css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
+  <link href="{{ url('') }}css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" /> -->
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
+  <!-- <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" /> -->
 </head>
 
 <body>
@@ -66,7 +66,7 @@
 					<span class="fas fa-folder-open mr-2"></span>Filling Documents
 				</a>
 			</li> -->
-          <li class="active">
+          <li>
 			<a href="/admin/users">
 				<span class="fas fa-users mr-2"></span>Users
 			</a>
@@ -76,7 +76,7 @@
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/admin/mitra">
             <span class="fas fa-university mr-2"></span>Mitra
             </a>
@@ -87,11 +87,11 @@
       <div class="container-fluid">
       <div class="content">
        
-	   <h2 style="margin-top:10px">Users</h2>
+	   <h2 style="margin-top:10px">Mitra</h2>
 			<div class="form-group">
 
 				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
-					<span>New User <i class="fas fa-user-plus"></i><span>
+					<span>Add Mitra <i class="fas fa-plus fa-lg"></i><span>
 				</button>
     
 				<!-- <input id="myInput" name="search" placeholder="Search" type="text" style="margin-top:-10px; border:2px solid #ccc; border-radius:5px; font-size: 15px; width: 180px; float:right"> -->
@@ -103,42 +103,21 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Add New user</h2>
+						<h2 class="modal-title">Add New Mitra</h2>
 					</div>	
 					<div class = "modal-body">
 						<div class = "input-group">
 							<div class ="input-group-addon">
-								<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+								<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
 								<input type="text" id="inisial" name="inisial" placeholder=" ">
 						</div>
-						<br>	
+						<br>
 						<div class = "input-group">
 							<div class ="input-group-addon">
-								<label for="nama" style="font-weight:bolder">Nama</label>
+								<label for="nama" style="font-weight:bolder">Nama Mitra</label>
 							</div>	
 								<input type="text" id="nama" name="nama" placeholder=" ">
-						</div>
-						<br>
-						<div class = "input-group">
-							<div class ="input-group-addon">						
-								<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-							</div>
-								<select id="role" class="form control" style="height:35px"> 
-									<option value="" hidden>Pilih Role</option>
-									<option value="admin">Admin</option>
-									<option value="manager">Manager</option>
-									<option value="engineer">Engineer</option>
-									<option value="guest">Guest</option>
-								</select>
-					
-						</div>
-						<br>
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="email" style="font-weight:bolder">Email</label>
-							</div>	
-								<input type="text" id="email" name="email" placeholder=" ">
 						</div>
 						<br>
 					<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
@@ -154,9 +133,8 @@
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Inisial</th>
-				<th>PIC</th>
-				<th>Role</th>
+				<th>ABA</th>
+				<th>Nama Mitra</th>
 				<th>Action</th>
 				<th>Add By</th>
 				<th>Modify By</th>
@@ -165,11 +143,10 @@
 		<tbody>
 			<tr>
 				<td>1</td>
-				<td>IDE</td>
-				<td>Ismi Destiawati</td>
-				<td>Engineer</td>
+				<td>001</td>
+				<td>BRI</td>
 				<td data-filter="false">
-					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-user-edit fa-lg"></i></button>
+					<button title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- <!-- The Modal -->
 						<div class="modal" id="modal1" role="dialog">
 						
@@ -177,41 +154,21 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit User</h2>
+								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 									</div>
 										<input type="text" id="inisial" name="inisial" placeholder=" ">
 								</div>
 								<br>	
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama</label>
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
 									</div>	
 										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-									</div>
-										<select id="role" name="role" style="height:35px">
-											<option value="" hidden>Pilih Role</option>
-											<option value="admin">Admin</option>
-											<option value="manager">Manager</option>
-											<option value="engineer">Engineer</option>
-											<option value="guest">Guest</option>
-										</select>
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder">Email</label>
-									</div>	
-										<input type="text" id="email" name="email" placeholder=" ">
 								</div>
 								<br>
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
@@ -219,18 +176,17 @@
 							</div>
 						</div>
 						</div>
-					<button onclick ="return confirm('Are you sure to delete this user?')" href='#' type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+							<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>
 			</tr>
 			<tr>
 				<td>2</td>
-				<td>DMR</td>
-				<td>Devi Mayang Sari</td>
-				<td>Admin</td>
+				<td>008</td>
+				<td>Bank Mandiri</td>
 				<td>
-					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-user-edit fa-lg"></i></button>
+					<button title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- <!-- The Modal -->
 						<div class="modal" id="modal2" role="dialog">
 						
@@ -238,41 +194,21 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit User</h2>
+								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 									</div>
 										<input type="text" id="inisial" name="inisial" placeholder=" ">
 								</div>
 								<br>	
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama</label>
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
 									</div>	
 										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-									</div>
-										<select id="role" name="role" style="height:35px">
-											<option value="" hidden>Pilih Role</option>
-											<option value="admin">Admin</option>
-											<option value="manager">Manager</option>
-											<option value="engineer">Engineer</option>
-											<option value="guest">Guest</option>
-										</select>
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder">Email</label>
-									</div>	
-										<input type="text" id="email" name="email" placeholder=" ">
 								</div>
 								<br>
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
@@ -280,19 +216,17 @@
 							</div>
 						</div>
 						</div>
-					<button onclick ="return confirm('Are you sure to delete this user?')" href='#' type="button"
-						title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>
 			</tr>
 			<tr>
 				<td>3</td>
-				<td>RAS</td>
-				<td>Rio Ari Saputra</td>
-				<td>Manager</td>
+				<td>009</td>
+				<td>BNI</td>
 				<td>
-					<button class="btn-edit" title="edit user" data-toggle="modal" data-target="#modal3"><i class="fas fa-user-edit fa-lg"></i></button>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal3"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- <!-- The Modal -->
 						<div class="modal" id="modal3" role="dialog">
 						
@@ -300,41 +234,21 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit User</h2>
+								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 									</div>
 										<input type="text" id="inisial" name="inisial" placeholder=" ">
 								</div>
 								<br>	
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama</label>
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
 									</div>	
 										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-									</div>
-										<select id="role" name="role" style="height:35px">
-											<option value="" hidden>Pilih Role</option>
-											<option value="admin">Admin</option>
-											<option value="manager">Manager</option>
-											<option value="engineer">Engineer</option>
-											<option value="guest">Guest</option>
-										</select>
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder">Email</label>
-									</div>	
-										<input type="text" id="email" name="email" placeholder=" ">
 								</div>
 								<br>
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
@@ -342,18 +256,17 @@
 							</div>
 						</div>
 						</div>
-					<button onclick ="return confirm('Are you sure to delete this user?')" href='#' type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>DMR</td>
 				<td>IDE</td>
 			</tr>
 			<tr>
 				<td>4</td>
-				<td>AUF</td>
-				<td>Aufar Rizqi</td>
-				<td>Guest</td>
+				<td>097</td>
+				<td>Bank Mayapada</td>
 				<td>
-					<button class="btn-edit" title="edit user" data-toggle="modal" data-target="#modal4"><i class="fas fa-user-edit fa-lg"></i></button>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- <!-- The Modal -->
 						<div class="modal" id="modal4" role="dialog">
 						
@@ -361,41 +274,21 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit User</h2>
+								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 									</div>
 										<input type="text" id="inisial" name="inisial" placeholder=" ">
 								</div>
 								<br>	
 								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama</label>
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
 									</div>	
 										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-									</div>
-										<select id="role" name="role" style="height:35px">
-											<option value="" hidden>Pilih Role</option>
-											<option value="admin">Admin</option>
-											<option value="manager">Manager</option>
-											<option value="engineer">Engineer</option>
-											<option value="guest">Guest</option>
-										</select>
-								</div>
-								<br>
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder">Email</label>
-									</div>	
-										<input type="text" id="email" name="email" placeholder=" ">
 								</div>
 								<br>
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
@@ -403,11 +296,172 @@
 							</div>
 						</div>
 						</div>
-					<button onclick ="return confirm('Are you sure to delete this user?')" href='#' type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>RAS</td>
 				<td>AUF</td>
 			</tr>
+			<tr>
+				<td>4</td>
+				<td>097</td>
+				<td>Bank Mayapada</td>
+				<td>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
+						<!-- <!-- The Modal -->
+						<div class="modal" id="modal4" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit Mitra</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+									</div>
+										<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
+									</div>	
+										<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							
+							</div>
+						</div>
+						</div>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
+				</td>
+				<td>RAS</td>
+				<td>AUF</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>097</td>
+				<td>Bank Mayapada</td>
+				<td>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
+						<!-- <!-- The Modal -->
+						<div class="modal" id="modal4" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit Mitra</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+									</div>
+										<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
+									</div>	
+										<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							
+							</div>
+						</div>
+						</div>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
+				</td>
+				<td>RAS</td>
+				<td>AUF</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>097</td>
+				<td>Bank Mayapada</td>
+				<td>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
+						<!-- <!-- The Modal -->
+						<div class="modal" id="modal4" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit Mitra</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+									</div>
+										<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
+									</div>	
+										<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							
+							</div>
+						</div>
+						</div>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
+				</td>
+				<td>RAS</td>
+				<td>AUF</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>097</td>
+				<td>Bank Mayapada</td>
+				<td>
+					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
+						<!-- <!-- The Modal -->
+						<div class="modal" id="modal4" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit Mitra</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+									</div>
+										<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
+									</div>	
+										<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							
+							</div>
+						</div>
+						</div>
+					<button onclick="return confirm('Are you sure wanna delete this mitra?')" href='#' type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></button>
+				</td>
+				<td>RAS</td>
+				<td>AUF</td>
+			</tr>
+			
 		</tbody>
 	</table>
 </div>
@@ -456,8 +510,8 @@ $(document).ready(function() {
     $('#table1').DataTable( { 
       pageSize: 8,     
          "searching": true,
-         "paging": false, 
-         "info": false,         
+         "paging": true, 
+         "info": true,         
          "lengthChange":false
            } );
 } );
