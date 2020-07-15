@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsStatusTable extends Migration
+class CreateProjectsKeteranganTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateProjectsStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects_status', function (Blueprint $table) {
-            $table->bigIncrements('id_pstatus');
-            $table->string('nama_pstatus');
+        Schema::create('projects_keterangans', function (Blueprint $table) {
+            $table->bigIncrements('id_pketerangan');
+            $table->string('nama_pkKeterangan');
         });
 
         //Schema::drop('dokumen');
@@ -28,6 +28,6 @@ class CreateProjectsStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_status');
+        Schema::dropIfExists('projects_keterangans');
     }
 }

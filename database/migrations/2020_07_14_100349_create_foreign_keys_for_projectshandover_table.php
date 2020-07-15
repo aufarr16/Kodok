@@ -13,9 +13,9 @@ class CreateForeignKeysForProjectshandoverTable extends Migration
      */
     public function up()
     {
-        Schema::table('projects_handover', function (Blueprint $table) {
-            $table->foreign('id_users')->references('id_users')->on('users');    
-            $table->foreign('id_projects')->references('id_projects')->on('projects');
+        Schema::table('projects_handovers', function (Blueprint $table) {
+            $table->foreign('id_user')->references('id_user')->on('users');    
+            $table->foreign('id_project')->references('id_project')->on('projects');
         });
     }
 
@@ -26,7 +26,7 @@ class CreateForeignKeysForProjectshandoverTable extends Migration
      */
     public function down()
     {
-        Schema::table('projects_handover', function (Blueprint $table) {
+        Schema::table('projects_handovers', function (Blueprint $table) {
             $table->dropForeign('projects_handover_id_users_foreign');
             $table->dropForeign('projects_handover_id_projects_foreign');           
         });

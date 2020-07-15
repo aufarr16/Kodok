@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentsTypeTable extends Migration
+class CreateUsersLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDocumentsTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('documents_type', function (Blueprint $table) {
-            $table->bigIncrements('id_DocType');
-            $table->string('nama_DocType');
+        Schema::create('users_levels', function (Blueprint $table) {
+            $table->bigIncrements('id_ulevel');
+            $table->string('nama_ulevel');
         });
 
         //Schema::drop('dokumen');
@@ -28,6 +28,6 @@ class CreateDocumentsTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documents_type');
+        Schema::dropIfExists('users_levels');
     }
 }

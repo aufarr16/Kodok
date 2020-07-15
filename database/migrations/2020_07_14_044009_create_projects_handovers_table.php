@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectshandoverTable extends Migration
+class CreateProjectsHandoversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateProjectshandoverTable extends Migration
     {
         Schema::create('projects_handovers', function (Blueprint $table) {
             $table->bigIncrements('id_handover');
-            $table->unsignedBigInteger('id_users');
-            $table->unsignedBigInteger('id_projects');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_project');
             $table->date('waktu_assign_handover');
             $table->date('waktu_selesai_handover');
         });
@@ -29,6 +29,6 @@ class CreateProjectshandoverTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projectshandover');
+        Schema::dropIfExists('projects_handovers');
     }
 }

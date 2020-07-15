@@ -14,12 +14,12 @@ class CreateForeignKeysForProjectsTable extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->foreign('id_users')->references('id_users')->on('users');
-            $table->foreign('id_pketerangan')->references('id_pketerangan')->on('projects_keterangan');
-            $table->foreign('id_pstatus')->references('id_pstatus')->on('projects_status');
-            $table->foreign('id_ptype')->references('id_ptype')->on('projects_type');
-            $table->foreign('id_produk')->references('id_produk')->on('produk');
-            $table->foreign('ABA')->references('ABA')->on('mitra');
+            $table->foreign('id_user')->references('id_user')->on('users');
+            $table->foreign('id_pketerangan')->references('id_pketerangan')->on('projects_keterangans');
+            $table->foreign('id_pstat')->references('id_pstat')->on('projects_stats');
+            $table->foreign('id_ptype')->references('id_ptype')->on('projects_types');
+            $table->foreign('id_product')->references('id_product')->on('products');
+            $table->foreign('ABA')->references('ABA')->on('mitras');
         });
     }
 

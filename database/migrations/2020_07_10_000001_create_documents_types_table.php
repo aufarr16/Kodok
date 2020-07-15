@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMitraTable extends Migration
+class CreateDocumentsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateMitraTable extends Migration
      */
     public function up()
     {
-        Schema::create('mitra', function (Blueprint $table) {
-            $table->integer('ABA')->primary('ABA');
-            $table->string('nama_mitra');
+        Schema::create('documents_types', function (Blueprint $table) {
+            $table->bigIncrements('id_DocType');
+            $table->string('nama_DocType');
         });
+
+        //Schema::drop('dokumen');
     }
 
     /**
@@ -26,6 +28,6 @@ class CreateMitraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mitra');
+        Schema::dropIfExists('documents_types');
     }
 }

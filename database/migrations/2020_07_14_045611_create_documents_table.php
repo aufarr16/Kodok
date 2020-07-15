@@ -14,10 +14,10 @@ class CreateDocumentsTable extends Migration
     public function up()
     {
         Schema::create('documents', function (Blueprint $table) {
-            $table->bigIncrements('id_documents');
-            $table->unsignedBigInteger('id_projects');
+            $table->bigIncrements('id_document');
+            $table->unsignedBigInteger('id_project');
             $table->unsignedBigInteger('id_DocType');
-            $table->string('nama_dokumen');
+            $table->string('nama_document');
             $table->boolean('softcopy_status');
             $table->boolean('hardcopy_status');
         });

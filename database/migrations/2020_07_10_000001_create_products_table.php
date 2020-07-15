@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersLevelTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUsersLevelTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_level', function (Blueprint $table) {
-            $table->bigIncrements('id_ulevel');
-            $table->string('nama_ulevel');
+        Schema::create('products', function (Blueprint $table) {
+            $table->bigIncrements('id_product');
+            $table->string('nama_product');
         });
 
         //Schema::drop('dokumen');
@@ -28,6 +28,7 @@ class CreateUsersLevelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_level');
+        Schema::dropIfExists('products');
     }
 }
+

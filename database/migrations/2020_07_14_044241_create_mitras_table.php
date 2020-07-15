@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsKeteranganTable extends Migration
+class CreateMitrasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateProjectsKeteranganTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects_keterangan', function (Blueprint $table) {
-            $table->bigIncrements('id_pketerangan');
-            $table->string('nama_pkKeterangan');
+        Schema::create('mitras', function (Blueprint $table) {
+            $table->integer('ABA')->primary('ABA');
+            $table->string('nama_mitra');
         });
-
-        //Schema::drop('dokumen');
     }
 
     /**
@@ -28,6 +26,6 @@ class CreateProjectsKeteranganTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_keterangan');
+        Schema::dropIfExists('mitras');
     }
 }
