@@ -1,0 +1,11 @@
+.tombol_submit{
+	background: #F0F8FF;
+	color: black;
+	font-size: 11pt;
+	width: 50px;
+	border-radius: 10px;
+	margin: 2px 1px;
+	margin-left: 95px;
+	margin-top: 5px;
+	cursor: pointer;
+}
