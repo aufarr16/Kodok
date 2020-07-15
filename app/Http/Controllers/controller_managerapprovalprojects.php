@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_managerapprovalprojects extends Controller
+class Controller_ManagerApprovalProjects extends Controller
 {
     public function openPage(){
-    	return view('view_managerapprovalprojects'); 	
+    	return view('View_ManagerApprovalProjects'); 	
     }
 }

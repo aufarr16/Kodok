@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_adminmitra extends Controller
+class Controller_AdminMitra extends Controller
 {
     public function openPage(){
-    	return view('view_adminmitra');
+    	return view('View_AdminMitra');
     }
 }

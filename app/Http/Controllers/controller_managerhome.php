@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_managerhome extends Controller
+class Controller_ManagerHome extends Controller
 {
     public function openPage(){
-    	return view('view_managerhome'); 	
+    	return view('View_ManagerHome'); 	
     }
 }

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_adminproducts extends Controller
+class Controller_AdminProducts extends Controller
 {
     public function openPage(){
-    	return view('view_adminproducts');
+    	return view('View_AdminProducts');
     }
 }

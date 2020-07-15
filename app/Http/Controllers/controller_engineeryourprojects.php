@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_engineeryourprojects extends Controller
+class Controller_EngineerYourProjects extends Controller
 {
     public function openPage(){
-    	return view('view_engineeryourprojects');
+    	return view('View_EngineerYourProjects');
     }
 }

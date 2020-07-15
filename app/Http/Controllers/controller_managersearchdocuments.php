@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controller_managersearchdocuments extends Controller
+class Controller_ManagerSearchDocuments extends Controller
 {
     public function openPage(){
-    	return view('view_managersearchdocuments'); 	
+    	return view('View_ManagerSearchDocuments'); 	
     }
 }
