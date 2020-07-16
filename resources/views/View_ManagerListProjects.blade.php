@@ -20,19 +20,11 @@
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
-
-  <!-- 
-  <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" /> -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header class="main-header">
-      <div class="custom-menu">
+  <header class="main-header">
+    <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -41,13 +33,13 @@
           Sistem Dokumentasi
         </div>
       <div class="col-md-6">
-          <h4 style="float:right; margin-right:5px">Welcome, Manager</h4>
-        </div>
+        <h4 style="float:right; margin-right:5px">Welcome, Manager</h4>
+      </div>
       </div>
     </div>
-    </header>
+  </header>
 
-    <div class="wrapper d-flex align-items-stretch">
+<div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
           <li>
@@ -110,7 +102,7 @@
                 <div class="popover_parent"> 
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</button>
 
-                 <!--  <!-- The Modal -->
+                 <!-- The Modal -->
                   <div class="modal1" id="modal1" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
@@ -142,7 +134,7 @@
                         </div>
                         <div class="tile-outer">
                         </div>
-                      
+                    <!-- ./qualification -->
                     </div>
                   <!-- modal body -->
                   </div>
@@ -152,7 +144,6 @@
                 </div>
               <!-- popover -->
               </div>
-                
               </td>
         			<td>07 Juli 2020</td>
         			<td><small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small></td>
@@ -168,7 +159,7 @@
                  <div class="popover_parent"> 
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal2">Internal Test Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</button>
 
-                 <!--  <!-- The Modal -->
+                 <!-- The Modal -->
                   <div class="modal1" id="modal2" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
@@ -206,8 +197,8 @@
                       </div>
                       <div class="tile-outer">
                       </div>
-                    
-                  </div>
+                    <!-- ./qualification -->
+                    </div>
                   <!-- modal body -->
                   </div>
                   <!-- modal content -->
@@ -231,7 +222,7 @@
                  <div class="popover_parent"> 
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal3">Implementasi ATM Bersama Debit as Acquirer Bank QNB</button>
 
-                 <!--  <!-- The Modal -->
+                 <!-- The Modal -->
                   <div class="modal1" id="modal3" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
@@ -247,24 +238,24 @@
                         <span class="circle">AUF</span>
                         <div class="tile">
                               <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
+                        </div>
                       </div>
                       <div class="tile-outer">
-                          <span class="circle">DMR</span>
-                          <div class="tile">
+                        <span class="circle">DMR</span>
+                        <div class="tile">
                               <p>11 Oktober 2019</p> 
-                          </div>
+                        </div>
                       </div>
                       <div class="tile-outer">
                         <span class="circle">RAS</span>
                         <div class="tile">
                               <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                          </div>
+                        </div>
                       </div>
                       <div class="tile-outer">
                       </div>
-                    
-                  </div>
+                    <!-- ./qualification -->
+                    </div>
                   <!-- modal body -->
                   </div>
                   <!-- modal content -->
@@ -288,7 +279,7 @@
                   <div class="popover_parent"> 
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal4">Implementasi ATM Bersama Channel Mobile Banking Bank DKI</button>
 
-                  <!--  <!-- The Modal -->
+                  <!--  The Modal -->
                   <div class="modal1" id="modal4" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
@@ -303,25 +294,25 @@
                       <div class="tile-outer">
                         <span class="circle">RAS</span>
                         <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
+                          <p>1 Oktober 2019 - 10 Oktober 2019</p> 
+                        </div>
                       </div>
                       <div class="tile-outer">
                           <span class="circle">IDE</span>
                           <div class="tile">
-                              <p>11 Oktober 2019</p> 
+                            <p>11 Oktober 2019</p> 
                           </div>
                       </div>
                       <div class="tile-outer">
                         <span class="circle">AUF</span>
                         <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                          </div>
+                          <p>12 Oktober 2019 - 15 Oktober 2019</p> 
+                        </div>
                       </div>
                       <div class="tile-outer">
                       </div>
-                    
-                   </div>
+                    <!-- ./qualification -->
+                    </div>
                   <!-- modal body -->
                   </div>
                   <!-- modal content -->
@@ -345,7 +336,7 @@
                  <div class="popover_parent"> 
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
 
-                  <!--  <!-- The Modal -->
+                  <!-- The Modal -->
                   <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
@@ -373,12 +364,12 @@
                         <span class="circle">DMR</span>
                         <div class="tile">
                               <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                          </div>
+                        </div>
                       </div>
                       <div class="tile-outer">
                       </div>
-                    
-                  </div>
+                    <!-- ./qualification -->
+                    </div>
                   <!-- modal body -->
                   </div>
                   <!-- modal content -->
@@ -395,17 +386,20 @@
       	 </tbody>   
       </table>
 	   </br>
-</div>
-</div>
+  <!-- ./content -->
+  </div>
+  <!-- ./container fluid -->
+  </div>
+<!-- ./wrapper -->
 </div>
 
   <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
+  <span class="copyright">
+      Copyright ©
+    <script>
+      document.write(new Date().getFullYear())
+    </script>  All rights reserved
+  </span>
   </footer>
 
   <!--   Core JS Files   -->
@@ -413,10 +407,6 @@
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
@@ -429,19 +419,7 @@
       demo.initChartsPages();
     });
   </script>
-<!-- <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script> -->
-<!-- <script>
-  $(function() {
-    $('#sortable').change(function () {
-      $('#table').bootstrapTable('refreshOptions', {
-        sortable: $('#sortable').prop('checked')
-      })
-    })
-  })
-</script> -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>

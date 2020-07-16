@@ -23,6 +23,11 @@
   vertical-align: middle;
 }
 
+.table1 a .btn-edit {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+
 .btn-edit:hover{
 	background-color: #ffc107;
 	color: white; /* White text */

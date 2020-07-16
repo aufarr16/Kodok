@@ -20,14 +20,11 @@
   <!-- Select 2 -->
   <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
- 
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
 </head>
 
   <body>
-      <header class="main-header">
-      <div class="custom-menu">
+  <header class="main-header">
+     <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -35,12 +32,12 @@
         </button>
           Sistem Dokumentasi
         </div>
-      <div class="col-md-6">
+        <div class="col-md-6">
           <h4 style="float:right; margin-right:5px">Welcome, Manager</h4>
         </div>
       </div>
     </div>
-    </header>
+  </header>
   
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
@@ -74,7 +71,7 @@
       </nav>
     
   <div class="container-fluid">
-      <div class="content">
+    <div class="content">
 
        <h2 style="margin-top:10px">Assign Projects</h2>
           <!-- Nav pills -->
@@ -141,7 +138,6 @@
             <br>
             <input class="input" type="text" id="nama_project" name="nama_project" required>
               <span class="underline"></span>
-            <br>
           </div>
 
           <button type="submit" class="btn-submit">Submit</button>
@@ -183,18 +179,20 @@
               <option value="AUF">Aufar Rizqi</option>
               <option value="RAS">Rio Ari Saputra</option>
             </select>
-          </div>
-                                                              
+          </div>                          
           <button type="submit" class="btn-submit">Submit</button>
         </form>
+
+      <!-- ./container tab -->
       </div>
+    <!-- ./tab content -->
     </div>
                        
-<!-- content -->
-</div>
-<!-- container fluid -->
-</div>
-</div>
+  <!-- ./content -->
+  </div>
+  <!-- ./container fluid -->
+  </div>
+<!-- ./wrapper -->
 </div>
 
   <footer class="footer">

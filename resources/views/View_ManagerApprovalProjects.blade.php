@@ -23,18 +23,11 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
 
-<!--   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" /> 
-    <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.min.css" rel="stylesheet">-->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <!--<link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />-->
 </head>
 
 <body>
-
   <header class="main-header">
-      <div class="custom-menu">
+     <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -42,12 +35,12 @@
         </button>
           Sistem Dokumentasi
         </div>
-      <div class="col-md-6">
+      	<div class="col-md-6">
           <h4 style="float:right; margin-right:5px">Welcome, Manager</h4>
         </div>
       </div>
     </div>
-    </header>
+   </header>
   
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
@@ -83,9 +76,9 @@
   <div class="container-fluid">
   <div class="content">
        
-	  <h2 style="margin-top:10px">Approval Projects</h2>
+	<h2 style="margin-top:10px">Approval Projects</h2>
 		
-		<table class="table1" id="table1">
+	<table class="table1" id="table1">
 		<thead>
 		<tr>
 			<th>No</th>
@@ -137,8 +130,8 @@
 										<tr>
 											<td>1</td>
 											<td>Nodin Penugasan</td>
-											<td><button class="btn-doc" title="Preview dokumen">400/ND/117/2020</button></td>
-                      <td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
+											<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
+                      						<td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
                       						<td>-</td>
 										</tr>
 										<tr>
@@ -161,8 +154,8 @@
 				
 			</td>
 			<td>
-				<button class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></button>
-				<button class="btn-decline"><i class="fa fa-times fa-lg"></i></button>
+				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
+				<a href="#" class="btn-decline"><i class="fa fa-times fa-lg"></i></a>
 			</td>
 		</tr>
 		<tr>
@@ -180,7 +173,7 @@
 				<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-top:100px">
 				
 				<!-- Modal content -->
-					<div class="modal-content">
+				<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
@@ -202,7 +195,7 @@
 										<tr>
 											<td>1</td>
 											<td>Nodin Penugasan</td>
-                      						<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
+                      						<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
 											<td><small class="label lbl-notcollected"><i class="fas fa-thumbs-down"></i>&nbsp Not Collected</small></td>
 											<td>-</td>
 										</tr>
@@ -215,24 +208,28 @@
 										</tr>
 									</table>
 								</br>
+							<!-- ./input group -->
 							</div>
+						<!-- ./modal body -->
 						</div>
-					</div>					
+					<!-- ./modal content -->
+					</div>	
+				<!-- ./the modal -->
 				</div>	
 			</td>
 			<td>
-				<button class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></button>
-				<button class="btn-decline"><i class="fa fa-times fa-lg"></i></button>
+				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
+				<a href="#" class="btn-decline"><i class="fa fa-times fa-lg"></i></a>
 			</td>
 		</tr>
 		</tbody>
 	</table>
-  <!-- content -->
+	<!-- ./content -->
+	</div>
+	<!-- ./container fluid -->
+	</div>
+<!-- ./wrapper -->
 </div>
-<!-- container fluid -->
-</div>
-</div>
-</body>
 
   <footer class="footer">
               <span class="copyright">

@@ -18,14 +18,11 @@
   <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
 </head>
-
 
   <body>
    <header class="main-header">
-      <div class="custom-menu">
+    <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -38,9 +35,9 @@
         </div>
       </div>
     </div>
-    </header>
+  </header>
 
-    <div class="wrapper d-flex align-items-stretch">
+  <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
           <li class="active">
@@ -75,7 +72,7 @@
 	<div class="content">
 	  <h2 style="margin-top:10px; margin-bottom: 10px">Home</h2>
       
-      <div col-md-3>
+    <div col-md-3>
       <div class="tile done">
         <div class="body">
           <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
@@ -92,7 +89,7 @@
           </div>
         <!-- header done -->
         </div>
-        <!-- tile done -->
+      <!-- tile done -->
       </div>
 
       <div class="tile onprogress">
@@ -164,9 +161,11 @@
                 <figure class="highcharts-figure">
                    <div id="PieProduk"></div>
                 </figure>
+              <!-- ./card body -->
               </div>
-                <!-- <hr> -->
+            <!-- ./card -->
             </div>
+          <!-- ./col -->
           </div>
           <div class="col-md-6">
             <div class="card card-chart">
@@ -174,10 +173,13 @@
                  <figure class="highcharts-figure">
                    <div id="BarProduk"></div>
                 </figure>
+              <!-- ./card body -->
               </div>       
-			<!-- 	</hr> -->     
+			      <!-- ./card -->
             </div>
+          <!-- ./col -->
           </div>
+        <!-- ./row -->
         </div>
       
         <div class="row" style="margin-top: 20px; margin-bottom: 20px">
@@ -187,9 +189,10 @@
                 <figure class="highcharts-figure">
                    <div id="PieJenisProject"></div>
                 </figure>
-              </div>
-                <!-- <hr> -->
+              </div>       
+            <!-- ./card -->
             </div>
+          <!-- ./col -->
           </div>
           <div class="col-md-6">
             <div class="card card-chart">
@@ -198,42 +201,49 @@
                    <div id="BarJenisProject"></div>
                 </figure>
               </div>       
-                <!-- </hr>    -->
+            <!-- ./card -->
             </div>
+          <!-- ./col -->
           </div>
+        <!-- ./row -->
         </div>
 
        <div class="row" style="margin-right: 20px; margin-top: 20px; margin-bottom: 20px">
-                <div class="col-md-12" >
-                  <div class="card card-chart" style="margin-right: -22px">
-                    <div class="card-body">
-                      <figure class="highcharts-figure1">
-                        <div id="LoadPICstatus"></div>
-                      </figure>
-                    </div>   
-                      <!-- <hr> -->
-                  </div>
-                </div>
-        </div>     
+          <div class="col-md-12" >
+            <div class="card card-chart" style="margin-right: -35px">
+              <div class="card-body">
+                <figure class="highcharts-figure1">
+                  <div id="LoadPICstatus"></div>
+                </figure>
+              </div>       
+            <!-- ./card -->
+            </div>
+          <!-- ./col -->
+          </div>
+        <!-- ./row -->
+        </div>    
 
-      <div class="row" style="margin-right: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px">
+      <div class="row" style="margin-right: 20px; margin-top: 20px; margin-bottom: 20px">
           <div class="col-md-12">
-            <div class="card card-chart" style="margin-right: -22px">
+            <div class="card card-chart" style="margin-right: -35px">
               <div class="card-body">
                 <figure class="highcharts-figure1">
                   <div id="LoadPICtotal"></div>
                 </figure>
-              </div>   
-               <!--  <hr> -->
+              </div>       
+            <!-- ./card -->
             </div>
+          <!-- ./col -->
           </div>
-      </div>
+        <!-- ./row -->
+        </div>
 
-	<!--./content-->
-	</div>
+	<!-- ./content -->
+  </div>
+  <!-- ./container fluid -->
+  </div>
+<!-- ./wrapper -->
 </div>
-</div>
-</body>
 
       <footer class="footer">
               <span class="copyright">
@@ -248,12 +258,6 @@
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
-  <script src="https://cdnjs.com/libraries/Chart.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
@@ -289,11 +293,9 @@
   subtitle: {
     text: 'Berdasarkan Produk'
   },
-  // legend: {
-  //   align: 'top',
-  //   verticalAlign: 'middle',
-  //   layout: 'horizontal'
-  // },
+  credits: {
+    enabled: false
+  },
   xAxis: {
     categories: [
       'ATM Bersama',
@@ -371,6 +373,9 @@
   subtitle: {
     text: 'Berdasarkan Jenis Project'
   },
+  credits: {
+    enabled: false
+  },
   xAxis: {
     categories: [
       'Internal Test',
@@ -447,6 +452,9 @@
   title: {
     text: 'Total Project Berdasarkan Jenis Project'
   },
+  credits: {
+    enabled: false
+  },
   plotOptions: {
     pie: {
       allowPointSelect: true,
@@ -485,6 +493,9 @@
   title: {
     text: 'Total Project Berdasarkan Produk'
   },
+  credits: {
+    enabled: false
+  },
   plotOptions: {
     pie: {
       allowPointSelect: true,
@@ -517,6 +528,9 @@
   },
   title: {
     text: 'Status Project'
+  },
+  credits: {
+    enabled: false
   },
   subtitle: {
     text: 'Berdasarkan PIC'
@@ -605,6 +619,9 @@
   },
   title: {
     text: 'Total Project'
+  },
+  credits: {
+    enabled: false
   },
   subtitle: {
     text: 'Berdasarkan PIC'

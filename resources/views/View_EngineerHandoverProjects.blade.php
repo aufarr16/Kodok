@@ -20,18 +20,13 @@
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
-<!--   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" /> -->
+  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert.min.css" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />
 </head>
 
   <body>
-	 <header class="main-header">
-      <div class="custom-menu">
+	<header class="main-header">
+    <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -39,25 +34,21 @@
         </button>
           Sistem Dokumentasi
         </div>
-      <div class="col-md-6">
+      	<div class="col-md-6">
           <h4 style="float:right; margin-right:5px">Welcome, Engineer</h4>
         </div>
       </div>
     </div>
     </header>
 	  
-	  <div class="wrapper d-flex align-items-stretch">
-	    <nav id="sidebar">
-	  
-      <!-- <div class=""> -->
-
-      <ul class="list-unstyled components mb-5">
-      	<li>
+<div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <ul class="list-unstyled components mb-5">
+		  <li class="active ">
             <a href="/engineer/doctools">
               <span class="fas fa-file-alt mr-2"></span>Documents & Tools
             </a>
           </li>
-          <li>
           <li class="active">
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false">
               <div class="d-flex w-100 justify-content-start align-items-center">
@@ -90,12 +81,6 @@
       <div class="content">
 
 	  <h2 style="margin-top:10px">Handover Projects</h2>
-		<!-- <form>
-		<br>
-			<input id="myInput" type="text" name="search" placeholder="Search" style="margin-top:-20px">
-		</br>
-		</form> -->
-		
 		<table class="table1" id="table1">
 
 			<thead>
@@ -141,7 +126,7 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top: 60px">
+						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-left: 190px; margin-top: 10px">
 						
 
 							<!-- Modal content -->
@@ -158,15 +143,11 @@
 									
 								<div class="card">
 											<h2 class="m-minus">
-												<button type="button" class="btn-collapse" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false""> 
+												<button type="button" class="btn-collapse" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false"> 
 													<i class="fa" aria-hidden="false"></i>
 													&nbsp Persiapan Pengujian
 												</button>
-												<!-- <button type="button" class="btn-collapse" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false">
-													<div class="expand_caret caret"></div>&nbsp Persiapan Pengujian
-												</button> -->
 											</h2>
-										<!-- </div> -->
 										<div id="collapseOne1" class="collapse" data-parent="#accordionExample">
 											<div class="card-content">
 										
@@ -179,11 +160,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">MOM Kick Off Meeting</h3>
 																		<div class="box-body">
-																			<!-- <input type="file" id="myFile" name="filename2"> -->
-																			<div class="upload-btn-wrapper>
-																				 <button type="button" class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -199,10 +176,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Nodin Penugasan</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -218,10 +192,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Dokumen Jadwal</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -237,10 +208,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Memo Dinas</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -256,10 +224,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Pendaftaran</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -299,10 +264,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form SIT</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -318,10 +280,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian SIT</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -337,10 +296,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form UAT</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -356,10 +312,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian UAT</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -375,10 +328,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian Regresi 1</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -394,10 +344,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian Stress Test 1</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -413,10 +360,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian Regresi 2</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -432,10 +376,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Harian Stress Test 2</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -476,10 +417,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Final Pengujian</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -495,10 +433,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form BAKO</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -514,10 +449,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form BAE</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -533,10 +465,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form BA Stress Test</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -579,10 +508,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">MOM Migrasi</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -598,10 +524,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Jadwal Migrasi</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -617,10 +540,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Permintaan Perubahan</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -636,10 +556,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Pendaftaran Jaringan</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -655,10 +572,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Memo Dinas</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -674,10 +588,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Migrasi</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -693,10 +604,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Base24</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -712,10 +620,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Gapura</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -756,10 +661,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form Pra TO</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -775,10 +677,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form TO</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -794,10 +693,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form BATO</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -812,12 +708,8 @@
 															<div class="box box warning">
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Monitoring Harian</h3>
-																	
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -859,10 +751,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Laporan Final Monitoring</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -878,10 +767,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Memo Dinas Monitoring</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -897,11 +783,8 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">BA Serah Terima Monitoring</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
-																	<!--./box-body-->
+																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
 																</div>
@@ -916,10 +799,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Form BA Stress Test</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -935,10 +815,7 @@
 																<div class="box-header with-border">
 																	<h3 class="box-title">Nodin Balasan</h3>
 																		<div class="box-body">
-																			<div class="upload-btn-wrapper>
-																				 <button class="btn-file"></button>
 																					<input type="file" name="filename">
-																			</div>
 																		<!--./box-body-->
 																		</div>
 																<!--./box-header-->
@@ -968,14 +845,17 @@
 							</div>						
 				</td>
 				<td>
-					<button onclick="return confirm('Is the handover project done?')" href='#' type="button" class="btn-handover-done dialog-box" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
+					<a href='#' onclick="return confirm('Is the handover project done?')" type="button" class="btn-handover-done dialog-box" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></a>
 				</td>
 			</tr>
 			
 			</tbody>
 		</table>
-</div>
-</div>
+  <!-- ./content -->
+  </div>
+  <!-- ./container fluid -->
+  </div>
+<!-- ./wrapper -->
 </div>
 
 		<footer class="footer">
@@ -992,22 +872,10 @@
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
-<!--   <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script> -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
   <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
@@ -1046,11 +914,6 @@ $(document).ready(function () {
             });
         });
 </script>
-
-<!-- JS untuk alert button handover done -->
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert.js"></script>
-
-<script src="{{ url('') }}/js/plugins/Bootbox/bootbox.all.min.js"></script>
 </body>
 
 </html>

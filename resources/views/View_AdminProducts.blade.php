@@ -21,11 +21,7 @@
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
-<!--   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" /> -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <!--<link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />-->
+
 </head>
 
 <body>
@@ -59,11 +55,6 @@
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>
-         <!--  <li>
-				<a href="./Filling - Admin.html">
-					<span class="fas fa-folder-open mr-2"></span>Filling Documents
-				</a>
-			</li> -->
           <li>
 			<a href="/admin/users">
 				<span class="fas fa-users mr-2"></span>Users
@@ -92,8 +83,6 @@
 					<span>Add Products &nbsp<i class="fas fa-plus fa-lg"></i><span>
 				</button>
     
-				<!-- <input id="myInput" name="search" placeholder="Search" type="text" style="margin-top:-10px; border:2px solid #ccc; border-radius:5px; font-size: 15px; width: 180px; float:right"> -->
-				
 				<!-- The Modal -->
 				<div class="modal" id="modal" role="dialog" style="padding-left:17px;">
 				
@@ -113,13 +102,15 @@
 						</div>
 						<br>
 					<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-					
+					<!-- ./modal body -->
 					</div>
+				<!-- ./modal content -->
 				</div>
+				<!-- ./modal -->
 				</div>
+			<!-- ./form group -->
 			</div>
-			<!-- <input type="text" name="search" placeholder="Search" style="margin-left: 735px"> -->
-	
+			
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
 		
 		<thead>
@@ -156,12 +147,13 @@
 							</div>
 							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+							<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 						
 				</td>
 				<td>IDE</td>
@@ -191,12 +183,13 @@
 							</div>
 							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
 				<td>DMR</td>
 				<td>IDE</td>
@@ -223,14 +216,16 @@
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<br>
+							
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
 				<td>RAS</td>
 				<td>AUF</td>
@@ -259,11 +254,13 @@
 							</div>
 							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
 				<td>AUF</td>
 				<td>RAS</td>
@@ -290,14 +287,16 @@
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<br>
+							
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>
@@ -324,22 +323,27 @@
 								</div>
 								<input type="text" id="nama" name="nama" placeholder=" ">
 							</div>
-								
+							<br>	
 							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<br>
+							
+							<!-- ./modal content -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+						<!-- modal -->
 						</div>
-						<button onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" 
-						title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
 				<td>IDE</td>
 				<td>DMR</td>
 			</tr>
 		</tbody>
 	</table>
-</div>
-</div>
+	<!-- ./content -->
+	</div>
+	<!-- ./container fluid -->
+	</div>
+<!-- ./wrapper -->
 </div>
 		 <footer class="footer">
               <span class="copyright">
@@ -354,16 +358,10 @@
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
@@ -372,8 +370,6 @@
   </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
@@ -390,17 +386,6 @@ $(document).ready(function() {
            } );
 } );
 </script>
-<!-- Untuk Search -->
-<!-- <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script> -->
 <script>
 $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {

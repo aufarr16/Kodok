@@ -22,11 +22,7 @@
   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
-  <!-- <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" /> -->
-  <!-- <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.responsive.css" rel="stylesheet"> -->
-  <!-- <link href="{{ url('') }}/css/searchluar.css" rel="stylesheet" /> -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  
+
 </head>
 
 <body>
@@ -45,9 +41,9 @@
       </div>
     </div>
     </header>
-  
-  <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
+    
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
           <li>
             <a href="/manager/home">
@@ -78,38 +74,33 @@
       </nav>
 
     <div class="container-fluid">
-	<div class="content">
-
-	  <h2 style="margin-top:10px">Search Documents</h2>
-		<!-- <form>
-			<br>
-			<input id="myInput" type="text" name="search" placeholder="Search" style="margin-top:-20px">
-			</br>
-		</form>
- -->
-			<table class="table1" id="table1">
-
-			<thead>
-			<tr class="filters">
-				<th>No</th>
-				<th>Nama Mitra</th>
-				<th>Nama Project</th>
-				<th>PIC</th>
-				<th>Tahun</th>
-			</tr>
-			</thead>
-			
-			<tbody>
-			<tr>
+    <div class="content">
+	  
+    <h2 style="margin-top:10px">Search Documents</h2>
+		
+		<table class="table1" id="table1">
+		
+		<thead>
+		<tr>
+			<th>No</th>
+			<th>Nama Mitra</th>
+			<th>Nama Project</th>
+			<th>PIC</th>
+			<th>Tahun</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<tr>
 			<td>1</td>
 			<td>Bank Nagari</td>
 			<td>Implementasi ATMB Debit Bank Nagari &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal1">
-						<i class="fa fa-search fa-lg"></i>
-					</button>
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
+					<i class="fa fa-search fa-lg"></i>
+				</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="modal1" role="dialog">
+				<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-top: 20px">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
@@ -122,7 +113,7 @@
 								<br>
 							<table class="table1" id="search1">
 								<thead>
-									<tr class="filters">
+									<tr>
 										<th>No</th>
 										<th>Dokumen</th>
 										<th>No.Dokumen</th>
@@ -133,38 +124,42 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><button class="btn-doc" title="Preview dokumen">400/ND/117/2020</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>
 									</tr>
 								
 							</table>
+							<!-- ./input group -->
+							</div>
+						<!-- modal body -->
 						</div>
+					<!-- ./modal content -->
 					</div>
-					</div>
+				<!-- ./modal -->
 				</div>
 			</td>
 			<td>IDE</td>
@@ -174,11 +169,11 @@
 			<td>Bank Artos</td>
 			<td>Implementasi ATMB Bank Artos &nbsp;
 				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal2">
-						<i class="fa fa-search fa-lg"></i>
-					</button>
+					<i class="fa fa-search fa-lg"></i>
+				</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="modal2" role="dialog" style="padding-left:17px; padding-right: 17px">
+				<div class="modal" id="modal2" role="dialog" style="padding-left:17px;">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
@@ -191,7 +186,7 @@
 								<br>
 							<table class="table1" id="search2">
 								<thead>
-									<tr class="filters">
+									<tr>
 										<th>No</th>
 										<th>Dokumen</th>
 										<th>No.Dokumen</th>
@@ -202,37 +197,41 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><button class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2019 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2019 (BAE)</td>
 									</tr>
 								</table>
+							<!-- ./input group -->
 							</div>
+						<!-- modal body -->
 						</div>
+					<!-- ./modal content -->
 					</div>
+				<!-- ./modal -->
 				</div>
 			</td>
 			<td>DMR</td>
@@ -240,27 +239,27 @@
 		</tr>
 		<tr>
 			<td>3</td>
-			<td>Bank Artos</td>
-			<td>Implmentasi Indosat pada Bank DKI Channel Internet Banking &nbsp;
+			<td>Bank DKI</td>
+			<td>Implementasi Implementasi Indosat bank DKI pada Channel Internet Banking &nbsp;
 				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal3">
-						<i class="fa fa-search fa-lg"></i>
-					</button>
+					<i class="fa fa-search fa-lg"></i>
+				</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="modal3" role="dialog" style="padding-left:17px; padding-right: 17px">
+				<div class="modal" id="modal3" role="dialog" style="padding-left:17px;">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implmentasi Indosat pada Bank DKI Channel Internet Banking</h2>
+						<h2 class="modal-title">Implementasi Implementasi Indosat bank DKI pada Channel Internet Banking</h2>
 					</div>	
 						<div class = "modal-body">
 							<div class = "input-group">
 								<br>
 							<table class="table1" id="search3">
 								<thead>
-									<tr class="filters">
+									<tr>
 										<th>No</th>
 										<th>Dokumen</th>
 										<th>No.Dokumen</th>
@@ -271,114 +270,97 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><button class="btn-doc" title="Preview dokumen">442/ND/145/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">446/ND/130/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/227/III/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/228/III/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2019 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><button class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/233/III/2019</button></td>
+										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
 										<td>	
-											<button class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2019 (BAE)</td>
 									</tr>
 								</table>
+							<!-- ./input group -->
 							</div>
+						<!-- modal body -->
 						</div>
+					<!-- ./modal content -->
 					</div>
+				<!-- ./modal -->
 				</div>
 			</td>
 			<td>DMR</td>
 			<td>2019</td>
 		</tr>
+		
 		</tbody>
-	</table> 
-   
-	<!-- content -->
-	</div>
-<!-- container-fluid -->
-</div>
-</div>
+	</table>
 
-	 <footer class="footer">
+	<!-- ./content -->
+	</div>
+	<!-- ./container fluid -->
+	</div>
+<!-- ./wrapper -->
+</div>
+     <footer class="footer">
               <span class="copyright">
                 Copyright ©
                 <script>
                   document.write(new Date().getFullYear())
                 </script>  All rights reserved
               </span>
-  	</footer>
-	
-  
+      </footer>
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <!-- <script src="{{ url('') }}/js/core/popper.min.js"></script> -->
+  <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
-
-<!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Fixheader/dataTables.fixedHeader.min.js"></script> -->
-<!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/dataTables.responsive.js"></script> -->
-
-<!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/jquery-3.3.1.js"></script> -->
 
 <!-- JS Datatable pagination  -->
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
-    	// pageSize: 8,     
+      pageSize: 8,     
          "searching": true,
-         "paging": true,
+         "paging": true, 
          "info": false,         
          "lengthChange":false
            } );
 
-   $('#search1').DataTable( {
+    $('#search1').DataTable( {
        "pageLength": 10,     
          "searching": true,
          "paging": true, 
          "info": true,         
          "lengthChange":false,
            } );
-
     $('#search2').DataTable( {
        "pageLength": 10,     
          "searching": true,
@@ -386,7 +368,6 @@ $(document).ready(function() {
          "info": true,         
          "lengthChange":false,
            } );
-
     $('#search3').DataTable( {
        "pageLength": 10,     
          "searching": true,
@@ -394,9 +375,23 @@ $(document).ready(function() {
          "info": true,         
          "lengthChange":false,
            } );
+    $('#search4').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+    $('#search5').DataTable( {
+       "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
+           } );
+   
 } );
 </script>
-
 <script>
 $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
@@ -404,7 +399,6 @@ $(document).ready(function () {
             });
         });
 </script>
-
 </body>
 
 </html>

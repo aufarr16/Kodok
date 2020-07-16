@@ -22,11 +22,7 @@
   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
-<!--   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Fixheader/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/jquery.dataTables.css" rel="stylesheet" /> -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <!--<link href="{{ url('') }}/demo/demo.css" rel="stylesheet" />-->
+
 </head>
 
 <body>
@@ -46,7 +42,7 @@
     </div>
     </header>
 	  
-	  <div class="wrapper d-flex align-items-stretch">
+	<div class="wrapper d-flex align-items-stretch">
 	    <nav id="sidebar">
 	  
       <ul class="list-unstyled components mb-5">
@@ -60,11 +56,6 @@
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>
-         <!--  <li>
-				<a href="./Filling - Admin.html">
-					<span class="fas fa-folder-open mr-2"></span>Filling Documents
-				</a>
-			</li> -->
           <li>
 			<a href="/admin/users">
 				<span class="fas fa-users mr-2"></span>Users
@@ -83,10 +74,10 @@
         </ul>
       </nav>
 
-     <div class="container-fluid">
-     <div class="content">
+	    <div class="container-fluid">
+	    <div class="content">
        
-	  <h2 style="margin-top:10px">Archive Documents</h2>
+	  	<h2 style="margin-top:10px">Archive Documents</h2>
 			<table class="table1" id="table1" style="overflow:auto">
 		<thead>
 		<tr>
@@ -142,7 +133,7 @@
 													<div id="notcollected1" class="status_docs1"></div>
 													<div id="postponed1" class="status_docs1">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -164,7 +155,7 @@
 													<div id="notcollected1_2" class="status_docs1_2"></div>
 													<div id="postponed1_2" class="status_docs1_2">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -186,7 +177,7 @@
 													<div id="notcollected1_3" class="status_docs1_3"></div>
 													<div id="postponed1_3" class="status_docs1_3">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -208,7 +199,7 @@
 													<div id="notcollected1_4" class="status_docs1_4"></div>
 													<div id="postponed1_4" class="status_docs1_4">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -230,17 +221,22 @@
 													<div id="notcollected1_5" class="status_docs1_5"></div>
 													<div id="postponed1_5" class="status_docs1_5">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
 										</tr>
 									</table>
 								</br>
+							<!-- ./input group -->
 							</div>
+							<!-- ./force overflow -->
 							</div>
+						<!-- ./modal body -->
 						</div>
+					<!-- ./modal content -->
 					</div>					
+				<!-- ./modal -->
 				</div>	
 			</td>
 		</tr>
@@ -288,7 +284,7 @@
 													<div id="notcollected2_1" class="status_docs2_1"></div>
 													<div id="postponed2_1" class="status_docs2_1">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
@@ -310,26 +306,33 @@
 													<div id="notcollected2_2" class="status_docs2_2"></div>
 													<div id="postponed2_2" class="status_docs2_2">
 														<br>
-													<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
+														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
 													</div>
 												</div>
 											</td>
 										</tr>
 									</table>
 								</br>
+						<!-- ./input group -->
 							</div>
+							<!-- ./force overflow -->
 							</div>
+						<!-- ./modal body -->
 						</div>
-					</div>	
-				<!-- ./the modal -->
-				</div>	
+					<!-- ./modal content -->
+					</div>					
+				<!-- ./modal -->
+				</div>		
 			</td>
 		</tr>
 		</tbody>
 		</table>
 	</br>
-</div>
-</div>
+	<!-- ./content -->
+	</div>
+	<!-- ./container fluid -->
+	</div>
+<!-- ./wrapper -->
 </div>
 
 		<footer class="footer">
@@ -346,16 +349,10 @@
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
   <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
   <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
@@ -364,8 +361,6 @@
   </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
