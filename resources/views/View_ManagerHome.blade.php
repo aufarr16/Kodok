@@ -69,7 +69,7 @@
       </nav>
 
   <div class="container-fluid">
-	<div class="content">
+  <div class="content" style="min-height: 240vh;">
 	  <h2 style="margin-top:10px; margin-bottom: 10px">Home</h2>
       
     <div col-md-3>
@@ -237,22 +237,35 @@
           </div>
         <!-- ./row -->
         </div>
-
+  <br>
 	<!-- ./content -->
   </div>
+
+  <!-- footer -->
+  <div class="blockquote text-right" style="margin-top:-30px; ">
+        <span>Copyright © 
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+  </div>
+    <!-- </footer> -->
+  </div>
+
   <!-- ./container fluid -->
   </div>
 <!-- ./wrapper -->
 </div>
 
-      <footer class="footer">
+      <!-- <footer class="footer">
               <span class="copyright">
                 Copyright ©
                 <script>
                   document.write(new Date().getFullYear())
                 </script>  All rights reserved
               </span>
-      </footer>
+      </footer> -->
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
   <script src="{{ url('') }}/js/core/popper.min.js"></script>

@@ -74,11 +74,12 @@
         </ul>
       </nav>
 
-	    <div class="container-fluid">
-	    <div class="content">
+	<div class="container-fluid">
+	<div class="content">
        
-	  	<h2 style="margin-top:10px">Archive Documents</h2>
-			<table class="table1" id="table1" style="overflow:auto">
+	  <h2 style="margin-top:10px">Archive Documents</h2>
+		<div class="table-responsive-lg">	
+		<table class="table1" id="table1" style="overflow:auto">
 		<thead>
 		<tr>
 			<th>No</th>
@@ -327,22 +328,27 @@
 		</tr>
 		</tbody>
 		</table>
+	<!-- table responsive -->
+	</div>
 	</br>
 	<!-- ./content -->
 	</div>
+
+		<!-- footer -->
+  	<div class="blockquote text-right">
+        <span>Copyright © 
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+    <!-- </footer> -->
+  	</div>
+
 	<!-- ./container fluid -->
 	</div>
 <!-- ./wrapper -->
 </div>
-
-		<footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-      	</footer>
 
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
@@ -369,9 +375,10 @@
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
-      pageSize: 8,     
+      // pageSize: 8,     
+        "pageLength": 10, 
          "searching": true,
-         "paging": true, 
+         "paging": true,
          "info": false,         
          "lengthChange":false
            } );

@@ -190,19 +190,22 @@
                        
   <!-- ./content -->
   </div>
+
+  <!-- footer -->
+  <div class="blockquote text-right">
+        <span>Copyright © 
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+    <!-- </footer> -->
+  </div>
+
   <!-- ./container fluid -->
   </div>
 <!-- ./wrapper -->
 </div>
-
-  <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-  </footer>
     
   <!--   Core JS Files  -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
@@ -225,10 +228,6 @@
       demo.initChartsPages();
     });
   </script>
- <!-- <script src="bootstrap-select.min.js"></script>
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-   <!--  <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script> -->
     
  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>

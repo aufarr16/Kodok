@@ -297,7 +297,7 @@ input[type=submit]:hover {
 .tab-content{
   position: absolute;
   width: 84%;
-  height: auto;
+  height: 71%;
   margin-top: -12px;
   /*margin-bottom: 50px;*/
   margin-left: 10px;
@@ -315,6 +315,5 @@ input[type=submit]:hover {
 .tab-content button{
   border-radius: 15px;
   width: 200px;
-  margin: 5px;
   float: left;
 }

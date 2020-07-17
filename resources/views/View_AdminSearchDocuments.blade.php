@@ -78,7 +78,7 @@
     <div class="content">
 	  
     <h2 style="margin-top:10px">Search Documents</h2>
-		
+		<div class="table-responsive-lg">	
 		<table class="table1" id="table1">
 		
 		<thead>
@@ -315,20 +315,28 @@
 		</tbody>
 	</table>
 
+	<!-- table responsive -->
+	</div>
+	</br>
 	<!-- ./content -->
 	</div>
+
+	<!-- footer -->
+  	<div class="blockquote text-right">
+        <span>Copyright © 
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+    <!-- </footer> -->
+  	</div>
+
 	<!-- ./container fluid -->
 	</div>
 <!-- ./wrapper -->
 </div>
-     <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-      </footer>
+     
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
@@ -348,10 +356,11 @@
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
-      pageSize: 8,     
+      //pageSize: 8,    
+      	"pageLength": 10, 
          "searching": true,
          "paging": true, 
-         "info": false,         
+         "info": true,         
          "lengthChange":false
            } );
 

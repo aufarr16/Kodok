@@ -72,12 +72,12 @@
           </li>
         </ul>
       </nav>
-  
+
   <div class="container-fluid">
   <div class="content">
-       
+ 	
 	<h2 style="margin-top:10px">Approval Projects</h2>
-		
+	<div class="table-responsive-lg">
 	<table class="table1" id="table1">
 		<thead>
 		<tr>
@@ -207,6 +207,7 @@
 											<td>-</td>
 										</tr>
 									</table>
+								
 								</br>
 							<!-- ./input group -->
 							</div>
@@ -224,21 +225,27 @@
 		</tr>
 		</tbody>
 	</table>
+	<!-- Table responsive -->
+	</div>
 	<!-- ./content -->
 	</div>
+
+	<!-- footer -->
+	<div class="blockquote text-right">
+  			<span>Copyright © 
+  			<script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+  	<!-- </footer> -->
+  </div>
+
 	<!-- ./container fluid -->
-	</div>
+	</div> 		
 <!-- ./wrapper -->
 </div>
 
-  <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-  </footer>
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
@@ -264,8 +271,6 @@
   <!-- JS Datatable    -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.bootstrap4.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
@@ -275,6 +280,7 @@
 $(document).ready(function() {
     $('#table1').DataTable( { 
       // pageSize: 8,     
+        "pageLength": 10, 
          "searching": true,
          "paging": true,
          "info": false,         

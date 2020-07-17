@@ -116,7 +116,8 @@
 				</div>
 			<!-- ./form group -->
 			</div>
-		
+
+		<div class="table-responsive-lg">	
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
 		
 		<thead>
@@ -301,20 +302,28 @@
 		</tbody>
 	</table>
 
+	<!-- table responsive -->
+	</div>
+	</br>
 	<!-- ./content -->
 	</div>
+
+	<!-- footer -->
+  	<div class="blockquote text-right">
+        <span>Copyright © 
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        All rights reserved
+      </span>
+    <!-- </footer> -->
+  	</div>
+
 	<!-- ./container fluid -->
 	</div>
 <!-- ./wrapper -->
 </div>
-		 <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-        </footer>
+		
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
@@ -340,10 +349,11 @@
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
-      pageSize: 8,     
+      // pageSize: 8,     
+        "pageLength": 10, 
          "searching": true,
-         "paging": true, 
-         "info": true,         
+         "paging": true,
+         "info": false,         
          "lengthChange":false
            } );
 } );

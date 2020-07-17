@@ -313,7 +313,8 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
+  /*margin-bottom: 0.5rem;*/
+  margin-bottom: 5px;
   font-weight: 500;
   line-height: 1.2; }
 
@@ -393,16 +394,25 @@ mark,
   text-transform: uppercase; }
 
 .blockquote {
-  margin-bottom: 1rem;
-  font-size: 1.25rem; }
+  margin-bottom: 0 !important;
+  font-size: 14px; 
+  padding-top: 2px;
+  background-color: white;
+}
 
 .blockquote-footer {
   display: block;
-  font-size: 80%;
-  color: #6c757d; }
-  .blockquote-footer::before {
-    content: "\2014\00A0"; }
+  /*font-size: 90%;*/
+  font-size: 14px;
+  color: #6c757d;
+  }
+/*  .blockquote-footer::before {
+    content: "\2014\00A0"; }*/
 
+.blockquote-footer span{
+  font-size: 14px;
+  margin-bottom: -10px;
+}
 .img-fluid {
   max-width: 100%;
   height: auto; }
@@ -478,11 +488,11 @@ pre {
 
 .container-fluid {
   width: 100%;
-  /*padding-right: 15px;*/
-  /*padding-left: 15px;*/
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: auto;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
   margin-left: auto; }
 
 .row {
@@ -8268,6 +8278,7 @@ body {
   background: #fff;
   color: gray; 
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
@@ -8304,7 +8315,8 @@ h1, h2, h3, h4, h5,
   background-position: center center; }
 
 .wrapper {
-  width: 100%; }
+  width: 100%;
+ }
 
 #sidebar {
   min-width: 180px;
@@ -8517,7 +8529,7 @@ a[data-toggle="collapse"] {
   height: 100%;
   padding-left:10px;
   padding-right:5px;
-  min-height: 89vh;
+  min-height: 84vh;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; 
@@ -8534,6 +8546,7 @@ a[data-toggle="collapse"] {
   height: 40px;
   width: 40px;
   padding: 2px;
+  /*margin-top: -10px;*/
 
 }
   .btn.btn-primary:hover, .btn.btn-primary:focus {
