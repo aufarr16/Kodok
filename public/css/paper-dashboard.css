@@ -51,7 +51,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 .main-header{
     padding-left: 5px;
-    color: black;
+    color: #19569A;
     display: block;
     font-size: 26px;
     border-bottom: 1px solid #E3EFF9;
@@ -8393,11 +8393,20 @@ h1, h2, h3, h4, h5,
       : #fff;
         /*background: #0C2D48;*/
         background-color: transparent;
-        border-left: 5px solid #D9E4EC; 
+        border-left: 5px solid #D9E4EC;
+        /*color: #D9E4EC;*/
+        color: white;
+        font-weight: bolder;
       }
+/*
+      #sidebar ul li a:hover{
+        color: red;
+      }*/
+
     #sidebar ul li.active > a {
       background: #124988;
-      color: #D9E4EC;
+      /*color: #D9E4EC;*/
+      color: white;
       font-weight: bold;
       border-left: 5px solid #D9E4EC; 
     }
@@ -8533,7 +8542,8 @@ a[data-toggle="collapse"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; 
-  background-color: #F1FAFC;
+  /*background-color: #F1FAFC;*/
+  background-color: #c9dfff61;
   /*overflow: auto;*/
   margin-right: auto;
   margin-left: auto;
@@ -8591,3 +8601,9 @@ a[data-toggle="collapse"] {
 
 .subscribe-form .form-control {
   background: #4897fc; }
+
+.custom-menu .welcome {
+  color: #19569A;
+  margin-left: 254vh;
+  display: flex;
+}

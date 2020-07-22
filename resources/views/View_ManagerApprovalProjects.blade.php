@@ -36,7 +36,7 @@
           Sistem Dokumentasi
         </div>
       	<div class="col-md-6">
-          <h4 style="float:right; margin-right:5px">Welcome, Manager</h4>
+          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, Manager</h4>
         </div>
       </div>
     </div>
