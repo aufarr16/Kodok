@@ -19,6 +19,7 @@
   <link href="{{ url('') }}/style.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
   <!-- <link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" /> -->
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
@@ -119,7 +120,28 @@
 					<button class="btn-ok" type="button">OK</button>
 					</div>
 				</td>
-				<td>Approved</td>
+				<td>Decline
+          <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
+
+            <!-- The Modal -->
+            <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
+                  
+              <!-- Modal content -->
+              <div class="modal-contentket">
+	              <div class="modal-headerket">
+	                <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
+	                  <h4 class="modal-titleket">Keterangan Status</h4>
+	              </div>  
+	              <div class = "modal-bodyket">
+	                <span>BAKO yang diupload tidak sesuai qwertyu asdfgh zxcvbn poiuytr lkjhgf mnbvc</span> 
+	              <!-- modal body -->
+	              </div>
+              <!-- modal content -->
+              </div>
+
+	          <!-- modal -->
+	          </div>
+				</td>
 				<td>
 					<button title="Upload Docs" type="button" class="btn-docs" data-toggle="modal" data-target="#modal" disabled>
 						<i class="fas fa-cloud-upload-alt fa-lg"></i>
@@ -867,7 +889,28 @@
 					<button class="btn-ok" type="button">OK</button>
 					</div>
 				</td>
-				<td>Menunggu Approval</td>
+				<td>Decline
+          <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal2"><i class="far fa-question-circle"></i></button>
+
+            <!-- The Modal -->
+            <div class="modalket" id="modal2" role="dialog" style="padding-left:10px;">
+                  
+              <!-- Modal content -->
+              <div class="modal-contentket">
+	              <div class="modal-headerket">
+	                <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
+	                  <h4 class="modal-titleket">Keterangan Status</h4>
+	              </div>  
+	              <div class = "modal-bodyket">
+	                <span>BAKO 2</span> 
+	              <!-- modal body -->
+	              </div>
+              <!-- modal content -->
+              </div>
+              
+	          <!-- modal -->
+	          </div>
+				</td>
 				<td>
 					<button title="Upload Docs" type="button" class="btn-docs" data-toggle="modal" data-target="#model">
 						<i class="fas fa-cloud-upload-alt fa-lg"></i>

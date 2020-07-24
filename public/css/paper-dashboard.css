@@ -4765,6 +4765,27 @@ a.close.disabled {
   opacity:1;
   transition: opacity 1s ease;
 }
+/*Akhir dari Untuk User manager, menu projects*/
+
+/*Untuk user engineer, menu your projects dan handover projects*/
+.modalket {
+  position: fixed;
+  top: 150px;
+  left: 570px;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  outline: 0; 
+  transition: all 0.3s;
+}
+
+.mdoalketerangan:target{
+  opacity:1;
+  transition: opacity 1s ease;
+}
+/*Akhir untuk user engineer, menu your projects dan handover projects*/
+
 .modal-dialog {
   position: relative;
   width: auto;
@@ -4849,7 +4870,7 @@ a.close.disabled {
   transition: opacity 0.2s ease-in; 
 }
 
-/*Conent Untuk User Manager Menu Projects*/
+/*Content Untuk User Manager Menu Projects*/
 .modal-content1 {
   position: relative;
   display: -webkit-box;
@@ -4868,6 +4889,29 @@ a.close.disabled {
   outline: 0;
   background-color: #fff;
 }
+/*Akhir content Untuk User Manager Menu Projects*/
+
+/*Content Untuk User Engineer Menu Your Projects dan Handover Projects*/
+.modal-contentket{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 25%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  background-color: #fff;
+  /*height: 140px;*/
+}
+/*Akhir Content Untuk User Engineer Menu Your Projects dan Handover Projects*/
 
 .modal-backdrop {
   position: fixed;
@@ -4905,15 +4949,6 @@ a.close.disabled {
     margin-top: 0px; 
   }
 
-/*  .close{
-    /* padding-top: 0px; */
-    /* padding-left: 2px; *
-     margin-left: 2px; 
-    margin-top: -25px;
-    margin-right: -745px;
-    float: right; 
-  }*/
-
 .modal-title {
   /*margin-bottom: 0;
   line-height: 1.5;*/
@@ -4936,6 +4971,43 @@ a.close.disabled {
   font-size: 14px;
   text-align: center;
 }
+/*Akhir title untuk user manager menu projects*/
+
+/*Title untuk user engineer menu your projects dan handover projects*/
+.modal-contentket .modal-headerket .closeket .modal-titleket{
+  margin-bottom: -15px;
+  line-height: 1.5;
+  margin-top: -15px;
+  color: #19569A;
+  width: 80%;
+  font-size: 14px;
+  text-align: center;
+  font-size: 10px
+}
+
+.modal-headerket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+/*  justify-content: center;
+  padding: 0rem 1rem;*/
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-headerket h4{
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 5px
+}
+/*Akhir title untuk user engineer menu your projects dan handover projects*/
 
 .modal-body {
   position: relative;
@@ -4958,6 +5030,31 @@ a.close.disabled {
     min-width: 500px;
     max-height: 250px;
 }
+/*Akhir body Untuk User Manager Menu Projects*/
+
+/*Body Untuk User Engineer Menu Your Projects dan Handover Projects*/
+.modal-bodyket {
+    position: inherit;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+.input-groupket{
+  margin-top: -5px
+}
+.input-groupket label{
+  color: #19569A;
+  font-size: 14px;
+  color: #8C92AC;
+  font-weight: normal;
+}
+
+.input-groupket textarea{
+  margin-top: -2px;
+  width: 300px
+}
+/*Akhir body Untuk User Manager Menu Your Projects dan Handover Projects*/
 
 .modal-footer {
   display: -webkit-box;
@@ -8278,7 +8375,7 @@ body {
   background: #fff;
   color: gray; 
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 a {

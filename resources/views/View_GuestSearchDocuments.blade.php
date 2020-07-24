@@ -105,7 +105,7 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
+										<td>400/ND/117/2020</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -114,7 +114,7 @@
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
+										<td>006/02/BAKO-DEBIT/223/II/2020</td>
 										<td>
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -123,7 +123,7 @@
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
+										<td>006/02/BAE-DEBIT/223/II/2020</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -175,7 +175,7 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
+										<td>442/ND/130/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -184,7 +184,7 @@
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
+										<td>006/02/BAKO-ATMB/223/III/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -193,7 +193,7 @@
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
+										<td>006/02/BAE-ATMB/223/III/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -245,7 +245,7 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">446/ND/130/2019</button></td>
+										<td>446/ND/130/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -254,7 +254,7 @@
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/228/III/2019</button></td>
+										<td>006/02/BAKO-ATMB/228/III/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -263,7 +263,7 @@
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
+										<td>006/02/BAE-ATMB/223/III/2019</td>
 										<td>	
 											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>

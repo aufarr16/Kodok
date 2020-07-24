@@ -83,11 +83,10 @@
 		<tr>
 			<th>No</th>
 			<th>Inisial</th>
-			<th>PIC</th>
 			<th>Produk</th>
 			<th>Jenis Project</th>
 			<th>Nama Project</th>
-			<th>Nama Mitra</th>
+			<th>Keterangan</th>
 			<th>Docs</th>
 			<th>Action</th>
 		</tr>
@@ -96,11 +95,10 @@
 		<tr>
 			<td>1</td>
 			<td>DMR</td>
-			<td>Devi Mayang Sari</td>
 			<td>ATMB</td>
 			<td>Sertifikasi</td>
 			<td>Implementasi ATM Bersama Bank Artos</td>
-			<td>Bank Artos</td>
+			<td>Request approval project done</td>
 			<td>
 				<button type="button" class="btn-docs" data-toggle="modal" data-target="#modal"><i class="fa fa-search fa-lg"></i></button>
 				
@@ -131,8 +129,8 @@
 											<td>1</td>
 											<td>Nodin Penugasan</td>
 											<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
-                      						<td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
-                      						<td>-</td>
+                      	<td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
+                      	<td>-</td>
 										</tr>
 										<tr>
 											<td>2</td>
@@ -155,17 +153,42 @@
 			</td>
 			<td>
 				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
-				<a href="#" class="btn-decline"><i class="fa fa-times fa-lg"></i></a>
+				<a href="#" class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></a>
+
+	      <!-- The Modal -->
+        <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
+                  
+        <!-- Modal content -->
+        <div class="modal-contentket">
+	        <div class="modal-headerket">
+	          <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
+	          <h4 class="modal-titleket">Implementasi ATM Bersama Fitur Standard dan Transfer pada Channel Mobile Banking Bank Artos</h4>
+          </div>  	
+					<div class = "modal-bodyket">
+						<div class = "input-groupket">
+								<label for="inisial">Alasan Decline:</label>
+								<br>
+								&nbsp
+								<textarea id="comment_text" class="note_status" role="textbox"></textarea>
+						
+						<button class="btn-submitket" type="button" data-dismiss="modal">Submit</button>
+						</div>
+					<!-- ./modal body -->
+					</div>
+				<!-- ./modal content -->
+				</div>
+				<!-- ./modal -->
+				</div>
+
 			</td>
 		</tr>
 		<tr>
 			<td>2</td>
 			<td>IDE</td>
-			<td>Ismi Destiawati</td>
 			<td>Debit</td>
 			<td>Sertifikasi</td>
 			<td>Implementasi ATMB Debit Bank Nagari</td>
-			<td>Bank Nagari</td>
+			<td>Request approval pengujian done</td>
 			<td>
 				<button type="button" class="btn-docs" data-toggle="modal" data-target="#model"><i class="fa fa-search fa-lg"></i></button>
 				
@@ -220,9 +243,34 @@
 			</td>
 			<td>
 				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
-				<a href="#" class="btn-decline"><i class="fa fa-times fa-lg"></i></a>
+				<a href="#" class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal2"><i class="fa fa-times fa-lg"></i></a>
+
+	      <!-- The Modal -->
+        <div class="modalket" id="modal2" role="dialog" style="padding-left:10px;">
+                  
+        <!-- Modal content -->
+        <div class="modal-contentket">
+	        <div class="modal-headerket">
+	          <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
+	          <h4 class="modal-titleket">Implementasi ATMB Debit Bank Nagari</h4>
+          </div>  	
+					<div class = "modal-bodyket">
+						<div class = "input-groupket">
+								<label for="inisial">Alasan Decline:</label>
+								<br>
+								&nbsp
+								<textarea id="comment_text" class="note_status" role="textbox"></textarea>
+						<button class="btn-submitket" type="button" data-dismiss="modal">Submit</button>
+						</div>
+					<!-- ./modal body -->
+					</div>
+				<!-- ./modal content -->
+				</div>
+				<!-- ./modal -->
+				</div>
 			</td>
 		</tr>
+
 		</tbody>
 	</table>
 	<!-- Table responsive -->
