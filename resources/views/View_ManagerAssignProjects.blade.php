@@ -144,6 +144,7 @@
         </form>
       </div>
 
+      <!-- Assign Handover Project -->
       <div id="handover" class="container tab-pane fade">
         <form>
           <div class="form-group">
@@ -170,7 +171,7 @@
           </div>
           <br>
           <div class="form-group">
-            <label for="PIChandover" style="font-weight:bolder">Jenis Project</label>
+            <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
             <br>
             <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%">
               <option value=""></option>
@@ -185,9 +186,10 @@
 
       <!-- ./container tab -->
       </div>
+      <!-- Akhir Assign Handover Project -->
+
     <!-- ./tab content -->
-    </div>
-                       
+    </div>                
   <!-- ./content -->
   </div>
 
