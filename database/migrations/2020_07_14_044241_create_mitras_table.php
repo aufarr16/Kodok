@@ -14,8 +14,8 @@ class CreateMitrasTable extends Migration
     public function up()
     {
         Schema::create('mitras', function (Blueprint $table) {
-            $table->integer('ABA')->primary('ABA');
-            $table->string('nama_mitra');
+            $table->char('ABA', 13)->primary('ABA');
+            $table->string('nama_mitra', 51);
         });
     }
 

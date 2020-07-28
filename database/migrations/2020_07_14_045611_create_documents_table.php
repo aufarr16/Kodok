@@ -17,7 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->bigIncrements('id_document');
             $table->unsignedBigInteger('id_project');
             $table->unsignedBigInteger('id_DocType');
-            $table->string('nama_document');
+            $table->string('nama_document', 200);
             $table->boolean('softcopy_status');
             $table->boolean('hardcopy_status');
         });

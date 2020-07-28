@@ -15,7 +15,7 @@ class CreateUsersLevelsTable extends Migration
     {
         Schema::create('users_levels', function (Blueprint $table) {
             $table->bigIncrements('id_ulevel');
-            $table->string('nama_ulevel');
+            $table->string('nama_ulevel', 33);
         });
 
         //Schema::drop('dokumen');

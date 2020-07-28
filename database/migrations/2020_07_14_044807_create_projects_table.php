@@ -15,15 +15,16 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id_project');
+            $table->date('waktu_assign_projek');
             $table->unsignedBigInteger('id_pketerangan');
             $table->unsignedBigInteger('id_pstat');
             $table->unsignedBigInteger('id_ptype');
             $table->unsignedBigInteger('id_product');
             $table->unsignedBigInteger('id_user');
-            $table->Integer('ABA');
-            $table->string('nama_projek');
+            $table->char('ABA', 13);
+            $table->string('nama_projek', 201);
             $table->boolean('status_handover');
-            $table->date('waktu_assign_projek');
+            $table->string('pketerangan_note');
         });
     }
 

@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id_user');
             $table->unsignedBigInteger('id_ulevel');
-            $table->string('nama_users');
-            $table->string('email_users');
-            $table->string('inisial_users');
-            $table->string('log_users');
+            $table->string('nama_users', 100);
+            $table->string('email_users', 50);
+            $table->string('inisial_users', 3);
+            $table->string('log_users')->nullable();
         });
           
         //Schema::drop('users');

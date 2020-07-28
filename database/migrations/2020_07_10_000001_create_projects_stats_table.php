@@ -15,7 +15,7 @@ class CreateProjectsStatsTable extends Migration
     {
         Schema::create('projects_stats', function (Blueprint $table) {
             $table->bigIncrements('id_pstat');
-            $table->string('nama_pstat');
+            $table->string('nama_pstat', 24);
         });
 
         //Schema::drop('dokumen');

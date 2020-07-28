@@ -15,7 +15,7 @@ class CreateProjectsKeteranganTable extends Migration
     {
         Schema::create('projects_keterangans', function (Blueprint $table) {
             $table->bigIncrements('id_pketerangan');
-            $table->string('nama_pkKeterangan');
+            $table->string('nama_pketerangan', 24);
         });
 
         //Schema::drop('dokumen');
