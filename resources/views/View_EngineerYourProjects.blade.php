@@ -19,7 +19,7 @@
   <link href="{{ url('') }}/style.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
+  <!-- <link href="{{ url('') }}/css/search.css" rel="stylesheet" /> -->
   <!-- <link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" /> -->
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
@@ -148,7 +148,7 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-left: 190px; margin-top: 10px">
+						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-left: 165px; margin-top: 15px">
 						
 
 							<!-- Modal content -->
@@ -244,7 +244,7 @@
 														<div class="col-md-3">
 															<div class="box box warning">
 																<div class="box-header with-border">
-																	<h3 class="box-title">Form Pendaftaran</h3>
+																	<h3 class="box-title">Form Pendaftaran Jaringan</h3>
 																		<div class="box-body">
 																					<input type="file" name="filename">
 																		<!--./box-body-->
@@ -917,7 +917,7 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-left: 190px; margin-top: 10px">
+						<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-left: 165px; margin-top: 15px">
 						
 
 							<!-- Modal content -->
@@ -1014,7 +1014,7 @@
 														<div class="col-md-3">
 															<div class="box box warning">
 																<div class="box-header with-border">
-																	<h3 class="box-title">Form Pendaftaran</h3>
+																	<h3 class="box-title">Form Pendaftaran Jaringan</h3>
 																		<div class="box-body">
 																					<input type="file" name="filename">
 																		<!--./box-body-->

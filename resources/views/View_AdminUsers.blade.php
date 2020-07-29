@@ -84,7 +84,7 @@
 				</button>
     
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top: 25px">
+				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top: 50px">
 				
 				<!-- Modal content -->
 				<div class="modal-content">
