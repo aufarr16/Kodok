@@ -17,7 +17,7 @@
   <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
+  <!-- <link href="{{ url('') }}/css/search.css" rel="stylesheet" /> -->
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
@@ -84,7 +84,7 @@
 				</button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top: 25px">
+				<div class="modal" id="modal" role="dialog" style="margin-left:350px; margin-top: 50px">
 				
 				<!-- Modal content -->
 				<div class="modal-content">
