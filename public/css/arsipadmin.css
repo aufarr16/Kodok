@@ -1,8 +1,8 @@
 
-/* The Close Button */
+/* The Close Button *
 .close {
   color: #aaaaaa;
-  /* float: left;*/
+  /* float: left;*
   font-size: 28px;
   font-weight: bold;
   margin-right: -500px;
@@ -13,7 +13,7 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
-} 
+} */
 
 /* Darker background on mouse-over */
 .button-detail:hover {
@@ -106,9 +106,9 @@
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;
-    color: grey;
+    color: #7ba3d0;
     cursor: pointer;
 }
 .modal a.close1:hover {
-  color: black;
+  color: #19569A;
 }

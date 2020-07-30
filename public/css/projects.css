@@ -64,19 +64,24 @@ input[type=text] {
 
 /*Modal title untuk List Project Engineer*/
 .modal-title {
-    /* margin-left: -370px; */
-   /*  line-height: 1.42857143; */
 	color: #19569A;
 	width: 98%;
 	text-align: center;
+  margin-bottom: -15px;
+  /* line-height: 1.5; */
+  margin-top: -15px;
 }
 	
 /* The Modal (background) untuk List Project Engineer*/
 .modal {
 	width: 87%;
 	min-height: 100px;
-	margin-left: 240px;
-	margin-top: 30px;
+	/*margin-left: 240px;
+	margin-top: 30px;*/
+  padding-left: 17px;
+  margin-left: 165px;
+  margin-top: 15px;
+  /*display: block;*/
 }
 
 .modal a.close1 {
@@ -87,11 +92,11 @@ input[type=text] {
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;
-    color: grey;
+    color: #7ba3d0;
     cursor: pointer;
 }
 .modal a.close1:hover {
-  color: black;
+  color: #19569A;
 }
 
 /*Untuk list project manager*/
@@ -103,11 +108,11 @@ input[type=text] {
   font-size: 25px;
   font-weight: bold;
   text-decoration: none;
-  color: grey;
+  color: #7ba3d0;
   cursor: pointer;
 }
 .modal1 a.close1:hover {
-  color: black;
+  color: #19569A;
 }
 /*Akhir untuk list project manager*/
 
@@ -120,11 +125,11 @@ input[type=text] {
   font-size: 25px;
   font-weight: bold;
   text-decoration: none;
-  color: grey;
+  color: #7ba3d0;
   cursor: pointer;
 }
 .modalket a.closeket:hover {
-  color: black;
+  color: #19569A;
 }
 /*Akhir untuk keterangan di your projects dan handover projects*/
 
@@ -447,6 +452,10 @@ input[type=text] {
     border-radius: .25em;
 }
 
+.label-reserved {
+    background-color: #FAD02C;
+}
+
 .label-done {
     background-color: #0091E7;
 }
@@ -460,11 +469,11 @@ input[type=text] {
 }
 
 .label-hold {
-	background-color: #ffc107;
+	background-color: #FF8000;
 }
 
 .label-drop {
-	background-color: #FF5765;
+	background-color: #E50027;
 }
  
 .wrap-collabsible {
@@ -711,7 +720,7 @@ background-color: transparent;
 .qualifications {
   position: absolute;
   top: 10px;
-  left: 40px;
+  left: 65px;
 }
 
 .tile-outer {

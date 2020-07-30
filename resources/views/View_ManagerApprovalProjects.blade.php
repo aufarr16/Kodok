@@ -162,7 +162,7 @@
         <div class="modal-contentket">
 	        <div class="modal-headerket">
 	          <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
-	          <h4 class="modal-titleket">Implementasi ATM Bersama Fitur Standard dan Transfer pada Channel Mobile Banking Bank Artos</h4>
+	          <h5 class="modal-titleket">Implementasi ATM Bersama Fitur Standard dan Transfer pada Channel Mobile Banking Bank Artos</h5>
           </div>  	
 					<div class = "modal-bodyket">
 						<div class = "input-groupket">
@@ -252,7 +252,7 @@
         <div class="modal-contentket">
 	        <div class="modal-headerket">
 	          <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
-	          <h4 class="modal-titleket">Implementasi ATMB Debit Bank Nagari</h4>
+	          <h5 class="modal-titleket">Implementasi ATMB Debit Bank Nagari</h5>
           </div>  	
 					<div class = "modal-bodyket">
 						<div class = "input-groupket">

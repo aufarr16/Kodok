@@ -148,7 +148,7 @@
               </div>
               </td>
               <td>07 Juli 2020</td>
-              <td><small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small></td>
+              <td><small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small></td>
     </tr>
     <tr>
               <td>2</td>
@@ -211,7 +211,7 @@
               </div>
               </td>
               <td>12 Juni 2019</td>
-              <td><small class="label label-onprogress"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp On Progress</td>
+              <td><small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</td>
             </tr>
             <tr>
               <td>3</td>
@@ -268,7 +268,7 @@
               </div>
               </td>
               <td>10 Januari 2019</td>
-              <td><small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</td>
+              <td><small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress</td>
             </tr>
             <tr>
               <td>4</td>
@@ -325,18 +325,75 @@
               </div>
               </td>
               <td>10 Februari 2019</td>
+              <td><small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>IDE</td>
+              <td>Ismi Destiawati</td>
+              <td>Debit</td>
+              <td>Sertifikasi</td>
+              <td>Bank Panin</td>
+              <td>
+                 <div class="popover_parent"> 
+                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
+
+                  <!-- The Modal -->
+                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
+                  
+                  <!-- Modal content -->
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <a class="close1" data-dismiss="modal">&times;</a>
+                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
+                    </div>  
+                  <div class = "modal-body1">
+                    <div class="qualifications">
+                      <div class="line"></div>
+                      <div class="tile-outer">
+                        <span class="circle">IDE</span>
+                        <div class="tile">
+                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
+                          </div>
+                      </div>
+                      <div class="tile-outer">
+                          <span class="circle">RAS</span>
+                          <div class="tile">
+                              <p>11 Oktober 2019</p> 
+                          </div>
+                      </div>
+                      <div class="tile-outer">
+                        <span class="circle">DMR</span>
+                        <div class="tile">
+                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
+                        </div>
+                      </div>
+                      <div class="tile-outer">
+                      </div>
+                    <!-- ./qualification -->
+                    </div>
+                  <!-- modal body -->
+                  </div>
+                  <!-- modal content -->
+                  </div>
+                <!-- modal -->
+                </div>
+              <!-- popover -->
+              </div>
+              </td>
+              <td>10 Februari 2019</td>
               <td><small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold</td>
             </tr>
             <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
+              <td>6</td>
+              <td>DMR</td>
+              <td>Devi Mayang Sari</td>
+              <td>QR</td>
               <td>Sertifikasi</td>
-              <td>Bank Panin</td>
+              <td>BJB</td>
               <td>
                  <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
+                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi ATM Bersama QR MPM di BJB</button>
 
                   <!-- The Modal -->
                   <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
@@ -345,7 +402,7 @@
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
+                      <h4 class="modal-title1">Implementasi ATM Bersama QR MPM di BJB</h4>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -353,19 +410,19 @@
                       <div class="tile-outer">
                         <span class="circle">IDE</span>
                         <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
+                              <p>11 November 2019 - 20 November 2019</p> 
                           </div>
                       </div>
                       <div class="tile-outer">
                           <span class="circle">RAS</span>
                           <div class="tile">
-                              <p>11 Oktober 2019</p> 
+                              <p>21 November 2019</p> 
                           </div>
                       </div>
                       <div class="tile-outer">
                         <span class="circle">DMR</span>
                         <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
+                              <p>22 November 2019 - 25 November 2019</p> 
                         </div>
                       </div>
                       <div class="tile-outer">
@@ -381,921 +438,10 @@
               <!-- popover -->
               </div>
               </td>
-              <td>10 Februari 2019</td>
+              <td>9 November 2019</td>
               <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
             </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
+            
 
     </tbody>
   </table>

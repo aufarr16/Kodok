@@ -119,13 +119,6 @@
 .lbl-notcollected:hover{
 }
 
-/* /*Modal title*/
-.modal-title {
-     /*margin-left: -370px;*/
-    line-height: 1.42857143;
-	color: #51bcda;
-}
-	
 .text-overflow {
   overflow: hidden;
   word-wrap: break-word;

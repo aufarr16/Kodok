@@ -148,9 +148,8 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-left: 165px; margin-top: 15px">
+						<div class="modal" id="modal" role="dialog">
 						
-
 							<!-- Modal content -->
 							<div class="modal-content">
 							<div class="modal-header">
@@ -917,7 +916,7 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-left: 165px; margin-top: 15px">
+						<div class="modal" id="model" role="dialog">
 						
 
 							<!-- Modal content -->

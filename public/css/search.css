@@ -203,11 +203,11 @@
 	font-size: 25px;
 	font-weight: bold;
 	text-decoration: none;
-	color: grey;
+	color: #7ba3d0;
 	cursor: pointer;
 }
 .modal a.close1:hover {
-  color: black;
+  color: #19569A;
 }
 
 .container1{

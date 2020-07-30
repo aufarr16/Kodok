@@ -4952,20 +4952,17 @@ a.close.disabled {
 .modal-title {
   /*margin-bottom: 0;
   line-height: 1.5;*/
-    margin-bottom: -15px;
-    line-height: 1.5;
-    margin-top: -15px;
-} }
+  margin-bottom: -15px;
+  line-height: 1.5;
+  margin-top: -15px;
+  /*margin: auto;*/
+}
 
 /*Title untuk user manager menu projects*/
 .modal-content1 .modal-header .close1 .modal-title1 {
-  /*margin-bottom: 0;
-  line-height: 1.5; 
-  font-size: 18px;
-  color:#19569A;*/
   margin-bottom: -15px;
-    line-height: 1.5;
-    margin-top: -15px;
+  line-height: 1.5;
+  margin-top: -15px;
   color: #19569A;
   width: 80%;
   font-size: 14px;
@@ -4973,7 +4970,7 @@ a.close.disabled {
 }
 /*Akhir title untuk user manager menu projects*/
 
-/*Title untuk user engineer menu your projects dan handover projects*/
+/*Title untuk tombol tanda tanya user engineer menu your projects dan handover projects*/
 .modal-contentket .modal-headerket .closeket .modal-titleket{
   margin-bottom: -15px;
   line-height: 1.5;
@@ -5005,9 +5002,19 @@ a.close.disabled {
   font-size: 18px;
   font-weight: bold;
   margin-top: 5px;
-  padding: 5px
+  padding: 5px;
+  margin-left: 90px;
 }
-/*Akhir title untuk user engineer menu your projects dan handover projects*/
+
+.modal-headerket h5{
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 5px;
+  /*margin-left: 90px;*/
+}
+/*Akhir title untuk tombol tanda tanya user engineer menu your projects dan handover projects*/
+
 
 .modal-body {
   position: relative;

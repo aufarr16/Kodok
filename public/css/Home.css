@@ -112,7 +112,7 @@
 
 /*Untuk summary col home manager*/
 .tile {
-  width: 278px;
+  width: 220px;
   height: 50px;
   border-radius: 4px;
   /* box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.15); */
@@ -183,31 +183,50 @@
 /*   padding:4%; */
 }
 
+/*tile reserved*/
+.tile.reserved .header {
+  background: #FAD02C;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.tile.reserved .body {
+  color: #FAD02C;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+/*akhir tile reserved*/
+
+/*tile on progress*/
 .tile.onprogress .header {
-  background: #43B14B;
+  background: #28a745;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 .tile.onprogress .body {
-  color: #43B14B;
+  color: #28a745;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+/*akhir tile on progress*/
 
+/*tile done*/
 .tile.done .header {
   border-bottom-left-radius: 15px;
-  background: #009CDF;
+  background: #0091E7;
   /* border-radius: 15px; */
   border-bottom-right-radius: 15px;
 }
 
 .tile.done .body {
-  color: #009CDF;
+  color: #0091E7;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+/*akhir tile done*/
 
+/*tile hold*/
 .tile.hold .header {
   background: #FF8000;
   border-bottom-left-radius: 15px;
@@ -219,18 +238,21 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+/*akhir tile hold*/
 
+/*tile drop*/
 .tile.drop .header {
-  background: #F51720;
+  background: #E50027;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 .tile.drop .body {
-  color: #F51720;
+  color: #E50027;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+/*akhir tile drop*/
 
 .tile.field-change .header {
   background: linear-gradient(to bottom right, #ef7f00, #f7b200);

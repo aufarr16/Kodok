@@ -120,14 +120,35 @@
 					<button class="btn-ok" type="button">OK</button>
 					</div>
 				</td>
-				<td>Approved</td>
+				<td>Decline
+		          	<button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
+
+		            <!-- The Modal -->
+		            <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
+		                  
+		              <!-- Modal content -->
+		              <div class="modal-contentket">
+			              <div class="modal-headerket">
+			                <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
+			                  <h4 class="modal-titleket">Keterangan Status</h4>
+			              </div>  
+			              <div class = "modal-bodyket">
+			                <span>BAKO yang diupload tidak sesuai qwertyu asdfgh zxcvbn poiuytr lkjhgf mnbvc</span> 
+			              <!-- modal body -->
+			              </div>
+		              <!-- modal content -->
+		              </div>
+
+			          <!-- modal -->
+			          </div>
+			    </td>
 				<td>
 					<button title="Upload Docs" type="button" class="btn-docs" data-toggle="modal" data-target="#modal">
 						<i class="fas fa-cloud-upload-alt fa-lg"></i>
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-left: 165px; margin-top: 15px">
+						<div class="modal" id="modal" role="dialog">
 						
 
 							<!-- Modal content -->
