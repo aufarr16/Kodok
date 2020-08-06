@@ -152,12 +152,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($data_users as $dat_usr)
 			<tr>
-				<td>{{ $loop->iteration }}</td>
-				<td>{{ $dat_usr->inisial_users }}</td>
-				<td>{{ $dat_usr->nama_users }}</td>
-				<td>{{ $dat_usr->nama_ulevel }}</td>
+				<td>1</td>
+				<td>IDE</td>
+				<td>Ismi Destiawati</td>
+				<td>Engineer</td>
 				<td data-filter="false">
 					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-user-edit fa-lg"></i></button>
 						<!-- The Modal -->
@@ -213,10 +212,198 @@
 						</div>
 				<a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
-				<td>{{ $dat_usr->added_by }}</td>
-				<td>{{ $dat_usr->modified_by }}</td>
+				<td>IDE</td>
+				<td>DMR</td>
 			</tr>
-			@endforeach
+			<tr>
+				<td>2</td>
+				<td>DMR</td>
+				<td>Devi Mayang Sari</td>
+				<td>Admin</td>
+				<td>
+					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-user-edit fa-lg"></i></button>
+						<!-- The Modal -->
+						<div class="modal" id="modal2" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit User</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+									</div>
+								<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama</label>
+									</div>	
+								<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">						
+										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
+									</div>
+										<select id="role" name="role" style="height:35px">
+											<option value="" hidden>Pilih Role</option>
+											<option value="admin">Admin</option>
+											<option value="manager">Manager</option>
+											<option value="engineer">Engineer</option>
+											<option value="guest">Guest</option>
+										</select>
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="email" style="font-weight:bolder">Email</label>
+									</div>	
+								<input type="text" id="email" name="email" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							<!-- ./modal body -->
+							</div>
+						<!-- ./modal content -->
+						</div>
+						<!-- ./modal -->
+						</div>
+				<a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
+				</td>
+				<td>IDE</td>
+				<td>DMR</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>RAS</td>
+				<td>Rio Ari Saputra</td>
+				<td>Manager</td>
+				<td>
+					<button class="btn-edit" title="edit user" data-toggle="modal" data-target="#modal3"><i class="fas fa-user-edit fa-lg"></i></button>
+						<!-- The Modal -->
+						<div class="modal" id="modal3" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit User</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+									</div>
+								<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama</label>
+									</div>	
+								<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">						
+										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
+									</div>
+										<select id="role" name="role" style="height:35px">
+											<option value="" hidden>Pilih Role</option>
+											<option value="admin">Admin</option>
+											<option value="manager">Manager</option>
+											<option value="engineer">Engineer</option>
+											<option value="guest">Guest</option>
+										</select>
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="email" style="font-weight:bolder">Email</label>
+									</div>	
+								<input type="text" id="email" name="email" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							<!-- ./modal body -->
+							</div>
+						<!-- ./modal content -->
+						</div>
+						<!-- ./modal -->
+						</div>
+				<a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
+				</td>
+				<td>DMR</td>
+				<td>IDE</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>AUF</td>
+				<td>Aufar Rizqi</td>
+				<td>Guest</td>
+				<td>
+					<button class="btn-edit" title="edit user" data-toggle="modal" data-target="#modal4"><i class="fas fa-user-edit fa-lg"></i></button>
+						<!-- The Modal -->
+						<div class="modal" id="modal4" role="dialog">
+						
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<a class="close1" data-dismiss="modal">&times;</a>
+								<h2 class="modal-title">Edit User</h2>
+							</div>
+							<div class = "modal-body">
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+									</div>
+								<input type="text" id="inisial" name="inisial" placeholder=" ">
+								</div>
+								<br>	
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder">Nama</label>
+									</div>	
+								<input type="text" id="nama" name="nama" placeholder=" ">
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">						
+										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
+									</div>
+										<select id="role" name="role" style="height:35px">
+											<option value="" hidden>Pilih Role</option>
+											<option value="admin">Admin</option>
+											<option value="manager">Manager</option>
+											<option value="engineer">Engineer</option>
+											<option value="guest">Guest</option>
+										</select>
+								</div>
+								<br>
+								<div class = "input-group">
+									<div class ="input-group-addon">
+										<label for="email" style="font-weight:bolder">Email</label>
+									</div>	
+								<input type="text" id="email" name="email" placeholder=" ">
+								</div>
+								<br>
+							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							<!-- ./modal body -->
+							</div>
+						<!-- ./modal content -->
+						</div>
+						<!-- ./modal -->
+						</div>
+				<a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
+				</td>
+				<td>RAS</td>
+				<td>AUF</td>
+			</tr>
 		</tbody>
 	</table>
 	<!-- table responsive -->
