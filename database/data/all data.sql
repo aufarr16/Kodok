@@ -163,7 +163,6 @@ INSERT INTO `users_levels` (`id_ulevel`, `nama_ulevel`) VALUES
 (4, 'Guest'),
 (5, 'Admin x Engineer');
 
---USERS
 INSERT INTO `users` (`id_user`, `id_ulevel`, `nama_users`, `email_users`, `inisial_users`, `log_users`, `added_by`, `modified_by`) VALUES 
 (1, '5', 'Ismi Destiawati', 'ismi.destiawati@artajasa.co.id', 'IDE', NULL, 'IDE', NULL), 
 (2, '5', 'Devi Mayang Sari', 'devi.sari@artajasa.co.id', 'DMR', NULL, 'IDE', NULL), 
