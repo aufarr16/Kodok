@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id_project');
             $table->date('waktu_assign_projek');
-            $table->unsignedBigInteger('id_pketerangan');
+            $table->unsignedBigInteger('id_pketerangan')->nullable();
             $table->unsignedBigInteger('id_pstat');
             $table->unsignedBigInteger('id_ptype');
             $table->unsignedBigInteger('id_product');
@@ -24,7 +24,7 @@ class CreateProjectsTable extends Migration
             $table->char('ABA', 13);
             $table->string('nama_projek', 201);
             $table->boolean('status_handover');
-            $table->string('pketerangan_note');
+            $table->string('pketerangan_note')->nullable();
         });
     }
 
