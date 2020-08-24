@@ -93,9 +93,9 @@
 		@foreach($data_archive as $dat_arc)
 		<tr>
 			<td>{{ $loop->iteration }}</td>
-			<td>{{ $dat_arc->inisial_users}}</td>
+			<td>{{ $dat_arc->inisial_user}}</td>
 			<td>{{ $dat_arc->nama_ptype}}</td>
-			<td>{{ $dat_arc->nama_projek}}</td>
+			<td>{{ $dat_arc->nama_project}}</td>
 			<td>
 				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal1">Details</button>
 				

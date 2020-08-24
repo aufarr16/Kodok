@@ -155,8 +155,8 @@
 			@foreach($data_users as $dat_usr)
 			<tr>
 				<td>{{ $loop->iteration }}</td>
-				<td>{{ $dat_usr->inisial_users }}</td>
-				<td>{{ $dat_usr->nama_users }}</td>
+				<td>{{ $dat_usr->inisial_user }}</td>
+				<td>{{ $dat_usr->nama_user }}</td>
 				<td>{{ $dat_usr->nama_ulevel }}</td>
 				<td data-filter="false">
 					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-user-edit fa-lg"></i></button>

@@ -100,10 +100,11 @@
 		</thead>
 		
 		<tbody>
+		@foreach($data_search as $dat_sdoc)	
 		<tr>
-			<td>1</td>
-			<td>Bank Nagari</td>
-			<td>Implementasi ATMB Debit Bank Nagari &nbsp;
+			<td>{{ $loop->iteration }}</td>
+			<td>{{ $dat_sdoc->nama_mitra}}</td>
+			<td>{{ $dat_sdoc->nama_project}} &nbsp;
 				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
 					<i class="fa fa-search fa-lg"></i>
 				</button>
@@ -171,155 +172,10 @@
 				<!-- ./modal -->
 				</div>
 			</td>
-			<td>IDE</td>
-			<td>2020</td>
-		<tr>
-			<td>2</td>
-			<td>Bank Artos</td>
-			<td>Implementasi ATMB Bank Artos &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal2">
-					<i class="fa fa-search fa-lg"></i>
-				</button>
-					
-					<!-- The Modal -->
-				<div class="modal" id="modal2" role="dialog" style="padding-left:17px;">
-				
-				<!-- Modal content -->
-					<div class="modal-content">
-					<div class="modal-header">
-						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi ATMB Bank Artos</h2>
-					</div>	
-						<div class = "modal-body">
-							<div class = "input-group">
-								<br>
-							<table class="table1" id="search2">
-								<thead>
-									<tr>
-										<th>No</th>
-										<th>Dokumen</th>
-										<th>No.Dokumen</th>
-										<th>Softcopy</th>
-										<th>Hardcopy</th>
-									</tr>
-								</thead>
-									<tr>
-										<td>1</td>
-										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">442/ND/130/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/223/III/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>Bantex tahun 2019 (BAKO)</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>Bantex tahun 2019 (BAE)</td>
-									</tr>
-								</table>
-							<!-- ./input group -->
-							</div>
-						<!-- modal body -->
-						</div>
-					<!-- ./modal content -->
-					</div>
-				<!-- ./modal -->
-				</div>
-			</td>
-			<td>DMR</td>
-			<td>2019</td>
+			<td>{{ $dat_sdoc->inisial_user}}</td>
+			<td>{{ $dat_sdoc->tahun}}</td>
 		</tr>
-		<tr>
-			<td>3</td>
-			<td>Bank DKI</td>
-			<td>Implementasi Implementasi Indosat bank DKI pada Channel Internet Banking &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#modal3">
-					<i class="fa fa-search fa-lg"></i>
-				</button>
-					
-					<!-- The Modal -->
-				<div class="modal" id="modal3" role="dialog" style="padding-left:17px;">
-				
-				<!-- Modal content -->
-					<div class="modal-content">
-					<div class="modal-header">
-						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi Implementasi Indosat bank DKI pada Channel Internet Banking</h2>
-					</div>	
-						<div class = "modal-body">
-							<div class = "input-group">
-								<br>
-							<table class="table1" id="search3">
-								<thead>
-									<tr>
-										<th>No</th>
-										<th>Dokumen</th>
-										<th>No.Dokumen</th>
-										<th>Softcopy</th>
-										<th>Hardcopy</th>
-									</tr>
-								</thead>
-									<tr>
-										<td>1</td>
-										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">446/ND/130/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-ATMB/228/III/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>Bantex tahun 2019 (BAKO)</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-ATMB/223/III/2019</button></td>
-										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
-										</td>
-										<td>Bantex tahun 2019 (BAE)</td>
-									</tr>
-								</table>
-							<!-- ./input group -->
-							</div>
-						<!-- modal body -->
-						</div>
-					<!-- ./modal content -->
-					</div>
-				<!-- ./modal -->
-				</div>
-			</td>
-			<td>DMR</td>
-			<td>2019</td>
-		</tr>
-		
+		@endforeach		
 		</tbody>
 	</table>
 

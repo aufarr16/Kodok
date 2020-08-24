@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_AdminSearchDocuments extends Controller
 {
     public function openPage(){
-    	$data_search = DB::select("select nama_mitra, nama_projek, inisial_users, YEAR(waktu_assign_projek) as tahun from mitras as a, projects as b, users as c where b.ABA = a.ABA and b.id_user = c.id_user");
+    	$data_search = DB::select("select nama_mitra, nama_project, inisial_user, YEAR(waktu_assign_project) as tahun from mitras as a, projects as b, users as c where b.ABA = a.ABA and b.id_user = c.id_user");
     	//dump($data_search);
     	return view('View_AdminSearchDocuments', ['data_search' => $data_search]);
     }

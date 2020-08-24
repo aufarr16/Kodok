@@ -93,16 +93,17 @@
     </tr>
     </thead>
     <tbody>
+    @foreach($data_projek as $dat_proj)
     <tr>
-      <td>1</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Nagari</td>
+      <td>{{ $loop->iteration}}</td>
+              <td>{{ $dat_proj->inisial_user}}</td>
+              <td>{{ $dat_proj->nama_user}}</td>
+              <td>{{ $dat_proj->nama_product}}</td>
+              <td>{{ $dat_proj->nama_ptype}}</td>
+              <td>{{ $dat_proj->nama_mitra}}</td>
               <td>
                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</button>
+                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal1">{{ $dat_proj->nama_project}}</button>
 
                  <!-- The Modal -->
                   <div class="modal1" id="modal1" role="dialog" style="padding-left:17px;">
@@ -147,302 +148,10 @@
               <!-- popover -->
               </div>
               </td>
-              <td>07 Juli 2020</td>
+              <td>{{ $dat_proj->waktu_assign_project}}</td>
               <td><small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small></td>
     </tr>
-    <tr>
-              <td>2</td>
-              <td>DMR</td>
-              <td>Devi Mayang Sari</td>
-              <td>ATMB</td>
-              <td>Internal Test</td>
-              <td>Standard Charterd Bank</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal2">Internal Test Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</button>
-
-                 <!-- The Modal -->
-                  <div class="modal1" id="modal2" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Internal Test Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">AUF</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">AUF</span>
-                        <div class="tile">
-                              <p>16 Oktober 2019 - 17 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>12 Juni 2019</td>
-              <td><small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>AUF</td>
-              <td>Aufar Rizqi</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank QNB</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal3">Implementasi ATM Bersama Debit as Acquirer Bank QNB</button>
-
-                 <!-- The Modal -->
-                  <div class="modal1" id="modal3" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank QNB</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">AUF</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">RAS</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Januari 2019</td>
-              <td><small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>RAS</td>
-              <td>Rio Ari Saputra</td>
-              <td>ATMB</td>
-              <td>Sertifikasi</td>
-              <td>Bank DKI</td>
-              <td>
-                  <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal4">Implementasi ATM Bersama Channel Mobile Banking Bank DKI</button>
-
-                  <!--  The Modal -->
-                  <div class="modal1" id="modal4" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi ATM Bersama Channel Mobile Banking Bank DKI</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">RAS</span>
-                        <div class="tile">
-                          <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">IDE</span>
-                          <div class="tile">
-                            <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">AUF</span>
-                        <div class="tile">
-                          <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>IDE</td>
-              <td>Ismi Destiawati</td>
-              <td>Debit</td>
-              <td>Sertifikasi</td>
-              <td>Bank Panin</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi Debit GPN as Acquirer di Bank Panin</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi Debit GPN as Acquirer di Bank Panin</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>1 Oktober 2019 - 10 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>11 Oktober 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>12 Oktober 2019 - 15 Oktober 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>10 Februari 2019</td>
-              <td><small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>DMR</td>
-              <td>Devi Mayang Sari</td>
-              <td>QR</td>
-              <td>Sertifikasi</td>
-              <td>BJB</td>
-              <td>
-                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal5">Implementasi ATM Bersama QR MPM di BJB</button>
-
-                  <!-- The Modal -->
-                  <div class="modal1" id="modal5" role="dialog" style="padding-left:17px;">
-                  
-                  <!-- Modal content -->
-                  <div class="modal-content1">
-                    <div class="modal-header">
-                      <a class="close1" data-dismiss="modal">&times;</a>
-                      <h4 class="modal-title1">Implementasi ATM Bersama QR MPM di BJB</h4>
-                    </div>  
-                  <div class = "modal-body1">
-                    <div class="qualifications">
-                      <div class="line"></div>
-                      <div class="tile-outer">
-                        <span class="circle">IDE</span>
-                        <div class="tile">
-                              <p>11 November 2019 - 20 November 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                          <span class="circle">RAS</span>
-                          <div class="tile">
-                              <p>21 November 2019</p> 
-                          </div>
-                      </div>
-                      <div class="tile-outer">
-                        <span class="circle">DMR</span>
-                        <div class="tile">
-                              <p>22 November 2019 - 25 November 2019</p> 
-                        </div>
-                      </div>
-                      <div class="tile-outer">
-                      </div>
-                    <!-- ./qualification -->
-                    </div>
-                  <!-- modal body -->
-                  </div>
-                  <!-- modal content -->
-                  </div>
-                <!-- modal -->
-                </div>
-              <!-- popover -->
-              </div>
-              </td>
-              <td>9 November 2019</td>
-              <td><small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</td>
-            </tr>
-            
-
+    @endforeach
     </tbody>
   </table>
   <!-- Table responsive -->
@@ -518,3 +227,10 @@ $(document).ready(function () {
 </body>
 
 </html>
+<!-- STATUS LABEL  -->
+<!-- small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small  -->
+<!-- small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done  -->
+<!-- small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress  -->
+<!-- small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop  -->
+<!-- small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold  -->
+<!-- small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done  -->

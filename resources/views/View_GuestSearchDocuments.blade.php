@@ -76,7 +76,7 @@
 		<tr>
 			<td>{{ $loop->iteration }}</td>
 			<td>{{ $dat_sdoc->nama_mitra}}</td>
-			<td>{{ $dat_sdoc->nama_projek}} &nbsp;
+			<td>{{ $dat_sdoc->nama_project}} &nbsp;
 				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
 					<i class="fa fa-search fa-lg"></i>
 				</button>
@@ -141,7 +141,7 @@
 				<!-- ./modal -->
 				</div>
 			</td>
-			<td>{{ $dat_sdoc->inisial_users}}</td>
+			<td>{{ $dat_sdoc->inisial_user}}</td>
 			<td>{{ $dat_sdoc->tahun}}</td>
 		</tr>
 		@endforeach

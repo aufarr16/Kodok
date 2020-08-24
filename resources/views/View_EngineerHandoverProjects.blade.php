@@ -44,7 +44,7 @@
 <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar">
         <ul class="list-unstyled components mb-5">
-		  <li class="active ">
+		  <li>
             <a href="/engineer/doctools">
               <span class="fas fa-file-alt mr-2"></span>Documents & Tools
             </a>
