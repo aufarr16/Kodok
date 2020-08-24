@@ -92,13 +92,14 @@
 		</tr>
 		</thead>
 		<tbody>
+		@foreach($data_approval as $dat_apr)
 		<tr>
-			<td>1</td>
-			<td>DMR</td>
-			<td>ATMB</td>
-			<td>Sertifikasi</td>
-			<td>Implementasi ATM Bersama Bank Artos</td>
-			<td>Request approval project done</td>
+			<td>{{ $loop->iteration }}</td>
+			<td>{{ $dat_apr->inisial_user}}</td>
+			<td>{{ $dat_apr->nama_product}}</td>
+			<td>{{ $dat_apr->nama_ptype}}</td>
+			<td>{{ $dat_apr->nama_project}}</td>
+			<td>Request Approval {{ $dat_apr->nama_pstat}}</td>
 			<td>
 				<button type="button" class="btn-docs" data-toggle="modal" data-target="#modal"><i class="fa fa-search fa-lg"></i></button>
 				
@@ -182,95 +183,7 @@
 
 			</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>IDE</td>
-			<td>Debit</td>
-			<td>Sertifikasi</td>
-			<td>Implementasi ATMB Debit Bank Nagari</td>
-			<td>Request approval pengujian done</td>
-			<td>
-				<button type="button" class="btn-docs" data-toggle="modal" data-target="#model"><i class="fa fa-search fa-lg"></i></button>
-				
-				<!-- The Modal -->
-				<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-top:100px">
-				
-				<!-- Modal content -->
-				<div class="modal-content">
-					<div class="modal-header">
-						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
-					</div>	
-						<div class = "modal-body">
-							<div class = "input-group">
-								<br>
-									<table class="table1" style="margin:-20px 10px -20px 10px">
-										<tr>
-											<th rowspan="2">No</th>	
-											<th rowspan="2">Dokumen</th>
-											<th rowspan="2">Softcopy</th>
-                      						<th colspan="2">Hardcopy</th>
-										</tr>
-										<tr>
-											<th>Status</th>
-											<th>Notes</th>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-                      						<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
-											<td><small class="label lbl-notcollected"><i class="fas fa-thumbs-down"></i>&nbsp Not Collected</small></td>
-											<td>-</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td>-</td>
-											<td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
-											<td>-</td>
-										</tr>
-									</table>
-								
-								</br>
-							<!-- ./input group -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-					<!-- ./modal content -->
-					</div>	
-				<!-- ./the modal -->
-				</div>	
-			</td>
-			<td>
-				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
-				<a href="#" class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal2"><i class="fa fa-times fa-lg"></i></a>
-
-	      <!-- The Modal -->
-        <div class="modalket" id="modal2" role="dialog" style="padding-left:10px;">
-                  
-        <!-- Modal content -->
-        <div class="modal-contentket">
-	        <div class="modal-headerket">
-	          <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
-	          <h5 class="modal-titleket">Implementasi ATMB Debit Bank Nagari</h5>
-          </div>  	
-					<div class = "modal-bodyket">
-						<div class = "input-groupket">
-								<label for="inisial">Alasan Decline:</label>
-								<br>
-								&nbsp
-								<textarea id="comment_text" class="note_status" role="textbox"></textarea>
-						<button class="btn-submitket" type="button" data-dismiss="modal">Submit</button>
-						</div>
-					<!-- ./modal body -->
-					</div>
-				<!-- ./modal content -->
-				</div>
-				<!-- ./modal -->
-				</div>
-			</td>
-		</tr>
-
+		@endforeach
 		</tbody>
 	</table>
 	<!-- Table responsive -->
