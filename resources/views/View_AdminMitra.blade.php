@@ -131,10 +131,11 @@
 			</tr>
 		</thead>
 		<tbody>
+			@foreach($data_mitra as $dat_mit)
 			<tr>
-				<td>1</td>
-				<td>001</td>
-				<td>BRI</td>
+				<td>{{ $loop->iteration }}</td>
+				<td>{{ $dat_mit->ABA }}</td>
+				<td>{{ $dat_mit->nama_mitra }}</td>
 				<td data-filter="false">
 					<button type="button" title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- The Modal -->
@@ -170,135 +171,10 @@
 						</div>
 							<a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a>
 				</td>
-				<td>IDE</td>
-				<td>DMR</td>
+				<td>{{ $dat_mit->added_by }}</td>
+				<td>{{ $dat_mit->modified_by }}</td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>008</td>
-				<td>Bank Mandiri</td>
-				<td>
-					<button title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-pencil-alt fa-lg"></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal2" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Mitra</h2>
-							</div>
-							<div class = "modal-body">
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
-									</div>
-										<input type="text" id="inisial" name="inisial" placeholder=" ">
-								</div>
-								<br>	
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
-									</div>	
-										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<!-- ./modal body -->
-							</div>
-						<!-- ./modal content -->
-						</div>
-						<!-- ./modal -->
-						</div>
-							<a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>IDE</td>
-				<td>DMR</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>009</td>
-				<td>BNI</td>
-				<td>
-					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal3"><i class="fas fa-pencil-alt fa-lg"></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal3" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Mitra</h2>
-							</div>
-							<div class = "modal-body">
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
-									</div>
-										<input type="text" id="inisial" name="inisial" placeholder=" ">
-								</div>
-								<br>	
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
-									</div>	
-										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<!-- ./modal body -->
-							</div>
-						<!-- ./modal content -->
-						</div>
-						<!-- ./modal -->
-						</div>
-							<a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>DMR</td>
-				<td>IDE</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>097</td>
-				<td>Bank Mayapada</td>
-				<td>
-					<button class="btn-edit" title="edit mitra" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal4" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Mitra</h2>
-							</div>
-							<div class = "modal-body">
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
-									</div>
-										<input type="text" id="inisial" name="inisial" placeholder=" ">
-								</div>
-								<br>	
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
-									</div>	
-										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<!-- ./modal body -->
-							</div>
-						<!-- ./modal content -->
-						</div>
-						<!-- ./modal -->
-						</div>
-							<a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>RAS</td>
-				<td>AUF</td>
-			</tr>
+			@endforeach
 		</tbody>
 	</table>
 

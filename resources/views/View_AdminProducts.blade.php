@@ -123,9 +123,10 @@
 			</tr>
 		</thead>
 		<tbody>
+			@foreach($data_products as $dat_prod)
 			<tr>
-				<td>1</td>
-				<td>ATM Bersama</td>
+				<td>{{ $loop->iteration }}</td>
+				<td>{{ $dat_prod->nama_product}}</td>
 				<td data-filter="false">
 					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- The Modal -->
@@ -156,187 +157,10 @@
 							<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
 						
 				</td>
-				<td>IDE</td>
-				<td>DMR</td>
+				<td>{{ $dat_prod->added_by}}</td>
+				<td>{{ $dat_prod->modified_by}}</td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>ATMB Debit</td>
-				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal2"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal2" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Products</h2>
-							</div>
-							<div class = "modal-body">
-								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
-								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<!-- ./modal content -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-						<!-- modal -->
-						</div>
-						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>DMR</td>
-				<td>IDE</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Payment</td>
-				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal3"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal3" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Products</h2>
-							</div>
-							<div class = "modal-body">
-								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
-								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
-							<!-- ./modal content -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-						<!-- modal -->
-						</div>
-						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>RAS</td>
-				<td>AUF</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Remittance</td>
-				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal4"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal4" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Products</h2>
-							</div>
-							<div class = "modal-body">
-								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
-								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							<!-- ./modal content -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-						<!-- modal -->
-						</div>
-						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>AUF</td>
-				<td>RAS</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>Disbursement</td>
-				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal5"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal5" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Products</h2>
-							</div>
-							<div class = "modal-body">
-								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
-								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
-							<!-- ./modal content -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-						<!-- modal -->
-						</div>
-						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>IDE</td>
-				<td>DMR</td>
-			</tr>
-			<tr>
-				<td>6</td>
-				<td>QR Payment</td>
-				<td data-filter="false">
-					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal6"><i class="fas fa-pencil-alt fa-lg"></i></i></button>
-						<!-- The Modal -->
-						<div class="modal" id="modal6" role="dialog">
-						
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<a class="close1" data-dismiss="modal">&times;</a>
-								<h2 class="modal-title">Edit Products</h2>
-							</div>
-							<div class = "modal-body">
-								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
-								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
-							
-							<!-- ./modal content -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-						<!-- modal -->
-						</div>
-						<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
-				</td>
-				<td>IDE</td>
-				<td>DMR</td>
-			</tr>
+			@endforeach
 		</tbody>
 	</table>
 	<!-- table responsive -->

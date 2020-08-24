@@ -16,6 +16,8 @@ class CreateMitrasTable extends Migration
         Schema::create('mitras', function (Blueprint $table) {
             $table->char('ABA', 13)->primary('ABA');
             $table->string('nama_mitra', 51);
+            $table->string('added_by', 3)->nullable();
+            $table->string('modified_by', 3)->nullable();
         });
     }
 
