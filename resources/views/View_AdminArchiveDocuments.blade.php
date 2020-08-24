@@ -90,11 +90,12 @@
 		</tr>
 		</thead>
 		<tbody">
+		@foreach($data_archive as $dat_arc)
 		<tr>
-			<td>1</td>
-			<td>IDE</td>
-			<td>Sertifikasi</td>
-			<td>Implementasi ATM Bersama Bank Artos</td>
+			<td>{{ $loop->iteration }}</td>
+			<td>{{ $dat_arc->inisial_users}}</td>
+			<td>{{ $dat_arc->nama_ptype}}</td>
+			<td>{{ $dat_arc->nama_projek}}</td>
 			<td>
 				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal1">Details</button>
 				
@@ -241,91 +242,7 @@
 				</div>	
 			</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>AUF</td>
-			<td>Internal Test</td>
-			<td>Implementasi ATM Bersama Bank Nagari</td>
-			<td>
-				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal2">Details</button>
-				
-				<!-- The Modal -->
-				<div class="modal" id="modal2" role="dialog" style="left:20%; margin-top:50px">
-				
-				<!-- Modal content -->
-					<div class="modal-content" style="width:50%">
-					<div class="modal-header">
-						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi ATM Bersama Bank Nagari</h2>
-					</div>	
-						<div class = "modal-body" id="style-7">
-							<div class="force-overflow">
-							<div class = "input-group">
-								<br>
-									<table class="table1 fixedHeader" style="margin:-20px 10px -20px 10px">
-										<tr>
-											<th>No</th>	
-											<th>Dokumen</th>
-											<th>Status</th>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>Nodin Penugasan</td>
-											<td>	
-												<select class="custom-select" id="status_select2_1"> 
-													<option value="collected2_1">Collected</option>
-													<option value="notcollected2_1">Not Collected</option>
-													<option value="postponed2_1">Postponed</option>
-												</select>
-												
-												<button class="btn-ok" type="button">OK</button>
-													
-												<div class ="output">
-													<div id="collected2_1" class="status_docs2_1"></div>
-													<div id="notcollected2_1" class="status_docs2_1"></div>
-													<div id="postponed2_1" class="status_docs2_1">
-														<br>
-														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>BAKO</td>
-											<td>	
-												<select class="custom-select" id="status_select2_2"> 
-													<option value="collected2_2">Collected</option>
-													<option value="notcollected2_2">Not Collected</option>
-													<option value="postponed2_2">Postponed</option>
-												</select>
-												
-												<button class="btn-ok" type="button">OK</button>
-													
-												<div class ="output">
-													<div id="collected2_2" class="status_docs2_2"></div>
-													<div id="notcollected2_2" class="status_docs2_2"></div>
-													<div id="postponed2_2" class="status_docs2_2">
-														<br>
-														<textarea placeholder="Notes" rows="2" id="comment_text" cols="36" class="note_status" role="textbox"></textarea>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</table>
-								</br>
-						<!-- ./input group -->
-							</div>
-							<!-- ./force overflow -->
-							</div>
-						<!-- ./modal body -->
-						</div>
-					<!-- ./modal content -->
-					</div>					
-				<!-- ./modal -->
-				</div>		
-			</td>
-		</tr>
+		@endforeach
 		</tbody>
 		</table>
 	<!-- table responsive -->
@@ -376,7 +293,7 @@
 $(document).ready(function() {
     $('#table1').DataTable( { 
       // pageSize: 8,     
-        "pageLength": 10, 
+        "pageLength": 15, 
          "searching": true,
          "paging": true,
          "info": false,         

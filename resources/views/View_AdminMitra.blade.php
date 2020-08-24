@@ -226,7 +226,7 @@
 $(document).ready(function() {
     $('#table1').DataTable( { 
       // pageSize: 8,     
-        "pageLength": 10, 
+        "pageLength": 15, 
          "searching": true,
          "paging": true,
          "info": false,         
