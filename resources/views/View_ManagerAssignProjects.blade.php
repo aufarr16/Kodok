@@ -87,7 +87,8 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <div id="new" class="container tab-pane active">
-        <form>
+        <form method="post" action="/manager">
+          @csrf
           <div class="form-group">
             <label for="NamaPIC" style="font-weight:bolder">PIC</label>
             <br>
