@@ -10,12 +10,38 @@
 	cursor: pointer;
 }
 
+.btnpreview {
+	/* background-color: #4CAF50; */
+	display: button;
+	background-color: transparent;
+	color: #007bff;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 2px;
+	/* font-size: 14px; */
+	border: 2px solid #007bff;
+	cursor: pointer;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	border-radius: 5px;
+	padding: 4px 7px 1px 7px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.btnpreview:hover{
+	background-color: #007bff;
+	color: white;
+	border: 2px solid #007bff;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
 .btnsend {
 	/* background-color: #4CAF50; */
 	display: button;
 	background-color: transparent;
 	color: #FF8F45;
-	margin-right: 0px;
+	margin-right: 5px;
+	margin-left: 5px;
 	margin-top: 2px;
 	/* font-size: 14px; */
 	border: 2px solid #FF8F45;
@@ -40,7 +66,8 @@
 	display: button;
 	background-color: transparent;
 	color: #76B947;
-	margin-right: 0px;
+	margin-right: 5px;
+	margin-left: 5px;
 	margin-top: 2px;
 	/* font-size: 14px; */
 	border: 2px solid #76B947;
@@ -173,12 +200,13 @@
 	color: #19569A;
 	width: 100%;
 	text-align: center;
+	margin-top: 0px;
 }
 	
 /* The Modal (background) */
 .modal {
-	width: 55%;
-	margin-left: 350px;
+	width: 41.5%;
+	margin-left: 425px;
 	margin-top: 50px;
 	padding-left:17px;
 	padding-right: 17px;
