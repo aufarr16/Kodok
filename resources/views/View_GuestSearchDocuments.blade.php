@@ -90,7 +90,7 @@
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
 					</div>	
-						<div class = "modal-body">
+						<div class = "modal-body" style="padding-left: 38px">
 							<div class = "input-group">
 								<br>
 							<table class="table1" id="search1">
@@ -98,7 +98,6 @@
 									<tr>
 										<th>No</th>
 										<th>Dokumen</th>
-										<th>No.Dokumen</th>
 										<th>Softcopy</th>
 										<th>Hardcopy</th>
 									</tr>
@@ -106,27 +105,27 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td>400/ND/117/2020</td>
 										<td>	
-											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
+                      <a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td>006/02/BAKO-DEBIT/223/II/2020</td>
 										<td>
-											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
+                      <a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td>006/02/BAE-DEBIT/223/II/2020</td>
 										<td>	
-											<a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
+                      <a href="#" class="btnsend" title="Request ke admin"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>
 									</tr>

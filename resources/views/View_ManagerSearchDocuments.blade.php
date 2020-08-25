@@ -117,7 +117,6 @@
 									<tr>
 										<th>No</th>
 										<th>Dokumen</th>
-										<th>No.Dokumen</th>
 										<th>Softcopy</th>
 										<th>Hardcopy</th>
 									</tr>
@@ -125,8 +124,8 @@
 									<tr>
 										<td>1</td>
 										<td>Nodin Penugasan</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
-										<td>	
+										<td>
+                      <a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>	
 											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
 											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
@@ -135,9 +134,9 @@
 									<tr>
 										<td>2</td>
 										<td>BAKO</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAKO-DEBIT/223/II/2020</button></td>
 										<td>	
-											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
+											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
+                      <a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
 											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
@@ -145,8 +144,8 @@
 									<tr>
 										<td>3</td>
 										<td>BAE</td>
-										<td><a href="#" class="btn-doc" title="Preview dokumen">006/02/BAE-DEBIT/223/II/2020</button></td>
-										<td>	
+										<td>
+                      <a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>	
 											<a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
 											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
 										</td>
