@@ -31,6 +31,7 @@ Route::get('/manager/assign', 'Controller_ManagerAssignProjects@openPage');
 Route::get('/manager/home', 'Controller_ManagerHome@openPage');
 Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');
 Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
+Route::post('/manager/submitdata', 'Controller_ManagerAssignProjects@store');
 
 ##Engineer
 Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');

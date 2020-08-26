@@ -87,57 +87,52 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <div id="new" class="container tab-pane active">
-        <form method="post" action="/manager">
+        <form method="post" action="/manager/submitdata">
           @csrf
           <div class="form-group">
-            <label for="NamaPIC" style="font-weight:bolder">PIC</label>
+            <label for="id_user" style="font-weight:bolder">PIC</label>
             <br>
-            <select id="PIC" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%">
+            <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
               <option value=""></option>
-              <option value="IDE">Ismi Destiawati</option>
-              <option value="DMR">Devi Mayang Sari</option>
-              <option value="AUF">Aufar Rizqi</option>
-              <option value="RAS">Rio Ari Saputra</option>
+              @foreach($users as $usr)
+              <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
-            <label for="produk" style="font-weight:bolder">Produk</label>
+            <label for="id_product" style="font-weight:bolder">Produk</label>
             <br>
-            <select id="produk" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%">
+            <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
               <option value=""></option>
-              <option value="atmb">ATMB</option>
-              <option value="debit">Debit</option>
-              <option value="payment">Payment</option>
+              @foreach($products as $prod)
+              <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
-            <label for="jenisprojet" style="font-weight:bolder">Jenis Project</label>
+            <label for="id_ptype" style="font-weight:bolder">Jenis Project</label>
             <br>
-            <select id="jenisproject" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%">
+            <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
               <option value=""></option>
-              <option value="internaltest">Internal Test</option>
-              <option value="sertifikasi">Sertifikasi</option>
-              <option value="regresi">Regresi</option>
-              <option value="resertifikasi">Support</option>
-              <option value="qa">QA</option>
+              @foreach($ptypes as $ptype)
+              <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
-           <label for="namamitra" style="font-weight:bolder">Nama Mitra</label>
+           <label for="ABA" style="font-weight:bolder">Nama Mitra</label>
             <br>
-            <select id="namamitra" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%">
+            <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
               <option value=""></option>
-              <option value="internaltest">Internal Test</option>
-              <option value="sertifikasi">Sertifikasi</option>
-              <option value="regresi">Regresi</option>
-              <option value="resertifikasi">Support</option>
-              <option value="qa">QA</option>
+              @foreach($mitras as $mtr)
+              <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
+              @endforeach
             </select>
           </div>          
           <div class="form-group">
             <label for="nama_project" style="font-weight:bolder">Nama Project</label>
             <br>
-            <input class="input" type="text" id="nama_project" name="nama_project" required>
+            <input class="form-control" type="text" id="nama_project" name="nama_project" required>
               <span class="underline"></span>
           </div>
 
@@ -243,18 +238,18 @@ $(document).ready(function () {
 <!-- Select 2 -->
 <script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
 <script>
-     $("#PIC").select2({
+     $("#id_user").select2({
           allowClear: true
       });
 
-     $("#produk").select2({
+     $("#id_product").select2({
           allowClear: true
       });
 
-      $("#jenisproject").select2({
+      $("#id_ptype").select2({
           allowClear: true
       });
-      $("#namamitra").select2({
+      $("#ABA").select2({
           allowClear: true
       });
 </script>

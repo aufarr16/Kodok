@@ -1624,6 +1624,7 @@ pre {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  border-bottom: 2px solid #19569A;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -8677,19 +8678,23 @@ a[data-toggle="collapse"] {
   color: rgba(255, 255, 255, 0.5); }
 
 .form-control {
-  height: 40px !important;
-  background: #fff;
-  color: #000;
-  font-size: 13px;
-  border-radius: 4px;
+  height: 30px !important;
+  background: #D9E4EC;
+  color: #19569A;
+  font-size: 14px;
+  padding-left: 9px;
+  border-radius: 0px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: transparent; 
+  border-bottom: 2px solid #19569A;
   /*width:100%;*/
 }
 
   .form-control:focus, .form-control:active {
-    border-color: #000; }
+    border-color: #fff;
+    background-color: #D9E4EC; 
+    color: #19569A;}
   .form-control::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(255, 255, 255, 0.5); }

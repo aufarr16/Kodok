@@ -75,20 +75,20 @@
 		@foreach($data_search as $dat_sdoc)
 		<tr>
 			<td>{{ $loop->iteration }}</td>
-			<td>{{ $dat_sdoc->nama_mitra}}</td>
-			<td>{{ $dat_sdoc->nama_project}} &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
+			<td>{{ $dat_sdoc->nama_mitra }</td>
+			<td>{{ $dat_sdoc->nama_project }} &nbsp;
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#{{ $dat_sdoc->id_project }}">
 					<i class="fa fa-search fa-lg"></i>
 				</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-top: 20px">
+				<div class="modal" id="{{ $dat_sdoc->id_project }}" role="dialog" style="padding-left:17px; margin-top: 20px">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi ATMB Debit Bank Nagari</h2>
+						<h2 class="modal-title">{{ $dat_sdoc->nama_project }}</h2>
 					</div>	
 						<div class = "modal-body" style="padding-left: 38px">
 							<div class = "input-group">

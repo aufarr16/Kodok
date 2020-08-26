@@ -95,14 +95,14 @@
 		@foreach($data_search as $dat_sdoc)
 		<tr>
 			<td>{{ $loop->iteration }}</td>
-			<td>{{ $dat_sdoc->nama_mitra}}</td>
-			<td>{{ $dat_sdoc->nama_project}} &nbsp;
-				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#model">
+			<td>{{ $dat_sdoc->nama_mitra }}</td>
+			<td>{{ $dat_sdoc->nama_project }} &nbsp;
+				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#{{ $dat_sdoc->id_project }}">
 					<i class="fa fa-search fa-lg"></i>
 				</button>
 					
-					<!-- The Modal -->
-				<div class="modal" id="model" role="dialog" style="padding-left:17px; margin-top: 20px">
+				<!-- The Modal -->
+				<div class="modal" id="{{ $dat_sdoc->id_project }}" role="dialog" style="padding-left:17px; margin-top: 20px">
 				
 				<!-- Modal content -->
 					<div class="modal-content">
