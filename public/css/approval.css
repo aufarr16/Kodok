@@ -1,3 +1,115 @@
+.modalapproval {
+	width: 200%;
+	margin-left: -800px;
+	margin-top: -175px;
+	/*padding-left:17px;*/
+	/*padding-right: 17px;	*/
+ 	position: fixed;
+ 	display: none;
+ 	z-index: 1050;
+}
+
+/*Content Untuk User Engineer Menu Your Projects dan Handover Projects*/
+.modal-contentapproval{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 25%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  background-color: #fff;
+  /*height: 140px;*/
+}
+/*Akhir Content Untuk User Engineer Menu Your Projects dan Handover Projects*/
+
+/*Title untuk tombol tanda tanya user engineer menu your projects dan handover projects*/
+.modal-contentapproval .modal-headerapproval .closeapproval .modal-titleapproval{
+  margin-bottom: -15px;
+  line-height: 1.5;
+  margin-top: -15px;
+  color: #19569A;
+  width: 80%;
+  font-size: 14px;
+  text-align: center;
+  font-size: 10px
+}
+
+.modal-headerapproval {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+/*  justify-content: center;
+  padding: 0rem 1rem;*/
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-headerapproval h2{
+  /*font-size: 18px;*/
+  /*font-weight: bold;*/
+  margin-top: 3px;
+  padding: 5px;
+  margin-left: 45px;
+}
+
+/*Akhir title untuk tombol tanda tanya user engineer menu your projects dan handover projects*/
+
+/*Body Untuk User Engineer Menu Your Projects dan Handover Projects*/
+.modal-bodyapproval {
+    position: inherit;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+.input-groupapproval{
+  margin-top: -5px
+}
+.input-groupapproval label{
+  color: #19569A;
+  font-size: 14px;
+  color: #8C92AC;
+  font-weight: normal;
+}
+
+.input-groupapproval textarea{
+  margin-top: -2px;
+  width: 300px
+}
+/*Akhir body Untuk User Manager Menu Your Projects dan Handover Projects*/
+
+/*Untuk keterangan di your project dan handover projects*/
+.modalapproval a.closeapproval {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  transition: all 200ms;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #7ba3d0;
+  cursor: pointer;
+}
+.modalapproval a.closeapproval:hover {
+  color: #19569A;
+}
+/*Akhir untuk keterangan di your projects dan handover projects*/
+
 .btn-docs{
 	font-family: "Aleo", sans-serif;
 	font-size: 13px;

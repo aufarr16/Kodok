@@ -92,7 +92,7 @@
           <div class="form-group">
             <label for="id_user" style="font-weight:bolder">PIC</label>
             <br>
-            <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
+            <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user" required>
               <option value=""></option>
               @foreach($users as $usr)
               <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
@@ -102,7 +102,7 @@
           <div class="form-group">
             <label for="id_product" style="font-weight:bolder">Produk</label>
             <br>
-            <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
+            <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product" required>
               <option value=""></option>
               @foreach($products as $prod)
               <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
@@ -112,7 +112,7 @@
           <div class="form-group">
             <label for="id_ptype" style="font-weight:bolder">Jenis Project</label>
             <br>
-            <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
+            <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype" required>
               <option value=""></option>
               @foreach($ptypes as $ptype)
               <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
@@ -122,7 +122,7 @@
           <div class="form-group">
            <label for="ABA" style="font-weight:bolder">Nama Mitra</label>
             <br>
-            <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
+            <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA" required>
               <option value=""></option>
               @foreach($mitras as $mtr)
               <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
@@ -132,7 +132,7 @@
           <div class="form-group">
             <label for="nama_project" style="font-weight:bolder">Nama Project</label>
             <br>
-            <input class="form-control" type="text" id="nama_project" name="nama_project" required>
+            <input class="form-control" type="text" id="nama_project" name="nama_project" autocomplete="off" required>
               <span class="underline"></span>
           </div>
 
@@ -146,7 +146,7 @@
           <div class="form-group">
             <label for="NamaPIC" style="font-weight:bolder">PIC</label>
               <br>
-              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%">
+              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" required>
                 <option value=""></option>
                 <option value="IDE">Ismi Destiawati</option>
                 <option value="DMR">Devi Mayang Sari</option>
@@ -158,7 +158,7 @@
           <div class="form-group">
             <label for="produk" style="font-weight:bolder">Nama project</label>
             <br>
-            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%">
+            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" required>
               <option value=""></option>
               <option value="Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank">
               Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</option>
@@ -169,7 +169,7 @@
           <div class="form-group">
             <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
             <br>
-            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%">
+            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" required>
               <option value=""></option>
               <option value="IDE">Ismi Destiawati</option>
               <option value="DMR">Devi Mayang Sari</option>

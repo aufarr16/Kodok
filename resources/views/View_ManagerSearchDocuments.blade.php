@@ -112,7 +112,7 @@
 						<div class = "modal-body">
 							<div class = "input-group">
 								<br>
-							<table class="table1" id="search1">
+							<table class="table1" id="search">
 								<thead>
 									<tr>
 										<th>No</th>
@@ -216,42 +216,13 @@ $(document).ready(function() {
          "lengthChange":false
            } );
 
-    $('#search1').DataTable( {
+    $('#search').DataTable( {
        "pageLength": 10,     
          "searching": true,
          "paging": true, 
          "info": true,         
          "lengthChange":false,
            } );
-    $('#search2').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search3').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search4').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search5').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-   
 } );
 </script>
 <script>

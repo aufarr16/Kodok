@@ -104,23 +104,23 @@
 				<button type="button" class="btn-docs" data-toggle="modal" data-target="#modal"><i class="fa fa-search fa-lg"></i></button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top:100px">
+				<div class="modalapproval" id="modal" role="dialog">
 				
 				<!-- Modal content -->
-					<div class="modal-content">
-					<div class="modal-header">
-						<a class="close1" data-dismiss="modal">&times;</a>
-						<h2 class="modal-title">Implementasi ATM Bersama Bank Artos</h2>
+					<div class="modal-contentapproval">
+					<div class="modal-headerapproval">
+						<a class="closeapproval" data-dismiss="modal">&times;</a>
+						<h2 class="modal-titleapproval">Implementasi ATM Bersama Bank Artos</h2>
 					</div>	
-						<div class = "modal-body">
-							<div class = "input-group">
+						<div class = "modal-bodyapproval">
+							<div class = "input-groupapproval">
 								<br>
 									<table class="table1">
 										<tr>
 											<th rowspan="2">No</th>	
 											<th rowspan="2">Dokumen</th>
 											<th rowspan="2">Softcopy</th>
-                      						<th colspan="2">Hardcopy</th>
+                      <th colspan="2">Hardcopy</th>
 										</tr>
 										<tr>
 											<th>Status</th>
@@ -129,14 +129,14 @@
 										<tr>
 											<td>1</td>
 											<td>Nodin Penugasan</td>
-											<td><a href="#" class="btn-doc" title="Preview dokumen">400/ND/117/2020</a></td>
-                      	<td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
-                      	<td>-</td>
+											<td><a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a></td>
+                      <td><small class="label lbl-collected"><i class="fas fa-thumbs-up"></i>&nbsp Collected</small></td>
+                      <td>-</td>
 										</tr>
 										<tr>
 											<td>2</td>
 											<td>BAKO</td>
-                      						<td>-</td>
+                      <td>-</td>
 											<td><small class="label lbl-notcollected"><i class="fas fa-thumbs-down"></i>&nbsp Not Collected</small></td>
 											<td>Alamat pengirim tidak ditemukan, dokumen akan dikirim kembali minggu depan (12 Juni 2020)</td>
 										</tr>

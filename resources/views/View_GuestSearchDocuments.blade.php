@@ -75,7 +75,7 @@
 		@foreach($data_search as $dat_sdoc)
 		<tr>
 			<td>{{ $loop->iteration }}</td>
-			<td>{{ $dat_sdoc->nama_mitra }</td>
+			<td>{{ $dat_sdoc->nama_mitra }}</td>
 			<td>{{ $dat_sdoc->nama_project }} &nbsp;
 				<button title="Search Docs" type="button" class="button" data-toggle="modal" data-target="#{{ $dat_sdoc->id_project }}">
 					<i class="fa fa-search fa-lg"></i>
