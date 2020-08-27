@@ -172,32 +172,24 @@ INSERT INTO `users` (`id_user`, `id_ulevel`, `nama_user`, `email_user`, `inisial
 (6, '3', 'Nadia Sepriani', 'nadia.sepriani@artajasa.co.id', 'NSP', NULL, 'DMR', NULL), 
 (7, '3', 'Muchammad Wijdan Alyosa', 'muchammad.alyosa@artajasa.co.id', 'MWA', NULL, 'DMR', 'DMR');
 
-
 INSERT INTO `projects` (`id_project`, `waktu_assign_project`, `id_pketerangan`, `id_pstat`, `id_ptype`, `id_product`, `id_user`, `ABA`, `nama_project`, `status_handover`, `pketerangan_note`) VALUES
-(1, '2020-08-18', 2, 3, 1, 3, 1, '111', 'Internal Test Penambahan Channel Autodebet BPJS di Bank DKI', 0, NULL),
-(2, '2020-08-18', NULL, 1, 2, 6, 5, '425', 'Implementasi QRIS MPM as Issuer di BJBS', 0, NULL),
-(3, '2020-08-18', NULL, 3, 3, 2, 2, '110', 'Regresi Debit GPN MNC Bank', 0, NULL),
-(4, '2020-08-18', NULL, 2, 2, 5, 6, '125', 'Implementasi Disbursement pada Mitra Gudang Voucher', 1, NULL),
-(5, '2020-08-18', 1, 3, 5, 1, 7, '002', 'Pengembangan Front End Bersamaku', 1, NULL),
-(6, '2020-08-18', 3, 3, 2, 4, 4, '145', 'Sertifikasi Remittance untuk Mitra Ahayda', 1, NULL);
-
-
+(1, '2020-08-26 04:46:34', NULL, 2, 2, 5, 2, '426', 'mari bekerja untuk masa depan yg lebih maju', 0, NULL),
+(2, '2020-08-26 04:46:34', NULL, 1, 1, 4, 4, '002', 'internal tes bersama bang hadi sans', 0, NULL),
+(3, '2020-08-26 04:46:34', 1, 3, 5, 3, 1, '011', 'QA Payment bankgakan orang tua mu nak', 0, NULL),
+(4, '2020-08-26 04:54:00', 2, 3, 3, 2, 5, '061', 'regresi bank bank tut syapa yg kentut', 1, NULL),
+(5, '2020-08-26 04:46:34', 2, 4, 2, 6, 6, '950', 'qris sakti mantab djiwa', 0, NULL),
+(6, '2020-08-26 04:49:27', 2, 4, 1, 1, 7, '517', 'terkadang, hidup memang seperti itu. iya. itu.', 0, NULL),
+(7, '2020-08-26 04:53:32', NULL, 5, 3, 3, 5, '016', 'hold it right there mister', 1, NULL),
+(8, '2020-08-26 04:53:32', 3, 3, 2, 6, 7, '069', 'projek apa hayoooo, cari tau sendiri lah', 0, 'ada yg kurang, kamu kurang perhatian');
 
 INSERT INTO `projects_handovers` (`id_handover`, `id_user`, `id_project`, `waktu_assign_handover`, `waktu_selesai_handover`) VALUES
-(1, 6, 4, '2020-08-24', NULL),
-(2, 7, 5, '2020-08-25', NULL),
-(3, 4, 6, '2020-08-26', NULL);
-
-
+(1, 5, 4, '2020-08-26 04:59:54', NULL),
+(2, 5, 7, '2020-08-26 04:59:54', NULL),
+(3, 7, 6, '2020-08-26 04:59:54', NULL);12:01 PM 8/26/2020
 
 INSERT INTO `documents` (`id_document`, `id_project`, `id_DocType`, `nama_document`, `softcopy_status`, `hardcopy_status`) VALUES
-(1, 1, 2, 'Permintaan pembukaan koneksi untuk internal test penambahan channel autodebet BPJS di Bank DKI', 1, 0),
-(2, 1, 5, 'Form untuk pendaftaran jaringan devel terkait pembukaan koneksi penambahan autodebet BPJS bank DKI', 1, 0),
-(3, 2, 2, 'Permintaan pembukaan koneksi untuk implementasi QRIS MPM BJBS di BJBS', 1, 0),
-(4, 2, 15, 'Berita Acara Kesiapan Operasional implmentasi QRIS MPM di BJBS', 1, 1),
-(5, 2, 16, 'Berita Acara Eksepsi implmentasi QRIS MPM di BJBS', 0, 1),
-(6, 3, 2, 'Permintaan pembukaan koneksi untuk regresi GPN Debit di bank MNC', 1, 0),
-(7, 3, 6, 'Test script pengujian Debit di bank MNC', 0, 0),
-(8, 6, 2, 'Permintaan pembukaan koneksi untuk sertifikasi remittance pada mitra Ahayda', 0, 0),
-(9, 6, 15, 'Berita Acara Kesiapan Operasional sertifikasi remittance pada mitra Ahayda', 0, 0),
-(10, 6, 16, 'Berita Acara Eksepsi sertifikasi remittance pada mitra Ahayda', 0, 0);
+(1, 1, 15, 'bako bako bako', 0, 0),
+(2, 1, 7, 'form uat bank mamat', 1, 0),
+(3, 3, 26, 'form pra to torot tot tot', 0, 0),
+(4, 8, 19, 'file ini berisi jadwal migrasi burung kondor ke daerah selatan', 1, 1),
+(5, 5, 32, 'mari kita berserah diri kepada monitoring', 0, 1);

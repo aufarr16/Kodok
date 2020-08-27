@@ -1,14 +1,10 @@
+INSERT INTO `projects` (`id_project`, `waktu_assign_project`, `id_pketerangan`, `id_pstat`, `id_ptype`, `id_product`, `id_user`, `ABA`, `nama_project`, `status_handover`, `pketerangan_note`) VALUES
+(1, '2020-08-26 04:46:34', NULL, 2, 2, 5, 2, '426', 'mari bekerja untuk masa depan yg lebih maju', 0, NULL),
+(2, '2020-08-26 04:46:34', NULL, 1, 1, 4, 4, '002', 'internal tes bersama bang hadi sans', 0, NULL),
+(3, '2020-08-26 04:46:34', 1, 3, 5, 3, 1, '011', 'QA Payment bankgakan orang tua mu nak', 0, NULL),
+(4, '2020-08-26 04:54:00', 2, 3, 3, 2, 5, '061', 'regresi bank bank tut syapa yg kentut', 1, NULL),
+(5, '2020-08-26 04:46:34', 2, 4, 2, 6, 6, '950', 'qris sakti mantab djiwa', 0, NULL),
+(6, '2020-08-26 04:49:27', 2, 4, 1, 1, 7, '517', 'terkadang, hidup memang seperti itu. iya. itu.', 0, NULL),
+(7, '2020-08-26 04:53:32', NULL, 5, 3, 3, 5, '016', 'hold it right there mister', 1, NULL),
+(8, '2020-08-26 04:53:32', 3, 3, 2, 6, 7, '069', 'projek apa hayoooo, cari tau sendiri lah', 0, 'ada yg kurang, kamu kurang perhatian');
 
-INSERT INTO `projects` (`id_project`, `waktu_assign_projek`, `id_pketerangan`, `id_pstat`, `id_ptype`, `id_product`, `id_user`, `ABA`, `nama_projek`, `status_handover`, `pketerangan_note`) VALUES
-
-(1, '2020-08-18', 2, 3, 1, 3, 1, '111', 'Internal Test Penambahan Channel Autodebet BPJS di Bank DKI', 0, NULL),
-
-(2, '2020-08-18', NULL, 1, 2, 6, 5, '425', 'Implementasi QRIS MPM as Issuer di BJBS', 0, NULL),
-
-(3, '2020-08-18', NULL, 3, 3, 2, 2, '110', 'Regresi Debit GPN MNC Bank', 0, NULL),
-
-(4, '2020-08-18', NULL, 2, 2, 5, 6, '125', 'Implementasi Disbursement pada Mitra Gudang Voucher', 1, NULL),
-
-(5, '2020-08-18', 1, 3, 5, 1, 7, '002', 'Pengembangan Front End Bersamaku', 1, NULL),
-
-(6, '2020-08-18', 3, 3, 2, 4, 4, '145', 'Sertifikasi Remittance untuk Mitra Ahayda', 1, NULL);
