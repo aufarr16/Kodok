@@ -28,23 +28,25 @@
 <!-- Dialog Login-->
 <div class="box">
   <h3>Login</h3>
-  <form role="form" method="POST" action="https://accounts.artajasa.co.id/auth/login">
-    <div class="group">      
-      <input class="inputMaterial" type="text" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-
-      <label><span class="icon fas fa-user fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Username</label>
-    </div>
+  <form role="form-auth-small" method="post" action="/login/submitdata">
+    @csrf
       <div class="group">      
-        <input class="inputMaterial" type="password" required>
+        <input id="username" class="inputMaterial" type="username" name="username" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-
-        <label><span class="fas fa-unlock-alt fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Password</label>
+        <label>
+          <span class="icon fas fa-user fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Username
+        </label>
       </div>
-    <button class="btn-login" data-hover="GO!" type="submit" name="sign-in"><div>Ready to Work?</div></button>
-
+      <div class="group">      
+        <input id="password" class="inputMaterial" type="password" name="password"required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>
+          <span class="fas fa-unlock-alt fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Password
+        </label>
+      </div>
+    <button class="btn-login" data-hover="GO!" type="submit"><div>Ready to Work?</div></button>
   </form>
 <!-- ./box -->
 </div>

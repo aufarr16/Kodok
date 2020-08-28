@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 ##LOGIN
 Route::get('/', 'Controller_Login@openLogin');
 Route::get('/login/choose', 'Controller_Login@openChooseLogin');
+Route::post('/login/submitdata', 'Controller_Login@postLogin');
 
 ##Admin 
 Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');

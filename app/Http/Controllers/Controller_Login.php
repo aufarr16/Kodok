@@ -9,7 +9,13 @@ class Controller_Login extends Controller
     public function openLogin(){
     	return view('View_Login'); 	
     }
+    
     public function openChooseLogin(){
     	return view('View_Login5ChooseRole'); 	
+    }
+
+
+    public function postLogin(Request $request){
+    	dd($request->all());
     }
 }
