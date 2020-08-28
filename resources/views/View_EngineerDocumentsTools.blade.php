@@ -21,6 +21,8 @@
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
+  <!-- Toastr -->
+  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
 </head>
 
   <body>
@@ -100,7 +102,7 @@
     			<td>
     				Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank
     				<br>
-    				<a href="#" class="btn-folder" type="button">
+    				<a href="#" class="btn-folder" type="button" id="createfolder">
     					<i class="fa fa-folder-open"></i>&nbsp Create Folder
     				</a>
     				</br>
@@ -122,7 +124,7 @@
     			<td>
     				Implementasi ATM Bersama Debit Bank CIMB NIAGA As Acquirer
     				<br>
-    				<a href="#" class="btn-folder" type="button">
+    				<a href="#" class="btn-folder" type="button" id="createfolder">
     					<i class="fa fa-folder-open"></i>&nbsp Create Folder
     				</a>
     				</br>
@@ -203,6 +205,34 @@ $(document).ready(function () {
                 $('#sidebar').toggleClass('active');
             });
         });
+</script>
+
+<!-- Toastr Alert -->
+<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#createfolder").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Folder berhasil dibuat!")
+  });
+});
 </script>
 </body>
 

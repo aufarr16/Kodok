@@ -20,6 +20,8 @@
   <!-- Select 2 -->
   <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
+  <!-- Toastr -->
+  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
 </head>
 
   <body>
@@ -136,7 +138,7 @@
               <span class="underline"></span>
           </div>
 
-          <button type="submit" class="btn-submit">Submit</button>
+          <button type="submit" class="btn-submit" id="submitnew">Submit</button>
         </form>
       </div>
 
@@ -177,7 +179,7 @@
               <option value="RAS">Rio Ari Saputra</option>
             </select>
           </div>                          
-          <button type="submit" class="btn-submit">Submit</button>
+          <button type="submit" class="btn-submit" id="submithandover">Submit</button>
         </form>
 
       <!-- ./container tab -->
@@ -267,6 +269,56 @@ $(document).ready(function () {
           allowClear: true
       });
 
+</script>
+
+<!-- Toastr Alert -->
+<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#submitnew").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Data project berhasil ditambahkan!")
+  });
+
+  $("#submithandover").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Data handover project berhasil diedit!")
+  });
+});
 </script>
 </body>
 
