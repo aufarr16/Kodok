@@ -21,6 +21,7 @@
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
+  
 
 </head>
 
@@ -128,7 +129,7 @@
 								<input type="text" id="email" name="email" placeholder=" ">
 						</div>
 						<br>
-					<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+					<button class="btnsubmit" type="button" data-dismiss="modal" id="submituser">Submit</button>
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -204,7 +205,7 @@
 								<input type="text" id="email" name="email" placeholder=" ">
 								</div>
 								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal">Submit</button>
+							<button class="btnsubmit" type="button" data-dismiss="modal" id="edituser">Submit</button>
 							<!-- ./modal body -->
 							</div>
 						<!-- ./modal content -->
@@ -266,7 +267,7 @@
 $(document).ready(function() {
     $('#table1').DataTable( { 
       // pageSize: 8,     
-        "pageLength": 15, 
+        "pageLength": 10, 
          "searching": true,
          "paging": true,
          "info": false,         
@@ -280,6 +281,56 @@ $(document).ready(function () {
                 $('#sidebar').toggleClass('active');
             });
         });
+</script>
+
+<!-- Toastr Alert -->
+<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#submituser").on('click',function(){
+    toastr.options = {
+	  "closeButton": true,
+	  "debug": false,
+	  "newestOnTop": false,
+	  "progressBar": true,
+	  "positionClass": "toast-top-right",
+	  "preventDuplicates": false,
+	  "onclick": null,
+	  "showDuration": "300",
+	  "hideDuration": "1000",
+	  "timeOut": "5000",
+	  "extendedTimeOut": "1000",
+	  "showEasing": "swing",
+	  "hideEasing": "linear",
+	  "showMethod": "fadeIn",
+	  "hideMethod": "fadeOut"
+	}
+
+	toastr["success"]("Data user berhasil ditambahkan!")
+  });
+
+  $("#edituser").on('click',function(){
+    toastr.options = {
+	  "closeButton": true,
+	  "debug": false,
+	  "newestOnTop": false,
+	  "progressBar": true,
+	  "positionClass": "toast-top-right",
+	  "preventDuplicates": false,
+	  "onclick": null,
+	  "showDuration": "300",
+	  "hideDuration": "1000",
+	  "timeOut": "5000",
+	  "extendedTimeOut": "1000",
+	  "showEasing": "swing",
+	  "hideEasing": "linear",
+	  "showMethod": "fadeIn",
+	  "hideMethod": "fadeOut"
+	}
+
+	toastr["success"]("Data user berhasil diedit!")
+  });
+});
 </script>
 </body>
 

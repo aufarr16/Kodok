@@ -24,6 +24,8 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert.min.css" rel="stylesheet" />
+  <!-- Toastr -->
+  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
 </head>
 
   <body>
@@ -856,7 +858,8 @@
 									<!--./card-->
 									</div>	
 									
-									<button type="button" class="btn-upload" data-dismiss="modal">Upload File</button>
+									<button type="button" class="btn-upload" data-dismiss="modal" 
+									id="submit">Upload File</button>
 									
 								<!--./modal-body-->
 								</div>
@@ -1619,7 +1622,7 @@
 									<!--./card-->
 									</div>	
 										
-									<button type="button" class="btn-upload" data-dismiss="modal">Upload File</button>
+									<button type="button" class="btn-upload" data-dismiss="modal" id="submit">Upload File</button>
 										
 									<!--./modal-body-->
 								</div>
@@ -1689,6 +1692,34 @@ $(document).ready(function () {
                 $('#sidebar').toggleClass('active');
             });
         });
+</script>
+
+<!-- Toastr Alert -->
+<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#submit").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Dokumen berhasil diupload!")
+  });
+});
 </script>
 </body>
 

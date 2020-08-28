@@ -178,3 +178,15 @@ input[type=submit]:hover {
   width: 200px;
   float: left;
 }
+
+/*Alert Button Submit*/
+.myAlert-top{
+    position: fixed;
+    top: 25px; 
+    right:2%;
+    width: 50%;
+}
+
+.alert{
+    display: block;
+}
