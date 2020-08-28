@@ -1697,6 +1697,7 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   line-height: 1.5;
   color: #212529;
+  /*background-color: #000;*/
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0; }
@@ -1853,7 +1854,8 @@ textarea.form-control {
 
 .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
   border-color: #34ce57;
-  background-color: #34ce57; }
+  background-color: #34ce57; 
+}
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
@@ -4781,7 +4783,7 @@ a.close.disabled {
   transition: all 0.3s;
 }
 
-.mdoalketerangan:target{
+.modalketerangan:target{
   opacity:1;
   transition: opacity 1s ease;
 }
@@ -5022,7 +5024,7 @@ a.close.disabled {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 5px; 
+  padding: 4px; 
   overflow-y: auto;
   overflow-x: hidden;
 }

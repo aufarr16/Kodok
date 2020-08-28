@@ -185,7 +185,7 @@ INSERT INTO `projects` (`id_project`, `waktu_assign_project`, `id_pketerangan`, 
 INSERT INTO `projects_handovers` (`id_handover`, `id_user`, `id_project`, `waktu_assign_handover`, `waktu_selesai_handover`) VALUES
 (1, 5, 4, '2020-08-26 04:59:54', NULL),
 (2, 5, 7, '2020-08-26 04:59:54', NULL),
-(3, 7, 6, '2020-08-26 04:59:54', NULL);12:01 PM 8/26/2020
+(3, 7, 6, '2020-08-26 04:59:54', NULL);
 
 INSERT INTO `documents` (`id_document`, `id_project`, `id_DocType`, `nama_document`, `softcopy_status`, `hardcopy_status`) VALUES
 (1, 1, 15, 'bako bako bako', 0, 0),
