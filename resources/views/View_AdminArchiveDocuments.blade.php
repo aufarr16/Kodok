@@ -293,7 +293,7 @@
 $(document).ready(function() {
     $('#table1').DataTable( { 
       // pageSize: 8,     
-        "pageLength": 15, 
+        "pageLength": 10, 
          "searching": true,
          "paging": true,
          "info": false,         

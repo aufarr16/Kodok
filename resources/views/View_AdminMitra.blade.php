@@ -94,21 +94,25 @@
 						<h2 class="modal-title">Add New Mitra</h2>
 					</div>	
 					<div class = "modal-body">
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+						<form>
+						 <!-- <form class="needs-validation" novalidate> -->
+				          <div class="form-group">
+				          	<div class ="input-group-addon">
+								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
-								<input type="text" id="inisial" name="inisial" placeholder=" ">
-						</div>
-						<br>
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="nama" style="font-weight:bolder">Nama Mitra</label>
-							</div>	
-								<input type="text" id="nama" name="nama" placeholder=" ">
-						</div>
-						<br>
-					<button class="btnsubmit" type="button" data-dismiss="modal" id="submitmitra">Submit</button>
+				            <input type="text" class="form-control" required style="margin-bottom: 10px">
+				            <br>
+				            
+				            <div class ="input-group-addon">
+								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
+							</div>
+				            <input type="text" class="form-control" required style="margin-bottom: 10px">
+				            <br>
+
+				          </div>
+				         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+				        </form>
+					
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -149,21 +153,25 @@
 								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+								<form>
+								 <!-- <form class="needs-validation" novalidate> -->
+						          <div class="form-group">
+						          	<div class ="input-group-addon">
+										<label for="namaproduct" style="font-weight:bolder;float:left;">ABA</label>
 									</div>
-										<input type="text" id="inisial" name="inisial" placeholder=" ">
-								</div>
-								<br>	
-								<div class = "input-group">
-									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama Mitra</label>
-									</div>	
-										<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal" id="editmitra">Submit</button>
+						            <input type="text" class="form-control" required style="margin-bottom: 10px">
+						            <br>
+						            
+						            <div class ="input-group-addon">
+										<label for="namaproduct" style="font-weight:bolder;float:left;">Nama Mitra</label>
+									</div>
+						            <input type="text" class="form-control" required style="margin-bottom: 10px">
+						            <br>
+
+						          </div>
+						         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+						        </form>
+					
 							<!-- ./modal body -->
 							</div>
 						<!-- ./modal content -->

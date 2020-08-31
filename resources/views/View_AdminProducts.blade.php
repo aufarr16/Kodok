@@ -94,15 +94,21 @@
 						<h2 class="modal-title">Add New Products</h2>
 					</div>	
 					<div class = "modal-body">
-						
-						<div class = "input-group">
-							<div class ="input-group-addon">
+						<form>
+						 <!-- <form class="needs-validation" novalidate> -->
+				          <div class="form-group">
+				          	<div class ="input-group-addon">
 								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 							</div>
-								<input type="text" id="namaproduct" name="namaproduct" placeholder=" ">
-						</div>
-						<br>
-					<button class="btnsubmit" type="button" data-dismiss="modal" id="submitproduct">Submit</button>
+				            <input type="text" class="form-control" required>
+				            <br>
+				            <!-- <div class="invalid-feedback">
+				              Masukkan nama produk
+				            </div> -->
+				          </div>
+				         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+				        </form>
+					
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -141,14 +147,20 @@
 							</div>
 							<div class = "modal-body">
 								
-							<div class = "input-group">
-								<div class ="input-group-addon">						
-									<label for="nama_products" style="font-weight:bolder" style="margin:10px 50px">Nama Products</label>
+							<form>
+							 <!-- <form class="needs-validation" novalidate> -->
+					          <div class="form-group">
+					          	<div class ="input-group-addon">
+									<label for="namaproduct" style="font-weight:bolder; float:left;">Nama Product</label>
 								</div>
-								<input type="text" id="nama" name="nama" placeholder=" ">
-							</div>
-							<br>	
-							<button class="btnsubmit" type="button" data-dismiss="modal" id="editproduct">Submit</button>
+					            <input type="text" class="form-control" required style="margin-bottom: 10px">
+					            <br>
+					            <!-- <div class="invalid-feedback">
+					              Masukkan nama produk
+					            </div> -->
+					          </div>
+					         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+					        </form>
 							<!-- ./modal content -->
 							</div>
 						<!-- ./modal body -->
@@ -277,6 +289,22 @@ $(document).ready(function () {
   });
 });
 </script>
+<!-- <script>
+		toastr.options = {
+			"closeButton" : true,
+			"progressBar" : true,
+			"positionClass" : "toast-bottom-right",
+			"showDuration": "400",
+			"hideDuration": "1000",
+			"timeOut": "7000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		}
+
+</script> -->
 </body>
 
 </html>

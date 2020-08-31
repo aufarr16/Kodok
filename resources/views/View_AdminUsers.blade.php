@@ -94,42 +94,35 @@
 						<h2 class="modal-title">Add New user</h2>
 					</div>	
 					<div class = "modal-body">
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
-							</div>
-								<input type="text" id="inisial" name="inisial" placeholder=" ">
-						</div>
-						<br>	
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="nama" style="font-weight:bolder">Nama</label>
-							</div>	
-								<input type="text" id="nama" name="nama" placeholder=" ">
-						</div>
-						<br>
-						<div class = "input-group">
-							<div class ="input-group-addon">						
-								<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
-							</div>
-								<select id="role" class="form control" style="height:35px"> 
-									<option value="" hidden>Pilih Role</option>
-									<option value="admin">Admin</option>
-									<option value="manager">Manager</option>
-									<option value="engineer">Engineer</option>
-									<option value="guest">Guest</option>
-								</select>
-					
-						</div>
-						<br>
-						<div class = "input-group">
-							<div class ="input-group-addon">
-								<label for="email" style="font-weight:bolder">Email</label>
-							</div>	
-								<input type="text" id="email" name="email" placeholder=" ">
-						</div>
-						<br>
-					<button class="btnsubmit" type="button" data-dismiss="modal" id="submituser">Submit</button>
+					<form>
+								<div class = "form-group">
+									<div class ="input-group-addon">
+										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
+									</div>
+										<input type="text" class="form-control" required style="margin-bottom: 10px">
+									<div class ="input-group-addon">
+										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
+									</div>	
+										<input type="text" class="form-control" required style="margin-bottom: 10px;">
+								
+									<div class ="input-group-addon">						
+										<label for="role" style="font-weight:bolder;float: left;">Role</label>
+									</div>
+										<select id="role" class="form control" style="height:35px;" required> 
+											<option value="" hidden>Pilih Role</option>
+											<option value="admin">Admin</option>
+											<option value="manager">Manager</option>
+											<option value="engineer">Engineer</option>
+											<option value="guest">Guest</option>
+										</select>
+									<div class ="input-group-addon">
+										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
+									</div>	
+										<input type="email" class="form-control" required style="float: right; margin-bottom: 10px">
+								</div>
+							<button class="btnsubmit" type="submit" id="submituser">Submit</button>
+
+							</form>
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -171,41 +164,35 @@
 								<h2 class="modal-title">Edit User</h2>
 							</div>
 							<div class = "modal-body">
-								<div class = "input-group">
+								<form>
+								<div class = "form-group">
 									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-								<input type="text" id="inisial" name="inisial" placeholder=" ">
-								</div>
-								<br>	
-								<div class = "input-group">
+										<input type="text" class="form-control" required style="margin-bottom: 10px">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder">Nama</label>
+										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
-								<input type="text" id="nama" name="nama" placeholder=" ">
-								</div>
-								<br>
-								<div class = "input-group">
+										<input type="text" class="form-control" required style="margin-bottom: 10px">
+								
 									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder" style="margin:10px 50px">Role</label>
+										<label for="role" style="font-weight:bolder;float: left;">Role</label>
 									</div>
-										<select id="role" name="role" style="height:35px">
+										<select id="role" class="form control" style="height:35px" required> 
 											<option value="" hidden>Pilih Role</option>
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>
 											<option value="engineer">Engineer</option>
 											<option value="guest">Guest</option>
 										</select>
-								</div>
-								<br>
-								<div class = "input-group">
 									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder">Email</label>
+										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 									</div>	
-								<input type="text" id="email" name="email" placeholder=" ">
+										<input type="email" class="form-control" required style="margin-bottom: 10px">
 								</div>
-								<br>
-							<button class="btnsubmit" type="button" data-dismiss="modal" id="edituser">Submit</button>
+							<button class="btnsubmit" type="submit" id="submituser">Submit</button>
+
+							</form>
 							<!-- ./modal body -->
 							</div>
 						<!-- ./modal content -->

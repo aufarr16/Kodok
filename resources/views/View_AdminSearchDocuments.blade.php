@@ -22,6 +22,7 @@
   <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
+  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
 
 </head>
 
@@ -126,9 +127,9 @@
 										<td>1</td>
 										<td>Nodin Penugasan</td>
 										<td>	
-											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
-                      <a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button type="submit" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>-</td>
 									</tr>
@@ -136,9 +137,9 @@
 										<td>2</td>
 										<td>BAKO</td>
 										<td>	
-											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
-                      <a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button type="submit" class="btnsend" title="Kirim ke email" id="email2"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
 									</tr>
@@ -146,9 +147,9 @@
 										<td>3</td>
 										<td>BAE</td>
 										<td>	
-											<a href="#" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></a>
-                      <a href="#" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></a>
-											<a href="#" class="btnsend" title="Kirim ke email"><i class="fa fa-envelope fa-lg icon-shadow"></i></a>
+											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button type="submit" class="btnsend" title="Kirim ke email" id="email3"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>
 									</tr>
@@ -263,6 +264,78 @@ $(document).ready(function () {
                 $('#sidebar').toggleClass('active');
             });
         });
+</script>
+
+<!-- Toastr Alert -->
+<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#email").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Email berhasil dikirim!")
+  });
+
+  $("#email2").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Email berhasil dikirim!")
+  });
+
+  $("#email3").on('click',function(){
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  toastr["success"]("Email berhasil dikirim!")
+  });
+});
 </script>
 </body>
 

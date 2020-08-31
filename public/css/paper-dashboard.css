@@ -196,7 +196,8 @@ th {
 label {
   display: inline-block;
   margin-bottom: 5px;
-  /*margin-left: 10px; */
+  /*margin-left: 10px; */;
+  color: #1C3F60;
 }
 
 button {
