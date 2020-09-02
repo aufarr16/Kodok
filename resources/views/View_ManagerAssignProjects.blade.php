@@ -22,6 +22,7 @@
   <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
   <!-- Toastr -->
   <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
 </head>
 
   <body>
@@ -94,7 +95,7 @@
           <div class="form-group">
             <label for="id_user" style="font-weight:bolder">PIC</label>
             <br>
-            <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user" required>
+            <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
               <option value=""></option>
               @foreach($users as $usr)
               <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
@@ -104,7 +105,7 @@
           <div class="form-group">
             <label for="id_product" style="font-weight:bolder">Produk</label>
             <br>
-            <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product" required>
+            <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
               <option value=""></option>
               @foreach($products as $prod)
               <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
@@ -114,7 +115,7 @@
           <div class="form-group">
             <label for="id_ptype" style="font-weight:bolder">Jenis Project</label>
             <br>
-            <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype" required>
+            <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
               <option value=""></option>
               @foreach($ptypes as $ptype)
               <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
@@ -124,7 +125,7 @@
           <div class="form-group">
            <label for="ABA" style="font-weight:bolder">Nama Mitra</label>
             <br>
-            <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA" required>
+            <select id="aba" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
               <option value=""></option>
               @foreach($mitras as $mtr)
               <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
@@ -134,11 +135,11 @@
           <div class="form-group">
             <label for="nama_project" style="font-weight:bolder">Nama Project</label>
             <br>
-            <input class="form-control" type="text" id="nama_project" name="nama_project" autocomplete="off" required>
+            <input class="form-control" type="text" id="nama_project" name="nama_project" autocomplete="off">
               <span class="underline"></span>
           </div>
 
-          <button type="submit" class="btn-submit" id="submitnew">Submit</button>
+          <button onclick="submitproject()" type="button" class="btn-submit" id="submitnew">Submit</button>
         </form>
       </div>
 
@@ -148,7 +149,7 @@
           <div class="form-group">
             <label for="NamaPIC" style="font-weight:bolder">PIC</label>
               <br>
-              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" required>
+              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%">
                 <option value=""></option>
                 <option value="IDE">Ismi Destiawati</option>
                 <option value="DMR">Devi Mayang Sari</option>
@@ -160,7 +161,7 @@
           <div class="form-group">
             <label for="produk" style="font-weight:bolder">Nama project</label>
             <br>
-            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" required>
+            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%">
               <option value=""></option>
               <option value="Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank">
               Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</option>
@@ -171,7 +172,7 @@
           <div class="form-group">
             <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
             <br>
-            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" required>
+            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%">
               <option value=""></option>
               <option value="IDE">Ismi Destiawati</option>
               <option value="DMR">Devi Mayang Sari</option>
@@ -179,7 +180,7 @@
               <option value="RAS">Rio Ari Saputra</option>
             </select>
           </div>                          
-          <button type="submit" class="btn-submit" id="submithandover">Submit</button>
+          <button onclick="handover()" type="button" class="btn-submit">Submit</button>
         </form>
 
       <!-- ./container tab -->
@@ -251,7 +252,7 @@ $(document).ready(function () {
       $("#id_ptype").select2({
           allowClear: true
       });
-      $("#ABA").select2({
+      $("#aba").select2({
           allowClear: true
       });
 </script>
@@ -272,7 +273,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#submitnew").on('click',function(){
@@ -319,6 +320,103 @@ $(document).ready(function () {
   toastr["success"]("Data handover project berhasil diedit!")
   });
 });
+</script> -->
+<script>
+  function submitproject () {
+    var user = $('#id_user').val();
+    // var product = $('#id_product').val();
+    // var type = $('#id_ptype').val();
+    // var aba = $('#aba').val();
+    // var project = $('#nama_project').val();
+
+   if(user == ''){
+       Swal.fire({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 4000,
+      timerProgressBar:true,
+      // background:'lightgoldenrodyellow',
+      background:'#FFF4BD',
+      type: 'warning',
+      title: 'Mohon isi inisial'
+    })
+    //     }else if (product == ''){
+    //   Swal.fire({
+    //     toast: true,
+    //     position: 'top',
+    //     showConfirmButton: false,
+    //     timer: 4000,
+    //     timerProgressBar:true,
+    //     // background:'lightgoldenrodyellow',
+    //     background:'#FFF4BD',
+    //     type: 'warning',
+    //     title: 'Mohon isi nama user'
+    //   })
+    // }else if (type == ''){
+    //   Swal.fire({
+    //     toast: true,
+    //     position: 'top',
+    //     showConfirmButton: false,
+    //     timer: 4000,
+    //     timerProgressBar:true,
+    //     // background:'lightgoldenrodyellow',
+    //     background:'#FFF4BD',
+    //     type: 'warning',
+    //     title: 'Mohon isi role user'
+    //   })
+    // }else if (aba == ''){
+    //   Swal.fire({
+    //     toast: true,
+    //     position: 'top',
+    //     showConfirmButton: false,
+    //     timer: 4000,
+    //     timerProgressBar:true,
+    //     // background:'lightgoldenrodyellow',
+    //     background:'#FFF4BD',
+    //     type: 'warning',
+    //     title: 'Mohon isi email user'
+    //   })
+    // }else if (project == ''){
+    //   Swal.fire({
+    //     toast: true,
+    //     position: 'top',
+    //     showConfirmButton: false,
+    //     timer: 4000,
+    //     timerProgressBar:true,
+    //     // background:'lightgoldenrodyellow',
+    //     background:'#FFF4BD',
+    //     type: 'warning',
+    //     title: 'Mohon isi email user'
+    //   })
+      }else{
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        background:'#D4F1F4',
+        type: 'success',
+        title: 'Data mitra berhasil disimpan'
+      })
+    }}
+
+    function handover () {
+    var PIC = $('#PIC2').val();
+    // var product = $('#id_product').val();
+    // var type = $('#id_ptype').val();
+    // var aba = $('#aba').val();
+    // var project = $('#nama_project').val();
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        background:'#D4F1F4',
+        type: 'success',
+        title: 'Data mitra berhasil disimpan'
+      })
+    }
 </script>
 </body>
 

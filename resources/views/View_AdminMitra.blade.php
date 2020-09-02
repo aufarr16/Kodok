@@ -20,8 +20,9 @@
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
-  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
+  <!-- <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" /> -->
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -85,7 +86,7 @@
 				</button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="margin-left:350px; margin-top: 50px">
+				<div class="modal" id="modal" role="dialog" style="margin-left:350px;">
 				
 				<!-- Modal content -->
 				<div class="modal-content">
@@ -95,22 +96,19 @@
 					</div>	
 					<div class = "modal-body">
 						<form>
-						 <!-- <form class="needs-validation" novalidate> -->
 				          <div class="form-group">
 				          	<div class ="input-group-addon">
-								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+								<label style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
-				            <input type="text" class="form-control" required style="margin-bottom: 10px">
+				            <input type="text" id="aba" class="form-control" style="margin-bottom: 10px">
 				            <br>
-				            
 				            <div class ="input-group-addon">
-								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
+								<label style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
 							</div>
-				            <input type="text" class="form-control" required style="margin-bottom: 10px">
+				            <input type="text" id="mitra" class="form-control" style="margin-bottom: 10px">
 				            <br>
-
 				          </div>
-				         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+				         <button onclick="submitmitra()" type="button" class="btnsubmit">Submit</button>
 				        </form>
 					
 					<!-- ./modal body -->
@@ -154,22 +152,21 @@
 							</div>
 							<div class = "modal-body">
 								<form>
-								 <!-- <form class="needs-validation" novalidate> -->
 						          <div class="form-group">
 						          	<div class ="input-group-addon">
 										<label for="namaproduct" style="font-weight:bolder;float:left;">ABA</label>
 									</div>
-						            <input type="text" class="form-control" required style="margin-bottom: 10px">
+						            <input type="text" id="editaba" class="form-control" style="margin-bottom: 10px">
 						            <br>
 						            
 						            <div class ="input-group-addon">
 										<label for="namaproduct" style="font-weight:bolder;float:left;">Nama Mitra</label>
 									</div>
-						            <input type="text" class="form-control" required style="margin-bottom: 10px">
+						            <input type="text" id="editmitra" class="form-control" style="margin-bottom: 10px">
 						            <br>
 
 						          </div>
-						         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+						         <button onclick="submitedit()" type="button" class="btnsubmit">Submit</button>
 						        </form>
 					
 							<!-- ./modal body -->
@@ -178,7 +175,8 @@
 						</div>
 						<!-- ./modal -->
 						</div>
-							<a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a>
+							<!-- <a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a> -->
+							 <button onclick="deletemitra()" type="button" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>{{ $dat_mit->added_by }}</td>
 				<td>{{ $dat_mit->modified_by }}</td>
@@ -253,7 +251,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#submitmitra").on('click',function(){
@@ -300,6 +298,126 @@ $(document).ready(function () {
 	toastr["success"]("Data mitra berhasil diedit!")
   });
 });
+</script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script>
+	function submitmitra () {
+   	var aba = $('#aba').val();
+   	var mitra = $('#mitra').val();
+
+	 if(aba == ''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi data ABA'
+		})
+       	}else if (mitra == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi nama mitra'
+			})
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data mitra berhasil disimpan'
+			})
+	 	}}
+
+	function submitedit () {
+   	var editaba = $('#editaba').val();
+   	var editmitra = $('#editmitra').val();
+
+	 if(editaba == ''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi data ABA'
+		})
+       	}else if (editmitra == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi nama mitra'
+			})
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data mitra berhasil disimpan'
+			})
+	 	}}
+
+	 	function deletemitra () {
+		Swal.fire({
+		  title: 'Yakin hapus data ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				Swal.fire({
+					title:'Data mitra berhasil dihapus',
+					type:'success',
+					toast:true,
+					showConfirmButton:false,
+					position: 'top',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D4F1F4'
+				})
+
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Data mitra tetap tersimpan',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+		}
 </script>
 </body>
 

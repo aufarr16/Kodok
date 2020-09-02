@@ -20,8 +20,9 @@
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
+  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"><!-- </style> -->
   <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -95,18 +96,14 @@
 					</div>	
 					<div class = "modal-body">
 						<form>
-						 <!-- <form class="needs-validation" novalidate> -->
 				          <div class="form-group">
 				          	<div class ="input-group-addon">
 								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 							</div>
-				            <input type="text" class="form-control" required>
+				            <input type="text" id="name" class="form-control">
 				            <br>
-				            <!-- <div class="invalid-feedback">
-				              Masukkan nama produk
-				            </div> -->
 				          </div>
-				         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+				         <button onclick="alert()" type="button" class="btnsubmit">Submit</button>
 				        </form>
 					
 					<!-- ./modal body -->
@@ -151,15 +148,15 @@
 							 <!-- <form class="needs-validation" novalidate> -->
 					          <div class="form-group">
 					          	<div class ="input-group-addon">
-									<label for="namaproduct" style="font-weight:bolder; float:left;">Nama Product</label>
+									<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 								</div>
-					            <input type="text" class="form-control" required style="margin-bottom: 10px">
+					            <input type="text" id="edit" class="form-control">
 					            <br>
 					            <!-- <div class="invalid-feedback">
 					              Masukkan nama produk
 					            </div> -->
 					          </div>
-					         <button type="submit" class="btnsubmit" id="submitproduct">Submit</button>
+					         <button onclick="editsubmit()" type="button" class="btnsubmit">Submit</button>
 					        </form>
 							<!-- ./modal content -->
 							</div>
@@ -167,7 +164,8 @@
 						</div>
 						<!-- modal -->
 						</div>
-							<a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
+							<!-- <a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a> -->
+							<button onclick="deleteproduct()" type="button" class="btn-delete" id="deleteproduct"><i class="fas fa-trash fa-lg"></i></button>
 						
 				</td>
 				<td>{{ $dat_prod->added_by}}</td>
@@ -241,7 +239,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#submitproduct").on('click',function(){
@@ -288,7 +286,7 @@ $(document).ready(function () {
 	toastr["success"]("Data produk berhasil diedit")
   });
 });
-</script>
+</script> -->
 <!-- <script>
 		toastr.options = {
 			"closeButton" : true,
@@ -305,6 +303,142 @@ $(document).ready(function () {
 		}
 
 </script> -->
+
+<!-- sweetalert -->
+<!-- <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.all.min.js"></script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<!-- <script>
+   function alert () {
+   	var name = $('#name').val();
+
+	 	if(name ==''){
+        const Toast = Swal.mixin({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  background:'#ffdf0069'
+		   })
+
+		Toast.fire({
+		  type: 'warning',
+		  title: 'Mohon isi nama produk',
+		})
+
+	    }else{
+	 		const Toast = Swal.mixin({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#6adaffb8'
+			})
+
+			Toast.fire({
+			  type: 'success',
+			  title: 'Data produk berhasil disimpan'
+			})
+	 	}}
+</script> -->
+<script>
+	function alert () {
+   	var name = $('#name').val();
+
+	 if(name ==''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi nama produk'
+		})
+
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data produk berhasil disimpan'
+			})
+	 	}}
+</script>
+<script>
+   function editsubmit () {
+   	var edit = $('#edit').val();
+
+	 	if(edit ==''){
+        Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi nama produk'
+		})
+
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data produk berhasil disimpan'
+			})
+	 	}}
+</script>
+
+<script>
+	function deleteproduct () {
+		Swal.fire({
+		  title: 'Yakin hapus data ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				Swal.fire({
+					title:'Data produk berhasil dihapus',
+					type:'success',
+					toast:true,
+					showConfirmButton:false,
+					position: 'top',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D4F1F4'
+				})
+
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Data produk tetap tersimpan',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+		}
+</script>
 </body>
 
 </html>

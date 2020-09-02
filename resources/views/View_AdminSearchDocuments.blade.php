@@ -23,6 +23,7 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
   <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -127,9 +128,9 @@
 										<td>1</td>
 										<td>Nodin Penugasan</td>
 										<td>	
-											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button type="submit" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>-</td>
 									</tr>
@@ -137,9 +138,9 @@
 										<td>2</td>
 										<td>BAKO</td>
 										<td>	
-											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button type="submit" class="btnsend" title="Kirim ke email" id="email2"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
 									</tr>
@@ -147,9 +148,9 @@
 										<td>3</td>
 										<td>BAE</td>
 										<td>	
-											<button type="submit" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="submit" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
-											<button type="submit" class="btnsend" title="Kirim ke email" id="email3"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
+											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
+                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>
 									</tr>
@@ -267,7 +268,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#email").on('click',function(){
@@ -336,7 +337,21 @@ $(document).ready(function () {
   toastr["success"]("Email berhasil dikirim!")
   });
 });
+</script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script>
+  function sendemail () {
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        background:'#D4F1F4',
+        type: 'success',
+        title: 'Email berhasil dikirim'
+      })
+    }
+
 </script>
 </body>
-
 </html>

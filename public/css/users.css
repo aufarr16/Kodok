@@ -112,7 +112,7 @@
 /* The Modal (background) */
 .modal {
 	margin-left: 350px;
-	margin-top: 50px;
+	margin-top: 80px;
   width: 55%
 }
 
@@ -158,4 +158,13 @@ input[type=text], input[type=email],select{
   cursor: cursor;
   color: #19569A;
   background-color: transparent;
+}
+
+/*alert*/
+.alert {
+  display: none;
+}
+
+.error {
+  color: #e74c3c;
 }

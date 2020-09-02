@@ -20,7 +20,8 @@
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
+  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" /></style>
   
 
 </head>
@@ -85,7 +86,7 @@
 				</button>
     
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px; margin-top: 50px">
+				<div class="modal" id="modal" role="dialog" style="padding-left:17px;">
 				
 				<!-- Modal content -->
 				<div class="modal-content">
@@ -99,16 +100,16 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" class="form-control" required style="margin-bottom: 10px">
+										<input type="text" id="inisial" class="form-control" style="margin-bottom: 10px">
 									<div class ="input-group-addon">
-										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
+										<label style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
-										<input type="text" class="form-control" required style="margin-bottom: 10px;">
+										<input type="text" id="nama" class="form-control" style="margin-bottom: 10px;">
 								
 									<div class ="input-group-addon">						
-										<label for="role" style="font-weight:bolder;float: left;">Role</label>
+										<label style="font-weight:bolder;float: left;">Role</label>
 									</div>
-										<select id="role" class="form control" style="height:35px;" required> 
+										<select id="role" class="form control" style="height:35px;"> 
 											<option value="" hidden>Pilih Role</option>
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>
@@ -116,11 +117,11 @@
 											<option value="guest">Guest</option>
 										</select>
 									<div class ="input-group-addon">
-										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
+										<label style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 									</div>	
-										<input type="email" class="form-control" required style="float: right; margin-bottom: 10px">
+										<input type="email" id="email" class="form-control" style="float: right; margin-bottom: 10px">
 								</div>
-							<button class="btnsubmit" type="submit" id="submituser">Submit</button>
+								<button onclick="submituser()" class="btnsubmit" type="button">Submit</button>
 
 							</form>
 					<!-- ./modal body -->
@@ -169,16 +170,16 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" class="form-control" required style="margin-bottom: 10px">
+										<input type="text" id="editinisial" class="form-control" style="margin-bottom: 10px">
 									<div class ="input-group-addon">
 										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
-										<input type="text" class="form-control" required style="margin-bottom: 10px">
+										<input type="text" id="editnama" class="form-control" style="margin-bottom: 10px">
 								
 									<div class ="input-group-addon">						
 										<label for="role" style="font-weight:bolder;float: left;">Role</label>
 									</div>
-										<select id="role" class="form control" style="height:35px" required> 
+										<select id="editrole" class="form control" style="height:35px"> 
 											<option value="" hidden>Pilih Role</option>
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>
@@ -188,9 +189,9 @@
 									<div class ="input-group-addon">
 										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 									</div>	
-										<input type="email" class="form-control" required style="margin-bottom: 10px">
+										<input type="email" id="editemail" class="form-control" style="margin-bottom: 10px">
 								</div>
-							<button class="btnsubmit" type="submit" id="submituser">Submit</button>
+								<button onclick="edituser()" class="btnsubmit" type="button" id="submituser">Submit</button>
 
 							</form>
 							<!-- ./modal body -->
@@ -199,7 +200,8 @@
 						</div>
 						<!-- ./modal -->
 						</div>
-				<a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a>
+						<!-- <a href='#' onclick ="return confirm('Are you sure to delete this user?')" type="button" title="delete user" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a -->
+							<button onclick="deleteuser()" class="btn-delete" type="button" id="submituser"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>{{ $dat_usr->added_by }}</td>
 				<td>{{ $dat_usr->modified_by }}</td>
@@ -271,7 +273,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#submituser").on('click',function(){
@@ -318,6 +320,178 @@ $(document).ready(function () {
 	toastr["success"]("Data user berhasil diedit!")
   });
 });
+</script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script>
+	function submituser () {
+   	var inisial = $('#inisial').val();
+   	var nama = $('#nama').val();
+   	var role = $('#role').val();
+   	var email = $('#email').val();
+
+	 if(inisial == ''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi inisial'
+		})
+       	}else if (nama == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi nama user'
+			})
+		}else if (role == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi role user'
+			})
+		}else if (email == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi email user'
+			})
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data mitra berhasil disimpan'
+			})
+	 	}}
+
+	function edituser () {
+   	var editinisial = $('#editinisial').val();
+   	var editnama = $('#editnama').val();
+   	var editrole = $('#editrole').val();
+   	var editemail = $('#editemail').val();
+
+	 if(editinisial == ''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Mohon isi inisial'
+		})
+       	}else if (editnama == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi nama user'
+			})
+		}else if (editrole == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi role user'
+			})
+		}else if (editemail == ''){
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Mohon isi email user'
+			})
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'Data mitra berhasil disimpan'
+			})
+	 	}}
+
+	 	function deleteuser () {
+		Swal.fire({
+		  title: 'Yakin hapus data ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				Swal.fire({
+					title:'Data user berhasil dihapus',
+					type:'success',
+					toast:true,
+					showConfirmButton:false,
+					position: 'top',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D4F1F4'
+				})
+
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Data user tetap tersimpan',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					// timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+		}
 </script>
 </body>
 

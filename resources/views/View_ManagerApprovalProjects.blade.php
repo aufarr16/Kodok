@@ -22,6 +22,7 @@
   <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
+  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -153,8 +154,8 @@
 				
 			</td>
 			<td>
-				<a href="#" class="btn-approve" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></a>
-				<a href="#" class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></a>
+        <button onclick="approve()" type="button" class="btn-approve" title="Approve Project" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></button>
+				<button class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></button>
 
 	      <!-- The Modal -->
         <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
@@ -170,9 +171,9 @@
 								<label for="inisial">Alasan Decline:</label>
 								<br>
 								&nbsp
-								<textarea id="comment_text" class="note_status" role="textbox"></textarea>
+								<textarea id="alasan" class="note_status" role="textbox"></textarea>
 						
-						<button class="btn-submitket" type="button" data-dismiss="modal">Submit</button>
+						<button onclick="decline()" class="btn-submitket" type="button">Submit</button>
 						</div>
 					<!-- ./modal body -->
 					</div>
@@ -255,6 +256,75 @@ $(document).ready(function () {
                 $('#sidebar').toggleClass('active');
             });
         });
+</script>
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script>
+ function approve () {
+    Swal.fire({
+      title: 'Yakin approve project ini?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'lightgrey',
+      cancelButtonColor: 'dodgerblue',
+      confirmButtonText: 'Ya',
+      cancelButtonText: 'Tidak'
+    }).then((result)=>{
+      if(result.value){
+        Swal.fire({
+          title:'Project berhasil diapprove',
+          type:'success',
+          toast:true,
+          showConfirmButton:false,
+          position: 'top',
+          timer:1500,
+          timerProgressBar:true,
+          background:'#D4F1F4'
+        })
+
+      } else if (result.dismiss === 'cancel') {
+        Swal.fire({
+          title:'Project belum diapprove',
+          type:'info',
+          toast:true,
+          showConfirmButton:false,
+          position:'top',
+          grow:'row',
+          timer:1500,
+          timerProgressBar:true,
+          background:'#D2FBA4'
+        })
+      }
+    })
+    }
+
+    function decline () {
+    var alasan = $('#alasan').val();
+
+     if(alasan ==''){
+         Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon isi alasan'
+      })
+
+        }else{
+        Swal.fire({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 4000,
+          background:'#D4F1F4',
+          type: 'success',
+          title: 'Project berhasil didecline'
+        })
+      }}
+
 </script>
 </body>
 

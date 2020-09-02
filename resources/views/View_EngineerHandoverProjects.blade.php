@@ -22,8 +22,9 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert.min.css" rel="stylesheet" />
+   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
   <!-- Toastr -->
-  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
+  <!-- <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" /> -->
 </head>
 
   <body>
@@ -859,7 +860,7 @@
 									<!--./card-->
 									</div>	
 									
-									<button type="button" class="btn-upload" data-dismiss="modal" id="submithandover">Upload File</button>
+									<button onclick="uploadfile()"type="button" class="btn-upload" data-dismiss="modal" id="submithandover">Upload File</button>
 									
 								<!--./modal-body-->
 								</div>
@@ -869,7 +870,8 @@
 							</div>						
 				</td>
 				<td>
-					<a href='#' onclick="return confirm('Is the handover project done?')" type="button" class="btn-handover-done dialog-box" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></a>
+					<!-- <a href='#' onclick="return confirm('Is the handover project done?')" type="button" class="btn-handover-done dialog-box" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></a> -->
+					<button onclick="donehandover()" type="button" class="btn-handover-done" data-dismiss="modal" id="submithandover" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
 				</td>
 			</tr>
 			
@@ -947,7 +949,7 @@ $(document).ready(function () {
 </script>
 
 <!-- Toastr Alert -->
-<script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
+<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
 <script>
  $(document).ready(function(){
   $("#submithandover").on('click',function(){
@@ -972,7 +974,89 @@ $(document).ready(function () {
   toastr["success"]("Dokumen berhasil diupload!")
   });
 });
+</script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script>
+	function donehandover () {
+		Swal.fire({
+		  title: 'Yakin handover sudah selesai?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				Swal.fire({
+					title:'Handover telah selesai',
+					type:'success',
+					toast:true,
+					showConfirmButton:false,
+					position: 'top',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D4F1F4'
+				})
+
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Semangat handover',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+		}
 </script>
+<!-- <script>
+  function uploadfile () {
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        background:'#D4F1F4',
+        type: 'success',
+        title: 'File berhasil diupload'
+      })
+    }
+</script> -->
+<!-- <script>
+	function uploadfile () {
+   	var file = $('#file').val();
+
+	 if(file == ''){
+       Swal.fire({
+		  toast: true,
+		  position: 'top',
+		  showConfirmButton: false,
+		  timer: 4000,
+		  timerProgressBar:true,
+		  // background:'lightgoldenrodyellow',
+		  background:'#FFF4BD',
+		  type: 'warning',
+		  title: 'Tidak ada file yang bisa diupload'
+		})
+
+	    }else{
+	 		Swal.fire({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: 'File berhasil diupload'
+			})
+	 	}}
+</script> -->
 </body>
 
 </html>
