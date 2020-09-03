@@ -125,7 +125,7 @@
           <div class="form-group">
            <label for="ABA" style="font-weight:bolder">Nama Mitra</label>
             <br>
-            <select id="aba" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
+            <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
               <option value=""></option>
               @foreach($mitras as $mtr)
               <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
@@ -139,7 +139,7 @@
               <span class="underline"></span>
           </div>
 
-          <button onclick="submitproject()" type="button" class="btn-submit" id="submitnew">Submit</button>
+          <button onclick="submitproject()" type="submit" class="btn-submit" id="submitnew">Submit</button>
         </form>
       </div>
 
@@ -149,7 +149,7 @@
           <div class="form-group">
             <label for="NamaPIC" style="font-weight:bolder">PIC</label>
               <br>
-              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%">
+              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" >
                 <option value=""></option>
                 <option value="IDE">Ismi Destiawati</option>
                 <option value="DMR">Devi Mayang Sari</option>
@@ -161,7 +161,7 @@
           <div class="form-group">
             <label for="produk" style="font-weight:bolder">Nama project</label>
             <br>
-            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%">
+            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" >
               <option value=""></option>
               <option value="Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank">
               Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</option>
@@ -172,7 +172,7 @@
           <div class="form-group">
             <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
             <br>
-            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%">
+            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" >
               <option value=""></option>
               <option value="IDE">Ismi Destiawati</option>
               <option value="DMR">Devi Mayang Sari</option>
@@ -180,7 +180,7 @@
               <option value="RAS">Rio Ari Saputra</option>
             </select>
           </div>                          
-          <button onclick="handover()" type="button" class="btn-submit">Submit</button>
+          <button onclick="submithandover()" type="submit" class="btn-submit" id="submithandover">Submit</button>
         </form>
 
       <!-- ./container tab -->
@@ -252,7 +252,7 @@ $(document).ready(function () {
       $("#id_ptype").select2({
           allowClear: true
       });
-      $("#aba").select2({
+      $("#ABA").select2({
           allowClear: true
       });
 </script>
@@ -321,13 +321,41 @@ $(document).ready(function () {
   });
 });
 </script> -->
+<!-- <script>
+  $('#submitnew').on('click',function(e) {
+    
+    event.preventDefault();
+var form = this;
+    
+        swal({
+  title: "Are you sure?",
+  text: "All data related to this AMC ID will be parmanently deleted",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, DELETE it!",
+  cancelButtonText: "No, cancel please!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm){
+  if (isConfirm) {
+    form.submit();
+    } else {
+    swal("Cancelled", "AMC Record is safe :)", "error");
+  
+  }
+});
+});
+</script> -->
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script>
-  function submitproject () {
+   function submitproject () {
     var user = $('#id_user').val();
-    // var product = $('#id_product').val();
-    // var type = $('#id_ptype').val();
-    // var aba = $('#aba').val();
-    // var project = $('#nama_project').val();
+    var product = $('#id_product').val();
+    var type = $('#id_ptype').val();
+    var ABA = $('#ABA').val();
+    var project = $('#nama_project').val();
 
    if(user == ''){
        Swal.fire({
@@ -339,56 +367,56 @@ $(document).ready(function () {
       // background:'lightgoldenrodyellow',
       background:'#FFF4BD',
       type: 'warning',
-      title: 'Mohon isi inisial'
+      title: 'Mohon pilih PIC'
     })
-    //     }else if (product == ''){
-    //   Swal.fire({
-    //     toast: true,
-    //     position: 'top',
-    //     showConfirmButton: false,
-    //     timer: 4000,
-    //     timerProgressBar:true,
-    //     // background:'lightgoldenrodyellow',
-    //     background:'#FFF4BD',
-    //     type: 'warning',
-    //     title: 'Mohon isi nama user'
-    //   })
-    // }else if (type == ''){
-    //   Swal.fire({
-    //     toast: true,
-    //     position: 'top',
-    //     showConfirmButton: false,
-    //     timer: 4000,
-    //     timerProgressBar:true,
-    //     // background:'lightgoldenrodyellow',
-    //     background:'#FFF4BD',
-    //     type: 'warning',
-    //     title: 'Mohon isi role user'
-    //   })
-    // }else if (aba == ''){
-    //   Swal.fire({
-    //     toast: true,
-    //     position: 'top',
-    //     showConfirmButton: false,
-    //     timer: 4000,
-    //     timerProgressBar:true,
-    //     // background:'lightgoldenrodyellow',
-    //     background:'#FFF4BD',
-    //     type: 'warning',
-    //     title: 'Mohon isi email user'
-    //   })
-    // }else if (project == ''){
-    //   Swal.fire({
-    //     toast: true,
-    //     position: 'top',
-    //     showConfirmButton: false,
-    //     timer: 4000,
-    //     timerProgressBar:true,
-    //     // background:'lightgoldenrodyellow',
-    //     background:'#FFF4BD',
-    //     type: 'warning',
-    //     title: 'Mohon isi email user'
-    //   })
+        }else if (product == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon pilih produk'
+      })
+    }else if (type == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon pilih tipe project'
+      })
+    }else if (ABA == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon pilih mitra'
+      })
+    }else if (project == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon isi nama project'
+      })
       }else{
       Swal.fire({
         toast: true,
@@ -398,15 +426,50 @@ $(document).ready(function () {
         background:'#D4F1F4',
         type: 'success',
         title: 'Data mitra berhasil disimpan'
-      })
+    })
     }}
 
-    function handover () {
-    var PIC = $('#PIC2').val();
-    // var product = $('#id_product').val();
-    // var type = $('#id_ptype').val();
-    // var aba = $('#aba').val();
-    // var project = $('#nama_project').val();
+    function submithandover () {
+    var PIC2 = $('#PIC2').val();
+    var nama_project2 = $('#nama_project2').val();
+    var PIChandover = $('#PIChandover').val();
+    if(PIC2 == ''){
+       Swal.fire({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 4000,
+      timerProgressBar:true,
+      // background:'lightgoldenrodyellow',
+      background:'#FFF4BD',
+      type: 'warning',
+      title: 'Mohon pilih PIC utama'
+    })
+      }else if (nama_project2 == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon pilih nama project'
+      })
+      }else if (PIChandover == ''){
+      Swal.fire({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar:true,
+        // background:'lightgoldenrodyellow',
+        background:'#FFF4BD',
+        type: 'warning',
+        title: 'Mohon pilih PIC handover'
+      })
+      }else{
       Swal.fire({
         toast: true,
         position: 'top',
@@ -415,8 +478,8 @@ $(document).ready(function () {
         background:'#D4F1F4',
         type: 'success',
         title: 'Data mitra berhasil disimpan'
-      })
-    }
+    })
+    }}
 </script>
 </body>
 
