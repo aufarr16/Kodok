@@ -96,17 +96,17 @@
     @foreach($data_projek as $dat_proj)
     <tr>
       <td>{{ $loop->iteration}}</td>
-              <td>{{ $dat_proj->inisial_user}}</td>
-              <td>{{ $dat_proj->nama_user}}</td>
-              <td>{{ $dat_proj->nama_product}}</td>
-              <td>{{ $dat_proj->nama_ptype}}</td>
-              <td>{{ $dat_proj->nama_mitra}}</td>
+              <td>{{ $dat_proj->inisial_user }}</td>
+              <td>{{ $dat_proj->nama_user }}</td>
+              <td>{{ $dat_proj->nama_product }}</td>
+              <td>{{ $dat_proj->nama_ptype }}</td>
+              <td>{{ $dat_proj->nama_mitra }}</td>
               <td>
                 <div class="popover_parent"> 
-                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#modal1">{{ $dat_proj->nama_project}}</button>
+                  <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#{{ $dat_proj->id_project }}">{{ $dat_proj->nama_project}}</button>
 
                  <!-- The Modal -->
-                  <div class="modal1" id="modal1" role="dialog" style="padding-left:17px;">
+                  <div class="modal1" id="{{ $dat_proj->id_project }}" role="dialog" style="padding-left:17px;">
                   
                   <!-- Modal content -->
                   <div class="modal-content1">
@@ -148,8 +148,31 @@
               <!-- popover -->
               </div>
               </td>
-              <td>{{ $dat_proj->waktu_assign_project}}</td>
-              <td><small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small></td>
+              <td>{{ $dat_proj->waktu }}</td>
+              <td>
+                @switch($dat_proj->id_pstat)
+                  @case(1)
+                    <small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small>
+                    @break
+                  @case(2)
+                    <small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress</small>
+                    @break
+                  @case(3)
+                    <small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small>
+                    @break
+                  @case(4)
+                    <small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</small>
+                    @break
+                  @case(5)
+                    <small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold</small>
+                    @break
+                  @case(6)
+                    <small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</small>
+                    @break
+                  @default
+                    @break                
+                @endswitch
+              </td>
     </tr>
     @endforeach
     </tbody>
@@ -227,10 +250,3 @@ $(document).ready(function () {
 </body>
 
 </html>
-<!-- STATUS LABEL  -->
-<!-- small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small  -->
-<!-- small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done  -->
-<!-- small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress  -->
-<!-- small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop  -->
-<!-- small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold  -->
-<!-- small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done  -->
