@@ -100,7 +100,7 @@
 				          	<div class ="input-group-addon">
 								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 							</div>
-				            <input type="text" id="name" class="form-control">
+				            <input type="email" id="name" class="form-control">
 				            <br>
 				          </div>
 				         <button onclick="alert()" type="button" class="btnsubmit">Submit</button>

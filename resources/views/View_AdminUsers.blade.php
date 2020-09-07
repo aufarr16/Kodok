@@ -100,7 +100,7 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" id="inisial" class="form-control" style="margin-bottom: 10px">
+										<input type="text" id="inisial" class="form-control" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3">
 									<div class ="input-group-addon">
 										<label style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
@@ -170,7 +170,7 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" id="editinisial" class="form-control" style="margin-bottom: 10px">
+										<input type="text" id="editinisial" class="form-control" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3">
 									<div class ="input-group-addon">
 										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
@@ -189,7 +189,7 @@
 									<div class ="input-group-addon">
 										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 									</div>	
-										<input type="email" id="editemail" class="form-control" style="margin-bottom: 10px">
+										<input type="email" id="editemail" class="form-control" style="margin-bottom: 10px" pattern=".+@artajasa.co.id" required>
 								</div>
 								<button onclick="edituser()" class="btnsubmit" type="button" id="submituser">Submit</button>
 
@@ -451,7 +451,7 @@ $(document).ready(function () {
 			  timer: 4000,
 			  background:'#D4F1F4',
 			  type: 'success',
-			  title: 'Data mitra berhasil disimpan'
+			  title: 'Data user berhasil disimpan'
 			})
 	 	}}
 
