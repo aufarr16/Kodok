@@ -95,15 +95,16 @@
 						<h2 class="modal-title">Add New Products</h2>
 					</div>	
 					<div class = "modal-body">
-						<form>
+						<form method="post" action="/admin/submitproduct">
+						@csrf
 				          <div class="form-group">
 				          	<div class ="input-group-addon">
-								<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
+								<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 							</div>
-				            <input type="text" id="name" class="form-control">
+				            <input type="text" id="nama_product" class="form-control" name="nama_product">
 				            <br>
 				          </div>
-				         <button onclick="alert()" type="button" class="btnsubmit">Submit</button>
+				         <button onclick="alert()" type="submit" class="btnsubmit">Submit</button>
 				        </form>
 					
 					<!-- ./modal body -->
@@ -343,7 +344,7 @@ $(document).ready(function () {
 </script> -->
 <script>
 	function alert () {
-   	var name = $('#name').val();
+   	var name = $('#nama_product').val();
 
 	 if(name ==''){
        Swal.fire({

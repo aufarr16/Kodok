@@ -95,35 +95,33 @@
 						<h2 class="modal-title">Add New user</h2>
 					</div>	
 					<div class = "modal-body">
-					<form>
-								<div class = "form-group">
-									<div class ="input-group-addon">
-										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
-									</div>
-										<input type="text" id="inisial" class="form-control" style="margin-bottom: 10px">
-									<div class ="input-group-addon">
-										<label style="font-weight:bolder; float: left;">Nama</label>
-									</div>	
-										<input type="text" id="nama" class="form-control" style="margin-bottom: 10px;">
-								
-									<div class ="input-group-addon">						
-										<label style="font-weight:bolder;float: left;">Role</label>
-									</div>
-										<select id="role" class="form control" style="height:35px;"> 
-											<option value="" hidden>Pilih Role</option>
-											<option value="admin">Admin</option>
-											<option value="manager">Manager</option>
-											<option value="engineer">Engineer</option>
-											<option value="guest">Guest</option>
-										</select>
-									<div class ="input-group-addon">
-										<label style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
-									</div>	
-										<input type="email" id="email" class="form-control" style="float: right; margin-bottom: 10px">
-								</div>
-								<button onclick="submituser()" class="btnsubmit" type="button">Submit</button>
-
-							</form>
+					<form method="post" action="/admin/submituser">
+						@csrf
+						<div class = "form-group">
+							<div class ="input-group-addon">
+								<label for="inisial_user" style="font-weight:bolder;float: left;">Inisial</label>
+							</div>
+								<input type="text" id="inisial_user" class="form-control" name="inisial_user" style="margin-bottom: 10px">
+							<div class ="input-group-addon">
+								<label for="nama_user" style="font-weight:bolder; float: left;">Nama</label>
+							</div>	
+								<input type="text" id="nama_user" class="form-control" name="nama_user" style="margin-bottom: 10px;">
+							<div class ="input-group-addon">						
+								<label for="id_ulevel" style="font-weight:bolder;float: left;">Role</label>
+							</div>
+								<select id="id_ulevel" class="form control" name="id_ulevel" style="height:35px;"> 
+									<option value="" hidden>Pilih Role</option>
+									@foreach($levels as $lvl)
+									<option value="{{ $lvl->id_ulevel }}">{{ $lvl->nama_ulevel }}</option>
+									@endforeach
+								</select>
+							<div class ="input-group-addon">
+								<label for="email_user" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
+							</div>	
+								<input type="email" id="email_user" class="form-control" name="email_user" style="float: right; margin-bottom: 10px">
+						</div>
+						<button onclick="submituser()" class="btnsubmit" type="submit">Submit</button>
+					</form>
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -191,7 +189,7 @@
 									</div>	
 										<input type="email" id="editemail" class="form-control" style="margin-bottom: 10px">
 								</div>
-								<button onclick="edituser()" class="btnsubmit" type="button" id="submituser">Submit</button>
+								<button onclick="edituser()" class="btnsubmit" type="submit" id="submituser">Submit</button>
 
 							</form>
 							<!-- ./modal body -->
@@ -324,10 +322,10 @@ $(document).ready(function () {
 <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script>
 	function submituser () {
-   	var inisial = $('#inisial').val();
-   	var nama = $('#nama').val();
-   	var role = $('#role').val();
-   	var email = $('#email').val();
+   	var inisial = $('#inisial_user').val();
+   	var nama = $('#nama_user').val();
+   	var role = $('#id_ulevel').val();
+   	var email = $('#email_user').val();
 
 	 if(inisial == ''){
        Swal.fire({

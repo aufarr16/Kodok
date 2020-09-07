@@ -26,12 +26,17 @@ Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
 
+Route::post('/admin/submituser', 'Controller_AdminUsers@store');
+Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
+Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
+
 ##Manager
 Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
 Route::get('/manager/assign', 'Controller_ManagerAssignProjects@openPage');
 Route::get('/manager/home', 'Controller_ManagerHome@openPage');
 Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');
 Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
+
 Route::post('/manager/submitdata', 'Controller_ManagerAssignProjects@store');
 
 ##Engineer

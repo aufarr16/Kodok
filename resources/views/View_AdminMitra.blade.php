@@ -95,22 +95,22 @@
 						<h2 class="modal-title">Add New Mitra</h2>
 					</div>	
 					<div class = "modal-body">
-						<form>
+						<form method="post" action="/admin/submitmitra">
+						@csrf
 				          <div class="form-group">
 				          	<div class ="input-group-addon">
-								<label style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+								<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
-				            <input type="text" id="aba" class="form-control" style="margin-bottom: 10px">
-				            <br>
+				            <input type="text" id="ABA" class="form-control" style="margin-bottom: 10px" name="ABA">
+				            <br>				            
 				            <div class ="input-group-addon">
-								<label style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
+								<label for="nama_mitra" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
 							</div>
-				            <input type="text" id="mitra" class="form-control" style="margin-bottom: 10px">
+				            <input type="text" id="nama_mitra" class="form-control" style="margin-bottom: 10px" name="nama_mitra">
 				            <br>
 				          </div>
-				         <button onclick="submitmitra()" type="button" class="btnsubmit">Submit</button>
+				         <button onclick="submitmitra()" type="submit" class="btnsubmit">Submit</button>
 				        </form>
-					
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
@@ -302,10 +302,10 @@ $(document).ready(function () {
 <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script>
 	function submitmitra () {
-   	var aba = $('#aba').val();
-   	var mitra = $('#mitra').val();
+   	var aba = $('#ABA').val();
+   	var nama_mitra = $('#nama_mitra').val();
 
-	 if(aba == ''){
+	 if(ABA == ''){
        Swal.fire({
 		  toast: true,
 		  position: 'top',
@@ -317,7 +317,7 @@ $(document).ready(function () {
 		  type: 'warning',
 		  title: 'Mohon isi data ABA'
 		})
-       	}else if (mitra == ''){
+       	}else if (nama_mitra == ''){
 	 		Swal.fire({
 			  toast: true,
 			  position: 'top',
