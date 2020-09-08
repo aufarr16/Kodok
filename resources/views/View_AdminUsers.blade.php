@@ -78,6 +78,10 @@
       <div class="container-fluid">
       <div class="content">
        
+      @if(session('status'))
+          <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
+      @endif
+
 	   <h2 style="margin-top:10px">Users</h2>
 			<div class="form-group">
 

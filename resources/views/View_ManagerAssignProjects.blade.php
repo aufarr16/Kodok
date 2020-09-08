@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -76,6 +77,10 @@
   <div class="container-fluid">
     <div class="content">
 
+      @if(session('status'))
+          <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
+      @endif
+
        <h2 style="margin-top:10px">Assign Projects</h2>
           <!-- Nav pills -->
     <ul class="nav nav-pills" role="tablist">
@@ -90,7 +95,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <div id="new" class="container tab-pane active">
-        <form method="post" action="/manager/submitdata">
+        <form method="post" action="/manager/newproject">
           @csrf
           <div class="form-group">
             <label for="id_user" style="font-weight:bolder">PIC</label>
@@ -145,40 +150,36 @@
 
       <!-- Assign Handover Project -->
       <div id="handover" class="container tab-pane fade">
-        <form>
+        <form method="post" action="/manager/newhandover">
           <div class="form-group">
-            <label for="NamaPIC" style="font-weight:bolder">PIC</label>
+            <label for="PIC2" style="font-weight:bolder">PIC</label>
               <br>
-              <select id="PIC2" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" >
+              <select id="PIC2" class="js-states form-control picAsli" data-placeholder="Pilih PIC" style="width:100%">
                 <option value=""></option>
-                <option value="IDE">Ismi Destiawati</option>
-                <option value="DMR">Devi Mayang Sari</option>
-                <option value="AUF">Aufar Rizqi</option>
-                <option value="RAS">Rio Ari Saputra</option>
+                @foreach($users as $usr)
+                <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                @endforeach
               </select>
           </div>
           <br>
           <div class="form-group">
-            <label for="produk" style="font-weight:bolder">Nama project</label>
-            <br>
-            <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" >
-              <option value=""></option>
-              <option value="Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank">
-              Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</option>
-              <option value="Implementasi Layanan ATM Bersama Debit Bank Nagari">Implementasi Layanan ATM Bersama Debit Bank Nagari</option>
-            </select>
+            <label for="nama_project2" style="font-weight:bolder">Nama project</label>
+              <br>
+              <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+                <option value=""></option>
+                
+              </select>
           </div>
           <br>
           <div class="form-group">
             <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
-            <br>
-            <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" >
-              <option value=""></option>
-              <option value="IDE">Ismi Destiawati</option>
-              <option value="DMR">Devi Mayang Sari</option>
-              <option value="AUF">Aufar Rizqi</option>
-              <option value="RAS">Rio Ari Saputra</option>
-            </select>
+              <br>
+              <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" name="id_user">
+                <option value=""></option>
+                @foreach($users as $usr)
+                <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                @endforeach
+              </select>
           </div>                          
           <button onclick="submithandover()" type="submit" class="btn-submit" id="submithandover">Submit</button>
         </form>
@@ -348,7 +349,8 @@ function(isConfirm){
 });
 });
 </script> -->
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>\
+<script src="{{ url('') }}/js/script.js"></script>
 <script>
    function submitproject () {
     var user = $('#id_user').val();
