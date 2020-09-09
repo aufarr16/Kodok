@@ -22,9 +22,15 @@ class Controller_AdminMitra extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
     public function store(Request $request){
-    	//return $request;
+    	// return $request;
+
+        $request->validate([
+            'ABA' => 'required',
+            'nama_mitra' => 'required',
+        ]);
+
     	Mitra::create($request->all());
 
-    	return redirect('/admin/mitra');
+    	return redirect('/admin/mitra')->with('status','');
     }
 }

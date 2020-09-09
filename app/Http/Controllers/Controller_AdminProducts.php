@@ -23,8 +23,13 @@ class Controller_AdminProducts extends Controller
 	 */
     public function store(Request $request){
     	// return $request;
+
+        $request->validate([
+            'nama_product' => 'required',
+        ]);
+
     	Product::create($request->all());
 
-    	return redirect('/admin/products');
+    	return redirect('/admin/products')->with('status','');
     }
 }

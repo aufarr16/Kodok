@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class Controller_Login extends Controller
@@ -16,6 +17,8 @@ class Controller_Login extends Controller
 
 
     public function postLogin(Request $request){
-    	dd($request->all());
+    	// dd($request->all());
+    	$username = $request->username;
+    	$password = $request->password;
     }
 }

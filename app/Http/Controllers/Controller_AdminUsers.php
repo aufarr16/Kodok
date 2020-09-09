@@ -26,8 +26,16 @@ class Controller_AdminUsers extends Controller
 	 */
     public function store(Request $request){
     	//return $request;
+
+    	$request->validate([
+    		'inisial_user' => 'required',
+    		'nama_user' => 'required',
+    		'id_ulevel' => 'required',
+    		'email_user' => 'required',
+    	]);
+
     	User::create($request->all());
 
-    	return redirect('/admin/users');
+    	return redirect('/admin/users')->with('status','');
     }
 }
