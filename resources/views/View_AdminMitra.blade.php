@@ -105,12 +105,11 @@
 				          	<div class ="input-group-addon">
 								<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
-
 				            <!-- <input type="number" id="aba" class="form-control" style="margin-bottom: 10px" min="3" max="7"> -->
-				             <input type ="number" id="aba" class="form-control" style="margin-bottom: 10px" maxlength = "7" name="ABA"
+				             <input type ="number" id="ABA" class="form-control" style="margin-bottom: 10px" maxlength = "7" name="ABA"
 				             oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 				            <br>
-				            
+				
 				            <div class ="input-group-addon">
 								<label for="nama_mitra" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
 							</div>
@@ -159,13 +158,13 @@
 								<h2 class="modal-title">Edit Mitra</h2>
 							</div>
 							<div class = "modal-body">
-								<form>
+								<form method="post" action="/admin/submitmitra">
 						          <div class="form-group">
 						          	<div class ="input-group-addon">
 										<label for="namaproduct" style="font-weight:bolder;float:left;">ABA</label>
 									</div>
 						            <input type="number" id="editaba" class="form-control" style="margin-bottom: 10px" maxlength = "7"
-				             oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+				             		oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 						            <br>
 						            
 						            <div class ="input-group-addon">
@@ -175,7 +174,7 @@
 						            <br>
 
 						          </div>
-						         <button onclick="submitedit()" type="button" class="btnsubmit">Submit</button>
+						         <button onclick="submitedit()" type="submit" class="btnsubmit">Submit</button>
 						        </form>
 					
 							<!-- ./modal body -->
