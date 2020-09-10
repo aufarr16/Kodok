@@ -46,8 +46,12 @@ class Controller_ManagerAssignProjects extends Controller
         return redirect('/manager/assign')->with('status', '');
     }
 
-    public function fillProject(){
-        echo 'masuk';
+    public function fillProject($userId=0){
+        $empData['data'] = Project::orderby("nama_project","asc")->select('id_project', 'nama_project')->where('id_user', $userId)->get();
+        // $projectsById = new Project();
+        // $projectsById = $projectsById->getProjectById($_POST['id']);
+
+        return response()->json($empData);
     }
 
 }

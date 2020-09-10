@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -151,6 +151,7 @@
       <!-- Assign Handover Project -->
       <div id="handover" class="container tab-pane fade">
         <form method="post" action="/manager/newhandover">
+          @csrf
           <div class="form-group">
             <label for="PIC2" style="font-weight:bolder">PIC</label>
               <br>
@@ -165,9 +166,8 @@
           <div class="form-group">
             <label for="nama_project2" style="font-weight:bolder">Nama project</label>
               <br>
-              <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
-                <option value=""></option>
-                
+              <select id="nama_project2" class="js-states form-control proj_hv" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+                <option value=""></option> 
               </select>
           </div>
           <br>

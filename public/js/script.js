@@ -1,23 +1,38 @@
 $(function(){
 	$('.picAsli').change(function(){
-		if($('picAsli').val() != ''){
-			const id = $(this).val(	);
+		const id = $(this).val();
 
-			$.ajaxSetup({
-		        headers: {
-		            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		        }
-		    });
+		$('#nama_project2').find('option').not(':first').remove();
 
-			$.ajax({
-				url: "/manager/assigns",
-				data: {id : id},
-				type: "POST",
+		// $.ajaxSetup({
+	 //        headers: {
+	 //            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	 //        }
+	 //    });
 
-				success: function(data){
-					console.log(data);
+		$.ajax({
+			url: '/manager/assign/'+id,
+			type: 'get',
+			dataType: 'json',
+
+			success: function(response){
+				// console.log(response);
+				var len = 0;
+				if(response['data'].length != null){
+					len = response['data'].length;
 				}
-			})
-		}
+
+				if(len > 0){
+					for (var i=0; i<len; i++){
+						var id = response['data'][i].id_project;
+						var name = response['data'][i].nama_project;
+
+						var option = "<option value='"+id+"'>"+name+"</option>";
+
+						$("#nama_project2").append(option);
+					}
+				}
+			}
+		})	
 	})
 });
