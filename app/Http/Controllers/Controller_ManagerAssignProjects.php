@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Projecs_Handover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -41,7 +42,7 @@ class Controller_ManagerAssignProjects extends Controller
             'id_project' => 'required',
         ]);
 
-        Project::create($request->all());
+        Projects_Handover::create($request->all());
 
         return redirect('/manager/assign')->with('status', '');
     }
