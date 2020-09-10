@@ -3,15 +3,10 @@ $(function(){
 		const id = $(this).val();
 
 		$('#nama_project2').find('option').not(':first').remove();
-
-		// $.ajaxSetup({
-	 //        headers: {
-	 //            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	 //        }
-	 //    });
+		$('#PIChandover').find('option').not(':first').remove();		
 
 		$.ajax({
-			url: '/manager/assign/'+id,
+			url: '/manager/handover/project/'+id,
 			type: 'get',
 			dataType: 'json',
 
@@ -33,6 +28,34 @@ $(function(){
 					}
 				}
 			}
-		})	
+		})
+
+		$.ajax({
+			url: '/manager/handover/pic/'+id,
+			type: 'get',
+			dataType: 'json',
+
+			success: function(response){
+				console.log(response);
+				var len = 0;
+
+				if(response['data'].length != null){
+					len = response['data'].length;
+				}
+
+				if(len > 0){
+					for(var a=0; a<len; a++){
+						var id = response['data'][a].id_user;
+						var name = response['data'][a].nama_user;
+
+						var option = "<option value='"+id+"'>"+name+"</option>";
+
+						$("#PIChandover").append(option);
+					}
+				}
+
+			}
+		})
+
 	})
 });

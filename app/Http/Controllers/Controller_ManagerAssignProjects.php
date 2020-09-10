@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Projecs_Handover;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,24 +36,28 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeHandover(Request $request){
-        // return $request;
+        return $request;
 
-        $request->validate([
-            'id_user' => 'required',
-            'id_project' => 'required',
-        ]);
+        // $request->validate([
+        //     'id_user' => 'required',
+        //     'id_project' => 'required',
+        // ]);
 
-        Projects_Handover::create($request->all());
+        // Projects_Handover::create(
+        //     $request->all());
 
-        return redirect('/manager/assign')->with('status', '');
+        // return redirect('/manager/assign')->with('status', '');
     }
 
     public function fillProject($userId=0){
         $empData['data'] = Project::orderby("nama_project","asc")->select('id_project', 'nama_project')->where('id_user', $userId)->get();
-        // $projectsById = new Project();
-        // $projectsById = $projectsById->getProjectById($_POST['id']);
 
         return response()->json($empData);
     }
 
+    public function fillNewPIC($userId=0){
+        $empData['data'] = User::orderby("nama_user","asc")->select('id_user', 'nama_user')->where('id_user', '!=', $userId)->get();
+
+        return response()->json($empData);
+    }
 }

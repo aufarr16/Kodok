@@ -192,13 +192,6 @@
               <br>
               <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" name="id_user">
                 <option value=""></option>
-                @foreach($users as $usr)
-                  @if(old('id_user') == $usr->id_user)
-                    <option value="{{ $usr->id_user }}" selected>{{ $usr->nama_user }}</option>
-                  @else
-                    <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
-                  @endif
-                @endforeach
               </select>
           </div>                          
           <button onclick="submithandover()" type="submit" class="btn-submit" id="submithandover">Submit</button>

@@ -37,7 +37,9 @@ Route::get('/manager/home', 'Controller_ManagerHome@openPage');
 Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');
 Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
 
-Route::get('/manager/assign/{id}', 'Controller_ManagerAssignProjects@fillProject');
+Route::get('/manager/handover/project/{id}', 'Controller_ManagerAssignProjects@fillProject');
+Route::get('/manager/handover/pic/{id}', 'Controller_ManagerAssignProjects@fillNewPIC');
+
 Route::post('/manager/newproject', 'Controller_ManagerAssignProjects@storeNew');
 Route::post('/manager/newhandover', 'Controller_ManagerAssignProjects@storeHandover');
 
