@@ -28,7 +28,7 @@ Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
-Route::get('/admin/mitra/getdata', 'Controller_AdminMitra@get')->name('table.mitra');
+//Route::get('/admin/mitra/getdata', 'Controller_AdminMitra@get')->name('table.mitra');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
 
