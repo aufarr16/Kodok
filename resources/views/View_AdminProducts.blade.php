@@ -115,7 +115,7 @@
 							@enderror -->
 				            <br>
 				          </div>
-				         <button onclick="alert()" type="submit" class="btnsubmit">Submit</button>
+				         <button type="submit" class="btnsubmit">Submit</button>
 				        </form>
 					
 					<!-- ./modal body -->
@@ -168,7 +168,7 @@
 					              Masukkan nama produk
 					            </div> -->
 					          </div>
-					         <button onclick="editsubmit()" type="button" class="btnsubmit">Submit</button>
+					         <button type="button" class="btnsubmit">Submit</button>
 					        </form>
 							<!-- ./modal content -->
 							</div>
@@ -177,7 +177,7 @@
 						<!-- modal -->
 						</div>
 							<!-- <a onclick ="return confirm('Are you sure to delete this product?')" href='#' type="button" title="delete products" class="btn-delete"><i class="fas fa-trash fa-lg"></i></a> -->
-							<button onclick="deleteproduct()" type="button" class="btn-delete" id="deleteproduct"><i class="fas fa-trash fa-lg"></i></button>
+							<button type="button" class="btn-delete" id="deleteproduct"><i class="fas fa-trash fa-lg"></i></button>
 						
 				</td>
 				<td>{{ $dat_prod->added_by}}</td>
