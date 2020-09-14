@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
- <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -147,9 +148,9 @@
 				<td>{{ $dat_mit->ABA }}</td>
 				<td>{{ $dat_mit->nama_mitra }}</td>
 				<td data-filter="false">
-					<button type="button" title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
+					<button type="button" title="edit mitra" class="btn-edit" data-toggle="modal" data-target="#{{ $dat_mit->ABA }}"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- The Modal -->
-						<div class="modal" id="modal1" role="dialog">
+						<div class="modal" id="{{ $dat_mit->ABA }}" role="dialog">
 						
 						<!-- Modal content -->
 						<div class="modal-content">
@@ -159,21 +160,20 @@
 							</div>
 							<div class = "modal-body">
 								<form method="post" action="/admin/submitmitra">
-						          <div class="form-group">
-						          	<div class ="input-group-addon">
-										<label for="namaproduct" style="font-weight:bolder;float:left;">ABA</label>
-									</div>
-						            <input type="number" id="editaba" class="form-control" style="margin-bottom: 10px" maxlength = "7"
-				             		oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-						            <br>
-						            
-						            <div class ="input-group-addon">
-										<label for="namaproduct" style="font-weight:bolder;float:left;">Nama Mitra</label>
-									</div>
-						            <input type="text" id="editmitra" class="form-control" style="margin-bottom: 10px">
-						            <br>
-
-						          </div>
+								 	@csrf
+							          <div class="form-group">
+							          	<div class ="input-group-addon">
+											<label for="namaproduct" style="font-weight:bolder;float:left;">ABA</label>
+										</div>
+							            <input type="number" id="editaba" class="form-control" style="margin-bottom: 10px" maxlength = "7"
+					             		oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+							            <br>						            
+							            <div class ="input-group-addon">
+											<label for="namaproduct" style="font-weight:bolder;float:left;">Nama Mitra</label>
+										</div>
+							            <input type="text" id="{{ $dat_mit->ABA }}" class="form-control" style="margin-bottom: 10px">
+							            <br>
+							          </div>
 						         <button onclick="submitedit()" type="submit" class="btnsubmit">Submit</button>
 						        </form>
 					
@@ -184,7 +184,7 @@
 						<!-- ./modal -->
 						</div>
 							<!-- <a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a> -->
-							 <button onclick="deletemitra()" type="button" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+							<button id="{{ $dat_mit->ABA }}" type="submit" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>{{ $dat_mit->added_by }}</td>
 				<td>{{ $dat_mit->modified_by }}</td>
@@ -240,14 +240,87 @@
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
-      // pageSize: 8,     
+      // pageSize: 8,
+     	// ajax: "{{ route('table.mitra') }}",
+     	// responsive: true,
+     	// processing: true,
+     	// serverSide: true,
         "pageLength": 10, 
-         "searching": true,
-         "paging": true,
-         "info": false,         
-         "lengthChange":false
-           } );
+        "searching": true,
+        "paging": true,
+        "info": false,         
+        "lengthChange":false
+    } );
 } );
+
+$('body').on('click', '.btn-delete', function(event){
+		event.preventDefault();
+
+		var id = $(this).attr('id');
+
+		Swal.fire({
+		  title: 'Yakin hapus data ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+
+				$.ajax({
+					url: '/admin/delmitra/'+id,
+					type: 'get',
+					data: {
+						'_method': 'DELETE'
+					},
+
+					success: function(response){
+						// console.log(response);
+						table.ajax.reload();
+
+						Swal.fire({
+						title:'Data mitra berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+						})
+					},
+
+					error: function(xhr){
+						Swal.fire({
+							type: 'error',
+							title: 'Oops...',
+							text: 'Something went wrong!'
+						})
+					}
+				})
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Data mitra tetap tersimpan',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+	})
+
 </script>
 
 <script>
@@ -308,6 +381,7 @@ $(document).ready(function () {
 });
 </script> -->
 <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script src="{{ url('') }}/js/script.js"></script>
 <script>
 	function submitmitra () {
    	var aba = $('#ABA').val();
@@ -388,44 +462,6 @@ $(document).ready(function () {
 			  title: 'Data mitra berhasil disimpan'
 			})
 	 	}}
-
-	 	function deletemitra () {
-		Swal.fire({
-		  title: 'Yakin hapus data ini?',
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
-		  confirmButtonText: 'Ya',
-		  cancelButtonText: 'Tidak'
-		}).then((result)=>{
-			if(result.value){
-				Swal.fire({
-					title:'Data mitra berhasil dihapus',
-					type:'success',
-					toast:true,
-					showConfirmButton:false,
-					position: 'top',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D4F1F4'
-				})
-
-			} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Data mitra tetap tersimpan',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top',
-					grow:'row',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D2FBA4'
-				})
-			}
-		})
-		}
 </script>
 </body>
 

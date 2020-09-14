@@ -26,9 +26,13 @@ Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
 
-Route::post('/admin/submituser', 'Controller_AdminUsers@store');
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
+Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
+//Route::get('/admin/mitra/getdata', 'Controller_AdminMitra@get')->name('table.mitra');
+
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
+
+Route::post('/admin/submituser', 'Controller_AdminUsers@store');
 
 ##Manager
 Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');

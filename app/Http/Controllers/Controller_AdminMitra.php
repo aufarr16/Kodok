@@ -33,4 +33,17 @@ class Controller_AdminMitra extends Controller
 
     	return redirect('/admin/mitra')->with('status','');
     }
+
+    public function destroy($ABA){
+        Mitra::where('ABA', $ABA)->delete();
+        $mitraData['data'] = Mitra::orderby("ABA", "asc")->get();
+
+        return response()->json($mitraData);
+    }
+
+    public function get(){
+        $all_mitra['data'] = Mitra::orderby("ABA", "asc")->get();
+
+        return response()->json($all_mitra);
+    }
 }

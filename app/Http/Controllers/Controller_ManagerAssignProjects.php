@@ -20,20 +20,21 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeNew(Request $request){
-    	// return $request;
+    	//return $request;
 
-     //    $request->validate([
-     //        'id_user' => 'required',
-     //        'id_product' => 'required',
-     //        'id_ptype' => 'required',
-     //        'id_ABA' => 'required',
-     //        'nama_project' => 'required',
-     //    ]);
+
+        $request->validate([
+            'id_user' => 'required',
+            'id_product' => 'required',
+            'id_ptype' => 'required',
+            'ABA' => 'required',
+            'nama_project' => 'required',
+        ]);
 
     	// Project::create($request->all());
 
-    	// return redirect('/manager/assign')->with('status', 'yeay berhasil')
-        return redirect('/manager/assign');
+
+    	return redirect('/manager/assign');
     }
 
     public function storeHandover(Request $request){
@@ -51,14 +52,14 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function fillProject($userId=0){
-        $empData['data'] = Project::orderby("nama_project","asc")->select('id_project', 'nama_project')->where('id_user', $userId)->get();
+        $projData['data'] = Project::orderby("nama_project","asc")->select('id_project', 'nama_project')->where('id_user', $userId)->get();
 
-        return response()->json($empData);
+        return response()->json($projData);
     }
 
     public function fillNewPIC($userId=0){
-        $empData['data'] = User::orderby("nama_user","asc")->select('id_user', 'nama_user')->where('id_user', '!=', $userId)->get();
+        $userData['data'] = User::orderby("nama_user","asc")->select('id_user', 'nama_user')->where('id_user', '!=', $userId)->get();
 
-        return response()->json($empData);
+        return response()->json($userData);
     }
 }
