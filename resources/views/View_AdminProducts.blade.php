@@ -23,11 +23,10 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"><!-- </style> -->
   <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
-   <header class="main-header">
+   	<header class="main-header">
       <div class="custom-menu">
       <div class="row">
         <div class="col-md-6">
