@@ -30,6 +30,6 @@ class Controller_AdminProducts extends Controller
 
     	Product::create($request->all());
 
-    	return redirect('/admin/products')->with('status','');
+    	return redirect('/admin/products')->with('status','Yeay berhasil');
     }
 }

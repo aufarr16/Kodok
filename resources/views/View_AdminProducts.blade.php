@@ -80,6 +80,7 @@
 
       @if(session('status'))
           <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
+
       @endif
        
 	   <h2 style="margin-top:10px">Products</h2>
@@ -108,8 +109,10 @@
 
 				            <!-- <input type="text" id="nama_product" class="form-control" name="nama_product"> -->
 
-				            <input type="email" id="name_product" class="form-control" name="nama_product">
-
+				            <input type="text" id="name_product" class="form-control" name="nama_product">
+						<!-- 	@error('nama_product')
+						    <div class="alert alert-danger">{{ $message }}</div>
+							@enderror -->
 				            <br>
 				          </div>
 				         <button onclick="alert()" type="submit" class="btnsubmit">Submit</button>
@@ -350,7 +353,7 @@ $(document).ready(function () {
 			})
 	 	}}
 </script> -->
-<script>
+<!-- <script>
 	function alert () {
    	var name = $('#nama_product').val();
 
@@ -447,7 +450,7 @@ $(document).ready(function () {
 			}
 		})
 		}
-</script>
+</script> -->
 </body>
 
 </html>

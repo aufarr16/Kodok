@@ -22,17 +22,18 @@ class Controller_ManagerAssignProjects extends Controller
     public function storeNew(Request $request){
     	// return $request;
 
-        $request->validate([
-            'id_user' => 'required',
-            'id_product' => 'required',
-            'id_ptype' => 'required',
-            'id_ABA' => 'required',
-            'nama_project' => 'required',
-        ]);
+     //    $request->validate([
+     //        'id_user' => 'required',
+     //        'id_product' => 'required',
+     //        'id_ptype' => 'required',
+     //        'id_ABA' => 'required',
+     //        'nama_project' => 'required',
+     //    ]);
 
-    	Project::create($request->all());
+    	// Project::create($request->all());
 
-    	return redirect('/manager/assign')->with('status', '');
+    	// return redirect('/manager/assign')->with('status', 'yeay berhasil')
+        return redirect('/manager/assign');
     }
 
     public function storeHandover(Request $request){
