@@ -14,7 +14,7 @@ class Controller_AdminUsers extends Controller
 		$levels = Users_Level::all();
     	$data_users = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
 		//dump($data_users);
-    	return view('View_AdminUsers', compact('users', 'levels', 'data_users'));
+    	return view('Pages.Admin.View_AdminUsers', compact('users', 'levels', 'data_users'));
     }
 
       /**

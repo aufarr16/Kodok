@@ -16,7 +16,7 @@ class Controller_ManagerAssignProjects extends Controller
     	$mitras = DB::select("select * from mitras order by nama_mitra asc");
     	$ptypes = DB::select("select * from projects_types order by nama_ptype asc");
     	$users = DB::select("select * from users order by nama_user asc");
-    	return view('View_ManagerAssignProjects', compact('users','products','mitras','ptypes')); 	
+    	return view('Pages.Manager.View_ManagerAssignProjects', compact('users','products','mitras','ptypes')); 	
     }
 
     public function storeNew(Request $request){
