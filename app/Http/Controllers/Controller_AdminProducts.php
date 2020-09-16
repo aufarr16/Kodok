@@ -11,7 +11,7 @@ class Controller_AdminProducts extends Controller
     public function openPage(){
     	$data_products = Product::all();
     	//dump($data_products);
-    	return view('View_AdminProducts', compact('data_products'));
+    	return view('Pages.Admin.View_AdminProducts', compact('data_products'));
     }
 
       /**
@@ -30,6 +30,6 @@ class Controller_AdminProducts extends Controller
 
     	Product::create($request->all());
 
-    	return redirect('/admin/products')->with('status','');
+    	return redirect('/admin/products')->with('status','Yeay berhasil');
     }
 }

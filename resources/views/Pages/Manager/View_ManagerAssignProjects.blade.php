@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -99,11 +99,7 @@
             <select id="id_user" class="js-states form-control" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
               <option value=""></option>
               @foreach($users as $usr)
-                @if(old('id_user') == $usr->id_user)
-                  <option value="{{ $usr->id_user }}" selected>{{ $usr->nama_user }}</option>
-                @else
-                  <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
-                @endif
+              <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
               @endforeach
             </select>
           </div>
@@ -113,11 +109,7 @@
             <select id="id_product" class="js-states form-control" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
               <option value=""></option>
               @foreach($products as $prod)
-                @if(old('id_product') == $prod->id_product)
-                  <option value="{{ $prod->id_product }}" selected>{{ $prod->nama_product }}</option>
-                @else
-                  <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
-                @endif
+              <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
               @endforeach
             </select>
           </div>
@@ -127,11 +119,7 @@
             <select id="id_ptype" class="js-states form-control" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
               <option value=""></option>
               @foreach($ptypes as $ptype)
-                @if(old('id_ptype') == $ptype->id_ptype)
-                  <option value="{{ $ptype->id_ptype }}" selected>{{ $ptype->nama_ptype }}</option>
-                @else
-                  <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
-                @endif
+              <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
               @endforeach
             </select>
           </div>
@@ -141,18 +129,14 @@
             <select id="ABA" class="js-states form-control" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
               <option value=""></option>
               @foreach($mitras as $mtr)
-                @if(old('ABA') == $mtr->ABA)
-                  <option value="{{ $mtr->ABA }}" selected>{{ $mtr->nama_mitra }}</option>
-                @else
-                  <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
-                @endif
+              <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
               @endforeach
             </select>
           </div>          
           <div class="form-group">
             <label for="nama_project" style="font-weight:bolder">Nama Project</label>
             <br>
-            <input class="form-control" type="text" id="nama_project" name="nama_project" value="{{ old('nama_project') }}" autocomplete="off">
+            <input class="form-control" type="text" id="nama_project" name="nama_project" autocomplete="off">
               <span class="underline"></span>
           </div>
 
@@ -163,14 +147,13 @@
       <!-- Assign Handover Project -->
       <div id="handover" class="container tab-pane fade">
         <form method="post" action="/manager/newhandover">
-          @csrf
           <div class="form-group">
             <label for="PIC2" style="font-weight:bolder">PIC</label>
               <br>
               <select id="PIC2" class="js-states form-control picAsli" data-placeholder="Pilih PIC" style="width:100%">
                 <option value=""></option>
                 @foreach($users as $usr)
-                  <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
                 @endforeach
               </select>
           </div>
@@ -178,8 +161,9 @@
           <div class="form-group">
             <label for="nama_project2" style="font-weight:bolder">Nama project</label>
               <br>
-              <select id="nama_project2" class="js-states form-control proj_hv" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
-                <option value=""></option> 
+              <select id="nama_project2" class="js-states form-control" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+                <option value=""></option>
+                
               </select>
           </div>
           <br>
@@ -188,6 +172,9 @@
               <br>
               <select id="PIChandover" class="js-states form-control" data-placeholder="Pilih PIC Handover" style="width:100%" name="id_user">
                 <option value=""></option>
+                @foreach($users as $usr)
+                <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                @endforeach
               </select>
           </div>                          
           <button onclick="submithandover()" type="submit" class="btn-submit" id="submithandover">Submit</button>
