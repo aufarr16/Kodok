@@ -220,7 +220,6 @@ $(document).ready(function() {
          "info": true,         
          "lengthChange":false
            } );
-
     $('#search1').DataTable( {
        "pageLength": 10,     
          "searching": true,
