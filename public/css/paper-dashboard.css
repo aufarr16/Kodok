@@ -8434,7 +8434,8 @@ h1, h2, h3, h4, h5,
   max-width: 180px;
   /*background: #32373d;*/
   color: #fff;
-  max-height: 165vh; /*tinggi sidebar*/
+  min-height: 80vh; /*tinggi sidebar*/
+  max-height: 830px;
   background: linear-gradient(#003371, #00478F);
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;

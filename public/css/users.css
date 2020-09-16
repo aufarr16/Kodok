@@ -98,6 +98,7 @@
 	   margin-top: -10px;
      position: absolute;
     vertical-align: middle;
+    z-index: 2;
 }
 
 .btn-add:hover, .btn-add:focus, .btn-add:active{
