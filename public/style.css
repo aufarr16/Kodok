@@ -18,8 +18,10 @@
 }
 .table1, th, td {
     text-align: center;
-	background-color: #D9E4EC;
-	border: 1px solid #f0f0f2 !important;
+	/*background-color: #D9E4EC;*/
+	background-color: #bddad954;
+	/*border: 1px solid #f0f0f2 !important;*/
+	border: 1px solid #ffff !important;
 	color: #1C3F60;
 	border-radius: 2px;
 }

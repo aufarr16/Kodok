@@ -1,84 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+  @extends('Pages.Manager.TempManager')
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    | {Manager} Assign Projects
-  </title>  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
-  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
+  @push('styles')
   <link href="{{ url('') }}/css/assign.css" rel="stylesheet" />
   <!-- Select 2 -->
   <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
-  <!-- Toastr -->
-  <link href="{{ url('') }}/css/Plugin/Toastr/toastr.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
-</head>
+  @endpush
 
-  <body>
-  <header class="main-header">
-     <div class="custom-menu">
-      <div class="row">
-        <div class="col-md-6">
-        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-         <i class="fas fa-align-justify fa-2x"></i>
-        </button>
-          Sistem Dokumentasi
-        </div>
-        <div class="col-md-6">
-          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, Manager</h4>
-        </div>
-      </div>
-    </div>
-  </header>
-  
-  <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
-      <ul class="list-unstyled components mb-5">
-          <li>
-            <a href="/manager/home">
-           <span class="fa fa-home mr-2"></span>Home
-            </a>
-          </li>
-          <li>
-            <a href="/manager/projects">
-             <span class="fas fa-clipboard-list mr-2"></span>List Projects
-            </a>
-          </li>
-          <li class="active">
-            <a href="/manager/assign">
-             <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
-            </a>
-          </li>    
-          <li>
-            <a href="/manager/approval">
-              <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
-            </a>
-          </li>
-          <li>
-            <a href="/manager/searchdocs">
-              <span class="fa fa-search mr-2"></span>Search Documents
-            </a>
-          </li>
-        </ul>
-      </nav>
-    
-  <div class="container-fluid">
-    <div class="content">
+  @section('content')
+  <title>
+    | {Manager} Assign Projects
+  </title>
       
-       <h2 style="margin-top:10px">Assign Projects</h2>
-          <!-- Nav pills -->
+    <h2 style="margin-top:10px">Assign Projects</h2>
+    <!-- Nav pills -->
     <ul class="nav nav-pills" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="pill" href="#new">New Projects</a>
@@ -186,55 +121,9 @@
 
     <!-- ./tab content -->
     </div>                
-  <!-- ./content -->
-  </div>
-
-  <!-- footer -->
-  <div class="blockquote text-right">
-        <span>Copyright © 
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        All rights reserved
-      </span>
-    <!-- </footer> -->
-  </div>
-
-  <!-- ./container fluid -->
-  </div>
-<!-- ./wrapper -->
-</div>
+@endsection
     
-  <!--   Core JS Files  -->
-  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
-    
- <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script>
-$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-</script>
+@push('scripts')
 <!-- Select 2 -->
 <script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
 <script>
@@ -479,6 +368,4 @@ function(isConfirm){
     })
     }}
 </script>
-</body>
-
-</html>
+@endpush

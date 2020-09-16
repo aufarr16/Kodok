@@ -1,81 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+	@extends('Pages.Admin.TempAdmin')
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    | {Admin} Archive Documents
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
-  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet"></style>
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></style>
-
-</head>
-
-<body>
-	 <header class="main-header">
-      <div class="custom-menu">
-      <div class="row">
-        <div class="col-md-6">
-        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-         <i class="fas fa-align-justify fa-2x"></i>
-        </button>
-          Sistem Dokumentasi
-        </div>
-      <div class="col-md-6">
-          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, Admin</h4>
-        </div>
-      </div>
-    </div>
-    </header>
-	  
-	<div class="wrapper d-flex align-items-stretch">
-	    <nav id="sidebar">
-	  
-      <ul class="list-unstyled components mb-5">
-			<li class="active">
-				<a href="/admin/archive">
-					<span class="fa fa-book mr-2"></span>Archive Documents
-				</a>
-			</li>
-			<li>
-            <a href="/admin/searchdocs">
-             <span class="fa fa-search mr-2"></span>Search Documents
-            </a>
-          </li>
-          <li>
-			<a href="/admin/users">
-				<span class="fas fa-users mr-2"></span>Users
-			</a>
-			</li>
-          <li>
-            <a href="/admin/products">
-            <span class="fas fa-random mr-2"></span>Products
-            </a>
-          </li>
-          <li>
-            <a href="/admin/mitra">
-            <span class="fas fa-university mr-2"></span>Mitra
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-	<div class="container-fluid">
-	<div class="content">
+	@push('styles')
+	<link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" />
+	@endpush
+	
+	@section('content')
+  	<title>
+    	| {Admin} Archive Documents
+  	</title>
        
 	  <h2 style="margin-top:10px">Archive Documents</h2>
 		<div class="table-responsive-lg">	
@@ -248,66 +180,9 @@
 	<!-- table responsive -->
 	</div>
 	</br>
-	<!-- ./content -->
-	</div>
+	@endsection
 
-		<!-- footer -->
-  	<div class="blockquote text-right">
-        <span>Copyright © 
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        All rights reserved
-      </span>
-    <!-- </footer> -->
-  	</div>
-
-	<!-- ./container fluid -->
-	</div>
-<!-- ./wrapper -->
-</div>
-
-  <!--   Core JS Files   -->
-  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
-
-<!-- JS Datatable pagination  -->
-<script>
-$(document).ready(function() {
-    $('#table1').DataTable( { 
-      // pageSize: 8,     
-        "pageLength": 10, 
-         "searching": true,
-         "paging": true,
-         "info": false,         
-         "lengthChange":false
-           } );
-} );
-</script>
-<script>
-$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-</script>
+@push('scripts')
 <script>
 	$(document).ready(function(){
 	// 1 - Baris 1
@@ -397,6 +272,4 @@ $(document).ready(function () {
 
 });
 </script>
-</body>
-
-</html>
+@endpush
