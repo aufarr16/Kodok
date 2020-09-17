@@ -44,10 +44,10 @@
       <nav id="sidebar" class="shift">
    
       <ul class="list-unstyled components mb-5">
-        	<li class="active">
-			<a href="/guest/searchdocs">
-             	<span class="fa fa-search mr-2"></span>Search Documents
-            </a>
+      <li class="{{ 'guest/searchdocs' == request()->path() ? 'active' : '' }} ">
+			 <a href="/guest/searchdocs">
+          <span class="fa fa-search mr-2"></span>Search Documents
+        </a>
 			</li>
         </ul>
       </nav>
@@ -59,16 +59,17 @@
 	<!-- ./content -->
 	</div>
 
-	<!-- footer -->
-  	<div class="blockquote text-left">
-        <span>Copyright © 
+  <!-- footer -->
+    <!-- <div class="blockquote text-left"> -->
+        <footer class="footer fixed-bottom">
+          <span>Copyright © 
         <script>
           document.write(new Date().getFullYear())
         </script>
         All rights reserved
       </span>
     <!-- </footer> -->
-  	</div>
+    </footer>
 
 	<!-- ./container fluid -->
 	</div>

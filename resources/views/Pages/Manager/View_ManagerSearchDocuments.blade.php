@@ -1,14 +1,14 @@
   @extends('Pages.Manager.TempManager')
-  <title>
-    | {Manager} Search Documents
-  </title>
+  
   @push('styles')
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
-  <!-- <link href="{{ url('') }}/css/Plugin/Responsive/responsive.bootstrap4.scss" rel="stylesheet" /> -->
   @endpush
 
-  @section('content')  
+  @section('content')
+  <title>
+    | {Manager} Search Documents
+  </title>
   <h2 style="margin-top:10px">Search Documents</h2>
 	<div class="table-responsive-lg">	
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">

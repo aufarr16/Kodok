@@ -124,9 +124,12 @@
 @endsection
     
 @push('scripts')
-<!-- Select 2 -->
-<script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
-<script>
+  <!--   Core JS Files  -->
+  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
+
+  <!-- Select 2 -->
+  <script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
+  <script>
      $("#id_user").select2({
           allowClear: true
       });
@@ -141,9 +144,9 @@
       $("#ABA").select2({
           allowClear: true
       });
-</script>
+  </script>
 
-<script>
+  <script>
      $("#PIC2").select2({
           allowClear: true
       });
@@ -156,87 +159,10 @@
           allowClear: true
       });
 
-</script>
-
-<!-- Toastr Alert -->
-<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
-<script>
- $(document).ready(function(){
-  $("#submitnew").on('click',function(){
-    toastr.options = {
-    "closeButton": true,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": true,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-  }
-
-  toastr["success"]("Data project berhasil ditambahkan!")
-  });
-
-  $("#submithandover").on('click',function(){
-    toastr.options = {
-    "closeButton": true,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": true,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-  }
-
-  toastr["success"]("Data handover project berhasil diedit!")
-  });
-});
-</script> -->
-<!-- <script>
-  $('#submitnew').on('click',function(e) {
-    
-    event.preventDefault();
-var form = this;
-    
-        swal({
-  title: "Are you sure?",
-  text: "All data related to this AMC ID will be parmanently deleted",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, DELETE it!",
-  cancelButtonText: "No, cancel please!",
-  closeOnConfirm: false,
-  closeOnCancel: false
-},
-function(isConfirm){
-  if (isConfirm) {
-    form.submit();
-    } else {
-    swal("Cancelled", "AMC Record is safe :)", "error");
-  
-  }
-});
-});
-</script> -->
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>\
-<script src="{{ url('') }}/js/script.js"></script>
-<script>
+  </script>
+  <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>\
+  <script src="{{ url('') }}/js/script.js"></script>
+  <script>
    function submitproject () {
     var user = $('#id_user').val();
     var product = $('#id_product').val();
@@ -367,5 +293,5 @@ function(isConfirm){
         title: 'Data mitra berhasil disimpan'
     })
     }}
-</script>
-@endpush
+  </script>
+  @endpush

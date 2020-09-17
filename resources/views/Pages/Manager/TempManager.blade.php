@@ -41,27 +41,27 @@
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
-          <li>
+          <li class="{{ 'manager/home' == request()->path() ? 'active' : '' }} ">
             <a href="/manager/home">
            <span class="fa fa-home mr-2"></span>Home
             </a>
           </li>
-          <li>
+          <li class="{{ 'manager/projects' == request()->path() ? 'active' : '' }} ">
             <a href="/manager/projects">
              <span class="fas fa-clipboard-list mr-2"></span>List Projects
             </a>
           </li>
-          <li>
+          <li class="{{ 'manager/assign' == request()->path() ? 'active' : '' }} ">
             <a href="/manager/assign">
              <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
             </a>
           </li>    
-          <li class="active">
+          <li class="{{ 'manager/approval' == request()->path() ? 'active' : '' }} ">
             <a href="/manager/approval">
               <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
             </a>
           </li>
-          <li>
+          <li class="{{ 'manager/searchdocs' == request()->path() ? 'active' : '' }} ">
             <a href="/manager/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
@@ -70,25 +70,29 @@
       </nav>
 
   <div class="container-fluid">
-  <div class="content">
- 	@yield('content')
-	
-	<!-- ./content -->
-	</div>
+      <div class="content">
+    @yield('content')
+    <!-- <div class="content"> -->
 
-	<!-- footer -->
-	<div class="blockquote text-left">
-  			<span>Copyright © 
-  			<script>
+    @if(session('status'))
+          <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
+    @endif
+    
+  <!-- ./content -->
+  </div>
+  <!-- footer -->
+    <!-- <div class="blockquote text-left"> -->
+        <footer class="footer fixed-bottom">
+          <span>Copyright © 
+        <script>
           document.write(new Date().getFullYear())
         </script>
         All rights reserved
       </span>
-  	<!-- </footer> -->
+    <!-- </footer> -->
+    </footer>
+  <!-- ./container fluid -->
   </div>
-
-	<!-- ./container fluid -->
-	</div> 		
 <!-- ./wrapper -->
 </div>
 

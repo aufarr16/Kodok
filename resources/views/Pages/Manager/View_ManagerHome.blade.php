@@ -1,76 +1,10 @@
-<!DOCTYPE html>
-<!-- <html lang="en" style="overflow-x: hidden"> -->
-<html lang="en">
+  @extends('Pages.Manager.TempManager')
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  @section('content')
   <title>
     | {Manager} Home
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" /> -->
-  <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
-  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-</head>
 
-  <body>
-   <header class="main-header">
-    <div class="custom-menu">
-      <div class="row">
-        <div class="col-md-6">
-        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-         <i class="fas fa-align-justify fa-2x"></i>
-        </button>
-          Sistem Dokumentasi
-        </div>
-      <div class="col-md-6">
-          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, Manager</h4>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
-      <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="/manager/home">
-           <span class="fa fa-home mr-2"></span>Home
-            </a>
-          </li>
-          <li>
-            <a href="/manager/projects">
-             <span class="fas fa-clipboard-list mr-2"></span>List Projects
-            </a>
-          </li>
-          <li>
-            <a href="/manager/assign">
-             <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
-            </a>
-          </li>    
-          <li>
-            <a href="/manager/approval">
-              <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
-            </a>
-          </li>
-          <li>
-            <a href="/manager/searchdocs">
-              <span class="fa fa-search mr-2"></span>Search Documents
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-  <div class="container-fluid">
-  <div class="content" style="min-height: 240vh;">
 	  <h2 style="margin-top:10px; margin-bottom: 10px">Home</h2>
 
       <div class="tile reserved">
@@ -254,53 +188,11 @@
           </div>
         <!-- ./row -->
         </div>
-  <br>
-	<!-- ./content -->
-  </div>
+	@endsection
 
-  <!-- footer -->
-  <div class="blockquote text-right" style="margin-top:-30px; ">
-        <span>Copyright © 
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        All rights reserved
-      </span>
-  </div>
-    <!-- </footer> -->
-  </div>
-
-  <!-- ./container fluid -->
-  </div>
-<!-- ./wrapper -->
-</div>
-
-      <!-- <footer class="footer">
-              <span class="copyright">
-                Copyright ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>  All rights reserved
-              </span>
-      </footer> -->
+  @push('scripts')
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('') }}/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <!-- Highchart -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -768,6 +660,4 @@ $(document).ready(function () {
             });
         });
 </script>
-</body>
-
-</html>
+@endpush

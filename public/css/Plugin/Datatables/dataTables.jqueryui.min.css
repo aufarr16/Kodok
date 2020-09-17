@@ -257,6 +257,7 @@ table.dataTable td{
 	zoom:1;
 	/*margin-top: 0px;*/
 	margin-top: -17px;
+	margin-bottom: 25px
 	}
 .dataTables_wrapper .dataTables_length{
 	float:left

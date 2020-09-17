@@ -1,5 +1,4 @@
 	@extends('Pages.Admin.TempAdmin')
-
 	@section('content')
 	<title>
 	| {Admin} Mitra

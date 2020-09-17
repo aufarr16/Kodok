@@ -43,29 +43,29 @@
     
     
     <div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar">
+    <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
-         <li>
-				<a href="/admin/archive">
-					<span class="fa fa-book mr-2"></span>Archive Documents
-				</a>
-			</li>
-			<li>
+         <li class="{{ 'admin/archive' == request()->path() ? 'active' : '' }} ">
+					<a href="/admin/archive" >
+						<span class="fa fa-book mr-2"></span>Archive Documents
+					</a>
+					</li>
+					<li class="{{ 'admin/searchdocs' == request()->path() ? 'active' : '' }} ">
             <a href="/admin/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>
-          <li>
-			<a href="/admin/users">
-				<span class="fas fa-users mr-2"></span>Users
-			</a>
-			</li>
-          <li>
+          <li class="{{ 'admin/users' == request()->path() ? 'active' : '' }} ">
+						<a href="/admin/users">
+							<span class="fas fa-users mr-2"></span>Users
+						</a>
+					</li>
+          <li class="{{ 'admin/products' == request()->path() ? 'active' : '' }} ">
             <a href="/admin/products">
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>
-          <li>
+          <li class="{{ 'admin/mitra' == request()->path() ? 'active' : '' }} ">
             <a href="/admin/mitra">
             <span class="fas fa-university mr-2"></span>Mitra
             </a>
@@ -82,25 +82,25 @@
           <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
     @endif
     
-	<!- ./content -->
+	<!-- ./content -->
 	</div>
-
-	<!- footer -->
-  	<div class="blockquote text-left">
-        <span>Copyright © 
+	<!-- footer -->
+  	<!-- <div class="blockquote text-left"> -->
+        <footer class="footer fixed-bottom">
+        	<span>Copyright © 
         <script>
           document.write(new Date().getFullYear())
         </script>
         All rights reserved
       </span>
     <!-- </footer> -->
-  	</div>
-
+  	</footer>
 	<!-- ./container fluid -->
 	</div>
 <!-- ./wrapper -->
 </div>
 
+	
 @stack('scripts')
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
