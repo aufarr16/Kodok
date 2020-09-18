@@ -6,13 +6,12 @@
   <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
   @endpush
-
+  @section('PageTitle','Assign Projects')
   @section('content')
   <title>
     | {Manager} Assign Projects
   </title>
       
-    <h2 style="margin-top:10px">Assign Projects</h2>
     <!-- Nav pills -->
     <ul class="nav nav-pills" role="tablist">
       <li class="nav-item">

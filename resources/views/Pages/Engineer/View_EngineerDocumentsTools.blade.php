@@ -3,13 +3,12 @@
   @push('styles')
   <link href="{{ url('') }}/css/docs-engineer.css" rel="stylesheet" />
   @endpush
-
+  @section('PageTitle','Documents & Tools')
   @section('content')
    <title>
     | {Engineer} Documents & Tools
   </title>
  
-	  <h2 style="margin-top:10px">Documents & Tools</h2>
 		<div class="table-responsive-lg">
     	<table class="table1" id="table1" style="overflow:auto">
     		<thead>

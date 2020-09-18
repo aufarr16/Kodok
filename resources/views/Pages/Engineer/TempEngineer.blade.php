@@ -45,32 +45,22 @@
 <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar">
         <ul class="list-unstyled components mb-5">
-		  		<li class="{{ 'engineer/doctools' == request()->path() ? 'active' : '' }} ">
+		  		<li class="{{ Request::is('engineer/doctools') ? 'active' : '' }}">
             <a href="/engineer/doctools">
               <span class="fas fa-file-alt mr-2"></span>Documents & Tools
             </a>
           </li>
-          <li class="{{ 'engineer/projects' || 'engineer/handover' == request()->path() ? 'active' : '' }} ">
-            <a href="#submenu2" data-toggle="collapse" aria-expanded="false">
-              <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-clipboard-list mr-2"></span>
-                <span class="menu-collapsed">Projects</span>
-                <span class="fa" style="padding-left: 60px"></span>
-              </div>
+          <li>
+          	<a class="tree-toggle nav-header d-flex">
+          			<span class="fas fa-clipboard-list ">&nbsp Projects</span>
+                <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
             </a>
-            <!-- Submenu content -->
-            <div id='submenu2' class="collapse sidebar-submenu">
-              <a href="/engineer/projects" class="list-group-item list-group-item-action">
-                <span class="fas fa-tasks mr-1" style="margin-left: 13px"></span>
-                  <span class="menu-collapsed" style="font-size: 14px">Your Projects</span>
-              </a>
-              <a href="/engineer/handover" class="list-group-item list-group-item-action">
-                <span class="fas fa-stream mr-1" style="margin-left: 13px"></span>
-                <span class="menu-collapsed" style="font-size: 14px">Handover Projects</span>
-              </a>
-            </div>  
+	            <ul class="nav tree" style="display: none;">
+	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">Your Projects</a></li>
+	              <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/handover">Handover</a></li>
+	            </ul>
           </li>
-          <li class="{{ 'engineer/searchdocs' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
             <a href="/engineer/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
@@ -80,6 +70,7 @@
 
    	<div class="container-fluid">
       <div class="content">
+      	<h2 style="margin-top:10px">@yield('PageTitle')</h2>
       @yield('content')
 
 	  
@@ -124,120 +115,130 @@
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
 
-<!-- JS Datatable pagination  -->
-<script>
-$(document).ready(function() {
-    $('#table1').DataTable( { 
-      // pageSize: 8,     
-        "pageLength": 10, 
-         "searching": true,
-         "paging": true,
-         "info": false,         
-         "lengthChange":false
-           } );
-} );
-</script>
-<!-- JS Search All -->
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-<script>
-$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-</script>
+	<!-- JS Datatable pagination  -->
+	<script>
+	$(document).ready(function() {
+	    $('#table1').DataTable( { 
+	      // pageSize: 8,     
+	        "pageLength": 10, 
+	         "searching": true,
+	         "paging": true,
+	         "info": false,         
+	         "lengthChange":false
+	           } );
+	} );
+	</script>
+	<!-- JS Search All -->
+	<script>
+	$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#myTable tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+	</script>
+	<script>
+	$(document).ready(function () {
+	            $('#sidebarCollapse').on('click', function () {
+	                $('#sidebar').toggleClass('active');
+	            });
+	        });
 
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
-<script>
-	function donehandover () {
-		Swal.fire({
-		  title: 'Yakin handover sudah selesai?',
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
-		  confirmButtonText: 'Ya',
-		  cancelButtonText: 'Tidak'
-		}).then((result)=>{
-			if(result.value){
-				Swal.fire({
-					title:'Handover telah selesai',
-					type:'success',
-					toast:true,
-					showConfirmButton:false,
-					position: 'top',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D4F1F4'
-				})
+	// Dropdown menu projects
+	$('.tree-toggle').click(function() {
+	    $(this).parent().children('ul.tree').toggle(300);
+	});
 
-			} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Semangat handover',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top',
-					grow:'row',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D2FBA4'
-				})
+	// Rotate icon dropdown
+	$(".rotate").click(function () {
+    $(this).toggleClass("fas fa-chevron-circle-down fas fa-chevron-circle-up");
+})
+	</script>
+
+	<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+	<script>
+		function donehandover () {
+			Swal.fire({
+			  title: 'Yakin handover sudah selesai?',
+			  type: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: 'lightgrey',
+			  cancelButtonColor: 'dodgerblue',
+			  confirmButtonText: 'Ya',
+			  cancelButtonText: 'Tidak'
+			}).then((result)=>{
+				if(result.value){
+					Swal.fire({
+						title:'Handover telah selesai',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+
+				} else if (result.dismiss === 'cancel') {
+					Swal.fire({
+						title:'Semangat handover',
+						type:'info',
+						toast:true,
+						showConfirmButton:false,
+						position:'top',
+						grow:'row',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D2FBA4'
+					})
+				}
+			})
 			}
-		})
-		}
-</script>
-<!-- <script>
-  function uploadfile () {
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        background:'#D4F1F4',
-        type: 'success',
-        title: 'File berhasil diupload'
-      })
-    }
-</script> -->
-<!-- <script>
-	function uploadfile () {
-   	var file = $('#file').val();
+	</script>
+	<!-- <script>
+	  function uploadfile () {
+	      Swal.fire({
+	        toast: true,
+	        position: 'top',
+	        showConfirmButton: false,
+	        timer: 4000,
+	        background:'#D4F1F4',
+	        type: 'success',
+	        title: 'File berhasil diupload'
+	      })
+	    }
+	</script> -->
+	<!-- <script>
+		function uploadfile () {
+	   	var file = $('#file').val();
 
-	 if(file == ''){
-       Swal.fire({
-		  toast: true,
-		  position: 'top',
-		  showConfirmButton: false,
-		  timer: 4000,
-		  timerProgressBar:true,
-		  // background:'lightgoldenrodyellow',
-		  background:'#FFF4BD',
-		  type: 'warning',
-		  title: 'Tidak ada file yang bisa diupload'
-		})
-
-	    }else{
-	 		Swal.fire({
+		 if(file == ''){
+	       Swal.fire({
 			  toast: true,
 			  position: 'top',
 			  showConfirmButton: false,
 			  timer: 4000,
-			  background:'#D4F1F4',
-			  type: 'success',
-			  title: 'File berhasil diupload'
+			  timerProgressBar:true,
+			  // background:'lightgoldenrodyellow',
+			  background:'#FFF4BD',
+			  type: 'warning',
+			  title: 'Tidak ada file yang bisa diupload'
 			})
-	 	}}
-</script> -->
+
+		    }else{
+		 		Swal.fire({
+				  toast: true,
+				  position: 'top',
+				  showConfirmButton: false,
+				  timer: 4000,
+				  background:'#D4F1F4',
+				  type: 'success',
+				  title: 'File berhasil diupload'
+				})
+		 	}}
+	</script> -->
 </body>
 
 </html>

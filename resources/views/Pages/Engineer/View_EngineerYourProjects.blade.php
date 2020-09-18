@@ -1,11 +1,10 @@
 	@extends('Pages.Engineer.TempEngineer')
-  
+  @section('PageTitle','Your Projects')
   @section('content')
 	<title>
 		| {Engineer} Your Projects
 	</title>
 	  
-	  <h2 style="margin-top:10px">Your Projects</h2>
 		<div class="table-responsive-lg">
 		<table class="table1" id="table1">
 			<thead>

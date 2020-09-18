@@ -47,4 +47,5 @@ class Controller_AdminMitra extends Controller
 
         return response()->json($all_mitra);
     }
+
 }

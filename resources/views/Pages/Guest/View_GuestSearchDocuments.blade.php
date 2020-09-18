@@ -1,11 +1,10 @@
     @extends('Pages.Guest.TempGuest')
-
+    @section('PageTitle','Search Documents')
     @section('content')
     <title>
     | {Guest} Search Documents
     </title>
-	  
-    <h2 style="margin-top:10px">Search Documents</h2>
+	 
 		<div class="table-responsive-lg">
 		<table class="table1" id="table1">
 		

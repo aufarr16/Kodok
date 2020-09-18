@@ -44,7 +44,7 @@
       <nav id="sidebar" class="shift">
    
       <ul class="list-unstyled components mb-5">
-      <li class="{{ 'guest/searchdocs' == request()->path() ? 'active' : '' }} ">
+      <li class="{{ Request::is('guest/searchdocs') ? 'active' : '' }}">
 			 <a href="/guest/searchdocs">
           <span class="fa fa-search mr-2"></span>Search Documents
         </a>
@@ -54,6 +54,7 @@
 
     <div class="container-fluid">
     <div class="content">
+    <h2 style="margin-top:10px">@yield('PageTitle')</h2>
 	@yield('content')
  
 	<!-- ./content -->

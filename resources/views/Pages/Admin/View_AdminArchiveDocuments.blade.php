@@ -3,13 +3,13 @@
 	@push('styles')
 	<link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" />
 	@endpush
-	
+	@section('PageTitle','Archive Documents')
 	@section('content')
   	<title>
     	| {Admin} Archive Documents
   	</title>
        
-	  <h2 style="margin-top:10px">Archive Documents</h2>
+	  <!-- <h2 style="margin-top:10px">Archive Documents</h2> -->
 		<div class="table-responsive-lg">	
 		<table class="table1" id="table1" style="overflow:auto">
 		<thead>

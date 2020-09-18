@@ -1,11 +1,9 @@
   @extends('Pages.Manager.TempManager')
-
+  @section('PageTitle','Home')
   @section('content')
   <title>
     | {Manager} Home
   </title>
-
-	  <h2 style="margin-top:10px; margin-bottom: 10px">Home</h2>
 
       <div class="tile reserved">
         <div class="body">

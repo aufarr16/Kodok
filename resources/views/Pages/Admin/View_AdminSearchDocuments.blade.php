@@ -3,12 +3,11 @@
   @push('styles')
   <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
   @endpush
-
+  @section('PageTitle','Search Documents')
   @section('content')
 	  <title>
     | {Admin} Search Documents
     </title>
-    <h2 style="margin-top:10px">Search Documents</h2>
 		<div class="table-responsive-lg">	
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
 		

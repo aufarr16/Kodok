@@ -45,27 +45,28 @@
     <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
-         <li class="{{ 'admin/archive' == request()->path() ? 'active' : '' }} ">
+      	<li class="{{ Request::is('admin/archive') ? 'active' : '' }}">
+         <!-- <li class="{{ 'admin/archive' == request()->path() ? 'active' : '' }} "> -->
 					<a href="/admin/archive" >
 						<span class="fa fa-book mr-2"></span>Archive Documents
 					</a>
 					</li>
-					<li class="{{ 'admin/searchdocs' == request()->path() ? 'active' : '' }} ">
+					<li class="{{ Request::is('admin/serchdocs') ? 'active' : '' }}">
             <a href="/admin/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
           </li>
-          <li class="{{ 'admin/users' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('admin/users') ? 'active' : '' }}">
 						<a href="/admin/users">
 							<span class="fas fa-users mr-2"></span>Users
 						</a>
 					</li>
-          <li class="{{ 'admin/products' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('admin/products') ? 'active' : '' }}">
             <a href="/admin/products">
             <span class="fas fa-random mr-2"></span>Products
             </a>
           </li>
-          <li class="{{ 'admin/mitra' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('admin/mitra') ? 'active' : '' }}">
             <a href="/admin/mitra">
             <span class="fas fa-university mr-2"></span>Mitra
             </a>
@@ -75,6 +76,8 @@
 
     <div class="container-fluid">
     	<div class="content">
+    		<h2 style="margin-top:10px">@yield('PageTitle')</h2>
+    @yield('modal')
     @yield('content')
     <!-- <div class="content"> -->
 
@@ -84,6 +87,7 @@
     
 	<!-- ./content -->
 	</div>
+
 	<!-- footer -->
   	<!-- <div class="blockquote text-left"> -->
         <footer class="footer fixed-bottom">

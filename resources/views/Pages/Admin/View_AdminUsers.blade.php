@@ -1,11 +1,10 @@
 	@extends('Pages.Admin.TempAdmin')
-
+	@section('PageTitle','Users')
 	@section('content')
 	<title>
 	| {Admin} Users
 	</title>
 	
-	   <h2 style="margin-top:10px">Users</h2>
 			<div class="form-group">
 
 				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">

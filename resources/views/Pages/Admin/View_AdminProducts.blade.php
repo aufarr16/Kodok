@@ -4,12 +4,11 @@
 
 	  @endif -->
 	@extends('Pages.Admin.TempAdmin')
-
+	@section('PageTitle','Products')
 	@section('content')
 	<title>
 	| {Admin} Products
 	</title>
-	   <h2 style="margin-top:10px">Products</h2>
 			<div class="form-group">
 
 				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">

@@ -4,13 +4,12 @@
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/approval.css" rel="stylesheet" />
   @endpush
-
+  @section('PageTitle','Approval Projects')
   @section('content')
   <title>
     | {Manager} Approval Projects
   </title>
  	
-	<h2 style="margin-top:10px">Approval Projects</h2>
 	<div class="table-responsive-lg">
 	<table class="table1" id="table1">
 		<thead>

@@ -1,12 +1,12 @@
 	@extends('Pages.Admin.TempAdmin')
+	@section('PageTitle','Mitra')
 	@section('content')
 	<title>
 	| {Admin} Mitra
 	</title>
-
-	<h2 style="margin-top:10px">Mitra</h2>
+		@section('modal')
 			<div class="form-group">
-
+				
 				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
 					<span>Add Mitra <i class="fas fa-plus fa-lg"></i><span>
 				</button>
@@ -17,8 +17,10 @@
 				<!- Modal content -->
 				<div class="modal-content">
 					<div class="modal-header">
+						
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Add New Mitra</h2>
+						<!-- <a class="close1" data-dismiss="modal">&times;</a> -->
 					</div>	
 					<div class = "modal-body">
 						<form method="post" action="/admin/submitmitra">
@@ -27,7 +29,6 @@
 				          	<div class ="input-group-addon">
 								<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
 							</div>
-				            <input type="number" id="aba" class="form-control" style="margin-bottom: 10px" min="3" max="7">
 				             <input type ="number" id="ABA" class="form-control" style="margin-bottom: 10px" maxlength = "7" name="ABA"
 				             oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 				            <br>
@@ -46,8 +47,10 @@
 				</div>
 				<!-- ./modal -->
 				</div>
+				
 			<!-- ./form group -->
 			</div>
+		@endsection
 		<div class="table-responsive-lg">	
 		<table id="table1" class="table1"  style="overflow:auto">
 		

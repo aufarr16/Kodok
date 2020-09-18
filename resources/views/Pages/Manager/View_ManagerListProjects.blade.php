@@ -12,13 +12,12 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   @endpush
-
+  @section('PageTitle','List Projects')
   @section('content')
   <title>
     | {Manager} Approval Projects
   </title>
-
-  <h2 style="margin-top:10px">List Projects</h2>
+  
   <div class="table-responsive-lg">
   <table class="table1" id="table1">
     <thead>

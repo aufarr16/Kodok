@@ -41,27 +41,27 @@
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
-          <li class="{{ 'manager/home' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('manager/home') ? 'active' : '' }}">
             <a href="/manager/home">
            <span class="fa fa-home mr-2"></span>Home
             </a>
           </li>
-          <li class="{{ 'manager/projects' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('manager/projects') ? 'active' : '' }}">
             <a href="/manager/projects">
              <span class="fas fa-clipboard-list mr-2"></span>List Projects
             </a>
           </li>
-          <li class="{{ 'manager/assign' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('manager/assign') ? 'active' : '' }}">
             <a href="/manager/assign">
              <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
             </a>
           </li>    
-          <li class="{{ 'manager/approval' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('manager/approval') ? 'active' : '' }}">
             <a href="/manager/approval">
               <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
             </a>
           </li>
-          <li class="{{ 'manager/searchdocs' == request()->path() ? 'active' : '' }} ">
+          <li class="{{ Request::is('manager/searchdocs') ? 'active' : '' }}">
             <a href="/manager/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
@@ -70,7 +70,8 @@
       </nav>
 
   <div class="container-fluid">
-      <div class="content">
+    <div class="content">
+      <h2 style="margin-top:10px">@yield('PageTitle')</h2>
     @yield('content')
     <!-- <div class="content"> -->
 
