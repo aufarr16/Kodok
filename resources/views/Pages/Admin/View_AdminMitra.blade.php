@@ -119,3 +119,13 @@
 	<!-- table responsive -->
 	</div>
 	@endsection
+
+	@push('scripts')
+	<script>
+		(#table1).DataTable();
+			// responsive=true,
+			// serverside=true,
+			// processing=true,
+		
+	</script>
+	@endpush

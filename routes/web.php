@@ -33,6 +33,8 @@ Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
 
 Route::post('/admin/submituser', 'Controller_AdminUsers@store');
 
+Route::get('/admin/mitra/table', 'Controller_AdminUsers@dataTable');
+
 ##Manager
 Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
 Route::get('/manager/assign', 'Controller_ManagerAssignProjects@openPage');
