@@ -65,7 +65,7 @@
 	border: 2px solid #19569A;
 	font-size: 16px;
 	height: 35px;
-  display: inherit;
+  /*display: inherit;*/
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);

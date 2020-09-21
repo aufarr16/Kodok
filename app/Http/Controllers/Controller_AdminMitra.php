@@ -33,6 +33,9 @@ class Controller_AdminMitra extends Controller
     	Mitra::create($request->all());
 
     	return redirect('/admin/mitra')->with('status','');
+
+        // $model=new Mitra();
+        // return view('Pages.Admin.FormAdmin',compact('model'));
     }
 
     public function destroy($ABA){

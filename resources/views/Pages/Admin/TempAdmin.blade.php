@@ -77,7 +77,6 @@
     <div class="container-fluid">
     	<div class="content">
     		<h2 style="margin-top:10px">@yield('PageTitle')</h2>
-    @yield('modal')
     @yield('content')
     <!-- <div class="content"> -->
 
@@ -85,7 +84,6 @@
           <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
     @endif
     
-    @include('Layouts.Modal')
 	<!-- ./content
 	</div> -->
 
@@ -127,6 +125,7 @@
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
+  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/app.js')}}"></script>
 
 <!-- JS Datatable pagination  -->
 <script>
