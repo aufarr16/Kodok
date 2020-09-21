@@ -1,5 +1,6 @@
 	@extends('Pages.Admin.TempAdmin')
 	@section('PageTitle','Mitra')
+	@section('ModalTitle','Add New Mitra')
 	@section('content')
 	<title>
 	| {Admin} Mitra
@@ -22,7 +23,7 @@
 						<h2 class="modal-title">Add New Mitra</h2>
 						<!-- <a class="close1" data-dismiss="modal">&times;</a> -->
 					</div>	
-					<div class = "modal-body">
+					<div class = "modal-body" id="modal-body">
 						<form method="post" action="/admin/submitmitra">
 						@csrf
 				          <div class="form-group">
@@ -39,7 +40,7 @@
 				            <input type="text" id="nama_mitra" class="form-control" style="margin-bottom: 10px" name="nama_mitra">
 				            <br>
 				          </div>
-				         <button onclick="submitmitra()" type="submit" class="btnsubmit">Submit</button>
+				         <button type="submit" class="btnsubmit">Submit</button>
 				        </form>
 					<!-- ./modal body -->
 					</div>
@@ -123,9 +124,9 @@
 	@push('scripts')
 	<script>
 		(#table1).DataTable();
-			// responsive=true,
-			// serverside=true,
-			// processing=true,
+			responsive=true,
+			serverside=true,
+			processing=true,
 		
 	</script>
 	@endpush

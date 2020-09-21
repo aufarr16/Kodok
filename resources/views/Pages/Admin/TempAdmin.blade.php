@@ -85,8 +85,9 @@
           <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
     @endif
     
-	<!-- ./content -->
-	</div>
+    @include('Layouts.Modal')
+	<!-- ./content
+	</div> -->
 
 	<!-- footer -->
   	<!-- <div class="blockquote text-left"> -->

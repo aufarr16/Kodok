@@ -48,4 +48,16 @@ class Controller_AdminMitra extends Controller
         return response()->json($all_mitra);
     }
 
+    public function DataTable()
+    {
+        $model = user::query();
+        return DataTables::of($model)
+            ->addColumn('action', function($model){
+                return view('Layouts.Action',[
+                    'model'=> $model,
+                    // 'url_edit' => url('', $model->id),
+                    'url_destroy' => url('/admin/delmitra/{id}', $model->id),
+                ]);
+            });
+    }
 }
