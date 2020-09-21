@@ -26,7 +26,7 @@ Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
 
-Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable');
+Route::get('/admin/mitra/table', 'Controller_AdminUsers@dataTable');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');

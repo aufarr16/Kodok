@@ -33,6 +33,9 @@ class Controller_AdminMitra extends Controller
     	Mitra::create($request->all());
 
     	return redirect('/admin/mitra')->with('status','');
+
+        // $model=new Mitra();
+        // return view('Pages.Admin.FormAdmin',compact('model'));
     }
 
     public function destroy($ABA){
@@ -48,4 +51,16 @@ class Controller_AdminMitra extends Controller
         return response()->json($all_mitra);
     }
 
+    public function DataTable()
+    {
+        $model = user::query();
+        return DataTables::of($model)
+            ->addColumn('action', function($model){
+                return view('Layouts.Action',[
+                    'model'=> $model,
+                    // 'url_edit' => url('', $model->id),
+                    'url_destroy' => url('/admin/delmitra/{id}', $model->id),
+                ]);
+            });
+    }
 }

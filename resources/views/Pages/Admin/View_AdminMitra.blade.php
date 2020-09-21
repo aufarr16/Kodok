@@ -4,14 +4,13 @@
 	<title>
 	| {Admin} Mitra
 	</title>
-		@section('modal')
 			<div class="form-group">
 				
-				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
+				<a href="admin/submitmitra" class="btn-add modal-show" data-toggle="modal" data-target="#modal" style="float:left">
 					<span>Add Mitra <i class="fas fa-plus fa-lg"></i><span>
-				</button>
+				</a>
 				
-				<!- The Modal -->
+				<!-- The Modal -->
 				<div class="modal" id="modal" role="dialog" style="margin-left:350px;">
 				
 				<!- Modal content -->
@@ -22,7 +21,7 @@
 						<h2 class="modal-title">Add New Mitra</h2>
 						<!-- <a class="close1" data-dismiss="modal">&times;</a> -->
 					</div>	
-					<div class = "modal-body">
+					<div class = "modal-body" id="modal-body">
 						<form method="post" action="/admin/submitmitra">
 						@csrf
 				          <div class="form-group">
@@ -39,9 +38,11 @@
 				            <input type="text" id="nama_mitra" class="form-control" style="margin-bottom: 10px" name="nama_mitra">
 				            <br>
 				          </div>
-				         <button onclick="submitmitra()" type="submit" class="btnsubmit">Submit</button>
 				        </form>
 					<!-- ./modal body -->
+					</div>
+					<div class="modal-footer" id="modal-footer">
+						<button type="submit" class="btnsubmit" data-dismiss="modal">Submit</button>
 					</div>
 				<!-- ./modal content -->
 				</div>
@@ -50,7 +51,6 @@
 				
 			<!-- ./form group -->
 			</div>
-		@endsection
 		<div class="table-responsive-lg">	
 		<table id="table1" class="table1"  style="overflow:auto">
 		
@@ -121,11 +121,32 @@
 	@endsection
 
 	@push('scripts')
-	<script>
+	<!-- <script>
 		(#table1).DataTable();
-			// responsive=true,
-			// serverside=true,
-			// processing=true,
+			responsive=true,
+			serverside=true,
+			processing=true,
 		
-	</script>
+	</script> -->
+	<script type="text/javascript" language="javascript" src="{{ 'resources/js/app.js'}}"></script>
+	<script>
+		$('body').on('click', '.modal-show', function (event){
+	// event.preventDefault();
+	
+	var me = $(this),
+		url = me.attr('href'),
+		title = me.attr('title');
+
+		$('#modal-title').text(title);
+
+		$.ajax({
+			url: url,
+			dataType: 'html',
+			success: function(response){
+				$('#modal-body').html(response);
+			}
+		});
+		$('#modal').modal('show');
+})
+		</script>
 	@endpush
