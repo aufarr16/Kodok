@@ -32,10 +32,16 @@ class Controller_AdminUsers extends Controller
     		'nama_user' => 'required',
     		'id_ulevel' => 'required',
     		'email_user' => 'required',
+        ],
+        [
+            'inisial_user.required' => 'Mohon isi Inisial',
+            'nama_user.required' => 'Mohon isi Nama',
+            'id_ulevel.required' => 'Mohon isi Role',
+            'email_user.required' => 'Mohon isi Email'
     	]);
 
     	User::create($request->all());
 
-    	return redirect('/admin/users')->with('status','');
+    	return redirect('/admin/users')->with('status','Data User berhasil disimpan');
     }
 }

@@ -26,10 +26,13 @@ class Controller_AdminProducts extends Controller
 
         $request->validate([
             'nama_product' => 'required',
+        ],
+        [
+            'nama_product.required' => 'Mohon isi Nama Products'
         ]);
 
     	Product::create($request->all());
 
-    	return redirect('/admin/products')->with('status','Yeay berhasil');
+    	return redirect('/admin/products')->with('status','Data Admin berhasil disimpan');
     }
 }

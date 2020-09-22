@@ -198,6 +198,7 @@ label {
   margin-bottom: 5px;
   /*margin-left: 10px; */;
   color: #1C3F60;
+  float: left;
 }
 
 button {
@@ -8734,3 +8735,11 @@ a[data-toggle="collapse"] {
   margin-left: 254vh;
   display: flex;
 }*/
+
+.flash{
+  float: left;
+  margin-right: 571px;
+  width: 25%;
+  text-align: left;
+  margin-top: -8px;
+}

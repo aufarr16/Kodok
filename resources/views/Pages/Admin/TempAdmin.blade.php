@@ -77,12 +77,10 @@
     <div class="container-fluid">
     	<div class="content">
     		<h2 style="margin-top:10px">@yield('PageTitle')</h2>
-    @yield('content')
+    		@yield('content')
     <!-- <div class="content"> -->
 
-    @if(session('status'))
-          <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
-    @endif
+    <!-- @include('Layouts.Flash') -->
     
 	<!-- ./content
 	</div> -->

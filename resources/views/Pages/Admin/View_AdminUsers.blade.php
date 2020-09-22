@@ -28,26 +28,51 @@
 							<div class ="input-group-addon">
 								<label for="inisial_user" style="font-weight:bolder;float: left;">Inisial</label>
 							</div>
-								<input type="text" id="inisial_user" class="form-control" name="inisial_user" style="margin-bottom: 10px;text-transform: uppercase;" maxlength="3">
+								<input type="text" id="inisial_user" class="form-control @error('inisial_user') is-invalid @enderror" name="inisial_user" style="margin-bottom: 10px;text-transform: uppercase;" maxlength="3">
+								<div class="flash"> 
+				          @if ($errors->has('inisial_user'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('inisial_user') }}</span>
+                	@endif
+                </div>
 							<div class ="input-group-addon">
 								<label for="nama_user" style="font-weight:bolder; float: left;">Nama</label>
 							</div>	
-								<input type="text" id="nama_user" class="form-control" name="nama_user" style="margin-bottom: 10px;">
+								<input type="text" id="nama_user" class="form-control @error('nama_user') is-invalid @enderror" name="nama_user" style="margin-bottom: 10px;">
+								<div class="flash"> 
+				          @if ($errors->has('nama_user'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_user') }}</span>
+                	@endif
+                </div>
 							<div class ="input-group-addon">						
 								<label for="id_ulevel" style="font-weight:bolder;float: left;">Role</label>
 							</div>
-								<select id="id_ulevel" class="form control" name="id_ulevel" style="height:35px;"> 
+								<select id="id_ulevel" class="form control @error('id_ulevel') is-invalid @enderror" name="id_ulevel" style="height:35px; margin-bottom: 10px"> 
 									<option value="" hidden>Pilih Role</option>
 									@foreach($levels as $lvl)
 									<option value="{{ $lvl->id_ulevel }}">{{ $lvl->nama_ulevel }}</option>
 									@endforeach
 								</select>
+
+								<div class="flash"> 
+				          @if ($errors->has('id_ulevel'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('id_ulevel') }}</span>
+                	@endif
+                </div>
 							<div class ="input-group-addon">
 								<label for="email_user" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 							</div>	
-								<input type="email" id="email_user" class="form-control" name="email_user" style="float: right; margin-bottom: 10px">
+								<input type="email" id="email_user" class="form-control @error('email_user') is-invalid @enderror" name="email_user" style="float: right; margin-bottom: 10px">
+								<div class="flash"> 
+				          @if ($errors->has('email_user'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('email_user') }}</span>
+                	@endif
+                </div>
 						</div>
-						<button onclick="submituser()" class="btnsubmit" type="submit">Submit</button>
+						<br>
+				    <br>
+				    <div class="modal-footer" id="modal-footer">
+							<button type="submit" class="btnsubmit">Submit</button>
+						</div>
 					</form>
 
 					<!-- ./modal body -->
@@ -96,28 +121,50 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" id="editinisial" class="form-control" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3">
+										<input type="text" id="editinisial" class="form-control @error('inisial_user') is-invalid @enderror" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3">
+										<div class="flash"> 
+				          	@if ($errors->has('inisial_user'))
+                  		<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('inisial_user') }}</span>
+                		@endif
+                		</div>
 									<div class ="input-group-addon">
 										<label for="nama" style="font-weight:bolder; float: left;">Nama</label>
 									</div>	
-										<input type="text" id="editnama" class="form-control" style="margin-bottom: 10px">
-								
+									<input type="text" id="editnama" class="form-control @error('nama_user') is-invalid @enderror" style="margin-bottom: 10px">
+									<div class="flash"> 
+				          @if ($errors->has('nama_user'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_user') }}</span>
+                	@endif
+                	</div>
 									<div class ="input-group-addon">						
 										<label for="role" style="font-weight:bolder;float: left;">Role</label>
 									</div>
-										<select id="editrole" class="form control" style="height:35px"> 
+										<select id="editrole" class="form control @error('id_ulevel') is-invalid @enderror" style="height:35px; margin-bottom: 10px"> 
 											<option value="" hidden>Pilih Role</option>
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>
 											<option value="engineer">Engineer</option>
 											<option value="guest">Guest</option>
 										</select>
+										<br>
+									<div class="flash"> 
+				          @if ($errors->has('id_ulevel'))
+                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('id_ulevel') }}</span>
+                	@endif
+                	</div>
 									<div class ="input-group-addon">
 										<label for="email" style="font-weight:bolder; margin-top: 10px;float:left;">Email</label>
 									</div>	
-										<input type="email" id="editemail" class="form-control" style="margin-bottom: 10px" pattern=".+@artajasa.co.id" required>
+										<input type="email" id="editemail" class="form-control @error('email_user') is-invalid @enderror" style="margin-bottom: 10px">
+										<div class="flash"> 
+					          	@if ($errors->has('email_user'))
+	                  	<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('email_user') }}</span>
+	                		@endif
+                		</div>
 								</div>
-								<button onclick="edituser()" class="btnsubmit" type="submit" id="submituser">Submit</button>
+								<div class="modal-footer" id="modal-footer">
+									<button type="submit" class="btnsubmit" id="edituser">Submit</button>
+								</div>
 
 							</form>
 							<!-- ./modal body -->

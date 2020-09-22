@@ -28,14 +28,15 @@ class Controller_AdminMitra extends Controller
         $request->validate([
             'ABA' => 'required',
             'nama_mitra' => 'required',
+        ],
+        [
+            'ABA.required' => 'Mohon isi ABA',
+            'nama_mitra.required' => 'Mohon isi Nama Mitra'
         ]);
 
     	Mitra::create($request->all());
 
-    	return redirect('/admin/mitra')->with('status','');
-
-        // $model=new Mitra();
-        // return view('Pages.Admin.FormAdmin',compact('model'));
+    	return redirect('/admin/mitra')->with('status','Data mitra berhasil disimpan');
     }
 
     public function destroy($ABA){

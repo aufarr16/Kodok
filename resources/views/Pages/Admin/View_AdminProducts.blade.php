@@ -31,16 +31,19 @@
 							<div class ="input-group-addon">
 								<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 							</div>
-
-							<!-- <input type="text" id="nama_product" class="form-control" name="nama_product"> -->
-
-							<input type="text" id="name_product" class="form-control" name="nama_product">
-						<!-- 	@error('nama_product')
-							<div class="alert alert-danger">{{ $message }}</div>
-							@enderror -->
+							<input type="text" id="name_product" class="form-control @error('nama_product') is-invalid @enderror" name="nama_product">
 							<br>
+							<div class="flash"> 
+							@if ($errors->has('nama_product'))
+		            <span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_product') }}</span>
+		          @endif
+		          </div>
 						  </div>
-						 <button type="submit" class="btnsubmit">Submit</button>
+						  <br>
+						  <br>	
+						  <div class="modal-footer" id="modal-footer">
+								<button type="submit" class="btnsubmit">Submit</button>
+							</div>
 						</form>
 					
 					<!-- ./modal body -->
@@ -88,13 +91,19 @@
 								<div class ="input-group-addon">
 									<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 								</div>
-								<input type="text" id="edit" class="form-control">
+								<input type="text" id="edit" class="form-control @error('nama_product') is-invalid @enderror">
 								<br>
-								<!-- <div class="invalid-feedback">
-								  Masukkan nama produk
-								</div> -->
-							  </div>
-							 <button type="button" class="btnsubmit">Submit</button>
+								<div class="flash"> 
+								@if ($errors->has('nama_product'))
+		                  		<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_product') }}</span>
+		                	@endif
+		          	</div>							  
+		          </div>	
+		          <br>
+		          <br>
+							<div class="modal-footer" id="modal-footer">
+								<button type="submit" class="btnsubmit">Submit</button>
+							</div>
 							</form>
 							<!-- ./modal content -->
 							</div>
