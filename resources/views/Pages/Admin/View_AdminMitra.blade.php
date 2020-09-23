@@ -1,6 +1,6 @@
 	@extends('Pages.Admin.TempAdmin')
 	@section('PageTitle','Mitra')
-	@include('Layouts.Notif')
+	
 	@section('content')
 	<title>
 	| {Admin} Mitra
