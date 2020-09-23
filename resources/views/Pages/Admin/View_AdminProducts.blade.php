@@ -28,19 +28,17 @@
 						<form method="post" action="/admin/submitproduct">
 						@csrf
 						  <div class="form-group">
-							<div class ="input-group-addon">
-								<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
-							</div>
-							<input type="text" id="name_product" class="form-control @error('nama_product') is-invalid @enderror" name="nama_product">
-							<br>
-							<div class="flash"> 
-							@if ($errors->has('nama_product'))
-		            <span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_product') }}</span>
-		          @endif
-		          </div>
+								<div class ="input-group-addon">
+									<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
+										<br>
+									</div>
+					        <input type="text" id="nama_product" class="form-control @error('nama_product') is-invalid @enderror" style="margin-bottom: 10px" name="nama_product" value="{{ old('nama_product') }}">
+					          @error('nama_product')
+									<div class="invalid-feedback flash">
+										{{ $message }}
+									</div>
+									@enderror
 						  </div>
-						  <br>
-						  <br>	
 						  <div class="modal-footer" id="modal-footer">
 								<button type="submit" class="btnsubmit">Submit</button>
 							</div>
@@ -88,19 +86,17 @@
 							<form>
 							 <!-- <form class="needs-validation" novalidate> -->
 							  <div class="form-group">
-								<div class ="input-group-addon">
-									<label for="namaproduct" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
-								</div>
-								<input type="text" id="edit" class="form-control @error('nama_product') is-invalid @enderror">
-								<br>
-								<div class="flash"> 
-								@if ($errors->has('nama_product'))
-		                  		<span class="p-1 mb-2 bg-danger text-white rounded">{{ $errors->first('nama_product') }}</span>
-		                	@endif
-		          	</div>							  
+							  	 <div class ="input-group-addon">
+										<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
+										<br>
+									</div>
+					          <input type="text" id="nama_product" class="form-control @error('nama_product') is-invalid @enderror" style="margin-bottom: 10px" name="nama_product" value="{{ old('nama_product') }}">
+					          @error('nama_product')
+										<div class="invalid-feedback flash">
+											{{ $message }}
+										</div>
+										@enderror
 		          </div>	
-		          <br>
-		          <br>
 							<div class="modal-footer" id="modal-footer">
 								<button type="submit" class="btnsubmit">Submit</button>
 							</div>

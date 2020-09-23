@@ -26,17 +26,18 @@ class Controller_AdminMitra extends Controller
     	// return $request;
 
         $request->validate([
-            'ABA' => 'required',
+            'ABA' => 'required|min:3',
             'nama_mitra' => 'required',
         ],
-        [
+        $message = [
             'ABA.required' => 'Mohon isi ABA',
+              'ABA.min' => 'Mohon isi ABA minimal 3 angka',
             'nama_mitra.required' => 'Mohon isi Nama Mitra'
         ]);
 
     	Mitra::create($request->all());
 
-    	return redirect('/admin/mitra')->with('status','Data mitra berhasil disimpan');
+    	return redirect('/admin/mitra')->with('success','Item created successfully!');
     }
 
     public function destroy($ABA){

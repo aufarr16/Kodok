@@ -12,36 +12,40 @@ class Controller_AdminUsers extends Controller
 	public function openPage(){
 		$users = User::all();
 		$levels = Users_Level::all();
-    	$data_users = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
+		$data_users = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
 		//dump($data_users);
-    	return view('Pages.Admin.View_AdminUsers', compact('users', 'levels', 'data_users'));
-    }
+		return view('Pages.Admin.View_AdminUsers', compact('users', 'levels', 'data_users'));
+	}
 
-      /**
+	  /**
 	 *
 	 *
 	 *
 	 * @param \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-    public function store(Request $request){
-    	//return $request;
+	public function store(Request $request){
+		//return $request;
 
-    	$request->validate([
-    		'inisial_user' => 'required',
-    		'nama_user' => 'required',
-    		'id_ulevel' => 'required',
-    		'email_user' => 'required',
-        ],
-        [
-            'inisial_user.required' => 'Mohon isi Inisial',
-            'nama_user.required' => 'Mohon isi Nama',
-            'id_ulevel.required' => 'Mohon isi Role',
-            'email_user.required' => 'Mohon isi Email'
-    	]);
+		$request->validate([
+			'inisial_user' => 'required|min:3|max:3',
+			'nama_user' => 'required',
+			'id_ulevel' => 'required',
+			'email_user' => 'required|email|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
+		],
+		$message = [
+			'inisial_user.required' => 'Mohon isi Inisial',
+				// 'inisial_user.min' => 'Mohon isi Inisial dengan 3 huruf',
+				// 'inisial_user.max' => 'Mohon isi Inisial dengan 3 huruf',
+			'nama_user.required' => 'Mohon isi Nama',
+			'id_ulevel.required' => 'Mohon isi Role',
+			'email_user.required' => 'Mohon isi Email',
+				'email_user.regex'=>'Mohon isi format email dengan benar (domain @artajasa.co.id)',
+				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
+		]);
 
-    	User::create($request->all());
+		User::create($request->all());
 
-    	return redirect('/admin/users')->with('status','Data User berhasil disimpan');
-    }
+		return redirect('/admin/users')->with('status','Data User berhasil disimpan');
+	}
 }

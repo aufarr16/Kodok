@@ -75,12 +75,10 @@
       </nav>
 
     <div class="container-fluid">
-    	<div class="content">
-    		<h2 style="margin-top:10px">@yield('PageTitle')</h2>
+    	<h2 style="margin-top:10px">@yield('PageTitle')</h2>
+
     		@yield('content')
     <!-- <div class="content"> -->
-
-    <!-- @include('Layouts.Flash') -->
     
 	<!-- ./content
 	</div> -->
@@ -266,7 +264,7 @@ $(document).ready(function () {
 </script> -->
 <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script src="{{ url('') }}/js/script.js"></script>
-<script>
+<!-- <script>
 	function submitmitra () {
    	var aba = $('#ABA').val();
    	var nama_mitra = $('#nama_mitra').val();
@@ -346,6 +344,19 @@ $(document).ready(function () {
 			  title: 'Data mitra berhasil disimpan'
 			})
 	 	}}
+</script> -->
+<script>
+	@if(session('success'))
+		Swal({
+			  toast: true,
+			  position: 'top',
+			  showConfirmButton: false,
+			  timer: 4000,
+			  background:'#D4F1F4',
+			  type: 'success',
+			  title: '{{session('success')}}'
+			})
+	@endif
 </script>
 </body>
 
