@@ -33,11 +33,11 @@
 										<br>
 									</div>
 					        <input type="text" id="nama_product" class="form-control @error('nama_product') is-invalid @enderror" style="margin-bottom: 10px" name="nama_product" value="{{ old('nama_product') }}">
-					          @error('nama_product')
-									<div class="invalid-feedback flash">
-										{{ $message }}
-									</div>
-									@enderror
+					        @error('nama_product')
+								<div class="invalid-feedback flash">
+									{{ $message }}
+								</div>
+							@enderror
 						  </div>
 						  <div class="modal-footer" id="modal-footer">
 								<button type="submit" class="btnsubmit">Submit</button>
