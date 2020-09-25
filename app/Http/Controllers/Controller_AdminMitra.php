@@ -26,13 +26,14 @@ class Controller_AdminMitra extends Controller
     	// return $request;
 
         $request->validate([
-            'ABA' => 'required|min:3',
+            'ABA' => 'required|min:3|unique:mitras',
             'nama_mitra' => 'required',
         ],
         $message = [
             'ABA.required' => 'Mohon isi ABA',
               'ABA.min' => 'Mohon isi ABA minimal 3 angka',
-            'nama_mitra.required' => 'Mohon isi Nama Mitra'
+              'ABA.unique'=>'ABA sudah terdaftar',
+            'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
     	Mitra::create($request->all());

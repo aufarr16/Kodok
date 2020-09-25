@@ -110,18 +110,15 @@
   <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
+ 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/app.js')}}"></script>
+  <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+	<script src="{{ url('') }}/js/script.js"></script>
 
 <!-- JS Datatable pagination  -->
 <script>
@@ -134,13 +131,32 @@ $(document).ready(function() {
         "lengthChange":false
     } );
 } );
+</script>
 
+<!-- Sidebar -->
+<script>
+$(document).ready(function() {
+    $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+    }); 
+} );
+</script>
+
+<!-- Keeping modal open after validation error -->
+<script>
+  @if (count($errors) > 0)
+    $('#modal').modal('show');
+  @endif
+</script>
+
+<!-- Hapus Data -->
+<script>
 $('body').on('click', '.btn-delete', function(event){
 		event.preventDefault();
 
 		var id = $(this).attr('id');
 
-		Swal.fire({
+		Swal({
 		  title: 'Yakin hapus data ini?',
 		  type: 'warning',
 		  showCancelButton: true,
@@ -167,20 +183,20 @@ $('body').on('click', '.btn-delete', function(event){
 						// console.log(response);
 						table.ajax.reload();
 
-						Swal.fire({
-						title:'Data mitra berhasil dihapus',
+						Swal({
+						title:'Data berhasil dihapus',
 						type:'success',
 						toast:true,
 						showConfirmButton:false,
-						position: 'top',
-						timer:1500,
+						position: 'top-end',
+						// timer:1500,
 						timerProgressBar:true,
-						background:'#D4F1F4'
+						background:'palegreen'
 						})
 					},
 
 					error: function(xhr){
-						Swal.fire({
+						Swal({
 							type: 'error',
 							title: 'Oops...',
 							text: 'Something went wrong!'
@@ -188,176 +204,22 @@ $('body').on('click', '.btn-delete', function(event){
 					}
 				})
 			} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Data mitra tetap tersimpan',
+				Swal({
+					title:'Data tetap tersimpan',
 					type:'info',
 					toast:true,
 					showConfirmButton:false,
-					position:'top',
+					position:'top-end',
 					grow:'row',
-					timer:1500,
+					// timer:1500,
 					timerProgressBar:true,
-					background:'#D2FBA4'
+					background:'#d6ebff'
 				})
 			}
 		})
 	})
-
 </script>
 
-<script>
-$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-</script>
-
-<!-- Toastr Alert -->
-<!-- <script src="{{ url('') }}/js/plugins/Toastr/toastr.min.js"></script>
-<script>
- $(document).ready(function(){
-  $("#submitmitra").on('click',function(){
-    toastr.options = {
-	  "closeButton": true,
-	  "debug": false,
-	  "newestOnTop": false,
-	  "progressBar": true,
-	  "positionClass": "toast-top-right",
-	  "preventDuplicates": false,
-	  "onclick": null,
-	  "showDuration": "300",
-	  "hideDuration": "1000",
-	  "timeOut": "5000",
-	  "extendedTimeOut": "1000",
-	  "showEasing": "swing",
-	  "hideEasing": "linear",
-	  "showMethod": "fadeIn",
-	  "hideMethod": "fadeOut"
-	}
-
-	toastr["success"]("Data mitra berhasil ditambahkan!")
-  });
-
-  $("#editmitra").on('click',function(){
-    toastr.options = {
-	  "closeButton": true,
-	  "debug": false,
-	  "newestOnTop": false,
-	  "progressBar": true,
-	  "positionClass": "toast-top-right",
-	  "preventDuplicates": false,
-	  "onclick": null,
-	  "showDuration": "300",
-	  "hideDuration": "1000",
-	  "timeOut": "5000",
-	  "extendedTimeOut": "1000",
-	  "showEasing": "swing",
-	  "hideEasing": "linear",
-	  "showMethod": "fadeIn",
-	  "hideMethod": "fadeOut"
-	}
-
-	toastr["success"]("Data mitra berhasil diedit!")
-  });
-});
-</script> -->
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
-<script src="{{ url('') }}/js/script.js"></script>
-<!-- <script>
-	function submitmitra () {
-   	var aba = $('#ABA').val();
-   	var nama_mitra = $('#nama_mitra').val();
-
-	 if(ABA == ''){
-       Swal.fire({
-		  toast: true,
-		  position: 'top',
-		  showConfirmButton: false,
-		  timer: 4000,
-		  timerProgressBar:true,
-		  // background:'lightgoldenrodyellow',
-		  background:'#FFF4BD',
-		  type: 'warning',
-		  title: 'Mohon isi data ABA'
-		})
-       	}else if (nama_mitra == ''){
-	 		Swal.fire({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  timerProgressBar:true,
-			  // background:'lightgoldenrodyellow',
-			  background:'#FFF4BD',
-			  type: 'warning',
-			  title: 'Mohon isi nama mitra'
-			})
-	    }else{
-	 		Swal.fire({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  background:'#D4F1F4',
-			  type: 'success',
-			  title: 'Data mitra berhasil disimpan'
-			})
-	 	}}
-
-	function submitedit () {
-   	var editaba = $('#editaba').val();
-   	var editmitra = $('#editmitra').val();
-
-	 if(editaba == ''){
-       Swal.fire({
-		  toast: true,
-		  position: 'top',
-		  showConfirmButton: false,
-		  timer: 4000,
-		  timerProgressBar:true,
-		  // background:'lightgoldenrodyellow',
-		  background:'#FFF4BD',
-		  type: 'warning',
-		  title: 'Mohon isi data ABA'
-		})
-       	}else if (editmitra == ''){
-	 		Swal.fire({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  timerProgressBar:true,
-			  // background:'lightgoldenrodyellow',
-			  background:'#FFF4BD',
-			  type: 'warning',
-			  title: 'Mohon isi nama mitra'
-			})
-	    }else{
-	 		Swal.fire({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  background:'#D4F1F4',
-			  type: 'success',
-			  title: 'Data mitra berhasil disimpan'
-			})
-	 	}}
-</script> -->
-<script>
-	@if(session('success'))
-		Swal({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  background:'#D4F1F4',
-			  type: 'success',
-			  title: '{{session('success')}}'
-			})
-	@endif
-</script>
 </body>
 
 </html>

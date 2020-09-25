@@ -29,7 +29,7 @@
 							<div class ="input-group-addon">
 								<label for="inisial_user" style="font-weight:bolder;float: left;">Inisial</label>
 							</div>
-								<input type="text" id="inisial_user" class="form-control @error('inisial_user') is-invalid @enderror" name="inisial_user" style="margin-bottom: 10px;text-transform: uppercase;" maxlength="3" minlength="3" value="{{ old('inisial_user') }}">
+								<input type="text" id="inisial_user" class="form-control @error('inisial_user') is-invalid @enderror" name="inisial_user" style="margin-bottom: 10px;text-transform: uppercase;" maxlength="3" value="{{ old('inisial_user') }}">
 								@error('inisial_user')
 								<div class="invalid-feedback flash">
 									{{ $message }}</div>
@@ -45,13 +45,16 @@
 							<div class ="input-group-addon">						
 								<label for="id_ulevel" style="font-weight:bolder;float: left;">Role</label>
 							</div>
-								<select id="id_ulevel" class="form control @error('id_ulevel') is-invalid @enderror" name="id_ulevel" style="height:35px; margin-bottom: 10px" value="{{ old('id_ulevel') }}"> 
+								<select id="id_ulevel" class="form control @error('id_ulevel') is-invalid @enderror" name="id_ulevel" style="height:35px; margin-bottom: 10px"> 
 									<option value="" hidden>Pilih Role</option>
 									@foreach($levels as $lvl)
-									<option value="{{ $lvl->id_ulevel }}">{{ $lvl->nama_ulevel }}</option>
+										@if (old('id_ulevel') == $lvl->id_ulevel)
+											<option value="{{ $lvl->id_ulevel }}" selected>{{ $lvl->nama_ulevel }}</option>
+										@else 
+											<option value="{{ $lvl->id_ulevel }}">{{ $lvl->nama_ulevel }}</option>
+										@endif
 									@endforeach
 								</select>
-
 								@error('id_ulevel')
 								<div class="invalid-feedback flash">
 									{{ $message }}</div>
@@ -118,7 +121,7 @@
 									<div class ="input-group-addon">
 										<label for="inisial" style="font-weight:bolder;float: left;">Inisial</label>
 									</div>
-										<input type="text" id="editinisial" class="form-control @error('inisial_user') is-invalid @enderror" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3" minlength="3" value="{{ old('inisial_user') }}">
+										<input type="text" id="editinisial" class="form-control @error('inisial_user') is-invalid @enderror" style="margin-bottom: 10px; text-transform: uppercase;" maxlength="3" value="{{ old('inisial_user') }}">
 										@error('inisial_user')
 										<div class="invalid-feedback flash">
 											{{ $message }}</div>
