@@ -53,12 +53,8 @@
       </nav>
 
     <div class="container-fluid">
-    <div class="content">
-    <h2 style="margin-top:10px">@yield('PageTitle')</h2>
-	@yield('content')
- 
-	<!-- ./content -->
-	</div>
+    <h2>@yield('PageTitle')</h2>
+	   @yield('content')
 
   <!-- footer -->
     <!-- <div class="blockquote text-left"> -->

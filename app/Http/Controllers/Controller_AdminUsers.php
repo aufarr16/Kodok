@@ -46,6 +46,6 @@ class Controller_AdminUsers extends Controller
 
 		User::create($request->all());
 
-		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
+		return redirect('/admin/users')->with('submit_success','Data User berhasil disimpan');
 	}
 }

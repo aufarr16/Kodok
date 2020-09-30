@@ -51,7 +51,7 @@
 						<span class="fa fa-book mr-2"></span>Archive Documents
 					</a>
 					</li>
-					<li class="{{ Request::is('admin/serchdocs') ? 'active' : '' }}">
+					<li class="{{ Request::is('admin/searchdocs') ? 'active' : '' }}">
             <a href="/admin/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
@@ -75,13 +75,9 @@
       </nav>
 
     <div class="container-fluid">
-    	<h2 style="margin-top:10px">@yield('PageTitle')</h2>
+    	<h2>@yield('PageTitle')</h2>
     		@include('Layouts.Notif')
     		@yield('content')
-    <!-- <div class="content"> -->
-    
-	<!-- ./content
-	</div> -->
 
 	<!-- footer -->
   	<!-- <div class="blockquote text-left"> -->
@@ -129,6 +125,13 @@ $(document).ready(function() {
         "paging": true,
         "info": false,         
         "lengthChange":false
+    } );
+    $('#search1').DataTable( {
+       	"pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
     } );
 } );
 </script>

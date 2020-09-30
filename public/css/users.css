@@ -114,7 +114,7 @@
 .modal {
 	margin-left: 350px;
 	margin-top: 80px;
-  width: 55%
+  width: 100%
 }
 
 /* Modal Content */
@@ -143,7 +143,7 @@ input[type=text], select, textarea{
   padding-top: 30px;
   margin-top: 10px;
   border: 1px solid #ccc;
-  border-radius: 100px;
+  border-radius: 6px;
 /*   cursor: cursor; */
 }
 

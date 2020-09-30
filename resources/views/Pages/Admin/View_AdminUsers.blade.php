@@ -13,8 +13,9 @@
 				</button>
     
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px;">
-				
+				<!-- <div class="modal" id="modal" role="dialog" style="padding-left:17px;"> -->
+				<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
+				<div class="modal-dialog">
 				<!-- Modal content -->
 				<div class="modal-content">
 					<div class="modal-header">
@@ -79,6 +80,7 @@
 					</div>
 				<!-- ./modal content -->
 				</div>
+				</div>
 				<!-- ./modal -->
 				</div>
 			<!-- ./form group -->
@@ -107,8 +109,9 @@
 				<td data-filter="false">
 					<button title="edit user" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-user-edit fa-lg"></i></button>
 						<!-- The Modal -->
-						<div class="modal" id="modal1" role="dialog">
-						
+						<!-- <div class="modal" id="modal1" role="dialog"> -->
+						<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
+						<div class="modal-dialog">
 						<!-- Modal content -->
 						<div class="modal-content">
 							<div class="modal-header">
@@ -166,6 +169,7 @@
 							<!-- ./modal body -->
 							</div>
 						<!-- ./modal content -->
+						</div>
 						</div>
 						<!-- ./modal -->
 						</div>

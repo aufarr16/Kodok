@@ -32,15 +32,16 @@
 				<button type="button" class="btn-detail" data-toggle="modal" data-target="#modal1">Details</button>
 				
 				<!-- The Modal -->
-				<div class="modal" id="modal1" role="dialog" style="left:20%; margin-top:50px">
-				
+				<!-- <div class="modal" id="modal1" role="dialog" style="left:20%; margin-top:50px"> -->
+				<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="left: -323px; margin-top: 35px;">
+				<div class="modal-dialog">
 				<!-- Modal content -->
-					<div class="modal-content" style="width:50%">
+					<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Implementasi ATM Bersama Bank Artos</h2>
 					</div>	
-						<div class = "modal-body" id="style-7">
+						<div class = "modal-body" style="padding-right:15px" id="style-7">
 							<div class="force-overflow">
 							<div class = "input-group">
 								<br>

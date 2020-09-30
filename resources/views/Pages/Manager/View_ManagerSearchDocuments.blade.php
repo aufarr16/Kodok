@@ -34,8 +34,8 @@
 				</button>
 					
 					<!-- The Modal -->
-				<div class="modal" id="{{ $dat_sdoc->id_project }}" role="dialog" style="padding-left:17px; margin-top: 20px">
-				
+				<div class="modal fade" id="{{ $dat_sdoc->id_project }}" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+				<div class="modal-dialog" style="max-width: 505px">
 				<!-- Modal content -->
 					<div class="modal-content">
 					<div class="modal-header">
@@ -92,6 +92,7 @@
 						</div>
 					<!-- ./modal content -->
 					</div>
+				</div>
 				<!-- ./modal -->
 				</div>
 			</td>

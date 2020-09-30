@@ -48,8 +48,8 @@
 		          	<button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
 
 		            <!-- The Modal -->
-		            <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
-		                  
+		            <div class="modalket fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
+								<div class="modal-dialog modal-sm">          
 		              <!-- Modal content -->
 		              <div class="modal-contentket">
 			              <div class="modal-headerket">
@@ -62,7 +62,7 @@
 			              </div>
 		              <!-- modal content -->
 		              </div>
-
+		            </div>
 			          <!-- modal -->
 			          </div>
 			    </td>
@@ -72,8 +72,8 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog">
-						
+						<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+						<div class="modal-dialog modal-xl">
 
 							<!-- Modal content -->
 							<div class="modal-content">
@@ -787,6 +787,7 @@
 								</div>
 								<!--./modal content-->
 								</div>	
+							</div>
 							<!--./the modal-->
 							</div>						
 				</td>

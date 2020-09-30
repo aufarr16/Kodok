@@ -47,8 +47,8 @@
                   <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#{{ $dat_proj->id_project }}">{{ $dat_proj->nama_project}}</button>
 
                  <!-- The Modal -->
-                  <div class="modal1" id="{{ $dat_proj->id_project }}" role="dialog" style="padding-left:17px;">
-                  
+                  <div class="modal1 fade" id="{{ $dat_proj->id_project }}" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
                   <!-- Modal content -->
                   <div class="modal-content1">
                     <div class="modal-header">
@@ -84,6 +84,7 @@
                   </div>
                   <!-- modal content -->
                   </div>
+                </div>
                 <!-- modal -->
                 </div>
               <!-- popover -->

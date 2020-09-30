@@ -46,8 +46,8 @@
           <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
 
             <!-- The Modal -->
-            <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
-                  
+            <div class="modalket fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
+						<div class="modal-dialog modal-sm">    
               <!-- Modal content -->
               <div class="modal-contentket">
 	              <div class="modal-headerket">
@@ -60,7 +60,7 @@
 	              </div>
               <!-- modal content -->
               </div>
-
+             </div>
 	          <!-- modal -->
 	          </div>
 				</td>
@@ -70,8 +70,9 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="modal" role="dialog">
-						
+						<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" >
+						<div class="modal-dialog modal-xl">
+
 							<!-- Modal content -->
 							<div class="modal-content">
 							<div class="modal-header">
@@ -785,6 +786,7 @@
 								</div>
 								<!--./modal content-->
 								</div>	
+								</div>
 							<!--./the modal-->
 							</div>						
 				</td>
@@ -815,8 +817,8 @@
           <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal2"><i class="far fa-question-circle"></i></button>
 
             <!-- The Modal -->
-            <div class="modalket" id="modal2" role="dialog" style="padding-left:10px;">
-                  
+            <div class="modalket fade" id="modal2" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
+						<div class="modal-dialog modal-sm">          
               <!-- Modal content -->
               <div class="modal-contentket">
 	              <div class="modal-headerket">
@@ -829,7 +831,7 @@
 	              </div>
               <!-- modal content -->
               </div>
-              
+             </div>
 	          <!-- modal -->
 	          </div>
 				</td>
@@ -839,11 +841,11 @@
 					</button>
 						
 						<!-- The Modal -->
-						<div class="modal" id="model" role="dialog">
-						
+						<div class="modal fade" id="model" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+						<div class="modal-dialog modal-xl">
 
 							<!-- Modal content -->
-							<div class="modal-content">
+							<div class="modal-content" >
 							<div class="modal-header">
 								<a class="close1" data-dismiss="modal">&times;</a>
 								<h2 class="modal-title">Implementasi Layanan NSICCS ATM Bersama Melalui Delivery Channel ATM Standard Chartered Bank</h2>
@@ -1548,6 +1550,7 @@
 								</div>
 								<!--./modal content-->
 								</div>	
+							</div>
 							<!--./the modal-->
 							</div>		
 				</td>

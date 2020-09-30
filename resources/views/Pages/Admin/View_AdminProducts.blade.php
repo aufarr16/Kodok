@@ -1,8 +1,3 @@
-
-	  <!-- @if(session('status'))
-		  ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL
-
-	  @endif -->
 	@extends('Pages.Admin.TempAdmin')
 	@section('PageTitle','Products')
 	@section('content')
@@ -16,8 +11,9 @@
 				</button>
 	
 				<!-- The Modal -->
-				<div class="modal" id="modal" role="dialog" style="padding-left:17px;">
-				
+				<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
+				<div class="modal-dialog">
+
 				<!-- Modal content -->
 				<div class="modal-content">
 					<div class="modal-header">
@@ -48,6 +44,7 @@
 					</div>
 				<!-- ./modal content -->
 				</div>
+				</div>
 				<!-- ./modal -->
 				</div>
 			<!-- ./form group -->
@@ -73,8 +70,8 @@
 				<td data-filter="false">
 					<button title="edit products" class="btn-edit" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt fa-lg"></i></button>
 						<!-- The Modal -->
-						<div class="modal" id="modal1" role="dialog">
-						
+						<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
+						<div class="modal-dialog">
 						<!-- Modal content -->
 						<div class="modal-content">
 							<div class="modal-header">
@@ -104,6 +101,7 @@
 							<!-- ./modal content -->
 							</div>
 						<!-- ./modal body -->
+						</div>
 						</div>
 						<!-- modal -->
 						</div>

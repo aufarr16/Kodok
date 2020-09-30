@@ -3,6 +3,7 @@
   @push('styles')
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/approval.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   @endpush
   @section('PageTitle','Approval Projects')
   @section('content')
@@ -37,16 +38,18 @@
 				<button type="button" class="btn-docs" data-toggle="modal" data-target="#modal"><i class="fa fa-search fa-lg"></i></button>
 				
 				<!-- The Modal -->
-				<div class="modalapproval" id="modal" role="dialog">
-				
+				<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style=" margin-top: 50px; margin-left: 5px">
+				<!-- <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="left: -323px; margin-top: 35px;"> -->
+				<div class="modal-dialog">
+
 				<!-- Modal content -->
-					<div class="modal-contentapproval">
-					<div class="modal-headerapproval">
-						<a class="closeapproval" data-dismiss="modal">&times;</a>
-						<h2 class="modal-titleapproval">Implementasi ATM Bersama Bank Artos</h2>
+					<div class="modal-content">
+					<div class="modal-header">
+						<a class="close1" data-dismiss="modal">&times;</a>
+						<h2 class="modal-title">Implementasi ATM Bersama Bank Artos</h2>
 					</div>	
-						<div class = "modal-bodyapproval">
-							<div class = "input-groupapproval">
+						<div class = "modal-body">
+							<div class = "input-group">
 								<br>
 									<table class="table1">
 										<tr>
@@ -81,17 +84,19 @@
 						</div>
 					<!-- ./modal content -->
 					</div>	
+				</div>
 				<!-- ./the modal -->
 				</div>	
 				
 			</td>
 			<td>
         <button onclick="approve()" type="button" class="btn-approve" title="Approve Project" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></button>
-				<button class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></button>
+		<button class="btn-decline" title="Decline approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></button>
 
-	      <!-- The Modal -->
-        <div class="modalket" id="modal1" role="dialog" style="padding-left:10px;">
-                  
+	    <!-- The Modal -->
+        <div class="modalket fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog">
+
         <!-- Modal content -->
         <div class="modal-contentket">
 	        <div class="modal-headerket">
@@ -99,17 +104,22 @@
 	          <h5 class="modal-titleket">Implementasi ATM Bersama Fitur Standard dan Transfer pada Channel Mobile Banking Bank Artos</h5>
           </div>  	
 					<div class = "modal-bodyket">
-						<div class = "input-groupket">
-								<label for="inisial">Alasan Decline:</label>
+						<!-- <div class = "input-groupket"> -->
+								<label for="inisial" style="margin-left: 180px">
+								Alasan Decline:</label>
 								<br>
 								&nbsp
-								<textarea id="alasan" class="note_status" role="textbox"></textarea>
+								<textarea id="alasan" class="note_status" role="textbox" style="margin-top: -25px;padding-top: 0px !important"></textarea>
 						
-						<button onclick="decline()" class="btn-submitket" type="button">Submit</button>
+						<!-- <button onclick="decline()" class="btn-submitket" type="button">Submit</button> -->
+						<!-- </div> -->
+						<div class="modal-footer" id="modal-footer">
+							<button type="submit" class="btnsubmit" id="edituser">Submit</button>
 						</div>
 					<!-- ./modal body -->
 					</div>
 				<!-- ./modal content -->
+				</div>
 				</div>
 				<!-- ./modal -->
 				</div>

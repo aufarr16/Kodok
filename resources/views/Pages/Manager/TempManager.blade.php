@@ -70,17 +70,13 @@
       </nav>
 
   <div class="container-fluid">
-    <div class="content">
-      <h2 style="margin-top:10px">@yield('PageTitle')</h2>
+      <h2>@yield('PageTitle')</h2>
     @yield('content')
-    <!-- <div class="content"> -->
 
     @if(session('status'))
           <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
     @endif
-    
-  <!-- ./content -->
-  </div>
+
   <!-- footer -->
     <!-- <div class="blockquote text-left"> -->
         <footer class="footer fixed-bottom">
@@ -137,6 +133,13 @@ $(document).ready(function() {
          "paging": true,
          "info": false,         
          "lengthChange":false
+           } );
+    $('#search').DataTable( {
+        "pageLength": 10,     
+         "searching": true,
+         "paging": true, 
+         "info": true,         
+         "lengthChange":false,
            } );
 } );
 </script>

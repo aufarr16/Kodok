@@ -38,7 +38,7 @@ class Controller_AdminMitra extends Controller
 
     	Mitra::create($request->all());
 
-    	return redirect('/admin/mitra')->with('success','Data Mitra berhasil disimpan');
+    	return redirect('/admin/mitra')->with('submit_success','Data Mitra berhasil disimpan');
     }
 
     public function destroy($ABA){
