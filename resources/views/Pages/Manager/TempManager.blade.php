@@ -71,11 +71,8 @@
 
   <div class="container-fluid">
       <h2>@yield('PageTitle')</h2>
-    @yield('content')
-
-    @if(session('status'))
-          <!-- ISI SAMA FUNCTION MUNCULIN NOTIF BERHASIL -->
-    @endif
+      @include('Layouts.Notif')
+      @yield('content')
 
   <!-- footer -->
     <!-- <div class="blockquote text-left"> -->

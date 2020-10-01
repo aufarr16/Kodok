@@ -72,8 +72,8 @@
 						<br>
 				    <br>
 				    <div class="modal-footer" id="modal-footer">
-							<button type="submit" class="btnsubmit">Submit</button>
-						</div>
+						<button type="submit" class="btnsubmit">Submit</button>
+					</div>
 					</form>
 
 					<!-- ./modal body -->

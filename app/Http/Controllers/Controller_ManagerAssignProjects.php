@@ -29,26 +29,38 @@ class Controller_ManagerAssignProjects extends Controller
             'id_ptype' => 'required',
             'ABA' => 'required',
             'nama_project' => 'required',
+        ],
+        $message = [
+            'id_user.required' => 'Mohon pilih PIC',
+            'id_product.required' => 'Mohon pilih product',
+            'id_ptype.required' => 'Mohon pilih jenis project',
+            'ABA.required' => 'Mohon pilih nama mitra',
+            'nama_project.required' => 'Mohon isi nama project',
         ]);
 
     	// Project::create($request->all());
 
-
-    	return redirect('/manager/assign');
+    	return redirect('/manager/assign')->with('submit_success','Project berhasil di assign');
     }
 
     public function storeHandover(Request $request){
         return $request;
 
-        // $request->validate([
-        //     'id_user' => 'required',
-        //     'id_project' => 'required',
-        // ]);
+        $request->validate([
+            'id_user' => 'required',
+            'id_project' => 'required',
+            'PIChandover' => 'required',
+        ],
+        $message = [
+            'id_user.required' => 'Mohon pilih PIC Utama',
+            'id_project.required' => 'Mohon pilih project',
+            'PIChandover.required' => 'Mohon pilih PIC handover',
+        ]);
 
         // Projects_Handover::create(
         //     $request->all());
 
-        // return redirect('/manager/assign')->with('status', '');
+        return redirect('/manager/assign')->with('submit_success','Project berhasil di handover');
     }
 
     public function fillProject($userId=0){

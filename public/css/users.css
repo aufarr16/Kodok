@@ -121,6 +121,7 @@
 .modal-content {
  background-color: #fefefe;
  padding-top: 0px;
+ max-height: 525px
 }
 
 .modal a.close1 {
