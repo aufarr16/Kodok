@@ -53,7 +53,7 @@
                   <div class="modal-content1">
                     <div class="modal-header">
                       <a class="close1" data-dismiss="modal" aria-label="close">&times;</a>
-                      <h4 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</h4>
+                      <h5 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</h5>
                     </div>  
                   <div class = "modal-body1">
                     <div class="qualifications">
@@ -73,7 +73,7 @@
                         <div class="tile-outer">
                           <span class="circle">IDE</span>
                           <div class="tile">
-                                <p>12 Oktober 2019 - 15 Oktober 2019</p> 
+                                <p>12 November 2019 - 15 Desember 2019</p> 
                             </div>
                         </div>
                         <div class="tile-outer">

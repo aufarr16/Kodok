@@ -12,4 +12,7 @@ class Controller_AdminArchiveDocuments extends Controller
     	//dump($data_archive);
     	return view('Pages.Admin.View_AdminArchiveDocuments', ['data_archive' => $data_archive]);
     }
+
+
+    // return redirect('/admin/archive')->with('success','Notes archive berhasil disimpan');
 }

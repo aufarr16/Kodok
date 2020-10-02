@@ -12,4 +12,8 @@ class Controller_AdminSearchDocuments extends Controller
     	//dump($data_search);
     	return view('Pages.Admin.View_AdminSearchDocuments', ['data_search' => $data_search]);
     }
+
+    // return redirect('/admin/ ')->with('success','Dokumen berhasil download');
+
+    // return redirect('/admin/ ')->with('success','Dokumen berhasil terkirim');
 }

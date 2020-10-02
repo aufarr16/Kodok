@@ -21,4 +21,6 @@ class Controller_Login extends Controller
     	$username = $request->username;
     	$password = $request->password;
     }
+
+    // return redirect('/ ')->with('success','Login Berhasil');
 }
