@@ -1,5 +1,7 @@
 $(function(){
-	$('.picAsli').change(function(){
+	console.log("jalan");
+	$('#PIC2').change(function(){
+		console.log("masuk cuy");
 		const id = $(this).val();
 
 		$('#nama_project2').find('option').not(':first').remove();
@@ -53,10 +55,8 @@ $(function(){
 						$("#PIChandover").append(option);
 					}
 				}
-
 			}
 		})
-
 	})
 
 	$('body').on('click', '.btn-delete', function(event){
@@ -90,18 +90,18 @@ $(function(){
 
 					success: function(response){
 						console.log(response);
-						// table.ajax.reload();
+						table.ajax.reload();
 
-						// Swal.fire({
-						// title:'Data mitra berhasil dihapus',
-						// type:'success',
-						// toast:true,
-						// showConfirmButton:false,
-						// position: 'top',
-						// timer:1500,
-						// timerProgressBar:true,
-						// background:'#D4F1F4'
-						// })
+						Swal.fire({
+						title:'Data mitra berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+						})
 					},
 
 					error: function(xhr){

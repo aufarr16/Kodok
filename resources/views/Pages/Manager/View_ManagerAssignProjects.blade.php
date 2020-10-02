@@ -170,13 +170,7 @@
               <div class="@error('PIChandover') is-invalid @enderror">
                 <select id="PIChandover" class="js-states form-control @error('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC Handover" style="width:100%" name="PIChandover">
                   <option value=""></option>
-                  @foreach($users as $usr)
-                    @if (old('id_user') == $usr->id_user)
-                      <option value="{{ $usr->id_user }}" selected>{{ $usr->nama_user }}</option>
-                    @else 
-                      <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
-                    @endif
-                  @endforeach
+                  
                 </select>
                  @error('id_user')
                   <div class="invalid-feedback flash" style="margin-top: 2px">
@@ -185,7 +179,7 @@
             </div>
           </div> 
           <div class="modal-footer" id="modal-footer">
-            <button onclick="submithandover()" type="submit" class="btn-submit" id="submithandover">Submit</button>
+            <button type="submit" class="btn-submit" id="submithandover">Submit</button>
           </div>          
         </form>
 
@@ -235,137 +229,5 @@
 
   </script>
   <!-- <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>\ -->
-  <script src="{{ url('') }}/js/script.js"></script>
-<!--   <script>
-   function submitproject () {
-    var user = $('#id_user').val();
-    var product = $('#id_product').val();
-    var type = $('#id_ptype').val();
-    var ABA = $('#ABA').val();
-    var project = $('#nama_project').val();
 
-   if(user == ''){
-       Swal.fire({
-      toast: true,
-      position: 'top',
-      showConfirmButton: false,
-      timer: 4000,
-      timerProgressBar:true,
-      // background:'lightgoldenrodyellow',
-      background:'#FFF4BD',
-      type: 'warning',
-      title: 'Mohon pilih PIC'
-    })
-        }else if (product == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon pilih produk'
-      })
-    }else if (type == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon pilih tipe project'
-      })
-    }else if (ABA == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon pilih mitra'
-      })
-    }else if (project == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon isi nama project'
-      })
-      }else{
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        background:'#D4F1F4',
-        type: 'success',
-        title: 'Data mitra berhasil disimpan'
-    })
-    }}
-
-    function submithandover () {
-    var PIC2 = $('#PIC2').val();
-    var nama_project2 = $('#nama_project2').val();
-    var PIChandover = $('#PIChandover').val();
-    if(PIC2 == ''){
-       Swal.fire({
-      toast: true,
-      position: 'top',
-      showConfirmButton: false,
-      timer: 4000,
-      timerProgressBar:true,
-      // background:'lightgoldenrodyellow',
-      background:'#FFF4BD',
-      type: 'warning',
-      title: 'Mohon pilih PIC utama'
-    })
-      }else if (nama_project2 == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon pilih nama project'
-      })
-      }else if (PIChandover == ''){
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar:true,
-        // background:'lightgoldenrodyellow',
-        background:'#FFF4BD',
-        type: 'warning',
-        title: 'Mohon pilih PIC handover'
-      })
-      }else{
-      Swal.fire({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 4000,
-        background:'#D4F1F4',
-        type: 'success',
-        title: 'Data mitra berhasil disimpan'
-    })
-    }}
-  </script> -->
   @endpush

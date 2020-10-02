@@ -155,5 +155,5 @@
 			processing=true,
 		
 	</script> -->
-	<script type="text/javascript" language="javascript" src="{{ 'resources/js/app.js'}}"></script>
+	<script type="text/javascript" language="javascript" src="{{ url('') }}/js/script.js"></script>
 	@endpush
