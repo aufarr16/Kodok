@@ -12,4 +12,8 @@ class Controller_GuestSearchDocuments extends Controller
     	//dump($data_search);
     	return view('Pages.Guest.View_GuestSearchDocuments', ['data_search' => $data_search]);
     }
+
+    // return redirect('/guest/ ')->with('success','Dokumen berhasil download');
+
+    // return redirect('/guest/ ')->with('success','Dokumen berhasil terkirim');
 }

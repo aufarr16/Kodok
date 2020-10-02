@@ -12,4 +12,6 @@ class Controller_ManagerApprovalProjects extends Controller
     	//dump($data_approval);
     	return view('Pages.Manager.View_ManagerApprovalProjects', ['data_approval' => $data_approval]); 	
     }
+
+    // return redirect('/manager/ ')->with('success','Project berhasil di approve');
 }

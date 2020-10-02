@@ -33,6 +33,6 @@ class Controller_AdminProducts extends Controller
 
     	Product::create($request->all());
 
-    	return redirect('/admin/products')->with('submit_success','Data Product berhasil disimpan');
+    	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 }

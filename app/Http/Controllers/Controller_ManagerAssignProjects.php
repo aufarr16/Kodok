@@ -38,9 +38,9 @@ class Controller_ManagerAssignProjects extends Controller
             'nama_project.required' => 'Mohon isi nama project',
         ]);
 
-    	// Project::create($request->all());
+    	Project::create($request->all());
 
-    	return redirect('/manager/assign')->with('submit_success','Project berhasil di assign');
+    	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }
 
     public function storeHandover(Request $request){
@@ -57,10 +57,9 @@ class Controller_ManagerAssignProjects extends Controller
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-        // Projects_Handover::create(
-        //     $request->all());
+        Projects_Handover::create($request->all());
 
-        return redirect('/manager/assign')->with('submit_success','Project berhasil di handover');
+        return redirect('/manager/assign')->with('success','Project berhasil di handover');
     }
 
     public function fillProject($userId=0){

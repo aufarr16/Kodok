@@ -49,18 +49,18 @@
 						<div class = "modal-body">
 							<div class = "input-group">
 								<br>
-									<table class="table1" id="search">
+									<table class="table1" id="search" width="unset">
 										<thead>
 											<tr>
 												<th rowspan="2">No</th>	
 												<th rowspan="2">Dokumen</th>
 												<th rowspan="2">Softcopy</th>
-	                      <th colspan="2" style="box-sizing: unset;">Hardcopy</th>
+	                      <th colspan="2" style="box-sizing: unset; margin-right: 20px">Hardcopy</th>
 											</tr>
 
 											<tr>
 												<th>Status</th>
-												<th style="box-sizing: unset;">Notes</th>
+												<th style="box-sizing: unset; margin-right: 20px">Notes</th>
 											</tr>
 											</thead>
 											<tr>
@@ -106,7 +106,6 @@
 												<td></td>
 											</tr>
 									</table>
-								</br>
 							<!-- ./input group -->
 							</div>
 						<!-- ./modal body -->
