@@ -177,7 +177,7 @@
 						type:'success',
 						toast:true,
 						showConfirmButton:false,
-						position: 'top',
+						position: 'top-end',
 						timer:1500,
 						timerProgressBar:true,
 						background:'#D4F1F4'
@@ -189,7 +189,7 @@
 						type:'info',
 						toast:true,
 						showConfirmButton:false,
-						position:'top',
+						position:'top-end',
 						grow:'row',
 						timer:1500,
 						timerProgressBar:true,

@@ -76,7 +76,7 @@
     function createfolder () {
       Swal.fire({
         toast: true,
-        position: 'top',
+        position: 'top-end',
         showConfirmButton: false,
         timer: 4000,
         background:'#D4F1F4',

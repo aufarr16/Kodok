@@ -46,7 +46,7 @@
 							<div class ="input-group-addon">						
 								<label for="id_ulevel" style="font-weight:bolder;float: left;">Role</label>
 							</div>
-								<select id="id_ulevel" class="form control @error('id_ulevel') is-invalid @enderror" name="id_ulevel" style="height:35px; margin-bottom: 10px"> 
+								<select id="id_ulevel" class="form control custom-select @error('id_ulevel') is-invalid @enderror" name="id_ulevel" style="height:35px; margin-bottom: 10px; width: 100%"> 
 									<option value="" hidden>Pilih Role</option>
 									@foreach($levels as $lvl)
 										@if (old('id_ulevel') == $lvl->id_ulevel)
@@ -140,7 +140,7 @@
 									<div class ="input-group-addon">						
 										<label for="role" style="font-weight:bolder;float: left;">Role</label>
 									</div>
-										<select id="editrole" class="form control @error('id_ulevel') is-invalid @enderror" style="height:35px; margin-bottom: 10px" value="{{ old('id_ulevel') }}"> 
+										<select id="editrole" class="form control custom-select @error('id_ulevel') is-invalid @enderror" style="height:35px; margin-bottom: 10px; width:100%" value="{{ old('id_ulevel') }}"> 
 											<option value="" hidden>Pilih Role</option>
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>

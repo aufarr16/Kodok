@@ -10,5 +10,5 @@ class Controller_EngineerDocumentsTools extends Controller
     	return view('Pages.Engineer.View_EngineerDocumentsTools');
     }
 
-    // return redirect('/engineer/doctools')->with('success','Folder berhasil create');
+    // return redirect('/engineer/doctools')->with('success','Folder berhasil dibuat');
 }
