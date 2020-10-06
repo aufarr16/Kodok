@@ -55,7 +55,7 @@
 											<td>1</td>
 											<td>Nodin Penugasan</td>
 											<td>	
-												<select class="custom-select" id="status_select1"> 
+												<select class="custom-select" id="status_select1" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px"> 
 													<option value="collected1">Collected</option>
 													<option value="notcollected1">Not Collected</option>
 													<option value="postponed1">Postponed</option>
@@ -77,7 +77,7 @@
 											<td>2</td>
 											<td>BAKO</td>
 											<td>	
-												<select class="custom-select" id="status_select1_2"> 
+												<select class="custom-select" id="status_select1_2" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px"> 
 													<option value="collected1_2">Collected</option>
 													<option value="notcollected1_2">Not Collected</option>
 													<option value="postponed1_2">Postponed</option>
@@ -99,7 +99,7 @@
 											<td>3</td>
 											<td>BAE</td>
 											<td>	
-												<select class="custom-select" id="status_select1_3"> 
+												<select class="custom-select" id="status_select1_3" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px"> 
 													<option value="collected1_3">Collected</option>
 													<option value="notcollected1_3">Not Collected</option>
 													<option value="postponed1_3">Postponed</option>
@@ -121,7 +121,7 @@
 											<td>4</td>
 											<td>BATO</td>
 											<td>	
-												<select class="custom-select" id="status_select1_4"> 
+												<select class="custom-select" id="status_select1_4" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px"> 
 													<option value="collected1_4">Collected</option>
 													<option value="notcollected1_4">Not Collected</option>
 													<option value="postponed1_4">Postponed</option>
@@ -143,7 +143,7 @@
 											<td>5</td>
 											<td>BATO</td>
 											<td>	
-												<select class="custom-select" id="status_select1_5"> 
+												<select class="custom-select" id="status_select1_5" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px"> 
 													<option value="collected1_5">Collected</option>
 													<option value="notcollected1_5">Not Collected</option>
 													<option value="postponed1_5">Postponed</option>

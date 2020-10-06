@@ -191,9 +191,9 @@
 						showConfirmButton:false,
 						position:'top-end',
 						grow:'row',
-						timer:1500,
+						// timer:1500,
 						timerProgressBar:true,
-						background:'#D2FBA4'
+						background:'#B4F5F0'
 					})
 				}
 			})
