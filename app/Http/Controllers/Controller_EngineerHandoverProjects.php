@@ -10,7 +10,11 @@ class Controller_EngineerHandoverProjects extends Controller
     	return view('Pages.Engineer.View_EngineerHandoverProjects');
     }
 
-    // return redirect('/engineer/handover')->with('success','Handover sudah selesai');
+    // Notif ketika klik button upload file
+    // return redirect('/engineer/handover')->with('success','Dokumen berhasil di upload');
+	// return redirect('/engineer/handover')->with('error','Mohon upload file dengan format:docx|doc|xls|xlsx|jpg|jpeg|png|pdf|zip|rar'');
 
-    // return redirect('/engineer/handover')->with('success','Document berhasil di upload');
+	// Notif ketika klik button selesai handover
+	// return redirect('/engineer/handover')->with('success','Handover sudah selesai. Terimakasih');
+ 	// return redirect('/engineer/handover')->with('info','Tetap handover. Semangat');
 }
