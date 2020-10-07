@@ -132,9 +132,7 @@
 					</div>
 					<!-- ./modal -->
 					</div>
-
-							<!-- <a href='#' onclick="return confirm('Are you sure wanna delete this mitra?')" type="button" class="btn-delete dialog-box" title="Delete mitra"><i class="fas fa-trash fa-lg"></i></a> -->
-							<button id="{{ $dat_mit->ABA }}" type="submit" class="btn-delete"><i class="fas fa-trash fa-lg"></i></button>
+							<button id="{{ $dat_mit->ABA }}" type="submit" class="btn-delete delmit"><i class="fas fa-trash fa-lg"></i></button>
 				</td>
 				<td>{{ $dat_mit->added_by }}</td>
 				<td>{{ $dat_mit->modified_by }}</td>
@@ -155,5 +153,5 @@
 			processing=true,
 		
 	</script> -->
-	<script type="text/javascript" language="javascript" src="{{ url('') }}/js/script.js"></script>
+	<script src="{{ url('') }}/js/script.js"></script>
 	@endpush

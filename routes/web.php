@@ -29,7 +29,7 @@ Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
 Route::get('/admin/mitra/table', 'Controller_AdminUsers@dataTable');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
-Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
+Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy')->name('delete.mitra');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
 
@@ -56,5 +56,8 @@ Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
 
 ##GUEST
 Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
+
+##TABLE
+Route::get('/table/mitra', 'Controller_AdminMitra@dataTable');
 
 ?>

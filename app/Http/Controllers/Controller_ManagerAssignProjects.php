@@ -43,7 +43,7 @@ class Controller_ManagerAssignProjects extends Controller
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }
 
-    public function storeHandover(Request $request){
+    public function storeHandover(Request $request){    
         return $request;
 
         $request->validate([

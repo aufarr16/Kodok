@@ -120,11 +120,13 @@
 <script>
 $(document).ready(function() {
     $('#table1').DataTable( { 
+        "responsive": true,
+        "processing": true,
         "pageLength": 10, 
         "searching": true,
         "paging": true,
         "info": false,         
-        "lengthChange":false
+        "lengthChange": false
     } );
     $('#search1').DataTable( {
        	"pageLength": 10,     
@@ -153,7 +155,7 @@ $(document).ready(function() {
 </script>
 
 <!-- Hapus Data -->
-<script>
+<!-- <script>
 $('body').on('click', '.btn-delete', function(event){
 		event.preventDefault();
 
@@ -221,8 +223,7 @@ $('body').on('click', '.btn-delete', function(event){
 			}
 		})
 	})
-</script>
+</script> -->
 
 </body>
-
 </html>

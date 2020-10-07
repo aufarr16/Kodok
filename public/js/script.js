@@ -1,7 +1,7 @@
 function getHandoverData(id){
 	var elementPIC = document.getElementById(id);
 	var picID = $(elementPIC).val();
-	console.log(picID);
+	// console.log(picID);
 
 	$('#nama_project2').find('option').not(':first').remove();
 	$('#PIChandover').find('option').not(':first').remove();		
@@ -12,7 +12,7 @@ function getHandoverData(id){
 		dataType: 'json',
 
 		success: function(response){
-			console.log(response);
+			// console.log(response);
 			var len = 0;
 			if(response['data'].length != null){
 				len = response['data'].length;
@@ -37,7 +37,7 @@ function getHandoverData(id){
 		dataType: 'json',
 
 		success: function(response){
-			console.log(response);
+			// console.log(response);
 			var len = 0;
 
 			if(response['data'].length != null){
@@ -59,7 +59,8 @@ function getHandoverData(id){
 }
 
 $(function(){
-	$('body').on('click', '.btn-delete', function(event){
+	$('body').on('click', '.delmit', function(event){
+		// console.log("aman");
 		event.preventDefault();
 
 		var id = $(this).attr('id');
@@ -93,14 +94,14 @@ $(function(){
 						table.ajax.reload();
 
 						Swal.fire({
-						title:'Data mitra berhasil dihapus',
-						type:'success',
-						toast:true,
-						showConfirmButton:false,
-						position: 'top',
-						timer:1500,
-						timerProgressBar:true,
-						background:'#D4F1F4'
+							title:'Data mitra berhasil dihapus',
+							type:'success',
+							toast:true,
+							showConfirmButton:false,
+							position: 'top',
+							timer:1500,
+							timerProgressBar:true,
+							background:'#D4F1F4'
 						})
 					},
 

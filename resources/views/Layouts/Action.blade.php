@@ -1,2 +1,2 @@
-<a href="{{ $url_edit }}" class="btn-edit" title="Edit {{ $model->name }}"><i class="icon-pencil text-inverse"></i></a> | 
-<a href="{{ $url_destroy }}" class="btn-delete" title="Hapus {{ $model->name }}"><i class="icon-trash text-danger"></i></a>
+<!-- <a href="{{ $url_edit }}" class="btn-edit" title="Edit {{ $model->name }}"><i class="icon-pencil text-inverse"></i></a> | 
+<a href="{{ $url_destroy }}" class="btn-delete" title="Hapus {{ $model->name }}"><i class="icon-trash text-danger"></i></a> -->
