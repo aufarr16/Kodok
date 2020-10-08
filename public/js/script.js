@@ -58,8 +58,12 @@ function getHandoverData(id){
 	})
 }
 
+function deleteMitra(id){
+
+}
+
 $(function(){
-	$('body').on('click', '.delmit', function(event){
+	$('body').on('click', '.delmitra', function(event){
 		// console.log("aman");
 		event.preventDefault();
 

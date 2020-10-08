@@ -1,2 +1,2 @@
-<!-- <a href="{{ $url_edit }}" class="btn-edit" title="Edit {{ $model->name }}"><i class="icon-pencil text-inverse"></i></a> | 
-<a href="{{ $url_destroy }}" class="btn-delete" title="Hapus {{ $model->name }}"><i class="icon-trash text-danger"></i></a> -->
+<button class="btn-edit"><i class="fas fa-pencil-alt fa-lg"></i></button>  
+<button class="btn-delete delmitra"><i class="fas fa-trash fa-lg"></i></button>

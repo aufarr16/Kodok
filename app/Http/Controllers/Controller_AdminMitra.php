@@ -12,6 +12,7 @@ class Controller_AdminMitra extends Controller
     public function openPage(){
     	$data_mitra = Mitra::all();
     	//dump($data_mitra);
+        
     	return view('Pages.Admin.View_AdminMitra', compact('data_mitra'));
     }
 
@@ -54,19 +55,19 @@ class Controller_AdminMitra extends Controller
         return response()->json($all_mitra);
     }
 
-    // public function dataTable()
-    // {
-    //     $model = Mitra::query();
-    //     return DataTables::of($model)
-    //         ->addColumn('action', function($model){
-    //             return view('Layouts.Action',[
-    //                 'model'=> $model,
-    //                 // 'url_edit' => url('', $model->id),
-    //                 'url_destroy' => route('delete.mitra', $model->id),
-    //             ]);
-    //         })
-    //         ->addIndexColumn()
-    //         ->rawColumns(['action'])
-    //         ->make(true);
-    // }
+    public function dataTable()
+    {
+        $model = Mitra::query();
+        return DataTables::of($model)
+            ->addColumn('action', function($model){
+                return view('Layouts.Action',[
+                    'model'=> $model,
+                    // 'url_edit' => url('', $model->id),
+                    // 'url_destroy' => route('mitra.delete', $model->ABA),
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['action'])
+            ->make(true);
+    }
 }

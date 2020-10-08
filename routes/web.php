@@ -24,12 +24,10 @@ Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 Route::get('/admin/products', 'Controller_AdminProducts@openPage');
 Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
-Route::get('/admin/mitra', 'Controller_AdminMitra@openPage');
-
-Route::get('/admin/mitra/table', 'Controller_AdminUsers@dataTable');
+Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
-Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy')->name('delete.mitra');
+Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy')->name('mitra.delete');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
 
@@ -58,6 +56,6 @@ Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
 Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
 
 ##TABLE
-Route::get('/table/mitra', 'Controller_AdminMitra@dataTable');
+Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra.table');
 
 ?>

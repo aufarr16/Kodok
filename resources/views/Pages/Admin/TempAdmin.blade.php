@@ -20,6 +20,8 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
   @stack('styles')
 
 </head>
@@ -96,47 +98,30 @@
 </div>
 
 	
-@stack('scripts')
-  <!--   Core JS Files   -->
-  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
- 
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/app.js')}}"></script>
-  <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
-	<script src="{{ url('') }}/js/script.js"></script>
 
-<!-- JS Datatable pagination  -->
-<script>
-$(document).ready(function() {
-    $('#table1').DataTable( { 
-        "responsive": true,
-        "processing": true,
-        "pageLength": 10, 
-        "searching": true,
-        "paging": true,
-        "info": false,         
-        "lengthChange": false
-    } );
-    $('#search1').DataTable( {
-       	"pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-    } );
-} );
-</script>
+<!--   Core JS Files   -->
+<script src="{{ url('') }}/js/core/jquery.min.js"></script>
+<script src="{{ url('') }}/js/core/popper.min.js"></script>
+<script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
+<script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/app.js')}}"></script>
+<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+<script src="{{ url('') }}/js/script.js"></script>
+
+@stack('scripts')
 
 <!-- Sidebar -->
 <script>
@@ -153,77 +138,6 @@ $(document).ready(function() {
     $('#modal').modal('show');
   @endif
 </script>
-
-<!-- Hapus Data -->
-<!-- <script>
-$('body').on('click', '.btn-delete', function(event){
-		event.preventDefault();
-
-		var id = $(this).attr('id');
-
-		Swal({
-		  title: 'Yakin hapus data ini?',
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
-		  confirmButtonText: 'Ya',
-		  cancelButtonText: 'Tidak'
-		}).then((result)=>{
-			if(result.value){
-				$.ajaxSetup({
-					headers: {
-						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					}
-				});
-
-				$.ajax({
-					url: '/admin/delmitra/'+id,
-					type: 'get',
-					data: {
-						'_method': 'DELETE'
-					},
-
-					success: function(response){
-						// console.log(response);
-						table.ajax.reload();
-
-						Swal({
-						title:'Data berhasil dihapus',
-						type:'success',
-						toast:true,
-						showConfirmButton:false,
-						position: 'top-end',
-						// timer:1500,
-						timerProgressBar:true,
-						background:'palegreen'
-						})
-					},
-
-					error: function(xhr){
-						Swal({
-							type: 'error',
-							title: 'Oops...',
-							text: 'Something went wrong!'
-						})
-					}
-				})
-			} else if (result.dismiss === 'cancel') {
-				Swal({
-					title:'Data tetap tersimpan',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top-end',
-					grow:'row',
-					// timer:1500,
-					timerProgressBar:true,
-					background:'#d6ebff'
-				})
-			}
-		})
-	})
-</script> -->
 
 </body>
 </html>
