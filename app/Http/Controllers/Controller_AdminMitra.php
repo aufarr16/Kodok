@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_AdminMitra extends Controller
 {
     public function openPage(){
-    	$data_mitra = Mitra::all();
-    	//dump($data_mitra);
-        
-    	return view('Pages.Admin.View_AdminMitra', compact('data_mitra'));
+    	return view('Pages.Admin.View_AdminMitra');
     }
 
       /**
@@ -60,11 +57,7 @@ class Controller_AdminMitra extends Controller
         $model = Mitra::query();
         return DataTables::of($model)
             ->addColumn('action', function($model){
-                return view('Layouts.Action',[
-                    'model'=> $model,
-                    // 'url_edit' => url('', $model->id),
-                    // 'url_destroy' => route('mitra.delete', $model->ABA),
-                ]);
+                return view('Layouts.Action');
             })
             ->addIndexColumn()
             ->rawColumns(['action'])

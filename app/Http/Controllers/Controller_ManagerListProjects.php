@@ -12,4 +12,6 @@ class Controller_ManagerListProjects extends Controller
     	//dump($data_projek);
     	return view('Pages.Manager.View_ManagerListProjects', ['data_projek' => $data_projek]); 	
     }
+
+    
 }

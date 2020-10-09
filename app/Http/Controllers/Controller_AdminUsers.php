@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Users_Level;
+use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,9 +13,9 @@ class Controller_AdminUsers extends Controller
 	public function openPage(){
 		$users = User::all();
 		$levels = Users_Level::all();
-		$data_users = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
+
 		//dump($data_users);
-		return view('Pages.Admin.View_AdminUsers', compact('users', 'levels', 'data_users'));
+		return view('Pages.Admin.View_AdminUsers', compact('users','levels'));
 	}
 
 	  /**
@@ -48,4 +49,20 @@ class Controller_AdminUsers extends Controller
 
 		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
 	}
+
+	public function dataTable()
+    {
+        $model = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
+        return DataTables::of($model)
+            ->addColumn('action', function($model){
+                return view('Layouts.Action',[
+                    'model'=> $model,
+                    // 'url_edit' => url('', $model->id),
+                    // 'url_destroy' => route('mitra.delete', $model->ABA),
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['action'])
+            ->make(true);
+    }
 }

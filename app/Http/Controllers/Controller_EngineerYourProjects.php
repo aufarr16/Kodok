@@ -15,7 +15,5 @@ class Controller_EngineerYourProjects extends Controller
     	// return redirect('/engineer/projects')->with('error','Mohon upload file dengan format:docx|doc|xls|xlsx|jpg|jpeg|png|pdf|zip|rar');
 
     	// Notif ketika klik button ok (merubah status)
-    	// return redirect('/engineer/projects')->with('success','Status berhasil diubah');
-    }
-    
+    	// return redirect('/engineer/projects')->with('success','Status berhasil diubah'); 
 }
