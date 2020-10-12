@@ -1,4 +1,4 @@
-  @extends('Pages.Manager.TempManager')
+  @extends('Templates.Manager')
   
   @push('styles')
   <!-- CSS Files -->

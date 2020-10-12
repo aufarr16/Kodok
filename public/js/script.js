@@ -59,77 +59,208 @@ function getHandoverData(id){
 }
 
 function deleteMitra(id){
+	// console.log(id);
+	event.preventDefault();
 
+	var idDel = id;
+
+	Swal.fire({
+	  title: 'Yakin hapus data ini?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'dodgerblue',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/admin/delmitra/'+idDel,
+				type: 'get',
+				data: {
+					'_method': 'DELETE'
+				},
+
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Data mitra berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+				},
+
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						title: 'Oops...',
+						text: 'Something went wrong!'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Data mitra tetap tersimpan',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#D2FBA4'
+			})
+		}
+	})
 }
 
-$(function(){
-	$('body').on('click', '.delmitra', function(event){
-		// console.log("aman");
-		event.preventDefault();
+function deleteProduct(id){
+	console.log(id);
+	event.preventDefault();
 
-		var id = $(this).attr('id');
-		var table = $('#table1');
+	var idDel = id;
 
-		Swal.fire({
-		  title: 'Yakin hapus data ini?',
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
-		  confirmButtonText: 'Ya',
-		  cancelButtonText: 'Tidak'
-		}).then((result)=>{
-			if(result.value){
-				$.ajaxSetup({
-					headers: {
-						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					}
-				});
+	Swal.fire({
+	  title: 'Yakin hapus data ini?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'dodgerblue',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
 
-				$.ajax({
-					url: '/admin/delmitra/'+id,
-					type: 'get',
-					data: {
-						'_method': 'DELETE'
-					},
+			$.ajax({
+				url: '/admin/delproduct/'+idDel,
+				type: 'get',
+				data: {
+					'_method': 'DELETE'
+				},
 
-					success: function(response){
-						console.log(response);
-						table.ajax.reload();
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
 
-						Swal.fire({
-							title:'Data mitra berhasil dihapus',
-							type:'success',
-							toast:true,
-							showConfirmButton:false,
-							position: 'top',
-							timer:1500,
-							timerProgressBar:true,
-							background:'#D4F1F4'
-						})
-					},
+					Swal.fire({
+						title:'Data product berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+				},
 
-					error: function(xhr){
-						Swal.fire({
-							type: 'error',
-							title: 'Oops...',
-							text: 'Something went wrong!'
-						})
-					}
-				})
-			} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Data mitra tetap tersimpan',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top',
-					grow:'row',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D2FBA4'
-				})
-			}
-		})
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						title: 'Oops...',
+						text: 'Something went wrong!'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Data product tetap tersimpan',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#D2FBA4'
+			})
+		}
 	})
-});
+}
+
+function deleteUser(id){
+	console.log(id);
+	event.preventDefault();
+
+	var idDel = id;
+
+	Swal.fire({
+	  title: 'Yakin hapus data ini?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'dodgerblue',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/admin/deluser/'+idDel,
+				type: 'get',
+				data: {
+					'_method': 'DELETE'
+				},
+
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Data user berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+				},
+
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						title: 'Oops...',
+						text: 'Something went wrong!'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Data user tetap tersimpan',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#D2FBA4'
+			})
+		}
+	})
+}

@@ -1,4 +1,4 @@
-	@extends('Pages.Admin.TempAdmin')
+	@extends('Templates.Admin')
 	@section('PageTitle','Mitra')
 	@section('content')
 	<title>

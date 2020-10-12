@@ -46,6 +46,10 @@ class Controller_AdminMitra extends Controller
         return response()->json($mitraData);
     }
 
+    public function edit($ABA){
+        
+    }
+
     public function get(){
         $all_mitra['data'] = Mitra::orderby("ABA", "asc")->get();
 
@@ -57,7 +61,9 @@ class Controller_AdminMitra extends Controller
         $model = Mitra::query();
         return DataTables::of($model)
             ->addColumn('action', function($model){
-                return view('Layouts.Action');
+                return view('Layouts.ActionMitra',[
+                    'model'=> $model,
+                ]);
             })
             ->addIndexColumn()
             ->rawColumns(['action'])

@@ -1,4 +1,4 @@
-  @extends('Pages.Manager.TempManager')
+  @extends('Templates.Manager')
   
   @push('styles')
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />

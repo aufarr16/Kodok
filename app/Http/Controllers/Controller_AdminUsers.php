@@ -50,15 +50,20 @@ class Controller_AdminUsers extends Controller
 		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
 	}
 
+    public function destroy($id_user){
+        User::where('id_user', $id_user)->delete();
+        $userData['data'] = User::orderby("id_user", "asc")->get();
+
+        return response()->json($userData);
+    }
+
 	public function dataTable()
     {
-        $model = DB::select("select a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
+        $model = DB::select("select a.id_user, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
         return DataTables::of($model)
             ->addColumn('action', function($model){
-                return view('Layouts.Action',[
+                return view('Layouts.ActionUser',[
                     'model'=> $model,
-                    // 'url_edit' => url('', $model->id),
-                    // 'url_destroy' => route('mitra.delete', $model->ABA),
                 ]);
             })
             ->addIndexColumn()

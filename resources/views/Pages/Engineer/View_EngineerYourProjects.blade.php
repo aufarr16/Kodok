@@ -1,6 +1,6 @@
-	@extends('Pages.Engineer.TempEngineer')
-  @section('PageTitle','Your Projects')
-  @section('content')
+	@extends('Templates.Engineer')	
+	@section('PageTitle','Your Projects')
+	@section('content')
 	<title>
 		| {Engineer} Your Projects
 	</title>
@@ -43,13 +43,13 @@
 					</div>
 				</td>
 				<td>Decline
-          <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
+	      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>
 
-            <!-- The Modal -->
-            <div class="modalket fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
+	        <!-- The Modal -->
+	        <div class="modalket fade" id="modal1" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
 						<div class="modal-dialog modal-sm">    
-              <!-- Modal content -->
-              <div class="modal-contentket">
+	          <!-- Modal content -->
+	          <div class="modal-contentket">
 	              <div class="modal-headerket">
 	                <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
 	                  <h4 class="modal-titleket">Keterangan Status</h4>
@@ -58,9 +58,9 @@
 	                <span>BAKO yang diupload tidak sesuai qwertyu asdfgh zxcvbn poiuytr lkjhgf mnbvc</span> 
 	              <!-- modal body -->
 	              </div>
-              <!-- modal content -->
-              </div>
-             </div>
+	          <!-- modal content -->
+	          </div>
+	         </div>
 	          <!-- modal -->
 	          </div>
 				</td>
@@ -814,13 +814,13 @@
 					</div>
 				</td>
 				<td>Decline
-          <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal2"><i class="far fa-question-circle"></i></button>
+	      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal2"><i class="far fa-question-circle"></i></button>
 
-            <!-- The Modal -->
-            <div class="modalket fade" id="modal2" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
+	        <!-- The Modal -->
+	        <div class="modalket fade" id="modal2" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="padding-left:10px;">
 						<div class="modal-dialog modal-sm">          
-              <!-- Modal content -->
-              <div class="modal-contentket">
+	          <!-- Modal content -->
+	          <div class="modal-contentket">
 	              <div class="modal-headerket">
 	                <a class="closeket" data-dismiss="modal" aria-label="close">&times;</a>
 	                  <h4 class="modal-titleket">Keterangan Status</h4>
@@ -829,9 +829,9 @@
 	                <span>BAKO 2</span> 
 	              <!-- modal body -->
 	              </div>
-              <!-- modal content -->
-              </div>
-             </div>
+	          <!-- modal content -->
+	          </div>
+	         </div>
 	          <!-- modal -->
 	          </div>
 				</td>
@@ -1557,6 +1557,6 @@
 			</tr>
 			</tbody>
 		</table>
-  	<!-- table responsive -->
+		<!-- table responsive -->
 	</div>
 	@endsection

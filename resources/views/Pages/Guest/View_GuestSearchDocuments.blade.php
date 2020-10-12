@@ -1,4 +1,4 @@
-    @extends('Pages.Guest.TempGuest')
+    @extends('Templates.Guest')
     @section('PageTitle','Search Documents')
     @section('content')
     <title>

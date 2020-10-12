@@ -35,12 +35,19 @@ class Controller_AdminProducts extends Controller
     	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
-        public function dataTable()
+    public function destroy($id_product){
+        Product::where('id_product', $id_product)->delete();
+        $productData['data'] = Product::orderby("id_product", "asc")->get();
+
+        return response()->json($productData);
+    }
+
+    public function dataTable()
     {
         $model = Product::query();
         return DataTables::of($model)
             ->addColumn('action', function($model){
-                return view('Layouts.Action',[
+                return view('Layouts.ActionProduct',[
                     'model'=> $model,
                     // 'url_edit' => url('', $model->id),
                     // 'url_destroy' => route('mitra.delete', $model->ABA),

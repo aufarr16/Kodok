@@ -27,11 +27,13 @@ Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
-Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy')->name('mitra.delete');
+Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
+Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
 
 Route::post('/admin/submituser', 'Controller_AdminUsers@store');
+Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');
 
 ##Engineer
 Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');

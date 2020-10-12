@@ -1,4 +1,4 @@
-  @extends('Pages.Manager.TempManager')
+  @extends('Templates.Manager')
   @section('PageTitle','Home')
   @section('content')
   <title>

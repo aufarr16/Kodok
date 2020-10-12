@@ -1,5 +1,5 @@
-  @extends('Pages.Engineer.TempEngineer')
- 
+  @extends('Templates.Engineer')
+
   @push('styles')
   <link href="{{ url('') }}/css/docs-engineer.css" rel="stylesheet" />
   @endpush
@@ -8,8 +8,8 @@
    <title>
     | {Engineer} Documents & Tools
   </title>
- 
-		<div class="table-responsive-lg">
+
+  	<div class="table-responsive-lg">
     	<table class="table1" id="table1" style="overflow:auto">
     		<thead>
     		<tr>
