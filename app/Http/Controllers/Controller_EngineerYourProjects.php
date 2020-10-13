@@ -16,6 +16,5 @@ class Controller_EngineerYourProjects extends Controller
 
     	// Notif ketika klik button ok (merubah status)
     	// return redirect('/engineer/projects')->with('success','Status berhasil diubah');
-    }
     
 }

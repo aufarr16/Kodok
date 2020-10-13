@@ -77,7 +77,7 @@
       </nav>
 
     <div class="container-fluid">
-    	<h2>@yield('PageTitle')</h2>
+    	<h2 style="margin-left: 10px">@yield('PageTitle')</h2>
     		@include('Layouts.Notif')
     		@yield('content')
 

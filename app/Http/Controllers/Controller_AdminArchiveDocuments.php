@@ -14,5 +14,4 @@ class Controller_AdminArchiveDocuments extends Controller
     }
 
     	// return redirect('/admin/archive')->with('success','Notes archive berhasil disimpan');
-    }
 }
