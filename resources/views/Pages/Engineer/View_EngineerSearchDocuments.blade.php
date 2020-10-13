@@ -1,4 +1,4 @@
-  @extends('Pages.Engineer.TempEngineer')
+  @extends('Templates.Engineer')
 
   @push('styles')
   <link href="{{ url('') }}/css/search.css" rel="stylesheet" />

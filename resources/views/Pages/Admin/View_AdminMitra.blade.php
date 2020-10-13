@@ -1,4 +1,4 @@
-	@extends('Pages.Admin.TempAdmin')
+	@extends('Templates.Admin')
 	@section('PageTitle','Mitra')
 	@section('content')
 	<title>
@@ -80,7 +80,6 @@
 	@endsection
 
 	@push('scripts')
-	<script src="{{ url('') }}/js/script.js"></script>
 	<script>
     $('#table1').DataTable( { 
         "responsive": true,

@@ -1,13 +1,12 @@
-  @extends('Pages.Admin.TempAdmin')
-
-  @push('styles')
-  <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
-  @endpush
-  @section('PageTitle','Search Documents')
-  @section('content')
+	@extends('Templates.Admin')
+	@push('styles')
+	<link href="{{ url('') }}/css/search.css" rel="stylesheet" />
+	@endpush
+	@section('PageTitle','Search Documents')
+	@section('content')
 	  <title>
-    | {Admin} Search Documents
-    </title>
+	| {Admin} Search Documents
+	</title>
 		<div class="table-responsive-lg">	
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
 		
@@ -57,7 +56,7 @@
 										<td>Nodin Penugasan</td>
 										<td>	
 											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+	                  <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
 											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>-</td>
@@ -67,7 +66,7 @@
 										<td>BAKO</td>
 										<td>	
 											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+	                  <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
 											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAKO)</td>
@@ -77,7 +76,7 @@
 										<td>BAE</td>
 										<td>	
 											<button type="button" class="btnpreview" title="Preview Document"><i class="fas fa-search fa-lg icon-shadow"></i></button>
-                      <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
+	                  <button type="button" class="btndownload" title="Download Document"><i class="fa fa-download fa-lg icon-shadow"></i></button>
 											<button onclick="sendemail()" type="button" class="btnsend" title="Kirim ke email" id="email"><i class="fa fa-envelope fa-lg icon-shadow"></i></button>
 										</td>
 										<td>Bantex tahun 2020 (BAE)</td>

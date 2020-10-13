@@ -1,5 +1,4 @@
-	@extends('Pages.Admin.TempAdmin')
-
+	@extends('Templates.Admin')
 	@push('styles')
 	<link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" />
 	@endpush

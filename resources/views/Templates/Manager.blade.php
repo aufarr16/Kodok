@@ -121,26 +121,6 @@
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
 <script src="{{ url('') }}/js/script.js"></script>
 
-<!-- JS Datatable pagination  -->
-<script>
-$(document).ready(function() {
-    $('#table1').DataTable( { 
-      // pageSize: 8,     
-        "pageLength": 10, 
-         "searching": true,
-         "paging": true,
-         "info": false,         
-         "lengthChange":false
-           } );
-    $('#search').DataTable( {
-        "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-} );
-</script>
 <script>
 $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {

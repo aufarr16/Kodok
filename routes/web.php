@@ -27,11 +27,22 @@ Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
 
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
-Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy')->name('mitra.delete');
+Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
+Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
 
 Route::post('/admin/submituser', 'Controller_AdminUsers@store');
+Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');
+
+##Engineer
+Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
+Route::get('/engineer/handover', 'Controller_EngineerHandoverProjects@openPage');
+Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
+Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
+
+##GUEST
+Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
 
 ##Manager
 Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
@@ -46,16 +57,9 @@ Route::get('/manager/handover/pic/{id}', 'Controller_ManagerAssignProjects@fillN
 Route::post('/manager/newproject', 'Controller_ManagerAssignProjects@storeNew');
 Route::post('/manager/newhandover', 'Controller_ManagerAssignProjects@storeHandover');
 
-##Engineer
-Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
-Route::get('/engineer/handover', 'Controller_EngineerHandoverProjects@openPage');
-Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
-Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
-
-##GUEST
-Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
-
 ##TABLE
 Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra.table');
+Route::get('/admin/users/table', 'Controller_AdminUsers@dataTable')->name('users.table');
+Route::get('/admin/products/table', 'Controller_AdminProducts@dataTable')->name('products.table');
 
 ?>
