@@ -29,7 +29,7 @@ Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open')
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store');
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 
-Route::post('/admin/submitproduct', 'Controller_AdminProducts@store');
+Route::post('/admin/submitproduct', 'Controller_AdminProducts@store')->name('products.store');
 Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
 
 Route::post('/admin/submituser', 'Controller_AdminUsers@store');

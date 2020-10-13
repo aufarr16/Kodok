@@ -47,8 +47,8 @@
 									@enderror
 				      </div>
 				      <div class="modal-footer" id="modal-footer">
-								<button type="submit" class="btnsubmit">Submit</button>
-							</div>
+							<button type="submit" class="btnsubmit">Submit</button>
+						</div>
 				    </form>
 				    
 					<!-- ./modal body -->
@@ -100,5 +100,10 @@
         	{data: 'modified_by', name: 'modified_by'}
         ]
     });
+	</script>
+	<script>
+	@if (count($errors) > 0)
+	    $('#modal').modal('show');
+	@endif
 	</script>
 	@endpush

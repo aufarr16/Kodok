@@ -1,9 +1,4 @@
-@push('styles')
-<link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
-@endpush
-
 @push('scripts')
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script>
  	@if(session('success'))
 		Swal({
