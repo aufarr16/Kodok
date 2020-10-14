@@ -43,7 +43,7 @@ class Controller_AdminMitra extends Controller
         Mitra::where('ABA', $ABA)->delete();
         $mitraData['data'] = Mitra::orderby("ABA", "asc")->get();
 
-        return response()->json($mitraData);
+        return response()->json($mitraData)->with('success','Data Mitra dihapus');
     }
 
     public function edit($ABA){

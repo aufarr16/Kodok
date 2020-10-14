@@ -96,18 +96,21 @@ function deleteMitra(id){
 						type:'success',
 						toast:true,
 						showConfirmButton:false,
-						position: 'top',
+						position: 'top-end',
 						timer:1500,
 						timerProgressBar:true,
-						background:'#D4F1F4'
+						background:'#a3ffa3'
 					})
 				},
 
 				error: function(xhr){
 					Swal.fire({
 						type: 'error',
+						toast:true,
 						title: 'Oops...',
-						text: 'Something went wrong!'
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
 					})
 				}
 			})
@@ -117,11 +120,11 @@ function deleteMitra(id){
 				type:'info',
 				toast:true,
 				showConfirmButton:false,
-				position:'top',
+				position:'top-end',
 				grow:'row',
 				timer:1500,
 				timerProgressBar:true,
-				background:'#D2FBA4'
+				background:'#B4F5F0'
 			})
 		}
 	})
@@ -165,18 +168,21 @@ function deleteProduct(id){
 						type:'success',
 						toast:true,
 						showConfirmButton:false,
-						position: 'top',
+						position: 'top-end',
 						timer:1500,
 						timerProgressBar:true,
-						background:'#D4F1F4'
+						background:'#a3ffa3'
 					})
 				},
 
 				error: function(xhr){
 					Swal.fire({
 						type: 'error',
+						toast:true,
 						title: 'Oops...',
-						text: 'Something went wrong!'
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
 					})
 				}
 			})
@@ -186,11 +192,11 @@ function deleteProduct(id){
 				type:'info',
 				toast:true,
 				showConfirmButton:false,
-				position:'top',
+				position:'top-end',
 				grow:'row',
 				timer:1500,
 				timerProgressBar:true,
-				background:'#D2FBA4'
+				background:'#B4F5F0'
 			})
 		}
 	})
@@ -234,18 +240,21 @@ function deleteUser(id){
 						type:'success',
 						toast:true,
 						showConfirmButton:false,
-						position: 'top',
+						position: 'top-end',
 						timer:1500,
 						timerProgressBar:true,
-						background:'#D4F1F4'
+						background:'#a3ffa3'
 					})
 				},
 
 				error: function(xhr){
 					Swal.fire({
 						type: 'error',
+						toast:true,
 						title: 'Oops...',
-						text: 'Something went wrong!'
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
 					})
 				}
 			})
@@ -255,12 +264,34 @@ function deleteUser(id){
 				type:'info',
 				toast:true,
 				showConfirmButton:false,
-				position:'top',
+				position:'top-end',
 				grow:'row',
 				timer:1500,
 				timerProgressBar:true,
-				background:'#D2FBA4'
+				background:'#B4F5F0'
 			})
 		}
 	})
 }
+
+
+$('body').on('click' .'modal-show', function(event){
+    event.preventDefault();
+
+    var me = $(this),
+        url = me.attr('href'),
+        title = me.attr('title');
+
+    $('#modal-title').text(title);
+    $('#button-submit').text('Create Products');
+
+    $.ajax({
+        url: url,
+        dataType: 'html',
+        success: function (response) {
+            $('#modal-body').html(response);
+        }
+    });
+
+    $('#modal').modal('show');
+});
