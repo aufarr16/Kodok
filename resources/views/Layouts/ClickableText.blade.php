@@ -1,1 +1,1 @@
-<button type="button" class="btnproject" title="{{ $hovertext }}" data-toggle="modal" data-target="#{{ $model->id }}">{{ $model->name }}</button>
+<button type="button" class="btnproject" title="Lihat History PIC">{{ $data->nama_project }}</button>

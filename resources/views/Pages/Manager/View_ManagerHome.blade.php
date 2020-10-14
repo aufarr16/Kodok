@@ -199,7 +199,13 @@
   <!-- Untuk 3D Chart -->
   <script src="https://code.highcharts.com/highcharts-3d.js"></script>
   <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
 
+  <script>
   // Status project by produk
   Highcharts.chart('BarProduk', {
   colors: ['#FAD02C','#009CDF', '#43B14B','#FF8000','#F51720'],
@@ -652,10 +658,10 @@
 </script>
 <!-- Sidebar collapse -->
 <script>
-$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
+  $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+  });
 </script>
 @endpush

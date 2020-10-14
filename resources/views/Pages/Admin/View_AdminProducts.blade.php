@@ -68,7 +68,7 @@
  
  	@push('scripts')
 	<script>
-    $('#table1').DataTable( { 
+    $('#table1').DataTable({ 
         "responsive": true,
         "processing": true,
         "serverSide": true,

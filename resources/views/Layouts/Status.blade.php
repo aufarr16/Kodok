@@ -1,4 +1,4 @@
-@switch({{ $model->id }})
+@switch($data->id_pstat)
   @case(1)
     <small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small>
     @break

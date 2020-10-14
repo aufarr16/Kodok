@@ -62,4 +62,6 @@ Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra
 Route::get('/admin/users/table', 'Controller_AdminUsers@dataTable')->name('users.table');
 Route::get('/admin/products/table', 'Controller_AdminProducts@dataTable')->name('products.table');
 
+Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
+
 ?>

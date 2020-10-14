@@ -44,7 +44,7 @@
       <td>{{ $dat_proj->nama_mitra }}</td>
       <td>
         <div class="popover_parent"> 
-          <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#{{ $dat_proj->id_project }}">{{ $dat_proj->nama_project}}</button>
+          <button type="button" class="btnproject" title="Lihat history PIC" data-toggle="modal" data-target="#{{ $dat_proj->id_project }}">{{ $dat_proj->nama_project }}</button>
 
          <!-- The Modal -->
           <div class="modal1 fade" id="{{ $dat_proj->id_project }}" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
@@ -52,8 +52,8 @@
           <!-- Modal content -->
           <div class="modal-content1">
             <div class="modal-header">
-              <a class="close1" data-dismiss="modal" aria-label="close">&times;</a>
-              <h5 class="modal-title1">Implementasi ATM Bersama Debit as Acquirer Bank Nagari</h5>
+              <a class="close1" id="{{ $dat_proj->id_project }}" data-dismiss="modal" aria-label="close">&times;</a>
+              <h5 class="modal-title1">{{ $dat_proj->nama_project }}</h5>
             </div>  
           <div class = "modal-body1">
             <div class="qualifications">
