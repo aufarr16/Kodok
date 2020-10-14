@@ -31,6 +31,7 @@ Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store')->name('products.store');
 Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
+Route::get('/admin/createproduct', 'Controller_AdminProducts@create')->name('products.create');
 
 Route::post('/admin/submituser', 'Controller_AdminUsers@store');
 Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');

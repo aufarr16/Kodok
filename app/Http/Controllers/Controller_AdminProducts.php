@@ -57,4 +57,9 @@ class Controller_AdminProducts extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
+
+    public function create() {
+        $model = new Product();
+        return view('Layouts.FormProducts', compact('model'));
+    }
 }
