@@ -274,24 +274,48 @@ function deleteUser(id){
 	})
 }
 
-
-$('body').on('click' .'modal-show', function(event){
-    event.preventDefault();
-
+$('body').on('click', '.modal-show', function(e){
+    e.preventDefault();
+    
     var me = $(this),
         url = me.attr('href'),
         title = me.attr('title');
 
-    $('#modal-title').text(title);
-    $('#button-submit').text('Create Products');
+	  	$('#modal-title').text(title);
+  	  $('#button-submit').text('Tambah data');
 
     $.ajax({
+    	type: 'GET',
         url: url,
         dataType: 'html',
         success: function (response) {
-            $('#modal-body').html(response);
+            $('#modal-body').html(response); 
+            console.log($('#modal-body'));
         }
     });
 
     $('#modal').modal('show');
 });
+
+// $('body').on('click', 'mitra', '.modal-show', function(e){
+//     e.preventDefault();
+    
+//     var me = $(this),
+//         url = me.attr('href'),
+//         title = me.attr('title');
+
+// 	  	$('#modal-titlemitra').text(title);
+//   	  $('#button-submitmitra').text('Tambah Mitra');
+  	  
+//     $.ajax({
+//     	type: 'GET',
+//         url: url,
+//         dataType: 'html',
+//         success: function (response) {
+//         	console.log(response)
+//             $('#modal-bodymitra').html(response); 
+//         }
+//     });
+
+//     $('#modalmitra').modal('show');
+// });

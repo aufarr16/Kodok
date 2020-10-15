@@ -1,29 +1,29 @@
 	@extends('Templates.Admin')
 	@section('PageTitle','Users')
-
 	@section('content')
 	<title>
 	| {Admin} Users
 	</title>
-	
 			<div class="form-group">
-
-				<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
+				<a href="{{ route('user.create') }}" type="button" class="modal-show btn-add" title="Add New Users" id="btn-modal" style="float:left">
+					Add Users &nbsp<i class="fas fa-plus fa-lg"></i>
+				</a>
+				<!-- <button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
 					<span>New User <i class="fas fa-user-plus"></i><span>
-				</button>
+				</button> -->
     
-				<!-- The Modal -->
-				<!-- <div class="modal" id="modal" role="dialog" style="padding-left:17px;"> -->
+				<!-- The Modal --
 				<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
 				<div class="modal-dialog">
-				<!-- Modal content -->
+
+				<!- Modal content --
 				<div class="modal-content">
 					<div class="modal-header">
 						<a class="close1" data-dismiss="modal">&times;</a>
 						<h2 class="modal-title">Add New user</h2>
 					</div>	
-					<div class = "modal-body">
 
+					<div class = "modal-body" id="modal-body">
 					<form method="post" action="/admin/submituser">
 						@csrf
 						<div class = "form-group">
@@ -76,14 +76,14 @@
 					</div>
 					</form>
 
-					<!-- ./modal body -->
+					<!- ./modal body --
 					</div>
-				<!-- ./modal content -->
+				<!- ./modal content --
 				</div>
 				</div>
-				<!-- ./modal -->
+				<!- ./modal --
 				</div>
-			<!-- ./form group -->
+			<!- ./form group -->
 			</div>
 		<div class="table-responsive-lg">		
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
