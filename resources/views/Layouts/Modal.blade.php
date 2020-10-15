@@ -1,6 +1,6 @@
 
 	<!-- The Modal -->
-	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-left:350px;">
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<!-- Modal content -->
 			<div class="modal-content">
@@ -15,7 +15,7 @@
 			</div>
 			
 			<div class="modal-footer" id="modal-footer">
-        <button type="submit" class="btnsubmit" id="button-submit">Save changes</button>
+        <button type="button" class="btnsubmit" id="button-submit">Save changes</button>
 			</div>
 			
 			<!-- ./modal content -->

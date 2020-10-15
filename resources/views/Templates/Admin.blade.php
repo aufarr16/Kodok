@@ -101,8 +101,8 @@
 	
 
 <!--   Core JS Files   -->
-<script src="{{ url('') }}/js/core/jquery.min.js"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  -->
+<!-- <script src="{{ url('') }}/js/core/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script src="{{ url('') }}/js/core/popper.min.js"></script>
 <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>

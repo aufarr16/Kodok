@@ -1,9 +1,9 @@
 {!! Form::model($model, [
-	'route' => 'products.store',
-	'method' => 'POST',
+	'route' => $model->exist ? ['products.update', $model->id] : 'products.store',
+	'method' => $model->exist ? 'PUT' : 'POST'
 ]) !!}
 
-	<div class="form-group @error('nama_product') is-invalid @enderror">
+	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 				<br>

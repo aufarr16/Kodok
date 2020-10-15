@@ -25,14 +25,15 @@ class Controller_AdminProducts extends Controller
 
         $request->validate([
             'nama_product' => 'required',
-        ],
-        [
-            'nama_product.required' => 'Mohon isi Nama Products'
         ]);
+        // [
+        //     'nama_product.required' => 'Mohon isi Nama Products'
+        // ]);
 
-    	Product::create($request->all());
-
-    	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
+    	// Product::create($request->all());
+        $model = Product::create($request->all());
+        return $model;
+    	// return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
     public function destroy($id_product){
@@ -49,7 +50,7 @@ class Controller_AdminProducts extends Controller
             ->addColumn('action', function($model){
                 return view('Layouts.ActionProduct',[
                     'model'=> $model,
-                    // 'url_edit' => url('', $model->id),
+                    // 'url_edit' => route('products.edit', $model->id_product),
                     // 'url_destroy' => route('mitra.delete', $model->ABA),
                 ]);
             })
@@ -61,5 +62,15 @@ class Controller_AdminProducts extends Controller
     public function create() {
         $model = new Product();
         return view('Layouts.FormProducts', compact('model'));
+    }
+
+    public function update(){
+
+    }
+
+    public function edit($id)
+    {
+      $model = Product::findOrFail($id);
+      return view('Layouts.FormProducts', compact('model'));
     }
 }
