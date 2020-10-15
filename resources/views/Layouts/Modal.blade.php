@@ -1,5 +1,6 @@
+
 	<!-- The Modal -->
-	<div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-left:350px;">
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-left:350px;">
 		<div class="modal-dialog" role="document">
 			<!-- Modal content -->
 			<div class="modal-content">

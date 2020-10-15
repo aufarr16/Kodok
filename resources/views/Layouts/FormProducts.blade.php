@@ -1,6 +1,6 @@
 {!! Form::model($model, [
 	'route' => 'products.store',
-	'method' => 'POST'
+	'method' => 'POST',
 ]) !!}
 
 	<div class="form-group @error('nama_product') is-invalid @enderror">
@@ -11,7 +11,6 @@
 					['class'=>'form-control', 'id' =>'nama_product', 'style' =>'margin-bottom: 10px'])
 			!!}		
 		</div>
-		<!-- <input type="text" id="nama_product" class="form-control @error('nama_product') is-invalid @enderror" style="margin-bottom: 10px" name="nama_product" value="{{ old('nama_product') }}"> -->
 	</div>
 
 {!! Form::close() !!}
