@@ -274,6 +274,10 @@ function deleteUser(id){
 	})
 }
 
+function showDetails(id){
+
+}
+
 $('body').on('click', '.modal-show', function(event){
     event.preventDefault();
 
