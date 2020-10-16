@@ -29,6 +29,8 @@ Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open')
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store')->name('mitra.store');
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 Route::get('/admin/createmitra', 'Controller_AdminMitra@create')->name('mitra.create');
+Route::put('/admin/editmitra/{id}', 'Controller_AdminMitra@edit')->name('mitra.edit');
+Route::put('/admin/updatemitra', 'Controller_AdminMitra@update')->name('mitra.update');
 
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store')->name('products.store');
 Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
@@ -36,9 +38,11 @@ Route::get('/admin/createproduct', 'Controller_AdminProducts@create')->name('pro
 Route::put('/admin/editproduct/{id}', 'Controller_AdminProducts@edit')->name('products.edit');
 Route::put('/admin/updateproduct', 'Controller_AdminProducts@update')->name('products.update');
 
-Route::post('/admin/submituser', 'Controller_AdminUsers@store')->name('user.store');
+Route::post('/admin/submituser', 'Controller_AdminUsers@store')->name('users.store');
 Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');
-Route::get('/admin/createuser', 'Controller_AdminUsers@create')->name('user.create');
+Route::get('/admin/createuser', 'Controller_AdminUsers@create')->name('users.create');
+Route::put('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
+Route::put('/admin/updateuser', 'Controller_AdminUsers@update')->name('users.update');
 
 ##Engineer
 Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');

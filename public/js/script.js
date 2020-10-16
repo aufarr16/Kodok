@@ -297,6 +297,27 @@ $('body').on('click', '.modal-show', function(e){
     $('#modal').modal('show');
 });
 
+function editProduct(id){
+    
+    var me = $(this),
+        url = me.attr('href'),
+        title = me.attr('title');
+
+	  	$('#modal-title').text(title);
+  	  $('#button-submit').text('Tambah data');
+
+    $.ajax({
+    	type: 'GET',
+        url: url,
+        dataType: 'html',
+        success: function (response) {
+            $('#modal-body').html(response); 
+            console.log($('#modal-body'));
+        }
+    });
+
+    $('#modal').modal('show');
+};
 // $('body').on('click', 'mitra', '.modal-show', function(e){
 //     e.preventDefault();
     

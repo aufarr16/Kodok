@@ -75,4 +75,14 @@ class Controller_AdminUsers extends Controller
         $model = new User();
         return view('Layouts.FormUsers', compact('model'));
     }
+
+    public function update(){
+
+    }
+
+    public function edit($id_user)
+    {
+      $model = Product::findOrFail($id_user);
+      return view('Layouts.FormUsers', compact('model'));
+    }
 }

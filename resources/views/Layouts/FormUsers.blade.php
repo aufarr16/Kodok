@@ -1,60 +1,49 @@
-{!! Form::model($model, [
-	'route' => 'user.store',
-	'method' => 'POST'
+{!! Form::open([
+	'route' => $model->exist ? ['users.update', $model->id] : 'users.store',
+	'method' => $model->exist ? 'PUT' : 'POST'
 ]) !!}
 	
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
+			<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
 				<br>
-			{!! Form::number('ABA', null,
-					['class'=>'form-control', 'id' =>'ABA', 'style' =>'margin-bottom: 10px'])
+			{!! Form::text('inisial_user', null,
+					['class'=>'form-control', 
+						'id' =>'inisial_user', 
+						'style' =>'margin-bottom: 10px'])
 			!!}		
 		</div>
 		<div class ="input-group-addon">
-			<label for="nama_mitra" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
+			<label for="nama_user" style="font-weight:bolder" style="margin-top: -30px">Nama</label>
 				<br>
-			{!! Form::text('nama_mitra', null,
-					['class'=>'form-control', 'id' =>'nama_mitra', 'style' =>'margin-bottom: 10px'])
+			{!! Form::text('nama_user', null,
+				['class'=>'form-control', 
+					'id' =>'nama_user',
+					'style' =>'margin-bottom: 10px'])
+			!!}		
+		</div>
+		<div class ="input-group-addon">
+			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
+				<br>
+			<!-- {!! Form::text('id_ulevel', null,
+					['class'=>'form-control', 'id' =>'id_ulevel', 'style' =>'margin-bottom: 10px'])
+			!!}	 -->	
+			{!!Form::select("id_ulevel",['L' => 'Large', 'S' => 'Small'], null,
+             [
+                "class" => "form-group",
+                "placeholder" => "Pilih Role"
+             ])
+			!!}
+		</div>
+		<div class ="input-group-addon">
+			<label for="email_user" style="font-weight:bolder" style="margin-top: -30px">Email</label>
+				<br>
+			{!! Form::email('email_user', null,
+					['class'=>'form-control', 
+						'id' =>'email_user', 
+						'style' =>'margin-bottom: 10px'])
 			!!}		
 		</div>
 	</div>
 
 {!! Form::close() !!}
-<!-- {!! Form::model($model, [
-	'route' => 'users.store',
-	'method' => 'POST'
-]) !!}
-
-	<div class="form-group">
-		<div class ="input-group-addon">
-			<label for="inisial_user" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
-				<br>
-			{!! Form::text('inisial_user', null,
-					['class'=>'form-control', 'id' =>'inisial_user', 'style' =>'margin-bottom: 10px', 'text-transform' =>'uppercase','maxlength="3"'])
-			!!}		
-		</div>
-		<div class ="input-group-addon">
-			<label for="nama_user" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
-				<br>
-			{!! Form::text('nama_user', null,
-					['class'=>'form-control', 'id' =>'nama_user', 'style' =>'margin-bottom: 10px'])
-			!!}		
-		</div>
-		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
-				<br>
-			{!! Form::select('id_ulevel', null,
-					['class'=>'form-control', 'id' =>'id_ulevel', 'style' =>'margin-bottom: 10px'])
-			!!}		
-		</div>
-		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
-				<br>
-			{!! Form::text('email_user', null,
-					['class'=>'form-control', 'id' =>'email_user', 'style' =>'margin-bottom: 10px'])
-			!!}		
-		</div>
-	</div>
-
-{!! Form::close() !!} -->

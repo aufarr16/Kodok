@@ -5,7 +5,7 @@
 	| {Admin} Users
 	</title>
 			<div class="form-group">
-				<a href="{{ route('user.create') }}" type="button" class="modal-show btn-add" title="Add New Users" id="btn-modal" style="float:left">
+				<a href="{{ route('users.create') }}" type="button" class="modal-show btn-add" title="Add New Users" id="btn-modal" style="float:left">
 					Add Users &nbsp<i class="fas fa-plus fa-lg"></i>
 				</a>
 				<!-- <button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">

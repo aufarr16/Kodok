@@ -8,8 +8,11 @@
 			<label for="nama_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 				<br>
 			{!! Form::text('nama_product', null,
-					['class'=>'form-control', 'id' =>'nama_product', 'style' =>'margin-bottom: 10px'])
+				['class'=> $errors->has('nama_product') ? 'form-control is-invalid' : 'form-control', '
+					id' =>'nama_product', 
+					'style' =>'margin-bottom: 10px'])
 			!!}		
+			<!-- {!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!} -->
 		</div>
 	</div>
 

@@ -68,9 +68,9 @@ class Controller_AdminProducts extends Controller
 
     }
 
-    public function edit($id)
+    public function edit($id_product)
     {
-      $model = Product::findOrFail($id);
+      $model = Product::findOrFail($id_product);
       return view('Layouts.FormProducts', compact('model'));
     }
 }

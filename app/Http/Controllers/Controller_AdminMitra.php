@@ -47,10 +47,6 @@ class Controller_AdminMitra extends Controller
         return response()->json($mitraData);
     }
 
-    public function edit($ABA){
-        
-    }
-
     public function get(){
         $all_mitra['data'] = Mitra::orderby("ABA", "asc")->get();
 
@@ -74,5 +70,15 @@ class Controller_AdminMitra extends Controller
     public function create() {
         $model = new Mitra();
         return view('Layouts.FormMitra', compact('model'));
+    }
+
+    public function update(){
+
+    }
+
+    public function edit($ABA)
+    {
+      $model = Product::findOrFail($ABA);
+      return view('Layouts.FormMitra', compact('model'));
     }
 }
