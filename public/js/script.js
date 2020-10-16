@@ -281,14 +281,16 @@ $('body').on('click', '.modal-show', function(event){
         url = me.attr('href'),
         title = me.attr('title');
 
-    $('#modal-title').text(title);
-    $('#button-submit').text('Create Products');
+	  	$('#modal-title').text(title);
+  	  $('#button-submit').text('Tambah data');
 
     $.ajax({
+    	type: 'GET',
         url: url,
         dataType: 'html',
         success: function (response) {
-            $('#modal-body').html(response);
+            $('#modal-body').html(response); 
+            console.log($('#modal-body'));
         }
     });
 

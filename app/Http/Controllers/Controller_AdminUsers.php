@@ -46,7 +46,7 @@ class Controller_AdminUsers extends Controller
 		]);
 
 		User::create($request->all());
-
+		
 		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
 	}
 
@@ -69,5 +69,10 @@ class Controller_AdminUsers extends Controller
             ->addIndexColumn()
             ->rawColumns(['action'])
             ->make(true);
+    }
+
+    public function create() {
+        $model = new User();
+        return view('Layouts.FormUsers', compact('model'));
     }
 }
