@@ -274,8 +274,7 @@ function deleteUser(id){
 	})
 }
 
-
-$('body').on('click' .'modal-show', function(event){
+$('body').on('click', '.modal-show', function(event){
     event.preventDefault();
 
     var me = $(this),
