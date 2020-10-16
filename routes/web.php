@@ -42,6 +42,7 @@ Route::put('/admin/updateproduct', 'Controller_AdminProducts@update')->name('pro
 
 // Search Doc
 Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
+Route::get('/admin/searchdocs/table', 'Controller_AdminSearchDocuments@dataTable')->name('asearchdoc.table');
 
 // User
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
