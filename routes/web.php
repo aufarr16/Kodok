@@ -49,7 +49,7 @@ Route::get('/admin/searchdocs/table', 'Controller_AdminSearchDocuments@dataTable
 // User
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 Route::get('/admin/users/table', 'Controller_AdminUsers@dataTable')->name('users.table');
-Route::post('/admin/submituser', 'Controller_AdminUsers@store')->name('user.store');
+Route::post('/admin/submituser', 'Controller_AdminUsers@store')->name('users.store');
 Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');
 Route::get('/admin/createuser', 'Controller_AdminUsers@create')->name('users.create');
 Route::put('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
