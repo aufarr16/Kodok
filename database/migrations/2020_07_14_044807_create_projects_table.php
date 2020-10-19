@@ -24,6 +24,7 @@ class CreateProjectsTable extends Migration
             $table->char('ABA', 13);
             $table->string('nama_project', 201);
             $table->boolean('status_handover');
+            $table->string('pketerangan_status')->nullable();
             $table->string('pketerangan_note')->nullable();
         });
     }

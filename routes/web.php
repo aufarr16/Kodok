@@ -73,6 +73,7 @@ Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
 ##Manager
 // Approval Project
 Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
+Route::get('/manager/approval/table', 'Controller_ManagerApprovalProjects@dataTable')->name('approval.table');
 
 // Assign Project
 Route::get('/manager/assign', 'Controller_ManagerAssignProjects@openPage');

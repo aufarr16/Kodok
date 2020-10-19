@@ -193,8 +193,7 @@
           title: 'Project berhasil didecline'
         })
       }}
-
 </script>
-</body>
 
+</body>
 </html>
