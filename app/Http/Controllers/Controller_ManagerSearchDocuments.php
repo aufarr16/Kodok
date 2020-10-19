@@ -14,7 +14,7 @@ class Controller_ManagerSearchDocuments extends Controller
 
     public function dataTable()
     {
-        $data = DB::select("select a.nama_mitra, b.id_project, d.nama_ptype ,b.nama_project, c.inisial_user, YEAR(b.waktu_assign_project) as tahun from mitras as a, projects as b, users as c, projects_types as d where b.ABA = a.ABA and b.id_user = c.id_user and b.id_pstat = d.id_ptype ORDER BY `b`.`id_project` DESC");
+        $data = DB::select("select a.nama_mitra, b.id_project, d.nama_product ,b.nama_project, c.inisial_user, YEAR(b.waktu_assign_project) as tahun from mitras as a, projects as b, users as c, products as d where b.ABA = a.ABA and b.id_user = c.id_user and b.id_product = d.id_product ORDER BY `b`.`id_project` DESC");
         return DataTables::of($data)
             ->addColumn('action', function($data){
                 return view('Layouts.ActionSearchdoc',[

@@ -16,8 +16,8 @@
 	<tr>
 		<th>No</th>
 		<th>Nama Mitra</th>
-		<th>Jenis Project</th>
-		<th>Nama Project</th>
+		<th>Produk</th>
+		<th>Nama Projek</th>
 		<th>Action</th>
 		<th>PIC</th>
 		<th>Tahun</th>
@@ -42,7 +42,7 @@ $('#table1').DataTable( {
     columns: [
     	{data: 'DT_RowIndex', name: 'id_project'},
     	{data: 'nama_mitra', name: 'nama_mitra'},
-        {data: 'nama_ptype', name: 'nama_ptype'},
+        {data: 'nama_product', name: 'nama_product'},
     	{data: 'nama_project', name: 'nama_project'},
     	{data: 'action', name: 'action'},
     	{data: 'inisial_user', name: 'inisial_user'},
