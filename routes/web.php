@@ -44,7 +44,6 @@ Route::put('/admin/updateproduct', 'Controller_AdminProducts@update')->name('pro
 
 // Search Doc
 Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
-Route::get('/admin/searchdocs/table', 'Controller_AdminSearchDocuments@dataTable')->name('asearchdoc.table');
 
 // User
 Route::get('/admin/users', 'Controller_AdminUsers@openPage');
@@ -56,9 +55,16 @@ Route::put('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.ed
 Route::put('/admin/updateuser', 'Controller_AdminUsers@update')->name('users.update');
 
 ##Engineer
+// Doc Tools
 Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
+
+// Handover
 Route::get('/engineer/handover', 'Controller_EngineerHandoverProjects@openPage');
+
+// Search Doc
 Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
+
+// Your Project
 Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
 
 ##GUEST
@@ -84,5 +90,7 @@ Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable'
 
 // Search Doc
 Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
+
+Route::get('/searchdocs/table', 'Controller_ManagerSearchDocuments@dataTable')->name('searchdocs.table');
 
 ?>

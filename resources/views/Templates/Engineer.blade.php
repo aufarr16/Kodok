@@ -93,7 +93,7 @@
 <!-- ./wrapper -->
 </div>
 	
-	@stack('scripts')
+	
   <!--   Core JS Files   -->
   <script src="{{ url('') }}/js/core/jquery.min.js"></script>
   <script src="{{ url('') }}/js/core/popper.min.js"></script>
@@ -105,31 +105,12 @@
   <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/jquery.dataTables.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
+  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script> -->
   <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
+  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script> -->
+  <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
+  @stack('scripts')
 
-	<!-- JS Datatable pagination  -->
-	<script>
-	$(document).ready(function() {
-	    $('#table1').DataTable( { 
-	      // pageSize: 8,     
-	        "pageLength": 10, 
-	         "searching": true,
-	         "paging": true,
-	         "info": false,         
-	         "lengthChange":false
-	           } );
-	   	$('#search1').DataTable( {
-       	"pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-	} );
-	</script>
 	<!-- JS Search All -->
 	<script>
 	$(document).ready(function(){
@@ -159,7 +140,6 @@
 })
 	</script>
 
-	<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 	<script>
 		function donehandover () {
 			Swal.fire({

@@ -72,73 +72,24 @@
 	</div>
 <!-- ./wrapper -->
 </div>
-  
-  @stack('scripts')
-  <!--   Core JS Files   -->
-  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
+
+<!--   Core JS Files   -->
+<script src="{{ url('') }}/js/core/jquery.min.js"></script>
+<script src="{{ url('') }}/js/core/popper.min.js"></script>
+<script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
+<script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
 
-<!-- JS Datatable pagination  -->
-<script>
-$(document).ready(function() {
-    $('#table1').DataTable( { 
-      //pageSize: 8,    
-      	"pageLength":10,	 
-         "searching": true,
-         "paging": true, 
-         "info": false,         
-         "lengthChange":false
-           } );
+@stack('scripts')
 
-    $('#search1').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search2').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search3').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search4').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-    $('#search5').DataTable( {
-       "pageLength": 10,     
-         "searching": true,
-         "paging": true, 
-         "info": true,         
-         "lengthChange":false,
-           } );
-   
-} );
-</script>
 <script>
 $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {

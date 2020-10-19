@@ -1,1 +1,1 @@
-<button title="Documents" id="{{ $data->id_project }}" type="button" class="button" data-toggle="modal"><i class="fa fa-search fa-lg"></i></button>
+<button title="List Documents" id="{{ $data->id_project }}" type="button" class="button" data-toggle="modal"><i class="fa fa-search fa-lg"></i></button>
