@@ -293,7 +293,7 @@
   }]
 });
 
- //Status porject by jenis project
+ //Status project by jenis project
     Highcharts.chart('BarJenisProject', {
     colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C'],
 
