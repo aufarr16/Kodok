@@ -15,7 +15,7 @@
 @section('PageTitle','List Projects')
 @section('content')
 <title>
-  | {Manager} Approval Projects
+  | {Manager} List Projects
 </title>
 
 <div class="table-responsive-lg">
