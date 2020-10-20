@@ -257,35 +257,35 @@
   },
   series: [{
     name: 'Reserved',
-    data: [70,65,90,10,5,25],
+    data: [10,5,5,10,5,5],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
 
   }, {
     name: 'Done',
-    data: [20,50,40,5,2,10],
+    data: [20,50,40,5,5,10],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
 
   }, {
     name: 'On Progress',
-    data: [20,50,40,5,2,10],
+    data: [20,30,40,10,5,10],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
 
   }, {
     name: 'Hold',
-    data: [30,35,45,5,2,15],
+    data: [30,20,40,5,10,15],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
 
   }, {
     name: 'Drop',
-    data: [15,20,25,3,1,10],
+    data: [5,2,5,3,2,3],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
@@ -342,7 +342,7 @@
   },
   series: [{
     name: 'Reserved',
-    data: [30,100,20,10,6],
+    data: [5,2,3,5,5],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
@@ -363,7 +363,7 @@
 
   }, {
     name: 'Hold',
-    data: [5,30,45,5,3],
+    data: [5,30,20,5,3],
     pointPadding: 0.1,
     borderWidth: 0,
     // pointPlacement: 0.2
@@ -413,11 +413,11 @@
     type: 'pie',
     name: 'Total Project',
     data: [
-      ['Internal Test', 60],
-      ['Sertifikasi', 170],
-      ['Regresi', 100],
+      ['Internal Test', 55],
+      ['Sertifikasi', 152],
+      ['Regresi', 68],
       ['Support', 25],
-      ['QA', 14]
+      ['QA', 18]
     ]
   }]
 });
@@ -457,12 +457,12 @@
     type: 'pie',
     name: 'Total Project',
     data: [
-      ['ATM Bersama', 135],
-      ['ATMB Debit', 170],
-      ['Payment', 200],
-      ['Remittance', 23],
-      ['Disbursement', 10],
-      ['QR Payment', 60]
+      ['ATM Bersama', 85],
+      ['ATMB Debit', 107],
+      ['Payment', 90],
+      ['Remittance', 33],
+      ['Disbursement', 27],
+      ['QR Payment', 33]
     ]
   }]
 });
