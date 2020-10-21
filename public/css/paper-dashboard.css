@@ -8467,7 +8467,7 @@ h1, h2, h3, h4, h5,
   width: 100%;
   margin-left: 0px;
   min-height: 565px;
-  max-height: 1455px;
+  max-height: 1505px;
   /*height: 100%;*/
   background-color: #d0ebff99;
  }
@@ -8478,7 +8478,7 @@ h1, h2, h3, h4, h5,
   /*background: #32373d;*/
   color: #fff;
   min-height: 565px;
-  max-height: 1455px;
+  max-height: 1505px;
   /*height: 100%;*/
   background: linear-gradient(#003371, #00478F);
   -webkit-transition: all 0.3s;

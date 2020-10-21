@@ -1,9 +1,29 @@
   @extends('Templates.Manager')
+  @push('styles')
+  <!-- Select 2 -->
+  <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
+  @endpush
   @section('PageTitle','Home')
   @section('content')
   <title>
     | {Manager} Home
   </title>
+
+    <div class="card-tahun">
+      <!-- <div class="header-cardtahun">Pilih tahun</div> -->
+      <!-- <div class="col-md-3" style="margin-bottom: 10px; margin-left: -5px"> -->
+        <div class="input-group" style="padding-top: 5px; padding-left: 5px;">
+          <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
+            <option value="" hidden></option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+          </select>
+          <div class="btn-tahun">Pilih</div>
+        </div>
+      <!-- </div> -->
+    </div>
+
 
       <div class="tile reserved">
         <div class="body">
@@ -103,7 +123,7 @@
     <br>
     <br>
         <div class="row" style="margin-top: 60px; margin-bottom: 20px">
-          <div class="col-md-6" >
+          <div class="col-md-6" style="margin-left:5px">
             <div class="card card-chart">
               <div class="card-body ">
                 <figure class="highcharts-figure">
@@ -115,7 +135,7 @@
             </div>
           <!-- ./col -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" style="margin-left:-10px">
             <div class="card card-chart">
               <div class="card-body">
                  <figure class="highcharts-figure">
@@ -132,7 +152,7 @@
         
 
         <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-          <div class="col-md-6">
+          <div class="col-md-6" style="margin-left:5px">
             <div class="card card-chart">
               <div class="card-body"> 
                 <figure class="highcharts-figure">
@@ -143,7 +163,7 @@
             </div>
           <!-- ./col -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" style="margin-left:-10px">
             <div class="card card-chart">
               <div class="card-body">
                  <figure class="highcharts-figure">
@@ -157,9 +177,9 @@
         <!-- ./row -->
         </div>
 
-      <div class="row" style="margin-right: 20px; margin-top: 20px; margin-bottom: 20px">
+      <div class="row" style="margin-left: -10px; margin-right: 25px; margin-top: 20px; margin-bottom: 20px">
           <div class="col-md-12" >
-            <div class="card card-chart" style="margin-right: -35px">
+            <div class="card card-chart" style="margin-right: -35px; margin-top: -5px">
               <div class="card-body">
                 <figure class="highcharts-figure1">
                   <div id="LoadPICstatus"></div>
@@ -172,9 +192,9 @@
         <!-- ./row -->
         </div>    
 
-      <div class="row" style="margin-right: 20px; margin-top: 20px; margin-bottom: 20px">
+      <div class="row" style="margin-left: -10px; margin-right: 25px; margin-top: 20px; margin-bottom: 20px">
           <div class="col-md-12">
-            <div class="card card-chart" style="margin-right: -35px">
+            <div class="card card-chart" style="margin-right: -35px; margin-top: -5px">
               <div class="card-body">
                 <figure class="highcharts-figure1">
                   <div id="LoadPICtotal"></div>
@@ -203,6 +223,17 @@
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
     });
+  </script>
+
+  <!--   Core JS Files  -->
+  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
+
+  <!-- Select 2 -->
+  <script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
+  <script>
+     $("#tahun").select2({
+          allowClear: true
+      });
   </script>
 
   <script>
@@ -664,4 +695,5 @@
       });
   });
 </script>
+
 @endpush
