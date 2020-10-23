@@ -276,7 +276,7 @@ function deleteUser(id){
 	})
 }
 
-function addTrio(){
+function addDataTrio(){
 	event.preventDefault();
 
 	var form = $('#modal-body form'),
