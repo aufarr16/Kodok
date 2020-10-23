@@ -303,7 +303,7 @@ function addTrio(){
 			timer: 4000,
 			background: '#a3ffa3',
 			type: 'success',
-			text: 'Data mitra berhasil disimpan',
+			text: 'Data berhasil disimpan',
 			timerProgressBar: true,
 		})
 		},
