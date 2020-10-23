@@ -25,15 +25,15 @@ class Controller_AdminProducts extends Controller
 
         $request->validate([
             'nama_product' => 'required',
+        ],
+        $message = [
+            'nama_product.required' => 'Mohon isi Nama Products'
         ]);
-        // [
-        //     'nama_product.required' => 'Mohon isi Nama Products'
-        // ]);
 
-    	// Product::create($request->all());
-        $model = Product::create($request->all());
-        return $model;
-    	// return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
+    	Product::create($request->all());
+        // $model = Product::create($request->all());
+        // return $model;
+    	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
     public function destroy($id_product){

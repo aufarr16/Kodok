@@ -314,7 +314,7 @@ function addDataTrio(){
 					$('#' + key)
 						.closest('.form-group')
 						.addClass('has-error')
-						.append('<span class="help-block">' + value + '</span>')
+						.append('<span class="help-block is-invalid">' + value + '</span>')
 				})
 			}
 		}
