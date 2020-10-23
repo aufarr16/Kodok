@@ -276,7 +276,7 @@ function deleteUser(id){
 	})
 }
 
-function addMitra(){
+function addTrio(){
 	event.preventDefault();
 
 	var form = $('#modal-body form'),

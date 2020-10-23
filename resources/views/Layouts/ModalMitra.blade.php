@@ -14,7 +14,7 @@
 		</div>
 		
 		<div class="modal-footer" id="modal-footer">
-    		<button onclick="addMitra()" type="button" class="btnsubmit" id="submit-mitra">Tambah Mitra</button>
+    		<button onclick="addTrio()" type="button" class="btnsubmit" id="submit-mitra">Tambah Mitra</button>
 		</div>
 		
 		<!-- ./modal content -->
