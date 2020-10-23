@@ -35,10 +35,8 @@ class Controller_AdminMitra extends Controller
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
-    	// Mitra::create($request->all());
-         $model = Mitra::create($request->all());
+        $model = Mitra::create($request->all());
         return $model;
-    	// return redirect('/admin/mitra')->with('success','Data Mitra berhasil disimpan');
     }
 
     public function destroy($ABA){

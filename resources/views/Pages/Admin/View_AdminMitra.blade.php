@@ -56,9 +56,4 @@ $('#table1').DataTable( {
     ]
 });
 </script>
-<!-- <script>
-@if (count($errors) > 0)
-    $('#modal').modal('show');
-@endif
-</script> -->
 @endpush

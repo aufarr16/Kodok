@@ -15,7 +15,7 @@
 			</div>
 			
 			<div class="modal-footer" id="modal-footer">
-        <button type="button" class="btnsubmit" id="submit-users">Tambah Users</button>
+        		<button type="button" class="btnsubmit addNewData" id="submit-user">Tambah Users</button>
 			</div>
 			
 			<!-- ./modal content -->

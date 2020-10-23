@@ -13,6 +13,9 @@
 					'style' =>'margin-bottom: 10px'])
 			!!}		
 		</div>
+	</div>
+
+	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="nama_mitra" style="font-weight:bolder" style="margin-top: -30px">Nama Mitra</label>
 				<br>

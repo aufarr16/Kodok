@@ -1,3 +1,5 @@
+console.log('script.js is in');
+
 function getHandoverData(id){
 	var elementPIC = document.getElementById(id);
 	var picID = $(elementPIC).val();
@@ -59,7 +61,7 @@ function getHandoverData(id){
 }
 
 function deleteMitra(id){
-	// console.log(id);
+	console.log(id);
 	event.preventDefault();
 
 	var idDel = id;
@@ -274,6 +276,51 @@ function deleteUser(id){
 	})
 }
 
+function addMitra(){
+	event.preventDefault();
+
+	var form = $('#modal-body form'),
+		url = form.attr('action'),
+		method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
+
+
+	form.find('.help-block').remove();
+	form.find('.form-group').removeClass('has-error');
+
+	$.ajax({
+		url : url,
+		method : method,
+		data : form.serialize(),
+		success : function(response){
+			form.trigger('reset');
+			$('#modal').modal('hide');
+			$('#table1').DataTable().ajax.reload();
+
+			Swal({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 4000,
+			background: '#a3ffa3',
+			type: 'success',
+			text: 'Data mitra berhasil disimpan',
+			timerProgressBar: true,
+		})
+		},
+		error : function(xhr){
+			var resp = xhr.responseJSON;
+			if($.isEmptyObject(resp) == false){
+				$.each(resp.errors, function(key, value){
+					$('#' + key)
+						.closest('.form-group')
+						.addClass('has-error')
+						.append('<span class="help-block">' + value + '</span>')
+				})
+			}
+		}
+	})
+}
+
 function showDetails(id){
 
 }
@@ -347,8 +394,4 @@ $('body').on('click', '.modal-show', '.add-users', function(event){
     $('#modal').modal('show');
 });
 
-$('body').on('click', , function(event){
-	event.preventDefault();
 
-	
-})
