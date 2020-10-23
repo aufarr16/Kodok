@@ -285,8 +285,8 @@ $('body').on('click', '.modal-show', function(event){
         url = me.attr('href'),
         title = me.attr('title');
 
-	  	$('#modal-title').text(title);
-  	  $('#button-submit').text('Tambah data');
+	 $('#modal-title').text(title);
+  	 $('#button-submit').text('Tambah data');
 
     $.ajax({
     	type: 'GET',
@@ -300,3 +300,9 @@ $('body').on('click', '.modal-show', function(event){
 
     $('#modal').modal('show');
 });
+
+$('body').on('click', , function(event){
+	event.preventDefault();
+
+	
+})
