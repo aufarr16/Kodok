@@ -4,7 +4,7 @@
 	<title>
 	| {Admin} Products
 	</title>
-	@include('Layouts.ModalProducts')
+	
 			<div class="form-group">
 
 				<a href="{{ route('products.create') }}" type="button" class="modal-show add-products btn-add" title="Add New Products" id="btn-modal" style="float:left">

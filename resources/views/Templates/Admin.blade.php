@@ -80,7 +80,8 @@
     	<h2 style="margin-left: 10px">@yield('PageTitle')</h2>
     		@include('Layouts.Notif')
     		@yield('content')
-
+        @include('Layouts.Modal')
+        
 	<!-- footer -->
   	<!-- <div class="blockquote text-left"> -->
         <footer class="footer fixed-bottom">

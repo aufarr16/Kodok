@@ -4,7 +4,7 @@
 <title>
 | {Admin} Mitra
 </title>
-@include('Layouts.ModalMitra')
+
 		<div class="form-group">
 			<a href="{{ route('mitra.create') }}" type="button" class="modal-show add-mitra btn-add" title="Add New Mitra" id="btn-modal" style="float:left">
 				Add Mitra &nbsp<i class="fas fa-plus fa-lg"></i>

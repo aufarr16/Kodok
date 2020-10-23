@@ -325,54 +325,7 @@ function showDetails(id){
 
 }
 
-// Panggil modal dan form products
-$('body').on('click', '.modal-show', '.add-products', function(event){
-    event.preventDefault();
-
-    var me = $(this),
-        url = me.attr('href'),
-        title = me.attr('title');
-
-	  	$('#modal-title').text(title);
-
-    $.ajax({
-    	type: 'GET',
-        url: url,
-        dataType: 'html',
-        success: function (response) {
-            $('#modal-body').html(response); 
-            console.log($('#modal-body'));
-        }
-    });
-
-    $('#modal').modal('show');
-});
-
-// Panggil modal dan form mitra
-$('body').on('click', '.modal-show', '.add-mitra', function(event){
-    event.preventDefault();
-
-    var me = $(this),
-        url = me.attr('href'),
-        title = me.attr('title');
-
-	  	$('#modal-title').text(title);
-
-    $.ajax({
-    	type: 'GET',
-        url: url,
-        dataType: 'html',
-        success: function (response) {
-            $('#modal-body').html(response); 
-            console.log($('#modal-body'));
-        }
-    });
-
-    $('#modal').modal('show');
-});
-
-// Panggil modal dan form users
-$('body').on('click', '.modal-show', '.add-users', function(event){
+$('body').on('click', '.modal-show', function(event){
     event.preventDefault();
 
     var me = $(this),
