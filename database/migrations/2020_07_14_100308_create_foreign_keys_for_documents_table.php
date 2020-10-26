@@ -14,8 +14,8 @@ class CreateForeignKeysForDocumentsTable extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->foreign('id_project')->references('id_project')->on('projects');
-            $table->foreign('id_DocType')->references('id_DocType')->on('documents_types');
+            $table->foreign('id_project')->references('id')->on('projects');
+            $table->foreign('id_DocType')->references('id')->on('documents_types');
         });
     }
 

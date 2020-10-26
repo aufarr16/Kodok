@@ -14,7 +14,7 @@ class CreateProjectsHandoversTable extends Migration
     public function up()
     {
         Schema::create('projects_handovers', function (Blueprint $table) {
-            $table->bigIncrements('id_handover');
+            $table->id();
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_project');
             $table->timestamp('waktu_assign_handover');

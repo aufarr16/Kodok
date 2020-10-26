@@ -14,8 +14,8 @@ class CreateForeignKeysForProjectshandoverTable extends Migration
     public function up()
     {
         Schema::table('projects_handovers', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id_user')->on('users');    
-            $table->foreign('id_project')->references('id_project')->on('projects');
+            $table->foreign('id_user')->references('id')->on('users');    
+            $table->foreign('id_project')->references('id')->on('projects');
         });
     }
 

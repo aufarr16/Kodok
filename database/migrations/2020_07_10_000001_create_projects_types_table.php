@@ -14,7 +14,7 @@ class CreateProjectsTypesTable extends Migration
     public function up()
     {
         Schema::create('projects_types', function (Blueprint $table) {
-            $table->bigIncrements('id_ptype');
+            $table->id();
             $table->string('nama_ptype', 24);
         });
 

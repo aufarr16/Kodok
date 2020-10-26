@@ -14,14 +14,14 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id_project');
+            $table->id();
             $table->timestamp('waktu_assign_project');
             $table->unsignedBigInteger('id_pketerangan')->nullable();
             $table->unsignedBigInteger('id_pstat');
             $table->unsignedBigInteger('id_ptype');
             $table->unsignedBigInteger('id_product');
             $table->unsignedBigInteger('id_user');
-            $table->char('ABA', 13);
+            $table->unsignedBigInteger('id_mitra');
             $table->string('nama_project', 201);
             $table->boolean('status_handover');
             $table->string('pketerangan_status')->nullable();

@@ -14,7 +14,7 @@ class CreateForeignKeysForUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('id_ulevel')->references('id_ulevel')->on('users_levels');
+            $table->foreign('id_ulevel')->references('id')->on('users_levels');
         });
     }
 

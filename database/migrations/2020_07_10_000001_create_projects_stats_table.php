@@ -14,7 +14,7 @@ class CreateProjectsStatsTable extends Migration
     public function up()
     {
         Schema::create('projects_stats', function (Blueprint $table) {
-            $table->bigIncrements('id_pstat');
+            $table->id();
             $table->string('nama_pstat', 24);
         });
 
