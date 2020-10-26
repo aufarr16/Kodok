@@ -14,7 +14,7 @@
 		</div>
 		
 		<div class="modal-footer" id="modal-footer">
-    		<button onclick="addDataTrio()" type="button" class="btnsubmit" id="button-submit">Tambah Data</button>
+    		<button type="button" class="btnsubmit" id="button-submit"></button>
 		</div>
 		
 		<!-- ./modal content -->

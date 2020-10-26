@@ -30,8 +30,8 @@ Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra
 Route::post('/admin/submitmitra', 'Controller_AdminMitra@store')->name('mitra.store');
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 Route::get('/admin/createmitra', 'Controller_AdminMitra@create')->name('mitra.create');
-Route::put('/admin/editmitra/{id}', 'Controller_AdminMitra@edit')->name('mitra.edit');
-Route::put('/admin/updatemitra', 'Controller_AdminMitra@update')->name('mitra.update');
+Route::get('/admin/editmitra/{id}', 'Controller_AdminMitra@edit')->name('mitra.edit');
+Route::post('/admin/updatemitra', 'Controller_AdminMitra@update')->name('mitra.update');
 
 // Product
 Route::get('/admin/products', 'Controller_AdminProducts@openPage');

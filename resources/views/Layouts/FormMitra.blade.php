@@ -1,6 +1,6 @@
 {!! Form::model($model, [
-	'route' => $model->exist ? ['mitra.update', $model->id] : 'mitra.store',
-	'method' => $model->exist ? 'PUT' : 'POST'
+	'route' => $model->exists ? ['mitra.update', $model->ABA] : 'mitra.store',
+	'method' => 'POST'
 ]) !!}
 	
 	<div class="form-group">

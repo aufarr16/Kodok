@@ -52,6 +52,32 @@ class Controller_AdminMitra extends Controller
         return response()->json($all_mitra);
     }
 
+    public function create() {
+        $model = new Mitra();
+        return view('Layouts.FormMitra', compact('model'));
+    }
+
+    public function edit($ABA)
+    {
+      $model = Mitra::where('ABA', $ABA)->firstOrFail();
+      return view('Layouts.FormMitra', compact('model'));
+    }
+
+    public function update(Request $request){
+        $request->validate([
+            'ABA' => 'required|min:3|unique:mitras',
+            'nama_mitra' => 'required',
+        ],
+        $message = [
+            'ABA.required' => 'Mohon isi ABA',
+              'ABA.min' => 'Mohon isi ABA minimal 3 angka',
+              'ABA.unique'=>'ABA sudah terdaftar',
+            'nama_mitra.required' => 'Mohon isi Nama Mitra',
+        ]);
+
+        Mitra::where('ABA', $request->ABA)->update($request->all());
+    }
+
     public function dataTable()
     {
         $model = Mitra::query();
@@ -59,25 +85,11 @@ class Controller_AdminMitra extends Controller
             ->addColumn('action', function($model){
                 return view('Layouts.ActionMitra',[
                     'model'=> $model,
+                    'url_edit' => route('mitra.edit', $model->ABA)
                 ]);
             })
             ->addIndexColumn()
             ->rawColumns(['action'])
             ->make(true);
-    }
-
-    public function create() {
-        $model = new Mitra();
-        return view('Layouts.FormMitra', compact('model'));
-    }
-
-    public function update(){
-
-    }
-
-    public function edit($ABA)
-    {
-      $model = Product::findOrFail($ABA);
-      return view('Layouts.FormMitra', compact('model'));
     }
 }

@@ -276,13 +276,18 @@ function deleteUser(id){
 	})
 }
 
-function addDataTrio(){
+function showDetails(id){
+
+}
+
+$('body').on('click', '#button-submit', function(event){
 	event.preventDefault();
 
 	var form = $('#modal-body form'),
 		url = form.attr('action'),
-		method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
+		method = form.attr('method');
 
+	console.log(method);
 
 	form.find('.help-block').remove();
 	form.find('.form-group').removeClass('has-error');
@@ -319,11 +324,7 @@ function addDataTrio(){
 			}
 		}
 	})
-}
-
-function showDetails(id){
-
-}
+})
 
 $('body').on('click', '.modal-show', function(event){
     event.preventDefault();
@@ -332,7 +333,8 @@ $('body').on('click', '.modal-show', function(event){
         url = me.attr('href'),
         title = me.attr('title');
 
-	  	$('#modal-title').text(title);
+	$('#modal-title').text(title);
+	$('#button-submit').text(me.hasClass('btn-edit') ? 'Edit Data' : 'Tambah Data')
 
     $.ajax({
     	type: 'GET',
