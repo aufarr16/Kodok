@@ -47,7 +47,7 @@ $('#table1').DataTable( {
     "lengthChange": false,
     ajax: "{{ route('mitra.table') }}",
     columns: [
-    	{data: 'DT_RowIndex', name: 'ABA'},
+    	{data: 'DT_RowIndex', name: 'id'},
     	{data: 'ABA', name: 'ABA'},
     	{data: 'nama_mitra', name: 'nama_mitra'},
     	{data: 'action', name: 'action'},

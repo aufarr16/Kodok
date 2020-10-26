@@ -50,16 +50,16 @@ class Controller_AdminUsers extends Controller
 		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
 	}
 
-    public function destroy($id_user){
-        User::where('id_user', $id_user)->delete();
-        $userData['data'] = User::orderby("id_user", "asc")->get();
+    public function destroy($id){
+        User::where('id', $id)->delete();
+        $userData['data'] = User::orderby("id", "asc")->get();
 
         return response()->json($userData);
     }
 
 	public function dataTable()
     {
-        $model = DB::select("select a.id_user, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id_ulevel");
+        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id");
         return DataTables::of($model)
             ->addColumn('action', function($model){
                 return view('Layouts.ActionUser',[
@@ -80,9 +80,9 @@ class Controller_AdminUsers extends Controller
 
     }
 
-    public function edit($id_user)
+    public function edit($id)
     {
-      $model = Product::findOrFail($id_user);
+      $model = Product::findOrFail($id);
       return view('Layouts.FormUsers', compact('model'));
     }
 }

@@ -36,9 +36,9 @@ class Controller_AdminProducts extends Controller
     	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
-    public function destroy($id_product){
-        Product::where('id_product', $id_product)->delete();
-        $productData['data'] = Product::orderby("id_product", "asc")->get();
+    public function destroy($id){
+        Product::where('id', $id)->delete();
+        $productData['data'] = Product::orderby("id", "asc")->get();
 
         return response()->json($productData);
     }
@@ -68,9 +68,9 @@ class Controller_AdminProducts extends Controller
 
     }
 
-    public function edit($id_product)
+    public function edit($id)
     {
-      $model = Product::findOrFail($id_product);
+      $model = Product::findOrFail($id);
       return view('Layouts.FormProducts', compact('model'));
     }
 }

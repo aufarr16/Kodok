@@ -35,10 +35,10 @@
               <select id="id_user" class="js-states form-control @error ('id_product') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
                 <option value="" hidden>PIC</option>
                 @foreach($users as $usr)
-                  @if (old('id_user') == $usr->id_user)
-                    <option value="{{ $usr->id_user }}" selected>{{ $usr->nama_user }}</option>
+                  @if (old('id_user') == $usr->id)
+                    <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
                   @else 
-                    <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                    <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
                   @endif
                 @endforeach
               </select>
@@ -55,10 +55,10 @@
               <select id="id_product" class="js-states form-control @error ('id_product') is-invalid @enderror" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
                 <option value=""></option>
                 @foreach($products as $prod)
-                  @if (old('id_product') == $prod->id_product)
-                    <option value="{{ $prod->id_product }}" selected>{{ $prod->nama_product }}</option>
+                  @if (old('id_product') == $prod->id)
+                    <option value="{{ $prod->id }}" selected>{{ $prod->nama_product }}</option>
                   @else 
-                    <option value="{{ $prod->id_product }}">{{ $prod->nama_product }}</option>
+                    <option value="{{ $prod->id }}">{{ $prod->nama_product }}</option>
                   @endif
                 @endforeach
               </select>
@@ -75,10 +75,10 @@
               <select id="id_ptype" class="js-states form-control @error ('id_ptype') is-invalid @enderror" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
                 <option value=""></option>
                 @foreach($ptypes as $ptype)
-                  @if (old('id_ptype') == $ptype->id_ptype)
-                    <option value="{{ $ptype->id_ptype }}" selected>{{ $ptype->nama_ptype }}</option>
+                  @if (old('id_ptype') == $ptype->id)
+                    <option value="{{ $ptype->id }}" selected>{{ $ptype->nama_ptype }}</option>
                   @else 
-                    <option value="{{ $ptype->id_ptype }}">{{ $ptype->nama_ptype }}</option>
+                    <option value="{{ $ptype->id }}">{{ $ptype->nama_ptype }}</option>
                   @endif
                 @endforeach
               </select>
@@ -89,20 +89,20 @@
             </div>
           </div>
           <div class="form-group">
-           <label for="ABA" style="font-weight:bolder">Nama Mitra</label>
+           <label for="id_mitra" style="font-weight:bolder">Nama Mitra</label>
             <br>
-            <div class="@error('id_user') is-invalid @enderror">
-              <select id="ABA" class="js-states form-control @error ('ABA') is-invalid @enderror" data-placeholder="Pilih Mitra" style="width:100%" name="ABA">
+            <div class="@error('id_mitra') is-invalid @enderror">
+              <select id="id_mitra" class="js-states form-control @error ('id_mitra') is-invalid @enderror" data-placeholder="Pilih Mitra" style="width:100%" name="id_mitra">
                 <option value=""></option>
                 @foreach($mitras as $mtr)
-                  @if (old('ABA') == $mtr->ABA)
-                    <option value="{{ $mtr->ABA }}" selected>{{ $mtr->nama_mitra }}</option>
+                  @if (old('id_mitra') == $mtr->id)
+                    <option value="{{ $mtr->id }}" selected>{{ $mtr->nama_mitra }}</option>
                   @else 
-                    <option value="{{ $mtr->ABA }}">{{ $mtr->nama_mitra }}</option>
+                    <option value="{{ $mtr->id }}">{{ $mtr->nama_mitra }}</option>
                   @endif
                 @endforeach
               </select>
-              @error('ABA')
+              @error('id_mitra')
               <div class="invalid-feedback flash" style="margin-top: 2px">
                 {{ $message }}
               </div>
@@ -135,10 +135,10 @@
                 <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user" onchange="getHandoverData(id)">
                 <option value=""></option>
                 @foreach($users as $usr)
-                  @if (old('id_user') == $usr->id_user)
-                    <option value="{{ $usr->id_user }}" selected>{{ $usr->nama_user }}</option>
+                  @if (old('id_user') == $usr->id)
+                    <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
                   @else 
-                    <option value="{{ $usr->id_user }}">{{ $usr->nama_user }}</option>
+                    <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
                   @endif
                 @endforeach
               </select>

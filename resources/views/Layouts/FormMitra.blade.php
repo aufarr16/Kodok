@@ -1,5 +1,5 @@
 {!! Form::model($model, [
-	'route' => $model->exists ? ['mitra.update', $model->ABA] : 'mitra.store',
+	'route' => $model->exists ? ['mitra.update', $model->id] : 'mitra.store',
 	'method' => 'POST'
 ]) !!}
 	

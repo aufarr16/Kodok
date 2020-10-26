@@ -1,6 +1,6 @@
 {!! Form::model($model, [
-	'route' => $model->exist ? ['products.update', $model->id] : 'products.store',
-	'method' => $model->exist ? 'PUT' : 'POST'
+	'route' => $model->exists ? ['products.update', $model->id] : 'products.store',
+	'method' => $model->exists ? 'PUT' : 'POST'
 ]) !!}
 
 	<div class="form-group">

@@ -63,13 +63,13 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function fillProject($userId=0){
-        $projData['data'] = Project::orderby("nama_project","asc")->select('id_project', 'nama_project')->where('id_user', $userId)->get();
+        $projData['data'] = Project::orderby("nama_project","asc")->select('id', 'nama_project')->where('id_user', $userId)->get();
 
         return response()->json($projData);
     }
 
     public function fillNewPIC($userId=0){
-        $userData['data'] = User::orderby("nama_user","asc")->select('id_user', 'nama_user')->where('id_user', '!=', $userId)->get();
+        $userData['data'] = User::orderby("nama_user","asc")->select('id', 'nama_user')->where('id', '!=', $userId)->get();
 
         return response()->json($userData);
     }

@@ -45,7 +45,7 @@
         "lengthChange": false,
         ajax: "{{ route('products.table') }}",
         columns: [
-        	{data: 'DT_RowIndex', name: 'id_product'},
+        	{data: 'DT_RowIndex', name: 'id'},
         	{data: 'nama_product', name: 'nama_product'},
         	{data: 'action', name: 'action'},
         	{data: 'added_by', name: 'added_by'},

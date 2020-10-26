@@ -38,7 +38,7 @@ $('#table1').DataTable( {
     "lengthChange": false,
     ajax: "{{ route('searchdocs.table') }}",
     columns: [
-    	{data: 'DT_RowIndex', name: 'id_project'},
+    	{data: 'DT_RowIndex', name: 'id'},
     	{data: 'nama_mitra', name: 'nama_mitra'},
         {data: 'nama_product', name: 'nama_product'},
     	{data: 'nama_project', name: 'nama_project'},

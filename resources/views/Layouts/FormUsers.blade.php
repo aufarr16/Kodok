@@ -1,6 +1,6 @@
 {!! Form::open([
-	'route' => $model->exist ? ['users.update', $model->id] : 'users.store',
-	'method' => $model->exist ? 'PUT' : 'POST'
+	'route' => $model->exists ? ['users.update', $model->id] : 'users.store',
+	'method' => $model->exists ? 'PUT' : 'POST'
 ]) !!}
 	
 	<div class="form-group">

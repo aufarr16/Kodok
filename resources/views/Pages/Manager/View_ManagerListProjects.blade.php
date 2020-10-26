@@ -52,7 +52,7 @@
     "lengthChange": false,
     ajax: "{{ route('listprojects.table') }}",
     columns: [
-      {data: 'DT_RowIndex', name: 'id_project'},
+      {data: 'DT_RowIndex', name: 'id'},
       {data: 'inisial_user', name: 'inisial_user'},
       {data: 'nama_user', name: 'nama_user'},
       {data: 'nama_product', name: 'nama_product'},
@@ -62,7 +62,7 @@
       {data: 'waktu', name: 'waktu'},
       {data: 'id_pstat', name: 'id_pstat'}
     ],
-    "order": [[ 7, "desc" ]]
+    "order": [[ 7, "desc" ], [ 1, "asc" ]]
   });
 </script>
 @endpush

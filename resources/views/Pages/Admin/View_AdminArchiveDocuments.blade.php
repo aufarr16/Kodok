@@ -39,7 +39,7 @@
 	    "lengthChange": false,
 	    ajax: "{{ route('archive.table') }}",
 	    columns: [
-	    	{data: 'DT_RowIndex', name: 'id_project'},
+	    	{data: 'DT_RowIndex', name: 'id'},
 	    	{data: 'inisial_user', name: 'inisial_user'},
 	    	{data: 'nama_ptype', name: 'nama_ptype'},
 	    	{data: 'nama_project', name: 'nama_project'},

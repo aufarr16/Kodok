@@ -39,15 +39,15 @@ class Controller_AdminMitra extends Controller
         return $model;
     }
 
-    public function destroy($ABA){
-        Mitra::where('ABA', $ABA)->delete();
-        $mitraData['data'] = Mitra::orderby("ABA", "asc")->get();
+    public function destroy($id){
+        Mitra::where('id', $id)->delete();
+        $mitraData['data'] = Mitra::orderby("id", "asc")->get();
 
         return response()->json($mitraData);
     }
 
     public function get(){
-        $all_mitra['data'] = Mitra::orderby("ABA", "asc")->get();
+        $all_mitra['data'] = Mitra::orderby("id", "asc")->get();
 
         return response()->json($all_mitra);
     }
@@ -57,9 +57,9 @@ class Controller_AdminMitra extends Controller
         return view('Layouts.FormMitra', compact('model'));
     }
 
-    public function edit($ABA)
+    public function edit($id)
     {
-      $model = Mitra::where('ABA', $ABA)->firstOrFail();
+      $model = Mitra::where('id', $id)->firstOrFail();
       return view('Layouts.FormMitra', compact('model'));
     }
 
@@ -75,7 +75,8 @@ class Controller_AdminMitra extends Controller
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
-        Mitra::where('ABA', $request->ABA)->update($request->all());
+        $model = Mitra::find($request->id);
+        $model->update($request->all());
     }
 
     public function dataTable()
@@ -85,7 +86,7 @@ class Controller_AdminMitra extends Controller
             ->addColumn('action', function($model){
                 return view('Layouts.ActionMitra',[
                     'model'=> $model,
-                    'url_edit' => route('mitra.edit', $model->ABA)
+                    'url_edit' => route('mitra.edit', $model->id)
                 ]);
             })
             ->addIndexColumn()
