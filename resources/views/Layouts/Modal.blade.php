@@ -14,7 +14,7 @@
 		</div>
 		
 		<div class="modal-footer" id="modal-footer">
-    		<button type="button" class="btnsubmit" id="button-submit"></button>
+    		<button type="submit" class="btnsubmit" id="button-submit"></button>
 		</div>
 		
 		<!-- ./modal content -->

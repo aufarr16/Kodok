@@ -75,8 +75,10 @@ class Controller_AdminMitra extends Controller
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
-        $model = Mitra::find($request->id);
-        $model->update($request->all());
+        $model = Mitra::where('id', $request->id)->firstOrFail();
+        $model->ABA = $request->ABA;
+        $model->nama_mitra = $request->nama_mitra;
+        $model->save();
     }
 
     public function dataTable()

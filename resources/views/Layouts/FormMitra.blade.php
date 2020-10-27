@@ -1,8 +1,10 @@
 {!! Form::model($model, [
-	'route' => $model->exists ? ['mitra.update', $model->id] : 'mitra.store',
+	'route' => $model->exists ? 'mitra.update' : 'mitra.store',
 	'method' => 'POST'
 ]) !!}
 	
+	<input type="hidden" id="{{ $model->id }}" name="id">
+
 	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
