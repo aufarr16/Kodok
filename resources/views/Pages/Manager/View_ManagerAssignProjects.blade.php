@@ -209,7 +209,7 @@
       $("#id_ptype").select2({
           allowClear: true
       });
-      $("#ABA").select2({
+      $("#id_mitra").select2({
           allowClear: true
       });
   </script>
