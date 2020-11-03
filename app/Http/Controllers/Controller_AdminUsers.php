@@ -85,7 +85,7 @@ class Controller_AdminUsers extends Controller
 		$model->inisial_user = $request->inisial_user;
 		$model->nama_user = $request->nama_user;
         $model->id_ulevel = $request->id_ulevel;
-        $model->email_user = $request->email_user;
+        $model->nama_product = $request->nama_product;
         $model->save();
     }
 
