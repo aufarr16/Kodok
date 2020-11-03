@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_AdminUsers extends Controller
 {
 	public function openPage(){
-		return view('Pages.Admin.View_AdminUsers', compact('users','levels'));
+		return view('Pages.Admin.View_AdminUsers');
 	}
 
 	  /**
