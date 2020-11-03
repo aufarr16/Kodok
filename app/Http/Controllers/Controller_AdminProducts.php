@@ -20,9 +20,13 @@ class Controller_AdminProducts extends Controller
 	 * @param \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-    public function store(Request $request){
-    	// return $request;
 
+    public function create() {
+        $model = new Product();
+        return view('Layouts.FormProducts', compact('model'));
+    }
+
+    public function store(Request $request){
         $request->validate([
             'nama_product' => 'required',
         ],
@@ -31,8 +35,7 @@ class Controller_AdminProducts extends Controller
         ]);
 
     	Product::create($request->all());
-        // $model = Product::create($request->all());
-        // return $model;
+
     	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
@@ -43,6 +46,25 @@ class Controller_AdminProducts extends Controller
         return response()->json($productData);
     }
 
+    public function edit($id)
+    {
+      $model = Product::where('id', $id)->firstOrFail();
+      return view('Layouts.FormProducts', compact('model'));
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'nama_product' => 'required',
+        ],
+        $message = [
+            'nama_product.required' => 'Mohon isi Nama Products'
+        ]);
+
+        $model = Product::where('id', $id)->firstOrFail();
+        $model->nama_product = $request->nama_product;
+        $model->save();
+    }
+
     public function dataTable()
     {
         $model = Product::query();
@@ -50,27 +72,11 @@ class Controller_AdminProducts extends Controller
             ->addColumn('action', function($model){
                 return view('Layouts.ActionProduct',[
                     'model'=> $model,
-                    // 'url_edit' => route('products.edit', $model->id_product),
-                    // 'url_destroy' => route('mitra.delete', $model->ABA),
+                    'url_edit' => route('products.edit', $model->id)
                 ]);
             })
             ->addIndexColumn()
             ->rawColumns(['action'])
             ->make(true);
-    }
-
-    public function create() {
-        $model = new Product();
-        return view('Layouts.FormProducts', compact('model'));
-    }
-
-    public function update(){
-
-    }
-
-    public function edit($id)
-    {
-      $model = Product::findOrFail($id);
-      return view('Layouts.FormProducts', compact('model'));
     }
 }

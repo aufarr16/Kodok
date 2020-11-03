@@ -288,6 +288,7 @@ $('body').on('click', '#button-submit', function(event){
 		method = form.attr('method');
 
 	console.log(method);
+	console.log(url);
 
 	form.find('.help-block').remove();
 	form.find('.form-group').removeClass('has-error');

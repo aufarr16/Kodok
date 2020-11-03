@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\DB;
 class Controller_AdminUsers extends Controller
 {
 	public function openPage(){
-		$users = User::all();
-		$levels = Users_Level::all();
-
-		//dump($data_users);
 		return view('Pages.Admin.View_AdminUsers', compact('users','levels'));
 	}
 
@@ -25,9 +21,13 @@ class Controller_AdminUsers extends Controller
 	 * @param \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request){
-		//return $request;
 
+    public function create() {
+        $model = new User();
+        return view('Layouts.FormUsers', compact('model'));
+    }
+
+	public function store(Request $request){
 		$request->validate([
 			'inisial_user' => 'required|unique:users|min:3',
 			'nama_user' => 'required',
@@ -57,6 +57,38 @@ class Controller_AdminUsers extends Controller
         return response()->json($userData);
     }
 
+    public function edit($id)
+    {
+      $model = User::where('id', $id)->firstOrFail();
+      return view('Layouts.FormUsers', compact('model'));
+    }
+
+    public function update(Request $request, $id){
+    	$request->validate([
+			'inisial_user' => 'required|unique:users|min:3',
+			'nama_user' => 'required',
+			'id_ulevel' => 'required',
+			'email_user' => 'required|email|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
+		],
+		$message = [
+			'inisial_user.required' => 'Mohon isi Inisial',
+				'inisial_user.unique' => 'Inisial sudah terdaftar',
+				'inisial_user.min' => 'Mohon isi inisial dengan benar (3 huruf)',
+			'nama_user.required' => 'Mohon isi Nama',
+			'id_ulevel.required' => 'Mohon isi Role',
+			'email_user.required' => 'Mohon isi Email',
+				'email_user.regex'=>'Mohon isi format email dengan benar (domain @artajasa.co.id)',
+				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
+		]);
+
+		$model = User::where('id', $id)->firstOrFail();
+		$model->inisial_user = $request->inisial_user;
+		$model->nama_user = $request->nama_user;
+        $model->id_ulevel = $request->id_ulevel;
+        $model->email_user = $request->email_user;
+        $model->save();
+    }
+
 	public function dataTable()
     {
         $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id");
@@ -69,20 +101,5 @@ class Controller_AdminUsers extends Controller
             ->addIndexColumn()
             ->rawColumns(['action'])
             ->make(true);
-    }
-
-    public function create() {
-        $model = new User();
-        return view('Layouts.FormUsers', compact('model'));
-    }
-
-    public function update(){
-
-    }
-
-    public function edit($id)
-    {
-      $model = Product::findOrFail($id);
-      return view('Layouts.FormUsers', compact('model'));
     }
 }

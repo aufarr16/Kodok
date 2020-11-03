@@ -31,7 +31,7 @@ Route::post('/admin/submitmitra', 'Controller_AdminMitra@store')->name('mitra.st
 Route::get('/admin/delmitra/{id}', 'Controller_AdminMitra@destroy');
 Route::get('/admin/createmitra', 'Controller_AdminMitra@create')->name('mitra.create');
 Route::get('/admin/editmitra/{id}', 'Controller_AdminMitra@edit')->name('mitra.edit');
-Route::post('/admin/updatemitra', 'Controller_AdminMitra@update')->name('mitra.update');
+Route::put('/admin/updatemitra/{id}', 'Controller_AdminMitra@update')->name('mitra.update');
 
 // Product
 Route::get('/admin/products', 'Controller_AdminProducts@openPage');
@@ -39,8 +39,8 @@ Route::get('/admin/products/table', 'Controller_AdminProducts@dataTable')->name(
 Route::post('/admin/submitproduct', 'Controller_AdminProducts@store')->name('products.store');
 Route::get('/admin/delproduct/{id}', 'Controller_AdminProducts@destroy');
 Route::get('/admin/createproduct', 'Controller_AdminProducts@create')->name('products.create');
-Route::put('/admin/editproduct/{id}', 'Controller_AdminProducts@edit')->name('products.edit');
-Route::put('/admin/updateproduct', 'Controller_AdminProducts@update')->name('products.update');
+Route::get('/admin/editproduct/{id}', 'Controller_AdminProducts@edit')->name('products.edit');
+Route::put('/admin/updateproduct/{id}', 'Controller_AdminProducts@update')->name('products.update');
 
 // Search Doc
 Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
@@ -51,8 +51,8 @@ Route::get('/admin/users/table', 'Controller_AdminUsers@dataTable')->name('users
 Route::post('/admin/submituser', 'Controller_AdminUsers@store')->name('users.store');
 Route::get('/admin/deluser/{id}', 'Controller_AdminUsers@destroy');
 Route::get('/admin/createuser', 'Controller_AdminUsers@create')->name('users.create');
-Route::put('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
-Route::put('/admin/updateuser', 'Controller_AdminUsers@update')->name('users.update');
+Route::get('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
+Route::put('/admin/updateuser/{id}', 'Controller_AdminUsers@update')->name('users.update');
 
 ##Engineer
 // Doc Tools
@@ -92,6 +92,7 @@ Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable'
 // Search Doc
 Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
 
+##TABLE
 Route::get('/searchdocs/table', 'Controller_ManagerSearchDocuments@dataTable')->name('searchdocs.table');
 
 ?>

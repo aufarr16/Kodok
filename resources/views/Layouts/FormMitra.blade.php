@@ -1,9 +1,7 @@
 {!! Form::model($model, [
-	'route' => $model->exists ? 'mitra.update' : 'mitra.store',
-	'method' => 'POST'
+	'route' => $model->exists ? ['mitra.update', $model->id] : 'mitra.store',
+	'method' => $model->exists ? 'PUT' : 'POST'
 ]) !!}
-	
-	<input type="hidden" id="{{ $model->id }}" name="id">
 
 	<div class="form-group">
 		<div class ="input-group-addon">
