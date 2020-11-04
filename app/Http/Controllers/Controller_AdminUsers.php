@@ -61,10 +61,10 @@ class Controller_AdminUsers extends Controller
 
     public function edit($id)
     {
-      $model = User::where('id', $id)->firstOrFail();
+      $model = user::where('id', $id)->firstOrFail();
       dd($model);
 
-      return view('Layouts.FormUsers', compact('model'));
+      // return view('Layouts.FormUsers', compact('model'));
     }
 
     public function update(Request $request, $id){
