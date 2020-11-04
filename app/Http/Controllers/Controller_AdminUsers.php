@@ -23,12 +23,10 @@ class Controller_AdminUsers extends Controller
 	 */
 
     public function create() {
-	$model = new User();
-	$levels = Users_Level::all()->pluck('nama_ulevel')->prepend('Pilih Role');
-	
-	return view('Layouts.FormUsers', compact('model','levels'));
-       
-       
+		$model = new User();
+		$levels = Users_Level::all()->pluck('nama_ulevel')->prepend('Pilih Role');
+		
+		return view('Layouts.FormUsers', compact('model','levels'));  
     }
 
 	public function store(Request $request){
@@ -64,6 +62,8 @@ class Controller_AdminUsers extends Controller
     public function edit($id)
     {
       $model = User::where('id', $id)->firstOrFail();
+      dd($model);
+
       return view('Layouts.FormUsers', compact('model'));
     }
 
@@ -100,6 +100,7 @@ class Controller_AdminUsers extends Controller
             ->addColumn('action', function($model){
                 return view('Layouts.ActionUser',[
                     'model'=> $model,
+                    'url_edit' => route('users.edit', $model->id)
                 ]);
             })
             ->addIndexColumn()
