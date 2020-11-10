@@ -15,6 +15,17 @@ class Controller_Login extends Controller
     	return view('View_Login5ChooseRole'); 	
     }
 
+    public function authenticate(){
+        $ldap_con = ldap_connect("10.90.2.253");
+        $ldap_dn = "cn=read-only-admin,dc=example,dc=com";
+        $ldap_password = "password";
+
+        if(ldap_bind($ldap_con, $ldap_dn, $ldap_password)){
+            echo "Bind Successfull";
+        } else{
+            echo "Bind Fail";
+        }
+    }
 
     public function postLogin(Request $request){
     	// dd($request->all());
@@ -22,5 +33,5 @@ class Controller_Login extends Controller
     	$password = $request->password;
     }
 
-    // return redirect('/ ')->with('success','Login Berhasil');
+    
 }
