@@ -17,8 +17,8 @@ class Controller_Login extends Controller
 
     public function authenticate(){
         $ldap_con = ldap_connect("10.90.2.253");
-        $ldap_dn = "cn=read-only-admin,dc=example,dc=com";
-        $ldap_password = "password";
+        $ldap_uname = "aufar.rizqi";
+        $ldap_password = "openSesame16?!";
 
         if(ldap_bind($ldap_con, $ldap_dn, $ldap_password)){
             echo "Bind Successfull";
