@@ -28,7 +28,7 @@
 <!-- Dialog Login-->
 <div class="box">
   <h3>Login</h3>
-  <form role="form-auth-small" method="get" action="/login/auth">
+  <form role="form-auth-small" method="POST" action="/login/auth">
     @csrf
       <div class="group">      
         <input id="username" class="inputMaterial" type="username" name="username" required>

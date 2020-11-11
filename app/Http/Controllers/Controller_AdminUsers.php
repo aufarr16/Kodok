@@ -61,7 +61,7 @@ class Controller_AdminUsers extends Controller
 
     public function edit($id)
     {
-      $model = user::where('id', $id)->firstOrFail();
+      $model = User::where('id', $id)->firstOrFail();
       dd($model);
 
       // return view('Layouts.FormUsers', compact('model'));

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Controller_Login extends Controller
 {
@@ -22,9 +23,25 @@ class Controller_Login extends Controller
         $ldap_password = $request->password;
 
         if(ldap_bind($ldap_con, $ldap_uname, $ldap_password)){
-            echo "Bind Successfull";
+            // echo "Bind Successfull";
+
+            $user = User::where('email_user', $request->username)->firstOrFail();
+            
+            switch($user->id_ulevel){
+                case '1':
+                    return redirect('/admin/searchdocs');
+                case '2':
+                    return redirect('/manager/home');
+                case '3':
+                    return redirect('/engineer/projects');
+                case '4':
+                    return redirect('/guest/searchdocs');
+                case '5':
+                    return redirect('/login/choose');
+            }
+
         } else{
-            echo "Bind Fail";
+            return redirect('/');
         }
     }
 

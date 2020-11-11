@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 ##LOGIN
 Route::get('/', 'Controller_Login@openLogin');
 Route::get('/login/choose', 'Controller_Login@openChooseLogin');
-Route::get('/login/auth', 'Controller_Login@authenticate');
+Route::post('/login/auth', 'Controller_Login@authenticate');
 
 ##Admin
 // Archive
