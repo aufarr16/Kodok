@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +25,10 @@ class Controller_Login extends Controller
 
         if(ldap_bind($ldap_con, $ldap_uname, $ldap_password)){
             // echo "Bind Successfull";
+
+            // if(Auth::attempt()){
+                
+            // }
 
             $user = User::where('email_user', $request->username)->firstOrFail();
             dd($user);
