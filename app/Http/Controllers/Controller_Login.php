@@ -26,16 +26,17 @@ class Controller_Login extends Controller
             // echo "Bind Successfull";
 
             $user = User::where('email_user', $request->username)->firstOrFail();
+            dd($user);
             
             switch($user->id_ulevel){
                 case '1':
-                    return redirect('/admin/searchdocs');
+                    return redirect('/admin/searchdocs')->with(compact('user'));
                 case '2':
-                    return redirect('/manager/home');
+                    return redirect('/manager/home')->with(compact('user'));
                 case '3':
-                    return redirect('/engineer/projects');
+                    return redirect('/engineer/projects')->with('user', $user);
                 case '4':
-                    return redirect('/guest/searchdocs');
+                    return redirect('/guest/searchdocs')->with(compact('user'));
                 case '5':
                     return redirect('/login/choose');
             }

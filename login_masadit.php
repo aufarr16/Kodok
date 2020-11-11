@@ -32,7 +32,7 @@ Public function checking_access(){
 		       	        'email'=>$username, 
 						'token'=>"useriki",
 						);
-						
+
 		    $data_session=$this->security->xss_clean($data_session1);
 		   	$loginsert = array('EMAIL' => $username,'KETERANGAN' =>  "Sukses User - ".$dataop
 			);
@@ -40,5 +40,13 @@ Public function checking_access(){
 			$this->session->set_userdata($data_session);
 		    redirect(base_url("home"));	     
 	    }
-    } else {$loginsert = array('EMAIL' =>  $username,'KETERANGAN' => "gagal - ".$dataop);$logging=$this->M_admin->insert('log',$loginsert);echo "<script>alert('Username/Password Anda SALAH');window.location.href='login';</script>";}	
+    } else {
+	    $loginsert = array('EMAIL' =>  $username,'KETERANGAN' => "gagal - ".$dataop);
+	    $logging=$this->M_admin->insert('log',$loginsert);
+
+	    echo "<script>
+	    		alert('Username/Password Anda SALAH');
+	    		window.location.href='login';
+	    	 </script>";
+	}	
 }
