@@ -33,7 +33,7 @@
           Sistem Dokumentasi
         </div>
       	<div class="col-md-6">
-          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ $user-nama_user }}</h4>
+          <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, Engineer</h4>
         </div>
       </div>
     </div>

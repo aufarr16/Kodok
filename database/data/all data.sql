@@ -163,14 +163,15 @@ INSERT INTO `users_levels` (`id`, `nama_ulevel`) VALUES
 (4, 'Guest'),
 (5, 'Admin x Engineer');
 
-INSERT INTO `users` (`id`, `id_ulevel`, `nama_user`, `email_user`, `inisial_user`, `log_user`, `added_by`, `modified_by`) VALUES 
+INSERT INTO `users` (`id`, `id_ulevel`, `nama_user`, `email_user`, `inisial_user`, `password`, `added_by`, `modified_by`) VALUES 
 (1, '5', 'Ismi Destiawati', 'ismi.destiawati@artajasa.co.id', 'IDE', NULL, 'IDE', NULL), 
 (2, '5', 'Devi Mayang Sari', 'devi.sari@artajasa.co.id', 'DMR', NULL, 'IDE', NULL), 
 (3, '2', 'Arief Aji Pratopo', 'arief.aji@artajasa.co.id', 'AAP', NULL, 'IDE', 'DMR'), 
 (4, '3', 'Hadi Santoso', 'hadi.santoso@artajasa.co.id', 'HSO', NULL, 'DMR', 'IDE'), 
 (5, '3', 'Yudha Bagus Pratidana', 'yudha.pratidana@artajasa.co.id', 'YBP', NULL, 'DMR', 'IDE'), 
 (6, '3', 'Nadia Sepriani', 'nadia.sepriani@artajasa.co.id', 'NSP', NULL, 'DMR', NULL), 
-(7, '3', 'Muchammad Wijdan Alyosa', 'muchammad.alyosa@artajasa.co.id', 'MWA', NULL, 'DMR', 'DMR');
+(7, '3', 'Muchammad Wijdan Alyosa', 'muchammad.alyosa@artajasa.co.id', 'MWA', NULL, 'DMR', 'DMR'),
+(8, '3', 'Aufar Rizqi', 'aufar.rizqi@artajasa.co.id', 'AUF', NULL, 'DMR', '');
 
 INSERT INTO `projects` (`id`, `waktu_assign_project`, `id_pketerangan`, `id_pstat`, `id_ptype`, `id_product`, `id_user`, `id_mitra`, `nama_project`, `status_handover`, `pketerangan_status`, `pketerangan_note`) VALUES
 (1, '2020-08-25 14:46:34', NULL, 2, 2, 5, 2, '65', 'mari bekerja untuk masa depan yg lebih maju', 0, NULL, NULL),

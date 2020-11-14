@@ -31,7 +31,7 @@
   <form role="form-auth-small" method="POST" action="/login/auth">
     @csrf
       <div class="group">      
-        <input id="username" class="inputMaterial" type="username" name="username" required>
+        <input id="email" class="inputMaterial" type="email" name="email" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>
