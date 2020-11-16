@@ -31,7 +31,7 @@
 <div class="role">
   <h3 class="title">Engineer</h3>
   <div class="chooserole">
-    <a href="/engineer/doctools">
+    <a href="/engineer/projects">
       <div class="content-overlay"></div>
       <img class="content-image" src="{{ url('') }}/img/file.svg">
       <div class="content-details fadeIn-top">
@@ -46,7 +46,7 @@
 <div class="role">
   <h3 class="title">Admin</h3>
   <div class="chooserole">
-    <a href="/admin/archive">
+    <a href="/admin/searchdocs">
       <div class="content-overlay"></div>
       <img class="content-image" src="{{ url('') }}/img/email.svg">
       <div class="content-details fadeIn-top">
