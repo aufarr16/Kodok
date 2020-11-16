@@ -28,18 +28,21 @@
 <!-- Dialog Login-->
 <div class="box">
   <h3>Login</h3>
+  @include('Layouts.Notif')
   <form role="form-auth-small" method="POST" action="/login/auth">
     @csrf
-      <div class="group">      
-        <input id="email" class="inputMaterial" type="email" name="email" required>
+    
+      <div class="group">     
+        <input id="email" class="inputMaterial @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('inisial_user') }}" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>
           <span class="icon fas fa-user fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Username
         </label>
+
       </div>
       <div class="group">      
-        <input id="password" class="inputMaterial" type="password" name="password"required>
+        <input id="password" class="inputMaterial @error('password') is-invalid @enderror" type="password" name="password"required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>
