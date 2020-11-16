@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 ##ROUTING PAGE
 ##LOGIN
 Route::get('/', 'Controller_Login@openLogin')->name('login');
-Route::get('/login/choose', 'Controller_Login@openChooseLogin');
 Route::post('/login/auth', 'Controller_Login@authenticate');
-Route::post('/login/useracs', 'Controller_Login@userAccess');
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
+
+});
 
 ##Admin
 // Archive

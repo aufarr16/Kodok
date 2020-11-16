@@ -39,16 +39,16 @@ class Controller_Login extends Controller
 
             // dd(Auth::attempt($credentials));
             if(Auth::attempt($credentials)){
-
+                // dd($user);
                 switch($user->id_ulevel){
                     case '1':
-                        return redirect('/admin/searchdocs')->with(compact('user'));
+                        return view('Pages.Admin.View_AdminSearchDocuments', compact('user'));
                     case '2':
-                        return redirect('/manager/home')->with(compact('user'));
+                        return view('Pages.Manager.View_ManagerHome', compact('user'));
                     case '3':
-                        return redirect('/engineer/projects')->with('user', $user);
+                        return view('Pages.Engineer.View_EngineerYourProjects', compact('user'));
                     case '4':
-                        return redirect('/guest/searchdocs')->with(compact('user'));
+                        return view('Pages.Guest.View_GuestSearchDocuments', compact('user'));
                     case '5':
                         return redirect('/login/choose');
                 }
@@ -57,5 +57,9 @@ class Controller_Login extends Controller
         } else{
             return redirect("/");
         }
+    }
+
+    public function insertGuestData(){
+        
     }
 }
