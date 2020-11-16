@@ -25,7 +25,8 @@ class Controller_Login extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        if(ldap_bind($ldap_con, $email, $password)){
+        // dd(ldap_bind($ldap_con, $email, $password));
+        if(@ldap_bind($ldap_con, $email, $password)){
             // echo "Bind Successfull";
 
             $user = User::where('email_user', $email)->firstOrFail();
@@ -54,7 +55,7 @@ class Controller_Login extends Controller
 
             } 
         } else{
-            return redirect('/');
+            return redirect("/");
         }
     }
 }
