@@ -25,12 +25,9 @@ class Controller_Login extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        // dd(ldap_bind($ldap_con, $email, $password));
         if(@ldap_bind($ldap_con, $email, $password)){
-            // echo "Bind Successfull";
-
             $user = User::where('email_user', $email)->first();
-            if($user == null){
+            if($user == null){  //insert new guest data
                 $user = User::create([
                     'id_ulevel' => '4',
                     'nama_user' => 'Guest',
@@ -42,15 +39,15 @@ class Controller_Login extends Controller
                 $user = User::where('email_user', $email)->firstOrFail();
             }
 
-            if($user->password == NULL){
+            if($user->password == NULL){    //check if password still null when sdtl member first login
                 $user->password = $password;
                 $user->save();
             }
 
             $credentials = array('email_user' => $email, 'password' => $password); 
 
-            // dd(Auth::attempt($credentials));
-            if(Auth::attempt($credentials)){
+            // dd(Auth::attempt($credentials)); //check auth status
+            if(Auth::attempt($credentials)){    //auth laravel
                 // dd($user);
                 switch($user->id_ulevel){
                     case '1':
@@ -69,9 +66,5 @@ class Controller_Login extends Controller
         } else{
             return redirect("/");
         }
-    }
-
-    public function insertGuestData(){
-
     }
 }
