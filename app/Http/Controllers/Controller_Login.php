@@ -29,7 +29,19 @@ class Controller_Login extends Controller
         if(@ldap_bind($ldap_con, $email, $password)){
             // echo "Bind Successfull";
 
-            $user = User::where('email_user', $email)->firstOrFail();
+            $user = User::where('email_user', $email)->first();
+            if($user == null){
+                $user = User::create([
+                    'id_ulevel' => '4',
+                    'nama_user' => 'Guest',
+                    'email_user' => $email,
+                    'inisial_user' => 'GST',
+                    'password' => $password
+                ]);
+                
+                $user = User::where('email_user', $email)->firstOrFail();
+            }
+
             if($user->password == NULL){
                 $user->password = $password;
                 $user->save();
@@ -60,6 +72,6 @@ class Controller_Login extends Controller
     }
 
     public function insertGuestData(){
-        
+
     }
 }
