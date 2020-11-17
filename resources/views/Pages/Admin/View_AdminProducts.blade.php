@@ -10,10 +10,6 @@
 				<a href="{{ route('products.create') }}" type="button" class="modal-show add-products btn-add" title="Add New Products" id="btn-modal" style="float:left">
 					Add Products &nbsp<i class="fas fa-plus fa-lg"></i>
 				</a>
-				<!-- <a href="{{ route('products.create') }}" type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
-					Add Products &nbsp<i class="fas fa-plus fa-lg"></i>
-				</a> -->
-	
 				
 		<div class="table-responsive-lg">
 		<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">

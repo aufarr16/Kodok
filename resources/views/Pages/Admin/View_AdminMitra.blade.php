@@ -9,11 +9,6 @@
 			<a href="{{ route('mitra.create') }}" type="button" class="modal-show add-mitra btn-add" title="Add New Mitra" id="btn-modal" style="float:left">
 				Add Mitra &nbsp<i class="fas fa-plus fa-lg"></i>
 			</a>
-			<!-- <button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
-				<span>Add Mitra <i class="fas fa-plus fa-lg"></i><span>
-			</button> -->
-						
-		<!-- ./form group -->
 		</div>
 
 <div class="table-responsive-lg">	
