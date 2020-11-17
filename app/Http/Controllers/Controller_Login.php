@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\MessageBag;
 
 class Controller_Login extends Controller
 {
@@ -21,6 +22,15 @@ class Controller_Login extends Controller
 
     public function authenticate(Request $request){
         // dd($request->all());
+        $request->validate([
+            'email' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/',
+            'password' => 'required'
+        ],
+        $message = [
+            'email.required' => 'Mohon isi Email',
+                'email.regex'=>'Mohon isi format email dengan benar (domain @artajasa.co.id)',
+            'password.required' => "Mohon isi Password",
+        ]);
 
         $ldap_con = ldap_connect("10.90.2.253");
         $email = $request->email;
@@ -64,7 +74,7 @@ class Controller_Login extends Controller
 
             } 
         } else{
-            return redirect("/");
+            return redirect("/")->withErrors('Username / Password yang Anda Masukkan Salah');
         }
     }
 }

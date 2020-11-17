@@ -25,24 +25,45 @@
 	</style>
 </head>
 
+<!-- @if (count($errors) > 0)
+  <div class="alert alertlogin">
+    <p>Username atau Password yang Anda Masukan Salah</p>
+    {{$errors}}
+    <ul>
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </ul>
+  </div>
+   
+@endif -->
+
+
 <!-- Dialog Login-->
 <div class="box">
+    <!-- Error Message On Login Failure -->
+    @if (count($errors) > 0)
+      @foreach( $errors->all() as $message )
+        <div class="alertlogin">
+          {{$message}}
+        </div>
+      @endforeach
+    @endif
+    
   <h3>Login</h3>
-  @include('Layouts.Notif')
+
   <form role="form-auth-small" method="POST" action="/login/auth">
     @csrf
-    
       <div class="group">     
-        <input id="email" class="inputMaterial @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('inisial_user') }}" required>
+        <input id="email" class="inputMaterial" type="email" name="email" value="{{ old('inisial_user') }}" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>
           <span class="icon fas fa-user fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Username
         </label>
-
       </div>
       <div class="group">      
-        <input id="password" class="inputMaterial @error('password') is-invalid @enderror" type="password" name="password"required>
+        <input id="password" class="inputMaterial" type="password" name="password"required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>
