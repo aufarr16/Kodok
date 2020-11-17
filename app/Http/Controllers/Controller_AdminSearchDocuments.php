@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminSearchDocuments extends Controller
 {
     public function openPage(){
+        $user = Auth::user();
+        // dd($user['nama_user']);
     	return view('Pages.Admin.View_AdminSearchDocuments');
     }
     

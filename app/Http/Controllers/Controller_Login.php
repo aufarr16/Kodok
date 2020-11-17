@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class Controller_Login extends Controller
 {
@@ -39,19 +40,18 @@ class Controller_Login extends Controller
                 $user = User::where('email_user', $email)->firstOrFail();
             }
 
-            if($user->password == NULL){    //check if password still null when sdtl member first login
-                $user->password = $password;
-                $user->save();
-            }
+            $user->password = $password;
+            $user->save();
 
             $credentials = array('email_user' => $email, 'password' => $password); 
 
             // dd(Auth::attempt($credentials)); //check auth status
             if(Auth::attempt($credentials)){    //auth laravel
-                // dd($user);
+                // $name = Auth::user()->nama_user;
+                // dd($name);
                 switch($user->id_ulevel){
                     case '1':
-                        return view('Pages.Admin.View_AdminSearchDocuments', compact('user'));
+                        return redirect('/admin/searchdocs');
                     case '2':
                         return view('Pages.Manager.View_ManagerHome', compact('user'));
                     case '3':

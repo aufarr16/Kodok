@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('added_by', 3)->nullable();
             $table->string('modified_by', 3)->nullable();
+            $table->string('remember_token')->nullable();
         });
           
         //Schema::drop('users');

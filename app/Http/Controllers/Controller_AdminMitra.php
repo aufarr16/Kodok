@@ -7,6 +7,7 @@ use DataTables;
 use Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminMitra extends Controller
 {

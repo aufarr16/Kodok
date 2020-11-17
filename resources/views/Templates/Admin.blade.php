@@ -37,7 +37,7 @@
           Sistem Dokumentasi
         </div>
       <div class="col-md-6">
-          <h4 style="float:right; margin-right:10px; margin-top: 5px">Welcome, Admin</h4>
+          @yield('Welcome')
         </div>
       </div>
     </div>
