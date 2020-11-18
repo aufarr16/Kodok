@@ -24,9 +24,9 @@ class Controller_AdminUsers extends Controller
 
     public function create() {
 		$model = new User();
-		// $levels = Users_Level::all()->pluck('nama_ulevel')->prepend(' ');
-		$items = Users_Level::all(['id', 'name']);
-		return view('Layouts.FormUsers', compact('model','items',$items));  
+		// $levels = Users_Level::all()->pluck('nama_ulevel','id')->prepend(' ');
+		
+		return view('Layouts.FormUsers', compact('model'));  
     }
 
 	public function store(Request $request){
@@ -62,9 +62,9 @@ class Controller_AdminUsers extends Controller
     public function edit($id)
     {
       $model = User::where('id', $id)->firstOrFail();
-      dd($model);
+      // dd($model);
 
-      // return view('Layouts.FormUsers', compact('model'));
+      return view('Layouts.FormUsers', compact('model'));
     }
 
     public function update(Request $request, $id){
@@ -89,7 +89,7 @@ class Controller_AdminUsers extends Controller
 		$model->inisial_user = $request->inisial_user;
 		$model->nama_user = $request->nama_user;
         $model->id_ulevel = $request->id_ulevel;
-        $model->nama_product = $request->nama_product;
+        // $model->nama_product = $request->nama_product;
         $model->save();
     }
 

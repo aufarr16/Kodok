@@ -27,28 +27,16 @@
 	</div>
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
+			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Nama</label>
 				<br>
-						<!-- {!! Form::select('id_ulevel', $levels, null, 
-							['class'=>'form-control']) !!} -->
-					  <select class="form-control" name="item_id">
-					    @foreach($items as $item)
-					      <option value="{{$item->item_id}}">{{$item->id}}</option>
-					    @endforeach
-					  </select>
-				    <!-- {!! Form::select('id_ulevel', $levels, array('id_ulevel' => 'nama_ulevel',
-					    [
-					    'class' => 'form-control',
-					    ])) 
-				    !!} -->
-					
-						<!-- {!!Form::select('id_ulevel',['L' => 'Large', 'S' => 'Small'], null,
-		         	[
-		            'class' => 'form-group' .($errors->has('id_ulevel') ? 'is-invalid' : ''),
-		            'placeholder' => 'Pilih Role'])
-						!!} -->
+				{!! Form::text('id_ulevel', null,
+				['class'=>'form-control' .($errors->has('id_ulevel') ? 'is-invalid' : ''), 
+					'id' =>'id_ulevel',
+					'style' =>'margin-bottom: 10px'])
+				!!}		
 		</div>
 	</div>
+
 	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="email_user" style="font-weight:bolder" style="margin-top: -30px">Email</label>
