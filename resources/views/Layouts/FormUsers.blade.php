@@ -29,9 +29,13 @@
 		<div class ="input-group-addon">
 			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
 				<br>
-						{!! Form::select('id_ulevel', $levels, null, 
-							['class'=>'form-control']) !!}
-
+						<!-- {!! Form::select('id_ulevel', $levels, null, 
+							['class'=>'form-control']) !!} -->
+					  <select class="form-control" name="item_id">
+					    @foreach($items as $item)
+					      <option value="{{$item->item_id}}">{{$item->id}}</option>
+					    @endforeach
+					  </select>
 				    <!-- {!! Form::select('id_ulevel', $levels, array('id_ulevel' => 'nama_ulevel',
 					    [
 					    'class' => 'form-control',
