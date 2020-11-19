@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mitra;
+use App\User;
 use DataTables;
 use Response;
 use Illuminate\Http\Request;
@@ -42,7 +43,14 @@ class Controller_AdminMitra extends Controller
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
-        $model = Mitra::create($request->all());
+        $added_by = Auth::user()->inisial_user;
+
+        $model = Mitra::create([
+            'ABA' => $request->ABA,
+            'nama_mitra' => $request->nama_mitra,
+            'added_by' => $added_by
+        ]);
+
         return $model;
     }
 
@@ -77,9 +85,11 @@ class Controller_AdminMitra extends Controller
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
+        $modified_by = Auth::user()->inisial_user;
         $model = Mitra::where('id', $id)->firstOrFail();
         $model->ABA = $request->ABA;
         $model->nama_mitra = $request->nama_mitra;
+        $model->modified_by = $modified_by;
         $model->save();
 
         // return true;
