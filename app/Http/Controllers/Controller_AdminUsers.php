@@ -48,8 +48,6 @@ class Controller_AdminUsers extends Controller
 				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
 		]);
 
-		User::create([$request->all()]);
-
 		$added_by = Auth::user()->inisial_user;
 		User::create([
 			'nama_user' => $request->nama_user,
