@@ -6,6 +6,7 @@ use App\Product;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminProducts extends Controller
 {
@@ -34,7 +35,12 @@ class Controller_AdminProducts extends Controller
             'nama_product.required' => 'Mohon isi Nama Products'
         ]);
 
-    	Product::create($request->all());
+        $added_by = Auth::user()->inisial_user;
+
+    	Product::create([
+            'nama_product' => $request->nama_product,
+            'added_by' => $added_by
+        ]);
 
     	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
@@ -60,8 +66,10 @@ class Controller_AdminProducts extends Controller
             'nama_product.required' => 'Mohon isi Nama Products'
         ]);
 
+        $modified_by = Auth::user()->inisial_user;
         $model = Product::where('id', $id)->firstOrFail();
         $model->nama_product = $request->nama_product;
+        $model->modified_by = $modified_by;
         $model->save();
     }
 

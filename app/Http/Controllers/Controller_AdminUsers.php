@@ -7,6 +7,7 @@ use App\Users_Level;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminUsers extends Controller
 {
