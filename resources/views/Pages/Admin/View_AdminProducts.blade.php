@@ -9,8 +9,6 @@
 </title>
 
 		<div class="form-group">
-
-<<<<<<< HEAD
 			<a href="{{ route('products.create') }}" type="button" class="modal-show add-products btn-add" title="Add New Products" id="btn-modal" style="float:left">
 				Add Products &nbsp<i class="fas fa-plus fa-lg"></i>
 			</a>
