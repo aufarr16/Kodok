@@ -52,7 +52,8 @@
     
   <h3>Login</h3>
 
-  <form role="form-auth-small" method="POST" action="/login/auth">
+  <!-- <form role="form-auth-small" method="POST" action="/login/auth"> -->
+  <form method="POST" action="/login/auth">
     @csrf
       <div class="group">     
         <input id="email" class="inputMaterial" type="email" name="email" value="{{ old('inisial_user') }}" required>

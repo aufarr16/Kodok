@@ -2,55 +2,38 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model implements \Illuminate\Contracts\Auth\Authenticatable
+class User extends Authenticatable
 {
-    protected $fillable = ['id_ulevel', 'nama_user', 'email_user', 'inisial_user'];
+    use Notifiable;
 
-    public $timestamps = false;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nama_user', 'email_user', 'password',
+    ];
 
-    public function getAuthIdentifierName(){
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
-    }
-
-	public function getAuthIdentifier(){
-
-	}
-
-	public function getAuthPassword(){
-		return $this->password;
-	}
-
-	public function getRememberToken(){
-
-	}
-
-	public function setRememberToken($value){
-
-	}
-
-	public function getRememberTokenName(){
-
-	}
-
-	public function setPasswordAttribute($password)
-	{
-	    $this->attributes['password'] = bcrypt($password);
-	}
-
-	public function retrieveByCredentials(array $credentials)
-	{
-	    // First we will add each credential element to the query as a where clause.
-	    // Then we can execute the query and, if we found a user, return it in a
-	    // Eloquent User "model" that will be utilized by the Guard instances.
-	    $query = $this->createModel()->newQuery();
-
-	    foreach ($credentials as $key => $value)
-	    {
-	        if ( ! str_contains($key, 'password')) $query->where($key, $value);
-	    }
-
-	    return $query->first();
-	}
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

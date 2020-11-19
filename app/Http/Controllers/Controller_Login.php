@@ -37,6 +37,8 @@ class Controller_Login extends Controller
         $password = $request->password;
 
         if(@ldap_bind($ldap_con, $email, $password)){
+            $hashedpassword = Hash::make($password);
+
             $user = User::where('email_user', $email)->first();
             if($user == null){  //insert new guest data
                 $user = User::create([
@@ -50,7 +52,7 @@ class Controller_Login extends Controller
                 $user = User::where('email_user', $email)->firstOrFail();
             }
 
-            $user->password = $password;
+            $user->password = $hashedpassword;
             $user->save();
 
             $credentials = array('email_user' => $email, 'password' => $password); 
@@ -63,11 +65,11 @@ class Controller_Login extends Controller
                     case '1':
                         return redirect('/admin/searchdocs');
                     case '2':
-                        return view('Pages.Manager.View_ManagerHome', compact('user'));
+                        return redirect('/manager/home');
                     case '3':
-                        return view('Pages.Engineer.View_EngineerYourProjects', compact('user'));
+                        return redirect('/engineer/projects');
                     case '4':
-                        return view('Pages.Guest.View_GuestSearchDocuments', compact('user'));
+                        return redirect('/guest/searchdocs');
                     case '5':
                         return redirect('/login/choose');
                 }

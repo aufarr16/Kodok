@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 ##ROUTING PAGE
 ##LOGIN
-Route::get('/', 'Controller_Login@openLogin')->name('login');
+Route::get('/', 'Controller_Login@openLogin');
 Route::post('/login/auth', 'Controller_Login@authenticate');
-
-Route::group(['middleware' => 'auth'], function(){
-	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
-
-});
+Route::get('/login/choose', 'Controller_Login@openChooseLogin');
 
 ##Admin
 // Archive
