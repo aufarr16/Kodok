@@ -36,7 +36,6 @@ class Controller_AdminProducts extends Controller
         ]);
 
         $added_by = Auth::user()->inisial_user;
-
     	Product::create([
             'nama_product' => $request->nama_product,
             'added_by' => $added_by

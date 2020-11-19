@@ -48,7 +48,16 @@ class Controller_AdminUsers extends Controller
 				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
 		]);
 
-		User::create($request->all());
+		User::create([$request->all()]);
+
+		$added_by = Auth::user()->inisial_user;
+		User::create([
+			'nama_user' => $request->nama_user,
+			'inisial_user' => $request->inisial_user,
+			'id_ulevel' => $request->id_ulevel,
+			'email_user' => $request->email_user,
+			'added_by' => $added_by
+		]);
 		
 		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
 	}
@@ -86,11 +95,12 @@ class Controller_AdminUsers extends Controller
 				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
 		]);
 
+    	$modified_by = Auth::user()->inisial_user;
 		$model = User::where('id', $id)->firstOrFail();
 		$model->inisial_user = $request->inisial_user;
 		$model->nama_user = $request->nama_user;
         $model->id_ulevel = $request->id_ulevel;
-        // $model->nama_product = $request->nama_product;
+        $model->modified_by = $modified_by;
         $model->save();
     }
 
