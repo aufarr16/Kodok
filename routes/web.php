@@ -88,6 +88,7 @@ Route::post('/manager/newhandover', 'Controller_ManagerAssignProjects@storeHando
 
 // Home
 Route::get('/manager/home', 'Controller_ManagerHome@openPage');
+Route::post('/manager/home/data/year', 'Controller_ManagerHome@openPage');
 
 // List Project
 Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');

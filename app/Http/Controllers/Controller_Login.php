@@ -59,8 +59,6 @@ class Controller_Login extends Controller
 
             // dd(Auth::attempt($credentials)); //check auth status
             if(Auth::attempt($credentials)){    //auth laravel
-                // $name = Auth::user()->nama_user;
-                // dd($name);
                 switch($user->id_ulevel){
                     case '1':
                         return redirect('/admin/searchdocs');
@@ -75,6 +73,7 @@ class Controller_Login extends Controller
                 }
 
             } 
+            
         } else{
             return redirect("/")->withErrors('Username / Password yang Anda Masukkan Salah');
         }
