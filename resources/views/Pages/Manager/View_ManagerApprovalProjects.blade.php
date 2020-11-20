@@ -1,10 +1,12 @@
 @extends('Templates.Manager')
-
 @push('styles')
 <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
 <link href="{{ url('') }}/css/approval.css" rel="stylesheet" />
 <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
 @endpush
+@section('Welcome') 
+  <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
+@endsection
 @section('PageTitle','Approval Projects')
 @section('content')
 <title>
