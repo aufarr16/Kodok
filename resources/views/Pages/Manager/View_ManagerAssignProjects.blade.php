@@ -130,6 +130,7 @@
     <!-- Assign Handover Project -->
     <div id="handover" class="container tab-pane fade">
       <form method="post" action="/manager/newhandover">
+        @csrf
         <div class="form-group">
           <label for="PIC2" style="font-weight:bolder">PIC</label>
             <br>
