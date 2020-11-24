@@ -12,17 +12,22 @@
 <title>
   | {Manager} Home
 </title>
-
+    
     <div class="card-tahun">
+      <form method="POST" action="/manager/home/yearly">
+        @csrf
         <div class="input-group" style="padding-top: 5px; padding-left: 5px;">
           <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
             <option value="" hidden></option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
+            @foreach($years as $year)
+              <option value="{{ $year->tahun }}">{{ $year->tahun }}</option>
+            @endforeach
           </select>
-          <button onclick="getDataByYear(title)" class="btn-tahun" type="submit">Pilih</button>
+          <button class="btn-tahun" type="submit">Pilih</button>
         </div>
+      </form>
     </div>
+  
 
     <div class="tile reserved">
       <div class="body">
@@ -32,8 +37,8 @@
           <div class="count">{{ $preserved }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:40%">
-            <p class="percent">{{ ($preserved*100)/$projects }}%</p>
+          <div class="bar" style="width:{{ $percentrsrv }}%">
+            <p class="percent">{{ $percentrsrv }}%</p>
           <!-- bar done -->
           </div>
         <!-- progress done -->
@@ -48,11 +53,11 @@
         <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
       </div>
       <div class="header">
-          <div class="count">100</div>
+          <div class="count">{{ $pdone }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:40%">
-            <p class="percent">40%</p>
+          <div class="bar" style="width:{{ $percentdone }}%">
+            <p class="percent">{{ $percentdone }}%</p>
           <!-- bar done -->
           </div>
         <!-- progress done -->
@@ -67,11 +72,11 @@
         <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; On Progress</div>
       </div>
       <div class="header">
-          <div class="count">160</div>
+          <div class="count">{{ $ponprogress }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:60%">
-            <p class="percent">60%</p>
+          <div class="bar" style="width:{{ $percentop }}%">
+            <p class="percent">{{ $percentop }}%</p>
           <!-- bar on progress -->
           </div>
         <!-- progress on progress -->
@@ -86,11 +91,11 @@
         <div class="title"><i class="fa fa-history fa-lg"></i> &nbsp; Hold</div>
       </div>
       <div class="header">
-          <div class="count">80</div>
+          <div class="count">{{ $phold }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:25%">
-            <p class="percent">25%</p>
+          <div class="bar" style="width:{{ $percenthold }}%">
+            <p class="percent">{{ $percenthold }}%</p>
           <!-- bar hold -->
           </div>
         <!-- progress hold -->
@@ -105,11 +110,11 @@
         <div class="title"><i class="fa fa-times fa-lg"></i> &nbsp; Drop</div>
       </div>
       <div class="header">
-          <div class="count">20</div>
+          <div class="count">{{ $pdrop }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:5%">
-            <p class="percent">5%</p>
+          <div class="bar" style="width:{{ $percenthold }}%">
+            <p class="percent">{{ $percenthold }}%</p>
           <!-- bar drop -->
           </div>
         <!-- progress drop -->

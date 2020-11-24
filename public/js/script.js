@@ -276,10 +276,6 @@ function deleteUser(id){
 	})
 }
 
-function showDetails(id){
-
-}
-
 $('body').on('click', '#button-submit', function(event){
 	event.preventDefault();
 

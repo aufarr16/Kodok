@@ -122,7 +122,7 @@
             @enderror
         </div>
         <div class="modal-footer" id="modal-footer">
-          <button onclick="submitproject()" type="submit" class="btn-submit" id="submitnew">Submit</button>
+          <button type="submit" class="btn-submit" id="submitnew">Submit</button>
         </div>
       </form>
     </div>

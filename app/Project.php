@@ -12,7 +12,7 @@ class Project extends Model
     	'status_handover' => 0,
     ];
 
-    protected $fillable = ['id_product', 'id_ptype', 'id_user', 'ABA', 'nama_project'];
+    protected $fillable = ['id_product', 'id_ptype', 'id_user', 'id_mitra', 'nama_project'];
 
     public $timestamps = false;
 }

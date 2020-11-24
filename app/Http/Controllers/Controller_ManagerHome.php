@@ -8,64 +8,136 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_ManagerHome extends Controller
 {
-    public function openPage(){
-    	// CARD DATA
-    	$preserved = Project::select('id')->where('id_pstat', '1')->count();
-    	$ponprogress = Project::select('id')->where('id_pstat', '2')->count();
-    	$pdone = Project::select('id')->where('id_pstat', '4')->count();
-    	$phold = Project::select('id')->where('id_pstat', '5')->count();
-    	$pdrop = Project::select('id')->where('id_pstat', '6')->count();
-    	$projects = Project::select('id')->count();
-    	
-    	return view('Pages.Manager.View_ManagerHome', compact('preserved', 'projects')); 	
+    public function openAllDataPage(){
+        //YEAR DATA
+        $years = $this->getYears();
+
+        // CARD DATA
+        $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
+        $ponprogress = $this->allProjectPstat(2);   // 2. Projek On Progress
+        $pdone = $this->allProjectPstat(4);         // 3. Projek Done
+        $phold = $this->allProjectPstat(5);         // 4. Projek Hold
+        $pdrop = $this->allProjectPstat(6);         // 5. Projek Drop
+        $projects = $this->allProjects();           // 6. Jumlah All Projek
+
+        $percentrsrv = $this->toPercent($preserved, $projects);
+        $percentop = $this->toPercent($ponprogress, $projects);
+        $percentdone = $this->toPercent($pdone, $projects);
+        $percenthold = $this->toPercent($phold, $projects);
+        $percentdrop = $this->toPercent($pdrop, $projects);
+
+        //GRAPH DATA
+        $pstatperproduct = $this->allPstatProd();       // 1. jumlah p_stat dari masing2 produk
+        $pstatperptype = $this->allPstatPtype();        // 2. jumlah p_stat dari masing2 p_type
+        $projectperproduct = $this->allProjProd();     // 3. total all projek berdasarkan produk
+        $projectperptype =  $this->allProjPtype();      // 4. total all projek berdasarkan p_type
+        $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
+        $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
+
+    	return view('Pages.Manager.View_ManagerHome', compact('years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
     }
 
-    public function getAllData(){
-    	// DATA APA SAJA YG DIBUTUHKAN UNTUK CARD PROJEK
-    	// 1. Projek Reserved
-    	$preserved = Project::select('id')->where('id_pstat', '1')->count();
+    public function openFilteredDataPage(Request $request){
+        //YEAR DATA
+        $years = $this->getYears();
 
-    	// 2. Projek On Progress
-    	$ponprogress = Project::select('id')->where('id_pstat', '2')->count();
+        // CARD DATA
+        $preserved = $this->filteredProjectPstat($request->tahun, 1);     // 1. Projek Reserved
+        $ponprogress = $this->filteredProjectPstat($request->tahun, 2);   // 2. Projek On Progress
+        $pdone = $this->filteredProjectPstat($request->tahun, 4);         // 3. Projek Done
+        $phold = $this->filteredProjectPstat($request->tahun, 5);         // 4. Projek Hold
+        $pdrop = $this->filteredProjectPstat($request->tahun, 6);         // 5. Projek Drop
+        $projects = $this->filteredProjects($request->tahun);             // 6. Jumlah All Projek
 
-    	// 3. Projek Done
-    	$pdone = Project::select('id')->where('id_pstat', '4')->count();
+        $percentrsrv = $this->toPercent($preserved, $projects);
+        $percentop = $this->toPercent($ponprogress, $projects);
+        $percentdone = $this->toPercent($pdone, $projects);
+        $percenthold = $this->toPercent($phold, $projects);
+        $percentdrop = $this->toPercent($pdrop, $projects);
 
-    	// 4. Projek Hold
-    	$phold = Project::select('id')->where('id_pstat', '5')->count();
+        //GRAPH DATA
+        $pstatperproduct = $this->filteredPstatProd($request->tahun);       // 1. jumlah p_stat dari masing2 produk
+        $pstatperptype = $this->filteredPstatPtype($request->tahun);        // 2. jumlah p_stat dari masing2 p_type
+        $projectperproduct = $this->filteredProjProd($request->tahun);     // 3. total all projek berdasarkan produk
+        $projectperptype =  $this->filteredProjPtype($request->tahun);      // 4. total all projek berdasarkan p_type
+        $userprojectperpstat = $this->filteredUserPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
+        $userprojectperptype = $this->filteredUserPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
 
-    	// 5. Projek Drop
-    	$pdrop = Project::select('id')->where('id_pstat', '6')->count();
-
-    	// 6. Jumlah All Projek
-    	$projects = Project::select('id')->count();
-
-
-    	// DATA APA SAJA YG DIBUTUHKAN UNTUK GRAPH??
-    	// 1. jumlah p_stat dari masing2 produk
-    	$pstatperproduct = DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pr.nama_product from projects as p, projects_stats as ps, products as pr where p.id_pstat = ps.id and p.id_product = pr.id group by p.id_pstat, pr.nama_product, ps.nama_pstat");
-
-    	// 2. jumlah p_stat dari masing2 p_type
-    	$pstatperptype = DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pt.nama_ptype from projects as p, projects_stats as ps, projects_types as pt where p.id_pstat = ps.id and p.id_ptype = pt.id group by p.id_pstat, pt.nama_ptype, ps.nama_pstat");
-    	
-    	// 3. total all projek berdasarkan produk
-    	$projectperproduct = DB::select("select pr.nama_product, count(*) as jumlah_project from projects as p, products as pr where p.id_product = pr.id group by pr.nama_product order by pr.id asc");
-    	
-    	// 4. total all projek berdasarkan p_type
-    	$projectperptype = DB::select("select pt.nama_ptype, count(*) as jumlah_project from projects as p, projects_types as pt where p.id_ptype = pt.id group by pt.nama_ptype order by pt.id asc");
-    	
-    	// 5. total projek per orang berdasarkan p_stat
-    	$userprojectperpstat = DB::select("select u.inisial_user, ps.nama_pstat, count(*) jumlah_projek from users as u, projects as p, projects_stats as ps where u.id = p.id_user and ps.id = p.id_pstat group by ps.nama_pstat, u.inisial_user order by u.inisial_user asc, ps.id asc");
-    	
-    	// 6. total prokek per orang berdasarkan p_type
-    	$userprojectperptype = DB::select("select u.inisial_user, pt.nama_ptype, count(*) jumlah_projek from users as u, projects as p, projects_types as pt where u.id = p.id_user and pt.id = p.id_ptype group by pt.nama_ptype, u.inisial_user order by u.inisial_user asc, pt.id asc");
-
-    	$alldata[] = [$preserved, $ponprogress, $pdone, $phold, $pdrop, $projects, $pstatperproduct, $pstatperptype, $projectperproduct, $projectperptype, $userprojectperpstat, $userprojectperptype];
-
-    	// return $alldata; 
+        return view('Pages.Manager.View_ManagerHome', compact('years','preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
     }
 
-    public function getFilteredData(){
+    public function getYears(){
+        return DB::select("select YEAR(waktu_assign_project) as tahun from projects group by tahun order by tahun desc");
+    }
 
+    public function allProjectPstat($pstat){
+        return Project::select('id')->where('id_pstat', $pstat)->count();
+    }
+
+    public function allProjects(){
+        return Project::select('id')->count(); 
+    }
+
+    public function allPstatProd(){
+        return DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pr.nama_product from projects as p, projects_stats as ps, products as pr where p.id_pstat = ps.id and p.id_product = pr.id group by p.id_pstat, pr.nama_product, ps.nama_pstat");
+    }
+
+    public function allPstatPtype(){
+        return DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pt.nama_ptype from projects as p, projects_stats as ps, projects_types as pt where p.id_pstat = ps.id and p.id_ptype = pt.id group by p.id_pstat, pt.nama_ptype, ps.nama_pstat");
+    }
+
+    public function allProjProd(){
+        return DB::select("select pr.nama_product, count(*) as jumlah_project from projects as p, products as pr where p.id_product = pr.id group by pr.nama_product order by pr.id asc");
+    }
+
+    public function allProjPtype(){
+        return DB::select("select pt.nama_ptype, count(*) as jumlah_project from projects as p, projects_types as pt where p.id_ptype = pt.id group by pt.nama_ptype order by pt.id asc");
+    }
+
+    public function allUserPstat(){
+        return DB::select("select u.inisial_user, ps.nama_pstat, count(*) jumlah_projek from users as u, projects as p, projects_stats as ps where u.id = p.id_user and ps.id = p.id_pstat group by ps.nama_pstat, u.inisial_user order by u.inisial_user asc, ps.id asc");
+    }
+
+    public function allUserPtype(){
+        return DB::select("select u.inisial_user, pt.nama_ptype, count(*) jumlah_projek from users as u, projects as p, projects_types as pt where u.id = p.id_user and pt.id = p.id_ptype group by pt.nama_ptype, u.inisial_user order by u.inisial_user asc, pt.id asc");
+    }
+
+    public function filteredProjectPstat($year, $pstat){
+        return Project::select('id')
+        ->where('id_pstat', $pstat)
+        ->whereYear('waktu_assign_project', '=', $year)
+        ->count();
+    }
+
+    public function filteredProjects($year){
+        return Project::select('id')->whereYear('waktu_assign_project', '=', $year)->count(); 
+    }
+
+    public function filteredPstatProd($year){
+
+    }
+
+    public function filteredPstatPtype($year){
+
+    }
+
+    public function filteredProjProd($year){
+
+    }
+
+    public function filteredProjPtype($year){
+
+    }
+
+    public function filteredUserPstat($year){
+
+    }
+
+    public function filteredUserPtype($year){
+
+    }
+
+    public function toPercent($part, $total){
+        return number_format(($part*100)/$total, 2, '.', ',');
     }
 }

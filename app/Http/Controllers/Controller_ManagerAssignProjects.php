@@ -22,23 +22,23 @@ class Controller_ManagerAssignProjects extends Controller
     public function storeNew(Request $request){
     	//return $request;
 
-
         $request->validate([
             'id_user' => 'required',
             'id_product' => 'required',
             'id_ptype' => 'required',
-            'ABA' => 'required',
+            'id_mitra' => 'required',
             'nama_project' => 'required',
         ],
         $message = [
             'id_user.required' => 'Mohon pilih PIC',
             'id_product.required' => 'Mohon pilih product',
             'id_ptype.required' => 'Mohon pilih jenis project',
-            'ABA.required' => 'Mohon pilih nama mitra',
+            'id_mitra.required' => 'Mohon pilih nama mitra',
             'nama_project.required' => 'Mohon isi nama project',
         ]);
 
     	Project::create($request->all());
+
 
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }
