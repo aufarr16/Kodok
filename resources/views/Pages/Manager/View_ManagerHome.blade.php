@@ -273,7 +273,6 @@
   for(var i=0; i<psprpslength; i++){
     for(var j=0;j<prods.length; j++){
       var k = (i*prods.length) + j;
-      console.log(k);
       if(k < 1*prods.length){
         resvprod.push(pstatperprod[k].jumlah_project);
       }
