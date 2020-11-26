@@ -253,7 +253,8 @@
 <!-- Draw Graphs -->
 <script>
   console.log("highcharts in");
-  //Nyiapin data buat graps status project per profuct
+  //JUMLAH PSTAT PER PRODUK
+  //Proses data agar bisa msk ke highchart
   var pstatperprod = <?php echo json_encode($pstatperproduct) ?>;
   var prods = <?php echo json_encode($products) ?>;
   var prnames = [];
@@ -263,34 +264,38 @@
   var prdnprod = [];
   var holdprod = [];
   var dropprod = [];
+  var psprpslength = (pstatperprod.length/prods.length);
 
   for(var i=0; i<prods.length; i++){
     prnames.push(prods[i].nama_product);
   }
 
-  for(var i=0; i<pstatperprod.length; i++){
-    if(i<6){ //data reserved
-      resvprod.push(pstatperprod[i].jumlah_project);
-    }
-    else if(i>5 && i<12){ //data on progress
-      progprod.push(pstatperprod[i].jumlah_project);
-    }
-    else if(i>11 && i<18){ //data pengujian done
-      pgdnprod.push(pstatperprod[i].jumlah_project);
-    }
-    else if(i>17 && i<24){ //data projek done
-      prdnprod.push(pstatperprod[i].jumlah_project);
-    }
-    else if(i>23 && i<30){ //data hold
-      holdprod.push(pstatperprod[i].jumlah_project);
-    }
-    else if(i>29 && i<36){ //data drop
-      dropprod.push(pstatperprod[i].jumlah_project);
+  for(var i=0; i<psprpslength; i++){
+    for(var j=0;j<prods.length; j++){
+      var k = (i*prods.length) + j;
+      console.log(k);
+      if(k < 1*prods.length){
+        resvprod.push(pstatperprod[k].jumlah_project);
+      }
+      else if(k >= 1*prods.length && k < 2*prods.length){
+        progprod.push(pstatperprod[k].jumlah_project);
+      }
+      else if(k >= 2*prods.length && k < 3*prods.length){
+        pgdnprod.push(pstatperprod[k].jumlah_project);
+      }
+      else if(k >= 3*prods.length && k < 4*prods.length){
+        prdnprod.push(pstatperprod[k].jumlah_project);
+      }
+      else if(k >= 4*prods.length && k < 5*prods.length){
+        holdprod.push(pstatperprod[k].jumlah_project);
+      }
+      else if(k >= 5*prods.length && k < 6*prods.length){
+        dropprod.push(pstatperprod[k].jumlah_project);
+      }
     }
   }
 
-  console.log(dropprod);
-
+  //Draw Chart
   Highcharts.chart('BarProduk', {
     colors: ['#FAD02C','#009CDF', '#43B14B','#FF8000','#F51720'],
 
@@ -370,8 +375,45 @@
 
     }]
     });
+// ###########################################################################################################################################################
+  //JUMLAH PSTAT PER PTYPE
+  //Proses data agar bisa msk ke highchart
+  var pstatperptype = <?php echo json_encode($pstatperptype) ?>;
+  var ptypes = <?php echo json_encode($projtypes) ?>;
+  var typenames = [];
+  var resvptype = [];
+  var progptype = [];
+  var pgdnptype = [];
+  var prdnptype = [];
+  var holdptype = [];
+  var dropptype = [];
 
-  //Status project by jenis project
+  for(var i=0; i<ptypes.length; i++){
+    typenames.push(ptypes[i].nama_ptype)
+  } 
+
+  // for(var i=0; i<pstatperptype.length; i++){
+  //   if(i<5){ //data reserved
+  //     resvptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  //   else if(i>5 && i<12){ //data on progress
+  //     progptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  //   else if(i>11 && i<18){ //data pengujian done
+  //     pgdnptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  //   else if(i>17 && i<24){ //data projek done
+  //     prdnptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  //   else if(i>23 && i<30){ //data hold
+  //     holdptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  //   else if(i>29 && i<36){ //data drop
+  //     dropptype.push(pstatperptype[i].jumlah_project);
+  //   }
+  // }
+
+  //Draw Chart
   Highcharts.chart('BarJenisProject', {
     colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C'],
 
@@ -388,13 +430,7 @@
       enabled: false
     },
     xAxis: {
-      categories: [
-        'Internal Test',
-        'Sertifikasi',
-        'Regresi',
-        'Support',
-        'QA'
-      ],
+      categories: typenames,
       crosshair: true
     },
     yAxis: {

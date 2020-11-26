@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerHome extends Controller
 {
     public function openAllDataPage(){
-        //ESSENTIAL COUNTER
-        $products = $this->getProducts();
-
         //YEAR DATA
         $years = $this->getYears();
+
+        //HIGHCHARTS DATA
+        //ESSENTIAL COUNTER
+        $products = $this->getProducts();
+        $projtypes = $this->getPTypes();
 
         // CARD DATA
         $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
@@ -41,15 +43,17 @@ class Controller_ManagerHome extends Controller
         // dd($pstatperproduct);
         // dd(json_encode($pstatperproduct));
 
-    	return view('Pages.Manager.View_ManagerHome', compact('products', 'years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
+    	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
     }
 
     public function openFilteredDataPage(Request $request){
-        //ESSENTIAL COUNTER
-        $products = $this->getProducts();
-        
         //YEAR DATA
         $years = $this->getYears();
+
+        //HIGHCHARTS DATA
+        //ESSENTIAL COUNTER
+        $products = $this->getProducts();
+        $projtypes = $this->getPTypes();
 
         // CARD DATA
         $preserved = $this->filteredProjectPstat($request->tahun, 1);     // 1. Projek Reserved
@@ -73,7 +77,7 @@ class Controller_ManagerHome extends Controller
         $userprojectperpstat = $this->filteredUserPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->filteredUserPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
 
-        return view('Pages.Manager.View_ManagerHome', compact('products', 'years','preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
+        return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years','preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
     }
 
     public function getYears(){
@@ -82,6 +86,10 @@ class Controller_ManagerHome extends Controller
 
     public function getProducts(){
         return DB::select('select nama_product from products');
+    }
+
+    public function getPTypes(){
+        return DB::select('select nama_ptype from projects_types');
     }
 
     public function allProjectPstat($pstat){
@@ -97,7 +105,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function allPstatPtype(){
-        return DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pt.nama_ptype from projects as p, projects_stats as ps, projects_types as pt where p.id_pstat = ps.id and p.id_ptype = pt.id group by p.id_pstat, pt.nama_ptype, ps.nama_pstat");
+        return DB::select("select pst.nama_pstat, pst.nama_ptype, count(ptp.nama_project) as jumlah_project from (select ps.id as id_pstat, ps.nama_pstat, pt.id as id_ptype, pt.nama_ptype from projects_stats as ps, projects_types as pt order by ps.id asc, pt.id asc) as pst left outer join (select p.id_pstat, p.id_ptype, p.nama_project from projects as p left outer join projects_types as pt on p.id_ptype = pt.id order by p.id_pstat asc) as ptp ON ptp.id_pstat = pst.id_pstat and ptp.id_ptype = pst.id_ptype group by pst.id_pstat, pst.id_ptype order by pst.id_pstat");
     }
 
     public function allProjProd(){
