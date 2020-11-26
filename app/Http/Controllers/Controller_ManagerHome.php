@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class Controller_ManagerHome extends Controller
 {
     public function openAllDataPage(){
+        //ESSENTIAL COUNTER
+        $products = $this->getProducts();
+
         //YEAR DATA
         $years = $this->getYears();
 
@@ -29,15 +33,21 @@ class Controller_ManagerHome extends Controller
         //GRAPH DATA
         $pstatperproduct = $this->allPstatProd();       // 1. jumlah p_stat dari masing2 produk
         $pstatperptype = $this->allPstatPtype();        // 2. jumlah p_stat dari masing2 p_type
-        $projectperproduct = $this->allProjProd();     // 3. total all projek berdasarkan produk
+        $projectperproduct = $this->allProjProd();      // 3. total all projek berdasarkan produk
         $projectperptype =  $this->allProjPtype();      // 4. total all projek berdasarkan p_type
         $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
 
-    	return view('Pages.Manager.View_ManagerHome', compact('years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
+        // dd($pstatperproduct);
+        // dd(json_encode($pstatperproduct));
+
+    	return view('Pages.Manager.View_ManagerHome', compact('products', 'years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
     }
 
     public function openFilteredDataPage(Request $request){
+        //ESSENTIAL COUNTER
+        $products = $this->getProducts();
+        
         //YEAR DATA
         $years = $this->getYears();
 
@@ -63,11 +73,15 @@ class Controller_ManagerHome extends Controller
         $userprojectperpstat = $this->filteredUserPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->filteredUserPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
 
-        return view('Pages.Manager.View_ManagerHome', compact('years','preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
+        return view('Pages.Manager.View_ManagerHome', compact('products', 'years','preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
     }
 
     public function getYears(){
         return DB::select("select YEAR(waktu_assign_project) as tahun from projects group by tahun order by tahun desc");
+    }
+
+    public function getProducts(){
+        return DB::select('select nama_product from products');
     }
 
     public function allProjectPstat($pstat){
@@ -79,7 +93,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function allPstatProd(){
-        return DB::select("select ps.nama_pstat, count(*) as jumlah_pstat, pr.nama_product from projects as p, projects_stats as ps, products as pr where p.id_pstat = ps.id and p.id_product = pr.id group by p.id_pstat, pr.nama_product, ps.nama_pstat");
+        return DB::select("select psr.nama_pstat, psr.nama_product, count(prp.nama_project) as jumlah_project from (select ps.id as id_pstat, ps.nama_pstat, pr.id as id_product, pr.nama_product from projects_stats as ps, products as pr order by ps.id asc, pr.id asc) as psr left outer join (select p.id_pstat, p.id_product, p.nama_project from projects as p left outer join products as pr on p.id_product = pr.id order by p.id_pstat asc) as prp ON prp.id_pstat = psr.id_pstat and prp.id_product = psr.id_product group by psr.id_pstat, psr.id_product order by psr.id_pstat");
     }
 
     public function allPstatPtype(){

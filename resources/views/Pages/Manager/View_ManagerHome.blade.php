@@ -252,7 +252,45 @@
 
 <!-- Draw Graphs -->
 <script>
-  // Status project by produk
+  console.log("highcharts in");
+  //Nyiapin data buat graps status project per profuct
+  var pstatperprod = <?php echo json_encode($pstatperproduct) ?>;
+  var prods = <?php echo json_encode($products) ?>;
+  var prnames = [];
+  var resvprod = [];
+  var progprod = [];
+  var pgdnprod = [];
+  var prdnprod = [];
+  var holdprod = [];
+  var dropprod = [];
+
+  for(var i=0; i<prods.length; i++){
+    prnames.push(prods[i].nama_product);
+  }
+
+  for(var i=0; i<pstatperprod.length; i++){
+    if(i<6){ //data reserved
+      resvprod.push(pstatperprod[i].jumlah_project);
+    }
+    else if(i>5 && i<12){ //data on progress
+      progprod.push(pstatperprod[i].jumlah_project);
+    }
+    else if(i>11 && i<18){ //data pengujian done
+      pgdnprod.push(pstatperprod[i].jumlah_project);
+    }
+    else if(i>17 && i<24){ //data projek done
+      prdnprod.push(pstatperprod[i].jumlah_project);
+    }
+    else if(i>23 && i<30){ //data hold
+      holdprod.push(pstatperprod[i].jumlah_project);
+    }
+    else if(i>29 && i<36){ //data drop
+      dropprod.push(pstatperprod[i].jumlah_project);
+    }
+  }
+
+  console.log(dropprod);
+
   Highcharts.chart('BarProduk', {
     colors: ['#FAD02C','#009CDF', '#43B14B','#FF8000','#F51720'],
 
@@ -269,15 +307,9 @@
       enabled: false
     },
     xAxis: {
-      categories: [
-        'ATM Bersama',
-        'ATMB Debit',
-        'Payment',
-        'Remittance',
-        'Disbursement',
-        'QR Payment'
-      ],
+      categories: prnames,
       crosshair: true
+
     },
     yAxis: {
       min: 0,
@@ -303,35 +335,35 @@
     },
     series: [{
       name: 'Reserved',
-      data: [10,5,5,10,5,5],
+      data: resvprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Done',
-      data: [20,50,40,5,5,10],
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'On Progress',
-      data: [20,30,40,10,5,10],
+      data: progprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Hold',
-      data: [30,20,40,5,10,15],
+      data: holdprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Drop',
-      data: [5,2,5,3,2,3],
+      data: dropprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
