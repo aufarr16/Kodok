@@ -12,11 +12,20 @@
 <title>
   | {Manager} Home
 </title>
-    
-    <div class="card-tahun">
-      <form method="POST" action="/manager/home/yearly">
+    <!-- <div class="col-md-10"> -->
+      <!-- <div class="card"> -->
+      <div class="card-all">
+      <form method="POST" action="">
         @csrf
-        <div class="input-group" style="padding-top: 5px; padding-left: 5px;">
+          <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 160px;">
+            <input type="checkbox" name="all" value="" style="margin-top: 7px">&nbsp 
+              <div class="namaradio">Semua Tahun</div>
+              <button class="btn-tahun" type="submit">Pilih</button>
+          </div>
+      </form>
+
+      <form method="POST" action="/manager/home/yearly">
+        <div class="input-group" style="padding-left: 170px; margin-top: -30px;">
           <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
             <option value="" hidden></option>
             @foreach($years as $year)
@@ -27,7 +36,8 @@
         </div>
       </form>
     </div>
-  
+  <!-- </div> -->
+    <!-- </div> -->
 
     <div class="tile reserved">
       <div class="body">
@@ -315,7 +325,7 @@
 
   //Draw Chart
   Highcharts.chart('BarProduk', {
-    colors: ['#FAD02C','#009CDF', '#43B14B','#FF8000','#F51720'],
+    colors: ['#FAD02C','#43B14B','#009CDF','#FF8000','#F51720'],
 
     chart: {
       type: 'column'
@@ -474,21 +484,28 @@
     },
     series: [{
       name: 'Reserved',
-      data: [5,2,3,5,5],
-      pointPadding: 0.1,
-      borderWidth: 0,
-      // pointPlacement: 0.2
-
-    }, {
-      name: 'Done',
-      data: [20,50,10,5,5],
+      data: resvprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'On Progress',
-      data: [20,50,10,5,5],
+      data: progprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+  
+    }, {
+      name: 'Pengujian Done',
+      data: prdnprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+
+    }, {
+      name: 'Project Done',
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
