@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Controller_Login@openLogin')->name('login');
 Route::post('/login/auth', 'Controller_Login@authenticate');
 
-
 Route::group(['middleware' => 'auth'], function(){
 	##Login
 	//Login Choose

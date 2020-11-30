@@ -21,14 +21,16 @@ class Controller_ManagerHome extends Controller
         // CARD DATA
         $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
         $ponprogress = $this->allProjectPstat(2);   // 2. Projek On Progress
-        $pdone = $this->allProjectPstat(4);         // 3. Projek Done
-        $phold = $this->allProjectPstat(5);         // 4. Projek Hold
-        $pdrop = $this->allProjectPstat(6);         // 5. Projek Drop
-        $projects = $this->allProjects();           // 6. Jumlah All Projek
+        $pngdone = $this->allProjectPstat(3);       // 3. Pengujian Done
+        $prjdone = $this->allProjectPstat(4);       // 4. Projek Done
+        $phold = $this->allProjectPstat(5);         // 5. Projek Hold
+        $pdrop = $this->allProjectPstat(6);         // 6. Projek Drop
+        $projects = $this->allProjects();           // 7. Jumlah All Projek
 
         $percentrsrv = $this->toPercent($preserved, $projects);
         $percentop = $this->toPercent($ponprogress, $projects);
-        $percentdone = $this->toPercent($pdone, $projects);
+        $percentpgdn = $this->toPercent($pngdone, $projects);
+        $percentprdn = $this->toPercent($prjdone, $projects);
         $percenthold = $this->toPercent($phold, $projects);
         $percentdrop = $this->toPercent($pdrop, $projects);
 
@@ -40,10 +42,10 @@ class Controller_ManagerHome extends Controller
         $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
 
-        // dd($pstatperproduct);
+        // dd($projectperproduct);
         // dd(json_encode($pstatperproduct));
 
-    	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years', 'preserved', 'ponprogress', 'pdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentdone', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
+    	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years', 'preserved', 'ponprogress', 'pngdone', 'prjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
     }
 
     public function openFilteredDataPage(Request $request){

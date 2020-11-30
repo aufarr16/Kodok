@@ -53,11 +53,11 @@
         <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
       </div>
       <div class="header">
-          <div class="count">{{ $pdone }}</div>
+          <div class="count"></div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:{{ $percentdone }}%">
-            <p class="percent">{{ $percentdone }}%</p>
+          <div class="bar" style="width:%">
+            <p class="percent">%</p>
           <!-- bar done -->
           </div>
         <!-- progress done -->
@@ -386,31 +386,35 @@
   var prdnptype = [];
   var holdptype = [];
   var dropptype = [];
+  var psptlength = (pstatperptype.length/ptypes.length);
 
   for(var i=0; i<ptypes.length; i++){
     typenames.push(ptypes[i].nama_ptype)
   } 
 
-  // for(var i=0; i<pstatperptype.length; i++){
-  //   if(i<5){ //data reserved
-  //     resvptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  //   else if(i>5 && i<12){ //data on progress
-  //     progptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  //   else if(i>11 && i<18){ //data pengujian done
-  //     pgdnptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  //   else if(i>17 && i<24){ //data projek done
-  //     prdnptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  //   else if(i>23 && i<30){ //data hold
-  //     holdptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  //   else if(i>29 && i<36){ //data drop
-  //     dropptype.push(pstatperptype[i].jumlah_project);
-  //   }
-  // }
+  for(var i=0; i<psprpslength; i++){
+    for(var j=0;j<ptypes.length; j++){
+      var k = (i*ptypes.length) + j;
+      if(k < 1*ptypes.length){
+        resvptype.push(pstatperptype[k].jumlah_project);
+      }
+      else if(k >= 1*ptypes.length && k < 2*ptypes.length){
+        progptype.push(pstatperptype[k].jumlah_project);
+      }
+      else if(k >= 2*ptypes.length && k < 3*ptypes.length){
+        pgdnptype.push(pstatperptype[k].jumlah_project);
+      }
+      else if(k >= 3*ptypes.length && k < 4*ptypes.length){
+        prdnptype.push(pstatperptype[k].jumlah_project);
+      }
+      else if(k >= 4*ptypes.length && k < 5*ptypes.length){
+        holdptype.push(pstatperptype[k].jumlah_project);
+      }
+      else if(k >= 5*ptypes.length && k < 6*ptypes.length){
+        dropptype.push(pstatperptype[k].jumlah_project);
+      }
+    }
+  }
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
@@ -455,43 +459,46 @@
     },
     series: [{
       name: 'Reserved',
-      data: [5,2,3,5,5],
+      data: resvptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Done',
-      data: [20,50,10,5,5],
+      data: prdnptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'On Progress',
-      data: [20,50,10,5,5],
+      data: progptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Hold',
-      data: [5,30,20,5,3],
+      data: holdptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Drop',
-      data: [5,20,25,5,0],
+      data: dropptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }]
   });
+// ###########################################################################################################################################################
+  //JUMLAH PROJEK BY PTYPE
+  //Proses Data
 
-  // Pie Total By Jenis Project
+  //Draw Pie
   Highcharts.chart('PieJenisProject', {
     colors:['#CCAFA5','#8A9EA1','#A9BA88','#C85250','#FA7A50'],
      chart: {
@@ -534,9 +541,23 @@
       ]
     }]
     });
+// ###########################################################################################################################################################
+  //JUMLAH PROJEK BY PRODUCT
+  //Proses Data
+  var projbyprod = <?php echo json_encode($projectperproduct) ?>;
+  var projbyproddata = [];
 
-    //Pie Total By Produk
-    Highcharts.chart('PieProduk', {
+  for(var i=0; i<projbyprod.length; i++){
+    var temp = [];
+
+    temp[0] = projbyprod[i].nama_product;
+    temp[1] = projbyprod[i].jumlah_project;
+
+    projbyproddata.push(temp);
+  }
+
+  //Draw Pie
+  Highcharts.chart('PieProduk', {
     colors:['#68A4F1','#319905','#E13D00','#FEDE00','#FF8300','#A5A7CF'],
     chart: {
       type: 'pie',
@@ -569,18 +590,12 @@
     series: [{
       type: 'pie',
       name: 'Total Project',
-      data: [
-        ['ATM Bersama', 85],
-        ['ATMB Debit', 107],
-        ['Payment', 90],
-        ['Remittance', 33],
-        ['Disbursement', 27],
-        ['QR Payment', 33]
-      ]
+      data: projbyproddata
     }]
   });
+// ###########################################################################################################################################################
 
-    // Load PIC by Status
+  //Draw Chart
   Highcharts.chart('LoadPICstatus', {
     colors:['#D234B0','#278ED5','#E32227','#03D930','#FEDE00'],
     chart: {
