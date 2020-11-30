@@ -42,7 +42,7 @@ class Controller_ManagerHome extends Controller
         $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
 
-        // dd($projectperproduct);
+        // dd($projectperptype);
         // dd(json_encode($pstatperproduct));
 
     	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years', 'preserved', 'ponprogress', 'ppngdone', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	

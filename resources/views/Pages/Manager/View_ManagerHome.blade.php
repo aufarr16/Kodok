@@ -540,7 +540,18 @@
 // ###########################################################################################################################################################
   //JUMLAH PROJEK BY PTYPE
   //Proses Data
+  var projbyptype = <?php echo json_encode($projectperptype) ?>;
+  var projbyptypedata = [];
 
+  for(var i=0; i<projbyptype.length; i++){
+      var temp = [];
+
+      temp[0] = projbyptype[i].nama_ptype;
+      temp[1] = projbyptype[i].jumlah_project;
+
+      projbyptypedata.push(temp);
+  }
+  
   //Draw Pie
   Highcharts.chart('PieJenisProject', {
     colors:['#CCAFA5','#8A9EA1','#A9BA88','#C85250','#FA7A50'],
@@ -575,15 +586,9 @@
     series: [{
       type: 'pie',
       name: 'Total Project',
-      data: [
-        ['Internal Test', 55],
-        ['Sertifikasi', 152],
-        ['Regresi', 68],
-        ['Support', 25],
-        ['QA', 18]
-      ]
+      data: projbyptypedata
     }]
-    });
+  });
 // ###########################################################################################################################################################
   //JUMLAH PROJEK BY PRODUCT
   //Proses Data
