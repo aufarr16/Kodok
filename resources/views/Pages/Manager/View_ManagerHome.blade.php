@@ -187,22 +187,22 @@
       <div class="row" style="margin-top: 20px; margin-bottom: 20px">
         <div class="col-md-6" style="margin-left:5px">
           <div class="card card-chart">
-            <div class="card-body"> 
+            <!-- <div class="card-body">  -->
               <figure class="highcharts-figure">
                  <div id="PieJenisProject"></div>
               </figure>
-            </div>       
+            <!-- </div>        -->
           <!-- ./card -->
           </div>
         <!-- ./col -->
         </div>
         <div class="col-md-6" style="margin-left:-10px">
           <div class="card card-chart">
-            <div class="card-body">
+            <!-- <div class="card-body"> -->
                <figure class="highcharts-figure">
                  <div id="BarJenisProject"></div>
               </figure>
-            </div>       
+            <!-- </div>        -->
           <!-- ./card -->
           </div>
         <!-- ./col -->
@@ -325,7 +325,7 @@
 
   //Draw Chart
   Highcharts.chart('BarProduk', {
-    colors: ['#FAD02C','#43B14B','#009CDF','#FF8000','#F51720'],
+    colors: ['#FAD02C','#009CDF','#43B14B','#FF8000','#F51720','#52584D'],
 
     chart: {
       type: 'column'
@@ -374,15 +374,22 @@
       // pointPlacement: 0.2
 
     }, {
-      name: 'Done',
+      name: 'On Progress',
+      data: progprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+
+    }, {
+      name: 'Pengujian Done',
       data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
-      name: 'On Progress',
-      data: progprod,
+      name: 'Project Done',
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
@@ -443,7 +450,7 @@
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
-    colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C'],
+    colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C','#B68D40'],
 
     chart: {
       type: 'column'
@@ -618,7 +625,7 @@
 
     // Load PIC by Status
   Highcharts.chart('LoadPICstatus', {
-    colors:['#D234B0','#278ED5','#E32227','#03D930','#FEDE00'],
+    colors:['#D234B0','#E32227','#278ED5','#03D930','#FEDE00','#98705D'],
     chart: {
       type: 'column'
     },
@@ -693,12 +700,16 @@
       data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
-      name: 'Done',
+      name: 'On Progress',
+      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+
+    }, {
+      name: 'Pengujian Done',
       data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
-      name: 'On Progress',
-      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+      name: 'Project Done',
+      data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
       name: 'Hold',
