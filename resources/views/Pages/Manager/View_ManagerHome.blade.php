@@ -25,6 +25,7 @@
       </form>
 
       <form method="POST" action="/manager/home/yearly">
+        @csrf
         <div class="input-group" style="padding-left: 170px; margin-top: -30px;">
           <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
             <option value="" hidden></option>
