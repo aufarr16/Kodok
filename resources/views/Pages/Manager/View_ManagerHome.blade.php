@@ -17,10 +17,8 @@
       <div class="card-all">
       <form method="POST" action="">
         @csrf
-          <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 160px; background-color: grey">
-            <input type="checkbox" name="all" value="" style="margin-top: 7px">&nbsp 
-              <div class="namaradio">Semua Tahun</div>
-              <button class="btn-tahun" type="submit">Pilih</button>
+          <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 185px;">
+              <button class="btn-alltahun" type="submit">Pilih Data di Semua Tahun</button>
           </div>
       </form>
 
