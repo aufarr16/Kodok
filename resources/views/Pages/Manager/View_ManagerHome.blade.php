@@ -12,11 +12,20 @@
 <title>
   | {Manager} Home
 </title>
-    
-    <div class="card-tahun">
-      <form method="POST" action="/manager/home/yearly">
+    <!-- <div class="col-md-10"> -->
+      <!-- <div class="card"> -->
+      <div class="card-all">
+      <form method="POST" action="">
         @csrf
-        <div class="input-group" style="padding-top: 5px; padding-left: 5px;">
+          <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 160px;">
+            <input type="checkbox" name="all" value="" style="margin-top: 7px">&nbsp 
+              <div class="namaradio">Semua Tahun</div>
+              <button class="btn-tahun" type="submit">Pilih</button>
+          </div>
+      </form>
+
+      <form method="POST" action="/manager/home/yearly">
+        <div class="input-group" style="padding-left: 170px; margin-top: -30px;">
           <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
             <option value="" hidden></option>
             @foreach($years as $year)
@@ -27,7 +36,8 @@
         </div>
       </form>
     </div>
-  
+  <!-- </div> -->
+    <!-- </div> -->
 
     <div class="tile reserved">
       <div class="body">
@@ -39,25 +49,6 @@
         <div class="progress">
           <div class="bar" style="width:{{ $percentrsrv }}%">
             <p class="percent">{{ $percentrsrv }}%</p>
-          <!-- bar done -->
-          </div>
-        <!-- progress done -->
-        </div>
-      <!-- header done -->
-      </div>
-    <!-- tile done -->
-    </div>
-
-    <div class="tile done">
-      <div class="body">
-        <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
-      </div>
-      <div class="header">
-          <div class="count"></div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:%">
-            <p class="percent">%</p>
           <!-- bar done -->
           </div>
         <!-- progress done -->
@@ -84,6 +75,44 @@
       <!-- header on progress -->
       </div>
       <!-- tile on progress -->
+    </div>
+
+    <div class="tile done">
+      <div class="body">
+        <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Pengujian Done</div>
+      </div>
+      <div class="header">
+          <div class="count">{{ $ppngdone }}</div>
+          <div class="title">Projects</div>
+        <div class="progress">
+          <div class="bar" style="width:{{ $percentpgdn }}%">
+            <p class="percent">%</p>
+          <!-- bar done -->
+          </div>
+        <!-- progress done -->
+        </div>
+      <!-- header done -->
+      </div>
+    <!-- tile done -->
+    </div>
+
+    <div class="tile prodone">
+      <div class="body">
+        <div class="title"><i class="fas fa-check-double"></i> &nbsp; Project Done</div>
+      </div>
+      <div class="header">
+          <div class="count">{{ $pprjdone }}</div>
+          <div class="title">Projects</div>
+        <div class="progress">
+          <div class="bar" style="width:{{ $percentprdn }}%">
+            <p class="percent">{{ $percentprdn }}%</p>
+          <!-- bar done -->
+          </div>
+        <!-- progress done -->
+        </div>
+      <!-- header done -->
+      </div>
+    <!-- tile done -->
     </div>
 
     <div class="tile hold">
@@ -158,22 +187,22 @@
       <div class="row" style="margin-top: 20px; margin-bottom: 20px">
         <div class="col-md-6" style="margin-left:5px">
           <div class="card card-chart">
-            <div class="card-body"> 
+            <!-- <div class="card-body">  -->
               <figure class="highcharts-figure">
                  <div id="PieJenisProject"></div>
               </figure>
-            </div>       
+            <!-- </div>        -->
           <!-- ./card -->
           </div>
         <!-- ./col -->
         </div>
         <div class="col-md-6" style="margin-left:-10px">
           <div class="card card-chart">
-            <div class="card-body">
+            <!-- <div class="card-body"> -->
                <figure class="highcharts-figure">
                  <div id="BarJenisProject"></div>
               </figure>
-            </div>       
+            <!-- </div>        -->
           <!-- ./card -->
           </div>
         <!-- ./col -->
@@ -296,7 +325,7 @@
 
   //Draw Chart
   Highcharts.chart('BarProduk', {
-    colors: ['#FAD02C','#009CDF', '#43B14B','#FF8000','#F51720'],
+    colors: ['#FAD02C','#009CDF','#43B14B','#FF8000','#F51720','#52584D'],
 
     chart: {
       type: 'column'
@@ -345,15 +374,22 @@
       // pointPlacement: 0.2
 
     }, {
-      name: 'Done',
+      name: 'On Progress',
+      data: progprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+
+    }, {
+      name: 'Pengujian Done',
       data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
-      name: 'On Progress',
-      data: progprod,
+      name: 'Project Done',
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
@@ -418,7 +454,7 @@
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
-    colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C'],
+    colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C','#B68D40'],
 
     chart: {
       type: 'column'
@@ -465,15 +501,22 @@
       // pointPlacement: 0.2
 
     }, {
-      name: 'Done',
-      data: prdnptype,
+      name: 'On Progress',
+      data: progprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+  
+    }, {
+      name: 'Pengujian Done',
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
-      name: 'On Progress',
-      data: progptype,
+      name: 'Project Done',
+      data: prdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
@@ -597,7 +640,7 @@
 
   //Draw Chart
   Highcharts.chart('LoadPICstatus', {
-    colors:['#D234B0','#278ED5','#E32227','#03D930','#FEDE00'],
+    colors:['#D234B0','#E32227','#278ED5','#03D930','#FEDE00','#98705D'],
     chart: {
       type: 'column'
     },
@@ -672,12 +715,16 @@
       data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
-      name: 'Done',
+      name: 'On Progress',
+      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+
+    }, {
+      name: 'Pengujian Done',
       data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
-      name: 'On Progress',
-      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+      name: 'Project Done',
+      data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
 
     }, {
       name: 'Hold',
