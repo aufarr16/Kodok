@@ -211,7 +211,7 @@
 }
 /*akhir tile on progress*/
 
-/*tile done*/
+/*tile pengujian done*/
 .tile.done .header {
   border-bottom-left-radius: 15px;
   background: #0091E7;
@@ -224,7 +224,22 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-/*akhir tile done*/
+/*akhir tile pengujian done*/
+
+/*tile project done*/
+.tile.prodone .header {
+  border-bottom-left-radius: 15px;
+  background: #122620;
+  /* border-radius: 15px; */
+  border-bottom-right-radius: 15px;
+}
+
+.tile.prodone .body {
+  color: #122620;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+/*akhir tile project done*/
 
 /*tile hold*/
 .tile.hold .header {

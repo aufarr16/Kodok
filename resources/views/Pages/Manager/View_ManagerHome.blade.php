@@ -69,7 +69,7 @@
 
     <div class="tile done">
       <div class="body">
-        <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
+        <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Pengujian Done</div>
       </div>
       <div class="header">
           <div class="count">{{ $pdone }}</div>
@@ -86,9 +86,9 @@
     <!-- tile done -->
     </div>
 
-    <div class="tile done">
+    <div class="tile prodone">
       <div class="body">
-        <div class="title"><i class="fas fa-check-double"></i> &nbsp; Done</div>
+        <div class="title"><i class="fas fa-check-double"></i> &nbsp; Project Done</div>
       </div>
       <div class="header">
           <div class="count">{{ $pdone }}</div>
