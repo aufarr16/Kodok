@@ -300,7 +300,7 @@
 
   for(var i=0; i<psprpslength; i++){
     for(var j=0;j<prods.length; j++){
-      var k = (i*prods.length) + j;
+      var k = (i*prods.length) + j; 
 
       if(k < 1*prods.length){
         resvprod.push(pstatperprod[k].jumlah_project);
@@ -382,7 +382,7 @@
 
     }, {
       name: 'Pengujian Done',
-      data: prdnprod,
+      data: pgdnprod,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
@@ -428,9 +428,9 @@
     typenames.push(ptypes[i].nama_ptype)
   } 
 
-  for(var i=0; i<psprpslength; i++){
+  for(var i=0; i<psptlength; i++){
     for(var j=0;j<ptypes.length; j++){
-      var k = (i*ptypes.length) + j;
+      var k = (i*ptypes.length) + j; console.log(k);
 
       if(k < 1*ptypes.length){
         resvptype.push(pstatperptype[k].jumlah_project);
@@ -451,7 +451,7 @@
         dropptype.push(pstatperptype[k].jumlah_project);
       }
     }
-  }
+  } console.log(resvptype);
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
@@ -503,21 +503,21 @@
 
     }, {
       name: 'On Progress',
-      data: progprod,
+      data: progptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
   
     }, {
       name: 'Pengujian Done',
-      data: prdnprod,
+      data: pgdnptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
 
     }, {
       name: 'Project Done',
-      data: prdnprod,
+      data: prdnptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
