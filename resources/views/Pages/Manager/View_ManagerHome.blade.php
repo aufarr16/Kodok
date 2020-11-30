@@ -48,6 +48,25 @@
     <!-- tile done -->
     </div>
 
+    <div class="tile onprogress">
+      <div class="body">
+        <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; On Progress</div>
+      </div>
+      <div class="header">
+          <div class="count">{{ $ponprogress }}</div>
+          <div class="title">Projects</div>
+        <div class="progress">
+          <div class="bar" style="width:{{ $percentop }}%">
+            <p class="percent">{{ $percentop }}%</p>
+          <!-- bar on progress -->
+          </div>
+        <!-- progress on progress -->
+        </div>
+      <!-- header on progress -->
+      </div>
+      <!-- tile on progress -->
+    </div>
+
     <div class="tile done">
       <div class="body">
         <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Done</div>
@@ -67,23 +86,23 @@
     <!-- tile done -->
     </div>
 
-    <div class="tile onprogress">
+    <div class="tile done">
       <div class="body">
-        <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; On Progress</div>
+        <div class="title"><i class="fas fa-check-double"></i> &nbsp; Done</div>
       </div>
       <div class="header">
-          <div class="count">{{ $ponprogress }}</div>
+          <div class="count">{{ $pdone }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:{{ $percentop }}%">
-            <p class="percent">{{ $percentop }}%</p>
-          <!-- bar on progress -->
+          <div class="bar" style="width:{{ $percentdone }}%">
+            <p class="percent">{{ $percentdone }}%</p>
+          <!-- bar done -->
           </div>
-        <!-- progress on progress -->
+        <!-- progress done -->
         </div>
-      <!-- header on progress -->
+      <!-- header done -->
       </div>
-      <!-- tile on progress -->
+    <!-- tile done -->
     </div>
 
     <div class="tile hold">
