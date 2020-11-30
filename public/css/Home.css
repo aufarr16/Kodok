@@ -229,13 +229,13 @@
 /*tile project done*/
 .tile.prodone .header {
   border-bottom-left-radius: 15px;
-  background: #122620;
+  background: black;
   /* border-radius: 15px; */
   border-bottom-right-radius: 15px;
 }
 
 .tile.prodone .body {
-  color: #122620;
+  color: black;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
