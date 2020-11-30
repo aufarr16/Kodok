@@ -302,6 +302,7 @@
   for(var i=0; i<psprpslength; i++){
     for(var j=0;j<prods.length; j++){
       var k = (i*prods.length) + j;
+
       if(k < 1*prods.length){
         resvprod.push(pstatperprod[k].jumlah_project);
       }
@@ -431,6 +432,7 @@
   for(var i=0; i<psprpslength; i++){
     for(var j=0;j<ptypes.length; j++){
       var k = (i*ptypes.length) + j;
+
       if(k < 1*ptypes.length){
         resvptype.push(pstatperptype[k].jumlah_project);
       }
@@ -551,7 +553,7 @@
 
       projbyptypedata.push(temp);
   }
-  
+
   //Draw Pie
   Highcharts.chart('PieJenisProject', {
     colors:['#CCAFA5','#8A9EA1','#A9BA88','#C85250','#FA7A50'],
@@ -642,7 +644,48 @@
     }]
   });
 // ###########################################################################################################################################################
+  //JUMLAH PROJEK TIAP ORNG BY PSTAT
+  //Proses Data
+  var userprojperpstat = <?php echo json_encode($userprojectperpstat) ?>;
+  var userinit = <?php echo json_encode($inuser) ?>;
+  var initdata = [];
+  var userresv = [];
+  var userprog = [];
+  var userpgdn = [];
+  var userprdn = [];
+  var userhold = [];
+  var userdrop = [];
+  var psuserlength = (userprojperpstat.length/userinit.length); 
 
+  for(var i=0; i<userinit.length; i++){
+    initdata.push(userinit[i].inisial_user);
+  }
+
+  for(var i=0; i<psuserlength; i++){
+    for(var j=0; j<userinit.length; j++){
+      var k = (psuserlength * j) + i;
+
+      if(i == 0){
+        userresv.push(userprojperpstat[k].jumlah_projek);
+      }
+      else if(i == 1){
+        userprdn.push(userprojperpstat[k].jumlah_projek);
+      }
+      else if(i == 2){
+        userpgdn.push(userprojperpstat[k].jumlah_projek);
+      }
+      else if(i == 3){
+        userprog.push(userprojperpstat[k].jumlah_projek);
+      }
+      else if(i == 4){
+        userhold.push(userprojperpstat[k].jumlah_projek);
+      }
+      else if(i == 5){
+        userdrop.push(userprojperpstat[k].jumlah_projek);
+      }
+    }
+  }
+  
   //Draw Chart
   Highcharts.chart('LoadPICstatus', {
     colors:['#D234B0','#E32227','#278ED5','#03D930','#FEDE00','#98705D'],
@@ -659,39 +702,7 @@
       text: 'Berdasarkan Status Projects'
     },
     xAxis: {
-      categories: [
-        'AAN',
-        'ADT',
-        'AFH',
-        'AMR',
-        'ARE',
-        'AUF',
-        'DFA',
-        'DMR',
-        'EGW',
-        'FYS',
-        'HMW',
-        'HSO',
-        'IDE',
-        'IDO',
-        'INA',
-        'MAD',
-        'MAD',
-        'MDI',
-        'MMP',
-        'MWA',
-        'NSP',
-        'PDP',
-        'QAM',
-        'RAM',
-        'RAS',
-        'RMT',
-        'SHI',
-        'TRH',
-        'UPI',
-        'YBP',
-        'YKS'
-      ],
+      categories: initdata,
       crosshair: true
     },
     yAxis: {
@@ -717,27 +728,27 @@
     },
     series: [{
       name: 'Reserved',
-      data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
+      data: userresv
 
     }, {
       name: 'On Progress',
-      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+      data: userprog
 
     }, {
       name: 'Pengujian Done',
-      data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
+      data: userpgdn
 
     }, {
       name: 'Project Done',
-      data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
+      data: userprdn
 
     }, {
       name: 'Hold',
-      data: [489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 414]
+      data: userhold
 
     }, {
       name: 'Drop',
-      data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+      data: userdrop
 
     }]
   });

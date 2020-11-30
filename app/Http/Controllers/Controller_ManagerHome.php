@@ -17,6 +17,7 @@ class Controller_ManagerHome extends Controller
         //ESSENTIAL COUNTER
         $products = $this->getProducts();
         $projtypes = $this->getPTypes();
+        $inuser = $this->getInisial();
 
         // CARD DATA
         $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
@@ -42,10 +43,10 @@ class Controller_ManagerHome extends Controller
         $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
         $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
 
-        // dd($projectperptype);
+        // dd($userprojectperpstat);
         // dd(json_encode($pstatperproduct));
 
-    	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'years', 'preserved', 'ponprogress', 'ppngdone', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
+    	return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype')); 	
     }
 
     public function openFilteredDataPage(Request $request){
@@ -94,6 +95,10 @@ class Controller_ManagerHome extends Controller
         return DB::select('select nama_ptype from projects_types');
     }
 
+    public function getInisial(){
+        return DB::select('select inisial_user from users order by inisial_user asc');
+    }
+
     public function allProjectPstat($pstat){
         return Project::select('id')->where('id_pstat', $pstat)->count();
     }
@@ -119,7 +124,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function allUserPstat(){
-        return DB::select("select u.inisial_user, ps.nama_pstat, count(*) jumlah_projek from users as u, projects as p, projects_stats as ps where u.id = p.id_user and ps.id = p.id_pstat group by ps.nama_pstat, u.inisial_user order by u.inisial_user asc, ps.id asc");
+        return DB::select("select ups.inisial_user, ups.nama_pstat, count(pu.nama_project) jumlah_projek from (select u.id as id_user, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc) as ups left outer join (select p.id_user, p.id_pstat, p.nama_project from projects p left outer join users as u on u.id = p.id_user) as pu on pu.id_user = ups.id_user and pu.id_pstat = ups.id_pstat group by ups.nama_pstat, ups.inisial_user order by ups.inisial_user asc, ups.nama_pstat desc");
     }
 
     public function allUserPtype(){
