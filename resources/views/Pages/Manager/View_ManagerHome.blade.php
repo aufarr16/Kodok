@@ -685,7 +685,7 @@
       }
     }
   }
-  
+
   //Draw Chart
   Highcharts.chart('LoadPICstatus', {
     colors:['#D234B0','#E32227','#278ED5','#03D930','#FEDE00','#98705D'],
@@ -752,8 +752,40 @@
 
     }]
   });
+// ###########################################################################################################################################################
+  //JUMLAH PROJEK TIAP ORNG BY PTYPE
+  //Proses Data
+  var userprojperptype = <?php echo json_encode($userprojectperptype) ?>;
+  var userintt = [];
+  var usersert = [];
+  var userregr = [];
+  var usersupp = [];
+  var userqa = [];
+  var ptuserlength = (userprojperptype.length/userinit.length);
 
-  // Total projects by PIC
+  for(var i=0; i<ptuserlength; i++){
+    for(var j=0; j<userinit.length; j++){
+      var k = (ptuserlength * j) + i;
+
+      if(i == 0){
+        userintt.push(userprojperptype[k].jumlah_projek);
+      }
+      else if(i == 1){
+        usersert.push(userprojperptype[k].jumlah_projek);
+      }
+      else if(i == 2){
+        userregr.push(userprojperptype[k].jumlah_projek);
+      }
+      else if(i == 3){
+        usersupp.push(userprojperptype[k].jumlah_projek);
+      }
+      else if(i == 4){
+        userqa.push(userprojperptype[k].jumlah_projek);
+      }
+    }
+  } 
+
+  //Draw Chart
   Highcharts.chart('LoadPICtotal', {
     colors:['#A47786','#79A9F5','#CA6902','#F2CC98','#73B03A'],
     chart: {
@@ -769,39 +801,7 @@
       text: 'Berdasarkan Jenis Projects'
     },
     xAxis: {
-      categories: [
-        'AAN',
-        'ADT',
-        'AFH',
-        'AMR',
-        'ARE',
-        'AUF',
-        'DFA',
-        'DMR',
-        'EGW',
-        'FYS',
-        'HMW',
-        'HSO',
-        'IDE',
-        'IDO',
-        'INA',
-        'MAD',
-        'MAD',
-        'MDI',
-        'MMP',
-        'MWA',
-        'NSP',
-        'PDP',
-        'QAM',
-        'RAM',
-        'RAS',
-        'RMT',
-        'SHI',
-        'TRH',
-        'UPI',
-        'YBP',
-        'YKS'
-      ],
+      categories: initdata,
       crosshair: true
     },
     yAxis: {
@@ -827,23 +827,23 @@
     },
     series: [{
         name: 'Internal Test',
-        data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
+        data: userintt
 
       }, {
         name: 'Sertifikasi',
-        data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+        data: usersert
 
       }, {
         name: 'Regresi',
-        data: [836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 836, 788, 985, 934, 1060, 845, 1050, 1043, 912, 835, 1066, 788, 985, 934, 1060, 845, 836, 788, 985, 934]
+        data: userregr
 
       }, {
         name: 'Support',
-        data: [489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 489, 388, 393, 414, 470, 483, 590, 596, 524, 652, 414]
+        data: usersupp
 
         }, {
         name: 'QA',
-        data: [499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 499, 715, 1064, 1292, 1440, 1760, 1356, 1485, 2164, 1941, 956, 715, 1064, 1292, 1440, 715, 715, 1064, 1292, 1440]
+        data: userqa
 
     }]
   });
