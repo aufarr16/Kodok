@@ -802,5 +802,14 @@
 <!-- table responsive -->
 </div>
 @endsection
+  <script type="text/javascript">
+  $('#table1').DataTable( { 
+      "responsive": true,
+      "processing": true,
+      "serverSide": true,
+      "pageLength": 10, 
+      "searching": true,
+  });
+  </script>
 	
 
