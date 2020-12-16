@@ -19,6 +19,7 @@ class CreateProjectsHandoversTable extends Migration
             $table->unsignedBigInteger('id_project');
             $table->timestamp('waktu_assign_handover');
             $table->timestamp('waktu_selesai_handover')->nullable();
+            $table->integer('handover_order');
         });
     }
 
