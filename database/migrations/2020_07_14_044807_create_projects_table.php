@@ -20,10 +20,12 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('id_pstat');
             $table->unsignedBigInteger('id_ptype');
             $table->unsignedBigInteger('id_product');
-            $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_mitra');
+            $table->unsignedBigInteger('id_current_user');
+            $table->unsignedBigInteger('id_original_user');
             $table->string('nama_project', 201);
             $table->boolean('status_handover');
+            $table->integer('handover_counter');
             $table->string('pketerangan_status')->nullable();
             $table->string('pketerangan_note')->nullable();
         });

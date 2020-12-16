@@ -158,12 +158,11 @@
             <div class="@error('PIChandover') is-invalid @enderror">
               <select id="nama_project2" class="js-states form-control @error('PIChandover') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
                 <option value=""></option>
-                
               </select>
-               @error('PIChandover')
-                <div class="invalid-feedback flash" style="margin-top: 2px">
-                  {{ $message }}</div>
-              @enderror
+                @error('PIChandover')
+                  <div class="invalid-feedback flash" style="margin-top: 2px">
+                    {{ $message }}</div>
+                @enderror
             </div>
         </div>
         <br>

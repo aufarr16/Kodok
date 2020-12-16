@@ -1,6 +1,6 @@
 @extends('Templates.Engineer')
 @section('Welcome') 
-	<h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ $user->nama_user }}</h4>
+  <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
 @endsection
 @section('PageTitle','Your Projects')
 @section('content')

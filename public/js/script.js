@@ -22,10 +22,10 @@ function getHandoverData(id){
 
 			if(len > 0){
 				for (var i=0; i<len; i++){
-					var id = response['data'][i].id_project;
+					var id = response['data'][i].id;
 					var name = response['data'][i].nama_project;
 
-					var option = "<option value='"+id+"'>"+name+"</option>";
+					var option = "<option value='"+id+"'>"+name+"</option>"; 
 
 					$("#nama_project2").append(option);
 				}
@@ -48,10 +48,10 @@ function getHandoverData(id){
 
 			if(len > 0){
 				for(var a=0; a<len; a++){
-					var id = response['data'][a].id_user;
+					var id = response['data'][a].id;
 					var name = response['data'][a].nama_user;
 
-					var option = "<option value='"+id+"'>"+name+"</option>";
+					var option = "<option value='"+id+"'>"+name+"</option>"; 
 
 					$("#PIChandover").append(option);
 				}

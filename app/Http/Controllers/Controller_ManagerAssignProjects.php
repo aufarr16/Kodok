@@ -44,7 +44,7 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeHandover(Request $request){    
-        return $request;
+        // return $request;
 
         $request->validate([
             'id_user' => 'required',

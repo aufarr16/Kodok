@@ -430,7 +430,7 @@
 
   for(var i=0; i<psptlength; i++){
     for(var j=0;j<ptypes.length; j++){
-      var k = (i*ptypes.length) + j; console.log(k);
+      var k = (i*ptypes.length) + j; 
 
       if(k < 1*ptypes.length){
         resvptype.push(pstatperptype[k].jumlah_project);
@@ -451,7 +451,7 @@
         dropptype.push(pstatperptype[k].jumlah_project);
       }
     }
-  } console.log(resvptype);
+  }
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
