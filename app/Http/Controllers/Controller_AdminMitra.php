@@ -74,13 +74,12 @@ class Controller_AdminMitra extends Controller
 
     public function update(Request $request, $id){
         $request->validate([
-            'ABA' => 'required|min:3|unique:mitras',
+            'ABA' => 'required|min:3',
             'nama_mitra' => 'required',
         ],
         $message = [
             'ABA.required' => 'Mohon isi ABA',
               'ABA.min' => 'Mohon isi ABA minimal 3 angka',
-              'ABA.unique'=>'ABA sudah terdaftar',
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
         ]);
 
