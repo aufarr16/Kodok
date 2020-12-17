@@ -20,6 +20,7 @@ class CreateProjectsHandoversTable extends Migration
             $table->timestamp('waktu_assign_handover');
             $table->timestamp('waktu_selesai_handover')->nullable();
             $table->integer('handover_order');
+            $table->boolean('is_active');
         });
     }
 

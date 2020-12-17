@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
-use App\Projecs_Handover;
+use App\Projects_Handover;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,8 +37,6 @@ class Controller_ManagerAssignProjects extends Controller
             'nama_project.required' => 'Mohon isi nama project',
         ]);
 
-    	// Project::create($request->all());
-
         $newproject = Project::create([
             'id_current_pic' => $request->id_user,
             'id_original_pic' => $request->id_user,
@@ -65,19 +63,35 @@ class Controller_ManagerAssignProjects extends Controller
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-        Projects_Handover::create($request->all());
+        $handoveredproject = Project::where('id', $request->id_project)->firstOrFail(); 
+        $handoveredproject->id_current_pic = $request->PIChandover;
+        $handoveredproject->status_handover = 1;
+        $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;
+        $handoveredproject->save(); 
+
+        $newhandover = Projects_Handover::create([
+            'id_user' => $request->PIChandover,
+            'id_project' => $request->id_project,
+            'handover_order' => $handoveredproject->handover_counter
+        ]);
 
         return redirect('/manager/assign')->with('success','Project berhasil di handover');
     }
 
     public function fillProject($userId=0){
-        $projData['data'] = Project::orderby("nama_project","asc")->select('id', 'nama_project')->where('id_user', $userId)->get();
+        $projData['data'] = Project::orderby("nama_project","asc")
+        ->select('id', 'nama_project')
+        ->where('id_current_pic', $userId)
+        ->get();
 
         return response()->json($projData);
     }
 
     public function fillNewPIC($userId=0){
-        $userData['data'] = User::orderby("nama_user","asc")->select('id', 'nama_user')->where('id', '!=', $userId)->get();
+        $userData['data'] = User::orderby("nama_user","asc")
+        ->select('id', 'nama_user')
+        ->where('id', '!=', $userId)
+        ->get();
 
         return response()->json($userData);
     }

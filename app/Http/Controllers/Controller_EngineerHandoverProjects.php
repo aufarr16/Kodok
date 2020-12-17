@@ -2,19 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Projects_Stat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Controller_EngineerHandoverProjects extends Controller
 {
     public function openPage(){
-    	return view('Pages.Engineer.View_EngineerHandoverProjects');
+    	$userId = auth()->id();
+    	$projects = $this->getHandovertData($userId);
+        $pstat = Projects_Stat::where('id', '!=', 1)->get();
+
+    	return view('Pages.Engineer.View_EngineerHandoverProjects', compact('projects', 'pstat'));
     }
 
-    // Notif ketika klik button upload file
-    // return redirect('/engineer/handover')->with('success','Dokumen berhasil di upload');
-	// return redirect('/engineer/handover')->with('error','Mohon upload file dengan format:docx|doc|xls|xlsx|jpg|jpeg|png|pdf|zip|rar'');
-
-	// Notif ketika klik button selesai handover
-	// return redirect('/engineer/handover')->with('success','Handover sudah selesai. Terimakasih');
- 	// return redirect('/engineer/handover')->with('info','Tetap handover. Semangat');
+    public function getHandovertData($id){
+    	return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
+        ->leftjoin('products', 'projects.id_product', '=', 'products.id')
+        ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
+        ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
+        ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+        ->where('id_current_pic', $id)
+        ->where('status_handover', '=', '1')
+        ->orderBy('tanggal_assign', 'desc')
+        ->get();
+    }
 }

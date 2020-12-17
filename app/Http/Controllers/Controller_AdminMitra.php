@@ -89,8 +89,6 @@ class Controller_AdminMitra extends Controller
         $model->nama_mitra = $request->nama_mitra;
         $model->modified_by = $modified_by;
         $model->save();
-
-        // return true;
     }
 
     public function dataTable()
