@@ -20,7 +20,7 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeNew(Request $request){
-    	//return $request;
+    	// return $request;
 
         $request->validate([
             'id_user' => 'required',
@@ -37,8 +37,16 @@ class Controller_ManagerAssignProjects extends Controller
             'nama_project.required' => 'Mohon isi nama project',
         ]);
 
-    	Project::create($request->all());
+    	// Project::create($request->all());
 
+        $newproject = Project::create([
+            'id_current_pic' => $request->id_user,
+            'id_original_pic' => $request->id_user,
+            'id_product' => $request->id_product,
+            'id_ptype' => $request->id_ptype,
+            'id_mitra' => $request->id_mitra,
+            'nama_project' => $request->nama_project
+        ]);
 
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }

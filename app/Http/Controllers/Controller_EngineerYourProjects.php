@@ -21,6 +21,7 @@ class Controller_EngineerYourProjects extends Controller
     	->leftjoin('products', 'projects.id_product', '=', 'products.id')
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+    	->where('id_current_user', $id)
     	->orderBy('tanggal_assign', 'desc')
     	->get();
     }

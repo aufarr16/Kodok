@@ -14,7 +14,7 @@
 </title>
     <!-- <div class="col-md-10"> -->
       <!-- <div class="card"> -->
-      <div class="card-all">
+      <!-- <div class="card-all">
       <form method="POST" action="">
         @csrf
           <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 185px;">
@@ -34,7 +34,7 @@
           <button class="btn-tahun" type="submit">Pilih</button>
         </div>
       </form>
-    </div>
+    </div> -->
   <!-- </div> -->
     <!-- </div> -->
 
