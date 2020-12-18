@@ -35,14 +35,18 @@
 			<td>{{ $project->tanggal_assign}}</td>
 			<td>
 				<form method="POST" action="/engineer/changestat">
+					@method('patch')
 					@csrf
-					<select class="custom-select" id="{{ $project->id }}" name="id_pstat">
-						<option value="" hidden>{{ $project->nama_pstat }}</option>
-						@foreach($pstat as $stat)
-							<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
-						@endforeach
-					</select>
-												
+					<input type="hidden" value="{{ $project->id }}" name="id">
+					<div class="form-group">
+						<select class="custom-select form-control"name="id_pstat">
+							<option value="" hidden>{{ $project->nama_pstat }}</option>
+							@foreach($pstat as $stat)
+								<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
+							@endforeach
+						</select>								
+					</div>
+									
 					<button class="btn-ok" type="submit">OK</button>
 				</form>
 			</td>
