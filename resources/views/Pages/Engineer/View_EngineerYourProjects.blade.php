@@ -34,16 +34,17 @@
 			<td>{{ $project->nama_project }}</td>
 			<td>{{ $project->tanggal_assign}}</td>
 			<td>
-				<div class="input-group">
-				<select class="custom-select" id="status_select" name="id_pstat">
-					<option value="" hidden>{{ $project->nama_pstat }}</option>
-					@foreach($pstat as $stat)
-						<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
-					@endforeach
-				</select>
-											
-				<button class="btn-ok" type="button">OK</button>
-				</div>
+				<form method="POST" action="/engineer/changestat">
+					@csrf
+					<select class="custom-select" id="{{ $project->id }}" name="id_pstat">
+						<option value="" hidden>{{ $project->nama_pstat }}</option>
+						@foreach($pstat as $stat)
+							<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
+						@endforeach
+					</select>
+												
+					<button class="btn-ok" type="submit">OK</button>
+				</form>
 			</td>
 			<td>{{ $project->pketerangan_status }}
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     

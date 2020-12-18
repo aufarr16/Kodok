@@ -16,6 +16,10 @@ class Controller_EngineerYourProjects extends Controller
     	return view('Pages.Engineer.View_EngineerYourProjects', compact('projects', 'pstat'));
     }
 
+    public function changeStatus(Request $request){
+        dd($request->id);
+    }
+
     public function getProjectData($id){
     	return DB::table('projects')
     	->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
@@ -28,5 +32,4 @@ class Controller_EngineerYourProjects extends Controller
     	->orderBy('tanggal_assign', 'desc')
     	->get();
     }
-
 }
