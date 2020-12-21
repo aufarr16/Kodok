@@ -30,7 +30,6 @@
 				<th>Tanggal Handover</th>
 				<th style="width: 75px">Status</th>
 				<th>Keterangan</th>
-				<!-- <th>Docs</th> -->
 				<th>Action</th>
 			</tr>
 		</thead>
