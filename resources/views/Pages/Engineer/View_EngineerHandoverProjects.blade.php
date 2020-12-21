@@ -48,7 +48,7 @@
 				<form method="POST" action="/engineer/handover/changestat">
 					@method('patch')
 					@csrf
-						<input type="hidden" value="{{ $project->id }}" name="id">
+					<input type="hidden" value="{{ $project->id }}" name="id">
 						<div class="input-group">
 							<select class="custom-select" name="id_pstat">
 								<option value="" hidden>{{ $project->nama_pstat }}</option>
@@ -57,7 +57,7 @@
 								@endforeach  
 							</select>
 																
-						<button class="btn-ok" type="button">OK</button>
+						<button class="btn-ok" type="submit">OK</button>
 					</div>
 				</form>
 			</td>
@@ -65,7 +65,12 @@
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
 			</td>	
 			<td>
-				<button onclick="donehandover()" type="button" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
+				<form method="POST" action="/engineer/handover/done">
+				@method('patch')
+				@csrf
+				<input type="hidden" value="{{ $project->id }}" name="id">
+					<button type="submit" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
+				</form>
 			</td>
 		</tr>
 		@endforeach

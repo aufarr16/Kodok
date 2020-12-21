@@ -20,7 +20,7 @@ class Controller_EngineerHandoverProjects extends Controller
     public function changeStatus(Request $request){
         // dd($request);
 
-        $project = Project::where('id', $request->id)->firstOrFail();
+        $project = $this->getProjectById($request->id);
         $project->id_pstat = $request->id_pstat;
 
         if($request->id_pstat == 3){
@@ -41,6 +41,18 @@ class Controller_EngineerHandoverProjects extends Controller
         return redirect('/engineer/handover');
     }
 
+    public function handoverDone(Request $request){
+        // dd($request->id);
+
+        $project = $this->getProjectById($request->id);
+
+        $project->id_current_pic = $project->id_original_pic;
+        $project->status_handover = 0;
+        $project->save();
+
+        return redirect('/engineer/handover');
+    }
+
     public function getHandovertData($id){
     	return DB::table('projects')
         ->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
@@ -52,5 +64,9 @@ class Controller_EngineerHandoverProjects extends Controller
         ->where('status_handover', '=', '1')
         ->orderBy('tanggal_assign', 'desc')
         ->get();
+    }
+
+    public function getProjectById($id){
+        return Project::where('id', $id)->firstOrFail();
     }
 }

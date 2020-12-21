@@ -20,7 +20,7 @@ class Controller_EngineerYourProjects extends Controller
     public function changeStatus(Request $request){
         // dd($request);
 
-        $project = Project::where('id', $request->id)->firstOrFail();
+        $project = $this->getProjectById();
         $project->id_pstat = $request->id_pstat;
 
         if($request->id_pstat == 3){
@@ -52,5 +52,9 @@ class Controller_EngineerYourProjects extends Controller
         ->where('status_handover', '=', '0')
     	->orderBy('tanggal_assign', 'desc')
     	->get();
+    }
+
+    public function getProjectById($id){
+        return Project::where('id', $id)->firstOrFail();
     }
 }
