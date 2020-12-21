@@ -26,6 +26,7 @@ class Controller_AdminUsers extends Controller
     public function create() {
 		$model = new User();
 		// $levels = Users_Level::all()->pluck('nama_ulevel','id')->prepend(' ');
+		$levels = Users_Level::all()->pluck('nama_ulevel', 'id')->prepend(' ');
 		
 		return view('Layouts.FormUsers', compact('model'));  
     }
