@@ -15,7 +15,7 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('waktu_assign_project');
+            $table->dateTime('waktu_assign_project');
             $table->unsignedBigInteger('id_pketerangan')->nullable();
             $table->unsignedBigInteger('id_pstat');
             $table->unsignedBigInteger('id_ptype');

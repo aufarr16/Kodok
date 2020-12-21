@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Projects_Stat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,13 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function changeStatus(Request $request){
-        dd($request->id);
+        // dd($request);
+
+        $project = Project::where('id', $request->id)->firstOrFail();
+        $project->id_pstat = $request->id_pstat;
+        $project->save();
+
+        return redirect('/engineer/projects');
     }
 
     public function getProjectData($id){
