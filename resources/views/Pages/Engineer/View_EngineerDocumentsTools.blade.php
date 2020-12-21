@@ -2,9 +2,9 @@
 
 @push('styles')
 <link href="{{ url('') }}/css/docs-engineer.css" rel="stylesheet" />
-@section('Welcome') 
+<!-- @section('Welcome') 
 <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+@endsection -->
 @section('PageTitle','Documents & Tools')
 @section('content')
  <title>
