@@ -325,7 +325,7 @@
 
   //Draw Chart
   Highcharts.chart('BarProduk', {
-    colors: ['#FAD02C','#009CDF','#43B14B','#FF8000','#F51720','#52584D'],
+    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
 
     chart: {
       type: 'column'
@@ -455,7 +455,7 @@
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
-    colors: ['#9DB6CC','#B1BC6E','#A47786','#533440','#39918C','#B68D40'],
+  colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
 
     chart: {
       type: 'column'
@@ -555,7 +555,7 @@
 
   //Draw Pie
   Highcharts.chart('PieJenisProject', {
-    colors:['#CCAFA5','#8A9EA1','#A9BA88','#C85250','#FA7A50'],
+    colors:['#F0CCB0','#B97D60','#CCAFA5','#F3BC50','#B1D8B7'],
      chart: {
       type: 'pie',
       options3d: {
@@ -607,7 +607,7 @@
 
   //Draw Pie
   Highcharts.chart('PieProduk', {
-    colors:['#68A4F1','#319905','#E13D00','#FEDE00','#FF8300','#A5A7CF'],
+    colors:['#D4BBDD','#FDBFAF','#98D7C2','#F09CA2','#D9CE88','#BCA88E'],
     chart: {
       type: 'pie',
       options3d: {
@@ -687,7 +687,7 @@
 
   //Draw Chart
   Highcharts.chart('LoadPICstatus', {
-    colors:['#D234B0','#E32227','#278ED5','#03D930','#FEDE00','#98705D'],
+    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
     chart: {
       type: 'column'
     },
@@ -786,7 +786,8 @@
 
   //Draw Chart
   Highcharts.chart('LoadPICtotal', {
-    colors:['#A47786','#79A9F5','#CA6902','#F2CC98','#73B03A'],
+    colors:['#F0CCB0','#B97D60','#CCAFA5','#F3BC50','#B1D8B7'],
+    // colors:['#CCAFA5','#8A9EA1','#A9BA88','#C85250','#FA7A50'],
     chart: {
       type: 'column'
     },
