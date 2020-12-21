@@ -1,7 +1,23 @@
 @extends('Templates.Admin')
-@section('Welcome') 
-	<h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+<!-- @section('Welcome')  -->
+	<!-- <div class="dropdown-logout">
+  <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#19569A"><h4 class="namauser">Welcome, {{ auth()->user()->nama_user }}</h4>&nbsp&nbsp&nbsp
+          <b class="caret"></b></a>
+        <ul class="dropdown-menu logout" style="background: #19569A">
+          <li>
+            <a href="http://kodok.me/" style="color: white">Logout<i class="fas fa-lg fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div> -->
+  <!-- <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }}</h4> -->
+    <!-- <a href="http://kodok.me/" type="button" class="btn-logout">
+      <i class="fas fa-lg fa-sign-out-alt"></i>
+    </a> -->
+<!-- @endsection -->
 @section('PageTitle','Mitra')
 @section('content')
 <title>

@@ -1,10 +1,10 @@
 @extends('Templates.Admin')
 @push('styles')
 	<link href="{{ url('') }}/css/arsipadmin.css" rel="stylesheet" />
-@endpush
+@endpush<!-- 
 @section('Welcome') 
 	<h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+@endsection -->
 @section('PageTitle','Archive Documents')
 @section('content')
 	<title>
