@@ -53,7 +53,7 @@
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
 			</td>	
 			<td>
-				<button onclick="donehandover()" type="button" class="btn-handover-done" data-dismiss="modal" id="submithandover" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
+				<button onclick="donehandover()" type="button" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
 			</td>
 		</tr>
 		@endforeach

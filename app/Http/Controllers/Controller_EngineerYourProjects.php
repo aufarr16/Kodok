@@ -22,6 +22,17 @@ class Controller_EngineerYourProjects extends Controller
 
         $project = Project::where('id', $request->id)->firstOrFail();
         $project->id_pstat = $request->id_pstat;
+
+        if($request->id_pstat == 3){
+            $project->pketerangan_status = "Menunggu Approval Pengujian Done";
+        }
+        else if($request->id_pstat == 4){
+            $project->pketerangan_status = "Menunggu Approval Projek Done";
+        }
+        else {
+            $project->pketerangan_status = "";
+        }
+        
         $project->save();
 
         return redirect('/engineer/projects');
