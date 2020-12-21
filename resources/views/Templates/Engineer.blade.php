@@ -30,10 +30,11 @@
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
          <i class="fas fa-align-justify fa-2x"></i>
         </button>
-          Sistem Dokumentasi
+         <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp<a href="http://kodok.me/" style="color: black"><i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding:2px"></i></a></h4>
+          <!-- <div class="logout"></div> -->
         </div>
-      	<div class="col-md-6">
-          @yield('Welcome')
+        <div class="col-md-6">
+          <div class="namaweb">Sistem Dokumentasi</div>
         </div>
       </div>
     </div>

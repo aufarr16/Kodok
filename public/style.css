@@ -37,3 +37,20 @@
 /*td {
   word-wrap: word-break;
 }*/
+
+.btn-logout{
+	float: right;
+  margin-right: 10px;
+  color: #19569A;
+}
+
+.namauser{
+  margin-top: -39px;
+  padding-right: 2px;
+  padding-left: 2px;
+  margin-left: 35px;
+}
+
+.namaweb{
+	float: right;
+}

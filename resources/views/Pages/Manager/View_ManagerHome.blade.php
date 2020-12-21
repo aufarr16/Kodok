@@ -4,9 +4,9 @@
 <link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
 <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
 @endpush
-@section('Welcome') 
+<!-- @section('Welcome') 
   <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+@endsection -->
 @section('PageTitle','Home')
 @section('content')
 <title>

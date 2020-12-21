@@ -2,9 +2,9 @@
 @push('styles')
 <link href="{{ url('') }}/css/search.css" rel="stylesheet" />
 @endpush
-@section('Welcome') 
+<!-- @section('Welcome') 
   <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+@endsection -->
 @section('PageTitle','Search Documents')
 @section('content')
   <title>

@@ -34,10 +34,28 @@
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
          <i class="fas fa-align-justify fa-2x"></i>
         </button>
-          Sistem Dokumentasi
+          <!-- @yield('Welcome') -->
+         <!--  dari sini
+          <div class="dropdown-logout">
+  <-- <ul class="nav navbar-nav navbar-right"> -->
+      <!-- <li class="dropdown"> -->
+        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#19569A"><h4 class="namauser">Welcome, {{ auth()->user()->nama_user }}</h4>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" style="background: white">
+          <li>
+            <a href="http://kodok.me/" style="color: #19569A">Logout &nbsp<i class="fas fa-lg fa-sign-out-alt"></i></a>
+          </li> -->
+        <!-- </ul> -->
+      <!-- </li> --
+    </ul>
+  </div>
+  sampai sini -->
+          <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp<a href="http://kodok.me/" style="color: black"><i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i></a>
+          </h4>
         </div>
-      <div class="col-md-6">
-          @yield('Welcome')
+        <div class="col-md-6">
+          <div class="namaweb">Sistem Dokumentasi</div>
         </div>
       </div>
     </div>

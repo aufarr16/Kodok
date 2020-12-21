@@ -11,9 +11,9 @@
 <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
 @endpush
-@section('Welcome') 
+<!-- @section('Welcome') 
   <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection
+@endsection -->
 @section('PageTitle','List Projects')
 @section('content')
 <title>
