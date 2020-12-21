@@ -65,12 +65,12 @@
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
 			</td>	
 			<td>
-				<form method="POST" action="/engineer/handover/done">
+				<!-- <form method="POST" action="/engineer/handover/done">
 				@method('patch')
-				@csrf
-				<input type="hidden" value="{{ $project->id }}" name="id">
-					<button type="submit" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
-				</form>
+				@csrf -->
+				<!-- <input type="hidden" value="{{ $project->id }}" name="id"> -->
+					<button onclick="donehandover(id)" type="submit" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
+				<!-- </form> -->
 			</td>
 		</tr>
 		@endforeach
@@ -90,17 +90,79 @@
 	  });
 	});
 </script>
-<!-- <script>
-	$(document).ready(function() {
-	    $('#table1').DataTable( { 
-	      // pageSize: 8,     
-	        "pageLength": 10, 
-	         "searching": true,
-	         "paging": true,
-	         "info": false,         
-	         "lengthChange":false
-	           } );
-	} );
-</script> -->
 	
+<script>
+	function donehandover(id) {
+		event.preventDefault();
+
+		var idProj = id;
+
+		Swal.fire({
+		  title: 'Yakin handover sudah selesai?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+
+				$.ajax({
+					url: '/engineer/handover/done',
+					type: 'POST',
+					data: {
+						'_method': 'PATCH',
+						'id': idProj
+					},
+
+				success: function(response){
+					console.log(response);
+					// $('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Handover telah selesai',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top-end',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+				},
+
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
+	
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Semangat handover',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top-end',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#B4F5F0'
+			})
+		}
+		})
+	}
+	</script>
 

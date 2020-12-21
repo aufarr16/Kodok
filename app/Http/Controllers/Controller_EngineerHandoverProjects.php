@@ -42,15 +42,11 @@ class Controller_EngineerHandoverProjects extends Controller
     }
 
     public function handoverDone(Request $request){
-        // dd($request->id);
-
-        $project = $this->getProjectById($request->id);
+        $project = $this->getProjectById($request->input('id'));
 
         $project->id_current_pic = $project->id_original_pic;
         $project->status_handover = 0;
         $project->save();
-
-        return redirect('/engineer/handover');
     }
 
     public function getHandovertData($id){

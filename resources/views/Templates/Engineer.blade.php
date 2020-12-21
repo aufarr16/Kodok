@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -137,45 +138,6 @@
 })
 	</script>
 
-	<script>
-		function donehandover () {
-			Swal.fire({
-			  title: 'Yakin handover sudah selesai?',
-			  type: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: 'lightgrey',
-			  cancelButtonColor: 'dodgerblue',
-			  confirmButtonText: 'Ya',
-			  cancelButtonText: 'Tidak'
-			}).then((result)=>{
-				if(result.value){
-					Swal.fire({
-						title:'Handover telah selesai',
-						type:'success',
-						toast:true,
-						showConfirmButton:false,
-						position: 'top-end',
-						timer:1500,
-						timerProgressBar:true,
-						background:'#D4F1F4'
-					})
-
-				} else if (result.dismiss === 'cancel') {
-					Swal.fire({
-						title:'Semangat handover',
-						type:'info',
-						toast:true,
-						showConfirmButton:false,
-						position:'top-end',
-						grow:'row',
-						// timer:1500,
-						timerProgressBar:true,
-						background:'#B4F5F0'
-					})
-				}
-			})
-			}
-	</script>
 	<!-- <script>
 	  function uploadfile () {
 	      Swal.fire({
