@@ -34,7 +34,7 @@
 			<td>{{ $project->nama_project }}</td>
 			<td>{{ $project->tanggal_assign}}</td>
 			<td>
-				<form method="POST" action="/engineer/changestat">
+				<form method="POST" action="/engineer/projects/changestat">
 					@method('patch')
 					@csrf
 					<input type="hidden" value="{{ $project->id }}" name="id">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Projects_Stat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,16 @@ class Controller_EngineerHandoverProjects extends Controller
         $pstat = Projects_Stat::where('id', '!=', 1)->get();
 
     	return view('Pages.Engineer.View_EngineerHandoverProjects', compact('projects', 'pstat'));
+    }
+
+    public function changeStatus(Request $request){
+        // dd($request);
+
+        $project = Project::where('id', $request->id)->firstOrFail();
+        $project->id_pstat = $request->id_pstat;
+        $project->save();
+
+        return redirect('/engineer/handover');
     }
 
     public function getHandovertData($id){

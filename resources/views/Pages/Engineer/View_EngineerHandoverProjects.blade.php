@@ -5,12 +5,11 @@
 @section('PageTitle','Handover Projects')
 @section('content')
 <title>
-| {Engineer} Handover Projects
+	| {Engineer} Handover Projects
 </title>
 
   <div class="table-responsive-lg">
 	<table class="table1" id="table1">
-
 		<thead>
 			<tr>
 				<th>No</th>
@@ -36,16 +35,19 @@
 			<td>{{ $project->nama_project }}</td>
 			<td>{{ $project->tanggal_assign}}</td>
 			<td>
-				<div class="input-group">
-				<select class="custom-select" id="status_select" name="id_pstat">
-					<option value="" hidden>{{ $project->nama_pstat }}</option>
-					@foreach($pstat as $stat)
-						<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
-					@endforeach
-				</select>
-											
-				<button class="btn-ok" type="button">OK</button>
-				</div>
+				<form method="POST" action="/engineer/handover/changestat">
+					@method('patch')
+					@csrf
+					<input type="hidden" value="{{ $project->id }}" name="id">
+					<select class="custom-select"name="id_pstat">
+						<option value="" hidden>{{ $project->nama_pstat }}</option>
+						@foreach($pstat as $stat)
+							<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
+						@endforeach
+					</select>								
+			
+					<button class="btn-ok" type="submit">OK</button>
+				</form>
 			</td>
 			<td>{{ $project->pketerangan_status }}
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
