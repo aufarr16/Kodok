@@ -25,12 +25,15 @@ class Controller_EngineerYourProjects extends Controller
 
         if($request->id_pstat == 3){
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";
+            $project->id_pketerangan = 2;
         }
         else if($request->id_pstat == 4){
             $project->pketerangan_status = "Menunggu Approval Projek Done";
+            $project->id_pketerangan = 2;
         }
         else {
             $project->pketerangan_status = "";
+            $project->id_pketerangan = 1;
         }
         
         $project->save();
