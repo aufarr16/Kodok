@@ -23,7 +23,7 @@
 		<th>Jenis Project</th>
 		<th>Nama Project</th>
 		<th>Keterangan</th>
-		<th>Docs</th>
+		<!-- <th>Docs</th> -->
 		<th>Action</th>
 	</tr>
 	</thead>
@@ -51,7 +51,7 @@
       {data: 'nama_ptype', name: 'nama_ptype'},
       {data: 'nama_project', name: 'nama_project'},
       {data: 'pketerangan_status', name: 'pketerangan_status'},
-      {data: 'docs', name: 'docs'},
+      // {data: 'docs', name: 'docs'},
       {data: 'action', name: 'action'}
     ],
   });
