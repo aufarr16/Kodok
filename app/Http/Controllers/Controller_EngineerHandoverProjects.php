@@ -11,10 +11,8 @@ class Controller_EngineerHandoverProjects extends Controller
 {
     public function openPage(){
     	$userId = auth()->id();
-    	$projects = $this->getHandovertData($userId);
-        $pstat = Projects_Stat::where('id', '!=', 1)->get();
 
-    	return view('Pages.Engineer.View_EngineerHandoverProjects', compact('projects', 'pstat'));
+    	return view('Pages.Engineer.View_EngineerHandoverProjects');
     }
 
     public function changeStatus(Request $request){
@@ -47,6 +45,33 @@ class Controller_EngineerHandoverProjects extends Controller
         $project->id_current_pic = $project->id_original_pic;
         $project->status_handover = 0;
         $project->save();
+    }
+
+    public function dataTable()
+    {
+        $userId = auth()->id();
+        $project = $this->getHandovertData($userId);
+        $pstat = Projects_Stat::where('id', '!=', 1)->get();
+        return DataTables::of($project, $pstat)
+            ->addColumn('status', function($project){
+                return view('Layouts.StatusHandover',[
+                    'project'=> $project,
+                    'pstat' => $pstat
+                ]);
+            })
+            ->addColumn('keterangan', function($project){
+                return view('Layouts.KeteranganHandover',[
+                    'project'=> $project
+                ]);
+            })
+            ->addColumn('action', function($project){
+                return view('Layouts.ActionHandover',[
+                    'project'=> $project
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['status', 'keterangan', 'action'])
+            ->make(true);
     }
 
     public function getHandovertData($id){

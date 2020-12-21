@@ -68,6 +68,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Handover
 	Route::get('/engineer/handover', 'Controller_EngineerHandoverProjects@openPage');
+	Route::get('/engineer/handover/table', 'Controller_EngineerHandoverProjects@dataTable')->name('handover.table');
 	Route::patch('/engineer/handover/changestat', 'Controller_EngineerHandoverProjects@changeStatus');
 	Route::patch('/engineer/handover/done', 'Controller_EngineerHandoverProjects@handoverDone');
 

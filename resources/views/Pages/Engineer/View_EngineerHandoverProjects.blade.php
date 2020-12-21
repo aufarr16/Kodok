@@ -35,51 +35,12 @@
 			</tr>
 		</thead>
 
-		<tbody id="myTable">
-		@foreach($projects as $project)
-		<tr>
-			<td>{{ $loop->iteration }}</td>
-			<td>{{ $project->nama_product }}</td>
-			<td>{{ $project->nama_ptype }}</td>
-			<td>{{ $project->nama_mitra }}</td>
-			<td>{{ $project->nama_project }}</td>
-			<td>{{ $project->tanggal_assign}}</td>
-			<td style="width: 12%">
-				<form method="POST" action="/engineer/handover/changestat">
-					@method('patch')
-					@csrf
-					<input type="hidden" value="{{ $project->id }}" name="id">
-						<div class="input-group">
-							<select class="custom-select" name="id_pstat">
-								<option value="" hidden>{{ $project->nama_pstat }}</option>
-								@foreach($pstat as $stat)
-									<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
-								@endforeach  
-							</select>
-																
-						<button class="btn-ok" type="submit">OK</button>
-					</div>
-				</form>
-			</td>
-			<td style="width: 1%">{{ $project->pketerangan_status }}
-			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
-			</td>	
-			<td>
-				<!-- <form method="POST" action="/engineer/handover/done">
-				@method('patch')
-				@csrf -->
-				<!-- <input type="hidden" value="{{ $project->id }}" name="id"> -->
-					<button onclick="donehandover(id)" type="submit" class="btn-handover-done" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle fa-lg"></i></button>
-				<!-- </form> -->
-			</td>
-		</tr>
-		@endforeach
-		</tbody>
 	</table>
 <!-- table responsive -->
 </div>
 @endsection
 
+@push('scripts')
 <script>
 	$(document).ready(function(){
 	  $("#myInput").on("keyup", function() {
@@ -88,6 +49,32 @@
 	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 	    });
 	  });
+	});
+</script>
+
+<script>
+	console.log("draw table");
+	$('#table1').DataTable( { 
+	    "responsive": true,
+	    "processing": true,
+	    "serverSide": true,
+	    "pageLength": 10, 
+	    "searching": true,
+	    "paging": true,
+	    "info": false,         
+	    "lengthChange": false,
+	    ajax: "{{ route('handover.table') }}",
+	    columns: [
+	    	{data: 'DT_RowIndex', name: 'id'},
+	    	{data: 'nama_product', name: 'nama_product'},
+	    	{data: 'nama_ptype', name: 'nama_ptype'},
+	    	{data: 'nama_mitra', name: 'nama_mitra'},
+	    	{data: 'nama_project', name: 'nama_project'},
+	    	{data: 'tanggal_assign', name: 'tanggal_assign'},
+	    	{data: 'status', name: 'status'},
+	    	{data: 'keterangan', name: 'keterangan'},
+	    	{data: 'action', name: 'action'}
+	    ]
 	});
 </script>
 	
@@ -164,5 +151,5 @@
 		}
 		})
 	}
-	</script>
-
+</script>
+@endpush
