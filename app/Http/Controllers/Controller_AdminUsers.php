@@ -69,10 +69,12 @@ class Controller_AdminUsers extends Controller
     }
 
     public function edit($id){
-      $model = User::where('id', $id)->firstOrFail();
+    	$model = User::where('id', $id)->firstOrFail();
+      // $levels = Users_Level::all()->findOrFail()->toArray();
+      $levels = Users_Level::all()->pluck('nama_ulevel')->toArray();
       // dd($model);
 
-      return view('Layouts.FormUsers', compact('model'));
+      return view('Layouts.FormUsers', compact('model','levels'));
     }
 
     public function update(Request $request, $id){
@@ -94,12 +96,13 @@ class Controller_AdminUsers extends Controller
 		]);
 
     	$modified_by = Auth::user()->inisial_user;
-		$model = User::where('id', $id)->firstOrFail();
-		$model->inisial_user = $request->inisial_user;
-		$model->nama_user = $request->nama_user;
-        $model->id_ulevel = $request->id_ulevel;
-        $model->modified_by = $modified_by;
-        $model->save();
+    	$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
+			$model = User::where('id', $id)->firstOrFail();
+				$model->inisial_user = $request->inisial_user;
+				$model->nama_user = $request->nama_user;
+	      $model->id_ulevel = $level->id;
+	      $model->modified_by = $modified_by;
+	      $model->save();
     }
 
 	public function dataTable()
