@@ -25,8 +25,7 @@ class Controller_AdminUsers extends Controller
 
     public function create() {
 		$model = new User();
-		$levels = Users_Level::pluck('nama_ulevel','id');
-		// $levels = Users_Level::all()->pluck('id');
+		$levels = Users_Level::all()->pluck('nama_ulevel','id')->toArray();
 
 		return view('Layouts.FormUsers', compact('model', 'levels'));  
     }
@@ -52,11 +51,11 @@ class Controller_AdminUsers extends Controller
 		]);
 
 		$added_by = Auth::user()->inisial_user;
-		$level = Users_Level::where('nama_ulevel', $request->nama_ulevel)->get();
+		$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
 		User::create([
 			'nama_user' => $request->nama_user,
 			'inisial_user' => $request->inisial_user,
-			'id_ulevel' => $level->nama_ulevel,
+			'id_ulevel' => $level->id,
 			'email_user' => $request->email_user,
 			'added_by' => $added_by
 		]);
