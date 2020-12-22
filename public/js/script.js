@@ -294,6 +294,7 @@ $('body').on('click', '#button-submit', function(event){
 		method : method,
 		data : form.serialize(),
 		success : function(response){
+			console.log(response);
 			form.trigger('reset');
 			$('#modal').modal('hide');
 			$('#table1').DataTable().ajax.reload();
@@ -339,7 +340,7 @@ $('body').on('click', '.modal-show', function(event){
         dataType: 'html',
         success: function (response) {
             $('#modal-body').html(response); 
-            console.log($('#modal-body'));
+            // console.log($('#modal-body'));
         }
     });
 

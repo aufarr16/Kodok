@@ -1,4 +1,4 @@
-<form method="POST" action="/engineer/projects/changestat">
+<form method="POST" action="/engineer/handover/changestat">
 	@method('patch')
 	@csrf
 	<input type="hidden" value="{{ $project->id }}" name="id">
@@ -7,9 +7,9 @@
 			<option value="" hidden>{{ $project->nama_pstat }}</option>
 			@foreach($pstat as $stat)
 				<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
-			@endforeach
-		</select>								
-
+			@endforeach  
+		</select>
+												
 		<button class="btn-ok" type="submit">OK</button>
-	</div>	
+	</div>
 </form>

@@ -27,14 +27,16 @@ class Controller_AdminUsers extends Controller
 		$model = new User();
 		$levels = Users_Level::all()->pluck('nama_ulevel','id')->toArray();
 
-		return view('Layouts.FormUsers', compact('model','levels'));  
+		return view('Layouts.FormUsers', compact('model', 'levels'));  
     }
 
-	public function store(Request $request){	
+	public function store(Request $request){
+		dd($request);
+
 		$request->validate([
 			'inisial_user' => 'required|unique:users|min:3',
 			'nama_user' => 'required',
-			'id_ulevel' => 'required',
+			'nama_ulevel' => 'required',
 			'email_user' => 'required|email|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
@@ -42,7 +44,7 @@ class Controller_AdminUsers extends Controller
 				'inisial_user.unique' => 'Inisial sudah terdaftar',
 				'inisial_user.min' => 'Mohon isi inisial dengan benar (3 huruf)',
 			'nama_user.required' => 'Mohon isi Nama',
-			'id_ulevel.required' => 'Mohon isi Role',
+			'nama_ulevel.required' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.regex'=>'Mohon isi format email dengan benar (domain @artajasa.co.id)',
 				'email_user.unique'=>'Email sudah terdaftar oleh user lain',

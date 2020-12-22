@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use App\Project;
 use App\Projects_Stat;
-use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -55,7 +55,7 @@ class Controller_EngineerHandoverProjects extends Controller
         $pstat = Projects_Stat::where('id', '!=', 1)->get();
         return DataTables::of($project)
             ->addColumn('status', function($project) use ($pstat){
-                return view('Layouts.StatusProject',[
+                return view('Layouts.StatusHandover',[
                     'project'=> $project,
                     'pstat'=> $pstat
                 ]);
