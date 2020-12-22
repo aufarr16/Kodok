@@ -25,8 +25,8 @@ class Controller_AdminUsers extends Controller
 
     public function create() {
 		$model = new User();
-		// $levels = Users_Level::pluck('nama_ulevel','id');
-		$levels = Users_Level::all()->pluck('id');
+		$levels = Users_Level::pluck('nama_ulevel','id');
+		// $levels = Users_Level::all()->pluck('id');
 
 		return view('Layouts.FormUsers', compact('model','levels'));  
     }
@@ -68,8 +68,7 @@ class Controller_AdminUsers extends Controller
         return response()->json($userData);
     }
 
-    public function edit($id)
-    {
+    public function edit($id){
       $model = User::where('id', $id)->firstOrFail();
       // dd($model);
 

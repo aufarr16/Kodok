@@ -55,13 +55,13 @@ class Controller_EngineerHandoverProjects extends Controller
         $pstat = Projects_Stat::where('id', '!=', 1)->get();
         return DataTables::of($project)
             ->addColumn('status', function($project) use ($pstat){
-                return view('Layouts.StatusHandover',[
+                return view('Layouts.StatusProject',[
                     'project'=> $project,
                     'pstat'=> $pstat
                 ]);
             })
             ->addColumn('keterangan', function($project){
-                return view('Layouts.KeteranganHandover',[
+                return view('Layouts.KeteranganProject',[
                     'project'=> $project
                 ]);
             })
