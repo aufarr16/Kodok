@@ -5,7 +5,7 @@
 <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
 @endpush
 <!-- @section('Welcome') 
-  <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
+  <h4 style="float:right; margin-right:5px; margin-top:5px" >Welcome, {{ auth()->user()->nama_user }}</h4>
 @endsection -->
 @section('PageTitle','Approval Projects')
 @section('content')
@@ -14,20 +14,20 @@
 </title>
 	
 <div class="table-responsive-lg">
-<table class="table1" id="table1">
-	<thead>
-	<tr>
-		<th>No</th>
-		<th>Inisial</th>
-		<th>Produk</th>
-		<th>Jenis Project</th>
-		<th>Nama Project</th>
-		<th>Keterangan</th>
-		<!-- <th>Docs</th> -->
-		<th>Action</th>
-	</tr>
-	</thead>
-</table>
+  <table class="table1" id="table1">
+  	<thead>
+  	<tr>
+  		<th>No</th>
+  		<th>Inisial</th>
+  		<th>Produk</th>
+  		<th>Jenis Project</th>
+  		<th>Nama Project</th>
+  		<th>Keterangan</th>
+  		<!-- <th>Docs</th> -->
+  		<th>Action</th>
+  	</tr>
+  	</thead>
+  </table>
 </div>
 @endsection
 

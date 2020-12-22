@@ -88,6 +88,8 @@ Route::group(['middleware' => 'auth'], function(){
 	// Approval Project
 	Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
 	Route::get('/manager/approval/table', 'Controller_ManagerApprovalProjects@dataTable')->name('approval.table');
+	Route::get('/manager/approval/approve', 'Controller_ManagerApprovalProjects@openPage');
+	Route::get('/manager/approval/decline', 'Controller_ManagerApprovalProjects@openPage');
 
 	// Assign Project
 	Route::get('/manager/assign', 'Controller_ManagerAssignProjects@openPage');

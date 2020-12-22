@@ -61,7 +61,7 @@ function getHandoverData(id){
 }
 
 function deleteMitra(id){
-	console.log(id);
+	// console.log(id);
 	event.preventDefault();
 
 	var idDel = id;
@@ -133,7 +133,7 @@ function deleteMitra(id){
 }
 
 function deleteProduct(id){
-	console.log(id);
+	// console.log(id);
 	event.preventDefault();
 
 	var idDel = id;
@@ -205,7 +205,7 @@ function deleteProduct(id){
 }
 
 function deleteUser(id){
-	console.log(id);
+	// console.log(id);
 	event.preventDefault();
 
 	var idDel = id;
@@ -272,6 +272,107 @@ function deleteUser(id){
 				timerProgressBar:true,
 				background:'#B4F5F0'
 			})
+		}
+	})
+}
+
+function donehandover(id) {
+	event.preventDefault();
+
+	var idProj = id;
+
+	Swal.fire({
+	  title: 'Yakin handover sudah selesai?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'dodgerblue',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/engineer/handover/done',
+				type: 'POST',
+				data: {
+					'_method': 'PATCH',
+					'id': idProj
+				},
+
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Handover telah selesai',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top-end',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+			},
+
+			error: function(xhr){
+				Swal.fire({
+					type: 'error',
+					toast:true,
+					title: 'Oops...',
+					text: 'Something went wrong!',
+					timer: 4000,
+					background: 'bisque'
+				})
+			}
+		})
+
+	} else if (result.dismiss === 'cancel') {
+		Swal.fire({
+			title:'Semangat handover',
+			type:'info',
+			toast:true,
+			showConfirmButton:false,
+			position:'top-end',
+			grow:'row',
+			timer:1500,
+			timerProgressBar:true,
+			background:'#B4F5F0'
+		})
+	}
+	})
+}
+
+function approvalProject(id, type){
+	event.preventDefault();
+
+	var idProj = id;
+	var typeButton = type;
+
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
+	$.ajax({
+		url: '/manager/approval/approve/',
+		type: 'get',
+		data: {
+			'id': idProj
+		},
+
+		success: function(response){
+			// console.log(response);
+			var len = 0;
+
+			
 		}
 	})
 }

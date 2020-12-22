@@ -51,7 +51,7 @@ class Controller_EngineerHandoverProjects extends Controller
     public function dataTable()
     {
         $userId = auth()->id();
-        $project = $this->getHandovertData($userId);
+        $project = $this->getHandoverData($userId);
         $pstat = Projects_Stat::where('id', '!=', 1)->get();
         return DataTables::of($project)
             ->addColumn('status', function($project) use ($pstat){
@@ -75,7 +75,7 @@ class Controller_EngineerHandoverProjects extends Controller
             ->make(true);
     }
 
-    public function getHandovertData($id){
+    public function getHandoverData($id){
     	return DB::table('projects')
         ->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
         ->leftjoin('products', 'projects.id_product', '=', 'products.id')
