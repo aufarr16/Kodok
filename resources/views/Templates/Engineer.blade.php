@@ -20,6 +20,8 @@
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
   @stack('styles')
 </head>
 
@@ -94,7 +96,7 @@
 	
 	
 <!--   Core JS Files   -->
-<script src="{{ url('') }}/js/core/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script src="{{ url('') }}/js/core/popper.min.js"></script>
 <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
 <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -104,14 +106,17 @@
 <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script>
 <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
+<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script>
 <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
 <script src="{{ url('') }}/js/script.js"></script>
 
 @stack('scripts')
 
-	<!-- JS Search All -->
-	<script>
+<!-- JS Search All -->
+<script>
 	$(document).ready(function(){
 	  $("#myInput").on("keyup", function() {
 	    var value = $(this).val().toLowerCase();
@@ -120,24 +125,25 @@
 	    });
 	  });
 	});
-	</script>
-	<script>
+</script>
+
+<script>
 	$(document).ready(function () {
-	            $('#sidebarCollapse').on('click', function () {
-	                $('#sidebar').toggleClass('active');
-	            });
-	        });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
 
-	// Dropdown menu projects
-	$('.tree-toggle').click(function() {
-	    $(this).parent().children('ul.tree').toggle(300);
-	});
+		// Dropdown menu projects
+		$('.tree-toggle').click(function() {
+		    $(this).parent().children('ul.tree').toggle(300);
+		});
 
-	// Rotate icon dropdown
-	$(".rotate").click(function () {
-    $(this).toggleClass("fas fa-chevron-circle-down fas fa-chevron-circle-up");
-})
-	</script>
+		// Rotate icon dropdown
+		$(".rotate").click(function () {
+		$(this).toggleClass("fas fa-chevron-circle-down fas fa-chevron-circle-up");
+	})
+</script>
 
 	<!-- <script>
 	  function uploadfile () {

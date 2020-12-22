@@ -10,13 +10,13 @@
 	| {Engineer} Handover Projects
 </title>
 
-<div class="wrap">
+<!-- <div class="wrap">
    <div class="search">
      <div class=labelprojects>Search:</div>
       <input id="myInput" type="textprojects" style="margin-top: -10px; width: 165px">
      </button>
    </div>
-</div>
+</div> -->
 
   <div class="table-responsive-lg">
 	<table class="table1" id="table1">
