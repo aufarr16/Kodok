@@ -109,7 +109,7 @@
 
 				success: function(response){
 					console.log(response);
-					// $('#table1').DataTable().ajax.reload();
+					$('#table1').DataTable().ajax.reload();
 
 					Swal.fire({
 						title:'Handover telah selesai',
