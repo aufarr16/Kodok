@@ -71,10 +71,25 @@ class Controller_AdminUsers extends Controller
     }
 
     public function edit($id){
-      $model = User::where('id', $id)->firstOrFail();
-      // dd($model);
+    	$model = User::where('id', $id)->firstOrFail();
+      $levels = $this->getrole($id);
 
-      return view('Layouts.FormUsers', compact('model'));
+      return view('Layouts.FormUsers', compact('model','levels'));
+    }
+
+    public function getrole($id){
+    	$userid = $id;
+    	return DB::table('users_levels')
+      ->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
+      ->leftjoin('users', function($join) use ($userid) {
+      	$join->on('users.id_ulevel', '=', 'users_levels.id')
+      	->where('users.id',$userid);
+      })
+      ->groupBy('users_levels.id','users_levels.nama_ulevel')
+      ->orderBy('jml','DESC')
+      ->get()
+      ->pluck('nama_ulevel')
+      ->toArray();
     }
 
     public function update(Request $request, $id){
@@ -96,12 +111,13 @@ class Controller_AdminUsers extends Controller
 		]);
 
     	$modified_by = Auth::user()->inisial_user;
-		$model = User::where('id', $id)->firstOrFail();
-		$model->inisial_user = $request->inisial_user;
-		$model->nama_user = $request->nama_user;
-        $model->id_ulevel = $request->id_ulevel;
-        $model->modified_by = $modified_by;
-        $model->save();
+    	$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
+			$model = User::where('id', $id)->firstOrFail();
+				$model->inisial_user = $request->inisial_user;
+				$model->nama_user = $request->nama_user;
+	      $model->id_ulevel = $level->id;
+	      $model->modified_by = $modified_by;
+	      $model->save();
     }
 
 	public function dataTable()
