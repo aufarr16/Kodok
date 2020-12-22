@@ -51,7 +51,7 @@
     </ul>
   </div>
   sampai sini -->
-          <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp<a href="http://kodok.me/" style="color: black"><i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i></a>
+          <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp<a href="/logout" style="color: black"><i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i></a>
           </h4>
         </div>
         <div class="col-md-6">

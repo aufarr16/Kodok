@@ -78,4 +78,10 @@ class Controller_Login extends Controller
             return redirect("/")->withErrors('Username / Password yang Anda Masukkan Salah');
         }
     }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect('/');
+    }
 }
