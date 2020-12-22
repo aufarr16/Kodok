@@ -29,7 +29,11 @@
 		<div class ="input-group-addon">
 			<label for="nama_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
 				<br>
-				{!! Form::select('id_ulevel', $levels, ['class' => 'form-control']) !!}
+				 {!! Form::select('id_ulevel', $levels, array('id' => 'nama_ulevel',
+					    [
+					    'class' => 'form-control',
+					    ])) 
+				    !!}
 				<!-- {!! Form::select('id_ulevel', $levels, null,['class' => 'form-control']) !!} -->
 				<!-- {!! Form::text('id_ulevel', null,
 				['class'=>'form-control' .($errors->has('id_ulevel') ? 'is-invalid' : ''), 
