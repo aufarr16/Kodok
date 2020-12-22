@@ -23,6 +23,40 @@
 				<th>Docs</th>
 			</tr>
 		</thead>
+
+		<tbody id="myTable">
+		@foreach($projects as $project)
+		<tr>
+			<td>{{ $loop->iteration }}</td>
+			<td>{{ $project->nama_product }}</td>
+			<td>{{ $project->nama_ptype }}</td>
+			<td>{{ $project->nama_mitra }}</td>
+			<td>{{ $project->nama_project }}</td>
+			<td>{{ $project->tanggal_assign}}</td>
+			<td style="width: 12%">
+				<form method="POST" action="/engineer/projects/changestat">
+					@method('patch')
+					@csrf
+					<input type="hidden" value="{{ $project->id }}" name="id">
+					<div class="input-group">
+						<select class="custom-select" name="id_pstat">
+							<option value="" hidden>{{ $project->nama_pstat }}</option>
+							@foreach($pstat as $stat)
+								<option value="{{ $stat->id }}">{{ $stat->nama_pstat }}</option>
+							@endforeach
+						</select>								
+			
+						<button class="btn-ok" type="submit">OK</button>
+					</div>	
+				</form>
+			</td>
+			<td style="width: 1%">{{ $project->pketerangan_status }}
+			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
+			</td>	
+		</tr>
+		@endforeach
+		</tbody>
+
 		<tbody>
 		<tr>
 			<td>1</td>

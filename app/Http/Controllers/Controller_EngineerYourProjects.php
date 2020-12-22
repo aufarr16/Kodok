@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use App\Project;
 use App\Projects_Stat;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class Controller_EngineerYourProjects extends Controller
     public function changeStatus(Request $request){
         // dd($request);
 
-        $project = $this->getProjectById();
+        $project = $this->getProjectById($request->id);
         $project->id_pstat = $request->id_pstat;
 
         if($request->id_pstat == 3){
@@ -39,6 +40,28 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();
 
         return redirect('/engineer/projects');
+    }
+
+    public function dataTable()
+    {
+        $userId = auth()->id();
+        $project = $this->getProjectData($userId);
+        $pstat = Projects_Stat::where('id', '!=', 1)->get();
+        return DataTables::of($project)
+            ->addColumn('status', function($project) use ($pstat){
+                return view('Layouts.StatusProject',[
+                    'project'=> $project,
+                    'pstat'=> $pstat
+                ]);
+            })
+            ->addColumn('keterangan', function($project){
+                return view('Layouts.KeteranganProject',[
+                    'project'=> $project
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['status', 'keterangan'])
+            ->make(true);
     }
 
     public function getProjectData($id){

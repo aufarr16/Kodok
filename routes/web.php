@@ -78,6 +78,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Your Project
 	Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
+	Route::get('/engineer/projects/table', 'Controller_EngineerYourProjects@dataTable')->name('projects.table');
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 
 	##GUEST
