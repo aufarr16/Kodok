@@ -27,7 +27,7 @@
 	</div>
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
+			<label for="nama_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
 				<br>
 				{!! Form::select('id_ulevel', $levels, ['class' => 'form-control']) !!}
 				<!-- {!! Form::select('id_ulevel', $levels, null,['class' => 'form-control']) !!} -->

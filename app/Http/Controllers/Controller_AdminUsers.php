@@ -31,7 +31,7 @@ class Controller_AdminUsers extends Controller
 		return view('Layouts.FormUsers', compact('model','levels'));  
     }
 
-	public function store(Request $request){
+	public function store(Request $request){	
 		$request->validate([
 			'inisial_user' => 'required|unique:users|min:3',
 			'nama_user' => 'required',
@@ -50,10 +50,11 @@ class Controller_AdminUsers extends Controller
 		]);
 
 		$added_by = Auth::user()->inisial_user;
+		$level = Users_Level::where('nama_ulevel', $request->nama_ulevel)->get();
 		User::create([
 			'nama_user' => $request->nama_user,
 			'inisial_user' => $request->inisial_user,
-			'id_ulevel' => $request->id_ulevel,
+			'id_ulevel' => $level->nama_ulevel,
 			'email_user' => $request->email_user,
 			'added_by' => $added_by
 		]);
