@@ -72,11 +72,24 @@ class Controller_AdminUsers extends Controller
 
     public function edit($id){
     	$model = User::where('id', $id)->firstOrFail();
-      // $levels = Users_Level::all()->findOrFail()->toArray();
-      $levels = Users_Level::all()->pluck('nama_ulevel')->toArray();
-      // dd($model);
+      $levels = $this->getrole($id);
 
       return view('Layouts.FormUsers', compact('model','levels'));
+    }
+
+    public function getrole($id){
+    	$userid = $id;
+    	return DB::table('users_levels')
+      ->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
+      ->leftjoin('users', function($join) use ($userid) {
+      	$join->on('users.id_ulevel', '=', 'users_levels.id')
+      	->where('users.id',$userid);
+      })
+      ->groupBy('users_levels.id','users_levels.nama_ulevel')
+      ->orderBy('jml','DESC')
+      ->get()
+      ->pluck('nama_ulevel')
+      ->toArray();
     }
 
     public function update(Request $request, $id){
