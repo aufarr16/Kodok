@@ -478,4 +478,39 @@ $('body').on('click', '.modal-show', function(event){
     $('#modal').modal('show');
 });
 
-
+function gantistatus () {
+		Swal.fire({
+		  title: 'Yakin ganti status?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+		}).then((result)=>{
+			if(result.value){
+				Swal.fire({
+					title:'Status berhasil diganti',
+					type:'success',
+					toast:true,
+					showConfirmButton:false,
+					position: 'top',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D4F1F4'
+				})
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Status tidak terganti',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+	};
