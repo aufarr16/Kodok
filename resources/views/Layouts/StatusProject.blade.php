@@ -10,6 +10,6 @@
 			@endforeach
 		</select>								
 
-		<button class="btn-ok" type="submit">OK</button>
+		<button onclick="gantistatus()" class="btn-ok" type="submit">OK</button>
 	</div>	
 </form>
