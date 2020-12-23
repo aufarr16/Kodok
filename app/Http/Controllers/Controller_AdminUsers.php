@@ -103,7 +103,7 @@ class Controller_AdminUsers extends Controller
 		],
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
-				// 'inisial_user.unique' => 'Inisial sudah terdaftar',
+				'inisial_user.unique' => 'Inisial sudah terdaftar',
 				'inisial_user.min' => 'Mohon isi inisial dengan benar (3 huruf)',
 			'nama_user.required' => 'Mohon isi Nama',
 			'id_ulevel.required' => 'Mohon isi Role',
