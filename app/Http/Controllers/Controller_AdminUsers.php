@@ -94,20 +94,18 @@ class Controller_AdminUsers extends Controller
 
     public function update(Request $request, $id){
     	$request->validate([
-			'inisial_user' => 'required|unique:users|min:3',
+			'inisial_user' => 'required|min:3',
 			'nama_user' => 'required',
 			'id_ulevel' => 'required',
-			'email_user' => 'required|email|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
+			'email_user' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
-				'inisial_user.unique' => 'Inisial sudah terdaftar',
 				'inisial_user.min' => 'Mohon isi inisial dengan benar (3 huruf)',
 			'nama_user.required' => 'Mohon isi Nama',
 			'id_ulevel.required' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.regex'=>'Mohon isi format email dengan benar (domain @artajasa.co.id)',
-				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
 		]);
 
     	$modified_by = Auth::user()->inisial_user;
