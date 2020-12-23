@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,6 +11,40 @@ class Controller_ManagerApprovalProjects extends Controller
 {
     public function openPage(){
     	return view('Pages.Manager.View_ManagerApprovalProjects'); 	
+    }
+
+    public function approvalProject(Request $request){
+        $id = $request->input('id');
+        $type = $request->input('title');
+
+        // dd($id);
+
+        $project = Project::where('id', $id)->firstOrFail();
+        if($type == "Confirm Aproval"){
+            $pstat = $project->id_pstat;
+            if($pstat == 3){
+                $project->pketerangan_status = "Pengujian Done Approved";
+            }
+            else if($pstat == 4){
+                $project->pketerangan_status = "Projek Done Approved";
+            }
+
+            $project->id_pketerangan = 1;
+        }
+        else if($type == "Decline Approval"){
+            $pstat = $project->id_pstat;
+            if($pstat == 3){
+                $project->pketerangan_status = "Pengujian Done Declined";
+            }
+            else if($pstat == 4){
+                $project->pketerangan_status = "Projek Done Declined";
+            }
+
+            $project->id_pketerangan = 3;
+            $project->id_pstat = 2;
+        }
+
+        $project->save();
     }
 
     public function dataTable()

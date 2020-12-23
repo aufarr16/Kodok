@@ -306,7 +306,7 @@ function donehandover(id) {
 				},
 
 				success: function(response){
-					console.log(response);
+					// console.log(response);
 					$('#table1').DataTable().ajax.reload();
 
 					Swal.fire({
@@ -349,11 +349,12 @@ function donehandover(id) {
 	})
 }
 
-function approvalProject(id, type){
+function approveProject(id, title){
+	console.log("tes");
 	event.preventDefault();
 
 	var idProj = id;
-	var typeButton = type;
+	var titleButton = title;
 
 	$.ajaxSetup({
 		headers: {
@@ -362,17 +363,46 @@ function approvalProject(id, type){
 	});
 
 	$.ajax({
-		url: '/manager/approval/approve/',
-		type: 'get',
+		url: '/manager/approval/choose',
+		type: 'POST',
 		data: {
-			'id': idProj
+			'_method': 'PATCH',
+			'id': idProj,
+			'title': titleButton
 		},
 
 		success: function(response){
-			// console.log(response);
-			var len = 0;
+			console.log("success in");
+			$('#table1').DataTable().ajax.reload();
+		}
+	})
+}
 
-			
+function declineProject(id, title){
+	console.log("tes");
+	event.preventDefault();
+
+	var idProj = id;
+	var titleButton = title;
+
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
+	$.ajax({
+		url: '/manager/approval/choose',
+		type: 'POST',
+		data: {
+			'_method': 'PATCH',
+			'id': idProj,
+			'title': titleButton
+		},
+
+		success: function(response){
+			console.log("success in");
+			$('#table1').DataTable().ajax.reload();
 		}
 	})
 }

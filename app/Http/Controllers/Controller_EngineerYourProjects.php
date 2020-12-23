@@ -33,8 +33,10 @@ class Controller_EngineerYourProjects extends Controller
             $project->id_pketerangan = 2;
         }
         else {
-            $project->pketerangan_status = "";
-            $project->id_pketerangan = 1;
+            if($project->id_pketerangan != 3){
+                $project->pketerangan_status = "";
+                $project->id_pketerangan = 1;
+            }
         }
         
         $project->save();
