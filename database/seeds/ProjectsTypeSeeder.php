@@ -12,6 +12,24 @@ class ProjectsTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $intenaltest = Projects_Type::create([
+        	'nama_ptype' => 'Internal Test'
+        ]);
+
+        $sertifikasi = Projects_Type::create([
+        	'nama_ptype' => 'Sertifikasi'
+        ]);
+
+        $regresi = Projects_Type::create([
+        	'nama_ptype' => 'Regresi'
+        ]);
+
+        $support = Projects_Type::create([
+        	'nama_ptype' => 'Support'
+        ]);
+
+        $qa = Projects_Type::create([
+        	'nama_ptype' => 'QA'
+        ]);
     }
 }

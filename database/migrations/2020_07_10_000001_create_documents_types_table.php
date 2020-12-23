@@ -15,7 +15,7 @@ class CreateDocumentsTypesTable extends Migration
     {
         Schema::create('documents_types', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_DocType', 51);
+            $table->string('nama_dtype', 51);
         });
 
         //Schema::drop('dokumen');

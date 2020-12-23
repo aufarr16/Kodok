@@ -12,6 +12,24 @@ class UsersLevelSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $admin = Users_Level::create([
+        	'nama_ulevel' => 'Admin'
+        ]);
+
+        $manager = Users_Level::create([
+        	'nama_ulevel' => 'Manager'
+        ]);
+
+        $engineer = Users_Level::create([
+        	'nama_ulevel' => 'Engineer'
+        ]);
+
+        $guest = Users_Level::create([
+        	'nama_ulevel' => 'Guest'
+        ]);
+
+        $adminxeng = Users_Level::create([
+        	'nama_ulevel' => 'Admin x Engineer'
+        ]);
     }
 }

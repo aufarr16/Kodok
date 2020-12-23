@@ -12,6 +12,16 @@ class ProjectsKeteranganSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $approved = Projects_Keterangan::create([
+        	'nama_pketerangan' => 'Approved'
+        ]);
+
+        $menunggu = Projects_Keterangan::create([
+        	'nama_pketerangan' => 'Menunggu Approval'
+        ]);
+
+        $declined = Projects_Keterangan::create([
+        	'nama_pketerangan' => 'Decline'
+        ]);
     }
 }
