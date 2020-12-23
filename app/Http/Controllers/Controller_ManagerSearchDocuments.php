@@ -9,7 +9,13 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerSearchDocuments extends Controller
 {
     public function openPage(){
-    	return view('Pages.Manager.View_ManagerSearchDocuments'); 	
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 2){   
+            return view('Pages.Manager.View_ManagerSearchDocuments'); 
+        }
+        else{
+            return redirect('/logout');
+        }	
     }
 
     public function dataTable()

@@ -10,7 +10,13 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){
-    	return view('Pages.Manager.View_ManagerListProjects'); 	
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 2){
+            return view('Pages.Manager.View_ManagerListProjects');  
+        }
+        else{
+            return redirect('/logout');
+        }
     }
 
     public function dataTable()

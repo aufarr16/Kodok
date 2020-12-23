@@ -11,12 +11,17 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerAssignProjects extends Controller
 {
     public function openPage(){
-    	//return Mitra::all();
-    	$products = DB::select("select * from products order by nama_product asc");
-    	$mitras = DB::select("select * from mitras order by nama_mitra asc");
-    	$ptypes = DB::select("select * from projects_types order by nama_ptype asc");
-    	$users = DB::select("select * from users order by nama_user asc");
-    	return view('Pages.Manager.View_ManagerAssignProjects', compact('users','products','mitras','ptypes')); 	
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 2){
+            $products = DB::select("select * from products order by nama_product asc");
+            $mitras = DB::select("select * from mitras order by nama_mitra asc");
+            $ptypes = DB::select("select * from projects_types order by nama_ptype asc");
+            $users = DB::select("select * from users order by nama_user asc");
+            return view('Pages.Manager.View_ManagerAssignProjects', compact('users','products','mitras','ptypes'));
+        }
+        else{
+            return redirect('/logout');
+        }
     }
 
     public function storeNew(Request $request){
