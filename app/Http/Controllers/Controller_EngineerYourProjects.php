@@ -21,14 +21,14 @@ class Controller_EngineerYourProjects extends Controller
     public function changeStatus(Request $request){
         // dd($request);
 
-        $project = $this->getProjectById($request->id);
-        $project->id_pstat = $request->id_pstat;
+        $project = $this->getProjectById($request->input('id'));
+        $project->id_pstat = $request->input('pstat');
 
-        if($request->id_pstat == 3){
+        if($request->input('pstat') == 3){
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";
             $project->id_pketerangan = 2;
         }
-        else if($request->id_pstat == 4){
+        else if($request->input('pstat') == 4){
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
         }
@@ -40,8 +40,6 @@ class Controller_EngineerYourProjects extends Controller
         }
         
         $project->save();
-
-        return redirect('/engineer/projects');
     }
 
     public function dataTable()
@@ -68,7 +66,7 @@ class Controller_EngineerYourProjects extends Controller
 
     public function getProjectData($id){
     	return DB::table('projects')
-    	->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
+    	->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects.id_pstat, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
     	->leftjoin('products', 'projects.id_product', '=', 'products.id')
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')

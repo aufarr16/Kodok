@@ -321,17 +321,17 @@ function donehandover(id) {
 					})
 			},
 
-			error: function(xhr){
-				Swal.fire({
-					type: 'error',
-					toast:true,
-					title: 'Oops...',
-					text: 'Something went wrong!',
-					timer: 4000,
-					background: 'bisque'
-				})
-			}
-		})
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
 
 	} else if (result.dismiss === 'cancel') {
 		Swal.fire({
@@ -350,7 +350,7 @@ function donehandover(id) {
 }
 
 function approveProject(id, title){
-	console.log("tes");
+	// console.log("tes");
 	event.preventDefault();
 
 	var idProj = id;
@@ -379,7 +379,7 @@ function approveProject(id, title){
 }
 
 function declineProject(id, title){
-	console.log("tes");
+	// console.log("tes");
 	event.preventDefault();
 
 	var idProj = id;
@@ -406,6 +406,81 @@ function declineProject(id, title){
 		}
 	})
 }
+
+function changeStatusProject(id){
+	// console.log("tes changeStatus");
+	event.preventDefault();
+
+	var idProj = id;
+	var select = document.getElementById(idProj);
+	var pstat = select.value;	
+
+	Swal.fire({
+	  title: 'Yakin ganti status? ( ͡° ͜ʖ ͡°)',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'dodgerblue',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/engineer/projects/changestat',
+				type: 'POST',
+				data: {
+					'_method': 'PATCH',
+					'id': idProj,
+					'pstat': pstat
+				},
+
+				success: function(response){
+					// console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Status berhasil diganti',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+					})
+				},
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Status tidak terganti',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#D2FBA4'
+			})
+		}
+	})
+};
 
 $('body').on('click', '#button-submit', function(event){
 	event.preventDefault();
@@ -478,39 +553,3 @@ $('body').on('click', '.modal-show', function(event){
     $('#modal').modal('show');
 });
 
-function gantistatus () {
-		Swal.fire({
-		  title: 'Yakin ganti status?',
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
-		  confirmButtonText: 'Ya',
-		  cancelButtonText: 'Tidak'
-		}).then((result)=>{
-			if(result.value){
-				Swal.fire({
-					title:'Status berhasil diganti',
-					type:'success',
-					toast:true,
-					showConfirmButton:false,
-					position: 'top',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D4F1F4'
-				})
-			} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Status tidak terganti',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top',
-					grow:'row',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D2FBA4'
-				})
-			}
-		})
-	};
