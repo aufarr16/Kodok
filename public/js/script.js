@@ -440,61 +440,60 @@ function declineProject(id, title){
 		  cancelButtonText: 'Tidak'
 			}).then((result)=>{
 				if(result.value){
+					$.ajaxSetup({
+						headers: {
+							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+						}
+					});
 
-	$.ajaxSetup({
-		headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
+					$.ajax({
+						url: '/manager/approval/choose',
+						type: 'POST',
+						data: {
+							'_method': 'PATCH',
+							'id': idProj,
+							'title': titleButton
+						},
 
-	$.ajax({
-		url: '/manager/approval/choose',
-		type: 'POST',
-		data: {
-			'_method': 'PATCH',
-			'id': idProj,
-			'title': titleButton
-		},
-
-		success: function(response){
-			console.log("success in");
-			$('#table1').DataTable().ajax.reload();
-			Swal.fire({
-				title:'Project declined',
-				type:'success',
-				toast:true,
-				showConfirmButton:false,
-				position: 'top',
-				timer:1500,
-				timerProgressBar:true,
-				background:'#D4F1F4'
-				})
-			},
-				error: function(xhr){
+						success: function(response){
+							console.log("success in");
+							$('#table1').DataTable().ajax.reload();
+							Swal.fire({
+								title:'Project declined',
+								type:'success',
+								toast:true,
+								showConfirmButton:false,
+								position: 'top',
+								timer:1500,
+								timerProgressBar:true,
+								background:'#D4F1F4'
+								})
+							},
+								error: function(xhr){
+									Swal.fire({
+										type: 'error',
+										toast:true,
+										title: 'Oops...',
+										text: 'Something went wrong!',
+										timer: 4000,
+										background: 'bisque'
+									})
+								}
+						})
+				} else if (result.dismiss === 'cancel') {
 					Swal.fire({
-						type: 'error',
+						title:'Project menunggu approval',
+						type:'info',
 						toast:true,
-						title: 'Oops...',
-						text: 'Something went wrong!',
-						timer: 4000,
-						background: 'bisque'
+						showConfirmButton:false,
+						position:'top',
+						grow:'row',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D2FBA4'
 					})
 				}
 			})
-	} else if (result.dismiss === 'cancel') {
-				Swal.fire({
-					title:'Project menunggu approval',
-					type:'info',
-					toast:true,
-					showConfirmButton:false,
-					position:'top',
-					grow:'row',
-					timer:1500,
-					timerProgressBar:true,
-					background:'#D2FBA4'
-				})
-			}
-		})
 };
 
 function changeStatusProject(id){
