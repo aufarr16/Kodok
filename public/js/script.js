@@ -347,7 +347,7 @@ function donehandover(id) {
 		})
 	}
 	})
-}
+};
 
 function approveProject(id, title){
 	// console.log("tes");
@@ -356,27 +356,63 @@ function approveProject(id, title){
 	var idProj = id;
 	var titleButton = title;
 
-	$.ajaxSetup({
-		headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
+		Swal.fire({
+		  title: 'Yakin approve project ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+			}).then((result)=>{
+				if(result.value){
+				$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
 
-	$.ajax({
-		url: '/manager/approval/choose',
-		type: 'POST',
-		data: {
-			'_method': 'PATCH',
-			'id': idProj,
-			'title': titleButton
-		},
+				$.ajax({
+					url: '/manager/approval/choose',
+					type: 'POST',
+					data: {
+						'_method': 'PATCH',
+						'id': idProj,
+						'title': titleButton
+					},
 
-		success: function(response){
-			console.log("success in");
-			$('#table1').DataTable().ajax.reload();
-		}
-	})
-}
+					success: function(response){
+						console.log("success in");
+						$('#table1').DataTable().ajax.reload();
+						Swal.fire({
+						title:'Project approved',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+						})
+					}
+				})
+				
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Project menunggu approval',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+};
+
 
 function declineProject(id, title){
 	// console.log("tes");
@@ -385,6 +421,17 @@ function declineProject(id, title){
 	var idProj = id;
 	var titleButton = title;
 
+	Swal.fire({
+		  title: 'Yakin decline project ini?',
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: 'lightgrey',
+		  cancelButtonColor: 'dodgerblue',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak'
+			}).then((result)=>{
+				if(result.value){
+
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -403,9 +450,33 @@ function declineProject(id, title){
 		success: function(response){
 			console.log("success in");
 			$('#table1').DataTable().ajax.reload();
+			Swal.fire({
+				title:'Project declined',
+				type:'success',
+				toast:true,
+				showConfirmButton:false,
+				position: 'top',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#D4F1F4'
+				})
 		}
 	})
-}
+	} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Project menunggu approval',
+					type:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+};
 
 function changeStatusProject(id){
 	// console.log("tes changeStatus");
