@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\DB;
 class Controller_AdminArchiveDocuments extends Controller
 {
     public function openPage(){
-    	return view('Pages.Admin.View_AdminArchiveDocuments');
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 1 || $userLevel == 5){
+            return view('Pages.Admin.View_AdminArchiveDocuments');
+        }
+        else{
+            return redirect('/logout');
+        }
+
     }
 
     public function dataTable()

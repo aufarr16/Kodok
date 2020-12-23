@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\DB;
 class Controller_EngineerYourProjects extends Controller
 {
     public function openPage(){
-    	$userId = auth()->id();
-    	$projects = $this->getProjectData($userId);
-        $pstat = Projects_Stat::where('id', '!=', 1)->get();
-
-    	return view('Pages.Engineer.View_EngineerYourProjects', compact('projects', 'pstat'));
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 3 || $userLevel == 5){
+            return view('Pages.Engineer.View_EngineerYourProjects');
+        }
+        else{
+            return redirect('/logout');
+        }
     }
 
     public function changeStatus(Request $request){

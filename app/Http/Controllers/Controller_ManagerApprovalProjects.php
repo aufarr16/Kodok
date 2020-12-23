@@ -10,7 +10,13 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerApprovalProjects extends Controller
 {
     public function openPage(){
-    	return view('Pages.Manager.View_ManagerApprovalProjects'); 	
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 2){
+            return view('Pages.Manager.View_ManagerApprovalProjects');  
+        }
+        else{
+            return redirect('/logout');
+        }
     }
 
     public function approvalProject(Request $request){
