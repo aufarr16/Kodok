@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Auth;
 class Controller_AdminSearchDocuments extends Controller
 {
     public function openPage(){
-        $user = Auth::user();
-        // dd($user['nama_user']);
-    	return view('Pages.Admin.View_AdminSearchDocuments');
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 1 || $userLevel == 5){
+            return view('Pages.Admin.View_AdminSearchDocuments');
+        }
+        else{
+            return redirect('/logout');
+        }
     }
     
     public function dataTable()
