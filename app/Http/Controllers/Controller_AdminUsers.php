@@ -94,11 +94,12 @@ class Controller_AdminUsers extends Controller
 
     public function update(Request $request, $id){
     	$request->validate([
-			// 'inisial_user' => "required|min:3|unique:users,inisial_user, $id",
-    	// 'inisial_user' => 'required|min:3|unique:users,inisial_user,',
+			// 'inisial_user' => 'required|min:3|unique:users,inisial_user,' .$id,
+    	'inisial_user' => 'required|min:3|unique:users,inisial_user,',
 			'nama_user' => 'required',
 			'id_ulevel' => 'required',
 			'email_user' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
+			// 'email_user' => 'required|unique:users,email,'.$id '|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
