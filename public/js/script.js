@@ -394,9 +394,18 @@ function approveProject(id, title){
 						timerProgressBar:true,
 						background:'#D4F1F4'
 						})
-					}
-				})
-				
+					},
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
 			} else if (result.dismiss === 'cancel') {
 				Swal.fire({
 					title:'Project menunggu approval',
@@ -460,8 +469,18 @@ function declineProject(id, title){
 				timerProgressBar:true,
 				background:'#D4F1F4'
 				})
-		}
-	})
+			},
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
 	} else if (result.dismiss === 'cancel') {
 				Swal.fire({
 					title:'Project menunggu approval',
