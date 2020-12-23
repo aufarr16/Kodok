@@ -11,9 +11,14 @@ use Illuminate\Support\Facades\DB;
 class Controller_EngineerHandoverProjects extends Controller
 {
     public function openPage(){
-    	$userId = auth()->id();
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 3 || $userLevel == 5){
+            return view('Pages.Engineer.View_EngineerHandoverProjects');
+        }
+        else{
+            return redirect('/logout');
+        }
 
-    	return view('Pages.Engineer.View_EngineerHandoverProjects');
     }
 
     public function handoverDone(Request $request){
