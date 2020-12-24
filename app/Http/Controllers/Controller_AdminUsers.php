@@ -79,27 +79,27 @@ class Controller_AdminUsers extends Controller
 
     public function getrole($id){
     	$userid = $id;
+
     	return DB::table('users_levels')
-      ->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
-      ->leftjoin('users', function($join) use ($userid) {
-      	$join->on('users.id_ulevel', '=', 'users_levels.id')
-      	->where('users.id',$userid);
-      })
-      ->groupBy('users_levels.id','users_levels.nama_ulevel')
-      ->orderBy('jml','DESC')
-      ->get()
-      ->pluck('nama_ulevel')
-      ->toArray();
+      	->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
+      	->leftjoin('users', function($join) use ($userid) {
+      		$join->on('users.id_ulevel', '=', 'users_levels.id')
+      		->where('users.id',$userid);
+      	})
+      	->groupBy('users_levels.id','users_levels.nama_ulevel')
+      	->orderBy('jml','DESC')
+      	->get()
+      	->pluck('nama_ulevel')
+      	->toArray();
     }
 
     public function update(Request $request, $id){
     	$request->validate([
-			// 'inisial_user' => 'required|min:3|unique:users,inisial_user,' .$id,
-    	'inisial_user' => 'required|min:3|unique:users,inisial_user,',
+			'inisial_user' => "required|min:3|unique:users,inisial_user, " . $id,
+    		// 'inisial_user' => 'required|min:3|unique:users,inisial_user,',
 			'nama_user' => 'required',
 			'id_ulevel' => 'required',
 			'email_user' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
-			// 'email_user' => 'required|unique:users,email,'.$id '|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
@@ -114,12 +114,12 @@ class Controller_AdminUsers extends Controller
 
     	$modified_by = Auth::user()->inisial_user;
     	$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
-			$model = User::where('id', $id)->firstOrFail();
-				$model->inisial_user = $request->inisial_user;
-				$model->nama_user = $request->nama_user;
-	      $model->id_ulevel = $level->id;
-	      $model->modified_by = $modified_by;
-	      $model->save();
+		$model = User::where('id', $id)->firstOrFail();
+		$model->inisial_user = $request->inisial_user;
+		$model->nama_user = $request->nama_user;
+	    $model->id_ulevel = $level->id;
+	    $model->modified_by = $modified_by;
+	    $model->save();
     }
 
 	public function dataTable()
