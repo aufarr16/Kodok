@@ -72,7 +72,7 @@ class Controller_AdminUsers extends Controller
 
     public function edit($id){
     	$model = User::where('id', $id)->firstOrFail();
-      $levels = $this->getrole($id);
+    	$levels = $this->getrole($id);
 
       return view('Layouts.FormUsers', compact('model','levels'));
     }
@@ -96,14 +96,13 @@ class Controller_AdminUsers extends Controller
     public function update(Request $request, $id){
     	$request->validate([
 			'inisial_user' => "required|min:3|unique:users,inisial_user, " . $id,
-    		// 'inisial_user' => 'required|min:3|unique:users,inisial_user,',
 			'nama_user' => 'required',
 			'id_ulevel' => 'required',
 			'email_user' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
-				// 'inisial_user.unique' => 'Inisial sudah terdaftar',
+				'inisial_user.unique' => 'Inisial sudah terdaftar',
 				'inisial_user.min' => 'Mohon isi inisial dengan benar (3 huruf)',
 			'nama_user.required' => 'Mohon isi Nama',
 			'id_ulevel.required' => 'Mohon isi Role',
