@@ -654,7 +654,7 @@ background-color: transparent;
   cursor: pointer; /* Mouse pointer on hover */
   border: 0;
   transition: background 0.3s ease-in;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 .btnproject:hover{

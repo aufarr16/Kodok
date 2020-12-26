@@ -46,7 +46,7 @@
 <div class="role">
   <h3 class="title">Admin</h3>
   <div class="chooserole">
-    <a href="/admin/searchdocs">
+    <a href="/admin/users">
       <div class="content-overlay"></div>
       <img class="content-image" src="{{ url('') }}/img/email.svg">
       <div class="content-details fadeIn-top">

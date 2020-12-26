@@ -64,11 +64,11 @@
               <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
             </a>
           </li>
-          <li class="{{ Request::is('manager/searchdocs') ? 'active' : '' }}">
+          <!-- <li class="{{ Request::is('manager/searchdocs') ? 'active' : '' }}">
             <a href="/manager/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
 

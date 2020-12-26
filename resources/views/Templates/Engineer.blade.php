@@ -46,11 +46,11 @@
 <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar">
         <ul class="list-unstyled components mb-5">
-		  		<li class="{{ Request::is('engineer/doctools') ? 'active' : '' }}">
+		  		<!-- <li class="{{ Request::is('engineer/doctools') ? 'active' : '' }}">
             <a href="/engineer/doctools">
               <span class="fas fa-file-alt mr-2"></span>Documents & Tools
             </a>
-          </li>
+          </li> -->
           <li>
           	<a class="tree-toggle nav-header d-flex">
           			<span class="fas fa-clipboard-list ">&nbsp Projects</span>
@@ -61,11 +61,11 @@
 	              <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/handover">Handover</a></li>
 	            </ul>
           </li>
-          <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
+          <!-- <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
             <a href="/engineer/searchdocs">
               <span class="fa fa-search mr-2"></span>Search Documents
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
 

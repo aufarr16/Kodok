@@ -65,8 +65,8 @@
     <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
       <ul class="list-unstyled components mb-5">
-      	<li class="{{ Request::is('admin/archive') ? 'active' : '' }}">
-         <!-- <li class="{{ 'admin/archive' == request()->path() ? 'active' : '' }} "> -->
+      	<!-- <li class="{{ Request::is('admin/archive') ? 'active' : '' }}">
+         <!- <li class="{{ 'admin/archive' == request()->path() ? 'active' : '' }} "> --
 					<a href="/admin/archive" >
 						<span class="fa fa-book mr-2"></span>Archive Documents
 					</a>
@@ -75,7 +75,7 @@
             <a href="/admin/searchdocs">
              <span class="fa fa-search mr-2"></span>Search Documents
             </a>
-          </li>
+          </li> -->
           <li class="{{ Request::is('admin/users') ? 'active' : '' }}">
 						<a href="/admin/users">
 							<span class="fas fa-users mr-2"></span>Users

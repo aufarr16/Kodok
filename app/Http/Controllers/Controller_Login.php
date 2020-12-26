@@ -61,7 +61,7 @@ class Controller_Login extends Controller
             if(Auth::attempt($credentials)){    //auth laravel
                 switch($user->id_ulevel){
                     case '1':
-                        return redirect('/admin/searchdocs');
+                        return redirect('/admin/users');
                     case '2':
                         return redirect('/manager/home');
                     case '3':
