@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
             ProjectsKeteranganSeeder::class,
             ProjectsStatSeeder::class,
             ProjectsTypeSeeder::class,
-            UserSeeder::class,
             UsersLevelSeeder::class,
+            UserSeeder::class,
         ]);
         
     }

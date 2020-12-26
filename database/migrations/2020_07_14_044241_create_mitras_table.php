@@ -17,7 +17,7 @@ class CreateMitrasTable extends Migration
             $table->id();
             $table->char('ABA', 13);
             $table->string('nama_mitra', 51);
-            $table->string('added_by', 3)->nullable();
+            $table->string('added_by', 5);
             $table->string('modified_by', 3)->nullable();
         });
     }

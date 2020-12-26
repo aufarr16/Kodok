@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email_user', 50);
             $table->string('inisial_user', 3)->unique();
             $table->string('password')->nullable();
-            $table->string('added_by', 3)->nullable();
+            $table->string('added_by', 5);
             $table->string('modified_by', 3)->nullable();
             $table->string('remember_token')->nullable();
             $table->boolean('status_user');
