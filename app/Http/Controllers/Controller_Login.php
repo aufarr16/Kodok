@@ -17,7 +17,13 @@ class Controller_Login extends Controller
     }
     
     public function openChooseLogin(){
-    	return view('View_Login5ChooseRole'); 	
+        $userLevel = auth()->user()->id_ulevel;
+        if($userLevel == 5){
+            return view('View_Login5ChooseRole');   
+        }
+        else{
+            return redirect('/logout');
+        }
     }
 
     public function authenticate(Request $request){
