@@ -31,8 +31,6 @@ class Controller_AdminUsers extends Controller
     }
 
 	public function store(Request $request){
-		dd($request);
-
 		$request->validate([
 			'inisial_user' => 'required|unique:users|min:3',
 			'nama_user' => 'required',
@@ -64,10 +62,14 @@ class Controller_AdminUsers extends Controller
 	}
 
     public function destroy($id){
-        User::where('id', $id)->delete();
-        $userData['data'] = User::orderby("id", "asc")->get();
+    	if(auth()->id() != $id){
+    		User::where('id', $id)->delete();
+    	}
 
-        return response()->json($userData);
+    	$userData['data'] = User::orderby("id", "asc")->get();
+
+	    return response()->json($userData);
+        
     }
 
     public function edit($id){

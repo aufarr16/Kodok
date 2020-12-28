@@ -46,6 +46,10 @@ class Controller_Login extends Controller
             $hashedpassword = Hash::make($password);
 
             $user = User::where('email_user', $email)->first();
+            if($user == null){  //redirect data tidak terdaftar
+                return redirect("/")->withErrors('Username / Password yang Anda Masukkan Salah');
+            }
+            
             // if($user == null){  //insert new guest data
             //     $user = User::create([
             //         'id_ulevel' => '4',
