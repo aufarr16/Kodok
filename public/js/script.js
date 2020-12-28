@@ -31,6 +31,17 @@ function getHandoverData(id){
 				}
 			}
 		}
+
+		error: function(xhr){
+			Swal.fire({
+				type: 'error',
+				toast:true,
+				title: 'Oops...',
+				text: 'Something went wrong!',
+				timer: 4000,
+				background: 'bisque'
+			})
+		}
 	})
 
 	$.ajax({
@@ -56,6 +67,17 @@ function getHandoverData(id){
 					$("#PIChandover").append(option);
 				}
 			}
+		}
+
+		error: function(xhr){
+			Swal.fire({
+				type: 'error',
+				toast:true,
+				title: 'Oops...',
+				text: 'Something went wrong!',
+				timer: 4000,
+				background: 'bisque'
+			})
 		}
 	})
 }
@@ -395,17 +417,18 @@ function approveProject(id, title){
 						background:'#D4F1F4'
 						})
 					},
-				error: function(xhr){
-					Swal.fire({
-						type: 'error',
-						toast:true,
-						title: 'Oops...',
-						text: 'Something went wrong!',
-						timer: 4000,
-						background: 'bisque'
-					})
-				}
-			})
+
+					error: function(xhr){
+						Swal.fire({
+							type: 'error',
+							toast:true,
+							title: 'Oops...',
+							text: 'Something went wrong!',
+							timer: 4000,
+							background: 'bisque'
+						})
+					}
+				})
 			} else if (result.dismiss === 'cancel') {
 				Swal.fire({
 					title:'Project menunggu approval',
@@ -469,17 +492,18 @@ function declineProject(id, title){
 								background:'#D4F1F4'
 								})
 							},
-								error: function(xhr){
-									Swal.fire({
-										type: 'error',
-										toast:true,
-										title: 'Oops...',
-										text: 'Something went wrong!',
-										timer: 4000,
-										background: 'bisque'
-									})
-								}
-						})
+
+						error: function(xhr){
+							Swal.fire({
+								type: 'error',
+								toast:true,
+								title: 'Oops...',
+								text: 'Something went wrong!',
+								timer: 4000,
+								background: 'bisque'
+							})
+						}
+					})
 				} else if (result.dismiss === 'cancel') {
 					Swal.fire({
 						title:'Project menunggu approval',
@@ -544,6 +568,7 @@ function changeStatusProject(id){
 						background:'#D4F1F4'
 					})
 				},
+				
 				error: function(xhr){
 					Swal.fire({
 						type: 'error',
@@ -595,15 +620,15 @@ $('body').on('click', '#button-submit', function(event){
 			$('#table1').DataTable().ajax.reload();
 
 			Swal({
-			toast: true,
-			position: 'top-end',
-			showConfirmButton: false,
-			timer: 4000,
-			background: '#a3ffa3',
-			type: 'success',
-			text: 'Data berhasil disimpan',
-			timerProgressBar: true,
-		})
+				toast: true,
+				position: 'top-end',
+				showConfirmButton: false,
+				timer: 4000,
+				background: '#a3ffa3',
+				type: 'success',
+				text: 'Data berhasil disimpan',
+				timerProgressBar: true,
+			})
 		},
 		error : function(xhr){
 			var resp = xhr.responseJSON;

@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
 
 	##Admin
+	Route::get('/admin', 'Controller_AdminUsers@openPage');
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
@@ -64,6 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('/admin/updateuser/{id}', 'Controller_AdminUsers@update')->name('users.update');
 
 	##Engineer
+	Route::get('/engineer', 'Controller_EngineerYourProjects@openPage');
 	// Doc Tools
 	Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
 
@@ -82,9 +84,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 
 	##GUEST
+	Route::get('/guest', 'Controller_GuestSearchDocuments@openPage');
 	Route::get('/guest/searchdocs', 'Controller_GuestSearchDocuments@openPage');
 
 	##Manager
+	Route::get('/manager', 'Controller_ManagerHome@openAllDataPage');
 	// Approval Project
 	Route::get('/manager/approval', 'Controller_ManagerApprovalProjects@openPage');
 	Route::get('/manager/approval/table', 'Controller_ManagerApprovalProjects@dataTable')->name('approval.table');

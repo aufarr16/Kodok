@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class Controller_AdminUsers extends Controller
 {
 	public function openPage(){
-		return view('Pages.Admin.View_AdminUsers');
+		$userLevel = auth()->user()->id_ulevel;
+		if($userLevel == 1 || $userLevel == 5){
+            return view('Pages.Admin.View_AdminUsers');
+        }
+        else{
+            return redirect('/logout');
+        }
 	}
 
 	  /**
@@ -70,10 +76,14 @@ class Controller_AdminUsers extends Controller
 	}
 
     public function destroy($id){
-        User::where('id', $id)->delete();
-        $userData['data'] = User::orderby("id", "asc")->get();
+    	if(auth()->id() != $id){
+    		User::where('id', $id)->delete();
+    	}
 
-        return response()->json($userData);
+    	$userData['data'] = User::orderby("id", "asc")->get();
+
+	    return response()->json($userData);
+        
     }
 
     public function edit($id){
