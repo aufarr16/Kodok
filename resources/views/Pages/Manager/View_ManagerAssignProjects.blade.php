@@ -114,7 +114,7 @@
         <div class="form-group">
           <label for="nama_project" style="font-weight:bolder">Nama Project</label>
           <br>
-          <input class="form-control @error('nama_project') is-invalid @enderror" type="text" id="nama_project" name="nama_project" autocomplete="off">
+          <input class="form-control @error('nama_project') is-invalid @enderror" type="text" id="nama_project" name="nama_project" autocomplete="off" value="{{ old('nama_project') }}">
             <span class="underline"></span>
             @error('nama_project')
               <div class="invalid-feedback flash" style="margin-top: 2px">
