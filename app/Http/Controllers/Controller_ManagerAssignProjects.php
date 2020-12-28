@@ -59,13 +59,13 @@ class Controller_ManagerAssignProjects extends Controller
         // return $request;
 
         $request->validate([
-            'id_user' => 'required',
-            'id_project' => 'required',
+            'PIC2' => 'required',
+            'nama_project2' => 'required',
             'PIChandover' => 'required',
         ],
         $message = [
-            'id_user.required' => 'Mohon pilih PIC Utama',
-            'id_project.required' => 'Mohon pilih project',
+            'PIC2.required' => 'Mohon pilih PIC Utama',
+            'nama_project2.required' => 'Mohon pilih project',
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
