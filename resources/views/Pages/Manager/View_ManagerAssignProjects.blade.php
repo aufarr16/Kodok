@@ -135,7 +135,7 @@
           <label for="PIC2" style="font-weight:bolder">PIC</label>
             <br>
             <div class="@error('PIC2') is-invalid @enderror">
-              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user" onchange="getHandoverData(id)">
+              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="PIC2" onchange="getHandoverData(id)">
               <option value=""></option>
               @foreach($users as $usr)
                 @if (old('PIC2') == $usr->id)
