@@ -35,10 +35,12 @@ class Controller_AdminProducts extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'nama_product' => 'required',
+            'nama_product' => 'required|max:24|regex:/^[a-zA-Z]*$/',
         ],
         $message = [
-            'nama_product.required' => 'Mohon isi Nama Products'
+            'nama_product.required' => 'Mohon isi Nama Products',
+                'nama_product.max' => 'Nama Products maksimal 24 huruf',
+                'nama_product.regex' => 'Nama Products hanya boleh berisi huruf',
         ]);
 
         $added_by = Auth::user()->inisial_user;
@@ -65,10 +67,12 @@ class Controller_AdminProducts extends Controller
 
     public function update(Request $request, $id){
         $request->validate([
-            'nama_product' => 'required',
+            'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
         $message = [
-            'nama_product.required' => 'Mohon isi Nama Products'
+            'nama_product.required' => 'Mohon isi Nama Products',
+                'nama_product.max' => 'Nama Products maksimal 24 huruf',
+                'nama_product.regex' => 'Nama Products hanya boleh berisi huruf',
         ]);
 
         $modified_by = Auth::user()->inisial_user;
