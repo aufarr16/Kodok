@@ -187,6 +187,10 @@ class Controller_ManagerHome extends Controller
     }
 
     public function toPercent($part, $total){
+        if($total == 0){
+            $total = 1;
+        }
+
         return number_format(($part*100)/$total, 2, '.', ',');
     }
 }
