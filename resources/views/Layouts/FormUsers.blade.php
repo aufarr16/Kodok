@@ -14,6 +14,7 @@
 				!!}		
 		</div>
 	</div>
+
 	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="nama_user" style="font-weight:bolder" style="margin-top: -30px">Nama</label>
@@ -26,17 +27,6 @@
 		</div>
 	</div>
 
-	<div class="form-group">
-		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
-				<br>
-				 {!! Form::select('id_ulevel', $levels, array('id' => 'nama_ulevel',
-					    [
-					    'class' => 'form-control',
-					    ])) 
-				    !!}
-		</div>
-	</div>
 
 	<div class="form-group">
 		<div class ="input-group-addon">
@@ -50,4 +40,17 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<div class ="input-group-addon">
+			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
+				<br>
+				 {!! Form::select(
+				 	'id_ulevel',
+				 	$levels, array('id' => 'nama_ulevel', null,
+					    [
+					    'class' => 'form-control',
+					    ])) 
+				    !!}
+		</div>
+	</div>
 {!! Form::close() !!}

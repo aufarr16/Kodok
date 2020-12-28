@@ -25,7 +25,7 @@ class Controller_AdminUsers extends Controller
 
     public function create() {
 		$model = new User();
-		$levels = Users_Level::all()->pluck('nama_ulevel','id')->prepend('Pilih Role')->toArray();
+		$levels = Users_Level::all()->pluck('nama_ulevel','id')->prepend("Pilih Role")->toArray();
 
 		return view('Layouts.FormUsers', compact('model', 'levels'));  
     }
@@ -36,9 +36,10 @@ class Controller_AdminUsers extends Controller
 		$request->validate([
 			'inisial_user' => 'required|unique:users|max:3|min:3',
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
-			'nama_ulevel' => 'required',
+			'nama_ulevel' => 'required_if:id_ulevel,0',
 			'email_user' => 'required|max:50|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/|'
 		],
+
 		$message = [
 			'inisial_user.required' => 'Mohon isi Inisial',
 				'inisial_user.unique' => 'Inisial sudah terdaftar',
@@ -48,13 +49,12 @@ class Controller_AdminUsers extends Controller
 				'nama_user.max' => 'Nama maksimal 50 huruf',
 				'nama_user.regex' => 'Nama hanya boleh berisi huruf',
 				'nama_user.string' => 'Nama hanya boleh berisi huruf',
-			'nama_ulevel.required' => 'Mohon isi Role',
+			'nama_ulevel.required_if' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.max' => 'Email maksimal 50 huruf',
 				'email_user.regex'=>'Mohon isi email dengan benar dan hanya berisi huruf (domain @artajasa.co.id)',
 				'email_user.unique'=>'Email sudah terdaftar oleh user lain',
 		]);
-
 
 		$added_by = Auth::user()->inisial_user;
 		$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
@@ -103,7 +103,7 @@ class Controller_AdminUsers extends Controller
     	$request->validate([
 			'inisial_user' => "required|min:3||max:3|unique:users,inisial_user, " . $id,
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
-			'id_ulevel' => 'required',
+			'nama_ulevel' => 'required_if:id_ulevel,0',
 			'email_user' => 'required|max:50|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
@@ -114,7 +114,7 @@ class Controller_AdminUsers extends Controller
 			'nama_user.required' => 'Mohon isi Nama',
 				'nama_user.max' => 'Nama maksimal 50 huruf',
 				'nama_user.regex' => 'Nama hanya boleh berisi huruf',
-			'id_ulevel.required' => 'Mohon isi Role',
+			'nama_ulevel.required_if' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.alpha' => 'Email hanya boleh berisi huruf',
 				'email_user.max' => 'Email maksimal 50 huruf',

@@ -34,7 +34,7 @@
           <label for="id_user" style="font-weight:bolder">PIC</label>
           <br>
           <div class="@error('id_user') is-invalid @enderror">
-            <select id="id_user" class="js-states form-control @error ('id_product') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
+            <select id="id_user" class="js-states form-control @error ('id_user') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
               <option value="" hidden>PIC</option>
               @foreach($users as $usr)
                 @if (old('id_user') == $usr->id)
