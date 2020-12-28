@@ -47,7 +47,7 @@ class Controller_AdminMitra extends Controller
               'ABA.max' => 'Mohon isi ABA maksimal 13 angka',
               'ABA.unique'=>'ABA sudah terdaftar',
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
-                'nama_mitra.max' => 'Nama Mitra terlalu panjang (maks. 51 huruf)',
+                'nama_mitra.max' => 'Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => 'Nama Mitra hanya boleh berisi huruf',
         ]);
 
@@ -91,7 +91,7 @@ class Controller_AdminMitra extends Controller
               'ABA.min' => 'Mohon isi ABA minimal 3 angka',
               'ABA.max' => 'Mohon isi ABA maksimal 13 angka',
             'nama_mitra.required' => 'Mohon isi Nama Mitra',
-                'nama_mitra.max' => 'Nama Mitra terlalu panjang (maks. 51 huruf)',
+                'nama_mitra.max' => 'Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => 'Nama Mitra hanya boleh berisi huruf',
         ]);
 
