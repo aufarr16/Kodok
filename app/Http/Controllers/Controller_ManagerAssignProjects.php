@@ -32,7 +32,7 @@ class Controller_ManagerAssignProjects extends Controller
             'id_product' => 'required',
             'id_ptype' => 'required',
             'id_mitra' => 'required',
-            'nama_project' => 'required',
+            'nama_project' => 'required|max:201',
         ],
         $message = [
             'id_user.required' => 'Mohon pilih PIC',
@@ -40,6 +40,7 @@ class Controller_ManagerAssignProjects extends Controller
             'id_ptype.required' => 'Mohon pilih jenis project',
             'id_mitra.required' => 'Mohon pilih nama mitra',
             'nama_project.required' => 'Mohon isi nama project',
+                'nama_project.max' => 'Nama project max 201 kata',
         ]);
 
         $newproject = Project::create([

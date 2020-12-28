@@ -73,7 +73,7 @@
         <div class="form-group">
           <label for="id_ptype" style="font-weight:bolder">Jenis Project</label>
           <br>
-          <div class="@error('id_user') is-invalid @enderror">
+          <div class="@error('id_ptype') is-invalid @enderror">
             <select id="id_ptype" class="js-states form-control @error ('id_ptype') is-invalid @enderror" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
               <option value=""></option>
               @foreach($ptypes as $ptype)
@@ -138,14 +138,14 @@
               <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user" onchange="getHandoverData(id)">
               <option value=""></option>
               @foreach($users as $usr)
-                @if (old('id_user') == $usr->id)
+                @if (old('PIC2') == $usr->id)
                   <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
                 @else 
                   <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
                 @endif
               @endforeach
             </select>
-             @error('id_user')
+             @error('PIC2')
               <div class="invalid-feedback flash" style="margin-top: 2px">
                 {{ $message }}</div>
             @enderror
@@ -155,11 +155,11 @@
         <div class="form-group">
           <label for="nama_project2" style="font-weight:bolder">Nama project</label>
             <br>
-            <div class="@error('PIChandover') is-invalid @enderror">
-              <select id="nama_project2" class="js-states form-control @error('PIChandover') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+            <div class="@error('nama_project2') is-invalid @enderror">
+              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
                 <option value=""></option>
               </select>
-                @error('PIChandover')
+                @error('nama_project2')
                   <div class="invalid-feedback flash" style="margin-top: 2px">
                     {{ $message }}</div>
                 @enderror
@@ -170,11 +170,11 @@
           <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
             <br>
             <div class="@error('PIChandover') is-invalid @enderror">
-              <select id="PIChandover" class="js-states form-control @error('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC Handover" style="width:100%" name="PIChandover">
+              <select id="PIChandover" class="js-states form-control @error('PIChandover') is-invalid @enderror" data-placeholder="Pilih PIC Handover" style="width:100%" name="PIChandover">
                 <option value=""></option>
                 
               </select>
-               @error('id_user')
+               @error('PIChandover')
                 <div class="invalid-feedback flash" style="margin-top: 2px">
                   {{ $message }}</div>
               @enderror
