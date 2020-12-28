@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class Controller_AdminUsers extends Controller
 {
 	public function openPage(){
-		return view('Pages.Admin.View_AdminUsers');
+		$userLevel = auth()->user()->id_ulevel;
+		if($userLevel == 1 || $userLevel == 5){
+            return view('Pages.Admin.View_AdminUsers');
+        }
+        else{
+            return redirect('/logout');
+        }
 	}
 
 	  /**
