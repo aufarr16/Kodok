@@ -30,7 +30,7 @@ function getHandoverData(id){
 					$("#nama_project2").append(option);
 				}
 			}
-		}
+		},
 
 		error: function(xhr){
 			Swal.fire({
@@ -67,7 +67,7 @@ function getHandoverData(id){
 					$("#PIChandover").append(option);
 				}
 			}
-		}
+		},
 
 		error: function(xhr){
 			Swal.fire({
