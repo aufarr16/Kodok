@@ -45,7 +45,7 @@
 			<label for="nama_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
 				<br>
 				{!! Form::select('nama_ulevel', $levels, null, array(
-				    'class' => 'form-control',
+				    'class' => 'form-control selectrole',
 				    'id' => 'nama_ulevel', 
 				    )) 
 				!!}
