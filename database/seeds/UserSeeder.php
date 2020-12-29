@@ -95,7 +95,7 @@ class UserSeeder extends Seeder
         $user11 = User::create([
         	'id_ulevel' => 5,
         	'nama_user' => 'Devi Mayang Sari',
-        	'email_user' => 'devi.sari@artaja.co.id',
+        	'email_user' => 'devi.sari@artajasa.co.id',
         	'inisial_user' => 'DMR',
         	'added_by' => 'Kodok',
         ]);

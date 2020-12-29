@@ -69,7 +69,6 @@ class Controller_ManagerAssignProjects extends Controller
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-
         $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail(); 
         $handoveredproject->id_current_pic = $request->PIChandover;
         $handoveredproject->status_handover = 1;
