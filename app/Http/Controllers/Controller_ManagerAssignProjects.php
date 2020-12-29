@@ -55,9 +55,7 @@ class Controller_ManagerAssignProjects extends Controller
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }
 
-    public function storeHandover(Request $request){    
-        // return $request;
-
+    public function storeHandover(Request $request){ 
         $request->validate([
             'PIC2' => 'required',
             'nama_project2' => 'required',
