@@ -57,17 +57,17 @@ class Controller_ManagerAssignProjects extends Controller
 
     public function storeHandover(Request $request){ 
         $request->validate([
-            'PIC2' => 'required',
+            'id_user' => 'required',
             'nama_project2' => 'required',
             'PIChandover' => 'required',
         ],
         $message = [
-            'PIC2.required' => 'Mohon pilih PIC Utama',
+            'id_user.required' => 'Mohon pilih PIC Utama',
             'nama_project2.required' => 'Mohon pilih project',
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-        $handoveredproject = Project::where('id', $request->id_project)->firstOrFail(); 
+        $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail(); 
         $handoveredproject->id_current_pic = $request->PIChandover;
         $handoveredproject->status_handover = 1;
         $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;
@@ -75,7 +75,7 @@ class Controller_ManagerAssignProjects extends Controller
 
         $newhandover = Projects_Handover::create([
             'id_user' => $request->PIChandover,
-            'id_project' => $request->id_project,
+            'id_project' => $request->nama_project2,
             'handover_order' => $handoveredproject->handover_counter
         ]);
 

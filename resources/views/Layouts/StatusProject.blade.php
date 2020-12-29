@@ -6,5 +6,5 @@
 		@endforeach
 	</select>								
 
-	<button id="{{ $project->id }}" onclick="changeStatusProject(id)" class="btn-ok" type="submit">OK</button>
+	<button id="{{ $project->id }}" onclick="changeStatusProject(id)" class="btn-ok" type="submit" >OK</button>
 </div>	

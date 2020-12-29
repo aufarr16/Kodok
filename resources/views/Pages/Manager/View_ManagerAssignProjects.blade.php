@@ -135,10 +135,10 @@
           <label for="PIC2" style="font-weight:bolder">PIC</label>
             <br>
             <div class="@error('PIC2') is-invalid @enderror">
-              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="PIC2" onchange="getHandoverData(id)">
+              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user" onchange="getHandoverData(id)">
               <option value=""></option>
               @foreach($users as $usr)
-                @if (old('PIC2') == $usr->id)
+                @if (old('id_user') == $usr->id)
                   <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
                 @else 
                   <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
@@ -156,7 +156,7 @@
           <label for="nama_project2" style="font-weight:bolder">Nama project</label>
             <br>
             <div class="@error('nama_project2') is-invalid @enderror">
-              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="nama_project2">
                 <option value=""></option>
               </select>
                 @error('nama_project2')
