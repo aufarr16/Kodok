@@ -38,9 +38,9 @@ class Controller_AdminProducts extends Controller
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z]*$/',
         ],
         $message = [
-            'nama_product.required' => 'Mohon isi Nama Products',
-                'nama_product.max' => 'Nama Products maksimal 24 huruf',
-                'nama_product.regex' => 'Nama Products hanya boleh berisi huruf',
+            'nama_product.required' => ' Mohon isi Nama Products',
+                'nama_product.max' => ' Nama Products maksimal 24 huruf',
+                'nama_product.regex' => ' Nama Products hanya boleh berisi huruf',
         ]);
 
         $added_by = Auth::user()->inisial_user;
@@ -70,9 +70,9 @@ class Controller_AdminProducts extends Controller
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
         $message = [
-            'nama_product.required' => 'Mohon isi Nama Products',
-                'nama_product.max' => 'Nama Products maksimal 24 huruf',
-                'nama_product.regex' => 'Nama Products hanya boleh berisi huruf',
+            'nama_product.required' => ' Mohon isi Nama Products',
+                'nama_product.max' => ' Nama Products maksimal 24 huruf',
+                'nama_product.regex' => ' Nama Products hanya boleh berisi huruf',
         ]);
 
         $modified_by = Auth::user()->inisial_user;
