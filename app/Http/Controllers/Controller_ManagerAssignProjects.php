@@ -69,7 +69,7 @@ class Controller_ManagerAssignProjects extends Controller
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-        $handoveredproject = Project::where('id', $request->id_project)->firstOrFail(); 
+        $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail(); 
         $handoveredproject->id_current_pic = $request->PIChandover;
         $handoveredproject->status_handover = 1;
         $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;
@@ -77,7 +77,7 @@ class Controller_ManagerAssignProjects extends Controller
 
         $newhandover = Projects_Handover::create([
             'id_user' => $request->PIChandover,
-            'id_project' => $request->id_project,
+            'id_project' => $request->nama_project2,
             'handover_order' => $handoveredproject->handover_counter
         ]);
 

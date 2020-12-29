@@ -156,7 +156,7 @@
           <label for="nama_project2" style="font-weight:bolder">Nama project</label>
             <br>
             <div class="@error('nama_project2') is-invalid @enderror">
-              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="id_project">
+              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="nama_project2">
                 <option value=""></option>
               </select>
                 @error('nama_project2')
