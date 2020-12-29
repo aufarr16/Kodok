@@ -23,8 +23,8 @@
 			<th>PIC</th>
 			<th>Role</th>
 			<th>Action</th>
-			<th>Add By</th>
-			<th>Modify By</th>
+			<th>Added By</th>
+			<th>Modified By</th>
 		</tr>
 	</thead>
 </table>
