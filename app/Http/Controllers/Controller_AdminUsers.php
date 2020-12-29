@@ -37,12 +37,10 @@ class Controller_AdminUsers extends Controller
     }
 
 	public function store(Request $request){
-		// dd($request);
-
 		$request->validate([
 			'inisial_user' => 'required|unique:users|max:3|min:3',
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
-			'nama_ulevel' => 'required_if:id_ulevel,0',
+			'nama_ulevel' => 'gt:0',
 			'email_user' => 'required|max:50|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/|'
 		],
 
@@ -55,7 +53,7 @@ class Controller_AdminUsers extends Controller
 				'nama_user.max' => 'Nama maksimal 50 huruf',
 				'nama_user.regex' => 'Nama hanya boleh berisi huruf',
 				'nama_user.string' => 'Nama hanya boleh berisi huruf',
-			'nama_ulevel.required_if' => 'Mohon isi Role',
+			'nama_ulevel.gt' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.max' => 'Email maksimal 50 huruf',
 				'email_user.regex'=>'Mohon isi email dengan benar dan hanya berisi huruf (domain @artajasa.co.id)',
@@ -63,7 +61,7 @@ class Controller_AdminUsers extends Controller
 		]);
 
 		$added_by = Auth::user()->inisial_user;
-		$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
+		$level = Users_Level::where('id', $request->nama_ulevel)->firstOrFail();
 		User::create([
 			'nama_user' => $request->nama_user,
 			'inisial_user' => $request->inisial_user,
@@ -72,7 +70,7 @@ class Controller_AdminUsers extends Controller
 			'added_by' => $added_by
 		]);
 		
-		return redirect('/admin/users')->with('success','Data User berhasil disimpan');
+		return redirect('/admin/users');
 	}
 
     public function destroy($id){
@@ -88,9 +86,9 @@ class Controller_AdminUsers extends Controller
 
     public function edit($id){
     	$model = User::where('id', $id)->firstOrFail();
-    	$levels = $this->getrole($id);
+    	$levels = $this->getrole($id); 
 
-      return view('Layouts.FormUsers', compact('model','levels'));
+      	return view('Layouts.FormUsers', compact('model','levels'));
     }
 
     public function getrole($id){
@@ -105,7 +103,7 @@ class Controller_AdminUsers extends Controller
       	->groupBy('users_levels.id','users_levels.nama_ulevel')
       	->orderBy('jml','DESC')
       	->get()
-      	->pluck('nama_ulevel')
+      	->pluck('nama_ulevel', 'id')
       	->toArray();
     }
 
@@ -113,7 +111,7 @@ class Controller_AdminUsers extends Controller
     	$request->validate([
 			'inisial_user' => "required|min:3||max:3|unique:users,inisial_user, " . $id,
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
-			'nama_ulevel' => 'required_if:id_ulevel,0',
+			'nama_ulevel' => 'gt:0',
 			'email_user' => 'required|max:50|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
 		],
 		$message = [
@@ -124,7 +122,7 @@ class Controller_AdminUsers extends Controller
 			'nama_user.required' => 'Mohon isi Nama',
 				'nama_user.max' => 'Nama maksimal 50 huruf',
 				'nama_user.regex' => 'Nama hanya boleh berisi huruf',
-			'nama_ulevel.required_if' => 'Mohon isi Role',
+			'nama_ulevel.get' => 'Mohon isi Role',
 			'email_user.required' => 'Mohon isi Email',
 				'email_user.alpha' => 'Email hanya boleh berisi huruf',
 				'email_user.max' => 'Email maksimal 50 huruf',
@@ -133,7 +131,7 @@ class Controller_AdminUsers extends Controller
 		]);
 
     	$modified_by = Auth::user()->inisial_user;
-    	$level = Users_Level::where('id', $request->id_ulevel)->firstOrFail();
+    	$level = Users_Level::where('id', $request->nama_ulevel)->firstOrFail();
 		$model = User::where('id', $id)->firstOrFail();
 		$model->inisial_user = $request->inisial_user;
 		$model->nama_user = $request->nama_user;

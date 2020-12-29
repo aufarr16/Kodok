@@ -42,15 +42,13 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
+			<label for="nama_ulevel" style="font-weight:bolder" style="margin-top: -30px">Role</label>
 				<br>
-				 {!! Form::select(
-				 	'id_ulevel',
-				 	$levels, array('id' => 'nama_ulevel', null,
-					    [
-					    'class' => 'form-control',
-					    ])) 
-				    !!}
+				{!! Form::select('nama_ulevel', $levels, null, array(
+				    'class' => 'form-control',
+				    'id' => 'nama_ulevel', 
+				    )) 
+				!!}
 		</div>
 	</div>
 {!! Form::close() !!}
