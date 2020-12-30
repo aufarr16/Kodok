@@ -116,7 +116,7 @@ class MitraSeeder extends Seeder
 
         $mitra18 = Mitra::create([
         	'ABA' => '087',
-        	'nama_mitra' => 'Bank HSBC Indonesis',
+        	'nama_mitra' => 'Bank HSBC Indonesia',
         	'added_by' => 'Kodok',
         ]);
 
@@ -373,7 +373,7 @@ class MitraSeeder extends Seeder
         ]);
 
         $mitra61 = Mitra::create([
-        	'ABA' => '345',
+        	'ABA' => '945',
         	'nama_mitra' => 'Bank AGRIS',
         	'added_by' => 'Kodok',
         ]);
@@ -547,7 +547,7 @@ class MitraSeeder extends Seeder
         ]);
 
         $mitra90 = Mitra::create([
-        	'ABA' => '867',
+        	'ABA' => '699',
         	'nama_mitra' => 'BPR Eka',
         	'added_by' => 'Kodok',
         ]);
@@ -570,46 +570,178 @@ class MitraSeeder extends Seeder
         	'added_by' => 'Kodok',
         ]);
 
-        // $mitra94 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra94 = Mitra::create([
+        	'ABA' => '014',
+        	'nama_mitra' => 'BCA',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra95 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra95 = Mitra::create([
+        	'ABA' => '999992',
+        	'nama_mitra' => 'AMEX',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra96 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra96 = Mitra::create([
+        	'ABA' => '999991',
+        	'nama_mitra' => 'JCB',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra97 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra97 = Mitra::create([
+        	'ABA' => '999993',
+        	'nama_mitra' => 'Union Pay',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra98 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra98 = Mitra::create([
+        	'ABA' => '999994',
+        	'nama_mitra' => 'MEPS',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra99 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra99 = Mitra::create([
+        	'ABA' => '600101',
+        	'nama_mitra' => 'BPR Hasamitra',
+        	'added_by' => 'Kodok',
+        ]);
 
-        // $mitra100 = Mitra::create([
-        // 	'ABA' => '',
-        // 	'nama_mitra' => '',
-        // 	'added_by' => 'Kodok',
-        // ]);
+        $mitra100 = Mitra::create([
+        	'ABA' => '999000',
+        	'nama_mitra' => 'Non ATMB',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra101 = Mitra::create([
+        	'ABA' => '157',
+        	'nama_mitra' => 'Bank Maspion',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra102 = Mitra::create([
+        	'ABA' => '567',
+        	'nama_mitra' => 'Bank Harda',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra103 = Mitra::create([
+        	'ABA' => '360002',
+        	'nama_mitra' => 'Kartu Rintis',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra104 = Mitra::create([
+        	'ABA' => '600100',
+        	'nama_mitra' => 'BPR Supra Artapersada/LSB',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra105 = Mitra::create([
+        	'ABA' => '789',
+        	'nama_mitra' => 'Indosat Dompetku',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra106 = Mitra::create([
+        	'ABA' => '558',
+        	'nama_mitra' => 'BPR Semoga Jaya Artha',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra107 = Mitra::create([
+        	'ABA' => '052',
+        	'nama_mitra' => 'ABN Amro',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra108 = Mitra::create([
+        	'ABA' => '93600912',
+        	'nama_mitra' => 'QR OVO',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra109 = Mitra::create([
+        	'ABA' => '93600911',
+        	'nama_mitra' => 'QR TCASH',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra110 = Mitra::create([
+        	'ABA' => '93600914',
+        	'nama_mitra' => 'QR BCA',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra111 = Mitra::create([
+        	'ABA' => '93600009',
+        	'nama_mitra' => 'QR BNI',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra112 = Mitra::create([
+        	'ABA' => '93600916',
+        	'nama_mitra' => 'QR Maybank',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra113 = Mitra::create([
+        	'ABA' => '93600013',
+        	'nama_mitra' => 'QR Permata',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra114 = Mitra::create([
+        	'ABA' => '93600014',
+        	'nama_mitra' => 'QR Gopay',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra115 = Mitra::create([
+        	'ABA' => '93600022',
+        	'nama_mitra' => 'QR Niaga',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra116 = Mitra::create([
+        	'ABA' => '93600002',
+        	'nama_mitra' => 'QR BRI',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra117 = Mitra::create([
+        	'ABA' => '93600898',
+        	'nama_mitra' => 'QR Telkom',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra118 = Mitra::create([
+        	'ABA' => '93600153',
+        	'nama_mitra' => 'QR Sinarmas',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra119 = Mitra::create([
+        	'ABA' => '93600008',
+        	'nama_mitra' => 'QR Mandiri',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra120 = Mitra::create([
+        	'ABA' => '93600111',
+        	'nama_mitra' => 'QR DKI',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra121 = Mitra::create([
+        	'ABA' => '93600011',
+        	'nama_mitra' => 'QR Danamon',
+        	'added_by' => 'Kodok',
+        ]);
+
+        $mitra122 = Mitra::create([
+        	'ABA' => '93600503',
+        	'nama_mitra' => 'QR Nobu',
+        	'added_by' => 'Kodok',
+        ]);
     }
 }
