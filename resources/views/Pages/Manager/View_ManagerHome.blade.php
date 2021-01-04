@@ -292,6 +292,7 @@
   var prdnprod = [];
   var holdprod = [];
   var dropprod = [];
+  var mntrprod = [];
   var psprpslength = (pstatperprod.length/prods.length);
 
   for(var i=0; i<prods.length; i++){
@@ -302,23 +303,28 @@
     for(var j=0;j<prods.length; j++){
       var k = (i*prods.length) + j; 
 
-      if(k < 1*prods.length){
-        resvprod.push(pstatperprod[k].jumlah_project);
-      }
-      else if(k >= 1*prods.length && k < 2*prods.length){
-        progprod.push(pstatperprod[k].jumlah_project);
-      }
-      else if(k >= 2*prods.length && k < 3*prods.length){
-        pgdnprod.push(pstatperprod[k].jumlah_project);
-      }
-      else if(k >= 3*prods.length && k < 4*prods.length){
-        prdnprod.push(pstatperprod[k].jumlah_project);
-      }
-      else if(k >= 4*prods.length && k < 5*prods.length){
-        holdprod.push(pstatperprod[k].jumlah_project);
-      }
-      else if(k >= 5*prods.length && k < 6*prods.length){
-        dropprod.push(pstatperprod[k].jumlah_project);
+      switch(i){
+        case 0:
+          resvprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 1:
+          progprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 2:
+          pgdnprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 3:
+          mntrprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 4:
+          prdnprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 5:
+          holdprod.push(pstatperprod[k].jumlah_project);
+          break;
+        case 6:
+          dropprod.push(pstatperprod[k].jumlah_project);
+          break;
       }
     }
   }
@@ -408,6 +414,13 @@
       borderWidth: 0,
       // pointPlacement: 0.2
 
+    }, {
+      name: 'Monitoring',
+      data: mntrprod,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+
     }]
     });
 // ###########################################################################################################################################################
@@ -422,6 +435,7 @@
   var prdnptype = [];
   var holdptype = [];
   var dropptype = [];
+  var mntrptype = [];
   var psptlength = (pstatperptype.length/ptypes.length);
 
   for(var i=0; i<ptypes.length; i++){
@@ -432,23 +446,28 @@
     for(var j=0;j<ptypes.length; j++){
       var k = (i*ptypes.length) + j; 
 
-      if(k < 1*ptypes.length){
-        resvptype.push(pstatperptype[k].jumlah_project);
-      }
-      else if(k >= 1*ptypes.length && k < 2*ptypes.length){
-        progptype.push(pstatperptype[k].jumlah_project);
-      }
-      else if(k >= 2*ptypes.length && k < 3*ptypes.length){
-        pgdnptype.push(pstatperptype[k].jumlah_project);
-      }
-      else if(k >= 3*ptypes.length && k < 4*ptypes.length){
-        prdnptype.push(pstatperptype[k].jumlah_project);
-      }
-      else if(k >= 4*ptypes.length && k < 5*ptypes.length){
-        holdptype.push(pstatperptype[k].jumlah_project);
-      }
-      else if(k >= 5*ptypes.length && k < 6*ptypes.length){
-        dropptype.push(pstatperptype[k].jumlah_project);
+      switch(i){
+        case 0:
+          resvptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 1:
+          progptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 2:
+          pgdnptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 3:
+          mntrptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 4:
+          prdnptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 5:
+          holdptype.push(pstatperptype[k].jumlah_project);
+          break;
+        case 6:
+          dropptype.push(pstatperptype[k].jumlah_project);
+          break;
       }
     }
   }
@@ -532,6 +551,13 @@
     }, {
       name: 'Drop',
       data: dropptype,
+      pointPadding: 0.1,
+      borderWidth: 0,
+      // pointPlacement: 0.2
+
+    }, {
+      name: 'Monitoring',
+      data: mntrptype,
       pointPadding: 0.1,
       borderWidth: 0,
       // pointPlacement: 0.2
@@ -654,6 +680,7 @@
   var userprdn = [];
   var userhold = [];
   var userdrop = [];
+  var usermntr = [];
   var psuserlength = (userprojperpstat.length/userinit.length); 
 
   for(var i=0; i<userinit.length; i++){
@@ -664,23 +691,28 @@
     for(var j=0; j<userinit.length; j++){
       var k = (psuserlength * j) + i;
 
-      if(i == 0){
-        userresv.push(userprojperpstat[k].jumlah_projek);
-      }
-      else if(i == 1){
-        userprdn.push(userprojperpstat[k].jumlah_projek);
-      }
-      else if(i == 2){
-        userpgdn.push(userprojperpstat[k].jumlah_projek);
-      }
-      else if(i == 3){
-        userprog.push(userprojperpstat[k].jumlah_projek);
-      }
-      else if(i == 4){
-        userhold.push(userprojperpstat[k].jumlah_projek);
-      }
-      else if(i == 5){
-        userdrop.push(userprojperpstat[k].jumlah_projek);
+      switch(i){
+        case 0:
+          userresv.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 1:
+          userprdn.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 2:
+          userpgdn.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 3:
+          userprog.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 4:
+          usermntr.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 5:
+          userhold.push(userprojperpstat[k].jumlah_projek);
+          break;
+        case 6:
+          userdrop.push(userprojperpstat[k].jumlah_projek);
+          break;
       }
     }
   }
@@ -749,6 +781,10 @@
       name: 'Drop',
       data: userdrop
 
+    }, {
+      name: 'Monitoring',
+      data: usermntr
+
     }]
   });
 // ###########################################################################################################################################################
@@ -766,20 +802,22 @@
     for(var j=0; j<userinit.length; j++){
       var k = (ptuserlength * j) + i;
 
-      if(i == 0){
-        userintt.push(userprojperptype[k].jumlah_projek);
-      }
-      else if(i == 1){
-        usersert.push(userprojperptype[k].jumlah_projek);
-      }
-      else if(i == 2){
-        userregr.push(userprojperptype[k].jumlah_projek);
-      }
-      else if(i == 3){
-        usersupp.push(userprojperptype[k].jumlah_projek);
-      }
-      else if(i == 4){
-        userqa.push(userprojperptype[k].jumlah_projek);
+      switch(i){
+        case 0:
+          userintt.push(userprojperptype[k].jumlah_projek);
+          break;
+        case 1:
+          usersert.push(userprojperptype[k].jumlah_projek);
+          break;
+        case 2:
+          userregr.push(userprojperptype[k].jumlah_projek);
+          break;
+        case 3:
+          usersupp.push(userprojperptype[k].jumlah_projek);
+          break;
+        case 4:
+          userqa.push(userprojperptype[k].jumlah_projek);
+          break;
       }
     }
   } 

@@ -98,7 +98,7 @@ class Controller_AdminUsers extends Controller
       	->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
       	->leftjoin('users', function($join) use ($userid) {
       		$join->on('users.id_ulevel', '=', 'users_levels.id')
-      		->where('users.id',$userid);
+      		->where('users.id', $userid);
       	})
       	->groupBy('users_levels.id','users_levels.nama_ulevel')
       	->orderBy('jml','DESC')

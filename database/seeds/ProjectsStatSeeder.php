@@ -24,6 +24,10 @@ class ProjectsStatSeeder extends Seeder
         	'nama_pstat' => 'Pengujian Done'
         ]);
 
+        $monitoring = Projects_Stat::create([
+            'nama_pstat' => 'Monitoring'
+        ]);
+
         $projekdone = Projects_Stat::create([
         	'nama_pstat' => 'Projek Done'
         ]);

@@ -16,7 +16,7 @@ class Controller_ManagerAssignProjects extends Controller
             $products = DB::select("select * from products order by nama_product asc");
             $mitras = DB::select("select * from mitras order by nama_mitra asc");
             $ptypes = DB::select("select * from projects_types order by nama_ptype asc");
-            $users = DB::select("select * from users order by nama_user asc");
+            $users = User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 5)->get();
             return view('Pages.Manager.View_ManagerAssignProjects', compact('users','products','mitras','ptypes'));
         }
         else{
