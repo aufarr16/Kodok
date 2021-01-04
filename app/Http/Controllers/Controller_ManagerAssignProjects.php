@@ -16,8 +16,9 @@ class Controller_ManagerAssignProjects extends Controller
             $products = DB::select("select * from products order by nama_product asc");
             $mitras = DB::select("select * from mitras order by nama_mitra asc");
             $ptypes = DB::select("select * from projects_types order by nama_ptype asc");
-            $users = User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 5)->get();
-            return view('Pages.Manager.View_ManagerAssignProjects', compact('users','products','mitras','ptypes'));
+            $users1 = $this->getUser();
+            $users2 = $this->getUser();
+            return view('Pages.Manager.View_ManagerAssignProjects', compact('users1', 'users2','products','mitras','ptypes'));
         }
         else{
             return redirect('/logout');
@@ -57,12 +58,12 @@ class Controller_ManagerAssignProjects extends Controller
 
     public function storeHandover(Request $request){ 
         $request->validate([
-            'id_user' => 'required',
+            'id_user1' => 'required',
             'nama_project2' => 'required',
             'PIChandover' => 'required',
         ],
         $message = [
-            'id_user.required' => 'Mohon pilih PIC Utama',
+            'id_user1.required' => 'Mohon pilih PIC Utama',
             'nama_project2.required' => 'Mohon pilih project',
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
@@ -98,5 +99,9 @@ class Controller_ManagerAssignProjects extends Controller
         ->get();
 
         return response()->json($userData);
+    }
+
+    public function getUser(){
+        return User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 5)->get();
     }
 }

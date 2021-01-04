@@ -36,11 +36,11 @@
           <div class="@error('id_user') is-invalid @enderror">
             <select id="id_user" class="js-states form-control @error ('id_user') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
               <option value="" hidden>PIC</option>
-              @foreach($users as $usr)
-                @if (old('id_user') == $usr->id)
-                  <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
+              @foreach($users1 as $usr1)
+                @if (old('id_user') == $usr1->id)
+                  <option value="{{ $usr1->id }}" selected>{{ $usr1->nama_user }}</option>
                 @else 
-                  <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
+                  <option value="{{ $usr1->id }}">{{ $usr1->nama_user }}</option>
                 @endif
               @endforeach
             </select>
@@ -135,13 +135,13 @@
           <label for="PIC2" style="font-weight:bolder">PIC</label>
             <br>
             <div class="@error('PIC2') is-invalid @enderror">
-              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user" onchange="getHandoverData(id)">
+              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user1" onchange="getHandoverData(id)">
               <option value=""></option>
-              @foreach($users as $usr)
-                @if (old('id_user') == $usr->id)
-                  <option value="{{ $usr->id }}" selected>{{ $usr->nama_user }}</option>
+              @foreach($users2 as $usr2)
+                @if (old('id_user1') == $usr2->id)
+                  <option value="{{ $usr2->id }}" selected>{{ $usr2->nama_user }}</option>
                 @else 
-                  <option value="{{ $usr->id }}">{{ $usr->nama_user }}</option>
+                  <option value="{{ $usr2->id }}">{{ $usr2->nama_user }}</option>
                 @endif
               @endforeach
             </select>
