@@ -8,13 +8,13 @@
   @case(3)
     <small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small>
     @break
-  @case(4)
+  @case(5)
     <small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</small>
     @break
-  @case(5)
+  @case(6)
     <small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold</small>
     @break
-  @case(6)
+  @case(7)
     <small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</small>
     @break
   @default

@@ -102,5 +102,6 @@ class Controller_ManagerAssignProjects extends Controller
 
     public function getUser(){
         return User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 5)->get();
+        // return User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 4)->orWhere('id_ulevel', '=', 5)->get();
     }
 }

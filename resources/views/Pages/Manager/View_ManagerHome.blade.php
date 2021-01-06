@@ -414,14 +414,16 @@
       borderWidth: 0,
       // pointPlacement: 0.2
 
-    }, {
-      name: 'Monitoring',
-      data: mntrprod,
-      pointPadding: 0.1,
-      borderWidth: 0,
-      // pointPlacement: 0.2
+    }
+    // , {
+    //   name: 'Monitoring',
+    //   data: mntrprod,
+    //   pointPadding: 0.1,
+    //   borderWidth: 0,
+    //   // pointPlacement: 0.2
 
-    }]
+    // }
+    ]
     });
 // ###########################################################################################################################################################
   //JUMLAH PSTAT PER PTYPE
@@ -555,14 +557,16 @@
       borderWidth: 0,
       // pointPlacement: 0.2
 
-    }, {
-      name: 'Monitoring',
-      data: mntrptype,
-      pointPadding: 0.1,
-      borderWidth: 0,
-      // pointPlacement: 0.2
+    }
+    // , {
+    //   name: 'Monitoring',
+    //   data: mntrptype,
+    //   pointPadding: 0.1,
+    //   borderWidth: 0,
+    //   // pointPlacement: 0.2
 
-    }]
+    // }
+    ]
   });
 // ###########################################################################################################################################################
   //JUMLAH PROJEK BY PTYPE
@@ -781,11 +785,13 @@
       name: 'Drop',
       data: userdrop
 
-    }, {
-      name: 'Monitoring',
-      data: usermntr
+    }
+    // , {
+    //   name: 'Monitoring',
+    //   data: usermntr
 
-    }]
+    // }
+    ]
   });
 // ###########################################################################################################################################################
   //JUMLAH PROJEK TIAP ORNG BY PTYPE
