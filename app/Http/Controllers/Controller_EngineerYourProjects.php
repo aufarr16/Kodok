@@ -30,7 +30,7 @@ class Controller_EngineerYourProjects extends Controller
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";
             $project->id_pketerangan = 2;
         }
-        else if($request->input('pstat') == 4){
+        else if($request->input('pstat') == 5){
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
         }

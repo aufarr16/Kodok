@@ -65,6 +65,7 @@
 	    	{data: 'keterangan', name: 'keterangan'},
 	    	{data: 'action', name: 'action'}
 	    ]
+	    "order": [[5, "desc"]]
 	});
 </script>
 @endpush

@@ -31,7 +31,7 @@ class Controller_ManagerApprovalProjects extends Controller
             if($pstat == 3){
                 $project->pketerangan_status = "Pengujian Done Approved";
             }
-            else if($pstat == 4){
+            else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Approved";
             }
 
@@ -42,7 +42,7 @@ class Controller_ManagerApprovalProjects extends Controller
             if($pstat == 3){
                 $project->pketerangan_status = "Pengujian Done Declined";
             }
-            else if($pstat == 4){
+            else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Declined";
             }
 
