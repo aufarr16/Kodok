@@ -10,7 +10,7 @@
 
 		<div class="form-group">
 			<a href="{{ route('users.create') }}" type="button" class="modal-show add-users btn-add" title="Add New Users" id="btn-modal" style="float:left">
-				Add Users &nbsp<i class="fas fa-plus fa-lg"></i>
+				Add User &nbsp<i class="fas fa-plus fa-lg"></i>
 			</a>
 		</div>
 	<div class="table-responsive-lg">		

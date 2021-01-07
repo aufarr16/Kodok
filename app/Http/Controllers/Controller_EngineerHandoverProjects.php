@@ -32,7 +32,7 @@ class Controller_EngineerHandoverProjects extends Controller
     public function dataTable()
     {
         $userId = auth()->id();
-        $project = $this->getHandoverData($userId);
+        $project = $this->getHandoverData($userId); 
         $pstat = Projects_Stat::where('id', '!=', 1)->get();
         return DataTables::of($project)
             ->addColumn('status', function($project) use ($pstat){
