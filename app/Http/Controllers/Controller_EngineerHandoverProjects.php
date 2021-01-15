@@ -18,7 +18,6 @@ class Controller_EngineerHandoverProjects extends Controller
         else{
             return redirect('/logout');
         }
-
     }
 
     public function handoverDone(Request $request){
