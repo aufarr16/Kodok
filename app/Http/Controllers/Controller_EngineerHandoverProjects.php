@@ -64,6 +64,7 @@ class Controller_EngineerHandoverProjects extends Controller
         ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
         ->where('id_current_pic', $id)
         ->where('status_handover', '=', '1')
+        ->where('id_pstat', "!=", '5')
         ->orderBy('tanggal_assign', 'desc')
         ->get();
     }
