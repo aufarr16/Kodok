@@ -26,7 +26,6 @@
   <tr>
     <th>No</th>
     <th>Inisial</th>
-    <th>PIC</th>
     <th>Produk</th>
     <th>Jenis Project</th>
     <th>Nama Mitra</th>
@@ -56,7 +55,6 @@
     columns: [
       {data: 'DT_RowIndex', name: 'id'},
       {data: 'inisial_user', name: 'inisial_user'},
-      {data: 'nama_user', name: 'nama_user'},
       {data: 'nama_product', name: 'nama_product'},
       {data: 'nama_ptype', name: 'nama_ptype'},
       {data: 'nama_mitra', name: 'nama_mitra'},
@@ -64,7 +62,7 @@
       {data: 'waktu', name: 'waktu'},
       {data: 'id_pstat', name: 'id_pstat'}
     ],
-    "order": [[ 7, "desc" ], [ 1, "asc" ]]
+    "order": [[ 6, "desc" ], [ 0, "asc" ]]
   });
 </script>
 @endpush
