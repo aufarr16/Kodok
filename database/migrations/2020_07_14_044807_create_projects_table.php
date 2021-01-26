@@ -24,6 +24,8 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('id_current_pic');
             $table->unsignedBigInteger('id_original_pic');
             $table->string('nama_project', 201);
+            $table->integer('progress_sit');
+            $table->integer('progress_uat');
             $table->boolean('status_handover');
             $table->integer('handover_counter');
             $table->unsignedBigInteger('stats_temp')->nullable();    
