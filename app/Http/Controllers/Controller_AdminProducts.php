@@ -35,7 +35,7 @@ class Controller_AdminProducts extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'nama_product' => 'required|max:24|regex:/^[a-zA-Z]*$/',
+            'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
         $message = [
             'nama_product.required' => ' Mohon isi Nama Products',
