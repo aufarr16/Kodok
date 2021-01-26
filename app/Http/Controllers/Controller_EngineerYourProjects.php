@@ -44,6 +44,25 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();
     }
 
+    public function changeProgress(Request $request){
+        $project = getProjectById($request->id);
+
+        $project->progress_sit = $request->progress_sit;
+        $project->progress_uat = $request->progerss_uat;
+
+        $project->save();
+    }
+
+    public function changeBussinessPIC(Request $request){
+        $project = getProjectById($request->id);
+
+        $project->id_pic_product = $request->id_pic_product;
+        $project->id_pic_am = $request->id_pic_am;
+        $project->id_pic_pm = $request->id_pic_pm;
+
+        $project->save();
+    }
+
     public function dataTable()
     {
         $userId = auth()->id();

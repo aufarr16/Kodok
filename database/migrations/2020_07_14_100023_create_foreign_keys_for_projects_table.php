@@ -21,6 +21,9 @@ class CreateForeignKeysForProjectsTable extends Migration
             $table->foreign('id_mitra')->references('id')->on('mitras');
             $table->foreign('id_current_pic')->references('id')->on('users');
             $table->foreign('id_original_pic')->references('id')->on('users');
+            $table->foreign('id_pic_product')->references('id')->on('users');
+            $table->foreign('id_pic_am')->references('id')->on('users');
+            $table->foreign('id_pic_pm')->references('id')->on('users');
         });
     }
 
@@ -39,6 +42,9 @@ class CreateForeignKeysForProjectsTable extends Migration
             $table->dropForeign('projects_id_mitra_foreign');
             $table->dropForeign('projects_id_current_pic_foreign');
             $table->dropForeign('projects_id_original_pic_foreign');
+            $table->dropForeign('projects_id_pic_product_foreign');
+            $table->dropForeign('projects_id_pic_am_foreign');
+            $table->dropForeign('projects_id_pic_pm_foreign');
         });
     }
 }
