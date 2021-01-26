@@ -57,7 +57,8 @@
                 <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
             </a>
 	            <ul class="nav tree" style="display: none;">
-	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">Your Projects</a></li>
+	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">On Going</a></li>
+                <li class="{{ Request::is('engineer/history') ? 'active' : '' }}"><a class="" href="/engineer/history">Done</a></li>
 	              <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/handover">Handover</a></li>
 	            </ul>
           </li>
