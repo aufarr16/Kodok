@@ -62,7 +62,8 @@
 	    	{data: 'tanggal_assign', name: 'tanggal_assign'},
 	    	{data: 'status', name: 'status'},
 	    	{data: 'keterangan', name: 'keterangan'}
-	    ]
+	    ],
+	    "order": [[5, "desc"]]
 	});
 </script>
 @endpush

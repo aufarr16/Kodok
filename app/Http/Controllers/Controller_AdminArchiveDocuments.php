@@ -16,7 +16,6 @@ class Controller_AdminArchiveDocuments extends Controller
         else{
             return redirect('/logout');
         }
-
     }
 
     public function dataTable()

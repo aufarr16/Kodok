@@ -31,5 +31,17 @@ class UsersLevelSeeder extends Seeder
         $adminxeng = Users_Level::create([
         	'nama_ulevel' => 'Admin x Engineer'
         ]);
+
+        $product = Users_Level::create([
+            'nama_ulevel' => 'Product'
+        ]);
+
+        $am = Users_Level::create([
+            'nama_ulevel' => 'Account Manager'
+        ]);
+
+        $pm = Users_Level::create([
+            'nama_ulevel' => 'Project Manager'
+        ]);
     }
 }

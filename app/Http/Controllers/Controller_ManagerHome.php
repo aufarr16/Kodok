@@ -25,14 +25,16 @@ class Controller_ManagerHome extends Controller
             $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
             $ponprogress = $this->allProjectPstat(2);   // 2. Projek On Progress
             $ppngdone = $this->allProjectPstat(3);      // 3. Pengujian Done
-            $pprjdone = $this->allProjectPstat(4);      // 4. Projek Done
-            $phold = $this->allProjectPstat(5);         // 5. Projek Hold
-            $pdrop = $this->allProjectPstat(6);         // 6. Projek Drop
-            $projects = $this->allProjects();           // 7. Jumlah All Projek
+            $pmonitor = $this->allProjectPstat(4);      // 4. Monitoring
+            $pprjdone = $this->allProjectPstat(5);      // 5. Projek Done
+            $phold = $this->allProjectPstat(6);         // 6. Projek Hold
+            $pdrop = $this->allProjectPstat(7);         // 7. Projek Drop
+            $projects = $this->allProjects();           // 8. Jumlah All Projek
 
             $percentrsrv = $this->toPercent($preserved, $projects);
             $percentop = $this->toPercent($ponprogress, $projects);
             $percentpgdn = $this->toPercent($ppngdone, $projects);
+            $percentmntr = $this->toPercent($pmonitor, $projects);
             $percentprdn = $this->toPercent($pprjdone, $projects);
             $percenthold = $this->toPercent($phold, $projects);
             $percentdrop = $this->toPercent($pdrop, $projects);
@@ -47,7 +49,7 @@ class Controller_ManagerHome extends Controller
 
             // dd($pstatperptype);
 
-            return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
+            return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
         }
         else{
             return redirect('/logout');
@@ -71,10 +73,11 @@ class Controller_ManagerHome extends Controller
             $preserved = $this->filteredProjectPstat($request->tahun, 1);     // 1. Projek Reserved
             $ponprogress = $this->filteredProjectPstat($request->tahun, 2);   // 2. Projek On Progress
             $ppngdone = $this->filteredProjectPstat($request->tahun, 3);      // 3. Pengujian Done
-            $pprjdone = $this->filteredProjectPstat($request->tahun, 4);      // 4. Projek Done
-            $phold = $this->filteredProjectPstat($request->tahun, 5);         // 5. Projek Hold
-            $pdrop = $this->filteredProjectPstat($request->tahun, 6);         // 6. Projek Drop
-            $projects = $this->filteredProjects($request->tahun);             // 7. Jumlah All Projek
+            $pprjdone = $this->filteredProjectPstat($request->tahun, 4);      // 4. Monitoring
+            $pprjdone = $this->filteredProjectPstat($request->tahun, 5);      // 5. Projek Done
+            $phold = $this->filteredProjectPstat($request->tahun, 6);         // 6. Projek Hold
+            $pdrop = $this->filteredProjectPstat($request->tahun, 7);         // 7. Projek Drop
+            $projects = $this->filteredProjects($request->tahun);             // 8. Jumlah All Projek
 
             $percentrsrv = $this->toPercent($preserved, $projects);
             $percentop = $this->toPercent($ponprogress, $projects);

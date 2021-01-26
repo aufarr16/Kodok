@@ -76,6 +76,25 @@
       <!-- tile on progress -->
     </div>
 
+    <div class="tile onprogress">
+      <div class="body">
+        <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; Monitoring</div>
+      </div>
+      <div class="header">
+          <div class="count">{{ $pmonitor }}</div>
+          <div class="title">Projects</div>
+        <div class="progress">
+          <div class="bar" style="width:{{ $percentmntr }}%">
+            <p class="percent">{{ $percentmntr }}%</p>
+          <!-- bar on progress -->
+          </div>
+        <!-- progress on progress -->
+        </div>
+      <!-- header on progress -->
+      </div>
+      <!-- tile on progress -->
+    </div>
+
     <div class="tile done">
       <div class="body">
         <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Pengujian Done</div>

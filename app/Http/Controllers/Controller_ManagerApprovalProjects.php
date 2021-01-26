@@ -26,23 +26,23 @@ class Controller_ManagerApprovalProjects extends Controller
         // dd($id);
 
         $project = Project::where('id', $id)->firstOrFail();
+        $pstat = $project->stats_change;
         if($type == "Confirm Aproval"){
-            $pstat = $project->id_pstat;
             if($pstat == 3){
                 $project->pketerangan_status = "Pengujian Done Approved";
             }
-            else if($pstat == 4){
+            else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Approved";
             }
 
+            $project->id_pstat = $project->stats_change;
             $project->id_pketerangan = 1;
         }
         else if($type == "Decline Approval"){
-            $pstat = $project->id_pstat;
             if($pstat == 3){
                 $project->pketerangan_status = "Pengujian Done Declined";
             }
-            else if($pstat == 4){
+            else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Declined";
             }
 
@@ -50,12 +50,13 @@ class Controller_ManagerApprovalProjects extends Controller
             $project->id_pstat = 2;
         }
 
+        $project->stats_change = NULL;
         $project->save();
     }
 
     public function dataTable()
     {
-        $data = DB::select("select a.id, a.nama_project, b.inisial_user, c.nama_product, d.nama_ptype, e.nama_pstat, a.pketerangan_status from projects as a, users as b, products as c, projects_types as d, projects_stats as e where a.id_current_pic = b.id and a.id_product = c.id and a.id_ptype = d.id and a.id_pstat = e.id and a.id_pketerangan = 2 and (e.id = 3 or e.id = 4) order by a.waktu_assign_project asc");
+        $data = DB::select("select a.id, a.nama_project, b.inisial_user, c.nama_product, d.nama_ptype, e.nama_pstat, a.pketerangan_status from projects as a, users as b, products as c, projects_types as d, projects_stats as e where a.id_current_pic = b.id and a.id_product = c.id and a.id_ptype = d.id and a.stats_change = e.id and a.id_pketerangan = 2 and (e.id = 3 or e.id = 5) order by a.waktu_assign_project asc");
         return DataTables::of($data)
             // ->addColumn('docs', function($data){
             //     return view('Layouts.DocsApproval',[

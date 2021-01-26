@@ -24,13 +24,13 @@ class Controller_EngineerYourProjects extends Controller
         // dd($request);
 
         $project = $this->getProjectById($request->input('id'));
-        $project->id_pstat = $request->input('pstat');
+        $project->stats_change = $request->input('pstat');
 
         if($request->input('pstat') == 3){
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";
             $project->id_pketerangan = 2;
         }
-        else if($request->input('pstat') == 4){
+        else if($request->input('pstat') == 5){
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
         }
@@ -75,6 +75,7 @@ class Controller_EngineerYourProjects extends Controller
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
     	->where('id_current_pic', $id)
         ->where('status_handover', '=', '0')
+        ->where('id_pstat', "!=", '5')->where('id_pstat', "!=", '7')
     	->orderBy('tanggal_assign', 'desc')
     	->get();
     }
