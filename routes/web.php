@@ -86,6 +86,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
 	Route::get('/engineer/projects/table', 'Controller_EngineerYourProjects@dataTable')->name('projects.table');
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
+	Route::put('/engineer/projects/changeprogress', 'Controller_EngineerYourProjects@changeProgress');
+	Route::put('/engineer/projects/changepic', 'Controller_EngineerYourProjects@changeBussinessPIC');
 
 	##GUEST
 	Route::get('/guest', 'Controller_GuestSearchDocuments@openPage');
