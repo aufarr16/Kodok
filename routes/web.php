@@ -69,25 +69,27 @@ Route::group(['middleware' => 'auth'], function(){
 	// Doc Tools
 	Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
 
-	// Handover
+	// Handovered Project
 	Route::get('/engineer/handover', 'Controller_EngineerHandoverProjects@openPage');
 	Route::get('/engineer/handover/table', 'Controller_EngineerHandoverProjects@dataTable')->name('handover.table');
 	Route::patch('/engineer/handover/changestat', 'Controller_EngineerHandoverProjects@changeStatus');
 	Route::patch('/engineer/handover/done', 'Controller_EngineerHandoverProjects@handoverDone');
 
-	//History
-	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
-	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable');
+	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryProjects@openPage');
+	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryProjects@dataTable')->name('historyhover.table');
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
 
-	// Your Project
+	// Own Project
 	Route::get('/engineer/projects', 'Controller_EngineerYourProjects@openPage');
 	Route::get('/engineer/projects/table', 'Controller_EngineerYourProjects@dataTable')->name('projects.table');
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 	Route::put('/engineer/projects/changeprogress', 'Controller_EngineerYourProjects@changeProgress');
 	Route::put('/engineer/projects/changepic', 'Controller_EngineerYourProjects@changeBussinessPIC');
+
+	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
+	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');
 
 	##GUEST
 	Route::get('/guest', 'Controller_GuestSearchDocuments@openPage');
