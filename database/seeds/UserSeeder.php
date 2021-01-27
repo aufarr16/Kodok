@@ -268,68 +268,68 @@ class UserSeeder extends Seeder
         	'added_by' => 'Kodok',
         ]);
 
-        $user33 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user33 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user34 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user34 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user35 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user35 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user36 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user36 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user37 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user37 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user38 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user38 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user39 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user39 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
 
-        $user40 = User::create([
-            'id_ulevel' => ,
-            'nama_user' => '',
-            'email_user' => '',
-            'inisial_user' => '',
-            'added_by' => 'Kodok',
-        ]);
+        // $user40 = User::create([
+        //     'id_ulevel' => ,
+        //     'nama_user' => '',
+        //     'email_user' => '',
+        //     'inisial_user' => '',
+        //     'added_by' => 'Kodok',
+        // ]);
     }
 }
