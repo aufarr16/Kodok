@@ -38,7 +38,7 @@ class Controller_AdminUsers extends Controller
 
 	public function store(Request $request){
 		$request->validate([
-			'inisial_user' => 'required|unique:users|max:3|min:3',
+			'inisial_user' => 'required|unique:users|max:3|min:1',
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
 			'nama_ulevel' => 'gt:0',
 			'email_user' => 'required|max:50|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/|'
