@@ -39,7 +39,7 @@ class Controller_AdminMitra extends Controller
 
         $request->validate([
             'ABA' => 'required|min:3|max:13|unique:mitras',
-            'nama_mitra' => 'required|max:51|regex:/^[a-zA-Z ]*$/',
+            'nama_mitra' => 'required|max:51',
         ],
         $message = [
             'ABA.required' => ' Mohon isi ABA',
@@ -84,7 +84,7 @@ class Controller_AdminMitra extends Controller
     public function update(Request $request, $id){
         $request->validate([
             'ABA' => 'required|min:3|max:13|unique:mitras,ABA, ' .$id,
-            'nama_mitra' => 'required|max:51|regex:/^[a-zA-Z ]*$/',
+            'nama_mitra' => 'required|max:51',
         ],
         $message = [
             'ABA.required' => ' Mohon isi ABA',

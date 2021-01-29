@@ -39,7 +39,7 @@ class ProductSeeder extends Seeder
         ]);
 
         $qr = Product::create([
-        	'nama_product' => 'QR Payment',
+        	'nama_product' => 'ATMB QR',
         	'added_by' => 'Kodok',
         ]);
     }
