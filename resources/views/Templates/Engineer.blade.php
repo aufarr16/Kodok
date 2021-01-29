@@ -53,23 +53,24 @@
           </li> -->
           <li>
           	<a class="tree-toggle nav-header d-flex">
-          			<span class="fas fa-clipboard-list ">&nbsp Own Project</span>
+          			<span class="fas fa-clipboard-list ">&nbsp Project On Going</span>
                 <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
             </a>
 	            <ul class="nav tree" style="display: none;">
-	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">On Going</a></li>
-                <li class="{{ Request::is('engineer/history') ? 'active' : '' }}"><a class="" href="/engineer/history">Done</a></li>
+	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">Your Project</a></li>
+                <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/handover">Handover Project</a></li>
+                
 	            </ul>
           </li>
 
           <li>
             <a class="tree-toggle nav-header d-flex">
-                <span class="fas fa-clipboard-list ">&nbsp Handovered Project</span>
+                <span class="fas fa-clipboard-list ">&nbsp Project Done</span>
                 <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
             </a>
               <ul class="nav tree" style="display: none;">
-                <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/projects">On Going</a></li>
-                <li class="{{ Request::is('engineer/historyhover') ? 'active' : '' }}"><a class="" href="/engineer/history">Done</a></li>
+                <li class="{{ Request::is('engineer/history') ? 'active' : '' }}"><a class="" href="/engineer/history">Your Project</a></li>
+                <li class="{{ Request::is('engineer/historyhover') ? 'active' : '' }}"><a class="" href="/engineer/history">Handover Project</a></li>
               </ul>
           </li>
           <!-- <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
