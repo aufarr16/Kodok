@@ -104,7 +104,7 @@
           <div class="title">Projects</div>
         <div class="progress">
           <div class="bar" style="width:{{ $percentpgdn }}%">
-            <p class="percent">%</p>
+            <p class="percent">{{ $percentpgdn }}%</p>
           <!-- bar done -->
           </div>
         <!-- progress done -->
@@ -161,7 +161,7 @@
           <div class="title">Projects</div>
         <div class="progress">
           <div class="bar" style="width:{{ $percenthold }}%">
-            <p class="percent">{{ $percenthold }}%</p>
+            <p class="percent">{{ $percentdrop }}%</p>
           <!-- bar drop -->
           </div>
         <!-- progress drop -->

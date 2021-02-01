@@ -23,8 +23,6 @@ class Controller_ManagerApprovalProjects extends Controller
         $id = $request->input('id');
         $type = $request->input('title');
 
-        // dd($id);
-
         $project = Project::where('id', $id)->firstOrFail();
         $pstat = $project->stats_temp;
         if($type == "Confirm Aproval"){
@@ -35,7 +33,7 @@ class Controller_ManagerApprovalProjects extends Controller
                 $project->pketerangan_status = "Projek Done Approved";
             }
 
-            $project->id_pstat = $project->stats_change;
+            $project->id_pstat = $project->stats_temp;
             $project->id_pketerangan = 1;
         }
         else if($type == "Decline Approval"){
