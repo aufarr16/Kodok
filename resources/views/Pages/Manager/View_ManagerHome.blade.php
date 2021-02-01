@@ -160,7 +160,7 @@
           <div class="count">{{ $pdrop }}</div>
           <div class="title">Projects</div>
         <div class="progress">
-          <div class="bar" style="width:{{ $percenthold }}%">
+          <div class="bar" style="width:{{ $percentdrop }}%">
             <p class="percent">{{ $percentdrop }}%</p>
           <!-- bar drop -->
           </div>
