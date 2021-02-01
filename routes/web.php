@@ -75,8 +75,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::patch('/engineer/handover/changestat', 'Controller_EngineerHandoverProjects@changeStatus');
 	Route::patch('/engineer/handover/done', 'Controller_EngineerHandoverProjects@handoverDone');
 
-	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryProjects@openPage');
-	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryProjects@dataTable')->name('historyhover.table');
+	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryHandover@openPage');
+	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryHandover@dataTable')->name('historyhover.table');
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');

@@ -1,9 +1,6 @@
 @extends('Templates.Engineer')
 @push('styles')
 <link href="{{ url('') }}/css/yourhandoverprojects.css" rel="stylesheet" />
-<!-- @section('Welcome') 
-  <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection -->
 @section('PageTitle','History Projects')
 @section('content')
 <title>
@@ -20,7 +17,6 @@
 				<th>Nama Mitra</th>
 				<th>Nama Project</th>
 				<th>Tanggal Assign</th>
-				<th style="width: 75px">Status</th>
 				<th>Keterangan</th>
 				<!-- <th>Docs</th> -->
 			</tr>
@@ -52,7 +48,7 @@
 	    "paging": true,
 	    "info": false,         
 	    "lengthChange": false,
-	    ajax: "{{ route('projects.table') }}",
+	    ajax: "{{ route('history.table') }}",
 	    columns: [
 	    	{data: 'DT_RowIndex', name: 'id'},
 	    	{data: 'nama_product', name: 'nama_product'},
@@ -60,7 +56,6 @@
 	    	{data: 'nama_mitra', name: 'nama_mitra'},
 	    	{data: 'nama_project', name: 'nama_project'},
 	    	{data: 'tanggal_assign', name: 'tanggal_assign'},
-	    	{data: 'status', name: 'status'},
 	    	{data: 'keterangan', name: 'keterangan'}
 	    ],
 	    "order": [[5, "desc"]]

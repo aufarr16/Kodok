@@ -26,7 +26,7 @@ class Controller_ManagerApprovalProjects extends Controller
         // dd($id);
 
         $project = Project::where('id', $id)->firstOrFail();
-        $pstat = $project->stats_change;
+        $pstat = $project->stats_temp;
         if($type == "Confirm Aproval"){
             if($pstat == 3){
                 $project->pketerangan_status = "Pengujian Done Approved";
@@ -50,7 +50,7 @@ class Controller_ManagerApprovalProjects extends Controller
             $project->id_pstat = 2;
         }
 
-        $project->stats_change = NULL;
+        $project->stats_temp = NULL;
         $project->save();
     }
 

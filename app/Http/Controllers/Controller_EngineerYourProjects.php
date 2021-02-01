@@ -24,7 +24,7 @@ class Controller_EngineerYourProjects extends Controller
         // dd($request);
 
         $project = $this->getProjectById($request->input('id'));
-        $project->stats_change = $request->input('pstat');
+        $project->stats_temp = $request->input('pstat');
 
         if($request->input('pstat') == 3){
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";

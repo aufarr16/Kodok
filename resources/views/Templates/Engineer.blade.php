@@ -70,7 +70,7 @@
             </a>
               <ul class="nav tree" style="display: none;">
                 <li class="{{ Request::is('engineer/history') ? 'active' : '' }}"><a class="" href="/engineer/history">Your Project</a></li>
-                <li class="{{ Request::is('engineer/historyhover') ? 'active' : '' }}"><a class="" href="/engineer/history">Handover Project</a></li>
+                <li class="{{ Request::is('engineer/historyhover') ? 'active' : '' }}"><a class="" href="/engineer/historyhover">Handover Project</a></li>
               </ul>
           </li>
           <!-- <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
