@@ -37,8 +37,10 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function getPICBisnis($id){
-        return DB::table('project')
-        ;
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.id_pic_product, projects.id_pic_am, projects.id_pic_pm'))
+        ->where('id', '=', $id)
+        ->get();
     }
 
     public function dataTable()
