@@ -154,4 +154,10 @@ class Controller_AdminUsers extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
+
+    public function switchrole()
+    {
+    	// $ulevel = auth()->user()->id_ulevel;
+    	// return redirect('/admin/users', compact('ulevel'));   
+    }
 }
