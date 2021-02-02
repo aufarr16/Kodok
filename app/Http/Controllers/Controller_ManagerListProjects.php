@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use DataTables;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
@@ -17,6 +19,14 @@ class Controller_ManagerListProjects extends Controller
         else{
             return redirect('/logout');
         }
+    }
+
+    public function export(){
+        return Excel::download(new ProjectsExport, 'Data All Project.xlsx');
+    }
+
+    public function seeDetail(){
+        //Nampilin data historu PIC dan nama PIC AM PM Produk
     }
 
     public function dataTable()
