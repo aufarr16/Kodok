@@ -25,8 +25,20 @@ class Controller_ManagerListProjects extends Controller
         return Excel::download(new ProjectsExport, 'Data All Project.xlsx');
     }
 
-    public function seeDetail(){
-        //Nampilin data historu PIC dan nama PIC AM PM Produk
+    public function seeDetail(Request $request){
+        $idproject = $request->id;
+        $historypic = $this->getHistoryPIC($idproject);
+        $picbisnis = $this->getPICBisnis($idproject);
+    }
+
+    public function getHistoryPIC($id){
+        return DB::table('project')
+        ;
+    }
+
+    public function getPICBisnis($id){
+        return DB::table('project')
+        ;
     }
 
     public function dataTable()
