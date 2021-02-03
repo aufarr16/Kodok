@@ -1,7 +1,7 @@
 @extends('Templates.Engineer')
 @push('styles')
 <link href="{{ url('') }}/css/yourhandoverprojects.css" rel="stylesheet" />
-@section('PageTitle','History Projects')
+@section('PageTitle','History Own Projects')
 @section('content')
 <title>
 	| {Engineer} History Projects
