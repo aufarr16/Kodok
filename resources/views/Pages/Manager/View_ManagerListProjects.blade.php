@@ -19,8 +19,10 @@
 <title>
   | {Manager} List Projects
 </title>
-
-<div class="table-responsive-lg">
+<a href="/manager/projects/export" class="btn btn-success" style="z-index:2">
+  <i class="fas fa-file-download"></i>&nbsp Excel
+</a>
+<div class="table-responsive-lg" style="margin-top: -30px">
 <table class="table1" id="table1">
   <thead>
   <tr>
