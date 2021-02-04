@@ -13,7 +13,7 @@ class Controller_EngineerHistoryProjects extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
-            return view('Pages.Engineer.View_EngineerHistoryProjects');
+            return view('Pages.Engineer.View_EngineerHistoryProjects', compact('userLevel'));
         }
         else{
             return redirect('/logout');

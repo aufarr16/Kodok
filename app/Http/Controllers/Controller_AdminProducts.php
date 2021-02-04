@@ -13,7 +13,7 @@ class Controller_AdminProducts extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminProducts');
+            return view('Pages.Admin.View_AdminProducts', compact('userLevel'));
         }
         else{
             return redirect('/logout');

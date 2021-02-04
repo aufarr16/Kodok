@@ -13,7 +13,7 @@ class Controller_EngineerHistoryHandover extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
-            return view('Pages.Engineer.View_EngineerHistoryHandover');
+            return view('Pages.Engineer.View_EngineerHistoryHandover', compact('userLevel'));
         }
         else{
             return redirect('/logout');

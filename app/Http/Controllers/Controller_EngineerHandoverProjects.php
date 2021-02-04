@@ -13,7 +13,7 @@ class Controller_EngineerHandoverProjects extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
-            return view('Pages.Engineer.View_EngineerHandoverProjects');
+            return view('Pages.Engineer.View_EngineerHandoverProjects', compact('userLevel'));
         }
         else{
             return redirect('/logout');

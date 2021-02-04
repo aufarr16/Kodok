@@ -12,7 +12,7 @@ class Controller_AdminSearchDocuments extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminSearchDocuments');
+            return view('Pages.Admin.View_AdminSearchDocuments', compact('userLevel'));
         }
         else{
             return redirect('/logout');

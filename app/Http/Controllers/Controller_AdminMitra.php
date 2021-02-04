@@ -14,7 +14,7 @@ class Controller_AdminMitra extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminMitra');
+            return view('Pages.Admin.View_AdminMitra', compact('userLevel'));
         }
         else{
             return redirect('/logout');

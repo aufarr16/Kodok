@@ -11,7 +11,7 @@ class Controller_AdminArchiveDocuments extends Controller
     public function openPage(){
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminArchiveDocuments');
+            return view('Pages.Admin.View_AdminArchiveDocuments', compact('userLevel'));
         }
         else{
             return redirect('/logout');

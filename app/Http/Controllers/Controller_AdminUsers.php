@@ -14,7 +14,7 @@ class Controller_AdminUsers extends Controller
 	public function openPage(){
 		$userLevel = auth()->user()->id_ulevel;
 		if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminUsers');
+            return view('Pages.Admin.View_AdminUsers', compact('userLevel'));
         }
         else{
             return redirect('/logout');
@@ -153,11 +153,5 @@ class Controller_AdminUsers extends Controller
             ->addIndexColumn()
             ->rawColumns(['action'])
             ->make(true);
-    }
-
-    public function switchrole()
-    {
-    	// $ulevel = auth()->user()->id_ulevel;
-    	// return redirect('/admin/users', compact('ulevel'));   
     }
 }
