@@ -36,8 +36,8 @@ class Controller_EngineerYourProjects extends Controller
             $project->id_pketerangan = 2;
         }
         else if($request->input('pstat') == 7){
-            $project->stats_temp = $request->input('pstat');
-            $project->pketerangan_status = "Projek Done rop";
+            $project->id_pstat = $request->input('pstat');
+            $project->pketerangan_status = "Projek Drop";
         }
         else {
             $project->id_pstat = $request->input('pstat');
