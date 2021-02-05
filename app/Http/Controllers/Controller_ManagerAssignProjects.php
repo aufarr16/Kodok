@@ -86,6 +86,7 @@ class Controller_ManagerAssignProjects extends Controller
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
         ->where('id_current_pic', $userId)
+        ->where('id_pstat', '!=', '5')->orWhere('id_pstat', '!=', '7')
         ->get();
 
         return response()->json($projData);
