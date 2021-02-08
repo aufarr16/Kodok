@@ -38,6 +38,7 @@ class Controller_EngineerYourProjects extends Controller
         else if($request->input('pstat') == 7){
             $project->id_pstat = $request->input('pstat');
             $project->pketerangan_status = "Projek Drop";
+            $project->status_handover = 0;
         }
         else {
             $project->id_pstat = $request->input('pstat');
