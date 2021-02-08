@@ -24,10 +24,14 @@ class Controller_EngineerHistoryHandover extends Controller
     {
         $userId = auth()->id();
         $project = $this->getProjectData($userId);
-        $pstat = Projects_Stat::where('id', '!=', 1)->get();
         return DataTables::of($project)
+            ->addColumn('keterangan', function($project){
+                return view('Layouts.KeteranganProject',[
+                    'project'=> $project
+                ]);
+            })
             ->addIndexColumn()
-            ->rawColumns()
+            ->rawColumns(['keterangan'])
             ->make(true);
     }
 
@@ -38,10 +42,7 @@ class Controller_EngineerHistoryHandover extends Controller
         ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
         ->leftjoin('projects_handovers', 'projects.id', '=', 'projects_handovers.id_project')
-        ->where('projects_handovers.id_user', '=', $id)
-        ->where('projects_handover.id_user', '!=', 'projects.id_original_pic')
-        ->where('projects_handover.is_active', '=', 0)
-        ->where('id_pstat', "=", '5')->orWhere('id_pstat', "=", '7')
+        ->where('projects_handovers.id_user', $id)
         ->orderBy('tanggal_assign', 'desc')
         ->get();
     }

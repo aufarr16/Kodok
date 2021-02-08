@@ -48,7 +48,7 @@
 	    "paging": true,
 	    "info": false,         
 	    "lengthChange": false,
-	    ajax: "{{ route('history.table') }}",
+	    ajax: "{{ route('historyhover.table') }}",
 	    columns: [
 	    	{data: 'DT_RowIndex', name: 'id'},
 	    	{data: 'nama_product', name: 'nama_product'},
