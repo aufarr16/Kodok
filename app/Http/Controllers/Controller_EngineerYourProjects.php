@@ -103,7 +103,7 @@ class Controller_EngineerYourProjects extends Controller
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
     	->where('id_current_pic', $id)
         ->where('status_handover', '=', '0')
-        ->where('id_pstat', "!=", '5')->where('id_pstat', "!=", '7')
+        ->whereNotIn('id_pstat', [5,7])
     	->orderBy('tanggal_assign', 'desc')
     	->get();
     }
