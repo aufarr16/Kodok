@@ -86,7 +86,7 @@ class Controller_ManagerAssignProjects extends Controller
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
         ->where('id_current_pic', $userId)
-        ->where('id_pstat', '!=', '5')->orWhere('id_pstat', '!=', '7')
+        ->whereNotIn('id_pstat', [5,7])
         ->get();
 
         return response()->json($projData);
@@ -96,6 +96,7 @@ class Controller_ManagerAssignProjects extends Controller
         $userData['data'] = User::orderby("nama_user","asc")
         ->select('id', 'nama_user')
         ->where('id', '!=', $userId)
+        ->where('id_ulevel', '=', '3')->orWhere('id_ulevel', '=', '5')
         ->get();
 
         return response()->json($userData);
