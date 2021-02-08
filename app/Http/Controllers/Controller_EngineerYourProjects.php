@@ -62,6 +62,9 @@ class Controller_EngineerYourProjects extends Controller
     public function changeBussinessPIC(Request $request){
         $project = getProjectById($request->id);
 
+        $model = new changeBussinessPIC();
+        return view('Layouts.FormPic', compact('model'));
+
         $project->id_pic_product = $request->id_pic_product;
         $project->id_pic_am = $request->id_pic_am;
         $project->id_pic_pm = $request->id_pic_pm;

@@ -9,7 +9,11 @@
 <title>
 	| {Engineer} Your Projects
 </title>
-
+		<div class="form-group">
+				<a href="{{ route('changepic.changeBussinessPic') }}" type="button" class="modal-show add-pic btn-add" title="Add PIC" id="btn-modal" style="float:left">
+					Add PIC &nbsp<i class="fas fa-plus fa-lg"></i>
+				</a>
+		</div>
 	<div class="table-responsive-lg">
 	<table class="table1" id="table1">
 		<thead>
