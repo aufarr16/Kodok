@@ -25,7 +25,6 @@ class Controller_EngineerHandoverProjects extends Controller
 
         $project->id_current_pic = $project->id_original_pic;
         $project->status_handover = 0;
-        $project->is_active = 0;
         $project->save();
     }
 
