@@ -581,16 +581,31 @@ function changeStatusProject(id){
 				}
 			})
 		} else if (result.dismiss === 'cancel') {
-			Swal.fire({
-				title:'Status tidak terganti',
-				type:'info',
-				toast:true,
-				showConfirmButton:false,
-				position:'top',
-				grow:'row',
-				timer:1500,
-				timerProgressBar:true,
-				background:'#D2FBA4'
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/engineer/projects/cancel',
+				type: 'GET',
+
+				success: function(response){
+					// console.log("masuk pak");
+					$('#table1').DataTable().ajax.reload();
+					Swal.fire({
+						title:'Status tidak terganti',
+						type:'info',
+						toast:true,
+						showConfirmButton:false,
+						position:'top',
+						grow:'row',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D2FBA4'
+					})
+				}
 			})
 		}
 	})

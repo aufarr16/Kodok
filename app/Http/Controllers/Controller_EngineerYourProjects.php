@@ -112,4 +112,8 @@ class Controller_EngineerYourProjects extends Controller
     public function getProjectById($id){
         return Project::where('id', $id)->firstOrFail();
     }
+
+    public function cancel(){
+        
+    }
 }
