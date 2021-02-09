@@ -588,8 +588,8 @@ function changeStatusProject(id){
 			});
 
 			$.ajax({
-				url: '/engineer/projects/cancel',
-				type: 'GET',
+				// url: '/engineer/projects/cancel',
+				// type: 'GET',
 
 				success: function(response){
 					// console.log("masuk pak");
