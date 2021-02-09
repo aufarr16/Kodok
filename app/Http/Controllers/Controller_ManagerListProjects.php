@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use DataTables;
-use App\Exports\UsersExport;
+use App\Exports\ProjectsExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
