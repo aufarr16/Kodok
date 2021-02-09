@@ -22,7 +22,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function export(){
-        return Excel::download(new ProjectsExport, 'Data All Project.xlsx');
+        return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
     public function seeDetail(Request $request){
