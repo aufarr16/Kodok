@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DataTables;
 use App\Project;
 use App\Projects_Stat;
+use App\Projects_Handover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,31 +24,40 @@ class Controller_EngineerYourProjects extends Controller
     public function changeStatus(Request $request){
         // dd($request);
 
-        $project = $this->getProjectById($request->input('id'));
+        $id = $request->input('id');
+        $pstat = $request->input('pstat');
+        $project = $this->getProjectById($id);
 
-        if($request->input('pstat') == 3){
-            $project->stats_temp = $request->input('pstat');
+        if($pstat == 3){
+            $project->stats_temp = $pstat;
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";
             $project->id_pketerangan = 2;
         }
-        else if($request->input('pstat') == 5){
-            $project->stats_temp = $request->input('pstat');
+        else if($pstat == 5){
+            $project->stats_temp = $pstat;
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
+            $project->status_handover = 0;
         }
-        else if($request->input('pstat') == 7){
-            $project->id_pstat = $request->input('pstat');
+        else if($pstat == 7){
+            $project->id_pstat = $pstat;
             $project->pketerangan_status = "Projek Drop";
+
+            if($project->status_handover == 1){
+                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->first();
+                $handover->is_active = 0;
+            }
+
             $project->status_handover = 0;
         }
         else {
-            $project->id_pstat = $request->input('pstat');
+            $project->id_pstat = $pstat;
             if($project->id_pketerangan != 3){
                 $project->pketerangan_status = "";
                 $project->id_pketerangan = 1;
             }
         }
-        
+
         $project->save();
     }
 
@@ -102,7 +112,7 @@ class Controller_EngineerYourProjects extends Controller
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
-    	->where('id_current_pic', $id)
+    	->where('id_original_pic', $id)
         ->where('status_handover', '=', '0')
         ->whereNotIn('id_pstat', [5,7])
     	->orderBy('tanggal_assign', 'desc')
