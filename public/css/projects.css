@@ -460,6 +460,10 @@ input[type=text] {
     background-color: #0091E7;
 }
 
+.label-monitoring{
+  background-color: #8FDDE7;
+}
+
 .label-projectdone{
   background-color: #AEAEAE;
 }

@@ -45,6 +45,7 @@ class Controller_EngineerYourProjects extends Controller
             if($project->status_handover == 1){
                 $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
                 $handover->is_active = 0;
+                $handover->save();
             }
 
             $project->status_handover = 0;
@@ -58,7 +59,6 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         $project->save();
-        $handover->save();
     }
 
     public function changeProgress(Request $request){

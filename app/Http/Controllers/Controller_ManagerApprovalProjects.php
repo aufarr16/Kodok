@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
 use DataTables;
+use App\Project;
+use App\Projects_Handover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,6 +36,7 @@ class Controller_ManagerApprovalProjects extends Controller
                 if($project->status_handover == 1){
                     $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
                     $handover->is_active = 0;
+                    $handover->save();
                 }
                 
                 $project->status_handover = 0;
