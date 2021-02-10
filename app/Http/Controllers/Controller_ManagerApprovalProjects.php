@@ -31,6 +31,7 @@ class Controller_ManagerApprovalProjects extends Controller
             }
             else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Approved";
+                $project->status_handover = 0;
             }
 
             $project->id_pstat = $project->stats_temp;

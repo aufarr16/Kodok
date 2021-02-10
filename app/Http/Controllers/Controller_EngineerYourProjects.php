@@ -37,14 +37,13 @@ class Controller_EngineerYourProjects extends Controller
             $project->stats_temp = $pstat;
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
-            $project->status_handover = 0;
         }
         else if($pstat == 7){
             $project->id_pstat = $pstat;
             $project->pketerangan_status = "Projek Drop";
 
             if($project->status_handover == 1){
-                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->first();
+                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
                 $handover->is_active = 0;
             }
 
@@ -59,6 +58,7 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         $project->save();
+        $handover->save();
     }
 
     public function changeProgress(Request $request){
@@ -118,7 +118,7 @@ class Controller_EngineerYourProjects extends Controller
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
-    	->where('id_original_pic', $id)
+    	->where('id_current_pic', $id)
         ->where('status_handover', '=', '0')
         ->whereNotIn('id_pstat', [5,7])
     	->orderBy('tanggal_assign', 'desc')

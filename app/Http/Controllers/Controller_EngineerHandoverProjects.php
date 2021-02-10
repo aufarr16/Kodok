@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DataTables;
 use App\Project;
 use App\Projects_Stat;
+use App\Projects_Handover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,7 +26,12 @@ class Controller_EngineerHandoverProjects extends Controller
 
         $project->id_current_pic = $project->id_original_pic;
         $project->status_handover = 0;
+
+        $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
+        $handover->is_active = 0;
+
         $project->save();
+        $handover->save();
     }
 
     public function dataTable()
