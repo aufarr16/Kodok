@@ -42,7 +42,7 @@ class Controller_EngineerHistoryProjects extends Controller
         ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
         ->where('id_original_pic', '=', $id)
-        ->where('id_pstat', "=", [5,7])
+        ->where('id_pstat', "=", 5)->orWhere('id_pstat', '=', 7)
         ->orderBy('tanggal_assign', 'desc')
         ->get();
     }
