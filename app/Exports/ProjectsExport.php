@@ -22,7 +22,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     public function query()
     {
     	return DB::table('projects')
-    	->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, projects_stats.nama_pstat, date(projects.waktu_assign_project) as tanggal_assign'))
+    	->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, projects_stats.nama_pstat, projects.progress_sit, projects.progress_uat, date(projects.waktu_assign_project) as tanggal_assign'))
     	->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
     	->leftjoin('products', 'projects.id_product', '=', 'products.id')
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
@@ -40,6 +40,8 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     		'Mitra',
     		'Nama Projek',
     		'Status',
+            'Progress SIT (%)',
+            'Progress UAT (%)', 
     		'Tanggal Assign'
     	];	
     }
@@ -51,7 +53,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
             },
 
     		AfterSheet::class => function(AfterSheet $event){
-    			$event->sheet->getStyle('A1:H1')->applyFromArray([
+    			$event->sheet->getStyle('A1:J1')->applyFromArray([
     				'font' => [
     					'bold' => true
     				],
