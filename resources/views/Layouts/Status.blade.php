@@ -9,7 +9,7 @@
     <small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small>
     @break
   @case(4)
-    <small class="label label-monitoring"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp monitoring</small>
+    <small class="label label-monitoring"><i class="fas fa-binoculars fa-sm"></i>&nbsp Monitoring</small>
     @break
   @case(5)
     <small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</small>
