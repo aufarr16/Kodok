@@ -31,6 +31,12 @@ class Controller_ManagerApprovalProjects extends Controller
             }
             else if($pstat == 5){
                 $project->pketerangan_status = "Projek Done Approved";
+
+                if($project->status_handover == 1){
+                    $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
+                    $handover->is_active = 0;
+                }
+                
                 $project->status_handover = 0;
             }
 
