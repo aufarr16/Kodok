@@ -35,6 +35,7 @@ class Controller_ManagerApprovalProjects extends Controller
                 if($project->status_handover == 1){
                     $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
                     $handover->is_active = 0;
+                    $handover->save();
                 }
                 
                 $project->status_handover = 0;
