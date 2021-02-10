@@ -9,11 +9,6 @@
 <title>
 	| {Engineer} Your Projects
 </title>
-		<div class="form-group">
-				<a href="{{ route('changepic.changeBussinessPIC') }}" type="button" class="modal-show add-pic btn-add" title="Add PIC" id="btn-modal" style="float:left">
-					Add PIC &nbsp<i class="fas fa-plus fa-lg"></i>
-				</a>
-		</div>
 	<div class="table-responsive-lg">
 	<table class="table1" id="table1">
 		<thead>
@@ -26,6 +21,7 @@
 				<th>Tanggal Assign</th>
 				<th style="width: 75px">Status</th>
 				<th>Keterangan</th>
+				<th>Action</th>
 				<!-- <th>Docs</th> -->
 			</tr>
 		</thead>
@@ -65,7 +61,8 @@
 	    	{data: 'nama_project', name: 'nama_project'},
 	    	{data: 'tanggal_assign', name: 'tanggal_assign'},
 	    	{data: 'status', name: 'status'},
-	    	{data: 'keterangan', name: 'keterangan'}
+	    	{data: 'keterangan', name: 'keterangan'},
+	    	{data: 'action', name: 'action'}
 	    ],
 	    "order": [[5, "desc"]]
 	});
