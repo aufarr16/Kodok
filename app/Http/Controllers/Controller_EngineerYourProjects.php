@@ -93,7 +93,7 @@ class Controller_EngineerYourProjects extends Controller
             ->addColumn('action', function($project){
                 return view('Layouts.ActionPic',[
                     'project'=> $project,
-                    'url_add' => route('project.changeBussinessPIC', $project->id)
+                    'url_add' => route('changepic.changeBussinessPIC', $project->id)
                 ]);
             })
             ->addIndexColumn()
