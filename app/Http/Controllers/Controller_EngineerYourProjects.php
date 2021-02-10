@@ -37,14 +37,13 @@ class Controller_EngineerYourProjects extends Controller
             $project->stats_temp = $pstat;
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
-            $project->status_handover = 0;
         }
         else if($pstat == 7){
             $project->id_pstat = $pstat;
             $project->pketerangan_status = "Projek Drop";
 
             if($project->status_handover == 1){
-                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->first();
+                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
                 $handover->is_active = 0;
             }
 
@@ -59,6 +58,7 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         $project->save();
+        $handover->save();
     }
 
     public function changeProgress(Request $request){
