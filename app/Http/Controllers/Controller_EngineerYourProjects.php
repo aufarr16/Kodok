@@ -37,7 +37,6 @@ class Controller_EngineerYourProjects extends Controller
             $project->stats_temp = $pstat;
             $project->pketerangan_status = "Menunggu Approval Projek Done";
             $project->id_pketerangan = 2;
-            $project->status_handover = 0;
         }
         else if($pstat == 7){
             $project->id_pstat = $pstat;
