@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
 use DataTables;
+use App\Project;
+use App\Projects_Handover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
