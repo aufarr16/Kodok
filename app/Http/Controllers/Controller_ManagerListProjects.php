@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use DataTables;
-use App\Exports\UsersExport;
+use App\Exports\ProjectsExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -22,7 +22,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function export(){
-        return Excel::download(new ProjectsExport, 'Data All Project.xlsx');
+        return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
     public function seeDetail(Request $request){
