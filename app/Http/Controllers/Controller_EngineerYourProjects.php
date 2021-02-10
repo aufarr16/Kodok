@@ -90,8 +90,14 @@ class Controller_EngineerYourProjects extends Controller
                     'project'=> $project
                 ]);
             })
+            ->addColumn('action', function($project){
+                return view('Layouts.ActionPic',[
+                    'project'=> $project,
+                    'url_add' => route('project.changeBussinessPIC', $project->id)
+                ]);
+            })
             ->addIndexColumn()
-            ->rawColumns(['status', 'keterangan'])
+            ->rawColumns(['status', 'keterangan','action'])
             ->make(true);
     }
 
