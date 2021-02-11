@@ -73,7 +73,7 @@ class Controller_ManagerAssignProjects extends Controller
         $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;
         $handoveredproject->save(); 
 
-        if($prevhandover = Projects_Handover::where('id_project', $request->nama_project2)->orderby('handover_order', 'desc')->firstOrFail()){
+        if($prevhandover = Projects_Handover::where('id_project', $request->nama_project2)->orderby('handover_order', 'desc')->first()){
             $prevhandover->is_active = 0;
             $prevhandover->save();
         }
