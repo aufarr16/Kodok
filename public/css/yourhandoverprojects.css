@@ -62,3 +62,85 @@
   border-radius: 5px;
   width: 165px;
 }
+
+.table1 a .btn-add {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+
+.btn-add{
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 2px solid #ffc107; /* Remove borders */
+  color: #ffc107; /* White text */
+  margin: 0px 5px 0px 0px;
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  font-style: normal;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-add:hover, .btn-add:focus, .btn-add:active{
+  background-color: #ffc107;
+  color: white; /* White text */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+/* The Modal (background) */
+.modal {
+  /*margin-left: 350px;*/
+  /*margin-top: 80px;*/
+  width: 100%
+}
+
+/* Modal Content */
+.modal-content {
+ background-color: #fefefe;
+ padding-top: 0px;
+ max-height: 525px
+}
+
+.modal a.close1 {
+    position: absolute;
+    top: -10px;
+    right: 6px;
+    transition: all 200ms;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7ba3d0;
+    cursor: pointer;
+}
+.modal a.close1:hover {
+  color: #19569A;
+}
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding-top: 30px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+/*   cursor: cursor; */
+}
+
+input[type=text], input[type=email], input[type=number], select{
+  width: 100%;
+  padding: 5px 5px;
+  /*margin: 0px 10px;*/
+  margin: 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: cursor;
+  color: #19569A;
+  background-color: transparent;
+}

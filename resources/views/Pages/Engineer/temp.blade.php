@@ -21,6 +21,7 @@
 				<th style="width: 75px">Status</th>
 				<th>Keterangan</th>
 				<th>Docs</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 
@@ -52,7 +53,66 @@
 			</td>
 			<td style="width: 1%">{{ $project->pketerangan_status }}
 			      <button type="button" class="btn-keterangan" title="Keterangan Status" data-toggle="modal" data-target="#modal1"><i class="far fa-question-circle"></i></button>     
-			</td>	
+			</td>
+			<td data-filter="false">
+
+					<button type="button" class="btn-add" data-toggle="modal" data-target="#modal" style="float:left">
+					<span>New PIC <i class="fas fa-plus fa-lg"></i><span>
+					</button>
+					
+					<!-- The Modal -->
+					<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true" style="margin-left:-3px;">
+					<div class="modal-dialog">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<a class="close1" data-dismiss="modal">&times;</a>
+							<h2 class="modal-title">Submit</h2>
+							<!-- <a class="close1" data-dismiss="modal">&times;</a> -->
+						</div>	
+						<div class = "modal-body" id="modal-body">
+							<form method="post" action="/engineer/projects/changeBussinessPIC">
+							@csrf
+						      <div class="form-group">
+						        <div class ="input-group-addon">
+									<label for="id_pic_product" style="font-weight:bolder" style="margin-top: -30px">PIC Product</label>
+											<br>
+								</div>
+						        <input type ="number" id="id_pic_product" class="form-control @error('id_pic_product') is-invalid @enderror" style="margin-bottom: 10px" maxlength="7" name="id_pic_product" oninput="javascript:if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)" value="{{ old('id_pic_product') }}">
+											@error('id_pic_product')
+											<div class="invalid-feedback flash">
+												{{ $message }}</div>
+											@enderror
+						        <div class ="input-group-addon">
+											<label for="id_pic_am" style="font-weight:bolder" style="margin-top: -30px">PIC AM</label>
+											<br>
+								</div>
+						        <input type="text" id="id_pic_am" class="form-control @error('id_pic_am') is-invalid @enderror" style="margin-bottom: 10px" name="id_pic_am" value="{{ old('id_pic_am') }}">
+						          @error('id_pic_am')
+											<div class="invalid-feedback flash">
+												{{ $message }}</div>
+											@enderror
+								<div class ="input-group-addon">
+									<label for="id_pic_am" style="font-weight:bolder" style="margin-top: -30px">PIC AM</label>
+											<br>
+								</div>
+						        <input type="text" id="id_pic_pm" class="form-control @error('id_pic_pm') is-invalid @enderror" style="margin-bottom: 10px" name="id_pic_pm" value="{{ old('id_pic_pm') }}">
+						          @error('id_pic_pm')
+											<div class="invalid-feedback flash">
+												{{ $message }}</div>
+											@enderror
+						      </div>
+						      <div class="modal-footer" id="modal-footer">
+										<button type="submit" class="btnsubmit">Submit</button>
+									</div>
+						    </form>
+						</div>
+					</div>
+					</div>
+					</div>
+						
+				</td>
 		</tr>
 		@endforeach
 		</tbody>
