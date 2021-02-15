@@ -63,12 +63,14 @@
   width: 165px;
 }
 
-.table1 a .btn-add {
+.table1 a .btn-add, .btn-progress {
   color: #ffc107 !important;
   text-decoration: none;
 }
 
-.btn-add{
+
+ 
+.btn-add, .btn-progress{
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -86,6 +88,13 @@
 }
 
 .btn-add:hover, .btn-add:focus, .btn-add:active{
+  background-color: #ffc107;
+  color: white; /* White text */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btn-progress:hover, .btn-progress:focus, .btn-progress:active{
   background-color: #ffc107;
   color: white; /* White text */
   -webkit-transform: scale(1.1);
