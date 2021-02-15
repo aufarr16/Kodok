@@ -1,4 +1,4 @@
-<form method="PUT" action="{{ route('changepic.update') }}">
+<form method="PUT" action="{{ route('pic.update') }}">
   <div class="form-group">
     <label for="id_pic_product" style="font-weight:bolder">PIC Product</label>
     <br>

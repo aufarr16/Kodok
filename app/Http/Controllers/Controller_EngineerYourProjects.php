@@ -68,7 +68,6 @@ class Controller_EngineerYourProjects extends Controller
         $uat = $project->progress_uat;
 
         return view('Layouts.FormProgress', compact('sit', 'uat'));
-
     }
 
     public function changeProgress($id){
