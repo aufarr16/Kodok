@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DataTables;
+use App\User;
 use App\Project;
 use App\Projects_Stat;
 use App\Projects_Handover;
@@ -61,8 +62,17 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();
     }
 
-    public function changeProgress(Request $request){
-        $project = getProjectById($request->id);
+    public function editProgress($id){
+        $project = getProjectById($id);
+        $sit = $project->progress_sit;
+        $uat = $project->progress_uat;
+
+        return view('Layouts.FormProgress', compact('sit', 'uat'));
+
+    }
+
+    public function changeProgress($id){
+        $project = getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
         $project->progress_uat = $request->progerss_uat;
@@ -70,11 +80,22 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();
     }
 
-    public function changeBussinessPIC(Request $request){
-        $project = getProjectById($request->id);
+    public function editBussinessPIC($id){
+        $project = getProjectById($id);                 //ngambil data projek yg dipilih
+        $currentproduct = $project->id_pic_product;     //ngambil pic product skrng
+        $currentam = $project->id_pic_am;               //ngambil pic am skrng
+        $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
 
-        $model = new changeBussinessPIC();
-        return view('Layouts.FormPic', compact('model'));
+        //ngambil data buat ngisi dropdown
+        $listproduct = $this->getPICProduct();
+        $listam = $this->getPICAM();
+        $listpm = $this->getPICPM();
+
+        return view('Layouts.FormPic', compact('currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
+    }
+
+    public function changeBussinessPIC($id){
+        $project = getProjectById($id);
 
         $project->id_pic_product = $request->id_pic_product;
         $project->id_pic_am = $request->id_pic_am;
@@ -103,7 +124,7 @@ class Controller_EngineerYourProjects extends Controller
             ->addColumn('action', function($project){
                 return view('Layouts.ActionPic',[
                     'project'=> $project,
-                    'url_add' => route('changepic.changeBussinessPIC', $project->id)
+                    'url_add' => route('changepic.edit', $project->id)
                 ]);
             })
             ->addIndexColumn()
@@ -129,7 +150,15 @@ class Controller_EngineerYourProjects extends Controller
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function cancel(){
-        
+    public function getPICProduct(){
+        return User::where('id_ulevel', 6)->toArray();
+    }
+
+    public function getPICAM(){
+        return User::where('id_ulevel', 7)->toArray();
+    }
+
+    public function getPICPM(){
+        return User::where('id_ulevel', 8)->toArray();
     }
 }

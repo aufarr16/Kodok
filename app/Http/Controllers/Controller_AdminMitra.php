@@ -75,8 +75,7 @@ class Controller_AdminMitra extends Controller
         return response()->json($all_mitra);
     }
 
-    public function edit($id)
-    {
+    public function edit($id){
       $model = Mitra::where('id', $id)->firstOrFail();
       return view('Layouts.FormMitra', compact('model'));
     }

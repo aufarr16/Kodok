@@ -93,6 +93,8 @@
    	<div class="container-fluid">
    	<h2>@yield('PageTitle')</h2>
     @yield('content')
+    @include('Layouts.Modal')
+
 
 	<!-- footer -->
   	<!-- <div class="blockquote text-left"> -->
