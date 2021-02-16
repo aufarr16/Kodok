@@ -96,9 +96,13 @@ class Controller_EngineerYourProjects extends Controller
     public function changeBussinessPIC($id){
         $project = $this->getProjectById($id);
 
-        $project->id_pic_product = $request->id_pic_product;
-        $project->id_pic_am = $request->id_pic_am;
-        $project->id_pic_pm = $request->id_pic_pm;
+        $product = User::where('nama_user', $request->id_pic_product);
+        $am = User::where('nama_user', $request->id_pic_am);
+        $pm = User::where('nama_user', $request->id_pic_pm);
+
+        $project->id_pic_product = $product->id;
+        $project->id_pic_am = $am->id;
+        $project->id_pic_pm = $pm->id;
 
         $project->save();
     }

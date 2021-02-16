@@ -17,6 +17,7 @@
   <link href="{{ url('') }}/style.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
+  <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />

@@ -5,7 +5,7 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="progress_sit" style="font-weight:bolder" style="margin-top: -30px">Progress SIT</label>
+			<label for="progress_sit" style="font-weight:bolder" style="margin-top: -30px">Progress SIT (%)</label>
 				<br>
 			{!! Form::text('progress_sit', null,
 				['class'=> 'form-control',
@@ -19,7 +19,7 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="progress_uat" style="font-weight:bolder" style="margin-top: -30px">Progress UAT</label>
+			<label for="progress_uat" style="font-weight:bolder" style="margin-top: -30px">Progress UAT (%)</label>
 				<br>
 			{!! Form::text('progress_uat', null,
 				['class'=> 'form-control',
