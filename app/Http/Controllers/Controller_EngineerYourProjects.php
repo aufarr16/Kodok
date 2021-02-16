@@ -63,7 +63,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function editProgress($id){
-        $project = getProjectById($id);
+        $project = $this->getProjectById($id);
         $sit = $project->progress_sit;
         $uat = $project->progress_uat;
 
@@ -71,7 +71,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function changeProgress($id){
-        $project = getProjectById($id);
+        $project = $this->getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
         $project->progress_uat = $request->progerss_uat;
@@ -80,7 +80,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function editBussinessPIC($id){
-        $project = getProjectById($id);                 //ngambil data projek yg dipilih
+        $project = $this->getProjectById($id);                 //ngambil data projek yg dipilih
         $currentproduct = $project->id_pic_product;     //ngambil pic product skrng
         $currentam = $project->id_pic_am;               //ngambil pic am skrng
         $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
@@ -94,7 +94,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function changeBussinessPIC($id){
-        $project = getProjectById($id);
+        $project = $this->getProjectById($id);
 
         $project->id_pic_product = $request->id_pic_product;
         $project->id_pic_am = $request->id_pic_am;

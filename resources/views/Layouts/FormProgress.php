@@ -1,6 +1,6 @@
 {!! Form::model($project, [
-	'route' => $project->exists ? ['progress.change', $project->id] : 'progress.edit',
-	'method' => $project->exists ? 'PUT' : 'POST'
+	'route' => ['progress.change', $project->id],
+	'method' => 'PUT'
 ]) !!}
 
 	<div class="form-group">
