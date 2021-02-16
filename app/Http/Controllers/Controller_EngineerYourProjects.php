@@ -70,7 +70,7 @@ class Controller_EngineerYourProjects extends Controller
         return view('Layouts.FormProgress', compact('project', 'sit', 'uat'));
     }
 
-    public function changeProgress($id){
+    public function changeProgress(Request $request, $id){
         $project = $this->getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
@@ -93,7 +93,7 @@ class Controller_EngineerYourProjects extends Controller
         return view('Layouts.FormPic', compact('project', 'currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
     }
 
-    public function changeBussinessPIC($id){
+    public function changeBussinessPIC(Request $request, $id){
         $project = $this->getProjectById($id);
 
         $product = User::where('nama_user', $request->id_pic_product);
