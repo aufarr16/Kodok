@@ -67,7 +67,7 @@ class Controller_EngineerYourProjects extends Controller
         $sit = $project->progress_sit;
         $uat = $project->progress_uat;
 
-        return view('Layouts.FormProgress', compact('sit', 'uat'));
+        return view('Layouts.FormProgress', compact('sit', 'uat', 'project'));
     }
 
     public function changeProgress($id){
@@ -124,7 +124,7 @@ class Controller_EngineerYourProjects extends Controller
                 return view('Layouts.ActionProject',[
                     'project'=> $project,
                     'url_pic' => route('pic.edit', $project->id),
-                    'url_progress' => route('progress.edit', $project->id)
+                    'url_progress' => '/engineer/projects/editprogress/{id}'
                 ]);
             })
             ->addIndexColumn()
