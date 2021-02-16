@@ -90,7 +90,7 @@ class Controller_EngineerYourProjects extends Controller
         $listam = $this->getPICAM();
         $listpm = $this->getPICPM();
 
-        return view('Layouts.FormPic', compact('currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
+        return view('Layouts.FormPic', compact('project', 'currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
     }
 
     public function changeBussinessPIC($id){
