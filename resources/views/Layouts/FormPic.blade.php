@@ -1,6 +1,6 @@
-{!! Form::model($model, [
-	'route' => $model->exists ? ['pic.change', $model->id] : 'pic.edit',
-	'method' => $model->exists ? 'PUT' : 'POST'
+{!! Form::model($project, [
+	'route' => $project->exists ? ['pic.change', $model->id] : 'pic.edit',
+	'method' => $project->exists ? 'PUT' : 'POST'
 ]) !!}
 	<div class="form-group">
 		<div class ="input-group-addon">
