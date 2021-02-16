@@ -99,9 +99,9 @@ class Controller_EngineerYourProjects extends Controller
         $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
 
         //ngambil data buat ngisi dropdown
-        $listproduct = $this->getPICProduct();
-        $listam = $this->getPICAM();
-        $listpm = $this->getPICPM();
+        $listproduct = $this->getUserByLevel(6);
+        $listam = $this->getUserByLevel(7);
+        $listpm = $this->getUserByLevel(8);
 
         return view('Layouts.FormPic', compact('project', 'currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
     }
@@ -109,9 +109,9 @@ class Controller_EngineerYourProjects extends Controller
     public function changeBussinessPIC(Request $request, $id){
         $project = $this->getProjectById($id);
 
-        $product = User::where('nama_user', $request->id_pic_product);
-        $am = User::where('nama_user', $request->id_pic_am);
-        $pm = User::where('nama_user', $request->id_pic_pm);
+        $product = $this->getUserByName($request->id_pic_product);
+        $am = $this->getUserByName($request->id_pic_am);
+        $pm = $this->getUserByName($request->id_pic_pm);
 
         $project->id_pic_product = $product->id;
         $project->id_pic_am = $am->id;
@@ -167,15 +167,11 @@ class Controller_EngineerYourProjects extends Controller
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function getPICProduct(){
-        return User::where('id_ulevel', 6)->toArray();
+    public function getUserByLevel($level){
+        return User::where('id_ulevel', $level)->toArray();
     }
 
-    public function getPICAM(){
-        return User::where('id_ulevel', 7)->toArray();
-    }
-
-    public function getPICPM(){
-        return User::where('id_ulevel', 8)->toArray();
+    public function getUserByName($name){
+        return User::where('nama_user', $name)->firstOrFail();
     }
 }
