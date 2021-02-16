@@ -80,7 +80,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function editBussinessPIC($id){
-        $project = $this->getProjectById($id);                 //ngambil data projek yg dipilih
+        $project = $this->getProjectById($id);          //ngambil data projek yg dipilih
         $currentproduct = $project->id_pic_product;     //ngambil pic product skrng
         $currentam = $project->id_pic_am;               //ngambil pic am skrng
         $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
