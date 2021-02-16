@@ -13,7 +13,7 @@
 					'style' =>'margin-bottom: 10px'
 				])
 			!!}		
-			{!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!}
+			<!-- {!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!} -->
 		</div>
 	</div>
 
