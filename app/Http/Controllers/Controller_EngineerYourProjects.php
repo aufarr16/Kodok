@@ -72,16 +72,16 @@ class Controller_EngineerYourProjects extends Controller
 
     public function changeProgress(Request $request, $id){
         $request->validate([
-            'progress_sit' => 'required|lte:101|regex:/^[1-9][0-9]*([.][0-9]{2}|)$/|',
-            'progress_uat' => 'required|lte:101|regex:/^[1-9][0-9]*([.][0-9]{2}|)$/|',
+            'progress_sit' => 'required|lte:100|regex:/^[1-9][0-9]*([.][0-9]{2})$/',
+            'progress_uat' => 'required|lte:100|regex:/^[1-9][0-9]*([.][0-9]{2})$/',
         ],
         $message = [
             'progress_sit.required' => ' Mohon isi Progress SIT',
-              'progress_sit.lte' => ' Mohon isi Progress SIT max 3 angka',
+              'progress_sit.lte' => ' Progress SIT maks. 100',
               'progress_sit.regex' => ' Progress SIT hanya berisi angka',
-            'progress_uat.required' => ' Mohon isi Progress uat',
-              'progress_uat.lte' => ' Mohon isi Progress uat max 3 angka',
-              'progress_uat.regex' => ' Progress uat hanya berisi angka',
+            'progress_uat.required' => ' Mohon isi Progress UAT',
+              'progress_uat.lte' => ' Progress UAT maks. 100',
+              'progress_uat.regex' => ' Progress UAT hanya berisi angka',
         ]);
 
         $project = $this->getProjectById($id);
