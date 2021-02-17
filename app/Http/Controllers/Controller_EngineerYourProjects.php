@@ -100,9 +100,9 @@ class Controller_EngineerYourProjects extends Controller
         $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
 
         //ngambil data buat ngisi dropdown
-        $listproduct = $this->getUserByLevel(6);
-        $listam = $this->getUserByLevel(7);
-        $listpm = $this->getUserByLevel(8);
+        $listproduct = $this->getProductData($id);
+        // $listam = $this->getAMData($id);
+        // $listpm = $this->getPMData($id);
 
         return view('Layouts.FormPic', compact('project', 'currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
     }
@@ -168,9 +168,36 @@ class Controller_EngineerYourProjects extends Controller
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function getUserByLevel($level){
-        return User::where('id_ulevel', $level)->get();
+    public function getProductData($level){
+        return DB::table('users')
+        ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_users'))
+        ->leftjoin('projects', function($join) use ($userid) {
+            $join->on('projects.id_pic_product', '=', 'users.id')
+            ->where('projects.id', $userid);
+        })
+        ->where('users.id_ulevel', 6)
+        ->groupBy('users.id','users.nama_ulevel')
+        ->orderBy('jml','DESC')
+        ->get()
+        ->pluck('nama_users', 'id')
+        ->toArray();
     }
+
+    // public function getrole($id){
+    //     $userid = $id;
+
+    //     return DB::table('users_levels')
+    //     ->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
+    //     ->leftjoin('users', function($join) use ($userid) {
+    //         $join->on('users.id_ulevel', '=', 'users_levels.id')
+    //         ->where('users.id', $userid);
+    //     })
+    //     ->groupBy('users_levels.id','users_levels.nama_ulevel')
+    //     ->orderBy('jml','DESC')
+    //     ->get()
+    //     ->pluck('nama_ulevel', 'id')
+    //     ->toArray();
+    // }
 
     public function getUserByName($name){
         return User::where('nama_user', $name)->firstOrFail();
