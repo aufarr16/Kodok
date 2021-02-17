@@ -94,16 +94,16 @@ class Controller_EngineerYourProjects extends Controller
 
     public function editBussinessPIC($id){
         $project = $this->getProjectById($id);          //ngambil data projek yg dipilih
-        $currentproduct = $project->id_pic_product;     //ngambil pic product skrng
-        $currentam = $project->id_pic_am;               //ngambil pic am skrng
-        $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
+        // $currentproduct = $project->id_pic_product;     //ngambil pic product skrng
+        // $currentam = $project->id_pic_am;               //ngambil pic am skrng
+        // $currentpm = $project->id_pic_pm;               //ngambil pic pm skrng
 
         //ngambil data buat ngisi dropdown
         $listproduct = $this->getUserByLevel(6);
         $listam = $this->getUserByLevel(7);
         $listpm = $this->getUserByLevel(8);
 
-        return view('Layouts.FormPic', compact('project', 'currentproduct', 'currentam', 'currentpm', 'listproduct', 'listam', 'listpm'));
+        return view('Layouts.FormPic', compact('project', 'listproduct', 'listam', 'listpm'));
     }
 
     public function changeBussinessPIC(Request $request, $id){
