@@ -143,7 +143,7 @@ class Controller_AdminUsers extends Controller
 
 	public function dataTable()
     {
-        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id");
+        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id and a.id_ulevel != 9");
         return DataTables::of($model)
             ->addColumn('action', function($model){
                 return view('Layouts.ActionUser',[

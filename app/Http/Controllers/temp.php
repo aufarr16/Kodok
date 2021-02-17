@@ -20,3 +20,6 @@ Isi Awal Action.php
 <a href="{{ $url_show }}" class="btn-show" title="Detail: {{ $model->name }}"><i class=""></i></a>
 <a href="{{ $url_delete }}" class="btn-delete" title="Detail: {{ $model->name }}"><i class=""></i></a>
 <a href="{{ $url_edit }}" class="btn-edit" title="Detail: {{ $model->name }}"><i class=""></i></a>
+
+
+, 'listam', 'listpm'

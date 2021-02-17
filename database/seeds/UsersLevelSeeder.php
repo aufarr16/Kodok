@@ -43,5 +43,9 @@ class UsersLevelSeeder extends Seeder
         $pm = Users_Level::create([
             'nama_ulevel' => 'Project Manager'
         ]);
+
+        $void = Users_Level::create([
+            'nama_ulevel' => 'Placeholder'
+        ]);
     }
 }

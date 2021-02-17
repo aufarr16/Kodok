@@ -84,7 +84,7 @@ class Controller_EngineerYourProjects extends Controller
               'progress_uat.lte' => ' Progress UAT maks. 100',
               'progress_uat.regex' => ' Progress UAT hanya berisi angka',
         ]);
-
+        
         $project = $this->getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
@@ -97,19 +97,27 @@ class Controller_EngineerYourProjects extends Controller
         $project = $this->getProjectById($id);          //ngambil data projek yg dipilih
 
         //ngambil data buat ngisi dropdown
-        $listproduct = $this->getProductData($id);
+        if($project->id_pic_product == NULL){
+            $listproduct = $this->getProductData($id, 0); 
+            $flag = 0;
+        }
+        else{
+            $listproduct = $this->getProductData($id, 1);
+            $flag = 1;
+        }
+        
         // $listam = $this->getAMData($id);
         // $listpm = $this->getPMData($id);
 
-        return view('Layouts.FormPic', compact('project', 'listproduct', 'listam', 'listpm'));
+        return view('Layouts.FormPic', compact('project', 'listproduct', 'flag'));
     }
 
     public function changeBussinessPIC(Request $request, $id){
         $project = $this->getProjectById($id);
 
-        $product = $this->getUserByName($request->id_pic_product);
-        $am = $this->getUserByName($request->id_pic_am);
-        $pm = $this->getUserByName($request->id_pic_pm);
+        $product = $this->getUserById($request->id_pic_product);
+        $am = $this->getUserById($request->id_pic_am);
+        $pm = $this->getUserById($request->id_pic_pm);
 
         $project->id_pic_product = $product->id;
         $project->id_pic_am = $am->id;
@@ -165,38 +173,31 @@ class Controller_EngineerYourProjects extends Controller
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function getProductData($level){
-        return DB::table('users')
-        ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_users'))
-        ->leftjoin('projects', function($join) use ($userid) {
-            $join->on('projects.id_pic_product', '=', 'users.id')
-            ->where('projects.id', $userid);
-        })
-        ->where('users.id_ulevel', 6)
-        ->groupBy('users.id','users.nama_ulevel')
-        ->orderBy('jml','DESC')
-        ->get()
-        ->pluck('nama_users', 'id')
-        ->toArray();
+    public function getProductData($id, $flag){
+        if($flag == 0){
+            return User::whereIn('users.id_ulevel', [9, 6])
+            ->orderBy('id', 'asc')
+            ->get()
+            ->pluck('nama_user', 'id')
+            ->toArray();
+        }
+        else{
+            return DB::table('users')
+            ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_pic_product', '=', 'users.id')
+                ->where('projects.id', $id);
+            })
+            ->where('users.id_ulevel', 6)
+            ->groupBy('users.id','users.nama_user')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_user', 'id')
+            ->toArray();
+        }
     }
 
-    // public function getrole($id){
-    //     $userid = $id;
-
-    //     return DB::table('users_levels')
-    //     ->select(DB::raw('count(users.id) as jml, users_levels.id, users_levels.nama_ulevel'))
-    //     ->leftjoin('users', function($join) use ($userid) {
-    //         $join->on('users.id_ulevel', '=', 'users_levels.id')
-    //         ->where('users.id', $userid);
-    //     })
-    //     ->groupBy('users_levels.id','users_levels.nama_ulevel')
-    //     ->orderBy('jml','DESC')
-    //     ->get()
-    //     ->pluck('nama_ulevel', 'id')
-    //     ->toArray();
-    // }
-
-    public function getUserByName($name){
-        return User::where('nama_user', $name)->firstOrFail();
+    public function getUserById($id){
+        return User::where('id', $id)->firstOrFail();
     }
 }

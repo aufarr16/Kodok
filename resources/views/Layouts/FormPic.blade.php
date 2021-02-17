@@ -6,33 +6,37 @@
 		<div class ="input-group-addon">
 			<label for="id_pic_product" style="font-weight:bolder" style="margin-top: -30px">PIC Product</label>
 				<br>
-				{!! Form::select('nama_user', $listproduct, null, array(
+				{!! Form::select('id_pic_product', $listproduct, null, array(
 				    'class' => 'form-control selectproduct',
 				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div> 
-	</div>
+	</div> 
+
 	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="id_pic_am" style="font-weight:bolder" style="margin-top: -30px">PIC Am</label>
 				<br>
-				{!! Form::select('nama_user', $listam, null, array(
+				{!! Form::select('id_pic_am', $listam, null, array(
 				    'class' => 'form-control selectpicam',
 				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div>
 	</div>
+
 	<div class="form-group">
 		<div class ="input-group-addon">
 			<label for="id_pic_pm" style="font-weight:bolder" style="margin-top: -30px">PIC Pm</label>
 				<br>
-				{!! Form::select('nama_user', $listpm, null, array(
+				{!! Form::select('id_pic_pm', $listpm, null, array(
 				    'class' => 'form-control selectpicpm',
 				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div>
 	</div>
+	
+	
 {!! Form::close() !!}
