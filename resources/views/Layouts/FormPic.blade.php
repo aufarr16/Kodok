@@ -1,6 +1,6 @@
 {!! Form::model($project, [
-	'route' => $project->exists ? ['pic.change', $model->id] : 'pic.edit',
-	'method' => $project->exists ? 'PUT' : 'POST'
+	'route' => ['pic.change', $project->id],
+	'method' => 'PUT'
 ]) !!}
 	<div class="form-group">
 		<div class ="input-group-addon">
@@ -8,7 +8,7 @@
 				<br>
 				{!! Form::select('nama_user', $currentproduct, null, array(
 				    'class' => 'form-control selectproduct',
-				    'id' => 'nama_user'', 
+				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div> 
@@ -19,7 +19,7 @@
 				<br>
 				{!! Form::select('nama_user', $currentam, null, array(
 				    'class' => 'form-control selectpicam',
-				    'id' => 'nama_user'', 
+				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div>
@@ -30,7 +30,7 @@
 				<br>
 				{!! Form::select('nama_user', $currentpm, null, array(
 				    'class' => 'form-control selectpicpm',
-				    'id' => 'nama_user'', 
+				    'id' => 'nama_user', 
 				    )) 
 				!!}
 		</div>

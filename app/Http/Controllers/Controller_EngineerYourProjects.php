@@ -168,7 +168,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function getUserByLevel($level){
-        return User::where('id_ulevel', $level)->toArray();
+        return User::where('id_ulevel', $level)->get();
     }
 
     public function getUserByName($name){

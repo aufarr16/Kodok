@@ -671,6 +671,7 @@ $('body').on('click', '.modal-show', function(event){
         url: url,
         dataType: 'html',
         success: function (response) {
+        	$('#modal-body').html(""); 
             $('#modal-body').html(response); 
             // console.log($('#modal-body'));
         }
