@@ -63,14 +63,14 @@
   width: 165px;
 }
 
-.table1 a .btn-add, .btn-progress {
+.table1 a .btn-edit, .btn-progress {
   color: #ffc107 !important;
   text-decoration: none;
 }
 
 
  
-.btn-add, .btn-progress{
+.btn-edit, .btn-progress{
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -87,7 +87,7 @@
   vertical-align: middle;
 }
 
-.btn-add:hover, .btn-add:focus, .btn-add:active{
+.btn-edit:hover, .btn-edit:focus, .btn-edit:active{
   background-color: #ffc107;
   color: white; /* White text */
   -webkit-transform: scale(1.1);
