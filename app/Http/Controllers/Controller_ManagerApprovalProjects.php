@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerApprovalProjects extends Controller
 {
     public function openPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 2){
             return view('Pages.Manager.View_ManagerApprovalProjects');  

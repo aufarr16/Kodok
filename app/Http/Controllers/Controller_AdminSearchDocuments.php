@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Controller_AdminSearchDocuments extends Controller
 {
     public function openPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
             return view('Pages.Admin.View_AdminSearchDocuments', compact('userLevel'));

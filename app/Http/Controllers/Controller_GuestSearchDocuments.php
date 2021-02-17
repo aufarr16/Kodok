@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_GuestSearchDocuments extends Controller
 {
     public function openPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 4){
             return view('Pages.Guest.View_GuestSearchDocuments');        

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerHome extends Controller
 {
     public function openAllDataPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 2){
             //YEAR DATA

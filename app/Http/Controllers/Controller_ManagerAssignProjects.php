@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerAssignProjects extends Controller
 {
     public function openPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 2){
             $products = DB::select("select * from products order by nama_product asc");

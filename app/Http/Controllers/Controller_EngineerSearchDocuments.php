@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Controller_EngineerSearchDocuments extends Controller
 {
     public function openPage(){
+        //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
             return view('Pages.Engineer.View_EngineerSearchDocuments', compact('userLevel'));
