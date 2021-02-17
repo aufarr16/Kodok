@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 	Route::get('/engineer/projects/editprogress/{id}', 'Controller_EngineerYourProjects@editProgress')->name('progress.edit');
 	Route::put('/engineer/projects/changeprogress/{id}', 'Controller_EngineerYourProjects@changeProgress')->name('progress.change');
-	Route::get('/engineer/projects/editpic/{id}', 'Controller_EngineerYourProjects@editBussinesPIC')->name('pic.edit');
+	Route::get('/engineer/projects/editpic/{id}', 'Controller_EngineerYourProjects@editBussinessPIC')->name('pic.edit');
 	Route::put('/engineer/projects/changepic/{id}', 'Controller_EngineerYourProjects@changeBussinessPIC')->name('pic.change');
 
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');

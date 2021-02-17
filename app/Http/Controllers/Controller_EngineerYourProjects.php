@@ -73,8 +73,8 @@ class Controller_EngineerYourProjects extends Controller
 
     public function changeProgress(Request $request, $id){
         $request->validate([
-            'progress_sit' => 'required|lte:100|regex:/^[1-9][0-9]*([.][0-9]{2})$/',
-            'progress_uat' => 'required|lte:100|regex:/^[1-9][0-9]*([.][0-9]{2})$/',
+            'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
+            'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
         ],
         $message = [
             'progress_sit.required' => ' Mohon isi Progress SIT',
@@ -88,7 +88,7 @@ class Controller_EngineerYourProjects extends Controller
         $project = $this->getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
-        $project->progress_uat = $request->progerss_uat;
+        $project->progress_uat = $request->progress_uat;
 
         $project->save();
     }
@@ -169,7 +169,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function getUserByLevel($level){
-        return User::where('id_ulevel', $level)->toArray();
+        return User::where('id_ulevel', $level)->get();
     }
 
     public function getUserByName($name){
