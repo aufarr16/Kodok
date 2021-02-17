@@ -94,6 +94,7 @@
    	<div class="container-fluid">
    	<h2>@yield('PageTitle')</h2>
     @yield('content')
+    @include('Layouts.Notif')
     @include('Layouts.Modal')
 
 
