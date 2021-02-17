@@ -83,12 +83,11 @@ class Controller_EngineerYourProjects extends Controller
               'progress_uat.lte' => ' Progress UAT maks. 100',
               'progress_uat.regex' => ' Progress UAT hanya berisi angka',
         ]);
-        dd($request);
 
         $project = $this->getProjectById($id);
 
         $project->progress_sit = $request->progress_sit;
-        $project->progress_uat = $request->progerss_uat;
+        $project->progress_uat = $request->progress_uat;
 
         $project->save();
     }
