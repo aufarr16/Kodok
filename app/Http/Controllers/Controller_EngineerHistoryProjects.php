@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_EngineerHistoryProjects extends Controller
 {
-    public function openPage(){
+    public function openPage(){         //buka halaman Engineer - Project Done (Own Project)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
@@ -21,12 +21,11 @@ class Controller_EngineerHistoryProjects extends Controller
         }
     }
 
-    public function dataTable()
-    {
-        $userId = auth()->id();
-        $project = $this->getProjectData($userId);
-        return DataTables::of($project)
-            ->addColumn('keterangan', function($project){
+    public function dataTable(){                            //generate table di halaman Engineer - Project Done (Own Project)
+        $userId = auth()->id();                             //ngambil id user yg lagi login
+        $project = $this->getProjectData($userId);          //ngambil data2 projek user yg lagi login
+        return DataTables::of($project)                     //bikin tabel berdasarkan data2 yg udh diambil
+            ->addColumn('keterangan', function($project){   //nambah kolom keterangan
                 return view('Layouts.KeteranganProject',[
                     'project'=> $project
                 ]);
@@ -36,7 +35,7 @@ class Controller_EngineerHistoryProjects extends Controller
             ->make(true);
     }
 
-    public function getProjectData($id){
+    public function getProjectData($id){                    //ngambil data projek2 dari user yg lagi login
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, products.nama_product, projects_types.nama_ptype, projects.id_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
         ->leftjoin('products', 'projects.id_product', '=', 'products.id')
