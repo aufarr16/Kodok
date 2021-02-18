@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminMitra extends Controller
 {
-    public function openPage(){
+    public function openPage(){                     //buka halaman Admin - Mitra
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
@@ -30,14 +30,13 @@ class Controller_AdminMitra extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 
-    public function create(){
+    public function create(){                       //nyiapin form Tambah Mitra
         $model = new Mitra();                       //menyiapkan variabel mitra baru untuk dilempar dan nantinya diisi di form Tambah Mitra
         return view('Layouts.FormMitra', compact('model'));
     }
 
-    public function store(Request $request){
-    	//validasi data yg sudah diisi di form Tambah Mitra
-        $request->validate([
+    public function store(Request $request){        //nyimpen data yg udh disubmit dari form Tambah Mitra
+        $request->validate([                        //validasi data yg sudah diisi di form Tambah Mitra
             'ABA' => 'required|min:3|max:13|unique:mitras',
             'nama_mitra' => 'required|max:51',
         ],
@@ -62,25 +61,25 @@ class Controller_AdminMitra extends Controller
         return $model;
     }
 
-    public function destroy($id){
+    public function destroy($id){                   //delete data
         Mitra::where('id', $id)->delete();          //mencari data mitra berdasarkan idnya lalu menghapusnya
         $mitraData['data'] = Mitra::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
 
         return response()->json($mitraData);
     }
 
-    public function get(){
+    public function get(){                                          
         $all_mitra['data'] = Mitra::orderby("id", "asc")->get();    //mengambil semua data mitra
 
         return response()->json($all_mitra);
     }
 
-    public function edit($id){
+    public function edit($id){                                      //nyiapin form Edit Mitra
       $model = Mitra::where('id', $id)->firstOrFail();              //mengambil data mitra untuk nanti ditempel datanya di form Edit Mitra
       return view('Layouts.FormMitra', compact('model'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id){                  //ngedit data yg udh diinput dari form Edit Mitra
         $request->validate([
             'ABA' => 'required|min:3|max:13|unique:mitras,ABA, ' .$id,
             'nama_mitra' => 'required|max:51',
@@ -102,11 +101,11 @@ class Controller_AdminMitra extends Controller
         $model->save();                                             //menyimpan hasil editan data
     }
 
-    public function dataTable()
+    public function dataTable()                                     //generate table di halaman Admin - Mitra
     {
         $model = Mitra::query();                                    //mengambil semua data mitra
-        return DataTables::of($model)                               //membuat datatable
-            ->addColumn('action', function($model){
+        return DataTables::of($model)                               //membuat datatable berdasarkan data yg udh diambil
+            ->addColumn('action', function($model){                 //nambahin yg gak ada di query, disini yg ditambah action
                 return view('Layouts.ActionMitra',[
                     'model'=> $model,
                     'url_edit' => route('mitra.edit', $model->id)

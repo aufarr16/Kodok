@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminProducts extends Controller
 {
-    public function openPage(){
+    public function openPage(){             //buka halaman Admin - Product
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 5){
@@ -29,12 +29,12 @@ class Controller_AdminProducts extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 
-    public function create() {
+    public function create() {              //nyiapin form Tambah Product
         $model = new Product();             //membuat variable product baru untuk dilempar dan diisi di form Tambah Product
         return view('Layouts.FormProducts', compact('model'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request){//nambah data dari data yg udh diinput di for Tambah Product
         $request->validate([                //validasi input pada form Tambah Product
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
@@ -53,20 +53,20 @@ class Controller_AdminProducts extends Controller
     	return redirect('/admin/products')->with('success','Data Product berhasil disimpan');
     }
 
-    public function destroy($id){
-        Product::where('id', $id)->delete();                //mencari data product dan menghapusnya
+    public function destroy($id){                                       //delete data
+        Product::where('id', $id)->delete();                            //mencari data product dan menghapusnya
         $productData['data'] = Product::orderby("id", "asc")->get();    //mengambil semua data product setelah menghapus data
 
         return response()->json($productData);              //melempar data product 
     }
 
-    public function edit($id)
+    public function edit($id)                               //nyiapin form Edit Product
     {
       $model = Product::where('id', $id)->firstOrFail();    //mengambil data yg akan diedit untuk ditempel di form Edit Product
       return view('Layouts.FormProducts', compact('model'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id){          //edit data yg udh diinput di form Edit Product
         $request->validate([                                //validasi input pada form Edit Product
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
@@ -83,11 +83,11 @@ class Controller_AdminProducts extends Controller
         $model->save();                                     //menyimpan perubahan
     }
 
-    public function dataTable()
+    public function dataTable()                             //generate table di halaman Admin - Product
     {
         $model = Product::query();                          //mengambil semua data product
-        return DataTables::of($model)                       //membuat datatable
-            ->addColumn('action', function($model){
+        return DataTables::of($model)                       //membuat datatable berdasarkan data yg udh diambil
+            ->addColumn('action', function($model){         //nambahin yg gak ada di query, disini yg ditambah action
                 return view('Layouts.ActionProduct',[
                     'model'=> $model,
                     'url_edit' => route('products.edit', $model->id)
