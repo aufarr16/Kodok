@@ -28,33 +28,13 @@ class Controller_ManagerListProjects extends Controller
 
     public function seeDetail(Request $request){
         $idproject = $request->id;
-        $oripic = $this->getOriginalPIC($idproject);
+        $picori = $this->getOriginalPIC($idproject);
+        $piccurrent = $this->getCurrentPIC($idproject);
         $historypic = $this->getHistoryPIC($idproject);
         $picbisnis = $this->getPICBisnis($idproject);
-    }
+        $progress = $this->getProgress($idproject);
 
-    public function getOriginalPIC($id){
-        return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.id_original_pic, users.nama_user'))
-        ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
-        ->where('projects.id', '=', $id)
-        ->get();
-    }
-
-    public function getHistoryPIC($id){
-        return DB::table('projects_handover')
-        ->select(DB::raw('projects_handover.id_project, projects_handover.id_user, users.nama_user'))
-        ->leftjoin('users', 'projects_handover.id_user', '=', 'users.id')
-        ->where('projects_handover.id_project', '=', $id)
-        ->orderBy('projects_handover.handover_order', 'asc')
-        ->get();
-    }
-
-    public function getPICBisnis($id){
-        return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.id_pic_product, projects.id_pic_am, projects.id_pic_pm'))
-        ->where('id', '=', $id)
-        ->get();
+        return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picbisnis', 'progress'));
     }
 
     public function dataTable()
@@ -74,5 +54,44 @@ class Controller_ManagerListProjects extends Controller
             ->addIndexColumn()
             ->rawColumns(['nama_project', 'id_pstat'])
             ->make(true);
+    }
+
+    public function getOriginalPIC($id){
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.id_original_pic, users.nama_user'))
+        ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
+        ->where('projects.id', '=', $id)
+        ->get();
+    }
+
+    public function getCurrentPIC($id){
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.id_current_pic, users.nama_user'))
+        ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
+        ->where('projects.id', '=', $id)
+        ->get();
+    }
+
+    public function getHistoryPIC($id){
+        return DB::table('projects_handover')
+        ->select(DB::raw('projects_handover.id_project, projects_handover.id_user, users.nama_user'))
+        ->leftjoin('users', 'projects_handover.id_user', '=', 'users.id')
+        ->where('projects_handover.id_project', '=', $id)
+        ->orderBy('projects_handover.handover_order', 'asc')
+        ->get();
+    }
+
+    public function getPICBisnis($id){
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.id_pic_product, projects.id_pic_am, projects.id_pic_pm'))
+        ->where('projects.id', '=', $id)
+        ->get();
+    }
+
+    public function getProgress($id){
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.progress_sit, progress_uat'))
+        ->where('projects.id', '=', $id)
+        ->get();
     }
 }
