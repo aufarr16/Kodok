@@ -96,20 +96,31 @@ class Controller_EngineerYourProjects extends Controller
     public function editBussinessPIC($id){
         $project = $this->getProjectById($id);          //ngambil data projek yg dipilih
 
-        //ngambil data buat ngisi dropdown
-        if($project->id_pic_product == NULL){
-            $listproduct = $this->getProductData($id, 0); 
-            $flag = 0;
+        //ngambil data product buat ngisi dropdown
+        if($project->id_pic_product == NULL || $project->id_pic_product == 1){  //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+            $listproduct = $this->getPICData($id, 0, 6); 
         }
         else{
-            $listproduct = $this->getProductData($id, 1);
-            $flag = 1;
+            $listproduct = $this->getPICData($id, 1, 6);
         }
-        
-        // $listam = $this->getAMData($id);
-        // $listpm = $this->getPMData($id);
 
-        return view('Layouts.FormPic', compact('project', 'listproduct', 'flag'));
+        //ngambil data am buat ngisi dropdown
+        if($project->id_pic_am == NULL || $project->id_pic_am == 1){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+            $listam = $this->getPICData($id, 0, 7); 
+        }
+        else{
+            $listam = $this->getPICData($id, 1, 7);
+        }
+
+        //ngambil data pm buat ngisi dropdown
+        if($project->id_pic_pm == NULL || $project->id_pic_pm == 1){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+            $listpm = $this->getPICData($id, 0, 8); 
+        }
+        else{
+            $listpm = $this->getPICData($id, 1, 8);
+        }
+
+        return view('Layouts.FormPIC', compact('project', 'listproduct', 'listam', 'listpm'));
     }
 
     public function changeBussinessPIC(Request $request, $id){
@@ -173,9 +184,9 @@ class Controller_EngineerYourProjects extends Controller
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function getProductData($id, $flag){
+    public function getPICData($id, $flag, $level){
         if($flag == 0){
-            return User::whereIn('users.id_ulevel', [9, 6])
+            return User::whereIn('users.id_ulevel', [$level, 9])
             ->orderBy('id', 'asc')
             ->get()
             ->pluck('nama_user', 'id')
@@ -188,7 +199,7 @@ class Controller_EngineerYourProjects extends Controller
                 $join->on('projects.id_pic_product', '=', 'users.id')
                 ->where('projects.id', $id);
             })
-            ->where('users.id_ulevel', 6)
+            ->where('users.id_ulevel', $level)
             ->groupBy('users.id','users.nama_user')
             ->orderBy('jml','DESC')
             ->get()
