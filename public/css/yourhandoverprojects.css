@@ -63,14 +63,7 @@
   width: 165px;
 }
 
-.table1 a .btn-edit, .btn-progress {
-  color: #ffc107 !important;
-  text-decoration: none;
-}
-
-
- 
-.btn-edit, .btn-progress{
+.btn-edit{
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -87,16 +80,95 @@
   vertical-align: middle;
 }
 
-.btn-edit:hover, .btn-edit:focus, .btn-edit:active{
+.table1 a .btn-edit {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+
+.btn-edit:hover{
   background-color: #ffc107;
   color: white; /* White text */
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.btn-progress:hover, .btn-progress:focus, .btn-progress:active{
-  background-color: #ffc107;
+.btn-delete{
+  padding-top:5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: transparent;
+  border: 2px solid #dc3545;
+  color: #dc3545; /* White text */
+  /*margin: 0px 0px 0px 0px;*/
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  font-style: normal;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-delete:hover{
+  background-color: #dc3545;
   color: white; /* White text */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btnsubmit{
+  background-color: transparent;
+  color: #19569A;
+  padding: 3px 3px;
+  width: 30%;
+  margin: 5px 0px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bolder;
+  border: 2px solid #19569A;
+  font-size: 16px;
+  height: 35px;
+  /*display: inherit;*/
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.btnsubmit:hover, .btn-submit:focus, .btn-submit:active {
+  color: #fff;
+  background-color: #19569A;
+}
+
+.btn-add{
+    background-color: transparent;
+    color: #FF8882 !important;
+    border: 2px solid #FF8882;
+    padding: 4px; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+    height: 35px;
+/*  width: 100%; */
+    font-size: 14px;
+     margin-top: -10px;
+     position: absolute;
+    vertical-align: middle;
+    z-index: 2;
+    left: 190px;
+}
+
+.btn-add:hover, .btn-add:focus, .btn-add:active{
+  background-color: #FF8882;
+  color: white !important;
+  border: 2px solid #FF8882;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -152,4 +224,17 @@ input[type=text], input[type=email], input[type=number], select{
   cursor: cursor;
   color: #19569A;
   background-color: transparent;
+}
+
+/*alert*/
+.alert {
+  display: none;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.selectrole{
+  padding:0px !important;
 }
