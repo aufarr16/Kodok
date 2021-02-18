@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_EngineerHandoverProjects extends Controller
 {
-    public function openPage(){         //buka halaman Engineer - Own Project (Handover)
+    public function openPage(){         //buka halaman Engineer - Project On Going (Handover)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){ 
@@ -35,8 +35,7 @@ class Controller_EngineerHandoverProjects extends Controller
         $handover->save();                                          //save perubahan data2 di project_handover yg udh dilakukan
     }
 
-    public function dataTable()                                     //bikin tabel di halaman Engineer - Own Project (Handover)
-    {
+    public function dataTable(){                                    //generate tabel halaman Engineer - Own Project (Handover)
         $userId = auth()->id();                                     //ngambil id user yg lagi login
         $project = $this->getHandoverData($userId);                 //ngambil data projek handoveran punya user yg lagi login
         $pstat = Projects_Stat::where('id', '!=', 1)->get();        //ngambil pstat kecuali reserve buat ditampilin di dropdown status

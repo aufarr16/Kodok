@@ -101,8 +101,7 @@ class Controller_AdminMitra extends Controller
         $model->save();                                             //menyimpan hasil editan data
     }
 
-    public function dataTable()                                     //generate table di halaman Admin - Mitra
-    {
+    public function dataTable(){                                    //generate table di halaman Admin - Mitra
         $model = Mitra::query();                                    //mengambil semua data mitra
         return DataTables::of($model)                               //membuat datatable berdasarkan data yg udh diambil
             ->addColumn('action', function($model){                 //nambahin yg gak ada di query, disini yg ditambah action

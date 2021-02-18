@@ -83,8 +83,7 @@ class Controller_AdminProducts extends Controller
         $model->save();                                     //menyimpan perubahan
     }
 
-    public function dataTable()                             //generate table di halaman Admin - Product
-    {
+    public function dataTable(){                            //generate table di halaman Admin - Product
         $model = Product::query();                          //mengambil semua data product
         return DataTables::of($model)                       //membuat datatable berdasarkan data yg udh diambil
             ->addColumn('action', function($model){         //nambahin yg gak ada di query, disini yg ditambah action
