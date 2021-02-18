@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_EngineerYourProjects extends Controller
 {
-    public function openPage(){
+    public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5){
@@ -23,56 +23,54 @@ class Controller_EngineerYourProjects extends Controller
         }
     }
 
-    public function changeStatus(Request $request){
-        // dd($request);
+    public function changeStatus(Request $request){     //ganti status projek
+        $id = $request->input('id');                    //nyimpen id projek yg mau diubah statusnya
+        $pstat = $request->input('pstat');              //nyimpen statusnya mau diganti jadi apa
+        $project = $this->getProjectById($id);          //ngambil projek yg mau diganti statusnya
 
-        $id = $request->input('id');
-        $pstat = $request->input('pstat');
-        $project = $this->getProjectById($id);
-
-        if($pstat == 3){
-            $project->stats_temp = $pstat;
-            $project->pketerangan_status = "Menunggu Approval Pengujian Done";
-            $project->id_pketerangan = 2;
+        if($pstat == 3){                                                        //kalo statnys mau diganti ke pengujian done, maka
+            $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
+            $project->pketerangan_status = "Menunggu Approval Pengujian Done";  //ngubah keterangannya
+            $project->id_pketerangan = 2;                                       //ubah keterangannya jadi menunggu approval
         }
-        else if($pstat == 5){
-            $project->stats_temp = $pstat;
-            $project->pketerangan_status = "Menunggu Approval Projek Done";
-            $project->id_pketerangan = 2;
+        else if($pstat == 5){                                                   //kalo statnya mau diganti ke projek done, maka
+            $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
+            $project->pketerangan_status = "Menunggu Approval Projek Done";     //ngubah keterangannya
+            $project->id_pketerangan = 2;                                       //ubah keterangannya jadi menunggu approval
         }
-        else if($pstat == 7){
-            $project->id_pstat = $pstat;
-            $project->pketerangan_status = "Projek Drop";
+        else if($pstat == 7){                                                   //kalo statnya mau diganti ke drop, maka
+            $project->id_pstat = $pstat;                                        //status langsung diubah ke drop
+            $project->pketerangan_status = "Projek Drop";                       //ngubah keterangannya
 
-            if($project->status_handover == 1){
-                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
-                $handover->is_active = 0;
-                $handover->save();
+            if($project->status_handover == 1){                                 //kalo dia projek handoveran, maka
+                $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();  //ambil data projek handoverannya
+                $handover->is_active = 0;                                       //is_activenya dibikin 0 karena projek dianggap selesai
+                $handover->save();                                              //simpen perubahan data projek handover
             }
 
-            $project->status_handover = 0;
+            $project->status_handover = 0;                                      //di projek, status handoverannya dianggap selsai
         }
         else {
-            $project->id_pstat = $pstat;
-            if($project->id_pketerangan != 3){
-                $project->pketerangan_status = "";
-                $project->id_pketerangan = 1;
+            $project->id_pstat = $pstat;                                        //selain pengujian done, projek done, ato drop, maka
+            if($project->id_pketerangan != 3){                                  //kalo approval tidak di decline, maka
+                $project->pketerangan_status = "";                              //keterangan dikosongkan
+                $project->id_pketerangan = 1;                                   //keterangan diubah menjadi approved
             }
         }
 
-        $project->save();
+        $project->save();                                                       //save perubahan data 
     }
 
-    public function editProgress($id){
-        $project = $this->getProjectById($id);
-        $sit = $project->progress_sit;
-        $uat = $project->progress_uat;
+    public function editProgress($id){                                          //nyiapin form Edit Progress
+        $project = $this->getProjectById($id);                                  //ngambil data projek yg mau diubah progressnya
+        $sit = $project->progress_sit;                                          //ngambil progress sit
+        $uat = $project->progress_uat;                                          //ngambil progress uat 
 
-        return view('Layouts.FormProgress', compact('project', 'sit', 'uat'));
+        return view('Layouts.FormProgress', compact('project', 'sit', 'uat'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
 
-    public function changeProgress(Request $request, $id){
-        $request->validate([
+    public function changeProgress(Request $request, $id){                      //update data setelah nginput di form
+        $request->validate([                                                    //validasi input
             'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
         ],
@@ -85,20 +83,20 @@ class Controller_EngineerYourProjects extends Controller
               'progress_uat.regex' => ' Progress UAT hanya berisi angka',
         ]);
         
-        $project = $this->getProjectById($id);
+        $project = $this->getProjectById($id);                                  //cari projek yg datanya mau diubah
 
-        $project->progress_sit = $request->progress_sit;
-        $project->progress_uat = $request->progress_uat;
+        $project->progress_sit = $request->progress_sit;                        //ganti progress sit
+        $project->progress_uat = $request->progress_uat;                        //ganti progress uat
 
-        $project->save();
+        $project->save();                                                       //simpan perubahan
     }
 
-    public function editBussinessPIC($id){
-        $project = $this->getProjectById($id);          //ngambil data projek yg dipilih
+    public function editBussinessPIC($id){                                      //edit pic bisnis            
+        $project = $this->getProjectById($id);                                  //ngambil data projek yg mau ditempel di form Edit PIC Bisnis
 
         //ngambil data product buat ngisi dropdown
         if($project->id_pic_product == NULL || $project->id_pic_product == 1){  //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
-            $listproduct = $this->getPICData($id, 0, 6); 
+            $listproduct = $this->getPICData($id, 0, 6);                        
         }
         else{
             $listproduct = $this->getPICData($id, 1, 6);
@@ -120,45 +118,40 @@ class Controller_EngineerYourProjects extends Controller
             $listpm = $this->getPICData($id, 1, 8);
         }
 
-        return view('Layouts.FormPIC', compact('project', 'listproduct', 'listam', 'listpm'));
+        return view('Layouts.FormPIC', compact('project', 'listproduct', 'listam', 'listpm'));  //buka form edit pic dengan data2 yg sudah disiapkan
     }
 
-    public function changeBussinessPIC(Request $request, $id){
-        $project = $this->getProjectById($id);
+    public function changeBussinessPIC(Request $request, $id){                  //update data pic bisnis
+        $project = $this->getProjectById($id);                                  //ambil projek yg mau diubah pic bisnisnya
 
-        $product = $this->getUserById($request->id_pic_product);
-        $am = $this->getUserById($request->id_pic_am);
-        $pm = $this->getUserById($request->id_pic_pm);
+        $project->id_pic_product = $request->id_pic_product;                    //ubah pic product
+        $project->id_pic_am = $request->id_pic_am;                              //ubah pic am
+        $project->id_pic_pm = $request->id_pic_pm;                              //ubah pic pm
 
-        $project->id_pic_product = $product->id;
-        $project->id_pic_am = $am->id;
-        $project->id_pic_pm = $pm->id;
-
-        $project->save();
+        $project->save();                                                       //save perubahan
     }
 
-    public function dataTable()
-    {
-        $userId = auth()->id();
-        $project = $this->getProjectData($userId);
-        $pstat = Projects_Stat::where('id', '!=', 1)->get();
-        return DataTables::of($project)
-            ->addColumn('status', function($project) use ($pstat){
+    public function dataTable(){                                                //generate table di halaman Engineer - Project Own Going (Own Project)
+        $userId = auth()->id();                                                 //ambil id user yg lagi login
+        $project = $this->getProjectData($userId);                              //ambil data2 projek user yg lagi login
+        $pstat = Projects_Stat::where('id', '!=', 1)->get();                    //ambil list status kecuali reserve untuk ditampilin di dropdown status
+        return DataTables::of($project)                                         //bikin table berdasarkan data2 yg udh diambil
+            ->addColumn('status', function($project) use ($pstat){              //tambah kolom status buat ganti status
                 return view('Layouts.StatusProject',[
                     'project'=> $project,
                     'pstat'=> $pstat
                 ]);
             })
-            ->addColumn('keterangan', function($project){
+            ->addColumn('keterangan', function($project){                       //tambah kolom keterangan
                 return view('Layouts.KeteranganProject',[
                     'project'=> $project
                 ]);
             })
-            ->addColumn('action', function($project){
-                return view('Layouts.ActionProject',[
-                    'project'=> $project,
-                    'url_pic' => route('pic.edit', $project->id),
-                    'url_progress' => route('progress.edit', $project->id)
+            ->addColumn('action', function($project){                           //tambah kolom action
+                return view('Layouts.ActionProject',[                           //menggunakan layout di file ActionProject
+                    'project'=> $project,           
+                    'url_pic' => route('pic.edit', $project->id),               //melempar link untuk tombol edit pic beserta id projek yg mau diubah
+                    'url_progress' => route('progress.edit', $project->id)      //melempar link untuk tombol edit progress beserta id projek yg mau diubah
                 ]);
             })
             ->addIndexColumn()
@@ -180,11 +173,11 @@ class Controller_EngineerYourProjects extends Controller
     	->get();
     }
 
-    public function getProjectById($id){
+    public function getProjectById($id){                                        //ngamabil data projek berdasarkan idnya
         return Project::where('id', $id)->firstOrFail();
     }
 
-    public function getPICData($id, $flag, $level){
+    public function getPICData($id, $flag, $level){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
         if($flag == 0){
             return User::whereIn('users.id_ulevel', [$level, 9])
             ->orderBy('id', 'asc')
@@ -206,9 +199,5 @@ class Controller_EngineerYourProjects extends Controller
             ->pluck('nama_user', 'id')
             ->toArray();
         }
-    }
-
-    public function getUserById($id){
-        return User::where('id', $id)->firstOrFail();
     }
 }
