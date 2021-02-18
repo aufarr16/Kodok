@@ -1,1 +1,1 @@
-<button type="button" class="modal-show btnproject" title="Lihat History PIC" id="btn-modal">{{ $data->nama_project }}</button>
+<a href="{{ $url_detail }}" type="button" class="modal-show btnproject" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>

@@ -26,7 +26,7 @@ class Controller_ManagerListProjects extends Controller
         return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
-    public function seeDetail(Request $request){
+    public function detail(Request $request){
         $idproject = $request->id;
         $picori = $this->getOriginalPIC($idproject);
         $piccurrent = $this->getCurrentPIC($idproject);
@@ -44,6 +44,7 @@ class Controller_ManagerListProjects extends Controller
             ->addColumn('nama_project', function($data){
                 return view('Layouts.ClickableText',[
                     'data'=> $data,
+                    'url_detail' => route('listprojects.detail', $data->id)
                 ]);
             })
             ->addColumn('id_pstat', function($data){

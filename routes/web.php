@@ -115,6 +115,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');
 	Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
 	Route::get('/manager/projects/export', 'Controller_ManagerListProjects@export');
+	Route::get('/manager/projects/detail', 'Controller_ManagerListProjects@detail')->name('listprojects.detail');
 
 	// Search Doc
 	Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
