@@ -20,7 +20,7 @@
 				<br>
 				{!! Form::select('id_pic_am', $listam, null, array(
 				    'class' => 'form-control selectpicam',
-				    'id' => 'nama_user', 
+				    'id' => 'nama_user',
 				    )) 
 				!!}
 		</div>

@@ -825,3 +825,8 @@ background-color: transparent;
   background-color:#19569A;
   color: white;
 }
+
+.selectpicam{
+  size: 10 !important;
+  /*max-height: 20px !important;*/
+}
