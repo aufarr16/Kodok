@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_EngineerHandoverProjects extends Controller
 {
-    public function openPage(){
+    public function openPage(){         //buka halaman Engineer - Own Project (Handover)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 3 || $userLevel == 5){
+        if($userLevel == 3 || $userLevel == 5){ 
             return view('Pages.Engineer.View_EngineerHandoverProjects', compact('userLevel'));
         }
         else{
@@ -22,39 +22,41 @@ class Controller_EngineerHandoverProjects extends Controller
         }
     }
     
-    public function handoverDone(Request $request){
-        $project = $this->getProjectById($request->input('id'));
+    public function handoverDone(Request $request){                 //balikin projek handoveran ke pemilik aslinya
+        $project = $this->getProjectById($request->input('id'));    //ngambil data projek yg mau dibalikin
 
-        $project->id_current_pic = $project->id_original_pic;
-        $project->status_handover = 0;
+        $project->id_current_pic = $project->id_original_pic;       //ngubah pic skrng menjadi original picnya
+        $project->status_handover = 0;                              //status handover diubah menjadi 0 soalnya udh selesai handoevernya
 
-        $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();
-        $handover->is_active = 0;
+        $handover = Projects_Handover::where('id_project', $id)->orderBy('handover_order', 'desc')->firstOrFail();  //ngambil data handover_projectnya
+        $handover->is_active = 0;                                   //ngubah is_activenya jadi 0 soalnya udh selesai handoevernya
 
-        $project->save();
-        $handover->save();
+        $project->save();                                           //save perubahan data2 di project yg udh dilakukan
+        $handover->save();                                          //save perubahan data2 di project_handover yg udh dilakukan
     }
 
-    public function dataTable()
+    public function dataTable()                                     //bikin tabel di halaman Engineer - Own Project (Handover)
     {
-        $userId = auth()->id();
-        $project = $this->getHandoverData($userId); 
-        $pstat = Projects_Stat::where('id', '!=', 1)->get();
-        return DataTables::of($project)
-            ->addColumn('status', function($project) use ($pstat){
+        $userId = auth()->id();                                     //ngambil id user yg lagi login
+        $project = $this->getHandoverData($userId);                 //ngambil data projek handoveran punya user yg lagi login
+        $pstat = Projects_Stat::where('id', '!=', 1)->get();        //ngambil pstat kecuali reserve buat ditampilin di dropdown status
+        return DataTables::of($project)                             //bikin tabel berdasarkan data projek user yg lagi login
+            ->addColumn('status', function($project) use ($pstat){  //nambah kolom buat ganti status
                 return view('Layouts.StatusProject',[
                     'project'=> $project,
                     'pstat'=> $pstat
                 ]);
             })
-            ->addColumn('keterangan', function($project){
+            ->addColumn('keterangan', function($project){           //nambah kolom buat keterangan projek
                 return view('Layouts.KeteranganProject',[
                     'project'=> $project
                 ]);
             })
-            ->addColumn('action', function($project){
+            ->addColumn('action', function($project){               //nambah kolom buat action
                 return view('Layouts.ActionHandover',[
-                    'project'=> $project
+                    'project'=> $project,
+                    'url_pic' => route('pic.edit', $project->id),
+                    'url_progress' => route('progress.edit', $project->id)
                 ]);
             })
             ->addIndexColumn()
@@ -62,7 +64,7 @@ class Controller_EngineerHandoverProjects extends Controller
             ->make(true);
     }
 
-    public function getHandoverData($id){
+    public function getHandoverData($id){                           //ngambil data buat ditampilin di halaman Engineer - Own Project (Handover)
     	return DB::table('projects')
         ->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects.id_pstat, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
         ->leftjoin('products', 'projects.id_product', '=', 'products.id')
@@ -76,7 +78,7 @@ class Controller_EngineerHandoverProjects extends Controller
         ->get();
     }
 
-    public function getProjectById($id){
+    public function getProjectById($id){                            //ngambil data projek bersdasarkan idnya
         return Project::where('id', $id)->firstOrFail();
     }
 }
