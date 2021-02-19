@@ -9,18 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_ManagerHome extends Controller
 {
-    public function openAllDataPage(){
-        //Autentikasi level user yg boleh msk
-        $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2){
+    public function openAllDataPage(){                  //Buka halaman home dengan all data
+        $userLevel = auth()->user()->id_ulevel;         
+        if($userLevel == 2){                            //Autentikasi level user yg boleh msk
             //YEAR DATA
-            $years = $this->getYears();
+            $years = $this->getYears();                 //Ngambil data tahun buat ditampilin di dropdown filter tahun
 
             //HIGHCHARTS DATA
             //ESSENTIAL COUNTER
-            $products = $this->getProducts();
-            $projtypes = $this->getPTypes();
-            $inuser = $this->getInisial();
+            $products = $this->getProducts();           //Data All Product      
+            $projtypes = $this->getPTypes();            //Data All Project Types
+            $inuser = $this->getInisial();              //Data All Inisial      
 
             // CARD DATA
             $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
@@ -32,13 +31,13 @@ class Controller_ManagerHome extends Controller
             $pdrop = $this->allProjectPstat(7);         // 7. Projek Drop
             $projects = $this->allProjects();           // 8. Jumlah All Projek
 
-            $percentrsrv = $this->toPercent($preserved, $projects);
-            $percentop = $this->toPercent($ponprogress, $projects);
-            $percentpgdn = $this->toPercent($ppngdone, $projects);
-            $percentmntr = $this->toPercent($pmonitor, $projects);
-            $percentprdn = $this->toPercent($pprjdone, $projects);
-            $percenthold = $this->toPercent($phold, $projects);
-            $percentdrop = $this->toPercent($pdrop, $projects);
+            $percentrsrv = $this->toPercent($preserved, $projects); // 1. Persentase Projek Reserved
+            $percentop = $this->toPercent($ponprogress, $projects); // 2. Persentase Projek On Progress
+            $percentpgdn = $this->toPercent($ppngdone, $projects);  // 3. Persentase Projek Pengujian Done
+            $percentmntr = $this->toPercent($pmonitor, $projects);  // 4. Persentase Projek Monitoring
+            $percentprdn = $this->toPercent($pprjdone, $projects);  // 5. Persentase Projek Projek Done
+            $percenthold = $this->toPercent($phold, $projects);     // 6. Persentase Projek Hold
+            $percentdrop = $this->toPercent($pdrop, $projects);     // 7. Persentase Projek Drop
 
             //GRAPH DATA
             $pstatperproduct = $this->allPstatProd();       // 1. jumlah p_stat dari masing2 produk
@@ -58,39 +57,40 @@ class Controller_ManagerHome extends Controller
          	
     }
 
-    public function openFilteredDataPage(Request $request){
-        $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2){
+    public function openFilteredDataPage(Request $request){                     //Buka halaman home dengan data berdasarkan filternya
+        $userLevel = auth()->user()->id_ulevel;     
+        if($userLevel == 2){                                                    //Autentikasi level user yg boleh msk                                
             //YEAR DATA
-            $years = $this->getYears();
+            $years = $this->getYears();                                         //Ngambil data tahun buat ditampilin di dropdown filter tahun
 
             //HIGHCHARTS DATA
             //ESSENTIAL COUNTER
-            $products = $this->getProducts();
-            $projtypes = $this->getPTypes();
-            $inuser = $this->getInisial();
+            $products = $this->getProducts();                                   //Data All product
+            $projtypes = $this->getPTypes();                                    //Data All Project Types
+            $inuser = $this->getInisial();                                      //Data All Inisial
 
             // CARD DATA
-            $preserved = $this->filteredProjectPstat($request->tahun, 1);     // 1. Projek Reserved
-            $ponprogress = $this->filteredProjectPstat($request->tahun, 2);   // 2. Projek On Progress
-            $ppngdone = $this->filteredProjectPstat($request->tahun, 3);      // 3. Pengujian Done
-            $pprjdone = $this->filteredProjectPstat($request->tahun, 4);      // 4. Monitoring
-            $pprjdone = $this->filteredProjectPstat($request->tahun, 5);      // 5. Projek Done
-            $phold = $this->filteredProjectPstat($request->tahun, 6);         // 6. Projek Hold
-            $pdrop = $this->filteredProjectPstat($request->tahun, 7);         // 7. Projek Drop
-            $projects = $this->filteredProjects($request->tahun);             // 8. Jumlah All Projek
+            $preserved = $this->filteredProjectPstat($request->tahun, 1);       // 1. Projek Reserved
+            $ponprogress = $this->filteredProjectPstat($request->tahun, 2);     // 2. Projek On Progress
+            $ppngdone = $this->filteredProjectPstat($request->tahun, 3);        // 3. Pengujian Done
+            $pprjdone = $this->filteredProjectPstat($request->tahun, 4);        // 4. Monitoring
+            $pprjdone = $this->filteredProjectPstat($request->tahun, 5);        // 5. Projek Done
+            $phold = $this->filteredProjectPstat($request->tahun, 6);           // 6. Projek Hold
+            $pdrop = $this->filteredProjectPstat($request->tahun, 7);           // 7. Projek Drop
+            $projects = $this->filteredProjects($request->tahun);               // 8. Jumlah All Projek
 
-            $percentrsrv = $this->toPercent($preserved, $projects);
-            $percentop = $this->toPercent($ponprogress, $projects);
-            $percentpgdn = $this->toPercent($ppngdone, $projects);
-            $percentprdn = $this->toPercent($pprjdone, $projects);
-            $percenthold = $this->toPercent($phold, $projects);
-            $percentdrop = $this->toPercent($pdrop, $projects);
+            $percentrsrv = $this->toPercent($preserved, $projects);             // 1. Persentase Projek Reserved
+            $percentop = $this->toPercent($ponprogress, $projects);             // 2. Persentase Projek On Progress
+            $percentpgdn = $this->toPercent($ppngdone, $projects);              // 3. Persentase Projek Pengujian Done    
+            $percentmntr = $this->toPercent($pmonitor, $projects);              // 4. Persentase Projek Monitoring
+            $percentprdn = $this->toPercent($pprjdone, $projects);              // 5. Persentase Projek Projek Done
+            $percenthold = $this->toPercent($phold, $projects);                 // 6. Persentase Projek Hold
+            $percentdrop = $this->toPercent($pdrop, $projects);                 // 7. Persentase Projek Drop
 
             //GRAPH DATA
             $pstatperproduct = $this->filteredPstatProd($request->tahun);       // 1. jumlah p_stat dari masing2 produk
             $pstatperptype = $this->filteredPstatPtype($request->tahun);        // 2. jumlah p_stat dari masing2 p_type
-            $projectperproduct = $this->filteredProjProd($request->tahun);     // 3. total all projek berdasarkan produk
+            $projectperproduct = $this->filteredProjProd($request->tahun);      // 3. total all projek berdasarkan produk
             $projectperptype =  $this->filteredProjPtype($request->tahun);      // 4. total all projek berdasarkan p_type
             $userprojectperpstat = $this->filteredUserPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
             $userprojectperptype = $this->filteredUserPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
@@ -117,7 +117,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function getInisial(){
-        return DB::select('select inisial_user from users order by inisial_user asc');
+        return DB::select('select inisial_user from users order by inisial_user asc where id_ulevel = 3 or id_ulevel = 5');
     }
 
     public function allProjectPstat($pstat){
@@ -190,7 +190,7 @@ class Controller_ManagerHome extends Controller
 
     }
 
-    public function toPercent($part, $total){
+    public function toPercent($part, $total){           //return persentase data input
         if($total == 0){
             $total = 1;
         }
