@@ -12,19 +12,19 @@
      <td>{{ $picori->nama_user }}</td>
     </tr>
     <tr>
-     <th>History Pic</th>
-     <td>{{ $historypic->nama_user }}</td>
-    </tr>
-    <tr>
      <th>Nama PIC Product</th>
-     <td>{{ $picbisnis->nama_user }}</td>
+     <td>{{ $picproduct->nama_user }}</td>
     </tr>
     <tr>
      <th>Nama PIC PM</th>
-     <td>{{ $picbisnis->nama_user }}</td>
+     <td>{{ $picpm->nama_user }}</td>
     </tr>
     <tr>
      <th>Nama PIC AM</th>
+     <td>{{ $picam->nama_user }}</td>
+    </tr>
+    <tr>
+     <th>Nama PIC Bisnis</th>
      <td>{{ $picbisnis->nama_user }}</td>
     </tr>
     <tr>
