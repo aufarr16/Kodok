@@ -12,13 +12,13 @@ use Illuminate\Support\MessageBag;
 
 class Controller_Login extends Controller
 {
-    public function openLogin(){
+    public function openLogin(){                        //buka halaman login
     	return view('View_Login');
     }
     
-    public function openChooseLogin(){
+    public function openChooseLogin(){                          //buka halaman buat milih hak akses khusus admin x engineer
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 5){
+        if($userLevel == 5){                            
             return view('View_Login5ChooseRole');   
         }
         else{
@@ -26,9 +26,9 @@ class Controller_Login extends Controller
         }
     }
 
-    public function authenticate(Request $request){
-        // dd($request->all());
-        $request->validate([
+    public function authenticate(Request $request){             //autentikasi data login
+        // dd($request->all()); 
+        $request->validate([                                    //validasi data login    
             'email' => 'required|email|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/',
             'password' => 'required'
         ],
@@ -38,16 +38,16 @@ class Controller_Login extends Controller
             'password.required' => "Mohon isi Password",
         ]);
 
-        $ldap_con = ldap_connect("10.90.2.253");
-        $email = $request->email;
-        $password = $request->password;
+        $ldap_con = ldap_connect("10.90.2.253");                //setup ip koneksi ldap
+        $email = $request->email;                               //menyimpan data email dari input login
+        $password = $request->password;                         //menyimpan data password dari input login
 
-        if(@ldap_bind($ldap_con, $email, $password)){
-            $hashedpassword = Hash::make($password);
+        if(@ldap_bind($ldap_con, $email, $password)){           //start koneksi ldap, if true (data email dan password match), maka
+            $hashedpassword = Hash::make($password);            //buat password tersebut menjadi bentuk hash untuk dimasukkan ke tabel user
 
-            $user = User::where('email_user', $email)->first();
-            if($user == null){  //insert new guest data
-                $user = User::create([
+            $user = User::where('email_user', $email)->first(); //ambil data user berdasarkan email
+            if($user == null){                                  //kalo datanya tidak ada di db kodok, maka
+                $user = User::create([                          //maka simpan data baru    
                     'id_ulevel' => '4',
                     'nama_user' => 'Guest',
                     'email_user' => $email,
@@ -55,17 +55,16 @@ class Controller_Login extends Controller
                     'password' => $password
                 ]);
                 
-                $user = User::where('email_user', $email)->firstOrFail();
+                $user = User::where('email_user', $email)->firstOrFail();   //ngambil data user karena $user isinya NULL makanya butuh diisi lagi sama data baru
             }
 
-            $user->password = $hashedpassword;
-            $user->save();
+            $user->password = $hashedpassword;                  //masukkan password yg sudah dihash
+            $user->save();                                      //save data user
 
-            $credentials = array('email_user' => $email, 'password' => $password); 
+            $credentials = array('email_user' => $email, 'password' => $password);  //buat variabel untuk autentikasi dari laravel
 
-            // dd(Auth::attempt($credentials)); //check auth status
-            if(Auth::attempt($credentials)){    //auth laravel
-                switch($user->id_ulevel){
+            if(Auth::attempt($credentials)){                    //auth laravel
+                switch($user->id_ulevel){                       //redirect berdasarkan levele user yg login
                     case '1':
                         return redirect('/admin/users');
                     case '2':
