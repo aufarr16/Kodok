@@ -692,7 +692,7 @@
   //Proses Data
   var userprojperpstat = <?php echo json_encode($userprojectperpstat) ?>;
   var userinit = <?php echo json_encode($inuser) ?>;
-  var initdata = [];
+  var initdata = [];  
   var userresv = [];
   var userprog = [];
   var userpgdn = [];
@@ -808,7 +808,7 @@
   });
 // ###########################################################################################################################################################
   //JUMLAH PROJEK TIAP ORNG BY PTYPE
-  //Proses Data
+  //Proses Data 
   var userprojperptype = <?php echo json_encode($userprojectperptype) ?>;
   var userintt = [];
   var usersert = [];
@@ -905,6 +905,5 @@
     }]
   });
 </script>
-
 
 @endpush
