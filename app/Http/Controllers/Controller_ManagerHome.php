@@ -41,12 +41,12 @@ class Controller_ManagerHome extends Controller
             $percentdrop = $this->toPercent($pdrop, $projects);     // 7. Persentase Projek Drop
 
             //GRAPH DATA
-            $pstatperproduct = $this->allPstatProd();       // 1. jumlah p_stat dari masing2 produk
-            $pstatperptype = $this->allPstatPtype();        // 2. jumlah p_stat dari masing2 p_type
-            $projectperproduct = $this->allProjProd();      // 3. total all projek berdasarkan produk
-            $projectperptype =  $this->allProjPtype();      // 4. total all projek berdasarkan p_type
-            $userprojectperpstat = $this->allEngineerPstat();   // 5. total projek per orang berdasarkan p_stat
-            $userprojectperptype = $this->allEngineerPtype();   // 6. total prokek per orang berdasarkan p_type
+            $pstatperproduct = $this->allPstatProd();               // 1. jumlah p_stat dari masing2 produk
+            $pstatperptype = $this->allPstatPtype();                // 2. jumlah p_stat dari masing2 p_type
+            $projectperproduct = $this->allProjProd();              // 3. total all projek berdasarkan produk
+            $projectperptype =  $this->allProjPtype();              // 4. total all projek berdasarkan p_type
+            $userprojectperpstat = $this->allEngineerPstat();       // 5. total projek per orang berdasarkan p_stat
+            $userprojectperptype = $this->allEngineerPtype();       // 6. total prokek per orang berdasarkan p_type
 
             // dd($inuser);
 
@@ -89,10 +89,10 @@ class Controller_ManagerHome extends Controller
             $percentdrop = $this->toPercent($pdrop, $projects);                 // 7. Persentase Projek Drop
 
             //GRAPH DATA
-            $pstatperproduct = $this->filteredPstatProd($request->tahun);       // 1. jumlah p_stat dari masing2 produk
-            $pstatperptype = $this->filteredPstatPtype($request->tahun);        // 2. jumlah p_stat dari masing2 p_type
-            $projectperproduct = $this->filteredProjProd($request->tahun);      // 3. total all projek berdasarkan produk
-            $projectperptype =  $this->filteredProjPtype($request->tahun);      // 4. total all projek berdasarkan p_type
+            $pstatperproduct = $this->filteredPstatProd($request->tahun);           // 1. jumlah p_stat dari masing2 produk
+            $pstatperptype = $this->filteredPstatPtype($request->tahun);            // 2. jumlah p_stat dari masing2 p_type
+            $projectperproduct = $this->filteredProjProd($request->tahun);          // 3. total all projek berdasarkan produk
+            $projectperptype =  $this->filteredProjPtype($request->tahun);          // 4. total all projek berdasarkan p_type
             $userprojectperpstat = $this->filteredEngineerPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
             $userprojectperptype = $this->filteredEngineerPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
 
