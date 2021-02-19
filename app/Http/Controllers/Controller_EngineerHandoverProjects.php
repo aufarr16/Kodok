@@ -23,7 +23,8 @@ class Controller_EngineerHandoverProjects extends Controller
     }
     
     public function handoverDone(Request $request){                 //balikin projek handoveran ke pemilik aslinya
-        $project = $this->getProjectById($request->input('id'));    //ngambil data projek yg mau dibalikin
+        $id = $request->input('id');
+        $project = $this->getProjectById($id);    //ngambil data projek yg mau dibalikin
 
         $project->id_current_pic = $project->id_original_pic;       //ngubah pic skrng menjadi original picnya
         $project->status_handover = 0;                              //status handover diubah menjadi 0 soalnya udh selesai handoevernya
