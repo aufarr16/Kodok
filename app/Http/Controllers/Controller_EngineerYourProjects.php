@@ -159,7 +159,7 @@ class Controller_EngineerYourProjects extends Controller
             ->make(true);
     }
 
-    public function getProjectData($id){
+    public function getProjectData($id){                                     //ngambil data buat ditamplin di halaman Engineer - Project Own Going (Own Project)
     	return DB::table('projects')
     	->select(DB::raw('projects.id, projects.nama_project, projects.pketerangan_status, projects.pketerangan_note, products.nama_product, projects_types.nama_ptype, projects.id_pstat, projects_stats.nama_pstat, mitras.nama_mitra, date(projects.waktu_assign_project) as tanggal_assign'))
     	->leftjoin('products', 'projects.id_product', '=', 'products.id')
