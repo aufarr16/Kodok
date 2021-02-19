@@ -27,15 +27,18 @@ class Controller_ManagerListProjects extends Controller
 
     public function detail(Request $request){               //buka detail projek
         $idproject = $request->id;                          //ambil id projek yg mau diliat detailnya
-        $picori = $this->getOriginalPIC($idproject);        //ambil data original pic
+        $project = $this->getProjectById($idproject);       //ambil data projek yg mau diliat
+        $picori = $this->getOriginalPIC($idproject);        //ambil data original pic 
         $piccurrent = $this->getCurrentPIC($idproject);     //ambil data current pic
+        $historypic = $this->getHistoryPIC($idproject);     //ambil data history pic
         $picproduct = $this->getProductPIC($idproject);     //ambil data pic product 
         $picam = $this->getAMPIC($idproject);               //ambil data pic am 
         $picpm = $this->getPMPIC($idproject);               //ambil data pic pm 
-        $picbisnis = $this->getPICBisnis($idproject);       //ambil data pic bisnis
         $progress = $this->getProgress($idproject);         //ambil data progress
 
-        return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress'));
+        dd($picori);
+
+        return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
@@ -57,6 +60,10 @@ class Controller_ManagerListProjects extends Controller
             ->make(true);
     }
 
+    public function getProjectById($id){
+        return Project::where('id', $id)->firstOrFail();
+    }
+
     public function getOriginalPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_original_pic, users.nama_user'))
@@ -74,15 +81,15 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function getHistoryPIC($id){
-        return DB::table('projects_handover')
-        ->select(DB::raw('projects_handover.id_project, projects_handover.id_user, users.nama_user'))
-        ->leftjoin('users', 'projects_handover.id_user', '=', 'users.id')
-        ->where('projects_handover.id_project', '=', $id)
-        ->orderBy('projects_handover.handover_order', 'asc')
+        return DB::table('projects_handovers')
+        ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, users.nama_user'))
+        ->leftjoin('users', 'projects_handovers.id_user', '=', 'users.id')
+        ->where('projects_handovers.id_project', '=', $id)
+        ->orderBy('projects_handovers.handover_order', 'asc')
         ->get();
     }
 
-    public function getPICProduct($id){
+    public function getProductPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_product, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_product', '=', 'users.id')
@@ -90,7 +97,7 @@ class Controller_ManagerListProjects extends Controller
         ->get();
     }
 
-    public function getPICAM($id){
+    public function getAMPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_am, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_am', '=', 'users.id')
@@ -98,7 +105,7 @@ class Controller_ManagerListProjects extends Controller
         ->get();
     }
 
-    public function getPICPM($id){
+    public function getPMPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_pm, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_pm', '=', 'users.id')

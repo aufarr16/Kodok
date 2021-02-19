@@ -1,5 +1,5 @@
-{!! Form::model($listprojects, [
-    'route' => ['listprojects.detail', $listprojects->id],
+{!! Form::model($project, [
+    'route' => ['listprojects.detail', $project->id],
     'method' => 'GET'
 ]) !!}
     <div class="row">
