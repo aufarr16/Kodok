@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
 
 class Controller_ManagerAssignProjects extends Controller
 {
-    public function openPage(){
+    public function openPage(){             //buka halaman Manager - Assign
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 2){
-            $products = DB::select("select * from products order by nama_product asc");
-            $mitras = DB::select("select * from mitras order by nama_mitra asc");
-            $ptypes = DB::select("select * from projects_types order by nama_ptype asc");
-            $users = $this->getUser();
+            $products = DB::select("select * from products order by nama_product asc");     //ngambil data semua product
+            $mitras = DB::select("select * from mitras order by nama_mitra asc");           //ngambil data semua mitra
+            $ptypes = DB::select("select * from projects_types order by nama_ptype asc");   //ngambil data semua project type
+            $users = $this->getUser();                                                      //ngambil data engineer dan adminxengineer
             return view('Pages.Manager.View_ManagerAssignProjects', compact('users', 'products','mitras','ptypes'));
         }
         else{
@@ -25,10 +25,8 @@ class Controller_ManagerAssignProjects extends Controller
         }
     }
 
-    public function storeNew(Request $request){
-    	// return $request;
-
-        $request->validate([
+    public function storeNew(Request $request){                         //tambah data projek baru
+        $request->validate([                                            //validasi data input projek
             'id_user' => 'required',
             'id_product' => 'required',
             'id_ptype' => 'required',
@@ -44,7 +42,7 @@ class Controller_ManagerAssignProjects extends Controller
                 'nama_project.max' => 'Nama project max 201 kata',
         ]);
 
-        $newproject = Project::create([
+        $newproject = Project::create([                                 //bikin data project baru    
             'id_current_pic' => $request->id_user,
             'id_original_pic' => $request->id_user,
             'id_product' => $request->id_product,
@@ -56,8 +54,8 @@ class Controller_ManagerAssignProjects extends Controller
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
     }
 
-    public function storeHandover(Request $request){ 
-        $request->validate([
+    public function storeHandover(Request $request){                    //tambah data handover baru
+        $request->validate([                                            //validasi data input handover
             'id_user1' => 'required',
             'nama_project2' => 'required',
             'PIChandover' => 'required',
@@ -68,18 +66,19 @@ class Controller_ManagerAssignProjects extends Controller
             'PIChandover.required' => 'Mohon pilih PIC handover',
         ]);
 
-        $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail(); 
-        $handoveredproject->id_current_pic = $request->PIChandover;
-        $handoveredproject->status_handover = 1;
-        $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;
-        $handoveredproject->save(); 
+        $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail();  //ngambil data projek yg mau dihandover
+        $handoveredproject->id_current_pic = $request->PIChandover;                         //ubah pic skrng jadi pic handover
+        $handoveredproject->status_handover = 1;                                            //ubah status handover jadi true
+        $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;    //tambah counter handovernya    
+        $handoveredproject->save();                                                         //save perubahan data projek
 
+        //kalo sebelumnya udh dihandover cuma blm didone
         if($prevhandover = Projects_Handover::where('id_project', $request->nama_project2)->orderby('handover_order', 'desc')->first()){
-            $prevhandover->is_active = 0;
-            $prevhandover->save();
+            $prevhandover->is_active = 0;                                                   //handover sebelumnya dibuat otomatis done
+            $prevhandover->save();                                                          //save perubahan data handover
         }
 
-        $newhandover = Projects_Handover::create([
+        $newhandover = Projects_Handover::create([                                          //bikin data handover baru
             'id_user' => $request->PIChandover,
             'id_project' => $request->nama_project2,
             'handover_order' => $handoveredproject->handover_counter
@@ -88,7 +87,7 @@ class Controller_ManagerAssignProjects extends Controller
         return redirect('/manager/assign')->with('success','Project berhasil di handover');
     }
 
-    public function fillProject($userId=0){
+    public function fillProject($userId=0){                         //function autofill dropdown projek yg dimiliki user yg mau dihandoverin projeknya
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
         ->where('id_current_pic', $userId)
@@ -98,7 +97,7 @@ class Controller_ManagerAssignProjects extends Controller
         return response()->json($projData);
     }
 
-    public function fillNewPIC($userId=0){
+    public function fillNewPIC($userId=0){                          //function autofill dropdown user handover 
         $userData['data'] = User::orderby("nama_user","asc")
         ->select('id', 'nama_user')
         ->where('id', '!=', $userId)
@@ -108,8 +107,7 @@ class Controller_ManagerAssignProjects extends Controller
         return response()->json($userData);
     }
 
-    public function getUser(){
-        // return User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 5)->get();
-        return User::select(DB::raw('*'))->where('id_ulevel', '=', 3)->orWhere('id_ulevel', '=', 4)->orWhere('id_ulevel', '=', 5)->get();
+    public function getUser(){                                      //ngambil data user engineer dan adminxengineer
+        return User::select(DB::raw('*'))->whereIn('id_ulevel', [3, 5])->get();
     }
 }
