@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Project;
 use App\Product;
 use Illuminate\Http\Request;
@@ -44,10 +45,10 @@ class Controller_ManagerHome extends Controller
             $pstatperptype = $this->allPstatPtype();        // 2. jumlah p_stat dari masing2 p_type
             $projectperproduct = $this->allProjProd();      // 3. total all projek berdasarkan produk
             $projectperptype =  $this->allProjPtype();      // 4. total all projek berdasarkan p_type
-            $userprojectperpstat = $this->allUserPstat();   // 5. total projek per orang berdasarkan p_stat
-            $userprojectperptype = $this->allUserPtype();   // 6. total prokek per orang berdasarkan p_type
+            $userprojectperpstat = $this->allEngineerPstat();   // 5. total projek per orang berdasarkan p_stat
+            $userprojectperptype = $this->allEngineerPtype();   // 6. total prokek per orang berdasarkan p_type
 
-            // dd($pstatperptype);
+            // dd($inuser);
 
             return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
         }
@@ -92,10 +93,10 @@ class Controller_ManagerHome extends Controller
             $pstatperptype = $this->filteredPstatPtype($request->tahun);        // 2. jumlah p_stat dari masing2 p_type
             $projectperproduct = $this->filteredProjProd($request->tahun);      // 3. total all projek berdasarkan produk
             $projectperptype =  $this->filteredProjPtype($request->tahun);      // 4. total all projek berdasarkan p_type
-            $userprojectperpstat = $this->filteredUserPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
-            $userprojectperptype = $this->filteredUserPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
+            $userprojectperpstat = $this->filteredEngineerPstat($request->tahun);   // 5. total projek per orang berdasarkan p_stat
+            $userprojectperptype = $this->filteredEngineerPtype($request->tahun);   // 6. total prokek per orang berdasarkan p_type
 
-            dd($pstatperproduct);
+            // dd($pstatperproduct);
 
             return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn','percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   
         }
@@ -117,7 +118,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function getInisial(){
-        return DB::select('select inisial_user from users order by inisial_user asc where id_ulevel = 3 or id_ulevel = 5');
+        return DB::select('select inisial_user from users where id_ulevel = 3 or id_ulevel = 5 order by inisial_user asc');
     }
 
     public function allProjectPstat($pstat){
@@ -144,12 +145,12 @@ class Controller_ManagerHome extends Controller
         return DB::select("select pt.nama_ptype, count(*) as jumlah_project from projects as p, projects_types as pt where p.id_ptype = pt.id group by pt.nama_ptype order by pt.id asc");
     }
 
-    public function allUserPstat(){
-        return DB::select("select ups.inisial_user, ups.nama_pstat, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc) as ups left outer join (select p.id_current_pic, p.id_pstat, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = ups.id_current_pic and pu.id_pstat = ups.id_pstat group by ups.nama_pstat, ups.inisial_user order by ups.inisial_user asc, ups.nama_pstat desc");
+    public function allEngineerPstat(){
+        return DB::select("select ups.inisial_user, ups.nama_pstat, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps where u.id_ulevel = 3 or u.id_ulevel = 5  group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc) as ups left outer join (select p.id_current_pic, p.id_pstat, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = ups.id_current_pic and pu.id_pstat = ups.id_pstat group by ups.nama_pstat, ups.inisial_user order by ups.inisial_user asc, ups.nama_pstat desc");
     }
 
-    public function allUserPtype(){
-        return DB::select("select upt.inisial_user, upt.nama_ptype, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, pt.id as id_ptype, pt.nama_ptype from users as u, projects_types as pt group by u.id, u.inisial_user, pt.id, pt.nama_ptype order by u.inisial_user asc, pt.id asc) as upt left outer join (select p.id_current_pic, p.id_ptype, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = upt.id_current_pic and pu.id_ptype = upt.id_ptype group by upt.nama_ptype, upt.inisial_user order by upt.inisial_user asc, upt.id_ptype asc");
+    public function allEngineerPtype(){
+        return DB::select("select upt.inisial_user, upt.nama_ptype, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, pt.id as id_ptype, pt.nama_ptype from users as u, projects_types as pt where u.id_ulevel = 3 or u.id_ulevel = 5  group by u.id, u.inisial_user, pt.id, pt.nama_ptype order by u.inisial_user asc, pt.id asc) as upt left outer join (select p.id_current_pic, p.id_ptype, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = upt.id_current_pic and pu.id_ptype = upt.id_ptype group by upt.nama_ptype, upt.inisial_user order by upt.inisial_user asc, upt.id_ptype asc");
     }
 
     public function filteredProjectPstat($year, $pstat){
@@ -182,11 +183,11 @@ class Controller_ManagerHome extends Controller
 
     }
 
-    public function filteredUserPstat($year){
+    public function filteredEngineerPstat($year){
 
     }
 
-    public function filteredUserPtype($year){
+    public function filteredEngineerPtype($year){
 
     }
 
