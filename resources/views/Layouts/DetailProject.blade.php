@@ -7,8 +7,8 @@
       <table class="table table-bordered table-hover">
        <thead>
         <tr>
-         <th>PIC Saat ini</th>
-         <td>{{ $piccurrent->nama_user }}</td>
+         <th>PIC Saat ini</th> 
+         <td>{{ $piccurrent->nama_user }}</td> 
         </tr>
         <tr>
         <tr>
