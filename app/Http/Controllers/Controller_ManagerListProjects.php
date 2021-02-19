@@ -35,9 +35,7 @@ class Controller_ManagerListProjects extends Controller
         $picam = $this->getAMPIC($idproject);               //ambil data pic am 
         $picpm = $this->getPMPIC($idproject);               //ambil data pic pm 
         $progress = $this->getProgress($idproject);         //ambil data progress
-
-        dd($picori);
-
+        
         return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
     }
 
