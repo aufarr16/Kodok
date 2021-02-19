@@ -6,10 +6,14 @@
      <div class="col-lg-12">
       <table class="table table-bordered table-hover">
        <thead>
+
         <tr>
          <th>PIC Saat ini</th>
+         
          <td>{{ $piccurrent->nama_user }}</td>
+         
         </tr>
+
         <tr>
         <tr>
          <th>PIC Original</th>
