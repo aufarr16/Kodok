@@ -82,7 +82,7 @@ class Controller_ManagerListProjects extends Controller
         ->get();
     }
 
-    public function getPICProduct($id){
+    public function getProductPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_product, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_product', '=', 'users.id')
@@ -90,7 +90,7 @@ class Controller_ManagerListProjects extends Controller
         ->get();
     }
 
-    public function getPICAM($id){
+    public function getAMPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_am, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_am', '=', 'users.id')
@@ -98,7 +98,7 @@ class Controller_ManagerListProjects extends Controller
         ->get();
     }
 
-    public function getPICPM($id){
+    public function getPMPIC($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_pic_pm, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_pm', '=', 'users.id')
