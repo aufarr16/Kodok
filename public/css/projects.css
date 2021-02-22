@@ -723,7 +723,7 @@ background-color: transparent;
 }
 
 /*history PIC di list project*/
-.line {
+/*.line {
     top: 2px;
     left: 21px;
     bottom: 0;
@@ -758,7 +758,7 @@ background-color: transparent;
   height: 32px;
   width:100%;
 /*   -webkit-box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.3); */
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.3); *
 }
 
 .tile p {
@@ -776,12 +776,12 @@ background-color: transparent;
   top: 4px;
   left: -9px;
   z-index: -1;
-  -webkit-transform: rotate(45deg); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Opera 15+, Safari 3.1+ *
+  -ms-transform: rotate(45deg); /* IE 9 *
   transform: rotate(45deg); /* Firefox 16+, IE 10+, Opera */
 }
 
-/* Penggunaan bullet tanpa Inisial */
+/* Penggunaan bullet tanpa Inisial *
 .tile-outer i.fa {
   margin: 13px 0 0 0;
   position: relative;
@@ -803,7 +803,7 @@ background-color: transparent;
   line-height: 1;
   position: fixed;
   margin-left: -21px;
-}
+}*/
 /*akhir history PIC di list project*/
 
 /*Button submit keterangan*/
