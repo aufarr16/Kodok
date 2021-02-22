@@ -26,7 +26,6 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function detail($id){               //buka detail projek
-        // $idproject = $request->id;                          //ambil id projek yg mau diliat detailnya
         $project = $this->getProjectById($id);       //ambil data projek yg mau diliat
         $picori = $this->getOriginalPIC($id);        //ambil data original pic 
         $piccurrent = $this->getCurrentPIC($id);     //ambil data current pic
@@ -35,6 +34,8 @@ class Controller_ManagerListProjects extends Controller
         $picam = $this->getAMPIC($id);               //ambil data pic am 
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
         $progress = $this->getProgress($id);         //ambil data progress
+
+        dd($historypic);
         
         return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
     }
@@ -84,7 +85,7 @@ class Controller_ManagerListProjects extends Controller
         ->leftjoin('users', 'projects_handovers.id_user', '=', 'users.id')
         ->where('projects_handovers.id_project', '=', $id)
         ->orderBy('projects_handovers.handover_order', 'asc')
-        ->first();
+        ->get();
     }
 
     public function getProductPIC($id){
