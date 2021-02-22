@@ -15,6 +15,7 @@
   <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
   <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
+  <!-- <link href="{{ url('') }}/css/users.css" rel="stylesheet" /> -->
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
   <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
