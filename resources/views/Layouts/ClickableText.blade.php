@@ -1,1 +1,1 @@
-<a href=/manager/projects/detail/1 type="button" class="modal-show btn-edit" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>
+<a href="{{ $url_detail }}" type="button" class="modal-show btn-edit" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>
