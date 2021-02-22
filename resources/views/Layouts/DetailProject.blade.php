@@ -20,7 +20,7 @@
          <td>{{ $picproduct->nama_user }}</td>
         </tr>
         <tr>
-         <th>History Pic</th>
+         <th>HistoryPIC</th>
          <td>{{ $historypic->nama_user }}</td>
         </tr>
         <tr>
