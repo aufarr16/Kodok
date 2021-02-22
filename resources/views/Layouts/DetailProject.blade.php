@@ -28,10 +28,6 @@
          <td>{{ $picam->nama_user }}</td>
         </tr>
         <tr>
-         <th>Nama PIC Bisnis</th>
-         <td>{{ $picbisnis->nama_user }}</td>
-        </tr>
-        <tr>
          <th>Progress SIT</th>
          <td>{{ $progress->progress_sit }}</td>
         </tr>
