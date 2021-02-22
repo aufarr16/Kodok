@@ -25,16 +25,16 @@ class Controller_ManagerListProjects extends Controller
         return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
-    public function detail(Request $request){               //buka detail projek
-        $idproject = $request->id;                          //ambil id projek yg mau diliat detailnya
-        $project = $this->getProjectById($idproject);       //ambil data projek yg mau diliat
-        $picori = $this->getOriginalPIC($idproject);        //ambil data original pic 
-        $piccurrent = $this->getCurrentPIC($idproject);     //ambil data current pic
-        $historypic = $this->getHistoryPIC($idproject);     //ambil data history pic
-        $picproduct = $this->getProductPIC($idproject);     //ambil data pic product 
-        $picam = $this->getAMPIC($idproject);               //ambil data pic am 
-        $picpm = $this->getPMPIC($idproject);               //ambil data pic pm 
-        $progress = $this->getProgress($idproject);         //ambil data progress
+    public function detail($id){               //buka detail projek
+        // $idproject = $request->id;                          //ambil id projek yg mau diliat detailnya
+        $project = $this->getProjectById($id);       //ambil data projek yg mau diliat
+        $picori = $this->getOriginalPIC($id);        //ambil data original pic 
+        $piccurrent = $this->getCurrentPIC($id);     //ambil data current pic
+        $historypic = $this->getHistoryPIC($id);     //ambil data history pic
+        $picproduct = $this->getProductPIC($id);     //ambil data pic product 
+        $picam = $this->getAMPIC($id);               //ambil data pic am 
+        $picpm = $this->getPMPIC($id);               //ambil data pic pm 
+        $progress = $this->getProgress($id);         //ambil data progress
         
         return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
     }
