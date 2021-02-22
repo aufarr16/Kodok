@@ -67,7 +67,7 @@ class Controller_ManagerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.id_original_pic, users.nama_user'))
         ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 
     public function getCurrentPIC($id){
@@ -75,7 +75,7 @@ class Controller_ManagerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.id_current_pic, users.nama_user'))
         ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 
     public function getHistoryPIC($id){
@@ -92,7 +92,7 @@ class Controller_ManagerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.id_pic_product, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_product', '=', 'users.id')
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 
     public function getAMPIC($id){
@@ -100,7 +100,7 @@ class Controller_ManagerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.id_pic_am, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_am', '=', 'users.id')
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 
     public function getPMPIC($id){
@@ -108,13 +108,13 @@ class Controller_ManagerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.id_pic_pm, users.nama_user'))
         ->leftjoin('users', 'projects.id_pic_pm', '=', 'users.id')
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 
     public function getProgress($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.progress_sit, progress_uat'))
         ->where('projects.id', '=', $id)
-        ->get();
+        ->first();
     }
 }
