@@ -688,7 +688,7 @@ $('body').on('click', '.modal-show', function(event){
         title = me.attr('title');
 
 	$('#modal-title').text(title);
-	$('#button-submit').text(me.hasClass('btn-project'))
+	$('#button-project').text(me.hasClass('btn-project'))
 
     $.ajax({
     	type: 'GET',
