@@ -842,3 +842,8 @@ background-color: transparent;
   size: 10 !important;
   /*max-height: 20px !important;*/
 }
+
+/*Button nama project*/
+.btn-namaproject{
+  font-style: italic underline;
+}
