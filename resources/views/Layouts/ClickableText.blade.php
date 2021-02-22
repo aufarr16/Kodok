@@ -1,1 +1,1 @@
-<a href="{{ $url_detail }}" type="button" class="modal-show btn-project" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>
+<a href="{{ $url_detail }}" type="button" class="modal-show btn-edit" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>

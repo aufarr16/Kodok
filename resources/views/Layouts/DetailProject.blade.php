@@ -20,6 +20,10 @@
          <td>{{ $picproduct->nama_user }}</td>
         </tr>
         <tr>
+         <th>History Pic</th>
+         <td>{{ $historypic->nama_user }}</td>
+        </tr>
+        <tr>
          <th>Nama PIC PM</th>
          <td>{{ $picpm->nama_user }}</td>
         </tr>

@@ -84,7 +84,7 @@ class Controller_ManagerListProjects extends Controller
         ->leftjoin('users', 'projects_handovers.id_user', '=', 'users.id')
         ->where('projects_handovers.id_project', '=', $id)
         ->orderBy('projects_handovers.handover_order', 'asc')
-        ->get();
+        ->first();
     }
 
     public function getProductPIC($id){
