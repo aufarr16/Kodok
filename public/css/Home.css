@@ -316,9 +316,9 @@
 .percent {
   /* position: fixed; */
   margin-top: 0px;
-  margin-left: 10px;
+  margin-left: 50px;
   /* transform: translate(-50%,-50%); */
-  margin-left: 90px;
+  /*margin-left: 90px;*/
   font-family: tahoma,arial,helvetica;
   font-size: 10px;
   color: #826464;
