@@ -639,6 +639,9 @@ background-color: transparent;
 	background-color: #007bff;
 	color: #fff;
 	border: 2px solid #007bff;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 }
 
 .panel-body{
