@@ -617,6 +617,9 @@ background-color: transparent;
 }
 
 .btn-handover-done{
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 	display: button;
 	background-color: transparent;
 	color: #007bff;
@@ -628,7 +631,7 @@ background-color: transparent;
 	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 	display: inline-block;
 	vertical-align: middle;
-	height: 35px;
+	/*height: 35px;*/
 }
 
 .btn-handover-done:hover{
