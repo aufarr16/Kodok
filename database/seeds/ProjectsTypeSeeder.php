@@ -20,16 +20,13 @@ class ProjectsTypeSeeder extends Seeder
         	'nama_ptype' => 'Sertifikasi'
         ]);
 
-        $regresi = Projects_Type::create([
-        	'nama_ptype' => 'Regresi'
+        $internalproject = Projects_Type::create([
+        	'nama_ptype' => 'Internal Project'
         ]);
 
-        $support = Projects_Type::create([
-        	'nama_ptype' => 'Support'
+        $uatinternal = Projects_Type::create([
+        	'nama_ptype' => 'UAT Internal'
         ]);
 
-        $qa = Projects_Type::create([
-        	'nama_ptype' => 'QA'
-        ]);
     }
 }

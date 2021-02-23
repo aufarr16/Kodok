@@ -28,19 +28,31 @@ class ProductSeeder extends Seeder
         	'added_by' => 'Kodok',
         ]);
 
-        $remittance = Product::create([
-        	'nama_product' => 'Remittance',
-        	'added_by' => 'Kodok',
-        ]);
-
-        $disbursement = Product::create([
-        	'nama_product' => 'Disbursement',
+        $bersamaku = Product::create([
+        	'nama_product' => 'BersamaKU',
         	'added_by' => 'Kodok',
         ]);
 
         $qr = Product::create([
-        	'nama_product' => 'ATMB QR',
+            'nama_product' => 'ATM Bersama QR',
+            'added_by' => 'Kodok',
+        ]);
+
+        $laboratory = Product::create([
+        	'nama_product' => 'Laboratory',
         	'added_by' => 'Kodok',
         ]);
+
+        $mynt = Product::create([
+            'nama_product' => 'Mynt',
+            'added_by' => 'Kodok',
+        ]);
+
+        $internal = Product::create([
+            'nama_product' => 'SDTL Internal System',
+            'added_by' => 'Kodok',
+        ]);
+
+        
     }
 }
