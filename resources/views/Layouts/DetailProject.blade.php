@@ -21,7 +21,9 @@
         </tr>
         <tr>
          <th>HistoryPIC</th>
-         <td>{{ $historypic->nama_user }}</td>
+         @foreach ($historypic as $history)
+         <td>{{ $history->nama_user }}</td>
+         @endforeach
         </tr>
         <tr>
          <th>Nama PIC PM</th>
