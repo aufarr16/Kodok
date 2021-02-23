@@ -17,7 +17,7 @@
   vertical-align: middle;
 }
 
-.table1 a .btn-edit {
+.table1 a .btn-edit .btn-project{
   color: #ffc107 !important;
   text-decoration: none;
 }
@@ -25,6 +25,13 @@
 .btn-edit:hover{
 	background-color: #ffc107;
 	color: white; /* White text */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btn-project:hover{
+  background-color: #ffc107;
+  color: white; /* White text */
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -80,11 +87,6 @@
 }
 
 .btnsubmit:hover, .btn-submit:focus, .btn-submit:active {
-  color: #fff;
-  background-color: #19569A;
-}
-
-.btn-project:focus, .btn-project:active {
   color: #fff;
   background-color: #19569A;
 }

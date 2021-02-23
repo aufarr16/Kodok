@@ -4,7 +4,7 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header" id="modal-header">			
-			<a class="close1" data-dismiss="modallist">&times;</a>
+			<a class="close1" data-dismiss="modal">&times;</a>
 			<h2 class="modal-title" id="modallist-title">Form Input</h2>
 		</div>	
 		
