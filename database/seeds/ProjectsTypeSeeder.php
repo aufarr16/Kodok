@@ -28,5 +28,8 @@ class ProjectsTypeSeeder extends Seeder
         	'nama_ptype' => 'UAT Internal'
         ]);
 
+        $support = Projects_Type::create([
+            'nama_ptype' => 'Support'
+        ]);
     }
 }

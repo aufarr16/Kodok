@@ -28,6 +28,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
     	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+        ->where('id_ptype', '!=', 5)
     	->orderBy('id', 'asc');
     }
 
