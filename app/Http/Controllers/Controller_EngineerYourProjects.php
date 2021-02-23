@@ -95,7 +95,7 @@ class Controller_EngineerYourProjects extends Controller
         $project = $this->getProjectById($id);                                  //ngambil data projek yg mau ditempel di form Edit PIC Bisnis
 
         //ngambil data product buat ngisi dropdown
-        if($project->id_pic_product == NULL || $project->id_pic_product == 1){  //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+        if($project->id_pic_product == NULL){  //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
             $listproduct = $this->getPICData($id, 0, 6);                        
         }
         else{
@@ -103,7 +103,7 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         //ngambil data am buat ngisi dropdown
-        if($project->id_pic_am == NULL || $project->id_pic_am == 1){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+        if($project->id_pic_am == NULL){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
             $listam = $this->getPICData($id, 0, 7); 
         }
         else{
@@ -111,13 +111,13 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         //ngambil data pm buat ngisi dropdown
-        if($project->id_pic_pm == NULL || $project->id_pic_pm == 1){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
+        if($project->id_pic_pm == NULL){            //kalo pic blm ada ato placeholder, maka ambil data yg pake placeholder
             $listpm = $this->getPICData($id, 0, 8); 
         }
         else{
             $listpm = $this->getPICData($id, 1, 8);
         }
-
+        
         return view('Layouts.FormPIC', compact('project', 'listproduct', 'listam', 'listpm'));  //buka form edit pic dengan data2 yg sudah disiapkan
     }
 
@@ -179,7 +179,7 @@ class Controller_EngineerYourProjects extends Controller
 
     public function getPICData($id, $flag, $level){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
         if($flag == 0){
-            return User::whereIn('users.id_ulevel', [$level, 9])
+            return User::where('users.id_ulevel', $level)
             ->orderBy('id', 'asc')
             ->get()
             ->pluck('nama_user', 'id')
