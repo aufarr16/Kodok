@@ -84,6 +84,11 @@
   background-color: #19569A;
 }
 
+.btn-project:focus, .btn-project:active {
+  color: #fff;
+  background-color: #19569A;
+}
+
 .btn-add{
     background-color: transparent;
     color: #FF8882 !important;
@@ -110,6 +115,27 @@
   transform: scale(1.1);
 }
 
+/* The Modal (background) */
+.modallist {
+  /*margin-left: 350px;*/
+  /*margin-top: 80px;*/
+  width: 100%
+}
+
+.modallist a.close1 {
+    position: absolute;
+    top: -10px;
+    right: 6px;
+    transition: all 200ms;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7ba3d0;
+    cursor: pointer;
+}
+.modallist a.close1:hover {
+  color: #19569A;
+}
 
 /* The Modal (background) */
 .modal {

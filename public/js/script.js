@@ -687,7 +687,7 @@ $('body').on('click', '.modal-show', function(event){
         url = me.attr('href'),
         title = me.attr('title');
 
-	$('#modal-title').text(title);
+	$('#modallist-title').text(title);
 	$('#button-project').text(me.hasClass('btn-project'))
 
     $.ajax({
@@ -695,10 +695,10 @@ $('body').on('click', '.modal-show', function(event){
         url: url,
         dataType: 'html',
         success: function (response) {
-            $('#modal-body').html(response); 
+            $('#modallist-body').html(response); 
             // console.log($('#modal-body'));
         }
     });
 
-    $('#modal').modal('show');
+    $('#modallist').modallist('show');
 });

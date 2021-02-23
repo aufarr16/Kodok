@@ -77,7 +77,7 @@
   <div class="container-fluid">
       <h2>@yield('PageTitle')</h2>
       @include('Layouts.Notif')
-      @include('Layouts.Modal')
+      @include('Layouts.ModalList')
       @yield('content')
 
   <!-- footer -->
