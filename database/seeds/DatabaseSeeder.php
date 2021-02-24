@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // DocumentSeeder::class,
             // DocumentsTypeSeeder::class,
-            MitraSeeder::class,
+            // MitraSeeder::class,
             ProductSeeder::class,
             ProjectsKeteranganSeeder::class,
             ProjectsStatSeeder::class,

@@ -75,6 +75,12 @@ class Controller_Login extends Controller
                         return redirect('/logout');
                     case '5':
                         return redirect('/login/choose');
+                    case '6':
+                        return redirect('/logout');
+                    case '7':
+                        return redirect('/logout');
+                    case '8':
+                        return redirect('/logout');
                 }
 
             } 

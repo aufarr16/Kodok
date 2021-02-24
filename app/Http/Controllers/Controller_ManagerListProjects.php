@@ -81,7 +81,7 @@ class Controller_ManagerListProjects extends Controller
 
     public function getHistoryPIC($id){
         return DB::table('projects_handovers')
-        ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, users.nama_user'))
+        ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, projects_handovers.handover_order, users.nama_user'))
         ->leftjoin('users', 'projects_handovers.id_user', '=', 'users.id')
         ->where('projects_handovers.id_project', '=', $id)
         ->orderBy('projects_handovers.handover_order', 'asc')

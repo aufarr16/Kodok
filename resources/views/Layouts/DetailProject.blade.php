@@ -16,7 +16,7 @@
         </tr>
         @foreach ($historypic as $history)
         <tr class="text-center">
-            <th>HistoryPIC</th>
+            <th>History PIC {{ $history->handover_order }}</th>
             <td>{{ $history->nama_user }}</td>
         </tr>
         @endforeach
