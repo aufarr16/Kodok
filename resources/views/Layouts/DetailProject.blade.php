@@ -4,10 +4,11 @@
 ]) !!}
     <div class="row">
      <div class="table-responsive-lg">
-      <table class="table1 table-hover">
+    <!-- /*<table class="table table-bordered" style="margin-right: 250px; margin-left: 10px; margin-top: 0px">*/ -->
+      <table class="table1 table-hover" style="margin-right: 250px; margin-left: 10px; margin-top: 0px">
        <thead>
         <tr class="text-center">
-            <th>PIC Saat ini</th> 
+            <th style="width: 150px;">PIC Saat ini</th> 
             <td>{{ $piccurrent->nama_user }}</td> 
         </tr>
         <tr class="text-center">

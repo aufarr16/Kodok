@@ -30,10 +30,11 @@
 }
 
 .btn-project:hover{
-  background-color: #ffc107;
-  color: white; /* White text */
+  /*background-color: #ffc107;*/
+  /*color: white;  White text */
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  font-weight: bolder;
 }
 
 .btn-delete{
