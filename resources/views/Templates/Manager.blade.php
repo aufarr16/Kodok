@@ -79,18 +79,8 @@
       @include('Layouts.Notif')
       @include('Layouts.ModalList')
       @yield('content')
+      @include('Layouts.Footer')
 
-  <!-- footer -->
-    <!-- <div class="blockquote text-left"> -->
-        <footer class="footer fixed-bottom">
-          <span>Copyright © 
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        All rights reserved
-      </span>
-    <!-- </footer> -->
-    </footer>
   <!-- ./container fluid -->
   </div>
 <!-- ./wrapper -->
