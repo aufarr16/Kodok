@@ -31,7 +31,7 @@ class Controller_ManagerAssignProjects extends Controller
             'id_product' => 'required',
             'id_ptype' => 'required',
             'id_mitra' => 'required',
-            'nama_project' => 'required|max:201',
+            'nama_project' => 'required|max:256',
         ],
         $message = [
             'id_user.required' => 'Mohon pilih PIC',
