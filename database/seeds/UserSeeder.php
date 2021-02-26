@@ -262,8 +262,8 @@ class UserSeeder extends Seeder
 
         $user31 = User::create([
         	'id_ulevel' => 3,
-        	'nama_user' => 'Wahyu Gusti Hariadi',
-        	'email_user' => 'wahyu.hariadi@artajasa.co.id',
+        	'nama_user' => 'Wahyu Gusti Hariyadi',
+        	'email_user' => 'wahyu.hariyadi@artajasa.co.id',
         	'inisial_user' => 'WGH',
         	'added_by' => 'Kodok',
         ]);
