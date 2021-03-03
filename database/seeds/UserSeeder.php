@@ -12,13 +12,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // $user0 = User::create([
-        //     'id_ulevel' => 9,
-        //     'nama_user' => ' ',
-        //     'email_user' => ' ',
-        //     'inisial_user' => '  ',
-        //     'added_by' => 'Kodok',
-        // ]);
+        $user0 = User::create([
+            'id_ulevel' => 9,
+            'nama_user' => 'Abdul Rosyid',
+            'email_user' => 'rosyid@artajasa.co.id',
+            'inisial_user' => 'ABR',
+            'added_by' => 'Kodok',
+        ]);
 
         $user1 = User::create([
         	'id_ulevel' => 2,
