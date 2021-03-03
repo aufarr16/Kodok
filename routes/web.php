@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
 
 	##Admin
-	Route::get('/admin', 'Controller_AdminUsers@openPage');
+	Route::get('/admin', 'Controller_AdminUsers@openPage');	
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
