@@ -93,7 +93,7 @@ function deleteMitra(id){
 	  type: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'dodgerblue',
+	  cancelButtonColor: 'red',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
@@ -165,7 +165,7 @@ function deleteProduct(id){
 	  type: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'dodgerblue',
+	  cancelButtonColor: 'red',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
@@ -237,7 +237,7 @@ function deleteUser(id){
 	  type: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'dodgerblue',
+	  cancelButtonColor: 'red',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
@@ -308,7 +308,7 @@ function donehandover(id) {
 	  type: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'dodgerblue',
+	  cancelButtonColor: 'red',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
@@ -383,7 +383,7 @@ function approveProject(id, title){
 		  type: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
+		  cancelButtonColor: 'red',
 		  confirmButtonText: 'Ya',
 		  cancelButtonText: 'Tidak'
 			}).then((result)=>{
@@ -458,7 +458,7 @@ function declineProject(id, title){
 		  type: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: 'lightgrey',
-		  cancelButtonColor: 'dodgerblue',
+		  cancelButtonColor: 'red',
 		  confirmButtonText: 'Ya',
 		  cancelButtonText: 'Tidak'
 			}).then((result)=>{
@@ -533,7 +533,7 @@ function changeStatusProject(id){
 	  type: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'dodgerblue',
+	  cancelButtonColor: 'red',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
