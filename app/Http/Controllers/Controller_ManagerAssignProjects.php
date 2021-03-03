@@ -67,16 +67,22 @@ class Controller_ManagerAssignProjects extends Controller
         ]);
 
         $handoveredproject = Project::where('id', $request->nama_project2)->firstOrFail();  //ngambil data projek yg mau dihandover
+        if($request->PIChandover == $handoveredproject->id_original_pic){                   //kalo pic handover = pic original
+            $this->autoDoneLastHandover($request->nama_project2);
+
+            $handoveredproject->id_current_pic = $handoveredproject->id_original_pic;       //ubah pic skrng jadi pic original
+            $handoveredproject->status_handover = 0;                                        //statusnya menjadi tidak handover
+            $handoveredproject->save();
+
+            return redirect('/manager/assign')->with('success','Project berhasil di handover');
+        }
+
         $handoveredproject->id_current_pic = $request->PIChandover;                         //ubah pic skrng jadi pic handover
         $handoveredproject->status_handover = 1;                                            //ubah status handover jadi true
         $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;    //tambah counter handovernya    
         $handoveredproject->save();                                                         //save perubahan data projek
 
-        //kalo sebelumnya udh dihandover cuma blm didone
-        if($prevhandover = Projects_Handover::where('id_project', $request->nama_project2)->orderby('handover_order', 'desc')->first()){
-            $prevhandover->is_active = 0;                                                   //handover sebelumnya dibuat otomatis done
-            $prevhandover->save();                                                          //save perubahan data handover
-        }
+        $this->autoDoneLastHandover($request->nama_project2)                                    //kalo sebelumnya udh dihandover cuma blm didone
 
         $newhandover = Projects_Handover::create([                                          //bikin data handover baru
             'id_user' => $request->PIChandover,
@@ -109,5 +115,12 @@ class Controller_ManagerAssignProjects extends Controller
 
     public function getUser(){                                      //ngambil data user engineer dan adminxengineer
         return User::select(DB::raw('*'))->whereIn('id_ulevel', [3, 5])->get();
+    }
+
+    public function autoDoneLastHandover($id){
+         if($prevhandover = Projects_Handover::where('id_project', $id)->orderby('handover_order', 'desc')->first()){
+            $prevhandover->is_active = 0;                                                   //handover sebelumnya dibuat otomatis done
+            $prevhandover->save();                                                          //save perubahan data handover
+        }
     }
 }
