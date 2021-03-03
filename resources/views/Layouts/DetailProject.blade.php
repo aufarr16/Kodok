@@ -35,11 +35,11 @@
         </tr>
         <tr class="text-center">
             <th>Progress SIT</th>
-            <td>{{ $progress->progress_sit }}</td>
+            <td>{{ $progress->progress_sit }}%</td>
         </tr>
         <tr class="text-center">
             <th>Progress UAT</th>
-            <td>{{ $progress->progress_uat }}</td>
+            <td>{{ $progress->progress_uat }}%</td>
         </tr>
        </thead>
       </table>
