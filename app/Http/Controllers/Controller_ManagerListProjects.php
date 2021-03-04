@@ -25,7 +25,7 @@ class Controller_ManagerListProjects extends Controller
         return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
-    public function detail($id){               //buka detail projek
+    public function detail($id){                     //buka detail projek
         $project = $this->getProjectById($id);       //ambil data projek yg mau diliat
         $picori = $this->getOriginalPIC($id);        //ambil data original pic 
         $piccurrent = $this->getCurrentPIC($id);     //ambil data current pic
@@ -33,11 +33,11 @@ class Controller_ManagerListProjects extends Controller
         $picproduct = $this->getProductPIC($id);     //ambil data pic product 
         $picam = $this->getAMPIC($id);               //ambil data pic am 
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
-        $progress = $this->getProgress($id);         //ambil data progress
+        $prognotes = $this->getProgressAndNotes($id);//ambil data progress + notes
 
         // dd($historypic);
         
-        return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project', 'notes'));
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
@@ -112,9 +112,9 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 
-    public function getProgress($id){
+    public function getProgressAndNotes($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, progress_uat'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes'))
         ->where('projects.id', '=', $id)
         ->first();
     }

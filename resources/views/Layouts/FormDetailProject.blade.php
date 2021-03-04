@@ -39,7 +39,7 @@
         </tr>
         <tr class="text-center">
             <th>Progress UAT</th>
-            <td>{{ $progress->progress_uat }}%</td>
+            <td>{{ $prognotes->progress_uat }}%</td>
         </tr>
        </thead>
       </table>
