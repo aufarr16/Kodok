@@ -1,5 +1,5 @@
 {!! Form::model($project, [
-	'route' => ['pic.change', $project->id],
+	'route' => ['pic.update', $project->id],
 	'method' => 'PUT'
 ]) !!}
 	<div class="form-group">

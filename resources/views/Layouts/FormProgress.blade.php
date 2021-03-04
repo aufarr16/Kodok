@@ -1,5 +1,5 @@
 {!! Form::model($project, [
-	'route' => ['progress.change', $project->id],
+	'route' => ['progress.update', $project->id],
 	'method' => 'PUT'
 ]) !!}
 

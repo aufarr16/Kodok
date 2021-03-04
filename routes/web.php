@@ -82,9 +82,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/projects/table', 'Controller_EngineerYourProjects@dataTable')->name('projects.table');
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 	Route::get('/engineer/projects/editprogress/{id}', 'Controller_EngineerYourProjects@editProgress')->name('progress.edit');
-	Route::put('/engineer/projects/changeprogress/{id}', 'Controller_EngineerYourProjects@changeProgress')->name('progress.change');
+	Route::put('/engineer/projects/updateprogress/{id}', 'Controller_EngineerYourProjects@updateProgress')->name('progress.update');
 	Route::get('/engineer/projects/editpic/{id}', 'Controller_EngineerYourProjects@editBussinessPIC')->name('pic.edit');
-	Route::put('/engineer/projects/changepic/{id}', 'Controller_EngineerYourProjects@changeBussinessPIC')->name('pic.change');
+	Route::put('/engineer/projects/updatepic/{id}', 'Controller_EngineerYourProjects@updateBussinessPIC')->name('pic.update');
+	Route::get('/engineer/projects/editnotes/{id}', 'Controller_EngineerYourProjects@editNotes')->name('notes.edit');
+	Route::put('/engineer/projects/updatenotes/{id}', 'Controller_EngineerYourProjects@updateNotes')->name('notes.update');
 
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
 	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');

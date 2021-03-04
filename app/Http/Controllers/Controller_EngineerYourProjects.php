@@ -69,7 +69,7 @@ class Controller_EngineerYourProjects extends Controller
         return view('Layouts.FormProgress', compact('project', 'sit', 'uat'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
 
-    public function changeProgress(Request $request, $id){                      //update data setelah nginput di form
+    public function updateProgress(Request $request, $id){                      //update data setelah nginput di form
         $request->validate([                                                    //validasi input
             'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
@@ -121,13 +121,27 @@ class Controller_EngineerYourProjects extends Controller
         return view('Layouts.FormPIC', compact('project', 'listproduct', 'listam', 'listpm'));  //buka form edit pic dengan data2 yg sudah disiapkan
     }
 
-    public function changeBussinessPIC(Request $request, $id){                  //update data pic bisnis
+    public function updateBussinessPIC(Request $request, $id){                  //update data pic bisnis
         $project = $this->getProjectById($id);                                  //ambil projek yg mau diubah pic bisnisnya
 
         $project->id_pic_product = $request->id_pic_product;                    //ubah pic product
         $project->id_pic_am = $request->id_pic_am;                              //ubah pic am
         $project->id_pic_pm = $request->id_pic_pm;                              //ubah pic pm
 
+        $project->save();                                                       //save perubahan
+    }
+
+    public function editNotes($id){
+        $project = $this->getProjectById($id);                                  //ambil data projek
+        $notes = $project->notes;                                               //ambil data notesnya
+
+        return view('Layouts.FormNotes', compact('notes'));                     //buka form notes dengan data notes yg mau diedit
+    }
+
+    public function updateNotes(Request $request, $id){
+        $project = $this->getProjectById($id);                                  //ambil data projek yg mau diubah notesnya
+
+        $project->notes = $request->notes;                                      //ubah notes
         $project->save();                                                       //save perubahan
     }
 

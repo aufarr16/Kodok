@@ -34,6 +34,7 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('stats_temp')->nullable();    
             $table->string('pketerangan_status')->nullable();
             $table->string('pketerangan_note')->nullable();
+            $table->string('notes', 301);
         });
     }
 
