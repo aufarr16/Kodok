@@ -82,7 +82,7 @@ class Controller_ManagerAssignProjects extends Controller
         $handoveredproject->handover_counter = $handoveredproject->handover_counter + 1;    //tambah counter handovernya    
         $handoveredproject->save();                                                         //save perubahan data projek
 
-        $this->autoDoneLastHandover($request->nama_project2)                                //auto done kalo handover sebelumnya blm didone
+        $this->autoDoneLastHandover($request->nama_project2);                                //auto done kalo handover sebelumnya blm didone
 
         $newhandover = Projects_Handover::create([                                          //bikin data handover baru
             'id_user' => $request->PIChandover,

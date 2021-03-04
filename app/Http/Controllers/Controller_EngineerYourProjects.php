@@ -133,7 +133,7 @@ class Controller_EngineerYourProjects extends Controller
 
     public function editNotes($id){
         $project = $this->getProjectById($id);                                  //ambil data projek
-        $notes = $project->notes;                                               //ambil data notesnya
+        $notes = $project->notes_project;                                       //ambil data notesnya
 
         return view('Layouts.FormNotes', compact('notes'));                     //buka form notes dengan data notes yg mau diedit
     }
@@ -141,7 +141,7 @@ class Controller_EngineerYourProjects extends Controller
     public function updateNotes(Request $request, $id){
         $project = $this->getProjectById($id);                                  //ambil data projek yg mau diubah notesnya
 
-        $project->notes = $request->notes;                                      //ubah notes
+        $project->notes_project = $request->notes_project;                      //ubah notes
         $project->save();                                                       //save perubahan
     }
 
