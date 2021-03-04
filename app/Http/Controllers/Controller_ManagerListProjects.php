@@ -40,7 +40,17 @@ class Controller_ManagerListProjects extends Controller
         return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project', 'notes'));
     }
 
-    
+    public function editProject($id){
+        $project = $this->getProjectById($id);
+
+        return View('Layouts.FormProject', compact('project'));
+    }
+
+    public function updateProject(Request $request, $id){
+        $project = $this->getProjectById($id);
+
+        
+    }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
         $data = DB::select("select e.id, a.inisial_user, b.nama_product, c.nama_ptype, d.nama_mitra, e.nama_project, DATE(e.waktu_assign_project) as waktu, f.id as id_pstat from users as a, products as b, projects_types as c, mitras as d, projects as e, projects_stats as f where e.id_current_pic = a.id and e.id_product = b.id and e.id_ptype = c.id and e.id_mitra = d.id and e.id_pstat = f.id");    //ambil data buat ditempel di table
