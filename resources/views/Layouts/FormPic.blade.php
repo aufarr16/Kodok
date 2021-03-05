@@ -3,7 +3,7 @@
 	'method' => 'PUT'
 ]) !!}
 	<div class="form-group">
-		<div class ="input-group-addon">
+		<div class ="input-group-addon"">
 			<label for="id_pic_product" style="font-weight:bolder" style="margin-top: -30px">PIC Product</label>
 				<br>
 				{!! Form::select('id_pic_product', $listproduct, null, array(
