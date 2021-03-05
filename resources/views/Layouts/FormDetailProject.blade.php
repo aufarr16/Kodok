@@ -4,10 +4,11 @@
 ]) !!}
     <div class="row">
      <div class="table-responsive-lg">
-      <table class="table1 table-hover">
+    <!-- /*<table class="table table-bordered" style="margin-right: 250px; margin-left: 10px; margin-top: 0px">*/ -->
+      <table class="table1 table-hover" style="margin-right: 250px; margin-left: 10px; margin-top: 0px">
        <thead>
         <tr class="text-center">
-            <th>PIC Saat ini</th> 
+            <th style="width: 150px;">PIC Saat ini</th> 
             <td>{{ $piccurrent->nama_user }}</td> 
         </tr>
         <tr class="text-center">
@@ -16,7 +17,7 @@
         </tr>
         @foreach ($historypic as $history)
         <tr class="text-center">
-            <th>HistoryPIC</th>
+            <th>History PIC {{ $history->handover_order }}</th>
             <td>{{ $history->nama_user }}</td>
         </tr>
         @endforeach
@@ -34,11 +35,11 @@
         </tr>
         <tr class="text-center">
             <th>Progress SIT</th>
-            <td>{{ $progress->progress_sit }}</td>
+            <td>{{ $progress->progress_sit }}%</td>
         </tr>
         <tr class="text-center">
             <th>Progress UAT</th>
-            <td>{{ $progress->progress_uat }}</td>
+            <td>{{ $prognotes->progress_uat }}%</td>
         </tr>
        </thead>
       </table>

@@ -12,13 +12,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // $user0 = User::create([
-        //     'id_ulevel' => 9,
-        //     'nama_user' => ' ',
-        //     'email_user' => ' ',
-        //     'inisial_user' => '  ',
-        //     'added_by' => 'Kodok',
-        // ]);
+        $user0 = User::create([
+            'id_ulevel' => 9,
+            'nama_user' => 'Abdul Rosyid',
+            'email_user' => 'rosyid@artajasa.co.id',
+            'inisial_user' => 'ABR',
+            'added_by' => 'Kodok',
+        ]);
 
         $user1 = User::create([
         	'id_ulevel' => 2,
@@ -87,7 +87,7 @@ class UserSeeder extends Seeder
         $user9 = User::create([
         	'id_ulevel' => 3,
         	'nama_user' => 'I Nyoman Agastia',
-        	'email_user' => 'nyoman.agastia@artajasa.co.id',
+        	'email_user' => 'inyoman.agastia@artajasa.co.id',
         	'inisial_user' => 'INA',
         	'added_by' => 'Kodok',
         ]);
@@ -262,8 +262,8 @@ class UserSeeder extends Seeder
 
         $user31 = User::create([
         	'id_ulevel' => 3,
-        	'nama_user' => 'Wahyu Gusti Hariadi',
-        	'email_user' => 'wahyu.hariadi@artajasa.co.id',
+        	'nama_user' => 'Wahyu Gusti Hariyadi',
+        	'email_user' => 'wahyu.hariyadi@artajasa.co.id',
         	'inisial_user' => 'WGH',
         	'added_by' => 'Kodok',
         ]);
@@ -274,6 +274,14 @@ class UserSeeder extends Seeder
         	'email_user' => 'renaldy.pambudi@artajasa.co.id',
         	'inisial_user' => 'RBB',
         	'added_by' => 'Kodok',
+        ]);
+
+        $user103 = User::create([
+            'id_ulevel' => 3,
+            'nama_user' => 'Afdhol Martoni',
+            'email_user' => 'afdhol.martoni@artajasa.co.id',
+            'inisial_user' => 'AMR',
+            'added_by' => 'IDE',
         ]);
 
         $user33 = User::create([

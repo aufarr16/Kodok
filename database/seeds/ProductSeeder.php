@@ -29,26 +29,31 @@ class ProductSeeder extends Seeder
         ]);
 
         $bersamaku = Product::create([
+            'id' => 5,
         	'nama_product' => 'BersamaKU',
         	'added_by' => 'Kodok',
         ]);
 
         $qr = Product::create([
+            'id' => 6,
             'nama_product' => 'ATM Bersama QR',
             'added_by' => 'Kodok',
         ]);
 
         $laboratory = Product::create([
+            'id' => 7,
         	'nama_product' => 'Laboratory',
         	'added_by' => 'Kodok',
         ]);
 
         $mynt = Product::create([
+            'id' => 8,
             'nama_product' => 'Mynt',
             'added_by' => 'Kodok',
         ]);
 
         $internal = Product::create([
+            'id' => 9,
             'nama_product' => 'SDTL Internal System',
             'added_by' => 'Kodok',
         ]);

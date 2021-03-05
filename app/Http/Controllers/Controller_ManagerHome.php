@@ -12,7 +12,7 @@ class Controller_ManagerHome extends Controller
 {
     public function openAllDataPage(){                  //Buka halaman home dengan all data
         $userLevel = auth()->user()->id_ulevel;         
-        if($userLevel == 2){                            //Autentikasi level user yg boleh msk
+        if($userLevel == 2 || $userLevel == 9){                            //Autentikasi level user yg boleh msk
             //YEAR DATA
             $years = $this->getYears();                 //Ngambil data tahun buat ditampilin di dropdown filter tahun
 

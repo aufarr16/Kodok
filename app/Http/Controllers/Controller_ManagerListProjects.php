@@ -13,7 +13,7 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2){                                //Autentikasi level user yg boleh msk
+        if($userLevel == 2 || $userLevel == 9){                                //Autentikasi level user yg boleh msk
             return view('Pages.Manager.View_ManagerListProjects');  
         }
         else{
@@ -25,7 +25,7 @@ class Controller_ManagerListProjects extends Controller
         return (new ProjectsExport)->download('Data All Project.xlsx');
     }
 
-    public function detail($id){               //buka detail projek
+    public function detail($id){                     //buka detail projek
         $project = $this->getProjectById($id);       //ambil data projek yg mau diliat
         $picori = $this->getOriginalPIC($id);        //ambil data original pic 
         $piccurrent = $this->getCurrentPIC($id);     //ambil data current pic
@@ -33,11 +33,23 @@ class Controller_ManagerListProjects extends Controller
         $picproduct = $this->getProductPIC($id);     //ambil data pic product 
         $picam = $this->getAMPIC($id);               //ambil data pic am 
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
-        $progress = $this->getProgress($id);         //ambil data progress
+        $prognotes = $this->getProgressAndNotes($id);//ambil data progress + notes
 
         // dd($historypic);
         
-        return view('Layouts.DetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'progress', 'project'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project', 'notes'));
+    }
+
+    public function editProject($id){
+        $project = $this->getProjectById($id);
+
+        return View('Layouts.FormProject', compact('project'));
+    }
+
+    public function updateProject(Request $request, $id){
+        $project = $this->getProjectById($id);
+
+        
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
@@ -81,7 +93,7 @@ class Controller_ManagerListProjects extends Controller
 
     public function getHistoryPIC($id){
         return DB::table('projects_handovers')
-        ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, users.nama_user'))
+        ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, projects_handovers.handover_order, users.nama_user'))
         ->leftjoin('users', 'projects_handovers.id_user', '=', 'users.id')
         ->where('projects_handovers.id_project', '=', $id)
         ->orderBy('projects_handovers.handover_order', 'asc')
@@ -112,9 +124,9 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 
-    public function getProgress($id){
+    public function getProgressAndNotes($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, progress_uat'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project'))
         ->where('projects.id', '=', $id)
         ->first();
     }

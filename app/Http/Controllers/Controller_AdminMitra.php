@@ -37,14 +37,9 @@ class Controller_AdminMitra extends Controller
 
     public function store(Request $request){        //nyimpen data yg udh disubmit dari form Tambah Mitra
         $request->validate([                        //validasi data yg sudah diisi di form Tambah Mitra
-            'ABA' => 'required|min:3|max:13|unique:mitras',
             'nama_mitra' => 'required|max:51',
         ],
         $message = [
-            'ABA.required' => ' Mohon isi ABA',
-              'ABA.min' => ' Mohon isi ABA minimal 3 angka',
-              'ABA.max' => ' Mohon isi ABA maksimal 13 angka',
-              'ABA.unique'=>' ABA sudah terdaftar',
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => ' Nama Mitra hanya boleh berisi huruf',
@@ -53,7 +48,6 @@ class Controller_AdminMitra extends Controller
         $added_by = Auth::user()->inisial_user;     //mencari inisial user untuk dimasukkan ke bagian added_by pada tabel mitra
 
         $model = Mitra::create([                    //memasukkan data2 baru
-            'ABA' => $request->ABA,
             'nama_mitra' => $request->nama_mitra,
             'added_by' => $added_by
         ]);
@@ -81,13 +75,9 @@ class Controller_AdminMitra extends Controller
 
     public function update(Request $request, $id){                  //ngedit data yg udh diinput dari form Edit Mitra
         $request->validate([
-            'ABA' => 'required|min:3|max:13|unique:mitras,ABA, ' .$id,
             'nama_mitra' => 'required|max:51',
         ],
         $message = [
-            'ABA.required' => ' Mohon isi ABA',
-              'ABA.min' => ' Mohon isi ABA minimal 3 angka',
-              'ABA.max' => ' Mohon isi ABA maksimal 13 angka',
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => ' Nama Mitra hanya boleh berisi huruf',
@@ -95,7 +85,6 @@ class Controller_AdminMitra extends Controller
 
         $modified_by = Auth::user()->inisial_user;                  //mengambil inisial user untuk ditambahkan pada kolom modified_by di tabel mitra
         $model = Mitra::where('id', $id)->firstOrFail();            //mencari data mitra yg ingin diedit
-        $model->ABA = $request->ABA;                                //edit ABA
         $model->nama_mitra = $request->nama_mitra;                  //edit nama
         $model->modified_by = $modified_by;                         //edit modified_by
         $model->save();                                             //menyimpan hasil editan data

@@ -1,5 +1,5 @@
 {!! Form::model($project, [
-	'route' => ['pic.change', $project->id],
+	'route' => ['pic.update', $project->id],
 	'method' => 'PUT'
 ]) !!}
 	<div class="form-group">
@@ -9,7 +9,8 @@
 				{!! Form::select('id_pic_product', $listproduct, null, array(
 				    'class' => 'form-control selectproduct',
 				    'id' => 'nama_user', 
-				    'placeholder' => '', 
+				    'placeholder' => '',
+				    'style' => 'Background: #ffff', 
 				    )) 
 				!!}
 		</div> 
@@ -23,6 +24,7 @@
 				    'class' => 'form-control selectpicam',
 				    'id' => 'nama_user',
 				    'placeholder' => '', 
+				    'style' => 'Background: #ffff',
 				    )) 
 				!!}
 		</div>
@@ -35,7 +37,8 @@
 				{!! Form::select('id_pic_pm', $listpm, null, array(
 				    'class' => 'form-control selectpicpm',
 				    'id' => 'nama_user',
-				    'placeholder' => '', 
+				    'placeholder' => '',
+				    'style' => 'Background: #ffff', 
 				    )) 
 				!!}
 		</div>

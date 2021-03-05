@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
 
 	##Admin
-	Route::get('/admin', 'Controller_AdminUsers@openPage');
+	Route::get('/admin', 'Controller_AdminUsers@openPage');	
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
@@ -82,9 +82,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/projects/table', 'Controller_EngineerYourProjects@dataTable')->name('projects.table');
 	Route::patch('/engineer/projects/changestat', 'Controller_EngineerYourProjects@changeStatus');
 	Route::get('/engineer/projects/editprogress/{id}', 'Controller_EngineerYourProjects@editProgress')->name('progress.edit');
-	Route::put('/engineer/projects/changeprogress/{id}', 'Controller_EngineerYourProjects@changeProgress')->name('progress.change');
+	Route::put('/engineer/projects/updateprogress/{id}', 'Controller_EngineerYourProjects@updateProgress')->name('progress.update');
 	Route::get('/engineer/projects/editpic/{id}', 'Controller_EngineerYourProjects@editBussinessPIC')->name('pic.edit');
-	Route::put('/engineer/projects/changepic/{id}', 'Controller_EngineerYourProjects@changeBussinessPIC')->name('pic.change');
+	Route::put('/engineer/projects/updatepic/{id}', 'Controller_EngineerYourProjects@updateBussinessPIC')->name('pic.update');
+	Route::get('/engineer/projects/editnotes/{id}', 'Controller_EngineerYourProjects@editNotes')->name('notes.edit');
+	Route::put('/engineer/projects/updatenotes/{id}', 'Controller_EngineerYourProjects@updateNotes')->name('notes.update');
 
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
 	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');
@@ -116,6 +118,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
 	Route::get('/manager/projects/export', 'Controller_ManagerListProjects@export');
 	Route::get('/manager/projects/detail/{id}', 'Controller_ManagerListProjects@detail')->name('listprojects.detail');
+	Route::get('/manager/projects/edit/{$id}', 'Controller_ManagerListProjects@editProject')->name('projects.edit');
+	Route::put('/manager/projects/update/{$id}', 'Controller_ManagerListProjects@updateProject')->name('projects.update');
 
 	// Search Doc
 	Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');

@@ -26,14 +26,16 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('id_pic_product')->nullable();
             $table->unsignedBigInteger('id_pic_am')->nullable();
             $table->unsignedBigInteger('id_pic_pm')->nullable();
-            $table->string('nama_project', 201);
-            $table->float('progress_sit');
-            $table->float('progress_uat');
+            $table->string('nama_project', 256);
+            $table->float('progress_sit')->default(0);
+            $table->float('progress_uat')->default(0);
             $table->boolean('status_handover');
             $table->integer('handover_counter');
             $table->unsignedBigInteger('stats_temp')->nullable();    
             $table->string('pketerangan_status')->nullable();
             $table->string('pketerangan_note')->nullable();
+            $table->string('notes_project', 301)->nullable();
+            $table->integer('bobot_project')->nullable();
         });
     }
 

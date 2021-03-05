@@ -55,18 +55,7 @@
     <div class="container-fluid">
     <h2>@yield('PageTitle')</h2>
 	   @yield('content')
-
-  <!-- footer -->
-    <!-- <div class="blockquote text-left"> -->
-        <footer class="footer fixed-bottom">
-          <span>Copyright © 
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        All rights reserved
-      </span>
-    <!-- </footer> -->
-    </footer>
+     @include('Layouts.Footer')
 
 	<!-- ./container fluid -->
 	</div>
