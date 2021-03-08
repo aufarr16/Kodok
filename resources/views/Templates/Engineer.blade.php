@@ -1,205 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="{{ url('') }}/style.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
-  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"> -->
-  @stack('styles')
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineer | Dashboard</title>
 
-  <body>
-	<header class="main-header">
-    <div class="custom-menu">
-      <div class="row">
-        <div class="col-md-6">
-        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-         <i class="fas fa-align-justify fa-2x"></i>
-        </button>
-         <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
-          <a href="/logout" style="color: black">
-            <i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding:2px"></i>
-          </a>
-          @if($userLevel === 5)
-          <a href="/login/choose" style="color: black">
-            <i class="fas fa-sm fa-share" title="Switch Role" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i>
-          </a> 
-          @endif
-        </h4>
-          <!-- <div class="logout"></div> -->
-        </div>
-        <div class="col-md-6">
-          <div class="namaweb">Sistem Dokumentasi</div>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ url('assets') }}/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ url('assets') }}/plugins/summernote/summernote-bs4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+       <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
+        <a href="/logout" style="color: black">
+          <i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding:2px"></i>
+        </a>
+        @if($userLevel === 5)
+        <a href="/login/choose" style="color: black">
+          <i class="fas fa-sm fa-share" title="Switch Role" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i>
+        </a> 
+        @endif
+      </h4>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="#" class="d-block">{{ auth()->user()->nama_user }} &nbsp</a>
         </div>
       </div>
-    </div>
-    </header>
-	  
-<div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar">
-        <ul class="list-unstyled components mb-5">
-		  		<!-- <li class="{{ Request::is('engineer/doctools') ? 'active' : '' }}">
-            <a href="/engineer/doctools">
-              <span class="fas fa-file-alt mr-2"></span>Documents & Tools
-            </a>
-          </li> -->
-          <li>
-          	<a class="tree-toggle nav-header d-flex">
-          			<span class="fas fa-clipboard-list ">&nbsp Project On Going</span>
-                <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
-            </a>
-	            <ul class="nav tree" style="display: none;">
-	              <li class="{{ Request::is('engineer/projects') ? 'active' : '' }}"><a class="" href="/engineer/projects">Your Project</a></li>
-                <li class="{{ Request::is('engineer/handover') ? 'active' : '' }}"><a class="" href="/engineer/handover">Handover Project</a></li>
-                
-	            </ul>
-          </li>
 
-          <li>
-            <a class="tree-toggle nav-header d-flex">
-                <span class="fas fa-clipboard-list ">&nbsp Project Done</span>
-                <i class="fas fa-chevron-circle-down rotate" style="padding-left: 70px"></i>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                &nbsp Project On Going
+                <i class="right fas fa-angle-left"></i>
+              </p>
             </a>
-              <ul class="nav tree" style="display: none;">
-                <li class="{{ Request::is('engineer/history') ? 'active' : '' }}"><a class="" href="/engineer/history">Your Project</a></li>
-                <li class="{{ Request::is('engineer/historyhover') ? 'active' : '' }}"><a class="" href="/engineer/historyhover">Handover Project</a></li>
-              </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/engineer/projects" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Your Project</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/engineer/handover" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Handover Project</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <!-- <li class="{{ Request::is('engineer/searchdocs') ? 'active' : '' }}">
-            <a href="/engineer/searchdocs">
-              <span class="fa fa-search mr-2"></span>Search Documents
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                &nbsp Project Done
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
-          </li> -->
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/engineer/history" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Your Project</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/engineer/historyhover" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Handover Project</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 
-   	<div class="container-fluid">
-   	<h2>@yield('PageTitle')</h2>
-    @yield('content')
-    @include('Layouts.Notif')
-    @include('Layouts.Modal')
-    @include('Layouts.Footer')
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-	<!-- ./container fluid -->
-	</div>
-<!-- ./wrapper -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2021 <a>KODOK</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.1.2
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
-	<!-- ./container fluid -->
-	</div>
 <!-- ./wrapper -->
-</div>
-	
-	
-<!--   Core JS Files   -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-<script src="{{ url('') }}/js/core/popper.min.js"></script>
-<script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-<script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-<!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script> -->
-<script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
-<!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script> -->
-<script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
-<script src="{{ url('') }}/js/script.js"></script>
 
-@stack('scripts')
-
-<!-- JS Search All -->
+<!-- jQuery -->
+<script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ url('assets') }}/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-	$(document).ready(function(){
-	  $("#myInput").on("keyup", function() {
-	    var value = $(this).val().toLowerCase();
-	    $("#myTable tr").filter(function() {
-	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	    });
-	  });
-	});
+  $.widget.bridge('uibutton', $.ui.button)
 </script>
-
-<script>
-	$(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-
-		// Dropdown menu projects
-		$('.tree-toggle').click(function() {
-		    $(this).parent().children('ul.tree').toggle(300);
-		});
-
-		// Rotate icon dropdown
-		$(".rotate").click(function () {
-		$(this).toggleClass("fas fa-chevron-circle-down fas fa-chevron-circle-up");
-	})
-</script>
-
-	<!-- <script>
-	  function uploadfile () {
-	      Swal.fire({
-	        toast: true,
-	        position: 'top',
-	        showConfirmButton: false,
-	        timer: 4000,
-	        background:'#D4F1F4',
-	        type: 'success',
-	        title: 'File berhasil diupload'
-	      })
-	    }
-	</script> -->
-	<!-- <script>
-		function uploadfile () {
-	   	var file = $('#file').val();
-
-		 if(file == ''){
-	       Swal.fire({
-			  toast: true,
-			  position: 'top',
-			  showConfirmButton: false,
-			  timer: 4000,
-			  timerProgressBar:true,
-			  // background:'lightgoldenrodyellow',
-			  background:'#FFF4BD',
-			  type: 'warning',
-			  title: 'Tidak ada file yang bisa diupload'
-			})
-
-		    }else{
-		 		Swal.fire({
-				  toast: true,
-				  position: 'top',
-				  showConfirmButton: false,
-				  timer: 4000,
-				  background:'#D4F1F4',
-				  type: 'success',
-				  title: 'File berhasil diupload'
-				})
-		 	}}
-	</script> -->
+<!-- Bootstrap 4 -->
+<script src="{{ url('assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="{{ url('assets') }}/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="{{ url('assets') }}/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="{{ url('assets') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="{{ url('assets') }}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{ url('assets') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="{{ url('assets') }}/plugins/moment/moment.min.js"></script>
+<script src="{{ url('assets') }}/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ url('assets') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="{{ url('assets') }}/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="{{ url('assets') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{ url('assets') }}/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url('assets') }}/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ url('assets') }}/dist/js/pages/dashboard.js"></script>
 </body>
-
 </html>
