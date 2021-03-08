@@ -13,68 +13,55 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Responsive Hover Table</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <h3 class="card-title">DataTable with default features</h3>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
+              <div class="card-body">
+                <table id="table1" class="table table-bordered table-hover">
                   <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>User</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Reason</th>
-                    </tr>
+                  <tr>
+                    <th>No</th>
+					<th>Produk</th>
+					<th>Jenis Project</th>
+					<th>Nama Mitra</th>
+					<th>Nama Project</th>
+					<th>Tanggal Assign</th>
+					<th style="width: 75px">Status</th>
+					<th>Keterangan</th>
+					<th>Action</th>
+                  </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                  </tbody>
+                  <!-- <tbody>
+                  <tr>
+                    <td>Trident</td>
+                    <td>Internet
+                      Explorer 4.0
+                    </td>
+                    <td>Win 95+</td>
+                    <td> 4</td>
+                    <td>X</td>
+                  </tr>
+                  </tbody> -->
+                  <tfoot>
+                  <tr>
+                    <th>No</th>
+					<th>Produk</th>
+					<th>Jenis Project</th>
+					<th>Nama Mitra</th>
+					<th>Nama Project</th>
+					<th>Tanggal Assign</th>
+					<th style="width: 75px">Status</th>
+					<th>Keterangan</th>
+					<th>Action</th>
+                  </tr>
+                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
+          <!-- /.col -->
         </div>
 	<div class="table-responsive-lg">
 	<table class="table1" id="table1">
@@ -107,6 +94,33 @@
 	    });
 	  });
 	});
+</script>
+
+<script>
+  $(function () {
+    $('#table1').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      ajax: "{{ route('projects.table') }}",
+	    columns: [
+	    	{data: 'DT_RowIndex', name: 'id'},
+	    	{data: 'nama_product', name: 'nama_product'},
+	    	{data: 'nama_ptype', name: 'nama_ptype'},
+	    	{data: 'nama_mitra', name: 'nama_mitra'},
+	    	{data: 'nama_project', name: 'nama_project'},
+	    	{data: 'tanggal_assign', name: 'tanggal_assign'},
+	    	{data: 'status', name: 'status'},
+	    	{data: 'keterangan', name: 'keterangan'},
+	    	{data: 'action', name: 'action'}
+	    ],
+	    "order": [[5, "desc"]]
+    });
+  });
 </script>
 
 <script>
