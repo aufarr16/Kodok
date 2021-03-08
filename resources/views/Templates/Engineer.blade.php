@@ -25,12 +25,13 @@
   <link rel="stylesheet" href="{{ url('assets') }}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ url('assets') }}/plugins/summernote/summernote-bs4.min.css">
+  @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-blue">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -40,12 +41,12 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
        <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
-        <a href="/logout" style="color: black">
-          <i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px;padding:2px"></i>
+        <a href="/logout">
+          <i class="fas fa-sm fa-power-off" title="Logout"></i>
         </a>
         @if($userLevel === 5)
-        <a href="/login/choose" style="color: black">
-          <i class="fas fa-sm fa-share" title="Switch Role" style="color: #19569A;border: 2px solid;border-radius: 5px;padding: 2px"></i>
+        <a href="/login/choose">
+          <i class="fas fa-sm fa-share" title="Switch Role"></i>
         </a> 
         @endif
       </h4>
@@ -54,15 +55,15 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-navy elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="index3.html" class="brand-link navbar-navy">
       <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar bg-navy elevatio-2">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
@@ -151,7 +152,9 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
+    @yield('PageTitle')
+    @yield('content')
+    @include('Layouts.Notif')
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
