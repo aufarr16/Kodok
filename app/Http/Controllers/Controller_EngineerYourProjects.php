@@ -61,15 +61,16 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();                                                       //save perubahan data 
     }
 
-    public function editProgress($id){                                          //nyiapin form Edit Progress
+    public function editProgressBobot($id){                                     //nyiapin form Edit Progress
         $project = $this->getProjectById($id);                                  //ngambil data projek yg mau diubah progressnya
         $sit = $project->progress_sit;                                          //ngambil progress sit
         $uat = $project->progress_uat;                                          //ngambil progress uat 
+        $bobot = $project->bobot_project;                                       //ngambil bobot
 
-        return view('Layouts.FormProgress', compact('project', 'sit', 'uat'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
+        return view('Layouts.FormProgress', compact('project', 'sit', 'uat', 'bobot'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
 
-    public function updateProgress(Request $request, $id){                      //update data setelah nginput di form
+    public function updateProgressBobot(Request $request, $id){                 //update data setelah nginput di form
         $request->validate([                                                    //validasi input
             'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
@@ -87,6 +88,7 @@ class Controller_EngineerYourProjects extends Controller
 
         $project->progress_sit = $request->progress_sit;                        //ganti progress sit
         $project->progress_uat = $request->progress_uat;                        //ganti progress uat
+        $project->bobot_project = $request->bobot_project;                      //ganti bobot
 
         $project->save();                                                       //simpan perubahan
     }

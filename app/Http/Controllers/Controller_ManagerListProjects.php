@@ -49,6 +49,9 @@ class Controller_ManagerListProjects extends Controller
     public function updateProject(Request $request, $id){
         $project = $this->getProjectById($id);
 
+    }
+
+    public function deleteProject(){
         
     }
 
