@@ -9,78 +9,33 @@
 <title>
 	| {Engineer} Your Projects
 </title>
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="table1" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>No</th>
-					<th>Produk</th>
-					<th>Jenis Project</th>
-					<th>Nama Mitra</th>
-					<th>Nama Project</th>
-					<th>Tanggal Assign</th>
-					<th style="width: 75px">Status</th>
-					<th>Keterangan</th>
-					<th>Action</th>
-                  </tr>
-                  </thead>
-                  <!-- <tbody>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                  </tr>
-                  </tbody> -->
-                  <tfoot>
-                  <tr>
-                    <th>No</th>
-					<th>Produk</th>
-					<th>Jenis Project</th>
-					<th>Nama Mitra</th>
-					<th>Nama Project</th>
-					<th>Tanggal Assign</th>
-					<th style="width: 75px">Status</th>
-					<th>Keterangan</th>
-					<th>Action</th>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-	<div class="table-responsive-lg">
-	<table class="table1" id="table1">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>Produk</th>
-				<th>Jenis Project</th>
-				<th>Nama Mitra</th>
-				<th>Nama Project</th>
-				<th>Tanggal Assign</th>
-				<th style="width: 75px">Status</th>
-				<th>Keterangan</th>
-				<th>Action</th>
-				<!-- <th>Docs</th> -->
-			</tr>
-		</thead>
-	</table>
-	<!-- table responsive -->
+
+<div class="row mt-2">
+  <div class="col-md-12">
+      <!-- /.card-header -->
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <table id="table1" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>No</th>
+			<th>Produk</th>
+			<th>Jenis Project</th>
+			<th>Nama Mitra</th>
+			<th>Nama Project</th>
+			<th>Tanggal Assign</th>
+			<th>Status</th>
+			<th>Keterangan</th>
+			<th>Action</th>
+          </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col -->
 </div>
 @endsection
 
@@ -97,7 +52,7 @@
 </script>
 
 <script>
-  $(function () {
+  $(document).ready(function() {
     $('#table1').DataTable({
       "paging": true,
       "lengthChange": false,

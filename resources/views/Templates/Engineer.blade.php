@@ -8,27 +8,27 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- iCheck -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/jqvmap/jqvmap.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ url('assets') }}/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/summernote/summernote-bs4.min.css') }}">
   <!-- DataTables -->
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{ url('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
   @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -140,13 +140,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
+            <h1 class="m-0">@yield('PageTitle')</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -156,7 +150,6 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-    @yield('PageTitle')
     @yield('content')
     @include('Layouts.Notif')
       </div><!-- /.container-fluid -->
@@ -181,51 +174,51 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
+<script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{ url('assets') }}/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{ url('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="{{ url('assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="{{ url('assets') }}/plugins/chart.js/Chart.min.js"></script>
+<script src="{{ url('assets/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="{{ url('assets') }}/plugins/sparklines/sparkline.js"></script>
+<script src="{{ url('assets/plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->
-<script src="{{ url('assets') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="{{ url('assets') }}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="{{ url('assets/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ url('assets/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ url('assets') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="{{ url('assets/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
-<script src="{{ url('assets') }}/plugins/moment/moment.min.js"></script>
-<script src="{{ url('assets') }}/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="{{ url('assets/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ url('assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ url('assets') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="{{ url('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
-<script src="{{ url('assets') }}/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="{{ url('assetsplugins/summernote/summernote-bs4.min.js') }}/"></script>
 <!-- overlayScrollbars -->
-<script src="{{ url('assets') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{ url('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ url('assets') }}/dist/js/adminlte.js"></script>
+<script src="{{ url('assets/dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ url('assets') }}/dist/js/demo.js"></script>
+<script src="{{ url('assets/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ url('assets') }}/dist/js/pages/dashboard.js"></script>
+<script src="{{ url('assets/dist/js/pages/dashboard.js') }}"></script>
 <!-- DataTables  & Plugins -->
-<script src="{{ url('assets') }}/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="{{ url('assets') }}/plugins/jszip/jszip.min.js"></script>
-<script src="{{ url('assets') }}/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="{{ url('assets') }}/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="{{ url('assets') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{ url('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ url('assets/plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ url('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ url('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ url('assetsplugins/datatables-buttons/js/buttons.html5.min.js') }}/"></script>
+<script src="{{ url('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 </body>
 </html>
