@@ -18,15 +18,15 @@
         <table id="table1" class="table table-bordered table-hover">
           <thead>
           <tr>
-            <th>No</th>
-			<th>Produk</th>
-			<th>Jenis Project</th>
-			<th>Nama Mitra</th>
-			<th>Nama Project</th>
-			<th>Tanggal Assign</th>
-			<th>Status</th>
-			<th>Keterangan</th>
-			<th>Action</th>
+            <th class="text-center">No</th>
+      			<th class="text-center">Produk</th>
+      			<th class="text-center">Jenis Project</th>
+      			<th class="text-center">Nama Mitra</th>
+      			<th class="text-center">Nama Project</th>
+      			<th class="text-center">Tanggal Assign</th>
+      			<th class="text-center">Status</th>
+      			<th class="text-center">Keterangan</th>
+      			<th class="text-center" style="width: 85px">Action</th>
           </tr>
           </thead>
         </table>
@@ -45,7 +45,7 @@
     $('#table1').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false,

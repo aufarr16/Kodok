@@ -151,6 +151,7 @@
       <div class="container-fluid">
     @yield('content')
     @include('Layouts.Notif')
+    @include('Layouts.Modal')
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -222,8 +223,8 @@
 <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-
-<script src="{{ url('') }}/js/script.js"></script>
+<!-- Script JS -->
+<script src="{{ url('assets/dist/js/script.js') }}"></script>
 
 </body>
 </html>
