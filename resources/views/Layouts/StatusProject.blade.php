@@ -6,7 +6,7 @@
 		@endforeach
 	</select>								
 	<span class="input-group-append">
-        <button id="{{ $project->id }}" onclick="changeStatusProject(id)" type="button" class="btn btn-info">OK</button>
+        <button id="{{ $project->id }}" onclick="changeStatusProject(id)" type="submit" class="btn btn-info">OK</button>
       </span>
 <!-- 	<button id="{{ $project->id }}" onclick="changeStatusProject(id)" class="btn-ok" type="submit" >OK</button> -->
 </div>	

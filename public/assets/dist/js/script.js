@@ -530,10 +530,10 @@ function changeStatusProject(id){
 
 	Swal.fire({
 	  title: 'Yakin ganti status? ( ͡° ͜ʖ ͡°)',
-	  type: 'warning',
+	  icon: 'success',
 	  showCancelButton: true,
-	  confirmButtonColor: 'lightgrey',
-	  cancelButtonColor: 'red',
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
 	  cancelButtonText: 'Tidak'
 	}).then((result)=>{
@@ -559,10 +559,10 @@ function changeStatusProject(id){
 
 					Swal.fire({
 						title:'Status berhasil diganti',
-						type:'success',
-						toast:true,
+						icon:'success',
+						// toast:true,
 						showConfirmButton:false,
-						position: 'top',
+						// position: 'top',
 						timer:1500,
 						timerProgressBar:true,
 						background:'#D4F1F4'
@@ -571,8 +571,8 @@ function changeStatusProject(id){
 				
 				error: function(xhr){
 					Swal.fire({
-						type: 'error',
-						toast:true,
+						icon: 'error',
+						// toast:true,
 						title: 'Oops...',
 						text: 'Something went wrong!',
 						timer: 4000,
@@ -593,11 +593,11 @@ function changeStatusProject(id){
 					$('#table1').DataTable().ajax.reload();
 					Swal.fire({
 						title:'Status tidak terganti',
-						type:'info',
-						toast:true,
+						icon: 'warning',
+						// toast:true,
 						showConfirmButton:false,
-						position:'top',
-						grow:'row',
+						// position:'top',
+						// grow:'row',
 						timer:1500,
 						timerProgressBar:true,
 						background:'#D2FBA4'
