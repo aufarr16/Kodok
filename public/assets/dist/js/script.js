@@ -1,4 +1,4 @@
-console.log('script.js is in');
+// console.log('script.js is in');
 
 function getHandoverData(id){
 	var elementPIC = document.getElementById(id);
@@ -593,11 +593,11 @@ function changeStatusProject(id){
 					$('#table1').DataTable().ajax.reload();
 					Swal.fire({
 						title:'Status tidak terganti',
-						icon: 'warning',
-						// toast:true,
+						type: 'warning',
+						toast:true,
 						showConfirmButton:false,
-						// position:'top',
-						// grow:'row',
+						position:'top',
+						grow:'row',
 						timer:1500,
 						timerProgressBar:true,
 						background:'#D2FBA4'

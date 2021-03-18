@@ -232,6 +232,7 @@
 <!-- Script JS -->
 <script src="{{ url('assets/dist/js/script.js') }}"></script>
 <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.all.js') }}"></script>
+<script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
 
 </body>
 </html>
