@@ -33,11 +33,26 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="bobot" style="font-weight:bolder" style="margin-top: -30px">Bobot</label>
+			<label for="notes_project" style="font-weight:bolder" style="margin-top: -30px">Notes</label>
 				<br>
-			{!! Form::select('bobot', [' '=> ' ', '1' => '1', '2' => '2', '3' => '3'], null,
+			{!! Form::textarea('notes_project', null,
 				['class'=> 'form-control',
-					'id' =>'bobot', 
+					'rows' => '2',
+					'id' =>'notes_project', 
+					'style' =>'margin-bottom: 10px'
+				])
+			!!}		
+			<!-- {!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!} -->
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class ="input-group-addon">
+			<label for="bobot_project" style="font-weight:bolder" style="margin-top: -30px">Bobot</label>
+				<br>
+			{!! Form::select('bobot_project', [' '=> ' ', '1' => '1', '2' => '2', '3' => '3'], null,
+				['class'=> 'form-control',
+					'id' =>'bobot_project', 
 					'style' =>'margin-bottom: 10px'
 				]);
 			!!}		

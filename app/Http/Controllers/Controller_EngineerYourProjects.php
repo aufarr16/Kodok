@@ -137,7 +137,7 @@ class Controller_EngineerYourProjects extends Controller
         $project = $this->getProjectById($id);                                  //ambil data projek
         $notes = $project->notes_project;                                       //ambil data notesnya
 
-        return view('Layouts.FormNotes', compact('notes'));                     //buka form notes dengan data notes yg mau diedit
+        return view('Layouts.FormNotes', compact('project', 'notes'));          //buka form notes dengan data notes yg mau diedit
     }
 
     public function updateNotes(Request $request, $id){
