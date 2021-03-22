@@ -31,4 +31,19 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<div class ="input-group-addon">
+			<label for="bobot" style="font-weight:bolder" style="margin-top: -30px">Bobot</label>
+				<br>
+			{!! Form::select('bobot', [' '=> ' ', '1' => '1', '2' => '2', '3' => '3'], null,
+				['class'=> 'form-control',
+					'id' =>'bobot', 
+					'style' =>'margin-bottom: 10px'
+				]);
+			!!}		
+			<!-- {!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!} -->
+		</div>
+	</div>
+	
+
 {!! Form::close() !!}
