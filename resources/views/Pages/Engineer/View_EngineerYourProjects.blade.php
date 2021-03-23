@@ -26,7 +26,7 @@
                                 <th class="text-center">Tanggal Assign</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Keterangan</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center" style="width: 85px">Action</th>
                             </tr>
                         </thead>
                     </table>
