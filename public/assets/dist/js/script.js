@@ -632,12 +632,14 @@ $('body').on('click', '#button-submit', function(event){
 			$('#table1').DataTable().ajax.reload();
 
 			Swal.fire({
-				icon: 'success',
-				// toast:true,
-				title: 'success',
-				text: 'Data berhasil disimpan',
+				toast: true,
+				position: 'top-end',
+				showConfirmButton: false,
 				timer: 4000,
-				background: '#a3ffa3'
+				background: '#a3ffa3',
+				icon: 'success',
+				text: 'Data berhasil disimpan',
+				timerProgressBar: true,
 			})
 		},
 		error : function(xhr){
