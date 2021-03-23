@@ -26,7 +26,7 @@
                                 <th class="text-center">Tanggal Assign</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Keterangan</th>
-                                <th class="text-center" style="width: 85px">Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                     </table>
@@ -53,39 +53,48 @@
                 ajax: "{{ route('projects.table') }}",
                 columns: [{
                         data: 'DT_RowIndex',
-                        name: 'id'
+                        name: 'id', 
+                        class: 'text-center'
                     },
                     {
                         data: 'nama_product',
-                        name: 'nama_product'
+                        name: 'nama_product', 
+                        class: 'text-center'
                     },
                     {
                         data: 'nama_ptype',
-                        name: 'nama_ptype'
+                        name: 'nama_ptype', 
+                        class: 'text-center'
                     },
                     {
                         data: 'nama_mitra',
-                        name: 'nama_mitra'
+                        name: 'nama_mitra', 
+                        class: 'text-center'
                     },
                     {
                         data: 'nama_project',
-                        name: 'nama_project'
+                        name: 'nama_project', 
+                        class: 'text-center'
                     },
                     {
                         data: 'tanggal_assign',
-                        name: 'tanggal_assign'
+                        name: 'tanggal_assign', 
+                        class: 'text-center'
                     },
                     {
                         data: 'status',
-                        name: 'status'
+                        name: 'status', 
+                        class: 'text-center'
                     },
                     {
                         data: 'keterangan',
-                        name: 'keterangan'
+                        name: 'keterangan', 
+                        class: 'text-center'
                     },
                     {
                         data: 'action',
-                        name: 'action'
+                        name: 'action', 
+                        class: 'text-center'
                     }
                 ],
                 "order": [

@@ -49,42 +49,48 @@
 
     <script>
         $('#table1').DataTable({
-            "responsive": true,
-            "processing": true,
-            "serverSide": true,
-            "pageLength": 10,
-            "searching": true,
             "paging": true,
-            "info": false,
             "lengthChange": false,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
             ajax: "{{ route('history.table') }}",
             columns: [{
                     data: 'DT_RowIndex',
-                    name: 'id'
+                    name: 'id', 
+                    class: 'text-center'
                 },
                 {
                     data: 'nama_product',
-                    name: 'nama_product'
+                    name: 'nama_product', 
+                    class: 'text-center'
                 },
                 {
                     data: 'nama_ptype',
-                    name: 'nama_ptype'
+                    name: 'nama_ptype', 
+                    class: 'text-center'
                 },
                 {
                     data: 'nama_mitra',
-                    name: 'nama_mitra'
+                    name: 'nama_mitra', 
+                    class: 'text-center'
                 },
                 {
                     data: 'nama_project',
-                    name: 'nama_project'
+                    name: 'nama_project', 
+                    class: 'text-center'
                 },
                 {
                     data: 'tanggal_assign',
-                    name: 'tanggal_assign'
+                    name: 'tanggal_assign', 
+                    class: 'text-center'
                 },
                 {
                     data: 'keterangan',
-                    name: 'keterangan'
+                    name: 'keterangan', 
+                    class: 'text-center'
                 }
             ],
             "order": [

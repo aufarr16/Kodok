@@ -7,52 +7,56 @@
 <title>
 | {Admin} Users
 </title>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <!-- /.card-header -->
+        <div class="card card-primary card-outline">
 
-		<div class="form-group">
-			<a href="{{ route('users.create') }}" type="button" class="modal-show add-users btn-add" title="Add New Users" id="btn-modal" style="float:left">
-				Add User &nbsp<i class="fas fa-plus fa-lg"></i>
-			</a>
-		</div>
-	<div class="table-responsive-lg">		
-	<table id="table1" class="table1" style="margin-top: -40px" style="overflow:auto">
-	
-	<thead>
-		<tr>
-			<th>No</th>
-			<th>Inisial</th>
-			<th>PIC</th>
-			<th>Role</th>
-			<th>Action</th>
-			<th>Added By</th>
-			<th>Modified By</th>
-		</tr>
-	</thead>
-</table>
-<!-- table responsive -->
+            <div class="card-body">
+                <a href="{{ route('users.create') }}" type="button" class="modal-show add-mitra btn btn-success" title="Add New Mitra" id="btn-modal" style="float:left">
+                    Add User &nbsp<i class="fas fa-plus"></i>
+                </a>
+                <table id="table1" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No</th>
+                            <th class="text-center">Inisial</th>
+                            <th class="text-center">PIC</th>
+                            <th class="text-center">Role</th>
+                            <th class="text-center">Action</th>
+                            <th class="text-center">Added By</th>
+                            <th class="text-center">Modified By</th>                        
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
 </div>
-
 @endsection
 
 @push('scripts')
 <script>
 $('#table1').DataTable( { 
-    "responsive": true,
-    "processing": true,
-    "serverSide": true,
-    "pageLength": 10, 
-    "searching": true,
-    "paging": true,
-    "info": false,         
+   "paging": true,
     "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
     ajax: "{{ route('users.table') }}",
     columns: [
-    	{data: 'DT_RowIndex', name: 'id'},
-    	{data: 'inisial_user', name: 'inisial_user'},
-    	{data: 'nama_user', name: 'nama_user'},
-    	{data: 'nama_ulevel', name: 'nama_ulevel'},
-    	{data: 'action', name: 'action'},
-    	{data: 'added_by', name: 'added_by'},
-    	{data: 'modified_by', name: 'modified_by'}
+    	{data: 'DT_RowIndex', name: 'id', class: 'text-center'},
+    	{data: 'inisial_user', name: 'inisial_user', class: 'text-center'},
+    	{data: 'nama_user', name: 'nama_user', class: 'text-center'},
+    	{data: 'nama_ulevel', name: 'nama_ulevel', class: 'text-center'},
+    	{data: 'action', name: 'action', class: 'text-center'},
+    	{data: 'added_by', name: 'added_by', class: 'text-center'},
+    	{data: 'modified_by', name: 'modified_by', class: 'text-center'}
     ]
 });
 </script>
