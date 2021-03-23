@@ -631,15 +631,13 @@ $('body').on('click', '#button-submit', function(event){
 			$('#modal').modal('hide');
 			$('#table1').DataTable().ajax.reload();
 
-			Swal({
-				toast: true,
-				position: 'top-end',
-				showConfirmButton: false,
-				timer: 4000,
-				background: '#a3ffa3',
-				type: 'success',
+			Swal.fire({
+				icon: 'success',
+				// toast:true,
+				title: 'success',
 				text: 'Data berhasil disimpan',
-				timerProgressBar: true,
+				timer: 4000,
+				background: '#a3ffa3'
 			})
 		},
 		error : function(xhr){
