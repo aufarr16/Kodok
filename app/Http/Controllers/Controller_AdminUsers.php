@@ -120,6 +120,7 @@ class Controller_AdminUsers extends Controller
 		$model = User::where('id', $id)->firstOrFail();								//cari data user yg mau di edit
 		$model->inisial_user = $request->inisial_user;								//edit inisial
 		$model->nama_user = $request->nama_user;									//edit nama
+		$model->email_user = $request->email_user;									//edit email
 	    $model->id_ulevel = $level->id;												//edit level
 	    $model->modified_by = $modified_by;											//edit modified_by
 	    $model->save();																//save perubahan data
