@@ -37,10 +37,11 @@ class Controller_AdminMitra extends Controller
 
     public function store(Request $request){        //nyimpen data yg udh disubmit dari form Tambah Mitra
         $request->validate([                        //validasi data yg sudah diisi di form Tambah Mitra
-            'nama_mitra' => 'required|max:51',
+            'nama_mitra' => 'required|unique:mitras|max:51',
         ],
         $message = [
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
+                'nama_mitra.unique' => ' Nama Mitra sudah terdaftar',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => ' Nama Mitra hanya boleh berisi huruf',
         ]);

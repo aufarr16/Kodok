@@ -3,17 +3,6 @@
 	'method' => $model->exists ? 'PUT' : 'POST'
 ]) !!}
 
-	<div class="form-group">
-		<div class ="input-group-addon">
-			<label for="ABA" style="font-weight:bolder" style="margin-top: -30px">ABA</label>
-				<br>
-			{!! Form::number('ABA', null,
-				['class'=>'form-control' .($errors->has('ABA') ? 'is-invalid' : ''), 
-					'id' =>'ABA',
-					'style' =>'margin-bottom: 10px'])
-			!!}		
-		</div>
-	</div>
 
 	<div class="form-group">
 		<div class ="input-group-addon">
