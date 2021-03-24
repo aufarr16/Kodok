@@ -2,130 +2,245 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Aleo:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <link href="{{ url('') }}/style.css" type="text/css" rel="stylesheet">
-  <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/users.css" rel="stylesheet" />
-  <!-- <link href="{{ url('') }}/css/projects.css" rel="stylesheet" /> -->
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/Plugin/Datatables/dataTables.jqueryui.min.css" rel="stylesheet">
-  <link href="{{ url('') }}/css/Plugin/Sweetalert/sweetalert2.min.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"> -->
-  @stack('styles')
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- <title>Engineer | Dashboard</title> -->
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2/sweetalert2.css') }}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/toastr/toastr.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="{{ url('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ url('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+
+    @stack('styles')
 </head>
 
-<body>
-  <header class="main-header">
-     <div class="custom-menu">
-      <div class="row">
-        <div class="col-md-6">
-        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-         <i class="fas fa-align-justify fa-2x"></i>
-        </button>
-          <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp<a href="/logout" style="color: black"><i class="fas fa-sm fa-power-off" title="Logout" style="color: #19569A;border: 2px solid;border-radius: 5px; padding: 2px"></i></a></h4>
-          <!-- <div class="logout"></div> -->
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-blue">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
+                    <a href="/logout">
+                        <i class="fas fa-sm fa-power-off" title="Logout"></i>
+                    </a>
+                </h4>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-navy elevation-4">
+            <!-- Brand Logo -->
+            <a href="/manager/home" class="brand-link navbar-navy">
+                <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar bg-navy elevatio-2">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <a href="#" class="d-block">{{ auth()->user()->nama_user }} &nbsp</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="/manager/home" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    HOME
+                                    <i class="right fas fa-home-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/manager/projects" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    List Projects
+                                    <i class="fas fa-clipboard-list-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/manager/assign" class="nav-link">
+                                <i class="nav-icon fas fa-random"></i>
+                                <p>
+                                    Assign Projects
+                                    <i class="fas fa-random-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/manager/approval" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-check"></i>
+                                <p>
+                                    Approval Projects
+                                    <i class="fas fa-clipboard-check-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">@yield('PageTitle')</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    @yield('content')
+                    @include('Layouts.Notif')
+                    @include('Layouts.Modal')
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
-        <div class="col-md-6">
-          <div class="namaweb">Sistem Dokumentasi</div>
-        </div>
-      </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2021 <a>KODOK</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1.1.2
+            </div>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
-   </header>
-  
-  <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
-      <ul class="list-unstyled components mb-5">
-          <li class="{{ Request::is('manager/home') ? 'active' : '' }}">
-            <a href="/manager/home">
-           <span class="fa fa-home mr-2"></span>Home
-            </a>
-          </li>
-          <li class="{{ Request::is('manager/projects') ? 'active' : '' }}">
-            <a href="/manager/projects">
-             <span class="fas fa-clipboard-list mr-2"></span>List Projects
-            </a>
-          </li>
-          <li class="{{ Request::is('manager/assign') ? 'active' : '' }}">
-            <a href="/manager/assign">
-             <span class="fa fa-pencil-square-o mr-2"></span>Assign Projects
-            </a>
-          </li>    
-          <li class="{{ Request::is('manager/approval') ? 'active' : '' }}">
-            <a href="/manager/approval">
-              <span class="fas fa-clipboard-check mr-2"></span>Approval Projects
-            </a>
-          </li>
-          <!-- <li class="{{ Request::is('manager/searchdocs') ? 'active' : '' }}">
-            <a href="/manager/searchdocs">
-              <span class="fa fa-search mr-2"></span>Search Documents
-            </a>
-          </li> -->
-        </ul>
-      </nav>
+    <!-- ./wrapper -->
 
-  <div class="container-fluid">
-      <h2>@yield('PageTitle')</h2>
-      @include('Layouts.Notif')
-      @include('Layouts.ModalList')
-      @yield('content')
-      @include('Layouts.Footer')
+    <!-- jQuery -->
+    <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 
-  <!-- ./container fluid -->
-  </div>
-<!-- ./wrapper -->
-</div>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{ url('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 
-  <!--   Core JS Files   -->
-  <script src="{{ url('') }}/js/core/jquery.min.js"></script>
-  <script src="{{ url('') }}/js/core/popper.min.js"></script>
-  <script src="{{ url('') }}/js/core/bootstrap.min.js"></script>
-  <script src="{{ url('') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{{ url('') }}/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-  <!-- JS Datatable    -->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-  <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Datatables/jquery.dataTables.min.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/Plugin/Datatables/dataTables.jqueryui.min.js"></script> -->
-  <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/responsive.bootstrap4.js"></script>
-  <!-- <script type="text/javascript" language="javascript" src="{{ url('') }}/js/plugins/Responsive/dataTables.bootstrap.js"></script> -->
-  <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>
-  <script src="{{ url('') }}/js/script.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
 
-  @stack('scripts')    
+    </script>
 
-<script>
-  $(document).ready(function () {
-      $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-      });
-  });
-</script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- ChartJS -->
+    <script src="{{ url('assets/plugins/chart.js/Chart.min.js') }}"></script>
+
+    <!-- jQuery Knob Chart -->
+    <script src="{{ url('assets/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+
+    <!-- daterangepicker -->
+    <script src="{{ url('assets/plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{{ url('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Summernote -->
+    <script src="{{ url('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+    <!-- overlayScrollbars -->
+    <script src="{{ url('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{{ url('assets/dist/js/adminlte.js') }}"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ url('assets/dist/js/demo.js') }}"></script>
+
+    <!-- DataTables  & Plugins -->
+    <script src="{{ url('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- Script JS -->
+    <script src="{{ url('assets/dist/js/script.js') }}"></script>
+    <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.js') }}"></script>
+    <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
+
+</body>
+
+</html>
+
+@stack('scripts')
 
 <script>
  function approve () {
     Swal.fire({
       title: 'Yakin approve project ini?',
-      type: 'warning',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: 'lightgrey',
       cancelButtonColor: 'dodgerblue',
@@ -135,7 +250,7 @@
       if(result.value){
         Swal.fire({
           title:'Project berhasil diapprove',
-          type:'success',
+          icon:'success',
           toast:true,
           showConfirmButton:false,
           position: 'top',
@@ -147,7 +262,7 @@
       } else if (result.dismiss === 'cancel') {
         Swal.fire({
           title:'Project belum diapprove',
-          type:'info',
+          icon:'info',
           toast:true,
           showConfirmButton:false,
           position:'top',
@@ -188,6 +303,3 @@
         })
       }}
 </script>
-
-</body>
-</html>

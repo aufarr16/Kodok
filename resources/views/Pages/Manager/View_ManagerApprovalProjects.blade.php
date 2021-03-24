@@ -1,8 +1,5 @@
 @extends('Templates.Manager')
 @push('styles')
-<link href="{{ url('') }}/css/projects.css" rel="stylesheet" />
-<link href="{{ url('') }}/css/approval.css" rel="stylesheet" />
-<link href="{{ url('') }}/css/users.css" rel="stylesheet" />
 @endpush
 <!-- @section('Welcome') 
   <h4 style="float:right; margin-right:5px; margin-top:5px" >Welcome, {{ auth()->user()->nama_user }}</h4>
@@ -12,37 +9,43 @@
 <title>
 | {Manager} Approval Projects
 </title>
-	
-<div class="table-responsive-lg">
-  <table class="table1" id="table1">
-  	<thead>
-  	<tr>
-  		<th>No</th>
-  		<th>Inisial</th>
-  		<th>Produk</th>
-  		<th>Jenis Project</th>
-  		<th>Nama Project</th>
-  		<th>Keterangan</th>
-  		<!-- <th>Docs</th> -->
-  		<th>Action</th>
-  	</tr>
-  	</thead>
-  </table>
-</div>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <!-- /.card-header -->
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <table id="table1" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No</th>
+                            <th class="text-center">Inisial</th>
+                            <th class="text-center">Produk</th>
+                            <th class="text-center">Jenis Project</th>
+                            <th class="text-center">Nama Project</th>
+                            <th class="text-center">Keterangan</th>
+                            <th class="text-center">Action</th>                           
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>	
 @endsection
 
 @push('scripts')
-<script src="{{ url('') }}/js/plugins/chartjs.min.js"></script>
 <script>
   $('#table1').DataTable({ 
-    "responsive": true,
-    "processing": true,
-    "serverSide": true,
-    "pageLength": 10, 
-    "searching": true,
-    "paging": true,
-    "info": false,         
+   "paging": true,
     "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
     ajax: "{{ route('approval.table') }}",
     columns: [
       {data: 'DT_RowIndex', name: 'id_project'},

@@ -13,7 +13,7 @@
         <div class="card card-primary card-outline">
 
             <div class="card-body">
-                <a href="{{ route('products.create') }}" type="button" class="modal-show add-mitra btn btn-success" title="Add New Mitra" id="btn-modal" style="float:left">
+                <a href="{{ route('products.create') }}" type="button" class="modal-show add-products btn btn-success" title="Add New Product" id="btn-modal" style="float:left">
                     Add Product &nbsp<i class="fas fa-plus"></i>
                 </a>
                 <table id="table1" class="table table-bordered table-hover">
