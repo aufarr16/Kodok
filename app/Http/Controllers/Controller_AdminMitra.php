@@ -76,10 +76,11 @@ class Controller_AdminMitra extends Controller
 
     public function update(Request $request, $id){                  //ngedit data yg udh diinput dari form Edit Mitra
         $request->validate([
-            'nama_mitra' => 'required|max:51',
+            'nama_mitra' => 'required|unique:mitras|max:51',
         ],
         $message = [
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
+                'nama_mitra.unique' => ' Nama Mitra sudah terdaftar',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',
                 'nama_mitra.regex' => ' Nama Mitra hanya boleh berisi huruf',
         ]);
