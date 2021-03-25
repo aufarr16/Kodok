@@ -1,142 +1,125 @@
 @extends('Templates.Manager')
 @push('styles')
-<link href="{{ url('') }}/css/assign.css" rel="stylesheet" />
-<!-- <link href="{{ url('') }}/css/users.css" rel="stylesheet" /> -->
-<!-- Select 2 -->
-<link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
-<link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
 @endpush
-<!-- @section('Welcome') 
-<h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection -->
 @section('PageTitle','Assign Projects')
 @section('content')
 <title>
   | {Manager} Assign Projects
 </title>
-    
-  <!-- Nav pills -->
-  <ul class="nav nav-pills" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="pill" href="#new">New Projects</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#handover">Handover Projects</a>
-    </li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="new" class="container tab-pane active">
-      <form method="post" action="/manager/newproject">
+<div class="card card-lightblue card-tabs">
+  <div class="card-header p-0 pt-1 border-bottom-0">
+    <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#new" role="tab" aria-controls="custom-tabs-three-home" aria-selected="false">New Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#handover" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="true">Handover Projects</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="tab-content" id="custom-tabs-three-tabContent">
+      <div class="tab-pane fade active show" id="new" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+        <form method="post" action="/manager/newproject">
         @csrf
-        <div class="form-group">
-          <label for="id_user" style="font-weight:bolder">PIC</label>
-          <br>
-          <div class="@error('id_user') is-invalid @enderror">
-            <select id="id_user" class="js-states form-control @error ('id_user') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user">
-              <option value="" hidden>PIC</option>
-              @foreach($users as $usr1)
+         <div class="form-group">
+            <label for="id_user">PIC</label>
+            <div class="@error('id_user') is-invalid @enderror">
+              <select class="custom-select form-control-border border-width-2 form-control @error ('id_user') is-invalid @enderror" id="id_user" name="id_user">
+                <option value="">PIC</option>
+                @foreach($users as $usr1)
                 @if (old('id_user') == $usr1->id)
                   <option value="{{ $usr1->id }}" selected>{{ $usr1->nama_user }}</option>
                 @else 
                   <option value="{{ $usr1->id }}">{{ $usr1->nama_user }}</option>
                 @endif
               @endforeach
-            </select>
-             @error('id_user')
-              <div class="invalid-feedback flash" style="margin-top: 2px">
+              </select>
+              @error('id_user')
+              <div class="invalid-feedback flash">
                 {{ $message }}</div>
             @enderror
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="id_product" style="font-weight:bolder">Produk</label>
-          <br>
-          <div class="@error('id_product') is-invalid @enderror">
-            <select id="id_product" class="js-states form-control @error ('id_product') is-invalid @enderror" data-placeholder="Pilih Produk" style="width:100%" name="id_product">
-              <option value=""></option>
-              @foreach($products as $prod)
+          <div class="form-group">
+            <label for="id_product">Produk</label>
+            <div class="@error('id_product') is-invalid @enderror">
+              <select class="custom-select form-control-border border-width-2 form-control @error ('id_product') is-invalid @enderror" id="id_product" name="id_product">
+                <option value="" >Pilih Produk</option>
+                @foreach($products as $prod)
                 @if (old('id_product') == $prod->id)
                   <option value="{{ $prod->id }}" selected>{{ $prod->nama_product }}</option>
                 @else 
                   <option value="{{ $prod->id }}">{{ $prod->nama_product }}</option>
                 @endif
-              @endforeach
-            </select>
-            @error('id_product')
-            <div class="invalid-feedback flash" style="margin-top: 2px">
-              {{ $message }}</div>
-            @enderror
+                @endforeach
+                </select>
+                @error('id_product')
+                <div class="invalid-feedback flash" style="margin-top: 2px">
+                  {{ $message }}</div>
+                @enderror
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="id_ptype" style="font-weight:bolder">Jenis Project</label>
-          <br>
-          <div class="@error('id_ptype') is-invalid @enderror">
-            <select id="id_ptype" class="js-states form-control @error ('id_ptype') is-invalid @enderror" data-placeholder="Pilih Jenis Project" style="width:100%" name="id_ptype">
-              <option value=""></option>
-              @foreach($ptypes as $ptype)
-                @if (old('id_ptype') == $ptype->id)
-                  <option value="{{ $ptype->id }}" selected>{{ $ptype->nama_ptype }}</option>
-                @else 
-                  <option value="{{ $ptype->id }}">{{ $ptype->nama_ptype }}</option>
-                @endif
+          <div class="form-group">
+            <label for="id_ptype">Jenis Project</label>
+            <div class="@error('id_ptype') is-invalid @enderror">
+              <select class="custom-select form-control-border border-width-2 form-control @error ('id_ptype') is-invalid @enderror" id="id_ptype" name="id_ptype">
+                <option value="">Pilih Jenis Project</option>
+                @foreach($ptypes as $ptype)
+                  @if (old('id_ptype') == $ptype->id)
+                    <option value="{{ $ptype->id }}" selected>{{ $ptype->nama_ptype }}</option>
+                  @else 
+                    <option value="{{ $ptype->id }}">{{ $ptype->nama_ptype }}</option>
+                  @endif
               @endforeach
-            </select>
-            @error('id_ptype')
-            <div class="invalid-feedback flash" style="margin-top: 2px">
-              {{ $message }}</div>
-            @enderror
+              </select>
+              @error('id_ptype')
+              <div class="invalid-feedback flash" style="margin-top: 2px">
+                {{ $message }}</div>
+              @enderror
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-         <label for="id_mitra" style="font-weight:bolder">Nama Mitra</label>
-          <br>
-          <div class="@error('id_mitra') is-invalid @enderror">
-            <select id="id_mitra" class="js-states form-control @error ('id_mitra') is-invalid @enderror" data-placeholder="Pilih Mitra" style="width:100%" name="id_mitra">
-              <option value=""></option>
-              @foreach($mitras as $mtr)
+          <div class="form-group">
+            <label for="id_mitra">Mitra</label>
+            <div class="@error('id_mitra') is-invalid @enderror">
+              <select class="custom-select form-control-border border-width-2 form-control @error ('id_mitra') is-invalid @enderror" id="id_mitra" name="id_mitra">
+                <option value="">Pilih Mitra</option>
+                @foreach($mitras as $mtr)
                 @if (old('id_mitra') == $mtr->id)
                   <option value="{{ $mtr->id }}" selected>{{ $mtr->nama_mitra }}</option>
                 @else 
                   <option value="{{ $mtr->id }}">{{ $mtr->nama_mitra }}</option>
                 @endif
-              @endforeach
-            </select>
-            @error('id_mitra')
-            <div class="invalid-feedback flash" style="margin-top: 2px">
-              {{ $message }}
+                @endforeach
+                </select>
+                @error('id_mitra')
+                <div class="invalid-feedback flash" style="margin-top: 2px">
+                {{ $message }}
+                </div>
+                @enderror 
             </div>
-            @enderror 
           </div>
-        </div>
-        <div class="form-group">
-          <label for="nama_project" style="font-weight:bolder">Nama Project</label>
-          <br>
-          <input class="form-control projectname @error('nama_project') is-invalid @enderror" type="text" id="nama_project" name="nama_project" autocomplete="off" value="{{ old('nama_project') }}">
-            <span class="underline"></span>
+          <div class="form-group">
+            <label for="nama_project">Nama Project</label>
+            <input type="text" class="form-control form-control-border border-width-2 @error('nama_project') is-invalid @enderror" id="nama_project" placeholder="Nama Project" name="nama_project" autocomplete="off" value="{{ old('nama_project') }}">
             @error('nama_project')
               <div class="invalid-feedback flash" style="margin-top: 2px">
                 {{ $message }}</div>
             @enderror
-        </div>
-        <div class="modal-footer" id="modal-footer">
-          <button type="submit" class="btn-submit" id="submitnew">Submit</button>
-        </div>
-      </form>
-    </div>
+          </div>
+          <button type="submit" class="btn btn-outline-primary btn-submit float-right" id="submitnew">Submit</button>
+        </form> 
+      </div>
 
-    <!-- Assign Handover Project -->
-    <div id="handover" class="container tab-pane fade">
-      <form method="post" action="/manager/newhandover">
+      <!-- HANDOVER -->
+      <div class="tab-pane fade" id="handover" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
+        <form method="post" action="/manager/newhandover">
         @csrf
-        <div class="form-group">
-          <label for="PIC2" style="font-weight:bolder">PIC</label>
-            <br>
+          <div class="form-group">
+            <label for="PIC2">PIC</label>
             <div class="@error('PIC2') is-invalid @enderror">
-              <select id="PIC2" class="js-states form-control picAsli @error ('PIC2') is-invalid @enderror" data-placeholder="Pilih PIC" style="width:100%" name="id_user1" onchange="getHandoverData(id)">
-              <option value=""></option>
+              <select class="custom-select form-control-border border-width-2 form-control @error ('PIC2') is-invalid @enderror" id="PIC2" name="PIC2">
+              <option value="">Pilih Pic</option>
               @foreach($users as $usr2)
                 @if (old('id_user1') == $usr2->id)
                   <option value="{{ $usr2->id }}" selected>{{ $usr2->nama_user }}</option>
@@ -144,92 +127,44 @@
                   <option value="{{ $usr2->id }}">{{ $usr2->nama_user }}</option>
                 @endif
               @endforeach
-            </select>
-             @error('PIC2')
+              </select>
+              @error('PIC2')
               <div class="invalid-feedback flash" style="margin-top: 2px">
                 {{ $message }}</div>
             @enderror
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="nama_project2" style="font-weight:bolder">Nama project</label>
-            <br>
+          <div class="form-group">
+            <label for="nama_project2">Nama Project</label>
             <div class="@error('nama_project2') is-invalid @enderror">
-              <select id="nama_project2" class="js-states form-control @error('nama_project2') is-invalid @enderror" data-placeholder="Pilih Nama Project" style="width:100%" name="nama_project2">
-                <option value=""></option>
-              </select>
+              <select class="custom-select form-control-border border-width-2 form-control @error ('nama_project2') is-invalid @enderror" id="nama_project2" name="nama_project2">
+                <option value="">Pilih Nama Project</option>
+                </select>
                 @error('nama_project2')
                   <div class="invalid-feedback flash" style="margin-top: 2px">
                     {{ $message }}</div>
                 @enderror
             </div>
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="PIChandover" style="font-weight:bolder">PIC Handover</label>
-            <br>
+          </div>
+          <div class="form-group">
+            <label for="PIChandover">PIC Handover</label>
             <div class="@error('PIChandover') is-invalid @enderror">
-              <select id="PIChandover" class="js-states form-control @error('PIChandover') is-invalid @enderror" data-placeholder="Pilih PIC Handover" style="width:100%" name="PIChandover">
-                <option value=""></option>
-                
-              </select>
-               @error('PIChandover')
+              <select class="custom-select form-control-border border-width-2 form-control @error ('PIChandover') is-invalid @enderror" id="PIChandover" name="PIChandover">
+                <option value="">Pilih PIC Handover</option>              
+                </select>
+                @error('PIChandover')
                 <div class="invalid-feedback flash" style="margin-top: 2px">
                   {{ $message }}</div>
-              @enderror
+                @enderror
+            </div>
           </div>
-        </div> 
-        <div class="modal-footer" id="modal-footer">
-          <button type="submit" class="btn-submit" id="submithandover">Submit</button>
-        </div>          
-      </form>
-
-    <!-- ./container tab -->
+            <button type="submit" class="btn btn-outline-primary btn-submit float-right" id="submitnew">Submit</button>
+        </form>
+      </div>
     </div>
-    <!-- Akhir Assign Handover Project -->
-
-  <!-- ./tab content -->
-  </div>                
+  </div>
 @endsection
   
 @push('scripts')
-<!--   Core JS Files  -->
-<script src="{{ url('') }}/js/core/jquery.min.js"></script>
-
-<!-- Select 2 -->
-<script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
-<script>
-   $("#id_user").select2({
-        allowClear: true
-    });
-
-   $("#id_product").select2({
-        allowClear: true
-    });
-
-    $("#id_ptype").select2({
-        allowClear: true
-    });
-    $("#id_mitra").select2({
-        allowClear: true
-    });
-</script>
-
-<script>
-   $("#PIC2").select2({
-        allowClear: true
-    });
-
-   $("#nama_project2").select2({
-        allowClear: true
-    });
-
-    $("#PIChandover").select2({
-        allowClear: true
-    });
-
-</script>
-<!-- <script src="{{ url('') }}/js/plugins/Sweetalert/sweetalert2.min.js"></script>\ -->
 
 @endpush
