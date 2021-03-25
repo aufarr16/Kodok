@@ -1,7 +1,7 @@
 @extends('Templates.Manager')
 @push('styles')
 <!-- Select 2 -->
-<link href="{{ url('') }}/css/Plugin/Select2/select2.min.css" rel="stylesheet" />
+<link href="{{ url('') }}/css/home.css" rel="stylesheet" />
 <link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
 @endpush
 <!-- @section('Welcome') 
@@ -37,7 +37,153 @@
     </div> -->
   <!-- </div> -->
     <!-- </div> -->
+<div class="row">
+  <div class="col-md-1 col-sm-1 col-12">
+    <div class="info-box bg-success">
+      <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
 
+      <div class="info-box-content">
+        <span class="info-box-text">&nbsp; Reserved</span>
+        <span class="info-box-number">{{ $preserved }}</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: {{ $percentrsrv }}%"></div>
+        </div>
+        <span class="progress-description">
+          {{ $percentrsrv }}%
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-1 col-sm-1 col-12">
+    <div class="info-box bg-success">
+      <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text"> &nbsp; On Progress</span>
+        <span class="info-box-number">{{ $ponprogress }}</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: {{ $percentop }}%"></div>
+        </div>
+        <span class="progress-description">
+          {{ $percentop }}%
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-2 col-sm-2 col-12">
+    <div class="info-box bg-warning">
+      <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Events</span>
+        <span class="info-box-number">41,410</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          70% Increase in 30 Days
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-2 col-sm-2 col-12">
+    <div class="info-box bg-danger">
+      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Comments</span>
+        <span class="info-box-number">41,410</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          70% Increase in 30 Days
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-12">
+    <div class="info-box bg-danger">
+      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Comments</span>
+        <span class="info-box-number">41,410</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          70% Increase in 30 Days
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-12">
+    <div class="info-box bg-danger">
+      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Comments</span>
+        <span class="info-box-number">41,410</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          70% Increase in 30 Days
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-12">
+    <div class="info-box bg-danger">
+      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Comments</span>
+        <span class="info-box-number">41,410</span>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          70% Increase in 30 Days
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+</div>
+
+
+
+  <!-- /.info-box-content -->
+</div>
     <div class="tile reserved">
       <div class="body">
         <div class="title"><i class="fa fa-hourglass-half fa-lg"></i> &nbsp; Reserved</div>
