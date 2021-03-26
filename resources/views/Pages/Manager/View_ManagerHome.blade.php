@@ -12,39 +12,14 @@
 <title>
   | {Manager} Home
 </title>
-    <!-- <div class="col-md-12"> -->
-      <!-- <div class="card"> -->
-      <!-- <div class="card-all">
-      <form method="POST" action="">
-        @csrf
-          <div class="input-group" style="padding-top: 5px; padding-left: 5px; z-index: 1000;width: 185px;">
-              <button class="btn-alltahun" type="submit">Pilih Data di Semua Tahun</button>
-          </div>
-      </form>
-
-      <form method="POST" action="/manager/home/yearly">
-        @csrf
-        <div class="input-group" style="padding-left: 195px; margin-top: -30px;">
-          <select id="tahun" class="form-control select-tahun" data-placeholder="Pilih Tahun" name="tahun" id="tahun" style="height: 35px; width: 70%; background-color: transparent !important;">
-            <option value="" hidden></option>
-            @foreach($years as $year)
-              <option value="{{ $year->tahun }}">{{ $year->tahun }}</option>
-            @endforeach
-          </select>
-          <button class="btn-tahun" type="submit">Pilih</button>
-        </div>
-      </form>
-    </div> -->
-  <!-- </div> -->
-    <!-- </div> -->
 <div class="row">
-  <div class="col-md-1 col-sm-1 col-12">
-    <div class="info-box bg-success">
-      <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box bg-warning">
+      <span class="info-box-icon"><i class="fas fa-hourglass-half"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">&nbsp; Reserved</span>
-        <span class="info-box-number">{{ $preserved }}</span>
+        <span class="info-box-number">{{ $preserved }} Project</span>
 
         <div class="progress">
           <div class="progress-bar" style="width: {{ $percentrsrv }}%"></div>
@@ -58,13 +33,13 @@
     <!-- /.info-box -->
   </div>
   <!-- /.col -->
-  <div class="col-md-1 col-sm-1 col-12">
+  <div class="col-md-3 col-sm-6 col-12">
     <div class="info-box bg-success">
-      <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+      <span class="info-box-icon"><i class="fas fa-spinner"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text"> &nbsp; On Progress</span>
-        <span class="info-box-number">{{ $ponprogress }}</span>
+        <span class="info-box-number">{{ $ponprogress }} Project</span>
 
         <div class="progress">
           <div class="progress-bar" style="width: {{ $percentop }}%"></div>
@@ -78,19 +53,19 @@
     <!-- /.info-box -->
   </div>
   <!-- /.col -->
-  <div class="col-md-2 col-sm-2 col-12">
-    <div class="info-box bg-warning">
-      <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box bg-purple">
+      <span class="info-box-icon"><i class="fas fa-binoculars"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Events</span>
-        <span class="info-box-number">41,410</span>
+        <span class="info-box-text">&nbsp; Monitoring</span>
+        <span class="info-box-number">{{ $pmonitor }} Project</span>
 
         <div class="progress">
-          <div class="progress-bar" style="width: 70%"></div>
+          <div class="progress-bar" style="width:{{ $percentmntr }}%"></div>
         </div>
         <span class="progress-description">
-          70% Increase in 30 Days
+          {{ $percentmntr }}%
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -98,19 +73,19 @@
     <!-- /.info-box -->
   </div>
   <!-- /.col -->
-  <div class="col-md-2 col-sm-2 col-12">
-    <div class="info-box bg-danger">
-      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box bg-info">
+      <span class="info-box-icon"><i class="fas fa-check"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Comments</span>
-        <span class="info-box-number">41,410</span>
+        <span class="info-box-text">&nbsp; Pengujian Done</span>
+        <span class="info-box-number">{{ $ppngdone}} Project</span>
 
         <div class="progress">
-          <div class="progress-bar" style="width: 70%"></div>
+          <div class="progress-bar" style="width:{{ $percentpgdn }}%"></div>
         </div>
         <span class="progress-description">
-          70% Increase in 30 Days
+          {{ $percentpgdn }}%
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -118,19 +93,19 @@
     <!-- /.info-box -->
   </div>
 
-  <div class="col-md-2 col-sm-2 col-12">
-    <div class="info-box bg-danger">
-      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+  <div class="col-md-4 col-sm-6 col-12">
+    <div class="info-box bg-black">
+      <span class="info-box-icon"><i class="fas fa-check-double"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Comments</span>
-        <span class="info-box-number">41,410</span>
+        <span class="info-box-text">&nbsp; Project Done</span>
+        <span class="info-box-number">{{ $pprjdone }} Project</span>
 
         <div class="progress">
-          <div class="progress-bar" style="width: 70%"></div>
+          <div class="progress-bar" style="width:{{ $percentprdn }}%"></div>
         </div>
         <span class="progress-description">
-          70% Increase in 30 Days
+          {{ $percentprdn }}%
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -138,19 +113,19 @@
     <!-- /.info-box -->
   </div>
 
-  <div class="col-md-2 col-sm-2 col-12">
-    <div class="info-box bg-danger">
-      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+  <div class="col-md-4 col-sm-6 col-12">
+    <div class="info-box bg-orange">
+      <span class="info-box-icon"><i class="fas fa-history"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Comments</span>
-        <span class="info-box-number">41,410</span>
+        <span class="info-box-text">&nbsp; Hold</span>
+        <span class="info-box-number">{{ $phold }} Project</span>
 
         <div class="progress">
-          <div class="progress-bar" style="width: 70%"></div>
+          <div class="progress-bar" style="width:{{ $percenthold }}0%"></div>
         </div>
         <span class="progress-description">
-          70% Increase in 30 Days
+          {{ $percenthold }}%
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -158,19 +133,19 @@
     <!-- /.info-box -->
   </div>
 
-  <div class="col-md-2 col-sm-2 col-12">
+  <div class="col-md-4 col-sm-6 col-12">
     <div class="info-box bg-danger">
-      <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+      <span class="info-box-icon"><i class="fas fa-times"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Comments</span>
-        <span class="info-box-number">41,410</span>
+        <span class="info-box-text">&nbsp; Drop</span>
+        <span class="info-box-number">{{ $pdrop }} Project</span>
 
         <div class="progress">
-          <div class="progress-bar" style="width: 70%"></div>
+          <div class="progress-bar" style="width: {{ $percentdrop }}%"></div>
         </div>
         <span class="progress-description">
-          70% Increase in 30 Days
+          {{ $percentdrop }}%
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -180,273 +155,101 @@
   <!-- /.col -->
 </div>
 
-
-
-  <!-- /.info-box-content -->
+<!-- HIGHCHARTZ -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-body ">
+        <figure class="highcharts-figure">
+           <div id="PieProduk"></div>
+        </figure>
+      <!-- ./card body -->
+      </div>
+    <!-- ./card -->
+    </div>
+  <!-- ./col -->
+  </div>
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-body">
+         <figure class="highcharts-figure">
+           <div id="BarProduk"></div>
+        </figure>
+      <!-- ./card body -->
+      </div>       
+    <!-- ./card -->
+    </div>
+  <!-- ./col -->
+  </div>
+<!-- ./row -->
 </div>
-    <div class="tile reserved">
-      <div class="body">
-        <div class="title"><i class="fa fa-hourglass-half fa-lg"></i> &nbsp; Reserved</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $preserved }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentrsrv }}%">
-            <p class="percent">{{ $percentrsrv }}%</p>
-          <!-- bar done -->
-          </div>
-        <!-- progress done -->
-        </div>
-      <!-- header done -->
-      </div>
-    <!-- tile done -->
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <!-- <div class="card-body">  -->
+        <figure class="highcharts-figure">
+           <div id="PieJenisProject"></div>
+        </figure>
+      <!-- </div>        -->
+    <!-- ./card -->
     </div>
-
-    <div class="tile onprogress">
-      <div class="body">
-        <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; On Progress</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $ponprogress }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentop }}%">
-            <p class="percent">{{ $percentop }}%</p>
-          <!-- bar on progress -->
-          </div>
-        <!-- progress on progress -->
-        </div>
-      <!-- header on progress -->
-      </div>
-      <!-- tile on progress -->
+  <!-- ./col -->
+  </div>
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <!-- <div class="card-body"> -->
+         <figure class="highcharts-figure">
+           <div id="BarJenisProject"></div>
+        </figure>
+      <!-- </div>        -->
+    <!-- ./card -->
     </div>
+  <!-- ./col -->
+  </div>
+<!-- ./row -->
+</div>
 
-    <div class="tile onprogress">
-      <div class="body">
-        <div class="title"><i class="fas fa-spinner fa-lg"></i> &nbsp; Monitoring</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $pmonitor }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentmntr }}%">
-            <p class="percent">{{ $percentmntr }}%</p>
-          <!-- bar on progress -->
-          </div>
-        <!-- progress on progress -->
-        </div>
-      <!-- header on progress -->
-      </div>
-      <!-- tile on progress -->
+<div class="row">
+  <div class="col-md-12" >
+    <div class="card card-chart">
+      <div class="card-body">
+        <figure class="highcharts-figure1">
+          <div id="LoadPICstatus"></div>
+        </figure>
+      </div>       
+    <!-- ./card -->
     </div>
+  <!-- ./col -->
+  </div>
+<!-- ./row -->
+</div>    
 
-    <div class="tile done">
-      <div class="body">
-        <div class="title"><i class="fa fa-check fa-lg"></i> &nbsp; Pengujian Done</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $ppngdone }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentpgdn }}%">
-            <p class="percent">{{ $percentpgdn }}%</p>
-          <!-- bar done -->
-          </div>
-        <!-- progress done -->
-        </div>
-      <!-- header done -->
-      </div>
-    <!-- tile done -->
+<div class="row" >
+  <div class="col-md-12">
+    <div class="card card-chart">
+      <div class="card-body">
+        <figure class="highcharts-figure1">
+          <div id="LoadPICtotal"></div>
+        </figure>
+      </div>       
+    <!-- ./card -->
     </div>
-
-    <div class="tile prodone">
-      <div class="body">
-        <div class="title"><i class="fas fa-check-double"></i> &nbsp; Project Done</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $pprjdone }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentprdn }}%">
-            <p class="percent">{{ $percentprdn }}%</p>
-          <!-- bar done -->
-          </div>
-        <!-- progress done -->
-        </div>
-      <!-- header done -->
-      </div>
-    <!-- tile done -->
-    </div>
-
-    <div class="tile hold">
-      <div class="body">
-        <div class="title"><i class="fa fa-history fa-lg"></i> &nbsp; Hold</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $phold }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percenthold }}%">
-            <p class="percent">{{ $percenthold }}%</p>
-          <!-- bar hold -->
-          </div>
-        <!-- progress hold -->
-        </div>
-      <!-- header hold -->
-      </div>
-      <!-- tile hold -->
-    </div>
-
-    <div class="tile drop">
-      <div class="body">
-        <div class="title"><i class="fa fa-times fa-lg"></i> &nbsp; Drop</div>
-      </div>
-      <div class="header">
-          <div class="count">{{ $pdrop }}</div>
-          <div class="title">Projects</div>
-        <div class="progress">
-          <div class="bar" style="width:{{ $percentdrop }}%">
-            <p class="percent">{{ $percentdrop }}%</p>
-          <!-- bar drop -->
-          </div>
-        <!-- progress drop -->
-        </div>
-      <!-- header drop -->
-      </div>
-      <!-- tile drop -->
-    </div>
-
-  <br>
-  <br>
-      <div class="row" style="margin-top: 60px; margin-bottom: 20px">
-        <div class="col-md-6" style="margin-left:5px">
-          <div class="card card-chart">
-            <div class="card-body ">
-              <figure class="highcharts-figure">
-                 <div id="PieProduk"></div>
-              </figure>
-            <!-- ./card body -->
-            </div>
-          <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-        <div class="col-md-6" style="margin-left:-10px">
-          <div class="card card-chart">
-            <div class="card-body">
-               <figure class="highcharts-figure">
-                 <div id="BarProduk"></div>
-              </figure>
-            <!-- ./card body -->
-            </div>       
-		      <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-      <!-- ./row -->
-      </div>
-      
-
-      <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-        <div class="col-md-6" style="margin-left:5px">
-          <div class="card card-chart">
-            <!-- <div class="card-body">  -->
-              <figure class="highcharts-figure">
-                 <div id="PieJenisProject"></div>
-              </figure>
-            <!-- </div>        -->
-          <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-        <div class="col-md-6" style="margin-left:-10px">
-          <div class="card card-chart">
-            <!-- <div class="card-body"> -->
-               <figure class="highcharts-figure">
-                 <div id="BarJenisProject"></div>
-              </figure>
-            <!-- </div>        -->
-          <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-      <!-- ./row -->
-      </div>
-
-    <div class="row" style="margin-left: -10px; margin-right: 25px; margin-top: 20px; margin-bottom: 20px">
-        <div class="col-md-12" >
-          <div class="card card-chart" style="margin-right: -35px; margin-top: -5px">
-            <div class="card-body">
-              <figure class="highcharts-figure1">
-                <div id="LoadPICstatus"></div>
-              </figure>
-            </div>       
-          <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-      <!-- ./row -->
-      </div>    
-
-    <div class="row" style="margin-left: -10px; margin-right: 25px; margin-top: 20px; margin-bottom: 20px">
-        <div class="col-md-12">
-          <div class="card card-chart" style="margin-right: -35px; margin-top: -5px">
-            <div class="card-body">
-              <figure class="highcharts-figure1">
-                <div id="LoadPICtotal"></div>
-              </figure>
-            </div>       
-          <!-- ./card -->
-          </div>
-        <!-- ./col -->
-        </div>
-      <!-- ./row -->
-      </div>
+  <!-- ./col -->
+  </div>
+<!-- ./row -->
+</div>
 @endsection
 
 @push('scripts')
-<!--   Core JS Files   -->
-<script src="{{ url('') }}/js/core/jquery.min.js"></script>
+
 <!-- Highchart -->
 <script src="{{ url('assets/plugins/highcharts/highcharts.js') }}"></script>
 <script src="{{ url('assets/plugins/highcharts/modules/exporting.js') }}"></script>
 <script src="{{ url('assets/plugins/highcharts/modules/export-data.js') }}"></script>
 <script src="{{ url('assets/plugins/highcharts/modules/accessibility.js') }}"></script>
 <script src="{{ url('assets/plugins/highcharts/highcharts-3d.js') }}"></script>
-<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
-<!-- Untuk 3D Chart -->
-<!-- <script src="https://code.highcharts.com/highcharts-3d.js"></script> -->
-<script>
-  $(document).ready(function() {
-    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-    demo.initChartsPages();
-  });
-</script>
-
-<!--   Core JS Files  -->
-<script src="{{ url('') }}/js/core/jquery.min.js"></script>
-<!-- <script src="{{ url('') }}/js/homemanager.js"></script> -->
-
-<!-- Select 2 -->
-<script src="{{ url('') }}/css/Plugin/Select2/select2.min.js"></script>
-<script>
-   $("#tahun").select2({
-        allowClear: true
-    });
-</script>
-
-<!-- Sidebar collapse -->
-<script>
-  $(document).ready(function () {
-      $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-      });
-  });
-</script>
 
 <!-- Draw Graphs -->
 <script>
@@ -501,7 +304,7 @@
 
   //Draw Chart
   Highcharts.chart('BarProduk', {
-    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
+    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027','#605ca8'],
 
     chart: {
       type: 'column'
@@ -644,7 +447,7 @@
 
   //Draw Chart
   Highcharts.chart('BarJenisProject', {
-  colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
+  colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027','#605ca8'],
 
     chart: {
       type: 'column'
@@ -889,7 +692,7 @@
 
   //Draw Chart
   Highcharts.chart('LoadPICstatus', {
-    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027'],
+    colors: ['#FAD02C','#28A745','#0091E7','BLACK','#FF8000','#E50027','#605ca8'],
     chart: {
       type: 'column'
     },
