@@ -1,8 +1,8 @@
 @extends('Templates.Manager')
 @push('styles')
 <!-- Select 2 -->
-<link href="{{ url('') }}/css/home.css" rel="stylesheet" />
-<link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> 
+<!-- <link href="{{ url('') }}/css/home.css" rel="stylesheet" />
+<link href="{{ url('') }}/css/Plugin/Select2/select2.full.min.css" rel="stylesheet" /> --> 
 @endpush
 <!-- @section('Welcome') 
   <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
@@ -409,12 +409,17 @@
 <!--   Core JS Files   -->
 <script src="{{ url('') }}/js/core/jquery.min.js"></script>
 <!-- Highchart -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{ url('assets/plugins/highcharts/highcharts.js') }}"></script>
+<script src="{{ url('assets/plugins/highcharts/modules/exporting.js') }}"></script>
+<script src="{{ url('assets/plugins/highcharts/modules/export-data.js') }}"></script>
+<script src="{{ url('assets/plugins/highcharts/modules/accessibility.js') }}"></script>
+<script src="{{ url('assets/plugins/highcharts/highcharts-3d.js') }}"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
 <!-- Untuk 3D Chart -->
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<!-- <script src="https://code.highcharts.com/highcharts-3d.js"></script> -->
 <script>
   $(document).ready(function() {
     // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
