@@ -34,7 +34,7 @@ function getHandoverData(id){
 
 		error: function(xhr){
 			Swal.fire({
-				type: 'error',
+				icon: 'error',
 				toast:true,
 				title: 'Oops...',
 				text: 'Something went wrong!',
@@ -71,7 +71,7 @@ function getHandoverData(id){
 
 		error: function(xhr){
 			Swal.fire({
-				type: 'error',
+				icon: 'error',
 				toast:true,
 				title: 'Oops...',
 				text: 'Something went wrong!',
@@ -90,7 +90,7 @@ function deleteMitra(id){
 
 	Swal.fire({
 	  title: 'Yakin hapus data ini?',
-	  type: 'warning',
+	  icon: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
 	  cancelButtonColor: 'red',
@@ -117,7 +117,7 @@ function deleteMitra(id){
 
 					Swal.fire({
 						title:'Data mitra berhasil dihapus',
-						type:'success',
+						icon:'success',
 						toast:true,
 						showConfirmButton:false,
 						position: 'top-end',
@@ -129,7 +129,7 @@ function deleteMitra(id){
 
 				error: function(xhr){
 					Swal.fire({
-						type: 'error',
+						icon: 'error',
 						toast:true,
 						title: 'Oops...',
 						text: 'Something went wrong!',
@@ -141,7 +141,7 @@ function deleteMitra(id){
 		} else if (result.dismiss === 'cancel') {
 			Swal.fire({
 				title:'Data mitra tetap tersimpan',
-				type:'info',
+				icon:'info',
 				toast:true,
 				showConfirmButton:false,
 				position:'top-end',
@@ -162,7 +162,7 @@ function deleteProduct(id){
 
 	Swal.fire({
 	  title: 'Yakin hapus data ini?',
-	  type: 'warning',
+	  icon: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
 	  cancelButtonColor: 'red',
@@ -213,7 +213,7 @@ function deleteProduct(id){
 		} else if (result.dismiss === 'cancel') {
 			Swal.fire({
 				title:'Data product tetap tersimpan',
-				type:'info',
+				icon:'info',
 				toast:true,
 				showConfirmButton:false,
 				position:'top-end',
@@ -234,7 +234,7 @@ function deleteUser(id){
 
 	Swal.fire({
 	  title: 'Yakin hapus data ini?',
-	  type: 'warning',
+	  icon: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
 	  cancelButtonColor: 'red',
@@ -261,7 +261,7 @@ function deleteUser(id){
 
 					Swal.fire({
 						title:'Data user berhasil dihapus',
-						type:'success',
+						icon:'success',
 						toast:true,
 						showConfirmButton:false,
 						position: 'top-end',
@@ -273,7 +273,7 @@ function deleteUser(id){
 
 				error: function(xhr){
 					Swal.fire({
-						type: 'error',
+						icon: 'error',
 						toast:true,
 						title: 'Oops...',
 						text: 'Something went wrong!',
@@ -285,7 +285,7 @@ function deleteUser(id){
 		} else if (result.dismiss === 'cancel') {
 			Swal.fire({
 				title:'Data user tetap tersimpan',
-				type:'info',
+				icon:'info',
 				toast:true,
 				showConfirmButton:false,
 				position:'top-end',
@@ -305,7 +305,7 @@ function donehandover(id) {
 
 	Swal.fire({
 	  title: 'Yakin handover sudah selesai?',
-	  type: 'warning',
+	  icon: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: 'lightgrey',
 	  cancelButtonColor: 'red',
@@ -333,7 +333,7 @@ function donehandover(id) {
 
 					Swal.fire({
 						title:'Handover telah selesai',
-						type:'success',
+						icon:'success',
 						toast:true,
 						showConfirmButton:false,
 						position: 'top-end',
@@ -345,7 +345,7 @@ function donehandover(id) {
 
 				error: function(xhr){
 					Swal.fire({
-						type: 'error',
+						icon: 'error',
 						toast:true,
 						title: 'Oops...',
 						text: 'Something went wrong!',
@@ -358,7 +358,7 @@ function donehandover(id) {
 	} else if (result.dismiss === 'cancel') {
 		Swal.fire({
 			title:'Semangat handover',
-			type:'info',
+			icon:'info',
 			toast:true,
 			showConfirmButton:false,
 			position:'top-end',
@@ -380,7 +380,7 @@ function approveProject(id, title){
 
 		Swal.fire({
 		  title: 'Yakin approve project ini?',
-		  type: 'warning',
+		  icon: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: 'lightgrey',
 		  cancelButtonColor: 'red',
@@ -408,7 +408,7 @@ function approveProject(id, title){
 						$('#table1').DataTable().ajax.reload();
 						Swal.fire({
 						title:'Project approved',
-						type:'success',
+						icon:'success',
 						toast:true,
 						showConfirmButton:false,
 						position: 'top',
@@ -420,7 +420,7 @@ function approveProject(id, title){
 
 					error: function(xhr){
 						Swal.fire({
-							type: 'error',
+							icon: 'error',
 							toast:true,
 							title: 'Oops...',
 							text: 'Something went wrong!',
@@ -432,7 +432,7 @@ function approveProject(id, title){
 			} else if (result.dismiss === 'cancel') {
 				Swal.fire({
 					title:'Project menunggu approval',
-					type:'info',
+					icon:'info',
 					toast:true,
 					showConfirmButton:false,
 					position:'top',
@@ -455,7 +455,7 @@ function declineProject(id, title){
 
 	Swal.fire({
 		  title: 'Yakin decline project ini?',
-		  type: 'warning',
+		  icon: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: 'lightgrey',
 		  cancelButtonColor: 'red',
@@ -483,7 +483,7 @@ function declineProject(id, title){
 							$('#table1').DataTable().ajax.reload();
 							Swal.fire({
 								title:'Project declined',
-								type:'success',
+								icon:'success',
 								toast:true,
 								showConfirmButton:false,
 								position: 'top',
@@ -495,7 +495,7 @@ function declineProject(id, title){
 
 						error: function(xhr){
 							Swal.fire({
-								type: 'error',
+								icon: 'error',
 								toast:true,
 								title: 'Oops...',
 								text: 'Something went wrong!',
@@ -507,7 +507,7 @@ function declineProject(id, title){
 				} else if (result.dismiss === 'cancel') {
 					Swal.fire({
 						title:'Project menunggu approval',
-						type:'info',
+						icon:'info',
 						toast:true,
 						showConfirmButton:false,
 						position:'top',
@@ -593,7 +593,7 @@ function changeStatusProject(id){
 					$('#table1').DataTable().ajax.reload();
 					Swal.fire({
 						title:'Status tidak terganti',
-						type: 'warning',
+						icon: 'warning',
 						toast:true,
 						showConfirmButton:false,
 						position:'top',
