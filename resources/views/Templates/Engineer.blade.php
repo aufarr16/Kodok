@@ -42,7 +42,7 @@
     @stack('styles')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -72,14 +72,14 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-navy elevation-4">
             <!-- Brand Logo -->
-            <a href="/engineer/projects" class="brand-link navbar-navy">
+            <a href="/engineer/projects" class="brand-link" style="background: linear-gradient(#003371, #00478F)">
                 <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar bg-navy elevatio-2">
+            <div class="sidebar elevatio-2" style="background: linear-gradient(#003371, #00478F)">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="info">

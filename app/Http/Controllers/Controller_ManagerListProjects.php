@@ -37,7 +37,7 @@ class Controller_ManagerListProjects extends Controller
 
         // dd($historypic);
         
-        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project', 'notes'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project'));
     }
 
     public function editProject($id){
@@ -129,7 +129,7 @@ class Controller_ManagerListProjects extends Controller
 
     public function getProgressAndNotes($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project'))
         ->where('projects.id', '=', $id)
         ->first();
     }
