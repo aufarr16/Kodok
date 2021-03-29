@@ -55,11 +55,14 @@
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
-                    <a href="/logout">
-                        <i class="fas fa-sm fa-power-off" title="Logout"></i>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link">Welcome, {{ auth()->user()->nama_user }} &nbsp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" role="button" title="Logout">
+                      <i class="fas fa-power-off"></i>
                     </a>
-                </h4>
+                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
