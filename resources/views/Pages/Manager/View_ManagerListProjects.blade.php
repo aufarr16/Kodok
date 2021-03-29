@@ -28,7 +28,8 @@
                             <th class="text-center">Nama Mitra</th>  
                             <th class="text-center">Nama Project</th>
                             <th class="text-center">Tanggal Assign</th>
-                            <th class="text-center">Status</th>                           
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Action</th>                           
                         </tr>
                     </thead>
                 </table>
@@ -60,7 +61,8 @@
       {data: 'nama_mitra', name: 'nama_mitra', class: 'text-center'},
       {data: 'nama_project', name: 'nama_project', class: 'text-center'},
       {data: 'waktu', name: 'waktu', class: 'text-center'},
-      {data: 'id_pstat', name: 'id_pstat', class: 'text-center'}
+      {data: 'id_pstat', name: 'id_pstat', class: 'text-center'},
+      {data: 'action', name: 'action', class: 'text-center'}
     ]
   });
 </script>
