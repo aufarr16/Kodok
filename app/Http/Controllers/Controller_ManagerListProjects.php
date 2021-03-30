@@ -42,24 +42,23 @@ class Controller_ManagerListProjects extends Controller
 
     public function editProject($id){
         $project = $this->getProjectById($id);
-        $inisial = $project->inisial_user;
-        $product = $project->nama_product;
-        $ptype = $project->nama_ptype;
-        $mitra = $project->nama_mitra;
-        $napro = $project->nama_project;
+
+        if($project->id_current_pic == NULL){ 
+            $inisial = $this->getLISTData($id, 0, 6);                        
+        }
+        else{
+            $inisial = $this->getLISTData($id, 1, 6);
+        }
+
+        $product = $project->id_product;
+        $ptype = $project->id_ptype;
+        $mitra = $project->id_mitra;
+        $napro = $project->id_project;
 
         return View('Layouts.FormProject', compact('project','inisial','product','ptype','mitra','napro'));
     }
 
     public function updateProject(Request $request, $id){
-
-        $request->validate([                                            //validasi data input projek
-            'nama_project' => 'required|max:256',
-        ],
-        $message = [
-            'nama_project.required' => 'Mohon isi nama project',
-            'nama_project.max' => 'Nama project max 201 kata',
-        ]);
 
         $project = $this->getProjectById($id);
         $project->id_current_pic= $request->id_current_pic;                   
@@ -164,3 +163,27 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 }
+
+    public function getLISTData($id, $flag){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
+        if($flag == 0){
+            return User::where('users.id_ulevel', $level)
+            ->orderBy('id', 'asc')
+            ->get()
+            ->pluck('inisial_user', 'id')
+            ->toArray();
+        }
+        else{
+            return DB::table('users')
+            ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_pic_product', '=', 'users.id')
+                ->where('projects.id', $id);
+            })
+            ->where('users.id_ulevel', $level)
+            ->groupBy('users.id','users.inisial_user')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('inisial_user', 'id')
+            ->toArray();
+        }
+    }
