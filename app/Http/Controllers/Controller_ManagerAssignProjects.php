@@ -94,7 +94,7 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function editProject($id){
-        
+        $project = $this->getProjectById($id);
     }
 
     public function updateProject(Request $request, $id){
