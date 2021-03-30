@@ -57,7 +57,7 @@ class Controller_ManagerListProjects extends Controller
     public function updateProject(Request $request, $id){
 
         $project = $this->getProjectById($id);
-        $project->id_current_pic= $request->id_current_pic;                   
+        $project->id_original_pic= $request->id_original_pic;                   
         $project->id_product = $request->id_product;                             
         $project->id_ptype = $request->id_ptype;
         $project->id_mitra = $request->id_mitra;
@@ -159,21 +159,33 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 
-     public function getInisialUser($id, $inisial){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
-        
+     public function getInisialUser($id){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
         return DB::table('users')
-        ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+        ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
         ->leftjoin('projects', function($join) use ($id) {
-            $join->on('projects.id_original_pic', '=', 'users.id')
+            $join->on('projects.id', '=', 'projects.id_original_pic')
             ->where('projects.id', $id);
         })
-        ->where('users.inisial_user', $inisial)
-        ->where('users.id_ulevel', 3)
-        ->groupBy('users.id','users.nama_user')
+        ->whereIn('users.id_ulevel', [3,5])
+        ->groupBy('projects.id_original_pic', 'users.id')
         ->orderBy('jml','DESC')
         ->get()
         ->pluck('inisial_user', 'id')
         ->toArray();
+        
+        // return DB::table('users')
+        // ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+        // ->leftjoin('projects', function($join) use ($id) {
+        //     $join->on('projects.id_original_pic', '=', 'users.id')
+        //     ->where('projects.id', $id);
+        // })
+        // ->where('users.inisial_user', $inisial)
+        // ->where('users.id_ulevel', 3)
+        // ->groupBy('users.id','users.nama_user')
+        // ->orderBy('jml','DESC')
+        // ->get()
+        // ->pluck('inisial_user', 'id')
+        // ->toArray();
     }
 }
 
