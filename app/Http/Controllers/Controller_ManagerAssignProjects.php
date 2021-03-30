@@ -93,21 +93,6 @@ class Controller_ManagerAssignProjects extends Controller
         return redirect('/manager/assign')->with('success','Project berhasil di handover');
     }
 
-    public function editProject($id){
-        $project = $this->getProjectById($id);
-    }
-
-    public function updateProject(Request $request, $id){
-
-    }
-
-    public function deleteProject($id){
-        Project::where('id', $id)->delete();                            //cari data project berdasarkan id lalu didelete
-        $projectData['data'] = Project::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
-
-        return response()->json($projectData);
-    }
-
     public function fillProject($userId=0){                         //function autofill dropdown projek yg dimiliki user yg mau dihandoverin projeknya
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
