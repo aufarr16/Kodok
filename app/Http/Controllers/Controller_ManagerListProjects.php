@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\User;
 use DataTables;
 use App\Exports\ProjectsExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -43,13 +44,8 @@ class Controller_ManagerListProjects extends Controller
     public function editProject($id){
         $project = $this->getProjectById($id);
 
-        if($project->id_current_pic == NULL){ 
-            $inisial = $this->getLISTData($id, 0, 6);                        
-        }
-        else{
-            $inisial = $this->getLISTData($id, 1, 6);
-        }
-
+        $user = User::where('id', $project->id_original_pic)->firstOrFail();
+        $inisial = $this->getInisialUser($id, $user->inisial_user); dd($inisial);
         $product = $project->id_product;
         $ptype = $project->id_ptype;
         $mitra = $project->id_mitra;
@@ -159,28 +155,23 @@ class Controller_ManagerListProjects extends Controller
         ->where('projects.id', '=', $id)
         ->first();
     }
+
+     public function getInisialUser($id, $inisial){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
+        
+        return DB::table('users')
+        ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+        ->leftjoin('projects', function($join) use ($id) {
+            $join->on('projects.id_original_pic', '=', 'users.id')
+            ->where('projects.id', $id);
+        })
+        ->where('users.inisial_user', $inisial)
+        ->where('users.id_ulevel', 3)
+        ->groupBy('users.id','users.nama_user')
+        ->orderBy('jml','DESC')
+        ->get()
+        ->pluck('inisial_user', 'id')
+        ->toArray();
+    }
 }
 
-    public function getLISTData($id, $flag){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
-        if($flag == 0){
-            return User::where('users.id_ulevel', $level)
-            ->orderBy('id', 'asc')
-            ->get()
-            ->pluck('inisial_user', 'id')
-            ->toArray();
-        }
-        else{
-            return DB::table('users')
-            ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
-            ->leftjoin('projects', function($join) use ($id) {
-                $join->on('projects.id_pic_product', '=', 'users.id')
-                ->where('projects.id', $id);
-            })
-            ->where('users.id_ulevel', $level)
-            ->groupBy('users.id','users.inisial_user')
-            ->orderBy('jml','DESC')
-            ->get()
-            ->pluck('inisial_user', 'id')
-            ->toArray();
-        }
-    }
+   
