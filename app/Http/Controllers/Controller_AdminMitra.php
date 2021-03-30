@@ -56,8 +56,8 @@ class Controller_AdminMitra extends Controller
         return $model;
     }
 
-    public function destroy($id){                   //delete data
-        Mitra::where('id', $id)->delete();          //mencari data mitra berdasarkan idnya lalu menghapusnya
+    public function destroy($id){                                   //delete data
+        Mitra::where('id', $id)->delete();                          //mencari data mitra berdasarkan idnya lalu menghapusnya
         $mitraData['data'] = Mitra::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
 
         return response()->json($mitraData);

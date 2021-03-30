@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/manager/projects/detail/{id}', 'Controller_ManagerListProjects@detail')->name('listprojects.detail');
 	Route::get('/manager/projects/edit/{$id}', 'Controller_ManagerListProjects@editProject')->name('projects.edit');
 	Route::put('/manager/projects/update/{$id}', 'Controller_ManagerListProjects@updateProject')->name('projects.update');
+	Route::get('/manager/projects/delete/{id}', 'Controller_ManagerListProjects@deleteProject')->name('projects.delete');
 
 	// Search Doc
 	Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');

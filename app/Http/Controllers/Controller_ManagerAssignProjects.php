@@ -93,6 +93,21 @@ class Controller_ManagerAssignProjects extends Controller
         return redirect('/manager/assign')->with('success','Project berhasil di handover');
     }
 
+    public function editProject($id){
+        
+    }
+
+    public function updateProject(Request $request, $id){
+
+    }
+
+    public function deleteProject($id){
+        Project::where('id', $id)->delete();                            //cari data project berdasarkan id lalu didelete
+        $projectData['data'] = Project::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
+
+        return response()->json($projectData);
+    }
+
     public function fillProject($userId=0){                         //function autofill dropdown projek yg dimiliki user yg mau dihandoverin projeknya
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
@@ -122,5 +137,9 @@ class Controller_ManagerAssignProjects extends Controller
             $prevhandover->is_active = 0;                                                   //handover sebelumnya dibuat otomatis done
             $prevhandover->save();                                                          //save perubahan data handover
         }
+    }
+
+    public function getProjectById($id){                                        //ngamabil data projek berdasarkan idnya
+        return Project::where('id', $id)->firstOrFail();
     }
 }

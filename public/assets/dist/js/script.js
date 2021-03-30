@@ -298,6 +298,151 @@ function deleteUser(id){
 	})
 }
 
+function deleteUser(id){
+	// console.log(id);
+	event.preventDefault();
+
+	var idDel = id;
+
+	Swal.fire({
+	  title: 'Yakin hapus data ini?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'red',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/admin/deluser/'+idDel,
+				type: 'get',
+				data: {
+					'_method': 'DELETE'
+				},
+
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Data user berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top-end',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#a3ffa3'
+					})
+				},
+
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Data user tetap tersimpan',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top-end',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#B4F5F0'
+			})
+		}
+	})
+}
+
+function deleteProject(id){
+	// console.log(id);
+	event.preventDefault();
+
+	var idDel = id;
+
+	Swal.fire({
+	  title: 'Yakin hapus data ini?',
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: 'lightgrey',
+	  cancelButtonColor: 'red',
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak'
+	}).then((result)=>{
+		if(result.value){
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				url: '/manager/projects/delete/'+idDel,
+				type: 'get',
+				data: {
+					'_method': 'DELETE'
+				},
+
+				success: function(response){
+					console.log(response);
+					$('#table1').DataTable().ajax.reload();
+
+					Swal.fire({
+						title:'Data user berhasil dihapus',
+						type:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top-end',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#a3ffa3'
+					})
+				},
+
+				error: function(xhr){
+					Swal.fire({
+						type: 'error',
+						toast:true,
+						title: 'Oops...',
+						text: 'Something went wrong!',
+						timer: 4000,
+						background: 'bisque'
+					})
+				}
+			})
+		} else if (result.dismiss === 'cancel') {
+			Swal.fire({
+				title:'Data user tetap tersimpan',
+				type:'info',
+				toast:true,
+				showConfirmButton:false,
+				position:'top-end',
+				grow:'row',
+				timer:1500,
+				timerProgressBar:true,
+				background:'#B4F5F0'
+			})
+		}
+	})
+}
+
+
 function donehandover(id) {
 	event.preventDefault();
 
