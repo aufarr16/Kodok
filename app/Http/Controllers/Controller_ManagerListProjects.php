@@ -45,13 +45,13 @@ class Controller_ManagerListProjects extends Controller
         $project = $this->getProjectById($id);
 
         $user = User::where('id', $project->id_original_pic)->firstOrFail();
-        $inisial = $this->getInisialUser($id, $user->inisial_user); dd($inisial);
+        $inisial = $this->getInisialUser($id, $user->inisial_user);
         $product = $project->id_product;
         $ptype = $project->id_ptype;
         $mitra = $project->id_mitra;
         $napro = $project->id_project;
 
-        return View('Layouts.FormProject', compact('project','inisial','product','ptype','mitra','napro'));
+        return View('Layouts.FormProject', compact('project','inisial'));
     }
 
     public function updateProject(Request $request, $id){
@@ -167,7 +167,7 @@ class Controller_ManagerListProjects extends Controller
             ->where('projects.id', $id);
         })
         ->whereIn('users.id_ulevel', [3,5])
-        ->groupBy('projects.id_original_pic', 'users.id')
+        ->groupBy('projects.id_original_pic', 'users.id', 'users.inisial_user')
         ->orderBy('jml','DESC')
         ->get()
         ->pluck('inisial_user', 'id')

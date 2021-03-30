@@ -16,7 +16,7 @@
 		</div> 
 	</div> 
 
-	<div class="form-group">
+	<!-- <div class="form-group">
 		<div class ="input-group-addon">
 			<label for="id_product" style="font-weight:bolder" style="margin-top: -30px">Nama Product</label>
 				<br>
@@ -67,10 +67,9 @@
 					'id' =>'nama_project', 
 					'style' =>'margin-bottom: 10px'
 				])
-			!!}		
-			<!-- {!!$errors->first('nama_product','<div class="invalid-feedback flash">$message</div>')!!} -->
+			!!}	
 		</div>
-	</div>
+	</div> -->
 	
 	
 {!! Form::close() !!}
