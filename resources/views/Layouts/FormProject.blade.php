@@ -1,9 +1,9 @@
-{!! Form::model($data, [
-	'route' => ['projects.update', $data->id],
+{!! Form::model($project, [
+	'route' => ['projects.update', $project->id],
 	'method' => 'PUT'
 ]) !!}
 	<div class="form-group">
-		<div class ="input-group-addon"">
+		<div class ="input-group-addon">
 			<label for="id_current_pic" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
 				<br>
 				{!! Form::select('id_current_pic', $inisial, null, array(
