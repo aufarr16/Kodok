@@ -161,26 +161,26 @@ class Controller_ManagerListProjects extends Controller
     }
 }
 
-    public function getLISTData($id, $flag, $level){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
+    public function getLISTData($id, $flag){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
         if($flag == 0){
             return User::where('users.id_ulevel', $level)
             ->orderBy('id', 'asc')
             ->get()
-            ->pluck('nama_user', 'id')
+            ->pluck('inisial_user', 'id')
             ->toArray();
         }
         else{
             return DB::table('users')
-            ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+            ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
             ->leftjoin('projects', function($join) use ($id) {
                 $join->on('projects.id_pic_product', '=', 'users.id')
                 ->where('projects.id', $id);
             })
             ->where('users.id_ulevel', $level)
-            ->groupBy('users.id','users.nama_user')
+            ->groupBy('users.id','users.inisial_user')
             ->orderBy('jml','DESC')
             ->get()
-            ->pluck('nama_user', 'id')
+            ->pluck('inisial_user', 'id')
             ->toArray();
         }
     }
