@@ -97,7 +97,7 @@ class Controller_ManagerAssignProjects extends Controller
         $projData['data'] = Project::orderby("nama_project","asc")
         ->select('id', 'nama_project')
         ->where('id_current_pic', $userId)
-        ->whereNotIn('id_pstat', [5,7])
+        ->whereNotIn('id_pstat', [5,7,4])
         ->get();
 
         return response()->json($projData);
@@ -122,5 +122,9 @@ class Controller_ManagerAssignProjects extends Controller
             $prevhandover->is_active = 0;                                                   //handover sebelumnya dibuat otomatis done
             $prevhandover->save();                                                          //save perubahan data handover
         }
+    }
+
+    public function getProjectById($id){                                        //ngamabil data projek berdasarkan idnya
+        return Project::where('id', $id)->firstOrFail();
     }
 }

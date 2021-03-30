@@ -67,8 +67,11 @@ class Controller_ManagerListProjects extends Controller
 
     }
 
-    public function deleteProject(){
-        
+    public function deleteProject($id){
+        Project::where('id', $id)->delete();                            //cari data project berdasarkan id lalu didelete
+        $projectData['data'] = Project::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
+
+        return response()->json($projectData);
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
