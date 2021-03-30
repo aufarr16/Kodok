@@ -8,7 +8,7 @@
 				<br>
 				{!! Form::select('id_current_pic', $inisial, null, array(
 				    'class' => 'form-control selectcurrentpic',
-				    'id' => 'inisial_user', 
+				    'id' => 'id_current_pic', 
 				    'placeholder' => '',
 				    'style' => 'Background: #ffff', 
 				    )) 
