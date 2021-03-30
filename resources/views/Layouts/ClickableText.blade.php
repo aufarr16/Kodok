@@ -1,1 +1,1 @@
-<a href="{{ $url_detail }}" type="button" class="modallist-show btn-project" title="{{ $data->nama_project }}" id="btn-modal">{{ $data->nama_project }}</a>
+<a href="{{ $url_detail }}" type="button" class="modallist-show" title="{{ $data->nama_project }}" data-target="#modallist" data-toggle="tooltip" data-placement="top">{{ $data->nama_project }}</a>

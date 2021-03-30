@@ -37,17 +37,38 @@ class Controller_ManagerListProjects extends Controller
 
         // dd($historypic);
         
-        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project', 'notes'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project'));
     }
 
     public function editProject($id){
         $project = $this->getProjectById($id);
+        $inisial = $project->inisial_user;
+        $product = $project->nama_product;
+        $ptype = $project->nama_ptype;
+        $mitra = $project->nama_mitra;
+        $napro = $project->nama_project;
 
-        return View('Layouts.FormProject', compact('project'));
+        return View('Layouts.FormProject', compact('project','inisial','product','ptype','mitra','napro'));
     }
 
     public function updateProject(Request $request, $id){
+
+        $request->validate([                                            //validasi data input projek
+            'nama_project' => 'required|max:256',
+        ],
+        $message = [
+            'nama_project.required' => 'Mohon isi nama project',
+            'nama_project.max' => 'Nama project max 201 kata',
+        ]);
+
         $project = $this->getProjectById($id);
+        $project->id_current_pic= $request->id_current_pic;                   
+        $project->id_product = $request->id_product;                             
+        $project->id_ptype = $request->id_ptype;
+        $project->id_mitra = $request->id_mitra;
+        $project->nama_project = $request->nama_project;                                  
+
+        $project->save(); 
 
     }
 
@@ -67,6 +88,12 @@ class Controller_ManagerListProjects extends Controller
             ->addColumn('id_pstat', function($data){        //tambah kolom status biar ada iconnya
                 return view('Layouts.Status',[
                     'data'=> $data,
+                ]);
+            })
+            ->addColumn('action', function($data){        
+                return view('Layouts.ActionListProject',[
+                    'data'=> $data,
+                    'url_edit' => route('projects.edit', $data->id)
                 ]);
             })
             ->addIndexColumn()
@@ -129,7 +156,7 @@ class Controller_ManagerListProjects extends Controller
 
     public function getProgressAndNotes($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project'))
         ->where('projects.id', '=', $id)
         ->first();
     }

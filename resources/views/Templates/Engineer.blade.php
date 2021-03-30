@@ -42,7 +42,7 @@
     @stack('styles')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -55,16 +55,21 @@
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <h4 class="namauser">Welcome, {{ auth()->user()->nama_user }} &nbsp
-                    <a href="/logout">
-                        <i class="fas fa-sm fa-power-off" title="Logout"></i>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link">Welcome, {{ auth()->user()->nama_user }} &nbsp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" role="button" title="Logout">
+                      <i class="fas fa-power-off"></i>
                     </a>
-                    @if ($userLevel === 5)
-                        <a href="/login/choose">
-                            <i class="fas fa-sm fa-share" title="Switch Role"></i>
-                        </a>
-                    @endif
-                </h4>
+                </li>
+                @if ($userLevel === 5)
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/choose" role="button" title="Switch Role">
+                      <i class="fas fa-share"></i>
+                    </a>
+                </li>
+                @endif
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -72,21 +77,14 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-navy elevation-4">
             <!-- Brand Logo -->
-            <a href="/engineer/projects" class="brand-link navbar-navy">
+            <a href="/engineer/projects" class="brand-link" style="background: linear-gradient(#003371, #00478F)">
                 <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar bg-navy elevatio-2">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->nama_user }} &nbsp</a>
-                    </div>
-                </div>
-
+            <div class="sidebar elevatio-2" style="background: linear-gradient(#003371, #00478F)">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"

@@ -19,10 +19,10 @@
   <link href="{{ url('') }}/css/Login.css" rel="stylesheet" >
 
   <style>
-		body {
-			background-image: url('{{ url('') }}/img/Abstract blue.jpg');
-			background-size: 100% 100%;}
-	</style>
+    body {
+      background-image: url('{{ url('') }}/img/Abstract blue.jpg');
+      background-size: 100% 100%;}
+  </style>
 </head>
 
 <!-- @if (count($errors) > 0)
