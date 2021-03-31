@@ -34,11 +34,11 @@ class Controller_ManagerListProjects extends Controller
         $picproduct = $this->getProductPIC($id);     //ambil data pic product 
         $picam = $this->getAMPIC($id);               //ambil data pic am 
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
-        $prognotes = $this->getProgressAndNotes($id);//ambil data progress + notes
+        $pbn = $this->getPBN($id);                   //ambil data progress + bobot + notes
 
         // dd($historypic);
         
-        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'prognotes', 'project'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }
 
     public function editProject($id){
@@ -152,7 +152,7 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 
-    public function getProgressAndNotes($id){
+    public function getPBN($id){
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project'))
         ->where('projects.id', '=', $id)
