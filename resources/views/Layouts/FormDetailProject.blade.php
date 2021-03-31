@@ -39,19 +39,19 @@
                         </tr>
                         <tr class="text-center">
                             <th>Progress SIT</th>
-                            <td>{{ $prognotes->progress_sit }}%</td>
+                            <td>{{ $pbn->progress_sit }}%</td>
                         </tr>
                         <tr class="text-center">
                             <th>Progress UAT</th>
-                            <td>{{ $prognotes->progress_uat }}%</td>
+                            <td>{{ $pbn->progress_uat }}%</td>
                         </tr>
                         <tr class="text-center">
                             <th>Notes Project</th>
-                            <td>{{ $prognotes->notes_project }}</td>
+                            <td>{{ $pbn->notes_project }}</td>
                         </tr>
                         <tr class="text-center">
                             <th>Bobot Project</th>
-                            <td>{{ $prognotes->notes_project }}</td>
+                            <td>{{ $pbn->bobot_project }}</td>
                         </tr>
                     </thead>
                 </table>
