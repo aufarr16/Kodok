@@ -39,7 +39,7 @@ class Controller_AdminUsers extends Controller
 
 	public function store(Request $request){			//masukkin data baru ke tabel dari form Tambah User
 		$request->validate([							//validasi input
-			'inisial_user' => 'required|unique:users|max:3|min:1',
+			'inisial_user' => 'required|unique:users|max:3|min:2',
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
 			'nama_ulevel' => 'gt:0',
 			'email_user' => 'required|max:50|unique:users|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/|'
@@ -49,7 +49,7 @@ class Controller_AdminUsers extends Controller
 			'inisial_user.required' => ' Mohon isi Inisial',
 				'inisial_user.unique' => ' Inisial sudah terdaftar',
 				'inisial_user.max' => ' Mohon isi inisial dengan benar (max. 3 huruf)',
-				'inisial_user.min' => ' Mohon isi inisial dengan benar (min. 3 huruf)',
+				'inisial_user.min' => ' Mohon isi inisial dengan benar (min. 2 huruf)',
 			'nama_user.required' => ' Mohon isi Nama',
 				'nama_user.max' => ' Nama maksimal 50 huruf',
 				'nama_user.regex' => ' Nama hanya boleh berisi huruf',
@@ -94,7 +94,7 @@ class Controller_AdminUsers extends Controller
 
     public function update(Request $request, $id){	   //edit data dari form Edit User
     	$request->validate([						   //validasi input
-			'inisial_user' => "required|min:3||max:3|unique:users,inisial_user, " . $id,
+			'inisial_user' => "required|min:2||max:3|unique:users,inisial_user, " . $id,
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
 			'nama_ulevel' => 'gt:0',
 			'email_user' => 'required|max:50|regex:/^[A-Za-z\.]*@(artajasa)[.](co)[.](id)$/'
@@ -102,7 +102,7 @@ class Controller_AdminUsers extends Controller
 		$message = [
 			'inisial_user.required' => ' Mohon isi Inisial',
 				'inisial_user.unique' => ' Inisial sudah terdaftar',
-				'inisial_user.min' => ' Mohon isi inisial dengan benar (min. 3 huruf)',
+				'inisial_user.min' => ' Mohon isi inisial dengan benar (min. 2 huruf)',
 				'inisial_user.max' => ' Mohon isi inisial dengan benar (max. 3 huruf)',
 			'nama_user.required' => ' Mohon isi Nama',
 				'nama_user.max' => ' Nama maksimal 50 huruf',

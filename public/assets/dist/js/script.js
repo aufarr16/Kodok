@@ -755,7 +755,7 @@ $('body').on('click', '#button-submit', function(event){
 	// console.log(method);
 	// console.log(url);
 
-	form.find('.help-block').remove();
+	form.find('.text-danger').remove();
 	form.find('.form-group').removeClass('has-error');
 
 	$.ajax({
@@ -786,7 +786,7 @@ $('body').on('click', '#button-submit', function(event){
 					$('#' + key)
 						.closest('.form-group')
 						.addClass('has-error')
-						.append('<span class="help-block is-invalid">' + value + '</span>')
+						.append('<span class="text-danger is-invalid">' + value + '</span>')
 				})
 			}
 		}
