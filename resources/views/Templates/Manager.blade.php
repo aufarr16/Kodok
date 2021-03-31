@@ -10,9 +10,11 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    <link rel="stylesheet" href="{{ url('assets/plugins/jquery-ui/jquery-ui.css') }}">
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2/sweetalert2.css') }}">
+ <!--    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2/sweetalert2.min.css') }}">
     <!-- Toastr -->
     <link rel="stylesheet" href="{{ url('assets/plugins/toastr/toastr.min.css') }}">
     <!-- Font Awesome -->
@@ -37,7 +39,6 @@
     <link rel="stylesheet"
         href="{{ url('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 
     @stack('styles')
 </head>
@@ -173,7 +174,7 @@
     <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ url('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/jquery-ui/jquery-ui.js') }}"></script>
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
@@ -224,8 +225,10 @@
     <script src="{{ url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Script JS -->
     <script src="{{ url('assets/dist/js/script.js') }}"></script>
-    <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.js') }}"></script>
+    <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ url('assets/dist/js/demo.js') }}"></script>
+
 
 </body>
 
