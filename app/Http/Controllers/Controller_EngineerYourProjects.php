@@ -61,16 +61,17 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();                                                       //save perubahan data 
     }
 
-    public function editProgressBobot($id){                                     //nyiapin form Edit Progress
+    public function editPBN($id){                                               //nyiapin form Edit Progress
         $project = $this->getProjectById($id);                                  //ngambil data projek yg mau diubah progressnya
         $sit = $project->progress_sit;                                          //ngambil progress sit
         $uat = $project->progress_uat;                                          //ngambil progress uat 
         $bobot = $project->bobot_project;                                       //ngambil bobot
+        $notes = $project->notes_project;                                       //ngambil notes
 
         return view('Layouts.FormProgress', compact('project', 'sit', 'uat', 'bobot'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
 
-    public function updateProgressBobot(Request $request, $id){                 //update data setelah nginput di form
+    public function updatePBN(Request $request, $id){                           //update data setelah nginput di form
         $request->validate([                                                    //validasi input
             'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
@@ -89,6 +90,7 @@ class Controller_EngineerYourProjects extends Controller
         $project->progress_sit = $request->progress_sit;                        //ganti progress sit
         $project->progress_uat = $request->progress_uat;                        //ganti progress uat
         $project->bobot_project = $request->bobot_project;                      //ganti bobot
+        $project->notes_project = $request->notes_project;                      //ganti notes
 
         $project->save();                                                       //simpan perubahan
     }
@@ -130,20 +132,6 @@ class Controller_EngineerYourProjects extends Controller
         $project->id_pic_am = $request->id_pic_am;                              //ubah pic am
         $project->id_pic_pm = $request->id_pic_pm;                              //ubah pic pm
 
-        $project->save();                                                       //save perubahan
-    }
-
-    public function editNotes($id){
-        $project = $this->getProjectById($id);                                  //ambil data projek
-        $notes = $project->notes_project;                                       //ambil data notesnya
-
-        return view('Layouts.FormNotes', compact('project', 'notes'));          //buka form notes dengan data notes yg mau diedit
-    }
-
-    public function updateNotes(Request $request, $id){
-        $project = $this->getProjectById($id);                                  //ambil data projek yg mau diubah notesnya
-
-        $project->notes_project = $request->notes_project;                      //ubah notes
         $project->save();                                                       //save perubahan
     }
 
