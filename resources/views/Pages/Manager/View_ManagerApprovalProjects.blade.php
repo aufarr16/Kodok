@@ -48,14 +48,14 @@
     "responsive": true,
     ajax: "{{ route('approval.table') }}",
     columns: [
-      {data: 'DT_RowIndex', name: 'id_project'},
-      {data: 'inisial_user', name: 'inisial_user'},
-      {data: 'nama_product', name: 'nama_product'},
-      {data: 'nama_ptype', name: 'nama_ptype'},
-      {data: 'nama_project', name: 'nama_project'},
-      {data: 'pketerangan_status', name: 'pketerangan_status'},
+      {data: 'DT_RowIndex', name: 'id_project', class: 'text-center'},
+      {data: 'inisial_user', name: 'inisial_user', class: 'text-center'},
+      {data: 'nama_product', name: 'nama_product', class: 'text-center'},
+      {data: 'nama_ptype', name: 'nama_ptype', class: 'text-center'},
+      {data: 'nama_project', name: 'nama_project', class: 'text-center'},
+      {data: 'pketerangan_status', name: 'pketerangan_status', class: 'text-center'},
       // {data: 'docs', name: 'docs'},
-      {data: 'action', name: 'action'}
+      {data: 'action', name: 'action', class: 'text-center'}
     ],
   });
 </script>

@@ -1,24 +1,24 @@
 @switch($data->id_pstat)
   @case(1)
-    <small class="label label-reserved"><i class="fa fa-hourglass-half fa-sm"></i>&nbsp Reserved</small>
+    <small class="badge bg-warning"><i class="fas fa-hourglass-half"></i>&nbsp Reserved</small>
     @break
   @case(2)
-    <small class="label label-onprogress"><i class="fas fa-spinner fa-sm"></i>&nbsp On Progress</small>
+    <small class="badge bg-success"><i class="fas fa-spinner"></i>&nbsp On Progress</small>
     @break
   @case(3)
-    <small class="label label-done"><i class="fa fa-check fa-sm"></i>&nbsp Pengujian Done</small>
+    <small class="badge bg-info"><i class="fas fa-check"></i>&nbsp Pengujian Done</small>
     @break
   @case(4)
-    <small class="label label-monitoring"><i class="fas fa-binoculars fa-sm"></i>&nbsp Monitoring</small>
+    <small class="badge bg-purple"><i class="fas fa-binoculars"></i>&nbsp Monitoring</small>
     @break
   @case(5)
-    <small class="label label-projectdone"><i class="fas fa-clipboard-check fa-sm"></i>&nbsp Project Done</small>
+    <small class="badge bg-black"><i class="fas fa-check-double"></i>&nbsp Project Done</small>
     @break
   @case(6)
-    <small class="label label-hold"><i class="fa fa-history fa-sm"></i>&nbsp Hold</small>
+    <small class="bade bg-orange"><i class="fas fa-history"></i>&nbsp Hold</small>
     @break
   @case(7)
-    <small class="label label-drop"><i class="fa fa-times fa-sm"></i>&nbsp Drop</small>
+    <small class="badge bg-danger"><i class="fas fa-times"></i>&nbsp Drop</small>
     @break
   @default
     @break

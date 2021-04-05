@@ -25,7 +25,7 @@
                                 <th class="text-center">Tanggal Handover</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Keterangan</th>
-                                <th class="text-center" style="width: 85px">Action</th>
+                                <th class="text-center" style="width: 100px">Action</th>
                             </tr>
                         </thead>
                     </table>
