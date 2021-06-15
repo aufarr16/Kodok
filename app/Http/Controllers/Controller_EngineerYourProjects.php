@@ -28,13 +28,19 @@ class Controller_EngineerYourProjects extends Controller
         $pstat = $request->input('pstat');              //nyimpen statusnya mau diganti jadi apa
         $project = $this->getProjectById($id);          //ngambil projek yg mau diganti statusnya
 
+        if($project->id_pketerangan == 2){
+            return;
+        }
+
         if($pstat == 3){                                                        //kalo statnys mau diganti ke pengujian done, maka
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
+            $project->id_pstat = 2;
             $project->pketerangan_status = "Menunggu Approval Pengujian Done";  //ngubah keterangannya
             $project->id_pketerangan = 2;                                       //ubah keterangannya jadi menunggu approval
         }
         else if($pstat == 5){                                                   //kalo statnya mau diganti ke projek done, maka
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
+            $project->id_pstat = 4;
             $project->pketerangan_status = "Menunggu Approval Projek Done";     //ngubah keterangannya
             $project->id_pketerangan = 2;                                       //ubah keterangannya jadi menunggu approval
         }
