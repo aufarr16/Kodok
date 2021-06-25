@@ -78,7 +78,7 @@
         <aside class="main-sidebar sidebar-dark-navy elevation-4">
             <!-- Brand Logo -->
             <a href="/engineer/projects" class="brand-link" style="background: linear-gradient(#003371, #00478F)">
-                <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                <img src="{{ url('assets/img/frog.png') }}"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
             </a>

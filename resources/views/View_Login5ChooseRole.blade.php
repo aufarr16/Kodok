@@ -8,19 +8,20 @@
   <title>
     | Login
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://fonts.google.com/css?family=Balsamiq+Sans" rel="stylesheet" type="text/css"/>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
-  <!-- CSS Files -->
-  <link href="{{ url('') }}/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="{{ url('') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" >
-  <link href="{{ url('') }}/css/Login.css" rel="stylesheet" >
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{{ url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
+  <link href="{{ url('assets/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="{{ url('assets/paper-dashboard.css?v=2.0.0') }}" rel="stylesheet" >
+  <link href="{{ url('assets/Login.css') }}" rel="stylesheet" >
 
   <style>
     body {
-      background-image: url('{{ url('') }}/img/Abstract blue.jpg');
+      background-image: url('{{ url('assets/img/Abstract blue.jpg') }}');
       background-size: 100% 100%;}
   </style>
 </head>
@@ -33,7 +34,7 @@
   <div class="chooserole">
     <a href="/engineer/projects">
       <div class="content-overlay"></div>
-      <img class="content-image" src="{{ url('') }}/img/file.svg">
+      <img class="content-image" src="{{ url('assets/img/file.svg') }}">
       <div class="content-details fadeIn-top">
         <h3>Login as <strong>Engineer</strong></h3>
         <i class="fas fa-sign-in-alt fa-2x" style="color: white"></i>
@@ -48,7 +49,7 @@
   <div class="chooserole">
     <a href="/admin/users">
       <div class="content-overlay"></div>
-      <img class="content-image" src="{{ url('') }}/img/email.svg">
+      <img class="content-image" src="{{ url('assets/img/email.svg') }}">
       <div class="content-details fadeIn-top">
         <h3>Login as <strong>Admin</strong></h3>
         <i class="fas fa-sign-in-alt fa-2x" style="color: white"></i>
@@ -60,4 +61,3 @@
 </div>
 
 <!-- Javascript -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>

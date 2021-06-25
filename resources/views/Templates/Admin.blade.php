@@ -79,13 +79,12 @@
         <aside class="main-sidebar sidebar-dark-navy elevation-4">
             <!-- Brand Logo -->
             <a href="/admin/users" class="brand-link" style="background: linear-gradient(#003371, #00478F)">
-                <img src="{{ url('assets') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ url('assets/img/frog.png') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sistem Dokumentasi</span>
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar elevatio-2" style="background: linear-gradient(#003371, #00478F)">
+            <div class="sidebar elevation-2" style="background: linear-gradient(#003371, #00478F)">
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
