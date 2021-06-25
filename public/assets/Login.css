@@ -1,0 +1,362 @@
+.card {
+		/* background:#6495ED; */
+		/* background:#0085eb; */
+		/* background:#50a8eb; */
+		background:#2474ff;
+        border-radius: 20px;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+        height: 300px;
+        width: 300px;
+		padding: 5px;
+		top: 50%;
+		left: 50%;
+		margin-top: 155px;
+		margin-left: -155px;
+		cursor: pointer;
+		opacity: 0.6;
+}
+
+/*.judul {
+	  font-size: 20pt;
+	  font-weight: bolder;
+	  padding-left: 5px;
+	  padding-top: 5px;
+	  color: white;
+	  text-align: center;
+}*/
+/*
+.kotak_login{
+	width: 290px;
+	background: white;
+	/*meletakkan form ke tengah*
+	margin: 20px 0px 5px 0px;
+	padding: 10px 5px;
+	cursor: cursor;
+	 display:flex; 
+	border: none;
+	border-bottom: 4px solid #ffff;
+	/* outline: none; *
+	text-decoration: none;
+	border-radius: 10px;
+	/* background: transparent; *
+}*/
+ 
+/*.tombol_login{
+	background: #F0F8FF;
+	color: black;
+	font-size: 11pt;
+	width: 100px;
+	border-radius: 10px;
+	margin: 4px 2px;
+	margin-left: 95px;
+	margin-top: 5px;
+	cursor: pointer;
+}*/
+
+.underline-title {
+	background: white;
+	height: 2px;
+	margin: -15px 0px 50px 0px;
+	width: 100%;
+	display: flex;
+	align-items: left;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  /*background: linear-gradient(120deg, rgba(53,117,156,1) 11%, rgba(86,188,230,1) 94%);*/
+  background: linear-gradient(120deg, rgba(47, 119, 255, 0.88) 11%, rgba(93, 162, 255, 0.75) 94%);
+  border-radius: 0.625rem;
+  opacity: 0.9;
+}
+
+.box h3 {
+    padding: 10px 0px 10px 0px;
+    color: #A7DCF0;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Balsamiq Sans', sans-serif;
+    letter-spacing: 5px;
+    /*background-color: #A7DCF0;*/
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(8,34,137,1) 11%, rgba(0,159,255,0.9444152661064426) 72%);*/
+    width: 320px;
+    margin-left: -40px;
+    margin-top: -30px;
+    /*margin-bottom: 30px;*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+ button:hover{cursor: pointer}
+    button {
+      background: transparent; 
+      outline: none;
+      position: relative;
+      border: 2px solid #A7DCF0;
+      padding: 10px 25px;
+      overflow: hidden;
+      background: #A7DCF0;
+      border-radius: 30px;
+      /*margin-left: 12px;*/
+      left: 5%;
+    }
+
+    /*button:before (attr data-hover)*/
+    button:hover:before{opacity: 1; transform: translate(0,0);}
+    button:before{
+      content: attr(data-hover);
+      position: absolute;
+      top: 10px; 
+      left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      font-size: .8em;
+      opacity: 0;
+      transform: translate(-100%,0);
+      transition: all .3s ease-in-out;
+      color: #132880;
+    }
+      /*button div (button text before hover)*/
+      button:hover div{opacity: 0; transform: translate(100%,0)}
+      button div{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 700;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+        color: #132880;
+      }
+
+
+body {
+	/*background: linear-gradient(135deg, #4D4E63, #333342);*/
+  	background: url("../assets/img/Abstract blue.jpg");
+	background-size: 100% 100%;height: 100vh;
+  	/*font-family: 'Roboto', sans-serif;*/
+  	font-size: 16px;
+}
+
+/*Bar*/
+.group 			  { 
+  position:relative; 
+  margin-bottom: 35px; 
+  margin-left: 40px;
+}
+
+.inputMaterial 				{
+  font-size:18px;
+  padding:10px 10px 0px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #A7DCF0;
+  background-color: transparent;
+  margin-left: -70px;
+  color: #A7DCF0
+}
+
+.inputMaterial:focus 		{ outline:none;}
+
+
+/* LABEL ======================================= */
+
+label 				 {
+  color: #A7DCF0; 
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:35px;
+  top:15px;
+  letter-spacing: 5px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+.inputMaterial:focus ~ label, .inputMaterial:valid ~ label{
+  top:-10px;
+  left: -37px;
+  font-size:14px;
+  color:#132880;
+  /*margin-left: -70px;*/
+  width: 100%;
+  border: none;
+  outline: none;
+  letter-spacing: 0px;
+  /*font-weight: bold;*/
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:315px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:2px; 
+  position:absolute;
+  background: #132880; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  margin-left: -70px;
+}
+.bar:after {
+  margin-left: -70px; 
+}
+
+/* active state */
+.inputMaterial:focus ~ .bar:before, .inputMaterial:focus ~ .bar:after {
+  width:300px;
+  top:-1px;
+}
+
+
+/* active state */
+.inputMaterial:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/*Choose Role*/
+
+/*.main-title {
+  color: black;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 130px;
+}*/
+
+.role{
+  padding: 1em 0;
+  float: left;
+  width: 19%;
+  margin-left: 25px;
+}
+
+.role .title{
+  color: black;
+  text-align: center;
+}
+
+.chooserole {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.chooserole .content-overlay {
+  /*background: rgba(190, 231, 255, 0.78);*/
+  background: #1b1e21c2;
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  border-radius: 15px;
+}
+
+.chooserole:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+/*  padding-left: 1em;
+  padding-right: 1em;*/
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.chooserole:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.role:hover .title{
+  opacity: 0;
+  transition: 0.6s ease all;
+}
+
+.content-details h3{
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  /*text-transform: uppercase;*/
+  font-size: 18px;
+  /*background: rgb(164, 211, 253);*/
+  border-radius: 10px;
+}
+
+.content-details strong{
+  text-transform: uppercase;
+}
+
+.fadeIn-top{
+  top: 20%;
+}
+
+.role-panel{
+  margin-left: 465px;
+  margin-top: 13%;
+}
+/*Akhir Choose Role*/
+
+
+/*When login failure*/
+.alertlogin{
+  /*background: #031e52;*/
+  Color: #031e52;
+  text-align: center;
+  margin-top: -35px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  border-radius: 0.625rem;
+  padding: 3px;
+  width: 120%;
+  margin-left: -25px;
+}
+
+.validatelogin{
+  background: aliceblue;
+  Color: red;
+  text-align: center;
+  margin-top: -35px;
+  font-weight: bold;
+}
