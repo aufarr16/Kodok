@@ -79,16 +79,15 @@ class Controller_EngineerYourProjects extends Controller
 
     public function updatePBN(Request $request, $id){                           //update data setelah nginput di form
         $request->validate([                                                    //validasi input
-            'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
+            'progress_sit' => 'lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
         ],
         $message = [
-            'progress_sit.required' => ' Mohon isi Progress SIT',
-              'progress_sit.lte' => ' Progress SIT maks. 100',
-              'progress_sit.regex' => ' Progress SIT hanya berisi angka',
+            'progress_sit.lte' => ' Progress SIT maks. 100',
+            'progress_sit.regex' => ' Progress SIT hanya berisi angka',
             'progress_uat.required' => ' Mohon isi Progress UAT',
-              'progress_uat.lte' => ' Progress UAT maks. 100',
-              'progress_uat.regex' => ' Progress UAT hanya berisi angka',
+            'progress_uat.lte' => ' Progress UAT maks. 100',
+            'progress_uat.regex' => ' Progress UAT hanya berisi angka',
         ]);
         
         $project = $this->getProjectById($id);                                  //cari projek yg datanya mau diubah
