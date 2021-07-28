@@ -23,7 +23,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     {
     	return DB::table('projects')
     	->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, projects_stats.nama_pstat, projects.progress_sit, projects.progress_uat, date(projects.waktu_assign_project) as tanggal_assign'))
-    	->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
+    	->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
     	->leftjoin('products', 'projects.id_product', '=', 'products.id')
     	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
         ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
