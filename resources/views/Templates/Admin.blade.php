@@ -224,9 +224,9 @@
     <script src="{{ url('assets/dist/js/script.js') }}"></script>
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
+    @stack('scripts')
 
 </body>
 
 </html>
 
-@stack('scripts')
