@@ -43,7 +43,7 @@ class Controller_EngineerHistoryHandover extends Controller
         ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
         ->leftjoin('projects_handovers', 'projects.id', '=', 'projects_handovers.id_project')
         ->where('projects_handovers.id_user', $id)
-        ->where('projects_handovers.is_active', 0)
+        ->whereIn('id_pstat', [5,7])
         ->orderBy('tanggal_assign', 'desc')
         ->get();
     }
