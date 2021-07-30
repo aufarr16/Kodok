@@ -44,12 +44,14 @@ class Controller_ManagerListProjects extends Controller
     public function editProject($id){
         $project = $this->getProjectById($id);
 
-        $user = User::where('id', $project->id_original_pic)->firstOrFail();
-        $inisial = $this->getInisialUser($id, $user->inisial_user);
         $product = $project->id_product;
         $ptype = $project->id_ptype;
         $mitra = $project->id_mitra;
-        $napro = $project->id_project;
+        $namaproject = $project->nama_project;
+
+        $listproduct = $this->getProductList();
+        $listptype = $this->getPtypeList();
+        $listmitra = $this->getMitraList();
 
         return View('Layouts.FormProject', compact('project','inisial'));
     }
@@ -186,6 +188,18 @@ class Controller_ManagerListProjects extends Controller
         // ->get()
         // ->pluck('inisial_user', 'id')
         // ->toArray();
+    }
+
+    public function getProductList(){
+
+    }
+
+    public function getMitraList(){
+
+    }
+
+    public function getPtypeList(){
+        
     }
 }
 
