@@ -5,9 +5,9 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_project" style="font-weight:bolder" style="margin-top: -30px">Nama Project</label>
+			<label for="nama_project" style="font-weight:bolder" style="margin-top: -30px">Nama Project</label>
 				<br>
-			{!! Form::text('id_project', $project, null,
+			{!! Form::text('nama_project', null,
 				['class'=> 'form-control',
 					'id' =>'nama_project', 
 					'style' =>'margin-bottom: 10px'
@@ -18,11 +18,11 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_current_pic" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
+			<label for="id_original_pic" style="font-weight:bolder" style="margin-top: -30px">Nama User</label>
 				<br>
-				{!! Form::select('id_current_pic', $listuser, null, array(
-				    'class' => 'form-control selectcurrentpic',
-				    'id' => 'nama_user', 
+				{!! Form::select('id_original_pic', $listuser, null, array(
+				    'class' => 'form-control selectoriginalpic',
+				    'id' => 'nama_user',
 				    'placeholder' => '',
 				    'style' => 'Background: #ffff', 
 				    )) 

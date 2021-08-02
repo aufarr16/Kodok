@@ -153,6 +153,7 @@
                     @yield('content')
                     @include('Layouts.Notif')
                     @include('Layouts.ModalList')
+                    @include('Layouts.Modal')
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
