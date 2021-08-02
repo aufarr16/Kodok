@@ -44,18 +44,17 @@ class Controller_ManagerListProjects extends Controller
     public function editProject($id){
         $project = $this->getProjectById($id);
 
-        $user = $project->id_original_pic;        
-        $product = $project->id_product;
-        $ptype = $project->id_ptype;
-        $mitra = $project->id_mitra;
-        $namaproject = $project->nama_project; 
+        // $user = $project->id_original_pic;        
+        // $product = $project->id_product;
+        // $ptype = $project->id_ptype;
+        // $mitra = $project->id_mitra;
+        // $namaproject = $project->nama_project; 
 
         $listuser = $this->getUserList($id); 
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
 
-        dd($listptype);
         return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra','namaproject'));
     }
 

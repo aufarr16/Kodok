@@ -6,7 +6,7 @@
 		<div class ="input-group-addon">
 			<label for="id_current_pic" style="font-weight:bolder" style="margin-top: -30px">Inisial</label>
 				<br>
-				{!! Form::select('id_current_pic', $inisial, null, array(
+				{!! Form::select('id_current_pic', $listuser, null, array(
 				    'class' => 'form-control selectcurrentpic',
 				    'id' => 'id_current_pic', 
 				    'placeholder' => '',
