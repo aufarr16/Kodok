@@ -44,16 +44,19 @@ class Controller_ManagerListProjects extends Controller
     public function editProject($id){
         $project = $this->getProjectById($id);
 
+        $user = $project->id_original_pic;        
         $product = $project->id_product;
         $ptype = $project->id_ptype;
         $mitra = $project->id_mitra;
-        $namaproject = $project->nama_project;
+        $namaproject = $project->nama_project; 
 
-        $listproduct = $this->getProductList();
-        $listptype = $this->getPtypeList();
-        $listmitra = $this->getMitraList();
+        $listuser = $this->getUserList($id); 
+        $listproduct = $this->getProductList($id);
+        $listptype = $this->getPtypeList($id);
+        $listmitra = $this->getMitraList($id);
 
-        return View('Layouts.FormProject', compact('project','inisial'));
+        dd($listptype);
+        return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra','namaproject'));
     }
 
     public function updateProject(Request $request, $id){
@@ -66,7 +69,6 @@ class Controller_ManagerListProjects extends Controller
         $project->nama_project = $request->nama_project;                                  
 
         $project->save(); 
-
     }
 
     public function deleteProject($id){
@@ -190,16 +192,61 @@ class Controller_ManagerListProjects extends Controller
         // ->toArray();
     }
 
-    public function getProductList(){
-
+    public function getUserList($id){
+        return DB::table('users')
+            ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_current_pic', '=', 'users.id')
+                ->where('projects.id', $id);
+            })
+            ->whereIn('users.id_ulevel', [3, 5])
+            ->groupBy('users.id','users.nama_user')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_user', 'id')
+            ->toArray();
     }
 
-    public function getMitraList(){
-
+    public function getProductList($id){
+        return DB::table('products')
+            ->select(DB::raw('count(projects.id) as jml, products.id, products.nama_product'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_product', '=', 'products.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('products.id','products.nama_product')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_product', 'id')
+            ->toArray();
     }
 
-    public function getPtypeList(){
-        
+    public function getMitraList($id){
+        return DB::table('mitras')
+            ->select(DB::raw('count(projects.id) as jml, mitras.id, mitras.nama_mitra'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_mitra', '=', 'mitras.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('mitras.id','mitras.nama_mitra')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_mitra', 'id')
+            ->toArray();
+    }
+
+    public function getPtypeList($id){
+        return DB::table('projects_types')
+            ->select(DB::raw('count(projects.id) as jml, projects_types.id, projects_types.nama_ptype'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_ptype', '=', 'projects_types.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('projects_types.id','projects_types.nama_ptype')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_ptype', 'id')
+            ->toArray();
     }
 }
 
