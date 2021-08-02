@@ -55,7 +55,7 @@ class Controller_ManagerListProjects extends Controller
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
 
-        return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra','namaproject'));
+        return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
     }
 
     public function updateProject(Request $request, $id){
