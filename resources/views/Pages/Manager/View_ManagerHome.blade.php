@@ -606,7 +606,7 @@
 
   //Draw Pie
   Highcharts.chart('PieProduk', {
-    colors:['#D4BBDD','#FDBFAF','#98D7C2','#F09CA2','#D9CE88','#BCA88E'],
+    colors:['#D4BBDD','#FDBFAF','#98D7C2','#F09CA2','#D9CE88','#BCA88E','#3CACAE','#E98973','#FFB067'],
     chart: {
       type: 'pie',
       options3d: {
