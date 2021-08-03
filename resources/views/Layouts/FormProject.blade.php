@@ -24,7 +24,6 @@
 				    'class' => 'form-control selectoriginalpic',
 				    'id' => 'nama_user',
 				    'placeholder' => '',
-				    'style' => 'Background: #ffff', 
 				    )) 
 				!!}
 		</div> 
