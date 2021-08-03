@@ -44,12 +44,6 @@ class Controller_ManagerListProjects extends Controller
     public function editProject($id){
         $project = $this->getProjectById($id);
 
-        // $user = $project->id_original_pic;        
-        // $product = $project->id_product;
-        // $ptype = $project->id_ptype;
-        // $mitra = $project->id_mitra;
-        // $namaproject = $project->nama_project; 
-
         $listuser = $this->getUserList($id); 
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
@@ -175,20 +169,6 @@ class Controller_ManagerListProjects extends Controller
         ->get()
         ->pluck('inisial_user', 'id')
         ->toArray();
-        
-        // return DB::table('users')
-        // ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
-        // ->leftjoin('projects', function($join) use ($id) {
-        //     $join->on('projects.id_original_pic', '=', 'users.id')
-        //     ->where('projects.id', $id);
-        // })
-        // ->where('users.inisial_user', $inisial)
-        // ->where('users.id_ulevel', 3)
-        // ->groupBy('users.id','users.nama_user')
-        // ->orderBy('jml','DESC')
-        // ->get()
-        // ->pluck('inisial_user', 'id')
-        // ->toArray();
     }
 
     public function getUserList($id){
