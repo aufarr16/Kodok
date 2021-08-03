@@ -18,7 +18,7 @@
 
 	<div class="form-group">
 		<div class ="input-group-addon">
-			<label for="id_original_pic" style="font-weight:bolder" style="margin-top: -30px">Nama User</label>
+			<label for="id_original_pic" style="font-weight:bolder" style="margin-top: -30px">PIC Project</label>
 				<br>
 				{!! Form::select('id_original_pic', $listuser, null, array(
 				    'class' => 'form-control selectoriginalpic',
