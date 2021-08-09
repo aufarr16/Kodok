@@ -54,7 +54,6 @@ class Controller_ManagerListProjects extends Controller
         else {
             
         }
-        
     }
 
     public function updateProject(Request $request, $id){
