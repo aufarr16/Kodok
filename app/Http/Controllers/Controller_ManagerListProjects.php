@@ -43,12 +43,11 @@ class Controller_ManagerListProjects extends Controller
 
     public function editProject($id){
         $project = $this->getProjectById($id);
-
         $listuser = $this->getUserList($id); 
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
-        if ($piccurrent != $picori) {
+        if ($project->id_current_pic == $project->id_original_pic) {
             return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
         }
         else {
