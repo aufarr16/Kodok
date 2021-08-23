@@ -21,7 +21,7 @@
     <div class="tab-content" id="custom-tabs-three-tabContent">
       
       <div class="tab-pane fade active show" id="new" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-        <form method="post" action="/manager/newproject">
+        <form method="post" action="/manager/newproject" id="my-form">
         @csrf
          <div class="form-group">
             <label for="id_user">PIC</label>
@@ -108,13 +108,13 @@
                 {{ $message }}</div>
             @enderror
           </div>
-          <button type="submit" class="btn btn-outline-primary btn-submit float-right" id="submitnew">Submit</button>
+          <button type="submit" class="btn btn-outline-primary float-right" id="btn-submit">Submit</button>
         </form> 
       </div>
 
       <!-- HANDOVER -->
       <div class="tab-pane fade" id="handover" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
-        <form method="post" action="/manager/newhandover">
+        <form method="post" action="/manager/newhandover" id="my-form">
         @csrf
           <div class="form-group">
             <label for="PIC2">PIC</label>
@@ -159,7 +159,7 @@
                 @enderror
             </div>
           </div>
-            <button type="submit" class="btn btn-outline-primary btn-submit float-right" id="submithandover">Submit</button>
+            <button type="submit" class="btn btn-outline-primary float-right" id="btn-submit">Submit</button>
         </form>
       </div>
     </div>
@@ -167,5 +167,19 @@
 @endsection
   
 @push('scripts')
+<script type="text/javascript">
+   
+    $(document).ready(function () {
+    
+        $("#my-form").submit(function (e) {
+   
+            $("#btn-submit").attr("disabled", true);
+   
+            return true;
+    
+        });
+    });
+    
+</script>
 
 @endpush

@@ -47,17 +47,17 @@ class Controller_ManagerListProjects extends Controller
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
-        $picori = $this->getOriginalPIC($id);
-        $piccurrent = $this->getCurrentPIC($id);
-        $project->id_original_pic= $request->id_original_pic;
-        $project->id_current_pic = $project->id_current_pic;    
-        // if ($project->id_current_pic === $project->id_original_pic) {
-        //     return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
-        // }
-        // else {
+        // $picori = $this->getOriginalPIC($id);
+        // $piccurrent = $this->getCurrentPIC($id);
+        // $project->id_original_pic= $request->id_original_pic;
+        // $project->id_current_pic = $project->id_current_pic;    
+        if ($project->id_current_pic === $project->id_original_pic) {
+            return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
+        }
+        else {
 
-        // }
-        return View('Layouts.FormProject', compact('project','picori', 'piccurrent','listuser','listproduct','listptype','listmitra'));
+        }
+        // return View('Layouts.FormProject', compact('project','picori', 'piccurrent','listuser','listproduct','listptype','listmitra'));
     }
 
     public function updateProject(Request $request, $id){

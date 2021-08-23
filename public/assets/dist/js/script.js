@@ -751,7 +751,7 @@ $('body').on('click', '#button-submit', function(event){
 	var form = $('#modal-body form'),
 		url = form.attr('action'),
 		method = form.attr('method');
-
+		
 	// console.log(method);
 	// console.log(url);
 
