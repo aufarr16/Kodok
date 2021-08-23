@@ -90,6 +90,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+                        
                         <li class="nav-item">
                             <a href="/manager/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
@@ -99,6 +100,7 @@
                                 </p>
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a href="/manager/projects" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
@@ -108,6 +110,7 @@
                                 </p>
                             </a>
                         </li>
+                        @if ($userLevel === 2)
                         <li class="nav-item">
                             <a href="/manager/assign" class="nav-link">
                                 <i class="nav-icon fas fa-random"></i>
@@ -126,6 +129,7 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

@@ -50,7 +50,7 @@ class Controller_ManagerHome extends Controller
 
             // dd($inuser);
 
-            return view('Pages.Manager.View_ManagerHome', compact('products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
+            return view('Pages.Manager.View_ManagerHome', compact('userLevel', 'products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
         }
         else{
             return redirect('/logout');

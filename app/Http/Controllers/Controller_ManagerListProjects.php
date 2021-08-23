@@ -15,7 +15,7 @@ class Controller_ManagerListProjects extends Controller
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 2 || $userLevel == 9){                                //Autentikasi level user yg boleh msk
-            return view('Pages.Manager.View_ManagerListProjects');  
+            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel'));  
         }
         else{
             return redirect('/logout');
@@ -47,9 +47,15 @@ class Controller_ManagerListProjects extends Controller
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
-        if ($project->id_current_pic == $project->id_original_pic) {
+        $picori = $this->getOriginalPIC($id);
+        $piccurrent = $this->getCurrentPIC($id);
+        if ($project->id_current_pic === $project->id_original_pic) {
             return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
         }
+        else {
+
+        }
+        // return View('Layouts.FormProject', compact('project','listuser','listproduct','listptype','listmitra'));
     }
 
     public function updateProject(Request $request, $id){
