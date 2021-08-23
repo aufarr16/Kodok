@@ -1,2 +1,2 @@
-<button id="{{ $data->id }}" onclick="approveProject(id, title)" type="submit" class="btn-approve btn btn-success" title="Confirm Aproval" style="height:1px width:1px"><i class="fa fa-check fa-lg"></i></button>
-<button id="{{ $data->id }}" onclick="declineProject(id, title)" type="submit" class="btn-decline btn btn-danger" title="Decline Approval" data-toggle="modal" data-target="#modal1"><i class="fa fa-times fa-lg"></i></button>
+<button id="{{ $data->id }}" onclick="approveProject(id, title)" type="submit" class="btn-approve btn btn-success" title="Confirm Aproval"><i class="fas fa-check"></i></button>
+<button id="{{ $data->id }}" onclick="declineProject(id, title)" type="submit" class="btn-decline btn btn-danger" title="Decline Approval"><i class="fas fa-times"></i></button>
