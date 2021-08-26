@@ -127,7 +127,7 @@ class Controller_AdminUsers extends Controller
     }
 
 	public function dataTable(){					  //generate table di halaman Admin - User
-        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id and a.id_ulevel != 9");//ngambil data buat nanti ditampilin di table halaman Admin - User
+        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id");//ngambil data buat nanti ditampilin di table halaman Admin - User
         return DataTables::of($model)				  //membuat datatable berdasarkan data yg udh diambil
             ->addColumn('action', function($model){	  //nambahin yg gak ada di query, disini yg ditambah action
                 return view('Layouts.ActionUser',[
