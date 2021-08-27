@@ -415,8 +415,8 @@ function deleteProject(id){
 					Swal.fire({
 						icon: 'error',
 						toast:true,
-						title: 'Oops...',
-						text: 'Something went wrong!',
+						title: 'Handover',
+						text: 'Project cant be deleted',
 						timer: 4000,
 						background: 'bisque'
 					})
