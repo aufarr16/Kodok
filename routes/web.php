@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/upload', "Controller_EngineerUploadDoc@upload")->name('engineer.upload')
+Route::get('/upload', "Controller_EngineerUploadDocument@openPage");
+
 ##ROUTING PAGE
 ##LOGIN
 Route::get('/', 'Controller_Login@openLogin')->name('login');
