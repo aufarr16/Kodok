@@ -47,6 +47,9 @@ class Controller_ManagerListProjects extends Controller
         $listproduct = $this->getProductList($id);
         $listptype = $this->getPtypeList($id);
         $listmitra = $this->getMitraList($id);
+       
+        // $statushandover = $this->getStatusPIC($id);
+
         // $picori = $this->getOriginalPIC($id);
         // $piccurrent = $this->getCurrentPIC($id);
         // $project->id_original_pic= $request->id_original_pic;
@@ -57,7 +60,7 @@ class Controller_ManagerListProjects extends Controller
         else {
 
         }
-        // return View('Layouts.FormProject', compact('project','picori', 'piccurrent','listuser','listproduct','listptype','listmitra'));
+        // return View('Layouts.FormProject', compact('id_current_pic', 'project','picori', 'piccurrent','listuser','listproduct','listptype','listmitra'));
     }
 
     public function updateProject(Request $request, $id){
@@ -121,6 +124,14 @@ class Controller_ManagerListProjects extends Controller
         return DB::table('projects')
         ->select(DB::raw('projects.id, projects.id_current_pic, users.nama_user'))
         ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
+        ->where('projects.id', '=', $id)
+        ->first();
+    }
+
+    public function getStatusPIC($id){
+        return DB::table('projects')
+        ->select(DB::raw('projects.id, projects.status_handover, users.nama_user'))
+        ->leftjoin('users', 'projects.status_handover', '=', 'users.id')
         ->where('projects.id', '=', $id)
         ->first();
     }
