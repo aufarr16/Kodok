@@ -50,8 +50,8 @@ class Controller_ManagerListProjects extends Controller
        
         // $statushandover = $this->getStatusPIC($id);
 
-        // $picori = $this->getOriginalPIC($id);
-        // $piccurrent = $this->getCurrentPIC($id);
+        // $picori = $project->id_original_pic;
+        // $piccurrent = $project->id_current_pic;
         // $project->id_original_pic= $request->id_original_pic;
         // $project->id_current_pic = $project->id_current_pic;    
         if ($project->id_current_pic === $project->id_original_pic) {
