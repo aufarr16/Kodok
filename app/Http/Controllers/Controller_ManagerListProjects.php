@@ -128,14 +128,6 @@ class Controller_ManagerListProjects extends Controller
         ->first();
     }
 
-    public function getStatusPIC($id){
-        return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.status_handover, users.nama_user'))
-        ->leftjoin('users', 'projects.status_handover', '=', 'users.id')
-        ->where('projects.id', '=', $id)
-        ->first();
-    }
-
     public function getHistoryPIC($id){
         return DB::table('projects_handovers')
         ->select(DB::raw('projects_handovers.id_project, projects_handovers.id_user, projects_handovers.handover_order, users.nama_user'))
