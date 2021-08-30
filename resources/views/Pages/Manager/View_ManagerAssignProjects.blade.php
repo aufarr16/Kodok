@@ -114,7 +114,7 @@
 
       <!-- HANDOVER -->
       <div class="tab-pane fade" id="handover" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
-        <form method="post" action="/manager/newhandover" id="my-form">
+        <form method="post" action="/manager/newhandover" id="my-handover">
         @csrf
           <div class="form-group">
             <label for="PIC2">PIC</label>
@@ -159,7 +159,7 @@
                 @enderror
             </div>
           </div>
-            <button type="submit" class="btn btn-outline-primary float-right" id="btn-submit">Submit</button>
+            <button type="submit" class="btn btn-outline-primary float-right" id="btn-submithandover">Submit</button>
         </form>
       </div>
     </div>
@@ -179,7 +179,20 @@
     
         });
     });
+</script>
+
+<script type="text/javascript">
+   
+    $(document).ready(function () {
     
+        $("#my-handover").submit(function (e) {
+   
+            $("#btn-submithandover").attr("disabled", true);
+   
+            return true;
+    
+        });
+    });
 </script>
 
 @endpush
