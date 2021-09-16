@@ -82,7 +82,7 @@ class Controller_Login extends Controller
                     case '8':
                         return redirect('/logout');
                     case '9':
-                        return redirect('/manager/home');
+                        return redirect('/eksekutif/home');
                 }
             } 
             

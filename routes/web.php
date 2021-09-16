@@ -66,6 +66,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
 	Route::put('/admin/updateuser/{id}', 'Controller_AdminUsers@update')->name('users.update');
 
+	##Eksekutif
+	Route::get('/eksekutif/home', 'Controller_ManagerHome@openAllDataPage');
+	Route::get('/eksekutif/projects', 'Controller_ManagerListProjects@openPage');
+
 	##Engineer
 	Route::get('/engineer', 'Controller_EngineerYourProjects@openPage');
 	// Doc Tools
@@ -79,6 +83,9 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryHandover@openPage');
 	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryHandover@dataTable')->name('historyhover.table');
+
+	//List Project
+	Route::get('/engineer/listprojects', 'Controller_ManagerListProjects@openPage');
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');

@@ -14,7 +14,7 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2 || $userLevel == 9){                                //Autentikasi level user yg boleh msk
+        if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
             return view('Pages.Manager.View_ManagerListProjects', compact('userLevel'));  
         }
         else{
