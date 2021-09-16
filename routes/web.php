@@ -33,6 +33,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
 
+	//Export
+	Route::get('/admin/export', 'Controller_AdminExportData@openPage');
+
 	// Mitra
 	Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
 	Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra.table');
