@@ -119,6 +119,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/export" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>
+                                    EXPORT DATABASE
+                                    <i class="fas fa-download-left right"></i>
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
