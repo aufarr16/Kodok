@@ -10,7 +10,7 @@
       <a href="#" class="btn btn-info info-box-icon"><i class="fas fa-download"></i></a>
 
       <div class="info-box-content">
-        <span class="info-box-text"><font size="4"><strong>Export Mitra</strong></font></span>
+        <span class="info-box-text"><font size="4"><strong>Export All Data</strong></font></span>
         
       </div>
       <!-- /.info-box-content -->
@@ -23,7 +23,7 @@
       <a href="#" class="btn btn-success info-box-icon"><i class="fas fa-download"></i></a>
 
       <div class="info-box-content">
-        <span class="info-box-text"><font size="4"><strong>Export Product</strong></font></span>
+        <span class="info-box-text"><font size="4"><strong>Export Mitra</strong></font></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -35,7 +35,7 @@
       <a href="#" class="btn btn-warning info-box-icon"><i class="fas fa-download"></i></a>
 
       <div class="info-box-content">
-        <span class="info-box-text"><font size="4"><strong>Export Jenis Project</strong></font></span>
+        <span class="info-box-text"><font size="4"><strong>Export Product</strong></font></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -70,7 +70,7 @@
             <a href="#" class="btn bg-pink info-box-icon"><i class="fas fa-download"></i></a>
 
           <div class="info-box-content">
-            <span class="info-box-text"><font size="4"><strong>Export All Data</strong></font></span>
+            <span class="info-box-text"><font size="4"><strong>Export Jenis Project</strong></font></span>
           </div>
         <!-- /.info-box-content -->
         </div>
