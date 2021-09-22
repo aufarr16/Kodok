@@ -35,6 +35,15 @@ Route::group(['middleware' => 'auth'], function(){
 
 	//Export
 	Route::get('/admin/export', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/mitra', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/product', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/project', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/handover', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/pketerangan', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/pstat', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/ptype', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/user', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@openPage');
 
 	// Mitra
 	Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
@@ -132,7 +141,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/manager/projects/edit/{id}', 'Controller_ManagerListProjects@editProject')->name('projects.edit');
 	Route::put('/manager/projects/update/{id}', 'Controller_ManagerListProjects@updateProject')->name('projects.update');
 	Route::get('/manager/projects/delete/{id}', 'Controller_ManagerListProjects@deleteProject')->name('projects.delete');
-
 
 	// Search Doc
 	Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');
