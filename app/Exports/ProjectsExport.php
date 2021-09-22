@@ -21,29 +21,33 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     */
     public function query()
     {
-    	return DB::table('projects')
-    	->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, projects_stats.nama_pstat, projects.progress_sit, projects.progress_uat, date(projects.waktu_assign_project) as tanggal_assign'))
-    	->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
-    	->leftjoin('products', 'projects.id_product', '=', 'products.id')
-    	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
-        ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
-    	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
-        ->where('id_ptype', '!=', 5)
-    	->orderBy('id', 'asc');
+    	return DB::table('projects');
     }
 
     public function headings(): array{
     	return[
     		'#',
-    		'PIC',
-    		'Produk',
-    		'Project Type',
-    		'Mitra',
-    		'Nama Projek',
-    		'Status',
-            'Progress SIT (%)',
-            'Progress UAT (%)', 
-    		'Tanggal Assign'
+    		'waktu_assign_project',
+    		'id_pketerangan',
+    		'id_pstat',
+    		'id_ptype',
+    		'id_product',
+    		'id_mitra',
+            'id_current_pic',
+            'id_original_pic',
+            'id_pic_product', 
+    		'id_pic_am',
+            'id_pic_pm',
+            'nama_project',
+            'progress_sit',
+            'progress_uat',
+            'status_handover',
+            'handover_counter',
+            'stats_temp',
+            'pketerangan_status',
+            'pketerangan_note',
+            'notes_project',
+            'bobot_project'
     	];	
     }
 
