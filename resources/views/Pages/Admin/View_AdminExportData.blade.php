@@ -57,7 +57,7 @@
     </div>
     <div class="col-md-4 col-sm-6 col-12">
         <div class="info-box">
-            <a href="#" class="btn bg-purple info-box-icon"><i class="fas fa-download"></i></a>
+            <a href="/admin/export/project" class="btn bg-purple info-box-icon"><i class="fas fa-download"></i></a>
 
           <div class="info-box-content">
             <span class="info-box-text"><font size="4"><strong>Export Project</strong></font></span>

@@ -35,15 +35,15 @@ Route::group(['middleware' => 'auth'], function(){
 
 	//Export
 	Route::get('/admin/export', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/mitra', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/product', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/project', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/handover', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/pketerangan', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/pstat', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/ptype', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/user', 'Controller_AdminExportData@openPage');
-	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/mitra', 'Controller_AdminExportData@exportMitra');
+	Route::get('/admin/export/product', 'Controller_AdminExportData@exportProduct');
+	Route::get('/admin/export/project', 'Controller_AdminExportData@exportProject');
+	Route::get('/admin/export/handover', 'Controller_AdminExportData@exportHandover');
+	Route::get('/admin/export/pketerangan', 'Controller_AdminExportData@exportPKeterangan');
+	Route::get('/admin/export/pstat', 'Controller_AdminExportData@exportPStatus');
+	Route::get('/admin/export/ptype', 'Controller_AdminExportData@exportPType');
+	Route::get('/admin/export/user', 'Controller_AdminExportData@exportUser');
+	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@exportULevel');
 
 	// Mitra
 	Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');

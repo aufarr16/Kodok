@@ -30,38 +30,38 @@ class Controller_AdminExportData extends Controller
     // }
 
     public function exportMitra(){
-    	return (new MitrasExport)->download('[DB Kodok] mitras.xslx');
+    	return (new MitrasExport)->download('[DB Kodok] mitras.xlsx');
     }
 
     public function exportProduct(){
-    	return (new ProductsExport)->download('[DB Kodok] products.xslx');
+    	return (new ProductsExport)->download('[DB Kodok] products.xlsx');
     }
 
     public function exportProject(){
-    	return (new ProjectsExport)->download('[DB Kodok] projects.xslx');
+    	return (new ProjectsExport)->download('[DB Kodok] projects.xlsx');
     }
 
     public function exportHandover(){
-    	return (new ProjectsHandoversExport)->download('[DB Kodok] projects_handovers.xslx');
+    	return (new ProjectsHandoversExport)->download('[DB Kodok] projects_handovers.xlsx');
     }
 
    	public function exportPKeterangan(){
-    	return (new ProjectsKeterangansExport)->download('[DB Kodok] projects_keterangans.xslx');
+    	return (new ProjectsKeterangansExport)->download('[DB Kodok] projects_keterangans.xlsx');
     }
 
     public function exportPStatus(){
-    	return (new ProjectsStatusExport)->download('[DB Kodok] projects_stats.xslx');
+    	return (new ProjectsStatusExport)->download('[DB Kodok] projects_stats.xlsx');
     }
 
     public function exportPType(){
-    	return (new ProjectsTypesExport)->download('[DB Kodok] projects_types');
+    	return (new ProjectsTypesExport)->download('[DB Kodok] projects_types.xlsx');
     }
 
     public function exportUser(){
-    	return (new UsersExport)->download('[DB Kodok] users');
+    	return (new UsersExport)->download('[DB Kodok] users.xlsx');
     }
 
     public function exportULevel(){
-    	return (new UsersLevelsExport)->download('[DB Kodok] users_levels');
+    	return (new UsersLevelsExport)->download('[DB Kodok] users_levels.xlsx');
     }
 }

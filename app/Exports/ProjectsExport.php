@@ -21,7 +21,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     */
     public function query()
     {
-    	return DB::table('projects');
+    	return Project::query();
     }
 
     public function headings(): array{
@@ -58,7 +58,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
             },
 
     		AfterSheet::class => function(AfterSheet $event){
-    			$event->sheet->getStyle('A1:J1')->applyFromArray([
+    			$event->sheet->getStyle('A1:V1')->applyFromArray([
     				'font' => [
     					'bold' => true
     				],
