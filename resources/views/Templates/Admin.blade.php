@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/projects" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
                                     LIST PROJECT
