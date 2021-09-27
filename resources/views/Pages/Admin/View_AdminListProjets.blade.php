@@ -1,21 +1,15 @@
-@extends('Templates.Manager')
+@extends('Templates.Admin')
 @push('styles')
 @endpush
-<!-- @section('Welcome') 
-  <h4 style="float:right; margin-right:5px; margin-top:5px">Welcome, {{ auth()->user()->nama_user }}</h4>
-@endsection -->
+
 @section('PageTitle','List Projects')
 @section('content')
 
-@if($userLevel === 2)
+
 <title>
-  | {Manager} List Projects
+  | {Admin} List Projects
 </title>
-@elseif($userLevel === 9)
-<title>
-  | {Eksekutif} List Projects
-</title>
-@endif 
+
 <div class="row mt-2">
     <div class="col-md-12">
         <!-- /.card-header -->
@@ -35,10 +29,7 @@
                             <th class="text-center">Nama Mitra</th>  
                             <th class="text-center">Nama Project</th>
                             <th class="text-center">Tanggal Assign</th>
-                            <th class="text-center">Status</th>
-                            @if($userLevel === 2)
-                            <th class="text-center">Action</th>
-                            @endif                           
+                            <th class="text-center">Status</th>                          
                         </tr>
                     </thead>
                 </table>
@@ -71,9 +62,6 @@
       {data: 'nama_project', name: 'nama_project', class: 'text-center'},
       {data: 'waktu', name: 'waktu', class: 'text-center'},
       {data: 'id_pstat', name: 'id_pstat', class: 'text-center'},
-      @if($userLevel === 2)
-      {data: 'action', name: 'action', class: 'text-center'}
-      @endif 
     ]
   });
 </script>
