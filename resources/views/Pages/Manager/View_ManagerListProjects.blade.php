@@ -11,7 +11,7 @@
 <title>
   | {Manager} List Projects
 </title>
-@else
+@elseif($userLevel === 9)
 <title>
   | {Eksekutif} List Projects
 </title>

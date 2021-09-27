@@ -129,7 +129,8 @@
                                 </p>
                             </a>
                         </li>
-                        @else
+                        
+                        @elseif($userLevel === 9)
                         <li class="nav-item">
                             <a href="/eksekutif/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
