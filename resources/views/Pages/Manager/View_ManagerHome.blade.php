@@ -9,9 +9,16 @@
 @endsection -->
 @section('PageTitle','Home')
 @section('content')
+@if($userLevel === 2)
 <title>
   | {Manager} Home
 </title>
+@else
+<title>
+  | {Eksekutif} Home
+</title>
+@endif 
+
 <div class="row">
   <div class="col-md-3 col-sm-6 col-12">
     <div class="info-box bg-warning">

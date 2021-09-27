@@ -90,7 +90,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        
+                        @if ($userLevel === 2)
                         <li class="nav-item">
                             <a href="/manager/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
@@ -110,7 +110,7 @@
                                 </p>
                             </a>
                         </li>
-                       @if ($userLevel === 2)
+                       
                         <li class="nav-item">
                             <a href="/manager/assign" class="nav-link">
                                 <i class="nav-icon fas fa-random"></i>
@@ -126,6 +126,26 @@
                                 <p>
                                     Approval Projects
                                     <i class="fas fa-clipboard-check-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a href="/eksekutif/home" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    HOME
+                                    <i class="right fas fa-home-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/eksekutif/projects" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    List Projects
+                                    <i class="fas fa-clipboard-list-left right"></i>
                                 </p>
                             </a>
                         </li>

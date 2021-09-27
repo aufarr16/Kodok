@@ -6,9 +6,16 @@
 @endsection -->
 @section('PageTitle','List Projects')
 @section('content')
+
+@if($userLevel === 2)
 <title>
   | {Manager} List Projects
 </title>
+@else
+<title>
+  | {Eksekutif} List Projects
+</title>
+@endif 
 <div class="row mt-2">
     <div class="col-md-12">
         <!-- /.card-header -->
