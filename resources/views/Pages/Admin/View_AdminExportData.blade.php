@@ -1,8 +1,8 @@
 @extends('Templates.Admin')
-@section('PageTitle','Export Data')
+@section('PageTitle','Export Import Data')
 @section('content')
 <title>
-| {Admin} ExportData
+| {Admin} ExportImportData
 </title>
 
 <div class="card card-lightblue card-tabs">
