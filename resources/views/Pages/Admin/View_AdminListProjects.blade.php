@@ -52,7 +52,7 @@
     "info": true,
     "autoWidth": false,
     "responsive": true,
-    ajax: "{{ route('listprojects.table') }}",
+    ajax: "{{ route('adminlistprojects.table') }}",
     columns: [
       {data: 'DT_RowIndex', name: 'id', class: 'text-center'},
       {data: 'inisial_user', name: 'inisial_user', class: 'text-center'},

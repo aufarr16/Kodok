@@ -74,8 +74,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/createuser', 'Controller_AdminUsers@create')->name('users.create');
 	Route::get('/admin/edituser/{id}', 'Controller_AdminUsers@edit')->name('users.edit');
 	Route::put('/admin/updateuser/{id}', 'Controller_AdminUsers@update')->name('users.update');
-
-	Route::get('/admin/projects', 'Controller_ManagerListProjects@openPage');
+	//List Project Admin
+	Route::get('/admin/projects', 'Controller_AdminListProjects@openPage');
+	Route::get('/admin/projects/table', 'Controller_AdminListProjects@dataTable')->name('adminlistprojects.table');
+	Route::get('/admin/projects/detail/{id}', 'Controller_AdminListProjects@detail')->name('adminlistprojects.detail');
 
 	##Eksekutif
 	Route::get('/eksekutif/home', 'Controller_ManagerHome@openAllDataPage');
