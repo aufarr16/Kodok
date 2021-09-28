@@ -16,9 +16,9 @@
         <div class="card card-primary card-outline">
 
             <div class="card-body">
-                <a href="/manager/projects/export" type="button" class="btn btn-success" style="float:left">
+                <!-- <a href="/manager/projects/export" type="button" class="btn btn-success" style="float:left">
                     Excel &nbsp<i class="fas fa-file-download"></i>
-                </a>
+                </a> -->
                 <table id="table1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
