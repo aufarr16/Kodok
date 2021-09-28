@@ -9,7 +9,7 @@
         <div class="card card-danger card-outline">
 
             <div class="card-body">
-                <table id="table1" class="table table-bordered table-striped">
+                <table id="table2" class="table table-bordered table-striped">
                     <thead>
                        <tr class="text-center">
                             <th style="width: 150px;">PIC Saat ini</th> 
