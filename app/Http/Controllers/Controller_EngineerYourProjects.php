@@ -15,7 +15,7 @@ class Controller_EngineerYourProjects extends Controller
     public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 3 || $userLevel == 5){
+        if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
             return view('Pages.Engineer.View_EngineerYourProjects', compact('userLevel'));
         }
         else{

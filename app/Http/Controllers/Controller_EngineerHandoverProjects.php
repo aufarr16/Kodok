@@ -14,7 +14,7 @@ class Controller_EngineerHandoverProjects extends Controller
     public function openPage(){         //buka halaman Engineer - Project On Going (Handover)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 3 || $userLevel == 5){ 
+        if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){ 
             return view('Pages.Engineer.View_EngineerHandoverProjects', compact('userLevel'));
         }
         else{
