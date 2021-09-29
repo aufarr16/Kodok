@@ -36,7 +36,7 @@ class Controller_ManagerListProjects extends Controller
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
         $pbn = $this->getPBN($id);                   //ambil data progress + bobot + notes
 
-        // dd($historypic);
+        // dd($project);
         
         return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }

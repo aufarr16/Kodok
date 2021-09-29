@@ -163,6 +163,7 @@
                 <div class="container-fluid">
                     @yield('content')
                     @include('Layouts.Notif')
+                    @include('Layouts.ModalList')
                     @include('Layouts.Modal')
                 </div><!-- /.container-fluid -->
             </section>
@@ -236,6 +237,7 @@
     <script src="{{ url('assets/dist/js/script.js') }}"></script>
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ url('assets/dist/js/demo.js') }}"></script>
     @stack('scripts')
 
 </body>
