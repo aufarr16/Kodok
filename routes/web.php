@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/export/user', 'Controller_AdminExportData@exportUser');
 	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@exportULevel');
 
-	//List Project
+	//List Project admin
 	Route::get('/admin/projects', 'Controller_AdminListProjects@openPage');
 	Route::get('/admin/projects/table', 'Controller_AdminListProjects@dataTable')->name('adminlistprojects.table');
 	Route::get('/admin/projects/detail/{id}', 'Controller_AdminListProjects@detail')->name('adminlistprojects.detail');
@@ -98,7 +98,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryHandover@openPage');
 	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryHandover@dataTable')->name('historyhover.table');
 
-	//List Project
+	//List Project enginner
 	Route::get('/engineer/listprojects', 'Controller_ManagerListProjects@openPage');
 
 	// Search Doc

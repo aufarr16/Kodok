@@ -137,6 +137,27 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>
+                                      Upload Document
+                                    <i class="fas fa-download-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                      List Project
+                                    <i class="fas fa-clipboard-list-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
