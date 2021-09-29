@@ -13,9 +13,9 @@ use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Events\BeforeExport;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-
 class ProjectsStatusExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
 {
+    use Exportable;
     /**
     * @return \Illuminate\Support\Collection
     */

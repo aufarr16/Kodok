@@ -15,6 +15,7 @@ use Maatwebsite\Excel\Events\AfterSheet;
 
 class ProjectsHandoversExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
 {
+    use Exportable;
     /**
     * @return \Illuminate\Support\Collection
     */
