@@ -99,7 +99,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryHandover@dataTable')->name('historyhover.table');
 
 	//List Project enginner
-	Route::get('/engineer/listprojects', 'Controller_ManagerListProjects@openPage');
+	Route::get('/engineer/listprojects', 'Controller_EngineerListProjects@openPage');
+	Route::get('/engineer/listprojects/table', 'Controller_EngineerListProjects@dataTable')->name('engineerlistprojects.table');
+	Route::get('/engineer/listprojects/detail/{id}', 'Controller_EngineerListProjects@detail')->name('engineerlistprojects.detail');
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');

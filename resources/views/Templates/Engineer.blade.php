@@ -149,7 +149,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/engineer/listprojects" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
                                       List Project
@@ -185,6 +185,7 @@
                     @yield('content')
                     @include('Layouts.Notif')
                     @include('Layouts.Modal')
+                    @include('Layouts.ModalList')
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
