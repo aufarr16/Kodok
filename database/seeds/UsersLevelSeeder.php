@@ -47,5 +47,9 @@ class UsersLevelSeeder extends Seeder
         $eksekutif = Users_Level::create([
             'nama_ulevel' => 'Eksekutif'
         ]);
+
+        $poh = Users_Level::create([
+            'nama_ulevel' => 'Engineer Poh'
+        ]);
     }
 }

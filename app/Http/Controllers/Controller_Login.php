@@ -83,6 +83,8 @@ class Controller_Login extends Controller
                         return redirect('/logout');
                     case '9':
                         return redirect('/eksekutif/home');
+                    case '10':
+                        return redirect('/engineer/listprojects');
                 }
             } 
             
