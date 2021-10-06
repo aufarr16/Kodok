@@ -91,7 +91,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                         @if ($userLevel === 3 || $userLevel === 3)
+                         @if ($userLevel === 3 || $userLevel === 5)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
