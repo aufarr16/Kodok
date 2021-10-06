@@ -125,7 +125,36 @@
 
       <!-- IMPORT DATABASE -->
       <div class="tab-pane fade" id="import" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
-                <div class="row">
+        <div class="row">
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quick Example</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="/admin/import/project" method="post" enctype="multipart/form">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
           <div class="col-md-4 col-sm-6 col-12">
             <div class="info-box ">
               <a href="#" class="btn btn-info info-box-icon"><i class="fas fa-download"></i></a>
@@ -162,7 +191,7 @@
           <!-- /.col -->
         </div>
 
-        <div class="row">
+      <div class="row">
         <div class="col-md-4 col-sm-6 col-12">
           <div class="info-box">
               <a href="#" class="btn btn-danger info-box-icon"><i class="fas fa-download"></i></a>

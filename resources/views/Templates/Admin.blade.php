@@ -238,6 +238,14 @@
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ url('assets/dist/js/demo.js') }}"></script>
+
+    <script src="{{ url('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script>
+    $(function () {
+      bsCustomFileInput.init();
+    });
+    </script>
+
     @stack('scripts')
 
 </body>
