@@ -13,8 +13,8 @@
         <div class="card card-primary card-outline">
 
             <div class="card-body">
-                <a href="{{ route('users.create') }}" type="button" class="modal-show add-users btn btn-success" title="Add New User" id="btn-modal" style="float:left">
-                    Add User &nbsp<i class="fas fa-plus"></i>
+                <a href="{{ route('users.create') }}" type="button" class="modal-show add-users btn btn-success" title="Tambah User" id="btn-modal" style="float:left">
+                    Tambah User &nbsp<i class="fas fa-plus"></i>
                 </a>
                 <table id="table1" class="table table-bordered table-hover">
                     <thead>

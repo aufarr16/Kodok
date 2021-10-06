@@ -95,7 +95,7 @@
                             <a href="/manager/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
-                                    HOME
+                                    Home
                                     <i class="right fas fa-home-left"></i>
                                 </p>
                             </a>
@@ -135,7 +135,7 @@
                             <a href="/eksekutif/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
-                                    HOME
+                                    Home
                                     <i class="right fas fa-home-left"></i>
                                 </p>
                             </a>

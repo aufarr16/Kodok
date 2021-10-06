@@ -96,7 +96,7 @@
                             <a href="/admin/users" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    USERS
+                                    Users
                                     <i class="right fas fa-users-left"></i>
                                 </p>
                             </a>
@@ -105,7 +105,7 @@
                             <a href="/admin/products" class="nav-link">
                                 <i class="nav-icon fas fa-random"></i>
                                 <p>
-                                    PRODUCT
+                                    Product
                                     <i class="fas fa-random-left right"></i>
                                 </p>
                             </a>
@@ -114,7 +114,7 @@
                             <a href="/admin/mitra" class="nav-link">
                                 <i class="nav-icon fas fa-university"></i>
                                 <p>
-                                    MITRA
+                                    Mitra
                                     <i class="fas fa-university-left right"></i>
                                 </p>
                             </a>
@@ -123,7 +123,7 @@
                             <a href="/admin/projects" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
-                                    LIST PROJECT
+                                    List Project
                                     <i class="fas fa-clipboard-list-left right"></i>
                                 </p>
                             </a>
@@ -132,7 +132,7 @@
                             <a href="/admin/export" class="nav-link">
                                 <i class="nav-icon fas fa-download"></i>
                                 <p>
-                                    EXPORT DATABASE
+                                    Database
                                     <i class="fas fa-download-left right"></i>
                                 </p>
                             </a>

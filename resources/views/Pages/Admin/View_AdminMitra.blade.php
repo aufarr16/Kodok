@@ -11,8 +11,8 @@
         <div class="card card-primary card-outline">
 
             <div class="card-body">
-                <a href="{{ route('mitra.create') }}" type="button" class="modal-show add-mitra btn btn-success" title="Add New Mitra" id="btn-modal" style="float:left">
-                    Add Mitra &nbsp<i class="fas fa-plus"></i>
+                <a href="{{ route('mitra.create') }}" type="button" class="modal-show add-mitra btn btn-success" title="Tambah Mitra" id="btn-modal" style="float:left">
+                    Tambah Mitra &nbsp<i class="fas fa-plus"></i>
                 </a>
                 <table id="table1" class="table table-bordered table-hover">
                     <thead>

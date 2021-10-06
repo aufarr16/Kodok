@@ -23,7 +23,7 @@
                                 <th class="text-center">Nama Mitra</th>
                                 <th class="text-center">Nama Project</th>
                                 <th class="text-center">Tanggal Handover</th>
-                                <th class="text-center">Status</th>
+                                <th class="text-center" style="width: 175px">Status</th>
                                 <th class="text-center">Keterangan</th>
                                 <th class="text-center" style="width: 145px">Action</th>
                             </tr>
