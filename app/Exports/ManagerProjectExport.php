@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Events\BeforeExport;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
+class ManagerProjectExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
 {
 	use Exportable;
     /**
@@ -21,33 +21,29 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
     */
     public function query()
     {
-    	return Project::query();
+    	return DB::table('projects')
+    	->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, projects_stats.nama_pstat, projects.progress_sit, projects.progress_uat, date(projects.waktu_assign_project) as tanggal_assign'))
+    	->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
+    	->leftjoin('products', 'projects.id_product', '=', 'products.id')
+    	->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
+        ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
+    	->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+        ->where('id_ptype', '!=', 5)
+    	->orderBy('id', 'asc');
     }
 
     public function headings(): array{
     	return[
     		'#',
-    		'waktu_assign_project',
-    		'id_pketerangan',
-    		'id_pstat',
-    		'id_ptype',
-    		'id_product',
-    		'id_mitra',
-            'id_current_pic',
-            'id_original_pic',
-            'id_pic_product', 
-    		'id_pic_am',
-            'id_pic_pm',
-            'nama_project',
-            'progress_sit',
-            'progress_uat',
-            'status_handover',
-            'handover_counter',
-            'stats_temp',
-            'pketerangan_status',
-            'pketerangan_note',
-            'notes_project',
-            'bobot_project'
+    		'PIC',
+    		'Produk',
+    		'Project Type',
+    		'Mitra',
+    		'Nama Projek',
+    		'Status',
+            'Progress SIT (%)',
+            'Progress UAT (%)', 
+    		'Tanggal Assign'
     	];	
     }
 
@@ -58,7 +54,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
             },
 
     		AfterSheet::class => function(AfterSheet $event){
-    			$event->sheet->getStyle('A1:V1')->applyFromArray([
+    			$event->sheet->getStyle('A1:J1')->applyFromArray([
     				'font' => [
     					'bold' => true
     				],

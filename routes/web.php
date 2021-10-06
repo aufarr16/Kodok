@@ -35,7 +35,21 @@ Route::group(['middleware' => 'auth'], function(){
 
 	//Export
 	Route::get('/admin/export', 'Controller_AdminExportData@openPage');
+	Route::get('/admin/export/mitra', 'Controller_AdminExportData@exportMitra');
+	Route::get('/admin/export/product', 'Controller_AdminExportData@exportProduct');
+	Route::get('/admin/export/project', 'Controller_AdminExportData@exportProject');
+	Route::get('/admin/export/handover', 'Controller_AdminExportData@exportHandover');
+	Route::get('/admin/export/pketerangan', 'Controller_AdminExportData@exportPKeterangan');
+	Route::get('/admin/export/pstat', 'Controller_AdminExportData@exportPStatus');
+	Route::get('/admin/export/ptype', 'Controller_AdminExportData@exportPType');
+	Route::get('/admin/export/user', 'Controller_AdminExportData@exportUser');
+	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@exportULevel');
 
+	//List Project admin
+	Route::get('/admin/projects', 'Controller_AdminListProjects@openPage');
+	Route::get('/admin/projects/table', 'Controller_AdminListProjects@dataTable')->name('adminlistprojects.table');
+	Route::get('/admin/projects/detail/{id}', 'Controller_AdminListProjects@detail')->name('adminlistprojects.detail');
+	
 	// Mitra
 	Route::get('/admin/mitra', 'Controller_AdminMitra@openPage')->name('mitra.open');
 	Route::get('/admin/mitra/table', 'Controller_AdminMitra@dataTable')->name('mitra.table');
@@ -84,8 +98,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/historyhover', 'Controller_EngineerHistoryHandover@openPage');
 	Route::get('/engineer/historyhover/table', 'Controller_EngineerHistoryHandover@dataTable')->name('historyhover.table');
 
-	//List Project
-	Route::get('/engineer/listprojects', 'Controller_ManagerListProjects@openPage');
+	//List Project enginner
+	Route::get('/engineer/listprojects', 'Controller_EngineerListProjects@openPage');
+	Route::get('/engineer/listprojects/table', 'Controller_EngineerListProjects@dataTable')->name('engineerlistprojects.table');
+	Route::get('/engineer/listprojects/detail/{id}', 'Controller_EngineerListProjects@detail')->name('engineerlistprojects.detail');
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
@@ -132,7 +148,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/manager/projects/edit/{id}', 'Controller_ManagerListProjects@editProject')->name('projects.edit');
 	Route::put('/manager/projects/update/{id}', 'Controller_ManagerListProjects@updateProject')->name('projects.update');
 	Route::get('/manager/projects/delete/{id}', 'Controller_ManagerListProjects@deleteProject')->name('projects.delete');
-
 
 	// Search Doc
 	Route::get('/manager/searchdocs', 'Controller_ManagerSearchDocuments@openPage');

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{ url('assets/img/frog-solid.svg') }}">
+    <link rel="icon" type="image/png" href="{{ url('assets/img/frog.png') }}">
     <!-- <title>Engineer | Dashboard</title> -->
 
     <!-- Google Font: Source Sans Pro -->
@@ -91,6 +91,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+                         @if ($userLevel === 3)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -137,6 +138,85 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/upload" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>
+                                      Upload Document
+                                    <i class="fas fa-download-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+
+                        @elseif ($userLevel === 10)
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    &nbsp Project On Going
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/engineer/projects" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Your Project</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/engineer/handover" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Handover Project</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    &nbsp Project Done
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/engineer/history" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Your Project</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/engineer/historyhover" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Handover Project</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/upload" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>
+                                      Upload Document
+                                    <i class="fas fa-download-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/engineer/listprojects" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                      List Project
+                                    <i class="fas fa-clipboard-list-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -164,6 +244,7 @@
                     @yield('content')
                     @include('Layouts.Notif')
                     @include('Layouts.Modal')
+                    @include('Layouts.ModalList')
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->

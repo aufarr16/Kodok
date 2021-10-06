@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="{{ url('') }}/img/frog-solid.svg">
+  <link rel="icon" type="image/png" href="{{ url('assets/img/frog-solid.svg') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     | Login

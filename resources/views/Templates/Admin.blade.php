@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{ url('assets/img/frog-solid.svg') }}">
+    <link rel="icon" type="image/png" href="{{ url('assets/img/frog.png') }}">
     <!-- <title>Engineer | Dashboard</title> -->
 
     <!-- Google Font: Source Sans Pro -->
@@ -119,6 +119,24 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/projects" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    LIST PROJECT
+                                    <i class="fas fa-clipboard-list-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/export" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>
+                                    EXPORT DATABASE
+                                    <i class="fas fa-download-left right"></i>
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -145,6 +163,7 @@
                 <div class="container-fluid">
                     @yield('content')
                     @include('Layouts.Notif')
+                    @include('Layouts.ModalList')
                     @include('Layouts.Modal')
                 </div><!-- /.container-fluid -->
             </section>
@@ -218,6 +237,7 @@
     <script src="{{ url('assets/dist/js/script.js') }}"></script>
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ url('assets/dist/js/demo.js') }}"></script>
     @stack('scripts')
 
 </body>

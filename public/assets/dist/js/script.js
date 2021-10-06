@@ -95,6 +95,7 @@ function deleteMitra(id){
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -166,6 +167,7 @@ function deleteProduct(id){
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -237,6 +239,7 @@ function deleteUser(id){
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -308,6 +311,7 @@ function deleteUser(id){
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -379,7 +383,9 @@ function deleteProject(id){
 	  showCancelButton: true,
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
-	  confirmButtonText: 'Ya'
+	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
+
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -451,6 +457,7 @@ function donehandover(id) {
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({
@@ -525,6 +532,7 @@ function approveProject(id, title){
 	  	  confirmButtonColor: '#3085d6',
 	      cancelButtonColor: '#d33',
 		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak',
 			}).then((result)=>{
 				if(result.value){
 				$.ajaxSetup({
@@ -599,6 +607,7 @@ function declineProject(id, title){
 	  	  confirmButtonColor: '#3085d6',
 	      cancelButtonColor: '#d33',
 		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak',
 			}).then((result)=>{
 				if(result.value){
 					$.ajaxSetup({
@@ -673,6 +682,7 @@ function changeStatusProject(id){
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Ya',
+	  cancelButtonText: 'Tidak',
 	}).then((result)=>{
 		if(result.value){
 			$.ajaxSetup({

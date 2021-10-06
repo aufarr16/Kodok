@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Mitra;
-use App\Product;
-use App\Project;
-use App\Projects_Handover;
-use App\Projects_Keterangan;
-use App\Projects_Stat;
-use App\Projects_Type;
-use App\User;
-use App\Users_Level;
 use DataTables;
+use App\Exports\MitrasExport;
+use App\Exports\ProductsExport;
 use App\Exports\ProjectsExport;
+use App\Exports\ProjectsHandoversExport;
+use App\Exports\ProjectsKeterangansExport;
+use App\Exports\ProjectsStatusExport;
+use App\Exports\UserExport;
+use App\Exports\UsersLevelsExport;
+//use App\Exports\DocumentsExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -27,5 +26,45 @@ class Controller_AdminExportData extends Controller
         else{
             return redirect('/logout');
         }
+    }
+
+    // public function exportDocument(){
+    // 	return (new DocumentsExport)->download('[DB Kodok] documents');
+    // }
+
+    public function exportMitra(){
+    	return (new MitrasExport)->download('[DB Kodok] mitras.xlsx');
+    }
+
+    public function exportProduct(){
+    	return (new ProductsExport)->download('[DB Kodok] products.xlsx');
+    }
+
+    public function exportProject(){
+    	return (new ProjectsExport)->download('[DB Kodok] projects.xlsx');
+    }
+
+    public function exportHandover(){
+    	return (new ProjectsHandoversExport)->download('[DB Kodok] projects_handovers.xlsx');
+    }
+
+   	public function exportPKeterangan(){
+    	return (new ProjectsKeterangansExport)->download('[DB Kodok] projects_keterangans.xlsx');
+    }
+
+    public function exportPStatus(){
+    	return (new ProjectsStatusExport)->download('[DB Kodok] projects_stats.xlsx');
+    }
+
+    public function exportPType(){
+    	return (new ProjectsTypesExport)->download('[DB Kodok] projects_types.xlsx');
+    }
+
+    public function exportUser(){
+    	return (new UsersExport)->download('[DB Kodok] users.xlsx');
+    }
+
+    public function exportULevel(){
+    	return (new UsersLevelsExport)->download('[DB Kodok] users_levels.xlsx');
     }
 }

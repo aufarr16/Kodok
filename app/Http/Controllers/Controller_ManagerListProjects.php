@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use App\Project;
 use App\User;
-use DataTables;
-use App\Exports\ProjectsExport;
+use App\Export\ManagerProjectExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -22,8 +22,8 @@ class Controller_ManagerListProjects extends Controller
         }
     }
 
-    public function export(){                               //Export list project ke dalam excel
-        return (new ProjectsExport)->download('Data All Project.xlsx');
+    public function export(){
+        return (new ManagerProjectExport)->download('Data All Project.xslx');
     }
 
     public function detail($id){                     //buka detail projek
@@ -36,7 +36,7 @@ class Controller_ManagerListProjects extends Controller
         $picpm = $this->getPMPIC($id);               //ambil data pic pm 
         $pbn = $this->getPBN($id);                   //ambil data progress + bobot + notes
 
-        // dd($historypic);
+        // dd($project);
         
         return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }

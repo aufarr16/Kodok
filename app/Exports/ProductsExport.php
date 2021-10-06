@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Project;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -13,41 +13,23 @@ use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Events\BeforeExport;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
+class ProductsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEvents
 {
-	use Exportable;
+    use Exportable;
     /**
     * @return \Illuminate\Support\Collection
     */
     public function query()
     {
-    	return Project::query();
+        return Product::query();
     }
 
     public function headings(): array{
     	return[
     		'#',
-    		'waktu_assign_project',
-    		'id_pketerangan',
-    		'id_pstat',
-    		'id_ptype',
-    		'id_product',
-    		'id_mitra',
-            'id_current_pic',
-            'id_original_pic',
-            'id_pic_product', 
-    		'id_pic_am',
-            'id_pic_pm',
-            'nama_project',
-            'progress_sit',
-            'progress_uat',
-            'status_handover',
-            'handover_counter',
-            'stats_temp',
-            'pketerangan_status',
-            'pketerangan_note',
-            'notes_project',
-            'bobot_project'
+    		'nama_product',
+    		'added_by',
+    		'modified_by'
     	];	
     }
 
