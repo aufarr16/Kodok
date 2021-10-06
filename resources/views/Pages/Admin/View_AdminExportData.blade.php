@@ -46,7 +46,7 @@
           <!-- /.col -->
           <div class="col-md-4 col-sm-6 col-12">
             <div class="info-box">
-              <a href="/admin/export/product" class="btn btn-warning info-box-icon"><i class="fas fa-download"></i></a>
+              <a href="/admin/export/product" class="btn btn-warning info-box-icon"><i class="fas fa-download" style="color:  blue"></i></a>
               <div class="info-box-content">
                 <span class="info-box-text"><font size="4"><strong>Export Product</strong></font></span>
               </div>
