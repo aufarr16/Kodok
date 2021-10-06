@@ -45,6 +45,17 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/export/user', 'Controller_AdminExportData@exportUser');
 	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@exportULevel');
 
+	//Import
+	Route::get('/admin/import/mitra', 'Controller_AdminImportData@importMitra');
+	Route::get('/admin/import/product', 'Controller_AdminImportData@importProduct');
+	Route::get('/admin/import/project', 'Controller_AdminImportData@importProject');
+	Route::get('/admin/import/handover', 'Controller_AdminImportData@importHandover');
+	Route::get('/admin/import/pketerangan', 'Controller_AdminImportData@importPKeterangan');
+	Route::get('/admin/import/pstat', 'Controller_AdminImportData@importPStatus');
+	Route::get('/admin/import/ptype', 'Controller_AdminImportData@importPType');
+	Route::get('/admin/import/user', 'Controller_AdminImportData@importUser');
+	Route::get('/admin/import/ulevel', 'Controller_AdminImportData@importULevel');
+
 	//List Project admin
 	Route::get('/admin/projects', 'Controller_AdminListProjects@openPage');
 	Route::get('/admin/projects/table', 'Controller_AdminListProjects@dataTable')->name('adminlistprojects.table');

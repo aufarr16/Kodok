@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DataTables;
+//use App\Exports\DocumentsExport;
 use App\Exports\MitrasExport;
 use App\Exports\ProductsExport;
 use App\Exports\ProjectsExport;
@@ -11,7 +12,17 @@ use App\Exports\ProjectsKeterangansExport;
 use App\Exports\ProjectsStatusExport;
 use App\Exports\UserExport;
 use App\Exports\UsersLevelsExport;
-//use App\Exports\DocumentsExport;
+
+//use App\Imports\DocumentsExport;
+use App\Imports\MitrasImport;
+use App\Imports\ProductsImport;
+use App\Imports\ProjectsImport;
+use App\Imports\ProjectsHandoversImport;
+use App\Imports\ProjectsKeterangansImport;
+use App\Imports\ProjectsStatusImport;
+use App\Imports\UserImport;
+use App\Imports\UsersLevelsImport;
+
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -66,5 +77,14 @@ class Controller_AdminExportData extends Controller
 
     public function exportULevel(){
     	return (new UsersLevelsExport)->download('[DB Kodok] users_levels.xlsx');
+    }
+
+    public function importProject(Request $request){
+        $file = $request->file('file')->store('Imported Data');
+
+        $import = new ProjectsImport;
+        $import->import($file);
+
+        return back()->withStatus('Excel file imported successfully');
     }
 }
