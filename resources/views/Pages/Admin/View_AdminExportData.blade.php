@@ -135,15 +135,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/admin/import/project" method="post" enctype="multipart/form">
+              <form action="/admin/import/project" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                    <label for="file">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="file" class="custom-file-input" id="file">
+                        <label class="custom-file-label" for="file">Choose file</label>
                       </div>
                       <div class="input-group-append">
                         <button type="submit" class="btn btn-info">Submit</button>

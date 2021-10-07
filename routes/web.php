@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Import
 	Route::get('/admin/import/mitra', 'Controller_AdminImportData@importMitra');
 	Route::get('/admin/import/product', 'Controller_AdminImportData@importProduct');
-	Route::post('/admin/import/project', 'Controller_AdminExportData@importProject');
+	Route::post('/admin/import/project', 'Controller_AdminExportData@store');
 	Route::get('/admin/import/handover', 'Controller_AdminImportData@importHandover');
 	Route::get('/admin/import/pketerangan', 'Controller_AdminImportData@importPKeterangan');
 	Route::get('/admin/import/pstat', 'Controller_AdminImportData@importPStatus');

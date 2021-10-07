@@ -79,11 +79,12 @@ class Controller_AdminExportData extends Controller
     	return (new UsersLevelsExport)->download('[DB Kodok] users_levels.xlsx');
     }
 
-    public function importProject(Request $request){
+    public function store(Request $request){
         $file = $request->file('file')->store('Imported Data');
 
         $import = new ProjectsImport;
         $import->import($file);
+        dd($file);
 
         return back()->withStatus('Excel file imported successfully');
     }

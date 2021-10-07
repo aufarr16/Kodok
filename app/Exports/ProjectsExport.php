@@ -26,7 +26,7 @@ class ProjectsExport implements FromQuery, ShouldAutoSize, WithHeadings, WithEve
 
     public function headings(): array{
     	return[
-    		'#',
+    		'id',
     		'waktu_assign_project',
     		'id_pketerangan',
     		'id_pstat',

@@ -5,13 +5,14 @@ namespace App\Imports;
 use App\Project;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithValidation;
 
-class ProjectsImport implements ToModel, WithHeadingRow, SkipsOnError, WithValidation
+
+class ProjectsImport implements ToModel, WithHeadingRow, SkipsOnError
 {
-    use Importable, SkipsError;
+    use Importable, SkipsErrors;
     /**
     * @param array $row
     *
