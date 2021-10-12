@@ -9,7 +9,6 @@ use Maatwebsite\Excel\Concerns\SkipsErrors;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-
 class ProjectsImport implements ToModel, WithHeadingRow, SkipsOnError
 {
     use Importable, SkipsErrors;

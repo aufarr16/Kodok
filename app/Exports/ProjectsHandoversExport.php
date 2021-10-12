@@ -21,12 +21,12 @@ class ProjectsHandoversExport implements FromQuery, ShouldAutoSize, WithHeadings
     */
     public function query()
     {
-        Projects_Handover::query();
+        return Projects_Handover::query();
     }
 
     public function headings(): array{
     	return[
-    		'#',
+    		'id',
     		'id_user',
     		'id_project',
     		'waktu_assign_handover',
