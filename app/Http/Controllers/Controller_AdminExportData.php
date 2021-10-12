@@ -84,7 +84,6 @@ class Controller_AdminExportData extends Controller
 
         $import = new ProjectsImport;
         $import->import($file);
-        // dd($file);
 
         return back()->with('success','Project Berhasil di Imported');
     }
