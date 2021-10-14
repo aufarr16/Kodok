@@ -65,6 +65,10 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'upload-dest' => [
+            'driver' => 'local',
+            'root' => 'D:\Kerjaan\Web\Uploaded File',
+        ],
     ],
 
     /*

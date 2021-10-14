@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Controller_EngineerUploadDocument extends Controller
 {
@@ -20,6 +21,6 @@ class Controller_EngineerUploadDocument extends Controller
     }
 
     public function upload(){
-
+        dd(Storage::disk('upload-dest'));
     }
 }
