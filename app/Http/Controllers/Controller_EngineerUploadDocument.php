@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DataTables;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,13 @@ class Controller_EngineerUploadDocument extends Controller
         }
     }
 
-    public function upload(){
-        dd(Storage::disk('upload-dest'));
+    public function upload(Request $request){
+        // dd(Storage::disk('upload-dest'));
+        // dd($request->file('uploadedfile'));
+
+        $file = $request->file('uploadedfile');
+        Storage::putFile('upload-dest', $file);
+
+        return "File has been upload";
     }
 }
