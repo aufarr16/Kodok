@@ -12,6 +12,8 @@ class DocumentsTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $doc_type1 = Documents_Type::create([
+        	'nama_dtype' => 
+        ]);
     }
 }
