@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             //DocumentSeeder::class,
             DocumentsTypeSeeder::class,
             // MitraSeeder::class,
-            ProductSeeder::class,
+            //ProductSeeder::class,
             ProjectsKeteranganSeeder::class,
             ProjectsStatSeeder::class,
             ProjectsTypeSeeder::class,

@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         ]);
 
         $user2 = User::create([
-        	'id_ulevel' => 3,
+        	'id_ulevel' => 10,
         	'nama_user' => 'Dewi Fitria Arfiyanti',
         	'email_user' => 'dewi.fitria@artajasa.co.id',
         	'inisial_user' => 'DFA',
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         ]);
 
         $user3 = User::create([
-        	'id_ulevel' => 3,
+        	'id_ulevel' => 10,
         	'nama_user' => 'Edwar Gigih Wicaksono',
         	'email_user' => 'edwar.gigih@artajasa.co.id',
         	'inisial_user' => 'EGW',
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
         ]);
 
         $user4 = User::create([
-        	'id_ulevel' => 3,
+        	'id_ulevel' => 10,
         	'nama_user' => 'Ardi Setiawan',
         	'email_user' => 'ardi.setiawan@artajasa.co.id',
         	'inisial_user' => 'ARE',
@@ -69,7 +69,7 @@ class UserSeeder extends Seeder
         ]);
 
         $user7 = User::create([
-        	'id_ulevel' => 3,
+        	'id_ulevel' => 10,
         	'nama_user' => 'Yusak Krisnanda Sihotang',
         	'email_user' => 'yusak.krisnanda@artajasa.co.id',
         	'inisial_user' => 'YKS',

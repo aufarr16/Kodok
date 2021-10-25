@@ -69,7 +69,6 @@ class Controller_AdminUsers extends Controller
 			'id_ulevel' => $level->id,
 			'email_user' => $request->email_user,
 			'added_by' => $added_by,
-			'status_user' => 1
 		]);
 		
 		return redirect('/admin/users');

@@ -26,7 +26,7 @@ class Controller_EngineerUploadDocument extends Controller
         // dd($request->file('uploadedfile'));
 
         $project = Project::where('id', $id)->firstOrFail();
-        $filelocation = $project->location_project + '/Nodin Penugasan';
+        $filelocation = $project->dir_project + '/Nodin Penugasan';
 
         $file = $request->file('uploadedfile')->store($filelocation);
 
