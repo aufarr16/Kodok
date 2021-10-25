@@ -13,7 +13,57 @@ class DocumentsTypeSeeder extends Seeder
     public function run()
     {
         $doc_type1 = Documents_Type::create([
-        	'nama_dtype' => 
+        	'nama_dtype' => 'Nota Dinas Penugasan'
         ]);
+
+        $doc_type2 = Documents_Type::create([
+        	'nama_dtype' => 'MOM Kickoff Meeting'
+        ]);
+
+        $doc_type3 = Documents_Type::create([
+        	'nama_dtype' => 'Jadwal Pengujian'
+        ]);
+
+        $doc_type4 = Documents_Type::create([
+        	'nama_dtype' => 'BAKO'
+        ]);
+
+        $doc_type5 = Documents_Type::create([
+        	'nama_dtype' => 'Draft Eksepsi'
+        ]);
+
+        $doc_type6 = Documents_Type::create([
+        	'nama_dtype' => 'BAE'
+        ]);
+
+        $doc_type7 = Documents_Type::create([
+        	'nama_dtype' => 'BA Stress Test'
+        ]);
+
+        $doc_type8 = Documents_Type::create([
+        	'nama_dtype' => 'MOM Pra Migrasi'
+        ]);
+
+        $doc_type9 = Documents_Type::create([
+        	'nama_dtype' => 'Jadwal Migrasi'
+        ]);
+
+        $doc_type10 = Documents_Type::create([
+        	'nama_dtype' => 'BATO'
+        ]);
+
+        $doc_type11 = Documents_Type::create([
+        	'nama_dtype' => 'Laporan Harian Monitoring'
+        ]);
+
+        $doc_type12 = Documents_Type::create([
+        	'nama_dtype' => ''
+        ]);
+
+        $doc_type13 = Documents_Type::create([
+        	'nama_dtype' => ''
+        ]);
+
+        
     }
 }

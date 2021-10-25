@@ -15,7 +15,7 @@ class CreateForeignKeysForDocumentsTable extends Migration
     {
         Schema::table('documents', function (Blueprint $table) {
             $table->foreign('id_project')->references('id')->on('projects');
-            $table->foreign('id_DocType')->references('id')->on('documents_types');
+            $table->foreign('id_dtype')->references('id')->on('documents_types');
         });
     }
 
@@ -28,7 +28,7 @@ class CreateForeignKeysForDocumentsTable extends Migration
     {
         Schema::table('documents', function (Blueprint $table) {
             $table->dropForeign('documents_id_projects_foreign');
-            $table->dropForeign('documents_id_DocType_foreign');
+            $table->dropForeign('documents_id_dtype_foreign');
         });
     }
 }

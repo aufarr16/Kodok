@@ -68,7 +68,8 @@ class Controller_AdminUsers extends Controller
 			'inisial_user' => $request->inisial_user,
 			'id_ulevel' => $level->id,
 			'email_user' => $request->email_user,
-			'added_by' => $added_by
+			'added_by' => $added_by,
+			'status_user' => 1
 		]);
 		
 		return redirect('/admin/users');
@@ -76,7 +77,9 @@ class Controller_AdminUsers extends Controller
 
     public function destroy($id){						//delete data
     	if(auth()->id() != $id){						//pembatas agar user gak bisa ngapus data sendiri
-    		User::where('id', $id)->delete();		    //delete data yg dipilih
+    		// User::where('id', $id)->delete();		    //delete data yg dipilih
+    		$user = User::where('id', $id)->firstOrFail();
+    		$user->status_user = 0;
     	}
 
     	$userData['data'] = User::orderby("id", "asc")->get();	//ngambil data yg lain setelah delete data
@@ -127,7 +130,7 @@ class Controller_AdminUsers extends Controller
     }
 
 	public function dataTable(){					  //generate table di halaman Admin - User
-        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id");//ngambil data buat nanti ditampilin di table halaman Admin - User
+        $model = DB::select("select a.id, a.nama_user, a.inisial_user, b.nama_ulevel, a.added_by, a.modified_by from users as a, users_levels as b where a.id_ulevel = b.id and a.status_user = 1");//ngambil data buat nanti ditampilin di table halaman Admin - User
         return DataTables::of($model)				  //membuat datatable berdasarkan data yg udh diambil
             ->addColumn('action', function($model){	  //nambahin yg gak ada di query, disini yg ditambah action
                 return view('Layouts.ActionUser',[

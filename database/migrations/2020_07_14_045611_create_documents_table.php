@@ -16,10 +16,11 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_project');
-            $table->unsignedBigInteger('id_DocType');
-            $table->string('nama_document', 200);
-            $table->boolean('softcopy_status');
-            $table->boolean('hardcopy_status');
+            $table->unsignedBigInteger('id_dtype');
+            $table->string('nama_document', 240);
+            $table->string('doc_location', 200);
+            $table->boolean('softcopy_status')->default(0);
+            $table->boolean('hardcopy_status')->default(0);
         });
     }
 
