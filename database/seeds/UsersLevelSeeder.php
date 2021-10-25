@@ -49,7 +49,7 @@ class UsersLevelSeeder extends Seeder
         ]);
 
         $poh = Users_Level::create([
-            'nama_ulevel' => 'PPejabat Operasional Harian (POJ)'
+            'nama_ulevel' => 'Pejabat Operasional Harian (POH)'
         ]);
     }
 }
