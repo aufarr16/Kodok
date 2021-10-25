@@ -36,7 +36,7 @@ class CreateProjectsTable extends Migration
             $table->string('pketerangan_note')->nullable();
             $table->string('notes_project', 301)->nullable();
             $table->integer('bobot_project')->nullable();
-            $table->string('proj_location');
+            $table->string('dir_project', 200);
         });
     }
 

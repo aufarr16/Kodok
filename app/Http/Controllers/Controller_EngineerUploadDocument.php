@@ -21,9 +21,12 @@ class Controller_EngineerUploadDocument extends Controller
         }
     }
 
-    public function upload(Request $request, $id){
+    public function uploadNodinPenugasan(Request $request, $id){
         // dd(Storage::disk('upload-dest'));
         // dd($request->file('uploadedfile'));
+
+        $project = Project::where('id', $id)->firstOrFail();
+        $filelocation = $project->location_project + '/Nodin Penugasan';
 
         $file = $request->file('uploadedfile')->store($filelocation);
 

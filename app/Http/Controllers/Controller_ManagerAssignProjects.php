@@ -42,13 +42,16 @@ class Controller_ManagerAssignProjects extends Controller
                 'nama_project.max' => 'Nama project max 201 kata',
         ]);
 
+        $project_dir = $this->getProjectDirectory($request->id_product, $request->id_mitra, $request->id_user, $request->nama_project);
+
         $newproject = Project::create([                                 //bikin data project baru    
             'id_current_pic' => $request->id_user,
             'id_original_pic' => $request->id_user,
             'id_product' => $request->id_product,
             'id_ptype' => $request->id_ptype,
             'id_mitra' => $request->id_mitra,
-            'nama_project' => $request->nama_project
+            'nama_project' => $request->nama_project,
+            'directory_project' => $project_dir
         ]);
 
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
@@ -114,7 +117,7 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function getUser(){                                      //ngambil data user engineer dan adminxengineer
-        return User::select(DB::raw('*'))->whereIn('id_ulevel', [3, 5])->get();
+        return User::select(DB::raw('*'))->whereIn('id_ulevel', [3, 5, 10])->get();
     }
 
     public function autoDoneLastHandover($id){
@@ -126,5 +129,25 @@ class Controller_ManagerAssignProjects extends Controller
 
     public function getProjectById($id){                                        //ngamabil data projek berdasarkan idnya
         return Project::where('id', $id)->firstOrFail();
+    }
+
+    public function getProjectDirectory($product, $mitra, $user, $nama_project){
+        $year = DB::select("select year(current_timestamp)")->toString();
+        $nama_product = DB::table('products')
+                        ->select(DB::raw('products.nama_product'))
+                        ->where('id', $product)
+                        ->first()
+                        ->toString();
+
+        $inisial_user = DB::table('users')
+                        ->select(DB::raw('users,inisial_user'))
+                        ->where('id', $user)
+                        ->first()
+                        ->toString();
+
+
+        $project_dir = 'Documents/' + $year + '/' + $nama_product + '/' + '[' + $inisial_user + '] ' + $nama_project; dd($project_dir);
+
+        return $project_dir; 
     }
 }
