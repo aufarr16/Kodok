@@ -21,7 +21,7 @@ class Controller_EngineerUploadDocument extends Controller
         }
     }
 
-    public function upload(Request $request){
+    public function upload(Request $request, $id){
         // dd(Storage::disk('upload-dest'));
         // dd($request->file('uploadedfile'));
 

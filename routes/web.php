@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/upload', "Controller_EngineerUploadDoc@upload")->name('engineer.upload')
-Route::get('/upload', "Controller_EngineerUploadDocument@openPage");
-Route::post('/upload', "Controller_EngineerUploadDocument@upload")->name('upload.file');
 
 ##ROUTING PAGE
 ##LOGIN
@@ -82,6 +80,21 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Search Doc
 	Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
+
+	//Upload Document
+	Route::get('/upload', "Controller_EngineerUploadDocument@openPage");
+	Route::post('/upload/nodinp/{id}', "Controller_EngineerUploadDocument@uploadNodinPenugasan")->name('upload.nodinp');
+	Route::post('/upload/mom/{id}', "Controller_EngineerUploadDocument@uploadMOM")->name('upload.mom');
+	Route::post('/upload/jadwal/{id}', "Controller_EngineerUploadDocument@uploadJadwalPengujian")->name('upload.jadwal');
+	Route::post('/upload/laphar/{id}', "Controller_EngineerUploadDocument@uploadLaporanHarian")->name('upload.laphar');
+	Route::post('/upload/ba/{id}', "Controller_EngineerUploadDocument@uploadBA")->name('upload.ba');
+	Route::post('/upload/fpengujian/{id}', "Controller_EngineerUploadDocument@uploadFormPengujian")->name('upload.fpengujian');
+	Route::post('/upload/lain/{id}', "Controller_EngineerUploadDocument@uploadLainnya")->name('upload.lain');
+	Route::post('/upload/memdin/{id}', "Controller_EngineerUploadDocument@uploadMemoDinas")->name('upload.lmemdin');
+	Route::post('/upload/nodin/{id}', "Controller_EngineerUploadDocument@uploadNodin")->name('upload.nodin');
+	Route::post('/upload/chat/{id}', "Controller_EngineerUploadDocument@uploadChat")->name('upload.chat');
+	Route::post('/upload/log/{id}', "Controller_EngineerUploadDocument@uploadLog")->name('upload.log');
+	Route::post('/upload/report/{id}', "Controller_EngineerUploadDocument@uploadReport")->name('upload.report');
 
 	// User
 	Route::get('/admin/users', 'Controller_AdminUsers@openPage');
