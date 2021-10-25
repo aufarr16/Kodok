@@ -25,7 +25,6 @@ class Controller_EngineerUploadDocument extends Controller
         // dd(Storage::disk('upload-dest'));
         // dd($request->file('uploadedfile'));
 
-        
         $file = $request->file('uploadedfile')->store($filelocation);
 
         return "File has been upload";

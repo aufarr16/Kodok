@@ -79,5 +79,30 @@ class DocumentsTypeSeeder extends Seeder
         $doc_type17 = Documents_Type::create([
         	'nama_dtype' => 'BASTK'
         ]);
+
+        $doc_type18 = Documents_Type::create([
+        	'nama_dtype' => 'Checklist Pengujian'
+        ]);
+
+        $doc_type19 = Documents_Type::create([
+        	'nama_dtype' => 'Dokumen Lain - Lain'
+        ]);
+
+        $doc_type20 = Documents_Type::create([
+        	'nama_dtype' => 'Laporan Harian Pengujian'
+        ]);
+
+        $doc_type21 = Documents_Type::create([
+        	'nama_dtype' => 'Testscript SIT'
+        ]);
+
+        $doc_type22 = Documents_Type::create([
+        	'nama_dtype' => 'Testscript UAT'
+        ]);
+        
+        $doc_type23 = Documents_Type::create([
+        	'nama_dtype' => 'Testscript Regresi'
+        ]);
+        
     }
 }
