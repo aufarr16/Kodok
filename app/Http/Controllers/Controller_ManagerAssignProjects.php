@@ -52,7 +52,7 @@ class Controller_ManagerAssignProjects extends Controller
             'id_ptype' => $request->id_ptype,
             'id_mitra' => $request->id_mitra,
             'nama_project' => $request->nama_project,
-            'directory_project' => $project_dir
+            'direktori_project' => $project_dir
         ]);
 
     	return redirect('/manager/assign')->with('success','Project berhasil di assign');
@@ -146,7 +146,7 @@ class Controller_ManagerAssignProjects extends Controller
                         ->get()
                         ->implode('inisial_user');
 
-        $project_dir = 'Documents/' . $year . '/' . $nama_product . '/' . '[' . $inisial_user . '] ' . $nama_project; dd($project_dir);
+        $project_dir = 'Documents/' . $year . '/' . $nama_product . '/' . '[' . $inisial_user . '] ' . $nama_project;
 
         return $project_dir; 
     }

@@ -15,7 +15,7 @@ class Project extends Model
     	'progress_uat' => 0,
     ];
 
-    protected $fillable = ['id_product', 'id_ptype', 'id_mitra', 'nama_project', 'id_current_pic', 'id_original_pic', 'id_pic_product', 'id_pic_am', 'id_pic_pm'];
+    protected $fillable = ['id_product', 'id_ptype', 'id_mitra', 'nama_project', 'id_current_pic', 'id_original_pic', 'id_pic_product', 'id_pic_am', 'id_pic_pm', 'direktori_project'];
 
     public $timestamps = false;
 }
