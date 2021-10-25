@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use App\Projects_Handover;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -132,21 +133,20 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function getProjectDirectory($product, $mitra, $user, $nama_project){
-        $year = DB::select("select year(current_timestamp)")->toString();
+        $year = strval(Carbon::now()->format('Y'));
         $nama_product = DB::table('products')
-                        ->select(DB::raw('products.nama_product'))
-                        ->where('id', $product)
-                        ->first()
-                        ->toString();
+                  ->select(DB::raw('products.nama_product'))
+                  ->where('id', $product)
+                  ->get()
+                  ->implode('nama_product'); 
 
         $inisial_user = DB::table('users')
-                        ->select(DB::raw('users,inisial_user'))
+                        ->select(DB::raw('users.inisial_user'))
                         ->where('id', $user)
-                        ->first()
-                        ->toString();
+                        ->get()
+                        ->implode('inisial_user');
 
-
-        $project_dir = 'Documents/' + $year + '/' + $nama_product + '/' + '[' + $inisial_user + '] ' + $nama_project; dd($project_dir);
+        $project_dir = 'Documents/' . $year . '/' . $nama_product . '/' . '[' . $inisial_user . '] ' . $nama_project; dd($project_dir);
 
         return $project_dir; 
     }
