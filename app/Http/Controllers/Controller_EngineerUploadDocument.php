@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use DataTables;
+use App\Document;
+use App\Project;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -65,7 +67,7 @@ class Controller_EngineerUploadDocument extends Controller
 
         $upload = $file->file('uploadedfile')->store($filelocation);
         // $filename = 
-        // $filelocation = $filelocation . $filename                     //update file location, tamabah nama filenya sekalian
+        // $filelocation = $filelocation . $filename;                     //update file location, tamabah nama filenya sekalian
 
         $newdocument = Document::create([
             'id_project' => $project->id,
@@ -79,6 +81,50 @@ class Controller_EngineerUploadDocument extends Controller
 
     public function uploadNodinPenugasan(Request $request, $id){
         $upload = $this->upload($request, 1);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 2);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 3);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 4);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 5);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 6);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 7);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 8);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 9);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 10);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 11);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 12);
     }
 
     public function getProjectByID($id){
