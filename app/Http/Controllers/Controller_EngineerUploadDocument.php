@@ -21,15 +21,66 @@ class Controller_EngineerUploadDocument extends Controller
         }
     }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        // dd(Storage::disk('upload-dest'));
-        // dd($request->file('uploadedfile'));
+    public function upload($file, $doctype){
+        $project = $this->getProjectByID($id);
+        
+        switch($doctype)
+            case '1':
+                $filelocation = $project->direktori_project . '/1. Nodin dari Div Terkait';
+                @break
+            case '2':
+                $filelocation = $project->direktori_project . '/2. Risalah Rapat dan Daftar Hadir';
+                @break
+            case '3':
+                $filelocation = $project->direktori_project . '/3. Jadwal Pengujian';
+                @break
+            case '4':
+                $filelocation = $project->direktori_project . '/4. Laporan Harian';
+                @break
+            case '5':
+                $filelocation = $project->direktori_project . '/5. Berota Acara (BA)';
+                @break
+            case '6':
+                $filelocation = $project->direktori_project . '/6. Form Pengujian';
+                @break
+            case '7':
+                $filelocation = $project->direktori_project . '/7. Dokumen Lainnya';
+                @break
+            case '8':
+                $filelocation = $project->direktori_project . '/8. Memo Dinas dari SDTL';
+                @break
+            case '9':
+                $filelocation = $project->direktori_project . '/9. Nodin dari ITO1';
+                @break
+            case '10':
+                $filelocation = $project->direktori_project . '/chat';
+                @break
+            case '11':
+                $filelocation = $project->direktori_project . '/log';
+                @break
+            case '12':
+                $filelocation = $project->direktori_project . '/report';
+                @break
 
-        $project = Project::where('id', $id)->firstOrFail();
-        $filelocation = $project->direktori_project . '/Nodin Penugasan';
+        $upload = $file->file('uploadedfile')->store($filelocation);
+        // $filename = 
+        // $filelocation =                          //update file location, tamabah nama filenya sekalian
 
-        $file = $request->file('uploadedfile')->store($filelocation);
+        $newdocument = Document::create([
+            'id_project' => $project->id,
+            'id_dtype' => $doctype,
+            'nama_document' => $filename,
+            'direktori_document' => $filelocation
+        ]);
 
         return "File has been upload";
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 1);
+    }
+
+    public function getProjectByID($id){
+        return Project::where('id', $id)->firstOrFail();
     }
 }
