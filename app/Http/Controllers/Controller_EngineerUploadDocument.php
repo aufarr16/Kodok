@@ -24,7 +24,7 @@ class Controller_EngineerUploadDocument extends Controller
     public function upload($file, $doctype){
         $project = $this->getProjectByID($id);
         
-        switch($doctype)
+        switch($doctype){
             case '1':
                 $filelocation = $project->direktori_project . '/1. Nodin dari Div Terkait';
                 @break
@@ -61,10 +61,11 @@ class Controller_EngineerUploadDocument extends Controller
             case '12':
                 $filelocation = $project->direktori_project . '/report';
                 @break
+        }
 
         $upload = $file->file('uploadedfile')->store($filelocation);
         // $filename = 
-        // $filelocation =                          //update file location, tamabah nama filenya sekalian
+        // $filelocation = $filelocation . $filename                     //update file location, tamabah nama filenya sekalian
 
         $newdocument = Document::create([
             'id_project' => $project->id,
