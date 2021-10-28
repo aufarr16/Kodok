@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Projects_Status;
+use App\Projects_Stat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -21,7 +21,7 @@ class ProjectsStatusExport implements FromQuery, ShouldAutoSize, WithHeadings, W
     */
     public function query()
     {
-        return Projects_Status::query();
+        return Projects_Stat::query();
     }
 
     public function headings(): array{
