@@ -55,11 +55,12 @@
                 </li>
             </ul>
             <!-- Right navbar links -->
+ 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item d-none d-sm-inline-block">
                     <a class="nav-link">Welcome, {{ auth()->user()->nama_user }} &nbsp</a>
                 </li>
-                <li class="nav-item">
+<!--                 <li class="nav-item">
                     <a class="nav-link" href="/logout" role="button" title="Logout">
                       <i class="fas fa-power-off"></i>
                     </a>
@@ -70,7 +71,30 @@
                       <i class="fas fa-share"></i>
                     </a>
                 </li>
-                @endif
+                @endif -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                      <i class="fas fa-th-large"></i>
+                      
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                      <span class="dropdown-item dropdown-header">Silahkan Pilih</span>
+                      <div class="dropdown-divider"></div>
+                      <a href="/logout" class="dropdown-item">
+                        <i class="fas fa-power-off"></i> Logout
+                      </a>
+                      @if ($userLevel === 5)
+                      <div class="dropdown-divider"></div>
+                      <a href="/login/choose" class="dropdown-item">
+                        <i class="fas fa-share"></i> Switch Role
+                      </a>
+                      @endif
+                      <div class="dropdown-divider"></div>
+                      <a href="http://10.14.36.29/simantaps/public/" class="dropdown-item">
+                        <i class="fas fa-file mr-2"></i> Switch SiMantaps
+                      </a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
