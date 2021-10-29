@@ -25,6 +25,8 @@ class Controller_EngineerUploadDocument extends Controller
 
     public function upload($file, $doctype){
         $project = $this->getProjectByID($id);
+        $user = auth()->user()->id;
+        // $filename = ;
         
         switch($doctype){
             case '1':
@@ -66,14 +68,14 @@ class Controller_EngineerUploadDocument extends Controller
         }
 
         $upload = $file->file('uploadedfile')->store($filelocation);
-        // $filename = 
         // $filelocation = $filelocation . $filename;                     //update file location, tamabah nama filenya sekalian
 
         $newdocument = Document::create([
             'id_project' => $project->id,
             'id_dtype' => $doctype,
             'nama_document' => $filename,
-            'direktori_document' => $filelocation
+            'direktori_document' => $filelocation,
+            'uploaded_by' => $user
         ]);
 
         return "File has been upload";
