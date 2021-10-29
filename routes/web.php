@@ -90,11 +90,12 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/upload/ba/{id}', "Controller_EngineerUploadDocument@uploadBA")->name('upload.ba');
 	Route::post('/upload/fpengujian/{id}', "Controller_EngineerUploadDocument@uploadFormPengujian")->name('upload.fpengujian');
 	Route::post('/upload/lain/{id}', "Controller_EngineerUploadDocument@uploadLainnya")->name('upload.lain');
-	Route::post('/upload/memdin/{id}', "Controller_EngineerUploadDocument@uploadMemoDinas")->name('upload.lmemdin');
+	Route::post('/upload/memdin/{id}', "Controller_EngineerUploadDocument@uploadMemoDinas")->name('upload.memdin');
 	Route::post('/upload/nodin/{id}', "Controller_EngineerUploadDocument@uploadNodin")->name('upload.nodin');
 	Route::post('/upload/chat/{id}', "Controller_EngineerUploadDocument@uploadChat")->name('upload.chat');
 	Route::post('/upload/log/{id}', "Controller_EngineerUploadDocument@uploadLog")->name('upload.log');
 	Route::post('/upload/report/{id}', "Controller_EngineerUploadDocument@uploadReport")->name('upload.report');
+	Route::post('/upload/checklist/{id}', "Controller_EngineerUploadDocument@uploadChecklist")->name('upload.checklist');
 
 	// User
 	Route::get('/admin/users', 'Controller_AdminUsers@openPage');

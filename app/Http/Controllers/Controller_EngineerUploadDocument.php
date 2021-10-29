@@ -31,40 +31,42 @@ class Controller_EngineerUploadDocument extends Controller
         switch($doctype){
             case '1':
                 $filelocation = $project->direktori_project . '/1. Nodin dari Div Terkait';
-                @break
+                break;
             case '2':
                 $filelocation = $project->direktori_project . '/2. Risalah Rapat dan Daftar Hadir';
-                @break
+                break;
             case '3':
                 $filelocation = $project->direktori_project . '/3. Jadwal Pengujian';
-                @break
+                break;
             case '4':
                 $filelocation = $project->direktori_project . '/4. Laporan Harian';
-                @break
+                break;
             case '5':
                 $filelocation = $project->direktori_project . '/5. Berota Acara (BA)';
-                @break
+                break;
             case '6':
                 $filelocation = $project->direktori_project . '/6. Form Pengujian';
-                @break
+                break;
             case '7':
                 $filelocation = $project->direktori_project . '/7. Dokumen Lainnya';
-                @break
+                break;
             case '8':
                 $filelocation = $project->direktori_project . '/8. Memo Dinas dari SDTL';
-                @break
+                break;
             case '9':
                 $filelocation = $project->direktori_project . '/9. Nodin dari ITO1';
-                @break
+                break;
             case '10':
                 $filelocation = $project->direktori_project . '/chat';
-                @break
+                break;
             case '11':
                 $filelocation = $project->direktori_project . '/log';
-                @break
+                break;
             case '12':
                 $filelocation = $project->direktori_project . '/report';
-                @break
+                break;
+            default:
+                break;
         }
 
         $upload = $file->file('uploadedfile')->store($filelocation);
@@ -78,7 +80,7 @@ class Controller_EngineerUploadDocument extends Controller
             'uploaded_by' => $user
         ]);
 
-        return "File has been upload";
+        // return "File has been upload";
     }
 
     public function uploadNodinPenugasan(Request $request, $id){
@@ -127,6 +129,10 @@ class Controller_EngineerUploadDocument extends Controller
 
     public function uploadNodinPenugasan(Request $request, $id){
         $upload = $this->upload($request, 12);
+    }
+
+    public function uploadNodinPenugasan(Request $request, $id){
+        $upload = $this->upload($request, 99);
     }
 
     public function getProjectByID($id){
