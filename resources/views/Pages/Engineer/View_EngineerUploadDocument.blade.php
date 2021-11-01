@@ -113,7 +113,7 @@
 	</div>
 
 	<!-- Jadwal Pengujian -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-info collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Jadwal Pengujian</h3>
 
@@ -166,7 +166,7 @@
 	</div>
 
 		<!-- Laporan Harian -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-danger collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Laporan Harian</h3>
 
@@ -219,7 +219,7 @@
 	</div>
 
 			<!-- Berita Acara (BA) -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-warning collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Berita Acara (BA)</h3>
 
@@ -272,7 +272,7 @@
 	</div>
 
 				<!-- Form Pengujian -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-success collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Form Pengujian</h3>
 
@@ -378,7 +378,7 @@
 	</div>
 
 		<!-- Memo Dinas dari SDTL -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-info collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Memo Dinas dari SDTL</h3>
 
@@ -431,7 +431,7 @@
 	</div>
 
 			<!-- Nodin dari ITO1 -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-danger collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">Nodin dari ITO1</h3>
 
@@ -484,7 +484,7 @@
 	</div>
 
 				<!-- chat -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-warning collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">chat</h3>
 
@@ -537,7 +537,7 @@
 	</div>
 
 	<!-- log -->
-	<div class="card card-outline card-primary collapsed-card">
+	<div class="card card-outline card-success collapsed-card">
   		<div class="card-header">
     	<h3 class="card-title">log</h3>
 
