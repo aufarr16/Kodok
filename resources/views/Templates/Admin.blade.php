@@ -91,7 +91,7 @@
                       @endif
                       <div class="dropdown-divider"></div>
                       <a href="http://10.14.36.29/simantaps/public/" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> Switch SiMantaps
+                        <i class="fas fa-file mr-2"></i> Switch to SiMantaps
                       </a>
                     </div>
                 </li>
