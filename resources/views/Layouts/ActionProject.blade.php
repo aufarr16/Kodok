@@ -3,4 +3,4 @@
 
 <button href="{{ $url_pic }}" type="button" class="modal-show btn btn-danger btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah PIC" data-target="#modal"><i class="fas fa-users"></i></button>
 <button href="{{ $url_progress }}" type="button" class="modal-show btn btn-warning btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah Progress" data-target="#modal"><i class="fas fa-edit"></i></button>
-<button href="{{ $url_upload }}" type="button" class="btn btn-info" title="Upload Document" ><i class="fas fa-edit"></i></button>
+<button href="{{ $url_upload }}" type="button" class="btn btn-info" title="Upload Document" ><i class="fas fa-download"></i></button>
