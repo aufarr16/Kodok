@@ -162,7 +162,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="/upload" class="nav-link">
                                 <i class="nav-icon fas fa-download"></i>
                                 <p>
@@ -170,7 +170,7 @@
                                     <i class="fas fa-download-left right"></i>
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
 
                         @elseif ($userLevel === 10)
                         <li class="nav-item">
