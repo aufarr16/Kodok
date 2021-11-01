@@ -161,7 +161,8 @@ class Controller_EngineerYourProjects extends Controller
                 return view('Layouts.ActionProject',[                           //menggunakan layout di file ActionProject
                     'project'=> $project,           
                     'url_pic' => route('pic.edit', $project->id),               //melempar link untuk tombol edit pic beserta id projek yg mau diubah
-                    'url_progress' => route('progress.edit', $project->id)      //melempar link untuk tombol edit progress beserta id projek yg mau diubah
+                    'url_progress' => route('progress.edit', $project->id),      //melempar link untuk tombol edit progress beserta id projek yg mau diubah
+                    'url_upload' => route('upload.open', $project->id)
                 ]);
             })
             ->addIndexColumn()

@@ -82,7 +82,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 
 	//Upload Document
-	Route::get('/upload', "Controller_EngineerUploadDocument@openPage");
+	Route::get('/upload', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
 	Route::post('/upload/nodinp/{id}', "Controller_EngineerUploadDocument@uploadNodinPenugasan")->name('upload.nodinp');
 	Route::post('/upload/mom/{id}', "Controller_EngineerUploadDocument@uploadMOM")->name('upload.mom');
 	Route::post('/upload/jadwal/{id}', "Controller_EngineerUploadDocument@uploadJadwalPengujian")->name('upload.jadwal');

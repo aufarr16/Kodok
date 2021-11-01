@@ -42,7 +42,7 @@ class Controller_EngineerUploadDocument extends Controller
                 $filelocation = $project->direktori_project . '/4. Laporan Harian';
                 break;
             case '5':
-                $filelocation = $project->direktori_project . '/5. Berota Acara (BA)';
+                $filelocation = $project->direktori_project . '/5. Berita Acara (BA)';
                 break;
             case '6':
                 $filelocation = $project->direktori_project . '/6. Form Pengujian';
@@ -87,53 +87,53 @@ class Controller_EngineerUploadDocument extends Controller
         $upload = $this->upload($request, 1);
     }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 2);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 2);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 3);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 3);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 4);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 4);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 5);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 5);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 6);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 6);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 7);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 7);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 8);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 8);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 9);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 9);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 10);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 10);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 11);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 11);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 12);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 12);
+    // }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 99);
-    }
+    // public function uploadNodinPenugasan(Request $request, $id){
+    //     $upload = $this->upload($request, 99);
+    // }
 
     public function getProjectByID($id){
         return Project::where('id', $id)->firstOrFail();
