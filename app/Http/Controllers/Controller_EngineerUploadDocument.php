@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Controller_EngineerUploadDocument extends Controller
 {
-	public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
+	public function openPage(){         //buka halaman Engineer - Upload Document
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
@@ -23,12 +23,12 @@ class Controller_EngineerUploadDocument extends Controller
         }
     }
 
-    public function upload($file, $doctype){
-        $project = $this->getProjectByID($id);
+    public function upload($file, $pid, $doccategory, $doctype){
+        $project = $this->getProjectByID($pid);
         $user = auth()->user()->id;
-        // $filename = ;
+        $filename = $file->getClientOriginalName();
         
-        switch($doctype){
+        switch($doccategory){
             case '1':
                 $filelocation = $project->direktori_project . '/1. Nodin dari Div Terkait';
                 break;
@@ -69,22 +69,23 @@ class Controller_EngineerUploadDocument extends Controller
                 break;
         }
 
-        $upload = $file->file('uploadedfile')->store($filelocation);
-        // $filelocation = $filelocation . $filename;                     //update file location, tamabah nama filenya sekalian
+        $upload = $file->storeAs($filelocation, $filename);
+        $filelocation = $filelocation . $filename;                     //update file location, tamabah nama filenya 
 
         $newdocument = Document::create([
-            'id_project' => $project->id,
+            'id_project' => $pid,
             'id_dtype' => $doctype,
             'nama_document' => $filename,
             'direktori_document' => $filelocation,
             'uploaded_by' => $user
         ]);
 
-        // return "File has been upload";
+        return "File has been upload";
     }
 
-    public function uploadNodinPenugasan(Request $request, $id){
-        $upload = $this->upload($request, 1);
+    public function uploadNodinPenugasan(Request $request){
+        dd($request);
+        return $this->upload($request->file('uploadedfile'), $id, 1);
     }
 
     // public function uploadNodinPenugasan(Request $request, $id){

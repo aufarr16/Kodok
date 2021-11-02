@@ -98,11 +98,6 @@
 
 </div>
 
-
-
-
-
-
 <div class="col-md-12">
 	<div class="card card-outline card-primary collapsed-card">
   		<div class="card-header">
@@ -117,7 +112,7 @@
 	</div>
   		<!-- /.card-header -->
 	<div class="card-body">
-	  	<form action="#" method="POST" enctype="multipart/form-data">
+	  	<form action="{{route('upload.nodinp')}}" method="POST" enctype="multipart/form-data">
 	    @csrf
 	    <div class="card-body">
 	      <div class="form-group">

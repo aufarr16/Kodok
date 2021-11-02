@@ -83,8 +83,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	//Upload Document
 	Route::get('/upload/{id}', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
-	Route::post('/upload/nodinp/{id}', "Controller_EngineerUploadDocument@uploadNodinPenugasan")->name('upload.nodinp');
-	Route::post('/upload/mom/{id}', "Controller_EngineerUploadDocument@uploadMOM")->name('upload.mom');
+	Route::post('/upload/nodinp/{id}/{doccat}/{doctype}', "Controller_EngineerUploadDocument@uploadNodinPenugasan")->name('upload.nodinp');
+	Route::post('/upload/mom/{id}/{doccat}/{doctype}', "Controller_EngineerUploadDocument@uploadMOM")->name('upload.mom');
 	Route::post('/upload/jadwal/{id}', "Controller_EngineerUploadDocument@uploadJadwalPengujian")->name('upload.jadwal');
 	Route::post('/upload/laphar/{id}', "Controller_EngineerUploadDocument@uploadLaporanHarian")->name('upload.laphar');
 	Route::post('/upload/ba/{id}', "Controller_EngineerUploadDocument@uploadBA")->name('upload.ba');
