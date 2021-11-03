@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateForeignKeysForUsersTable extends Migration
+class CreateForeignKeysForDocumentsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateForeignKeysForUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('id_ulevel')->references('id')->on('users_levels');
+        Schema::table('documents_types', function (Blueprint $table) {
+            $table->foreign('id_dcategory')->references('id')->on('documents_categories');        
         });
     }
 
@@ -25,8 +25,8 @@ class CreateForeignKeysForUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_id_ulevels_foreign');
+        Schema::table('documents_types', function (Blueprint $table) {
+            $table->dropForeign('documents_types_id_dcategory_foreign');
         });
     }
 }

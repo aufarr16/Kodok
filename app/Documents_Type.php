@@ -8,7 +8,7 @@ class Documents_Type extends Model
 {
 	protected $table = 'documents_types';
 
-    protected $fillable = ['nama_dtype'];
+    protected $fillable = ['id_dcategory', 'nama_dtype', 'sub_folder'];
 
     public $timestamps = false;
 }
