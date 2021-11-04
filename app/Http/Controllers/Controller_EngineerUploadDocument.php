@@ -12,62 +12,33 @@ use Illuminate\Support\Facades\Storage;
 
 class Controller_EngineerUploadDocument extends Controller
 {
-	public function openPage(){         //buka halaman Engineer - Upload Document
+	public function openPage($id){         //buka halaman Engineer - Upload Document
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
+        $id_project = $id;
         if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
-            return view('Pages.Engineer.View_EngineerUploadDocument', compact('userLevel'));
+            return view('Pages.Engineer.View_EngineerUploadDocument', compact('userLevel', 'id_project'));
         }
         else{
             return redirect('/logout');
         }
     }
 
-    public function upload($file, $pid, $doccategory, $doctype){
+    public function upload(Request $request){
+        $pid = $request->idproj;
         $project = $this->getProjectByID($pid);
         $user = auth()->user()->id;
+        $file = $request->file('uploadedfile');
         $filename = $file->getClientOriginalName();
-        
-        switch($doccategory){
-            case '1':
-                $filelocation = $project->direktori_project . '/1. Nodin dari Div Terkait';
-                break;
-            case '2':
-                $filelocation = $project->direktori_project . '/2. Risalah Rapat dan Daftar Hadir';
-                break;
-            case '3':
-                $filelocation = $project->direktori_project . '/3. Jadwal Pengujian';
-                break;
-            case '4':
-                $filelocation = $project->direktori_project . '/4. Laporan Harian';
-                break;
-            case '5':
-                $filelocation = $project->direktori_project . '/5. Berita Acara (BA)';
-                break;
-            case '6':
-                $filelocation = $project->direktori_project . '/6. Form Pengujian';
-                break;
-            case '7':
-                $filelocation = $project->direktori_project . '/7. Dokumen Lainnya';
-                break;
-            case '8':
-                $filelocation = $project->direktori_project . '/8. Memo Dinas dari SDTL';
-                break;
-            case '9':
-                $filelocation = $project->direktori_project . '/9. Nodin dari ITO1';
-                break;
-            case '10':
-                $filelocation = $project->direktori_project . '/chat';
-                break;
-            case '11':
-                $filelocation = $project->direktori_project . '/log';
-                break;
-            case '12':
-                $filelocation = $project->direktori_project . '/report';
-                break;
-            default:
-                break;
-        }
+        $doctype = $request->dtype;
+
+        $directory_data = DB::table('documents_types')
+                            ->select(DB::raw('documents_categories.id, documents_categories.nama_dcategory, documents_types.sub_folder'))
+                            ->leftjoin('documents_categories', 'documents_types.id_dcategory', 'documents_categories.id')
+                            ->where('documents_types.id', $doctype)
+                            ->get();
+
+        $filelocation = $project->direktori_project . "/" .$directory_data->implode('id') . ". " . $directory_data->implode('nama_dcategory') . "/" . $directory_data->implode('sub_folder'); 
 
         $upload = $file->storeAs($filelocation, $filename);
         $filelocation = $filelocation . $filename;                     //update file location, tamabah nama filenya 
@@ -82,59 +53,6 @@ class Controller_EngineerUploadDocument extends Controller
 
         return "File has been upload";
     }
-
-    public function uploadNodinPenugasan(Request $request){
-        dd($request);
-        return $this->upload($request->file('uploadedfile'), $id, 1);
-    }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 2);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 3);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 4);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 5);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 6);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 7);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 8);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 9);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 10);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 11);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 12);
-    // }
-
-    // public function uploadNodinPenugasan(Request $request, $id){
-    //     $upload = $this->upload($request, 99);
-    // }
 
     public function getProjectByID($id){
         return Project::where('id', $id)->firstOrFail();

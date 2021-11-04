@@ -81,22 +81,6 @@ Route::group(['middleware' => 'auth'], function(){
 	// Search Doc
 	Route::get('/admin/searchdocs', 'Controller_AdminSearchDocuments@openPage');
 
-	//Upload Document
-	Route::get('/upload/{id}', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
-	Route::post('/upload/nodinp/{id}/{doccat}/{doctype}', "Controller_EngineerUploadDocument@uploadNodinPenugasan")->name('upload.nodinp');
-	Route::post('/upload/mom/{id}/{doccat}/{doctype}', "Controller_EngineerUploadDocument@uploadMOM")->name('upload.mom');
-	Route::post('/upload/jadwal/{id}', "Controller_EngineerUploadDocument@uploadJadwalPengujian")->name('upload.jadwal');
-	Route::post('/upload/laphar/{id}', "Controller_EngineerUploadDocument@uploadLaporanHarian")->name('upload.laphar');
-	Route::post('/upload/ba/{id}', "Controller_EngineerUploadDocument@uploadBA")->name('upload.ba');
-	Route::post('/upload/fpengujian/{id}', "Controller_EngineerUploadDocument@uploadFormPengujian")->name('upload.fpengujian');
-	Route::post('/upload/lain/{id}', "Controller_EngineerUploadDocument@uploadLainnya")->name('upload.lain');
-	Route::post('/upload/memdin/{id}', "Controller_EngineerUploadDocument@uploadMemoDinas")->name('upload.memdin');
-	Route::post('/upload/nodin/{id}', "Controller_EngineerUploadDocument@uploadNodin")->name('upload.nodin');
-	Route::post('/upload/chat/{id}', "Controller_EngineerUploadDocument@uploadChat")->name('upload.chat');
-	Route::post('/upload/log/{id}', "Controller_EngineerUploadDocument@uploadLog")->name('upload.log');
-	Route::post('/upload/report/{id}', "Controller_EngineerUploadDocument@uploadReport")->name('upload.report');
-	Route::post('/upload/checklist/{id}', "Controller_EngineerUploadDocument@uploadChecklist")->name('upload.checklist');
-
 	// User
 	Route::get('/admin/users', 'Controller_AdminUsers@openPage');
 	Route::get('/admin/users/table', 'Controller_AdminUsers@dataTable')->name('users.table');
@@ -143,6 +127,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
 	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');
+
+	//Upload Document
+	Route::get('/upload/{id}', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
+	Route::post('/upload', "Controller_EngineerUploadDocument@upload");
 
 	##GUEST
 	Route::get('/guest', 'Controller_GuestSearchDocuments@openPage');

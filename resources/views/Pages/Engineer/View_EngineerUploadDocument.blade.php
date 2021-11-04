@@ -21,7 +21,7 @@
 	</div>
   		<!-- /.card-header -->
 	<div class="card-body">
-	  	<form action="{{route('upload.nodinp')}}" method="POST" enctype="multipart/form-data">
+	  	<form action="/upload" method="POST" enctype="multipart/form-data">
 	    @csrf
 	    <div class="card-body">
 	      <div class="form-group">
@@ -29,6 +29,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="1">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
