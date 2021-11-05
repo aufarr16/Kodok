@@ -54,7 +54,17 @@ class Controller_EngineerUploadDocument extends Controller
         return "File has been upload";
     }
 
+    public function download($id){
+        $document = $this->getDocumentByID($id);
+
+        return Response::download($document->direktori_document);
+    }
+
     public function getProjectByID($id){
         return Project::where('id', $id)->firstOrFail();
+    }
+
+    public function getDocumentByID($id){
+        return Document::where('id', $id)->firstOrFail();
     }
 }
