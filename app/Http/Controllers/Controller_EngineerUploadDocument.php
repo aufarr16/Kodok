@@ -57,7 +57,7 @@ class Controller_EngineerUploadDocument extends Controller
     public function download($id){
         $document = $this->getDocumentByID($id);
 
-        return Response::download($document->direktori_document);
+        return response()->download($document->direktori_document);
     }
 
     public function getProjectByID($id){
