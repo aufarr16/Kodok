@@ -211,4 +211,23 @@ class Controller_EngineerYourProjects extends Controller
             ->toArray();
         }
     }
+
+    public function setProjectDirectory($id){
+        $project = $this->getProjectById($id);
+
+        $year = strval(Carbon::now()->format('Y'));
+        $nama_product = DB::table('products')
+                  ->select(DB::raw('products.nama_product'))
+                  ->where('id', $product)
+                  ->get()
+                  ->implode('nama_product'); 
+
+        $inisial_user = DB::table('users')
+                        ->select(DB::raw('users.inisial_user'))
+                        ->where('id', $user)
+                        ->get()
+                        ->implode('inisial_user');
+
+        $project->direktori_project = 'Documents/' . $year . '/' . $nama_product . '/' . '[' . $inisial_user . '] ' . $nproject;
+    }
 }
