@@ -231,26 +231,219 @@
 	      </button>
 	    </div>
 	    <!-- /.card-tools -->
-	</div>
+		</div>
   		<!-- /.card-header -->
 	<div class="card-body">
-	  	<form action="#" method="POST" enctype="multipart/form-data">
-	    @csrf
-	    <div class="card-body">
-	      <div class="form-group">
-	        <label for="file">File input</label>
-	        <div class="input-group">
-	          <div class="custom-file">
-	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
-	            <label class="custom-file-label" for="file">Choose file</label>
-	          </div>
-	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  	</form>
+		<label> Silahkan Upload</label>
+
+		<div class="row">
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BAE</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BAKO</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BAO</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BAST</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BASTD</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-12">
+			<div class="card card-outline card-warning collapsed-card">
+				<div class="card-header">
+					<h3 class="card-title">BATO</h3>
+
+		    <div class="card-tools">
+		      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+		        <i class="fas fa-plus"></i>
+		      </button>
+		    </div>
+		    <!-- /.card-tools -->
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card-body">
+				  <div class="form-group">
+				    <label for="file">File input</label>
+				    <div class="input-group">
+				      <div class="custom-file">
+				        <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+				        <label class="custom-file-label" for="file">Choose file</label>
+				      </div>
+				      <div class="input-group-append">
+				        <button type="submit" class="btn btn-info">Submit</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+			</div>
+		</div>
+		</div>
+
 
         <table id="table1" class="table table-bordered table-striped">
             <thead>

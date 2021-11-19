@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use DataTables;
 use App\Project;
 use App\User;
-use App\Export\ManagerProjectExport;
+use App\Exports\ManagerProjectExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -23,7 +23,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function export(){
-        return (new ManagerProjectExport)->download('Data All Project.xslx');
+        return (new ManagerProjectExport)->download('Data All Project.xlsx');
     }
 
     public function detail($id){                     //buka detail projek

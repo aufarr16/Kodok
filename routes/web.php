@@ -131,7 +131,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Upload & Download Document
 	Route::get('/engineer/upload/{id}', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
 	Route::post('/engineer/upload', "Controller_EngineerUploadDocument@upload");
-	Route::get('/engineer/download/{id}' "Controller_EngineerUploadDocument@download");
+	Route::get('/engineer/download/{id}', "Controller_EngineerUploadDocument@download");
 
 	##GUEST
 	Route::get('/guest', 'Controller_GuestSearchDocuments@openPage');
