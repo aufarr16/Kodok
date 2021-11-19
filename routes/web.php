@@ -128,6 +128,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
 	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');
 
+	Route::get('engineer/projectdir/{id}', 'Conttoller_Engoineer@setProjectDirectory')->name('project.dir');
+
 	//Upload & Download Document
 	Route::get('/engineer/upload/{id}', "Controller_EngineerUploadDocument@openPage")->name('upload.open');
 	Route::post('/engineer/upload', "Controller_EngineerUploadDocument@upload");

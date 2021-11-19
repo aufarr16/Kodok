@@ -83,6 +83,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="2">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
@@ -136,6 +138,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="3">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
@@ -189,6 +193,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="20">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
@@ -700,6 +706,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="27">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
@@ -753,6 +761,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="28">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
@@ -806,6 +816,8 @@
 	        <div class="input-group">
 	          <div class="custom-file">
 	            <input type="file" name="uploadedfile" class="custom-file-input" id="uploadedfile">
+	            <input type="hidden" name="dtype" value="29">
+	            <input type="hidden" name="idproj" value="{{ $id_project }}">
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
