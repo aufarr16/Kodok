@@ -34,7 +34,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>
@@ -103,7 +103,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -139,7 +139,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -213,7 +213,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -249,7 +249,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -308,7 +308,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>
@@ -379,7 +379,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -415,7 +415,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -451,7 +451,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -489,7 +489,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -525,7 +525,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -600,7 +600,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -636,7 +636,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -672,7 +672,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -710,7 +710,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -746,7 +746,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -782,7 +782,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -820,7 +820,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -856,7 +856,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -892,7 +892,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -930,7 +930,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -1004,7 +1004,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -1040,7 +1040,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -1113,7 +1113,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -1149,7 +1149,7 @@
 				        <label class="custom-file-label" for="file">Choose file</label>
 				      </div>
 				      <div class="input-group-append">
-				        <button type="submit" class="btn btn-info">Submit</button>
+				        <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 				      </div>
 				    </div>
 				  </div>
@@ -1208,7 +1208,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>
@@ -1263,7 +1263,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>
@@ -1318,7 +1318,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>
@@ -1373,7 +1373,7 @@
 	            <label class="custom-file-label" for="file">Choose file</label>
 	          </div>
 	          <div class="input-group-append">
-	            <button type="submit" class="btn btn-info">Submit</button>
+	            <button type="submit" class="btn btn-info" id="btn-submit">Submit</button>
 	          </div>
 	        </div>
 	      </div>

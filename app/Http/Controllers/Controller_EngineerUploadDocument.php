@@ -51,7 +51,7 @@ class Controller_EngineerUploadDocument extends Controller
             'uploaded_by' => $user
         ]);
 
-        return "File has been upload";
+        return back()->with('success','Document berhasil di Upload');
     }
 
     public function download($id){
