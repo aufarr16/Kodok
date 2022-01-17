@@ -118,7 +118,7 @@ class Controller_ManagerHome extends Controller
     }
 
     public function getInisial(){
-        return DB::select('select inisial_user from users where id_ulevel = 3 or id_ulevel = 5 order by inisial_user asc');
+        return DB::select('select inisial_user from users where id_ulevel in (3, 5, 10) and status_user = 1 order by inisial_user asc');
     }
 
     public function allProjectPstat($pstat){
