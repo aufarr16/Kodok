@@ -76,15 +76,11 @@ class Controller_AdminUsers extends Controller
 
     public function destroy($id){						//delete data
     	if(auth()->id() != $id){						//pembatas agar user gak bisa ngapus data sendiri
-    		// User::where('id', $id)->delete();		    //delete data yg dipilih
-    		$user = User::where('id', $id)->firstOrFail();
-    		$user->status_user = 0;
+    		User::where('id', $id)->update(['status_user' => 0]);	//ubah status menjadi 0, tanda user non aktif
     	}
-
     	$userData['data'] = User::orderby("id", "asc")->get();	//ngambil data yg lain setelah delete data
 
 	    return response()->json($userData);						//balikin data yg udh diambil ke js buat refresh table
-        
     }
 
     public function edit($id){						   //nyiapin form Edit User

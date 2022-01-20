@@ -1,4 +1,4 @@
-// console.log('script.js is in');
+console.log('script.js is in');
 
 function getHandoverData(id){
 	var elementPIC = document.getElementById(id);
@@ -83,10 +83,10 @@ function getHandoverData(id){
 }
 
 function deleteMitra(id){
-	// console.log(id);
+	console.log(id);
 	event.preventDefault();
 
-	var idDel = id;
+	var idDel = id; 
 
 	Swal.fire({
 	  title: 'Yakin hapus data ini?',
@@ -228,6 +228,7 @@ function deleteProduct(id){
 
 function deleteUser(id){
 	// console.log(id);
+	console.log("deluser");
 	event.preventDefault();
 
 	var idDel = id;
@@ -256,79 +257,7 @@ function deleteUser(id){
 				},
 
 				success: function(response){
-					console.log(response);
-					$('#table1').DataTable().ajax.reload();
-
-					Swal.fire({
-						title:'Data user berhasil dihapus',
-						icon:'success',
-						toast:true,
-						showConfirmButton:false,
-						position: 'top-end',
-						timer:1500,
-						timerProgressBar:true,
-						background:'#a3ffa3'
-					})
-				},
-
-				error: function(xhr){
-					Swal.fire({
-						icon: 'error',
-						toast:true,
-						title: 'Oops...',
-						text: 'Something went wrong!',
-						timer: 4000,
-						background: 'bisque'
-					})
-				}
-			})
-		} else if (result.dismiss === 'cancel') {
-			Swal.fire({
-				title:'Data user tetap tersimpan',
-				icon:'info',
-				toast:true,
-				showConfirmButton:false,
-				position:'top-end',
-				grow:'row',
-				timer:1500,
-				timerProgressBar:true,
-				background:'#B4F5F0'
-			})
-		}
-	})
-}
-
-function deleteUser(id){
-	// console.log(id);
-	event.preventDefault();
-
-	var idDel = id;
-
-	Swal.fire({
-	  title: 'Yakin hapus data ini?',
-	  icon: 'warning',
-	  showCancelButton: true,
-	  confirmButtonColor: '#3085d6',
-	  cancelButtonColor: '#d33',
-	  confirmButtonText: 'Ya',
-	  cancelButtonText: 'Tidak',
-	}).then((result)=>{
-		if(result.value){
-			$.ajaxSetup({
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
-			});
-
-			$.ajax({
-				url: '/admin/deluser/'+idDel,
-				type: 'get',
-				data: {
-					'_method': 'DELETE'
-				},
-
-				success: function(response){
-					console.log(response);
+					// console.log(response);
 					$('#table1').DataTable().ajax.reload();
 
 					Swal.fire({
