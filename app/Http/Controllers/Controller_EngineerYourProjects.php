@@ -73,6 +73,12 @@ class Controller_EngineerYourProjects extends Controller
         $uat = $project->progress_uat;                                          //ngambil progress uat 
         $bobot = $project->bobot_project;                                       //ngambil bobot
         $notes = $project->notes_project;                                       //ngambil notes
+        $nodinin = $project->nodin_in;
+        $nodinout = $project->nodin_out;
+        $nobako = $project->no_bako;
+        $nobako = $project->no_bae;
+        $nobako = $project->no_bato;
+
 
         return view('Layouts.FormProgress', compact('project', 'sit', 'uat', 'bobot'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
@@ -97,6 +103,12 @@ class Controller_EngineerYourProjects extends Controller
         $project->progress_uat = $request->progress_uat;                        //ganti progress uat
         $project->bobot_project = $request->bobot_project;                      //ganti bobot
         $project->notes_project = $request->notes_project;                      //ganti notes
+        $project->nodin_in = $request->nodin_in; 
+        $project->nodin_out = $request->nodin_out;
+        $project->no_bako = $request->no_bako;
+        $project->no_bae = $request->no_bae;
+        $project->no_bato = $request->no_bato;
+
 
         $project->save();                                                       //simpan perubahan
     }

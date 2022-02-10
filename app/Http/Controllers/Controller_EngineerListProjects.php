@@ -110,7 +110,7 @@ class Controller_EngineerListProjects extends Controller
 
     public function getPBN($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project', 'projects.nodin_in', 'projects.nodin_out', 'projects.no_bako', 'projects.no_bae', 'projects.no_bato'))
         ->where('projects.id', '=', $id)
         ->first();
     }
