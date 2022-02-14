@@ -14,8 +14,9 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
+        $pic = DB::table('users')->select('inisial_user')->orderBy('inisial_user', 'ASC')->get(); dd($pic);
         if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
-            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel'));  
+            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic'));  
         }
         else{
             return redirect('/logout');
@@ -89,7 +90,7 @@ class Controller_ManagerListProjects extends Controller
         if($request->input('pic') != NULL){
             $data = $data->where('users.inisial_user', $request->pic);
         }
-        
+
         return DataTables::of($data)                        //bikin table berdasarkan data yg udh diambi;
             ->addColumn('nama_project', function($data){    //tambah kolom nama project yg bisa diklik
                 return view('Layouts.ClickableText',[
@@ -253,7 +254,7 @@ class Controller_ManagerListProjects extends Controller
             ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
             ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
             ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
-            ->orderby('waktu','DESC')
+            ->orderBy('waktu','DESC')
             ->get();   
     }
 }
