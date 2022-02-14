@@ -83,8 +83,13 @@ class Controller_ManagerListProjects extends Controller
         return response()->json($projectData);
     }
 
-    public function dataTable(){                            //generate table untuk halaman Manager - List Project
+    public function dataTable(Request $request){                            //generate table untuk halaman Manager - List Project
         $data = $this->getAllProjectsData();    //dd($data);
+
+        if($request->input('pic') != NULL){
+            $data = $data->where('users.inisial_user', $request->pic);
+        }
+        
         return DataTables::of($data)                        //bikin table berdasarkan data yg udh diambi;
             ->addColumn('nama_project', function($data){    //tambah kolom nama project yg bisa diklik
                 return view('Layouts.ClickableText',[
