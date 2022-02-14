@@ -159,8 +159,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// List Project
 	Route::get('/manager/projects', 'Controller_ManagerListProjects@openPage');
-	Route::post('/manager/projects/table', 'Controller_ManagerListProjects@dataTable');
-	// Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
+	// Route::post('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
+	Route::get('/manager/projects/table', 'Controller_ManagerListProjects@dataTable')->name('listprojects.table');
 	Route::get('/manager/projects/export', 'Controller_ManagerListProjects@export');
 	Route::get('/manager/projects/detail/{id}', 'Controller_ManagerListProjects@detail')->name('listprojects.detail');
 	Route::get('/manager/projects/edit/{id}', 'Controller_ManagerListProjects@editProject')->name('projects.edit');

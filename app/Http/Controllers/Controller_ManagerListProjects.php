@@ -14,7 +14,7 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
-        $pic = DB::table('users')->select('inisial_user')->orderBy('inisial_user', 'ASC')->get();
+        $pic = DB::table('users')->select('id', 'inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
         if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
             return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic'));  
         }
@@ -86,11 +86,6 @@ class Controller_ManagerListProjects extends Controller
 
     public function dataTable(Request $request){                            //generate table untuk halaman Manager - List Project
         $data = $this->getAllProjectsData();    //dd($data);
-
-        if($request->input('pic') != NULL){
-            $data = $data->where('users.inisial_user', $request->pic);
-        }
-
         return DataTables::of($data)                        //bikin table berdasarkan data yg udh diambi;
             ->addColumn('nama_project', function($data){    //tambah kolom nama project yg bisa diklik
                 return view('Layouts.ClickableText',[
@@ -181,7 +176,7 @@ class Controller_ManagerListProjects extends Controller
             $join->on('projects.id', '=', 'projects.id_original_pic')
             ->where('projects.id', $id);
         })
-        ->whereIn('users.id_ulevel', [3,5])
+        ->whereIn('users.id_ulevel', [3,5,10])
         ->groupBy('projects.id_original_pic', 'users.id', 'users.inisial_user')
         ->orderBy('jml','DESC')
         ->get()
@@ -196,7 +191,7 @@ class Controller_ManagerListProjects extends Controller
                 $join->on('projects.id_current_pic', '=', 'users.id')
                 ->where('projects.id', $id);
             })
-            ->whereIn('users.id_ulevel', [3, 5])
+            ->whereIn('users.id_ulevel', [3,5,10])
             ->groupBy('users.id','users.nama_user')
             ->orderBy('jml','DESC')
             ->get()
