@@ -84,7 +84,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
-        $data = DB::select("select e.id, a.inisial_user, b.nama_product, c.nama_ptype, d.nama_mitra, e.nama_project, DATE(e.waktu_assign_project) as waktu, f.id as id_pstat from users as a, products as b, projects_types as c, mitras as d, projects as e, projects_stats as f where e.id_current_pic = a.id and e.id_product = b.id and e.id_ptype = c.id and e.id_mitra = d.id and e.id_pstat = f.id order by waktu desc");    //ambil data buat ditempel di table
+        $data = $this->getAllProjectsData();    //dd($data);
         return DataTables::of($data)                        //bikin table berdasarkan data yg udh diambi;
             ->addColumn('nama_project', function($data){    //tambah kolom nama project yg bisa diklik
                 return view('Layouts.ClickableText',[
@@ -238,6 +238,18 @@ class Controller_ManagerListProjects extends Controller
             ->get()
             ->pluck('nama_ptype', 'id')
             ->toArray();
+    }
+
+    public function getAllProjectsData(){   //ambil data buat ditempel di table
+        return DB::table('projects')
+            ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
+            ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
+            ->leftjoin('products', 'projects.id_product', '=', 'products.id')
+            ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
+            ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+            ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
+            ->orderby('waktu','DESC')
+            ->get();   
     }
 }
 

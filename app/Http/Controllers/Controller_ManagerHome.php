@@ -153,43 +153,43 @@ class Controller_ManagerHome extends Controller
         return DB::select("select upt.inisial_user, upt.nama_ptype, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, pt.id as id_ptype, pt.nama_ptype from users as u, projects_types as pt where u.id_ulevel = 3 or u.id_ulevel = 5  group by u.id, u.inisial_user, pt.id, pt.nama_ptype order by u.inisial_user asc, pt.id asc) as upt left outer join (select p.id_current_pic, p.id_ptype, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = upt.id_current_pic and pu.id_ptype = upt.id_ptype group by upt.nama_ptype, upt.inisial_user order by upt.inisial_user asc, upt.id_ptype asc");
     }
 
-    public function filteredProjectPstat($year, $pstat){
-        return Project::select('id')
-        ->where('id_pstat', $pstat)
-        ->whereYear('waktu_assign_project', '=', $year)
-        ->count();
-    }
+    // public function filteredProjectPstat($year, $pstat){
+    //     return Project::select('id')
+    //     ->where('id_pstat', $pstat)
+    //     ->whereYear('waktu_assign_project', '=', $year)
+    //     ->count();
+    // }
 
-    public function filteredProjects($year){
-        return Project::select('id')->whereYear('waktu_assign_project', '=', $year)->count(); 
-    }
+    // public function filteredProjects($year){
+    //     return Project::select('id')->whereYear('waktu_assign_project', '=', $year)->count(); 
+    // }
 
-    public function filteredPstatProd($year){
-        $psxpr = DB::select("select u.id as id_user, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc");
+    // public function filteredPstatProd($year){
+    //     $psxpr = DB::select("select u.id as id_user, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc");
 
-        return $psxpr;
+    //     return $psxpr;
 
-    }
+    // }
 
-    public function filteredPstatPtype($year){
+    // public function filteredPstatPtype($year){
 
-    }
+    // }
 
-    public function filteredProjProd($year){
+    // public function filteredProjProd($year){
 
-    }
+    // }
 
-    public function filteredProjPtype($year){
+    // public function filteredProjPtype($year){
 
-    }
+    // }
 
-    public function filteredEngineerPstat($year){
+    // public function filteredEngineerPstat($year){
 
-    }
+    // }
 
-    public function filteredEngineerPtype($year){
+    // public function filteredEngineerPtype($year){
 
-    }
+    // }
 
     public function toPercent($part, $total){           //return persentase data input
         if($total == 0){
