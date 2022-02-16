@@ -673,6 +673,7 @@
 
       switch(i){
         case 0:
+          console.log(psuserlength)
           userresv.push(userprojperpstat[k].jumlah_projek);
           break;
         case 1:
