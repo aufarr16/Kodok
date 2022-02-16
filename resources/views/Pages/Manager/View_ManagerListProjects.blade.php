@@ -25,12 +25,16 @@
                 <div class="row">
                   <div class="col-md-4">
                     <label>PIC</label>
-                    <select data-column="1" class="form-control filter">
+                    <select data-column="1" class="form-control filter-select">
                       <option value="">Pilih PIC</option>
                       @foreach($pic as $p)
                         <option value="{{$p->inisial_user}}">{{$p->inisial_user}}</option>
                       @endforeach
                     </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Mitra</label>
+                    <input data-column="4" type="search" class="form-control form-control-sm filter-search" placeholder aria-controls="table1">
                   </div>
                 <a href="/manager/projects/export" type="button" class="btn btn-success" style="float:left">
                     Excel &nbsp<i class="fas fa-file-download"></i>
@@ -87,7 +91,11 @@
     ]
   });
 
-  $(".filter").change( function(){
+  $(".filter-select").change( function(){
+    table.column($(this).attr("data-column")).search($(this).val()).draw();
+  });
+
+  $(".filter-search").keyup( function(){
     table.column($(this).attr("data-column")).search($(this).val()).draw();
   });
 </script>

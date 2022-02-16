@@ -14,9 +14,10 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
-        $pic = DB::table('users')->select('id', 'inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
         if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
-            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic'));  
+            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic', 'prod'));  
         }
         else{
             return redirect('/logout');
