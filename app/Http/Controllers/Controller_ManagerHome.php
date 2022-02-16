@@ -45,7 +45,7 @@ class Controller_ManagerHome extends Controller
             $pstatperptype = $this->allPstatPtype();                // 2. jumlah p_stat dari masing2 p_type
             $projectperproduct = $this->allProjProd();              // 3. total all projek berdasarkan produk
             $projectperptype =  $this->allProjPtype();              // 4. total all projek berdasarkan p_type
-            $userprojectperpstat = $this->allEngineerPstat();       // 5. total projek per orang berdasarkan p_stat
+            $userprojectperpstat = $this->allEngineerPstat();//dd($userprojectperpstat);       // 5. total projek per orang berdasarkan p_stat
             $userprojectperptype = $this->allEngineerPtype();       // 6. total prokek per orang berdasarkan p_type
 
             // dd($inuser);
@@ -146,11 +146,11 @@ class Controller_ManagerHome extends Controller
     }
 
     public function allEngineerPstat(){
-        return DB::select("select ups.inisial_user, ups.nama_pstat, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps where u.id_ulevel = 3 or u.id_ulevel = 5  group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc) as ups left outer join (select p.id_current_pic, p.id_pstat, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = ups.id_current_pic and pu.id_pstat = ups.id_pstat group by ups.nama_pstat, ups.inisial_user order by ups.inisial_user asc, ups.nama_pstat desc");
+        return DB::select("select ups.inisial_user, ups.nama_pstat, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, ps.id as id_pstat, ps.nama_pstat from users as u, projects_stats as ps where u.id_ulevel in (3,5,10)  group by u.id, u.inisial_user, ps.id, ps.nama_pstat order by u.inisial_user asc, ps.id asc) as ups left outer join (select p.id_current_pic, p.id_pstat, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = ups.id_current_pic and pu.id_pstat = ups.id_pstat group by ups.nama_pstat, ups.inisial_user order by ups.inisial_user asc, ups.nama_pstat desc");
     }
 
     public function allEngineerPtype(){
-        return DB::select("select upt.inisial_user, upt.nama_ptype, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, pt.id as id_ptype, pt.nama_ptype from users as u, projects_types as pt where u.id_ulevel = 3 or u.id_ulevel = 5  group by u.id, u.inisial_user, pt.id, pt.nama_ptype order by u.inisial_user asc, pt.id asc) as upt left outer join (select p.id_current_pic, p.id_ptype, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = upt.id_current_pic and pu.id_ptype = upt.id_ptype group by upt.nama_ptype, upt.inisial_user order by upt.inisial_user asc, upt.id_ptype asc");
+        return DB::select("select upt.inisial_user, upt.nama_ptype, count(pu.nama_project) jumlah_projek from (select u.id as id_current_pic, u.inisial_user, pt.id as id_ptype, pt.nama_ptype from users as u, projects_types as pt where u.id_ulevel in (3,5,10)  group by u.id, u.inisial_user, pt.id, pt.nama_ptype order by u.inisial_user asc, pt.id asc) as upt left outer join (select p.id_current_pic, p.id_ptype, p.nama_project from projects p left outer join users as u on u.id = p.id_current_pic) as pu on pu.id_current_pic = upt.id_current_pic and pu.id_ptype = upt.id_ptype group by upt.nama_ptype, upt.inisial_user order by upt.inisial_user asc, upt.id_ptype asc");
     }
 
     // public function filteredProjectPstat($year, $pstat){
