@@ -18,7 +18,7 @@ class Controller_ManagerListProjects extends Controller
         $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
         $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
         $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
-        $pstat = DB::table('projects_stats')->select('id_pstat')->orderBy('id_pstat', 'ASC')->get();
+        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
         if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
             return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic', 'prod'));  
         }
