@@ -37,11 +37,11 @@ class CreateProjectsTable extends Migration
             $table->string('notes_project', 301)->nullable();
             $table->integer('bobot_project')->nullable();
             $table->string('direktori_project', 200);
-            $table->string('nodin_in', 51);
-            $table->string('nodin_out', 51);
-            $table->string('no_bako', 51);
-            $table->string('no_bae', 51);
-            $table->string('no_bato', 51);
+            $table->string('nodin_in', 51)->nullable();
+            $table->string('nodin_out', 51)->nullable();
+            $table->string('no_bako', 51)->nullable();
+            $table->string('no_bae', 51)->nullable();
+            $table->string('no_bato', 51)->nullable();
         });
     }
 
