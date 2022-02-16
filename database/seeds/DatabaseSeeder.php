@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             //DocumentSeeder::class,
-            DocumentsCategorySeeder::class,
-            DocumentsTypeSeeder::class,
+            // DocumentsCategorySeeder::class,
+            // DocumentsTypeSeeder::class,
             // MitraSeeder::class,
             //ProductSeeder::class,
             ProjectsKeteranganSeeder::class,
