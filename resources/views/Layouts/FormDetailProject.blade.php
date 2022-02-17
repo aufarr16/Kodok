@@ -53,6 +53,26 @@
                             <th>Bobot Project</th>
                             <td>{{ $pbn->bobot_project }}</td>
                         </tr>
+                        <tr class="text-center">
+                            <th>Nomor Nodin In</th>
+                            <td>{{ $pbn->nodin_in }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Nomor Nodin Out</th>
+                            <td>{{ $pbn->nodin_out }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Nomor BAKO</th>
+                            <td>{{ $pbn->no_bako }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Nomor BAE</th>
+                            <td>{{ $pbn->no_bae }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Nomor BATO</th>
+                            <td>{{ $pbn->no_bato }}</td>
+                        </tr>
                     </thead>
                 </table>
             </div>

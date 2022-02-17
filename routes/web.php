@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/export/ptype', 'Controller_AdminExportData@exportPType');
 	Route::get('/admin/export/user', 'Controller_AdminExportData@exportUser');
 	Route::get('/admin/export/ulevel', 'Controller_AdminExportData@exportULevel');
+	Route::get('/admin/project/export', 'Controller_AdminListProjects@export');
 
 	//Import
 	Route::get('/admin/import/mitra', 'Controller_AdminImportData@importMitra');
@@ -172,6 +173,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	##TABLE
 	Route::get('/searchdocs/table', 'Controller_ManagerSearchDocuments@dataTable')->name('searchdocs.table');
+
+
 });
 
 ?>

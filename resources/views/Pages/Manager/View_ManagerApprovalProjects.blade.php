@@ -21,9 +21,9 @@
                             <th class="text-center">Inisial</th>
                             <th class="text-center">Produk</th>
                             <th class="text-center">Jenis Project</th>
-                            <th class="text-center">Nama Project</th>
+                            <th class="text-center" style="width: 300px">Nama Project</th>
                             <th class="text-center">Keterangan</th>
-                            <th class="text-center">Action</th>                           
+                            <th class="text-center" style="width: 75px">Action</th>                           
                         </tr>
                     </thead>
                 </table>

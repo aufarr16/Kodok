@@ -13,8 +13,13 @@ class Controller_EngineerListProjects extends Controller
     public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
+        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
+        $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
+        $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
+        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
         if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
-            return view('Pages.Engineer.View_EngineerListProjects', compact('userLevel'));
+            return view('Pages.Engineer.View_EngineerListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));
         }
         else{
             return redirect('/logout');
@@ -113,6 +118,90 @@ class Controller_EngineerListProjects extends Controller
         ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project', 'projects.nodin_in', 'projects.nodin_out', 'projects.no_bako', 'projects.no_bae', 'projects.no_bato'))
         ->where('projects.id', '=', $id)
         ->first();
+    }
+
+    public function getInisialUser($id){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
+        return DB::table('users')
+        ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
+        ->leftjoin('projects', function($join) use ($id) {
+            $join->on('projects.id', '=', 'projects.id_original_pic')
+            ->where('projects.id', $id);
+        })
+        ->whereIn('users.id_ulevel', [3,5,10])
+        ->groupBy('projects.id_original_pic', 'users.id', 'users.inisial_user')
+        ->orderBy('jml','DESC')
+        ->get()
+        ->pluck('inisial_user', 'id')
+        ->toArray();
+    }
+
+    public function getUserList($id){
+        return DB::table('users')
+            ->select(DB::raw('count(projects.id) as jml, users.id, users.nama_user'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_current_pic', '=', 'users.id')
+                ->where('projects.id', $id);
+            })
+            ->whereIn('users.id_ulevel', [3,5,10])
+            ->groupBy('users.id','users.nama_user')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_user', 'id')
+            ->toArray();
+    }
+
+    public function getProductList($id){
+        return DB::table('products')
+            ->select(DB::raw('count(projects.id) as jml, products.id, products.nama_product'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_product', '=', 'products.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('products.id','products.nama_product')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_product', 'id')
+            ->toArray();
+    }
+
+    public function getMitraList($id){
+        return DB::table('mitras')
+            ->select(DB::raw('count(projects.id) as jml, mitras.id, mitras.nama_mitra'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_mitra', '=', 'mitras.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('mitras.id','mitras.nama_mitra')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_mitra', 'id')
+            ->toArray();
+    }
+
+    public function getPtypeList($id){
+        return DB::table('projects_types')
+            ->select(DB::raw('count(projects.id) as jml, projects_types.id, projects_types.nama_ptype'))
+            ->leftjoin('projects', function($join) use ($id) {
+                $join->on('projects.id_ptype', '=', 'projects_types.id')
+                ->where('projects.id', $id);
+            })
+            ->groupBy('projects_types.id','projects_types.nama_ptype')
+            ->orderBy('jml','DESC')
+            ->get()
+            ->pluck('nama_ptype', 'id')
+            ->toArray();
+    }
+
+    public function getAllProjectsData(){   //ambil data buat ditempel di table
+        return DB::table('projects')
+            ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
+            ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
+            ->leftjoin('products', 'projects.id_product', '=', 'products.id')
+            ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
+            ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')
+            ->leftjoin('projects_stats', 'projects.id_pstat', '=', 'projects_stats.id')
+            ->orderBy('waktu','DESC')
+            ->get();   
     }
 
 }

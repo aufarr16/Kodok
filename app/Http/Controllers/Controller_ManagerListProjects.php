@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use DataTables;
 use App\Project;
 use App\User;
-use App\Exports\ManagerProjectExport;
+use App\Exports\AdminProjectExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
@@ -20,7 +20,7 @@ class Controller_ManagerListProjects extends Controller
         $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
         $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
         if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
-            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic', 'prod'));  
+            return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));  
         }
         else{
             return redirect('/logout');
@@ -28,7 +28,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function export(){
-        return (new ManagerProjectExport)->download('Data All Project.xlsx');
+        return (new AdminProjectExport)->download('Data All Project.xlsx');
     }
 
     public function detail($id){                     //buka detail projek
@@ -168,12 +168,12 @@ class Controller_ManagerListProjects extends Controller
 
     public function getPBN($id){
         return DB::table('projects')
-        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project'))
+        ->select(DB::raw('projects.id, projects.progress_sit, projects.progress_uat, projects.notes_project, projects.bobot_project, projects.nodin_in, projects.nodin_out, projects.no_bako, projects.no_bae, projects.no_bato'))
         ->where('projects.id', '=', $id)
         ->first();
     }
 
-     public function getInisialUser($id){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
+    public function getInisialUser($id){                             //ngambil data untuk ditampilkan di dropdown form Edit PIC
         return DB::table('users')
         ->select(DB::raw('count(projects.id) as jml, users.id, users.inisial_user'))
         ->leftjoin('projects', function($join) use ($id) {
