@@ -40,7 +40,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `nama_product`, `added_by`, `modified_by`) VALUES
 (1, 'ATM Bersama', 'Kodok', NULL),
-(2, 'ATM Bersama Debit', 'Kodok', ''),
+(2, 'ATM Bersama Debit', 'Kodok', NULL),
 (3, 'Payment', 'Kodok', NULL),
 (5, 'BersamaKU', 'Kodok', NULL),
 (6, 'ATM Bersama QR', 'Kodok', NULL),
