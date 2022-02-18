@@ -223,7 +223,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
+<!--                         <li class="nav-item">
                             <a href="/upload" class="nav-link">
                                 <i class="nav-icon fas fa-download"></i>
                                 <p>
@@ -231,7 +231,7 @@
                                     <i class="fas fa-download-left right"></i>
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="/engineer/listprojects" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
