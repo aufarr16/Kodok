@@ -38,7 +38,7 @@ class Controller_Login extends Controller
             'password.required' => "Mohon isi Password",
         ]);
 
-        $ldap_con = ldap_connect("10.90.2.253");                //setup ip koneksi ldap
+        $ldap_con = ldap_connect("10.90.2.253");                //inisialisasi ip koneksi ldap
         $email = $request->email;                               //menyimpan data email dari input login
         $password = $request->password;                         //menyimpan data password dari input login
 
