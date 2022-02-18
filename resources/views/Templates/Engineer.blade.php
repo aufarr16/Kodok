@@ -11,6 +11,9 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Select2 -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2/sweetalert2.min.css') }}">
@@ -341,7 +344,23 @@
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/toastr/toastr.min.js') }}"></script>
 
+    <!-- Select2 -->
+    <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
+
     <script src="{{ url('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+
+    <script>
+    $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+    })
+    </script>
+
     <script>
     $(function () {
       bsCustomFileInput.init();
