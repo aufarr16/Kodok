@@ -16,6 +16,7 @@
   | {Eksekutif} List Projects
 </title>
 @endif 
+<div class="row mt-2">
 <div class="col-md-12">
   <div class="card card-outline card-primary collapsed-card">
     <div class="card-header">
@@ -130,6 +131,7 @@
     <!-- /.card -->
   </div>
 <!-- /.col -->
+</div>
 </div>
 @endsection
 
