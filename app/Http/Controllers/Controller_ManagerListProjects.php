@@ -248,7 +248,7 @@ class Controller_ManagerListProjects extends Controller
     public function getAllProjectsData(){   //ambil data buat ditempel di table
         return DB::table('projects')
             ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
-            ->leftjoin('users', 'projects.id_original_pic', '=', 'users.id')
+            ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
             ->leftjoin('products', 'projects.id_product', '=', 'products.id')
             ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
             ->leftjoin('mitras', 'projects.id_mitra', '=', 'mitras.id')

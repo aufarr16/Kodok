@@ -111,7 +111,7 @@ class Controller_ManagerAssignProjects extends Controller
         $userData['data'] = User::orderby("nama_user","asc")
         ->select('id', 'nama_user')
         ->where('id', '!=', $userId)
-        ->whereIn('id_ulevel', [3,5])
+        ->whereIn('id_ulevel', [3,5,10])
         ->get();
 
         return response()->json($userData);
