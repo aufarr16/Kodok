@@ -2,6 +2,6 @@
 <a href="{{ $url_progress }}" type="button" class="modal-show btn-edit" title="Ubah Progress" id="btn-modal"><i class="fas fa-percent fa-ld"></i></a> -->
 
 <button href="{{ $url_pic }}" type="button" class="modal-show btn btn-danger btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah PIC" data-target="#modal"><i class="fas fa-users"></i></button>
-<button href="{{ $url_progress }}" type="button" class="modal-show btn btn-warning btn-edit" data-toggle="tooltip" data-placement="top" title="Notes" data-target="#modal"><i class="fas fa-edit"></i></button>
+<button href="{{ $url_progress }}" type="button" class="modal-show btn btn-warning btn-edit" data-toggle="tooltip" data-placement="top" title="Catatan" data-target="#modal"><i class="fas fa-edit"></i></button>
 <!-- <a href="{{ $url_upload }}" type="button" class="btn btn-info" title="Upload Document" ><i class="fas fa-upload"></i></a> -->
 <a href="https://artajasacoid0.sharepoint.com/sites/SDTLDocs/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSDTLDocs%2FShared%20Documents%2FDokumentasi%20Project&viewid=13e53b47%2D3941%2D40f7%2D97b1%2Db4ea4a9b56d9" type="button" class="btn btn-info" title="Upload Document SharePoint" ><i class="fas fa-upload"></i></a>
