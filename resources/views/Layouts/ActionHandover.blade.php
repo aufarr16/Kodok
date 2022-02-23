@@ -1,4 +1,4 @@
 <button onclick="donehandover(id)" type="submit" class="btn-handover-done btn btn-success" data-dismiss="modal" id="{{ $project->id }}" title="Handover selesai"><i class="fas fa-check-circle"></i></button>
 <a href="{{ $url_pic }}" type="button" class="modal-show btn-edit btn btn-danger" title="Update PIC" id="btn-modal"><i class="fas fa-users"></i></a>
-<a href="{{ $url_progress }}" type="button" class="modal-show btn-edit btn-progress btn btn-warning" title="Update Catatan" id="btn-modal"><i class="fas fa-percent"></i></a>
+<a href="{{ $url_progress }}" type="button" class="modal-show btn-edit btn-progress btn btn-warning" title="Update Catatan" id="btn-modal"><i class="fas fa-edit"></i></a>
 <a href="https://artajasacoid0.sharepoint.com/sites/SDTLDocs/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSDTLDocs%2FShared%20Documents%2FDokumentasi%20Project&viewid=13e53b47%2D3941%2D40f7%2D97b1%2Db4ea4a9b56d9" type="button" class="btn btn-info" title="Upload Document SharePoint" ><i class="fas fa-upload"></i></a>
