@@ -28,6 +28,11 @@ Route::group(['middleware' => 'auth'], function(){
 
 	##Admin
 	Route::get('/admin', 'Controller_AdminUsers@openPage');	
+	// Approval Documents
+	Route::get('/admin/approval', 'Controller_AdminApprovalDocuments@openPage');
+	Route::get('/admin/approval/table', 'Controller_adminApprovalDocuments@dataTable')->name('approval.table');
+	Route::patch('/admin/approval/choose', 'Controller_AdminApprovalDocuments@approvalDocument');
+
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
