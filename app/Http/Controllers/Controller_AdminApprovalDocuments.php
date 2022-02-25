@@ -58,7 +58,18 @@ class Controller_AdminApprovalDocuments extends Controller
 
     public function dataTable()                                                 //generate table di halaman Manager - Aprroval
     {
-        $data = DB::select("select a.id, a.nama_project, b.inisial_user, c.nama_product, d.nama_ptype, e.nama_pstat, a.pketerangan_status from projects as a, users as b, products as c, projects_types as d, projects_stats as e where a.id_current_pic = b.id and a.id_product = c.id and a.id_ptype = d.id and a.stats_temp = e.id and a.id_pketerangan = 4 and (e.id = 3 or e.id = 5) order by a.waktu_assign_project asc");    //ngambil data buat di tabel
+        $userLevel = auth()->user()->id_ulevel;
+        $data = DB::table('projects')
+            ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
+            ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
+            ->leftjoin('products', 'projects.id_product', '=', 'products.id')
+            ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
+            ->leftjoin('projects_stats', 'projects.stats_temp', '=', 'projects_stats.id')
+            ->leftjoin('projects_keterangan', 'projects.id_pketerangan', '=', '4')
+            ->whereIn('projects.stats_temp', [3,5])
+            ->where('projects.id_current_pic', '!=', $userLevel)
+            ->orderBy('waktu','DESC')
+            ->get();                                                            //ngambil data buat di tabel
         return DataTables::of($data)                                            //buat data berdasarkan data yg udh diambil
             ->addColumn('action', function($data){                              //tambah kolom action
                 return view('Layouts.ActionApprovalDocument',[
