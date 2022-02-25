@@ -27,7 +27,7 @@ class Controller_ManagerApprovalProjects extends Controller
 
         $project = Project::where('id', $id)->firstOrFail();                    //ambil data projek yg mau diapprove
         $pstat = $project->stats_temp;                                          //ambil stats yg mau di approve / decline
-        if($type == "Confirm Aproval"){                                         //kalo approve, maka
+        if($type == "Confirm Approval"){                                         //kalo approve, maka
             if($pstat == 3){                                                    //kalo stat tujuannya pengujian done
                 $project->pketerangan_status = "Pengujian Done Approved By Manager";       //ubah keterangannya jadi pengujian done aaproved
             }
@@ -68,7 +68,7 @@ class Controller_ManagerApprovalProjects extends Controller
         $data = DB::select("select a.id, a.nama_project, b.inisial_user, c.nama_product, d.nama_ptype, e.nama_pstat, a.pketerangan_status from projects as a, users as b, products as c, projects_types as d, projects_stats as e where a.id_current_pic = b.id and a.id_product = c.id and a.id_ptype = d.id and a.stats_temp = e.id and a.id_pketerangan = 2 and (e.id = 3 or e.id = 5) order by a.waktu_assign_project asc");    //ngambil data buat di tabel
         return DataTables::of($data)                                            //buat data berdasarkan data yg udh diambil
             ->addColumn('action', function($data){                              //tambah kolom action
-                return view('Layouts.ActionApproval',[
+                return view('Layouts.ActionApprovalProject',[
                     'data'=> $data,
                 ]);
             })

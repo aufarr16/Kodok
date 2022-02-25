@@ -455,7 +455,7 @@ function approveProject(id, title){
 	var titleButton = title;
 
 		Swal.fire({
-		  title: 'Yakin approve project ini?',
+		  title: 'Yakin approve projek ini?',
 		  icon: 'warning',
 		  showCancelButton: true,
 	  	  confirmButtonColor: '#3085d6',
@@ -483,7 +483,7 @@ function approveProject(id, title){
 						console.log("success in");
 						$('#table1').DataTable().ajax.reload();
 						Swal.fire({
-						title:'Project approved',
+						title:'Project Approved',
 						icon:'success',
 						toast:true,
 						showConfirmButton:false,
@@ -507,7 +507,7 @@ function approveProject(id, title){
 				})
 			} else if (result.dismiss === 'cancel') {
 				Swal.fire({
-					title:'Project menunggu approval',
+					title:'Projek menunggu approval',
 					icon:'info',
 					toast:true,
 					showConfirmButton:false,
@@ -530,7 +530,7 @@ function declineProject(id, title){
 	var titleButton = title;
 
 	Swal.fire({
-		  title: 'Yakin decline project ini?',
+		  title: 'Yakin decline projek ini?',
 		  icon: 'warning',
 		  showCancelButton: true,
 	  	  confirmButtonColor: '#3085d6',
@@ -558,7 +558,162 @@ function declineProject(id, title){
 							console.log("success in");
 							$('#table1').DataTable().ajax.reload();
 							Swal.fire({
-								title:'Project declined',
+								title:'Project Declined',
+								icon:'success',
+								toast:true,
+								showConfirmButton:false,
+								position: 'top',
+								timer:1500,
+								timerProgressBar:true,
+								background:'#D4F1F4'
+								})
+							},
+
+						error: function(xhr){
+							Swal.fire({
+								icon: 'error',
+								toast:true,
+								title: 'Oops...',
+								text: 'Something went wrong!',
+								timer: 4000,
+								background: 'bisque'
+							})
+						}
+					})
+				} else if (result.dismiss === 'cancel') {
+					Swal.fire({
+						title:'Projek menunggu approval',
+						icon:'info',
+						toast:true,
+						showConfirmButton:false,
+						position:'top',
+						grow:'row',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D2FBA4'
+					})
+				}
+			})
+};
+
+function approveDocument(id, title){
+	// console.log("tes");
+	event.preventDefault();
+
+	var idProj = id;
+	var titleButton = title;
+
+		Swal.fire({
+		  title: 'Yakin approve dokumen projek ini?',
+		  icon: 'warning',
+		  text: 'Alasan:',
+		  input: 'text',
+		  showCancelButton: true,
+	  	  confirmButtonColor: '#3085d6',
+	      cancelButtonColor: '#d33',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak',
+			}).then((result)=>{
+				if(result.value || result.value == ''){
+				$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+
+				$.ajax({
+					url: '/admin/approval/choose',
+					type: 'POST',
+					data: {
+						'_method': 'PATCH',
+						'id': idProj,
+						'title': titleButton,
+						'notes': result.value
+					},
+
+					success: function(response){
+						console.log("success in");
+						$('#table1').DataTable().ajax.reload();
+						Swal.fire({
+						title:'Document Approved',
+						icon:'success',
+						toast:true,
+						showConfirmButton:false,
+						position: 'top',
+						timer:1500,
+						timerProgressBar:true,
+						background:'#D4F1F4'
+						})
+					},
+
+					error: function(xhr){
+						Swal.fire({
+							icon: 'error',
+							toast:true,
+							title: 'Oops...',
+							text: 'Something went wrong!',
+							timer: 4000,
+							background: 'bisque'
+						})
+					}
+				})
+			} else if (result.dismiss === 'cancel') {
+				Swal.fire({
+					title:'Dokumen projek menunggu approval',
+					icon:'info',
+					toast:true,
+					showConfirmButton:false,
+					position:'top',
+					grow:'row',
+					timer:1500,
+					timerProgressBar:true,
+					background:'#D2FBA4'
+				})
+			}
+		})
+};
+
+
+function declineDocument(id, title){
+	// console.log("tes");
+	event.preventDefault();
+
+	var idProj = id;
+	var titleButton = title;
+
+	Swal.fire({
+		  title: 'Yakin decline dokumen project ini?',
+		  icon: 'warning',
+		  text: 'Alasan:',
+		  input: 'text',
+		  showCancelButton: true,
+	  	  confirmButtonColor: '#3085d6',
+	      cancelButtonColor: '#d33',
+		  confirmButtonText: 'Ya',
+		  cancelButtonText: 'Tidak',
+			}).then((result)=>{
+				if(result.value || result.value == ''){
+					$.ajaxSetup({
+						headers: {
+							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+						}
+					});
+
+					$.ajax({
+						url: '/admin/approval/choose',
+						type: 'POST',
+						data: {
+							'_method': 'PATCH',
+							'id': idProj,
+							'title': titleButton,
+							'notes': result.value
+						},
+
+						success: function(response){
+							console.log("success in");
+							$('#table1').DataTable().ajax.reload();
+							Swal.fire({
+								title:'Project Declined',
 								icon:'success',
 								toast:true,
 								showConfirmButton:false,

@@ -21,21 +21,22 @@ class Controller_AdminApprovalDocuments extends Controller
         }
     }
 
-    public function approvalDocument(Request $request){                          //approve / decline project yg perlu approval
+    public function approvalDocument(Request $request){                         //approve / decline project yg perlu approval
         $id = $request->input('id');                                            //simpen data id projek
         $type = $request->input('title');                                       //simpen jenis approval, pengujian / projek done
+        $notes = $request->input('notes');
 
         $project = Project::where('id', $id)->firstOrFail();                    //ambil data projek yg mau diapprove
         $pstat = $project->stats_temp;                                          //ambil stats yg mau di approve / decline
-        if($type == "Confirm Aproval"){                                         //kalo approve, maka
+        if($type == "Confirm Approval"){                                         //kalo approve, maka
             if($pstat == 3){                                                    //kalo stat tujuannya pengujian done
-                $project->pketerangan_status = "Pengujian Done Approved By Adminn, Menunggu Approval By Manager";       //ubah keterangannya jadi pengujian done approved
-                $project->id_pketerangan = 2;
+                $project->pketerangan_status = "Pengujian Done Approved By Adminn, Menunggu Approval By Manager";       //approved by admin, mennunggu manager
             }
             else if($pstat == 5){                                               //kalo stat tujuannya projek done
-                $project->pketerangan_status = "Projek Done Approved By Admin, Menunggu Approval By Manager";          //ubah keterangannya jadi projek done approved
-                $project->id_pketerangan = 2;
+                $project->pketerangan_status = "Projek Done Approved By Admin, Menunggu Approval By Manager";          //approved by admin, mennunggu manager
             }
+
+            $project->id_pketerangan = 2;
         }
         else if($type == "Decline Approval"){                                   //kalo decline, maka
             if($pstat == 3){                                                    //kalo stat tujuannya pengujian done, maka
@@ -51,6 +52,7 @@ class Controller_AdminApprovalDocuments extends Controller
             $project->stats_temp = NULL;                                            //stat_tempnya dibuat NULL karena sudah digunakan
         }
 
+        $project->pketerangan_note = $notes;
         $project->save();                                                       //save semua perubahan yg ada
     }
 
@@ -59,7 +61,7 @@ class Controller_AdminApprovalDocuments extends Controller
         $data = DB::select("select a.id, a.nama_project, b.inisial_user, c.nama_product, d.nama_ptype, e.nama_pstat, a.pketerangan_status from projects as a, users as b, products as c, projects_types as d, projects_stats as e where a.id_current_pic = b.id and a.id_product = c.id and a.id_ptype = d.id and a.stats_temp = e.id and a.id_pketerangan = 4 and (e.id = 3 or e.id = 5) order by a.waktu_assign_project asc");    //ngambil data buat di tabel
         return DataTables::of($data)                                            //buat data berdasarkan data yg udh diambil
             ->addColumn('action', function($data){                              //tambah kolom action
-                return view('Layouts.ActionApproval',[
+                return view('Layouts.ActionApprovalDocument',[
                     'data'=> $data,
                 ]);
             })

@@ -1,0 +1,2 @@
+<button id="{{ $data->id }}" onclick="approveDocument(id, title)" type="submit" class="btn-approve btn btn-success" title="Confirm Approval"><i class="fas fa-check"></i></button>
+<button id="{{ $data->id }}" onclick="declineDocument(id, title)" type="submit" class="btn-decline btn btn-danger" title="Decline Approval"><i class="fas fa-times"></i></button>

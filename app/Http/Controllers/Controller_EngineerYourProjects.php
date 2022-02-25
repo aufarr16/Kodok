@@ -36,13 +36,13 @@ class Controller_EngineerYourProjects extends Controller
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
             $project->id_pstat = 2;
             $project->pketerangan_status = "Menunggu Approval Pengujian Done By Admin";  //ngubah keterangannya
-            $project->id_pketerangan = 5;                                       //ubah keterangannya jadi menunggu approval
+            $project->id_pketerangan = 4;                                       //ubah keterangannya jadi menunggu approval
         }
-        else if($pstat == 5){                                                   //kalo statnya mau diganti ke projek done, maka
+        else if($pstat == 5 && ($project->id_pketerangan != 3 || $project->id_pketerangan != 5)){ //kalo statnya mau diganti ke projek done, maka
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
             $project->id_pstat = 4;
             $project->pketerangan_status = "Menunggu Approval Projek Done By Admin";     //ngubah keterangannya
-            $project->id_pketerangan = 5;                                       //ubah keterangannya jadi menunggu approval
+            $project->id_pketerangan = 4;                                       //ubah keterangannya jadi menunggu approval
         }
         else if($pstat == 7){                                                   //kalo statnya mau diganti ke drop, maka
             $project->id_pstat = $pstat;                                        //status langsung diubah ke drop
@@ -58,9 +58,9 @@ class Controller_EngineerYourProjects extends Controller
         }
         else {
             $project->id_pstat = $pstat;                                        //selain pengujian done, projek done, ato drop, maka
-            if($project->id_pketerangan != 3){                                  //kalo approval tidak di decline, maka
+            if($project->id_pketerangan != 3 || $project->id_pketerangan != 5){ //kalo approval tidak di decline, maka
                 $project->pketerangan_status = "";                              //keterangan dikosongkan
-                $project->id_pketerangan = "";                                   //keterangan diubah menjadi approved
+                $project->id_pketerangan = "";                                  //keterangan dikosongin
             }
         }
 
