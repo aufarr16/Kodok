@@ -22,6 +22,8 @@ class Controller_ManagerApprovalProjects extends Controller
     }
 
     public function approvalProject(Request $request){                          //approve / decline project yg perlu approval
+        $this->authorize('isManager', auth()->user());
+        
         $id = $request->input('id');                                            //simpen data id projek
         $type = $request->input('title');                                       //simpen jenis approval, pengujian / projek done
 

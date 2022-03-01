@@ -30,11 +30,15 @@ class Controller_AdminProducts extends Controller
 	 */
 
     public function create() {              //nyiapin form Tambah Product
+        $this->authorize('isAdmin', auth()->user());
+        
         $model = new Product();             //membuat variable product baru untuk dilempar dan diisi di form Tambah Product
         return view('Layouts.FormProducts', compact('model'));
     }
 
     public function store(Request $request){//nambah data dari data yg udh diinput di for Tambah Product
+        $this->authorize('isAdmin', auth()->user());
+        
         $request->validate([                //validasi input pada form Tambah Product
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],
@@ -54,19 +58,24 @@ class Controller_AdminProducts extends Controller
     }
 
     public function destroy($id){                                       //delete data
+        $this->authorize('isAdmin', auth()->user());
+        
         Product::where('id', $id)->delete();                            //mencari data product dan menghapusnya
         $productData['data'] = Product::orderby("id", "asc")->get();    //mengambil semua data product setelah menghapus data
 
         return response()->json($productData);              //melempar data product 
     }
 
-    public function edit($id)                               //nyiapin form Edit Product
-    {
-      $model = Product::where('id', $id)->firstOrFail();    //mengambil data yg akan diedit untuk ditempel di form Edit Product
-      return view('Layouts.FormProducts', compact('model'));
+    public function edit($id){                              //nyiapin form Edit Product
+        $this->authorize('isAdmin', auth()->user());
+        
+        $model = Product::where('id', $id)->firstOrFail();  //mengambil data yg akan diedit untuk ditempel di form Edit Product
+        return view('Layouts.FormProducts', compact('model'));
     }
 
     public function update(Request $request, $id){          //edit data yg udh diinput di form Edit Product
+        $this->authorize('isAdmin', auth()->user());
+        
         $request->validate([                                //validasi input pada form Edit Product
             'nama_product' => 'required|max:24|regex:/^[a-zA-Z ]*$/',
         ],

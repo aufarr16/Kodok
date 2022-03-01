@@ -31,11 +31,15 @@ class Controller_AdminMitra extends Controller
 	 */
 
     public function create(){                       //nyiapin form Tambah Mitra
+        $this->authorize('isAdmin', auth()->user());
+        
         $model = new Mitra();                       //menyiapkan variabel mitra baru untuk dilempar dan nantinya diisi di form Tambah Mitra
         return view('Layouts.FormMitra', compact('model'));
     }
 
     public function store(Request $request){        //nyimpen data yg udh disubmit dari form Tambah Mitra
+        $this->authorize('isAdmin', auth()->user());
+        
         $request->validate([                        //validasi data yg sudah diisi di form Tambah Mitra
             'nama_mitra' => 'required|unique:mitras|max:51',
         ],
@@ -57,24 +61,32 @@ class Controller_AdminMitra extends Controller
     }
 
     public function destroy($id){                                   //delete data
+        $this->authorize('isAdmin', auth()->user());
+        
         Mitra::where('id', $id)->delete();                          //mencari data mitra berdasarkan idnya lalu menghapusnya
         $mitraData['data'] = Mitra::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
 
         return response()->json($mitraData);
     }
 
-    public function get(){                                          
+    public function get(){           
+        $this->authorize('isAdmin', auth()->user());
+                                       
         $all_mitra['data'] = Mitra::orderby("id", "asc")->get();    //mengambil semua data mitra
 
         return response()->json($all_mitra);
     }
 
     public function edit($id){                                      //nyiapin form Edit Mitra
-      $model = Mitra::where('id', $id)->firstOrFail();              //mengambil data mitra untuk nanti ditempel datanya di form Edit Mitra
-      return view('Layouts.FormMitra', compact('model'));
+        $this->authorize('isAdmin', auth()->user());
+        
+        $model = Mitra::where('id', $id)->firstOrFail();              //mengambil data mitra untuk nanti ditempel datanya di form Edit Mitra
+        return view('Layouts.FormMitra', compact('model'));
     }
 
     public function update(Request $request, $id){                  //ngedit data yg udh diinput dari form Edit Mitra
+        $this->authorize('isAdmin', auth()->user());
+        
         $request->validate([
             'nama_mitra' => 'required|unique:mitras|max:51',
         ],

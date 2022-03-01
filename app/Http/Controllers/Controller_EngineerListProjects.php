@@ -13,12 +13,12 @@ class Controller_EngineerListProjects extends Controller
     public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
-        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
-        $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
-        $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
-        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
         if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
+            $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+            $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
+            $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
+            $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
+            $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
             return view('Pages.Engineer.View_EngineerListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));
         }
         else{

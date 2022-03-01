@@ -15,12 +15,12 @@ class Controller_AdminListProjects extends Controller
     public function openPage(){                     //buka halaman Admin 
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
-        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
-        $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
-        $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
-        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
         if($userLevel == 1 || $userLevel == 5){
+            $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+            $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
+            $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
+            $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
+            $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
             return view('Pages.Admin.View_AdminListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));
         }
         else{
@@ -36,6 +36,7 @@ class Controller_AdminListProjects extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
     public function export(){
+        $this->authorize('isAdmin', auth()->user());
         return (new ManagerProjectExport)->download('Data All Project.xlsx');
     }
 

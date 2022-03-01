@@ -27,6 +27,8 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeNew(Request $request){                         //tambah data projek baru
+        $this->authorize('isManager', auth()->user());
+
         $request->validate([                                            //validasi data input projek
             'id_user' => 'required',
             'id_product' => 'required',
@@ -59,6 +61,8 @@ class Controller_ManagerAssignProjects extends Controller
     }
 
     public function storeHandover(Request $request){                    //tambah data handover baru
+        $this->authorize('isManager', auth()->user());
+        
         $request->validate([                                            //validasi data input handover
             'id_user1' => 'required',
             'nama_project2' => 'required',

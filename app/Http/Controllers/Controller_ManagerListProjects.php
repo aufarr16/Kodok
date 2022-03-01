@@ -14,12 +14,12 @@ class Controller_ManagerListProjects extends Controller
 {
     public function openPage(){                             //buka halaman Manager - List Project
         $userLevel = auth()->user()->id_ulevel;
-        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
-        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
-        $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
-        $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
-        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
-        if($userLevel == 2 || $userLevel == 9 || $userLevel == 3 || $userLevel == 5){       //Autentikasi level user yg boleh msk
+        if($userLevel == 2 || $userLevel == 9){       //Autentikasi level user yg boleh msk
+            $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+            $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
+            $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
+            $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
+            $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
             return view('Pages.Manager.View_ManagerListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));  
         }
         else{
@@ -28,6 +28,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function export(){
+        $this->authorize('isManager', auth()->user());
         return (new AdminProjectExport)->download('Data All Project.xlsx');
     }
 
@@ -47,6 +48,8 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function editProject($id){
+        $this->authorize('isManager', auth()->user());
+        
         $project = $this->getProjectById($id);
         $listuser = $this->getUserList($id); 
         $listproduct = $this->getProductList($id);
@@ -69,6 +72,7 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function updateProject(Request $request, $id){
+        $this->authorize('isManager', auth()->user());
 
         $project = $this->getProjectById($id);
         $project->id_original_pic= $request->id_original_pic;                   
@@ -82,6 +86,8 @@ class Controller_ManagerListProjects extends Controller
     }
 
     public function deleteProject($id){
+        $this->authorize('isManager', auth()->user());
+
         Project::where('id', $id)->delete();                            //cari data project berdasarkan id lalu didelete
         $projectData['data'] = Project::orderby("id", "asc")->get();    //mengambil semua data mitra yg baru, setelah sudah menghapus data, untuk direturn
 

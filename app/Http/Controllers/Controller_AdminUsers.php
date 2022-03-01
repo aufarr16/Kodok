@@ -38,6 +38,8 @@ class Controller_AdminUsers extends Controller
     }
 
 	public function store(Request $request){			//masukkin data baru ke tabel dari form Tambah User
+		$this->authorize('isAdmin', auth()->user());
+        
 		$request->validate([							//validasi input
 			'inisial_user' => 'required|unique:users|max:3|min:2',
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',
@@ -75,6 +77,8 @@ class Controller_AdminUsers extends Controller
 	}
 
     public function destroy($id){						//delete data
+    	$this->authorize('isAdmin', auth()->user());
+        
     	if(auth()->id() != $id){						//pembatas agar user gak bisa ngapus data sendiri
     		User::where('id', $id)->update(['status_user' => 0]);	//ubah status menjadi 0, tanda user non aktif
     	}
@@ -84,6 +88,8 @@ class Controller_AdminUsers extends Controller
     }
 
     public function edit($id){						   //nyiapin form Edit User
+    	$this->authorize('isAdmin', auth()->user());
+        
     	$model = User::where('id', $id)->firstOrFail();//ngambil data yg mau diedit
     	$levels = $this->getrole($id); 				   //ngambil data 
 
@@ -91,6 +97,8 @@ class Controller_AdminUsers extends Controller
     }
 
     public function update(Request $request, $id){	   //edit data dari form Edit User
+    	$this->authorize('isAdmin', auth()->user());
+        
     	$request->validate([						   //validasi input
 			'inisial_user' => "required|min:2||max:3|unique:users,inisial_user, " . $id,
 			'nama_user' => 'required|regex:/^[a-zA-Z ]*$/|max:50',

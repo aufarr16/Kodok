@@ -24,6 +24,8 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function changeStatus(Request $request){     //ganti status projek
+        $this->authorize('isEngineer', auth()->user());
+        
         $id = $request->input('id');                    //nyimpen id projek yg mau diubah statusnya
         $pstat = $request->input('pstat');              //nyimpen statusnya mau diganti jadi apa
         $project = $this->getProjectById($id);          //ngambil projek yg mau diganti statusnya
@@ -68,6 +70,8 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function editPBN($id){                                               //nyiapin form Edit Progress
+        $this->authorize('isEngineer', auth()->user());
+        
         $project = $this->getProjectById($id);                                  //ngambil data projek yg mau diubah progressnya
         $sit = $project->progress_sit;                                          //ngambil progress sit
         $uat = $project->progress_uat;                                          //ngambil progress uat 
@@ -84,6 +88,8 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function updatePBN(Request $request, $id){                           //update data setelah nginput di form
+        $this->authorize('isEngineer', auth()->user());
+        
         $request->validate([                                                    //validasi input
             'progress_sit' => 'required|lte:100|regex:/^[0-9.]*$/',
             'progress_uat' => 'required|lte:100|regex:/^[0-9.]*$/',
@@ -113,7 +119,8 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();                                                       //simpan perubahan
     }
 
-    public function editBussinessPIC($id){                                      //edit pic bisnis            
+    public function editBussinessPIC($id){                                      //edit pic bisnis  
+        $this->authorize('isEngineer', auth()->user());        
         $project = $this->getProjectById($id);                                  //ngambil data projek yg mau ditempel di form Edit PIC Bisnis
 
         //ngambil data product buat ngisi dropdown
@@ -144,6 +151,8 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function updateBussinessPIC(Request $request, $id){                  //update data pic bisnis
+        $this->authorize('isEngineer', auth()->user());
+        
         $project = $this->getProjectById($id);                                  //ambil projek yg mau diubah pic bisnisnya
 
         $project->id_pic_product = $request->id_pic_product;                    //ubah pic product

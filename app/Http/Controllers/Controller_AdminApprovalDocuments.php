@@ -22,6 +22,8 @@ class Controller_AdminApprovalDocuments extends Controller
     }
 
     public function approvalDocument(Request $request){                         //approve / decline project yg perlu approval
+        $this->authorize('isAdmin', auth()->user());
+        
         $id = $request->input('id');                                            //simpen data id projek
         $type = $request->input('title');                                       //simpen jenis approval, pengujian / projek done
         $notes = $request->input('notes');

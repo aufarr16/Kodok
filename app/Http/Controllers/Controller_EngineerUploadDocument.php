@@ -25,6 +25,8 @@ class Controller_EngineerUploadDocument extends Controller
     }
 
     public function upload(Request $request){
+        $this->authorize('isEngineer', auth()->user());
+        
         $pid = $request->idproj;
         $project = $this->getProjectByID($pid);
         $user = auth()->user()->id;

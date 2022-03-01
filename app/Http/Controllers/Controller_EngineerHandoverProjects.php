@@ -23,6 +23,8 @@ class Controller_EngineerHandoverProjects extends Controller
     }
     
     public function handoverDone(Request $request){                 //balikin projek handoveran ke pemilik aslinya
+        $this->authorize('isEngineer', auth()->user());
+        
         $id = $request->input('id');
         $project = $this->getProjectById($id);    //ngambil data projek yg mau dibalikin
 
