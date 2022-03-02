@@ -178,8 +178,6 @@ Route::group(['middleware' => 'auth'], function(){
 
 	##TABLE
 	Route::get('/searchdocs/table', 'Controller_ManagerSearchDocuments@dataTable')->name('searchdocs.table');
-
-
 });
 
 ?>
