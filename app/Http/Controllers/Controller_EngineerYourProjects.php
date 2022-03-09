@@ -7,6 +7,7 @@ use App\User;
 use App\Project;
 use App\Projects_Stat;
 use App\Projects_Handover;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -83,7 +84,6 @@ class Controller_EngineerYourProjects extends Controller
         $nobako = $project->no_bae;
         $nobako = $project->no_bato;
 
-
         return view('Layouts.FormProgress', compact('project', 'sit', 'uat', 'bobot'));  //buka formnya dengan data2 yg udh disiapin sebelumnya
     }
 
@@ -114,7 +114,7 @@ class Controller_EngineerYourProjects extends Controller
         $project->no_bako = $request->no_bako;
         $project->no_bae = $request->no_bae;
         $project->no_bato = $request->no_bato;
-
+        $project->last_updated = Carbon::now()->toDateTimeString();
 
         $project->save();                                                       //simpan perubahan
     }
