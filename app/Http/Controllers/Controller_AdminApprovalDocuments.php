@@ -14,7 +14,7 @@ class Controller_AdminApprovalDocuments extends Controller
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
         if($userLevel == 1 || $userLevel == 1){
-            return view('Pages.Admin.View_AdminApprovalDecuments', compact('userLevel'));  
+            return view('Pages.Admin.View_AdminApprovalDocuments', compact('userLevel'));  
         }
         else{
             return redirect('/logout');

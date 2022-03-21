@@ -1,26 +1,27 @@
 @extends('Templates.Admin')
-@section('PageTitle','Mitra')
+@push('styles')
+@endpush
+
+@section('PageTitle','Approval Projects')
 @section('content')
 <title>
-| {Admin} Mitra
+| {Admin} Approval Projects
 </title>
-
 <div class="row mt-2">
     <div class="col-md-12">
         <!-- /.card-header -->
         <div class="card card-primary card-outline">
-
             <div class="card-body">
-                <a href="{{ route('mitra.create') }}" type="button" class="modal-show add-mitra btn btn-success" title="Tambah Mitra" id="btn-modal" style="float:left">
-                    Tambah Mitra &nbsp<i class="fas fa-plus"></i>
-                </a>
                 <table id="table1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th class="text-center">No</th>
-                            <th class="text-center">Nama Mitra</th>
-                            <th class="text-center">Action</th>
-                          
+                            <th class="text-center">Inisial</th>
+                            <th class="text-center">Produk</th>
+                            <th class="text-center">Jenis Project</th>
+                            <th class="text-center" style="width: 300px">Nama Project</th>
+                            <th class="text-center">Keterangan</th>
+                            <th class="text-center" style="width: 75px">Action</th>                           
                         </tr>
                     </thead>
                 </table>
@@ -30,28 +31,30 @@
         <!-- /.card -->
     </div>
     <!-- /.col -->
-</div>
+</div>  
 @endsection
 
 @push('scripts')
 <script>
-    $('#table1').DataTable( { 
-        "paging": true,
-        "lengthChange": false,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-        ajax: "{{ route('mitra.table') }}",
-        columns: [
-        	{data: 'DT_RowIndex', name: 'id', class: 'text-center'},
-        	// {data: 'ABA', name: 'ABA'},
-        	{data: 'nama_mitra', name: 'nama_mitra', class: 'text-center'},
-        	{data: 'action', name: 'action', class: 'text-center'},
-        	{data: 'added_by', name: 'added_by', class: 'text-center'},
-        	{data: 'modified_by', name: 'modified_by', class: 'text-center'}
-        ]
-    });
+  $('#table1').DataTable({ 
+   "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+    ajax: "{{ route('approval.table') }}",
+    columns: [
+      {data: 'DT_RowIndex', name: 'id_project', class: 'text-center'},
+      {data: 'inisial_user', name: 'inisial_user', class: 'text-center'},
+      {data: 'nama_product', name: 'nama_product', class: 'text-center'},
+      {data: 'nama_ptype', name: 'nama_ptype', class: 'text-center'},
+      {data: 'nama_project', name: 'nama_project', class: 'text-center'},
+      {data: 'pketerangan_status', name: 'pketerangan_status', class: 'text-center'},
+      // {data: 'docs', name: 'docs'},
+      {data: 'action', name: 'action', class: 'text-center'}
+    ],
+  });
 </script>
 @endpush
