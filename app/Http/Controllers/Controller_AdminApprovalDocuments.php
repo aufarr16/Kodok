@@ -13,7 +13,6 @@ class Controller_AdminApprovalDocuments extends Controller
     public function openPage(){             //buka halaman Manager - Approval
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
-        $this->authorize('isAdmin', auth()->user());
         if($userLevel == 1 || $userLevel == 5){
             return view('Pages.Admin.View_AdminApprovalDocuments', compact('userLevel'));  
         }
@@ -61,18 +60,19 @@ class Controller_AdminApprovalDocuments extends Controller
 
     public function dataTable()                                                 //generate table di halaman Manager - Aprroval
     {
-        $admin = auth()->user()->id;
+        $approver = auth()->user()->id;
         $data = DB::table('projects')
-            ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
+            ->select(DB::raw('projects.id_pketerangan, projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, projects.nama_project, projects.pketerangan_status, DATE(projects.waktu_assign_project) as waktu'))
             ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
             ->leftjoin('products', 'projects.id_product', '=', 'products.id')
             ->leftjoin('projects_types', 'projects.id_ptype', '=', 'projects_types.id')
             ->leftjoin('projects_stats', 'projects.stats_temp', '=', 'projects_stats.id')
-            ->leftjoin('projects_keterangan', 'projects.id_pketerangan', '=', '4')
             ->whereIn('projects.stats_temp', [3,5])
-            ->where('projects.id_current_pic', '!=', $admin)
+            ->where('projects.id_pketerangan', 4)
+            ->where('projects.id_current_pic', '!=', $approver)
             ->orderBy('waktu','DESC')
-            ->get();                                                            //ngambil data buat di tabel
+            ->get();    
+                                                                   //ngambil data buat di tabel
         return DataTables::of($data)                                            //buat data berdasarkan data yg udh diambil
             ->addColumn('action', function($data){                              //tambah kolom action
                 return view('Layouts.ActionApprovalDocument',[

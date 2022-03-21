@@ -44,7 +44,7 @@
     "info": true,
     "autoWidth": false,
     "responsive": true,
-    ajax: "{{ route('approval.table') }}",
+    ajax: "{{ route('approve.table') }}",
     columns: [
       {data: 'DT_RowIndex', name: 'id_project', class: 'text-center'},
       {data: 'inisial_user', name: 'inisial_user', class: 'text-center'},
