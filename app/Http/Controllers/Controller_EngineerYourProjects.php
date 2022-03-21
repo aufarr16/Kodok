@@ -162,6 +162,9 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();                                                       //save perubahan
     }
 
+    public function notes(Request $request){
+
+    }
     public function dataTable(){                                                //generate table di halaman Engineer - Project Own Going (Own Project)
         $userId = auth()->id();                                                 //ambil id user yg lagi login
         $project = $this->getProjectData($userId);                              //ambil data2 projek user yg lagi login
@@ -175,7 +178,8 @@ class Controller_EngineerYourProjects extends Controller
             })
             ->addColumn('keterangan', function($project){                       //tambah kolom keterangan
                 return view('Layouts.KeteranganProject',[
-                    'project'=> $project
+                    'project'=> $project,
+                    'url_notes' => route('keterangan.notes', $project->id)
                 ]);
             })
             ->addColumn('action', function($project){                           //tambah kolom action

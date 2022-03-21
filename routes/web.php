@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/approval/table', 'Controller_adminApprovalDocuments@dataTable')->name('approve.table');
 	Route::patch('/admin/approval/choose', 'Controller_AdminApprovalDocuments@approvalDocument');
 
+
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');
 	Route::get('/admin/archive/table', 'Controller_AdminArchiveDocuments@dataTable')->name('archive.table');
@@ -102,6 +103,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	##Engineer
 	Route::get('/engineer', 'Controller_EngineerYourProjects@openPage');
+	Route::get('/engineer/approval/notes/{id}', 'Controller_EngineerYourProjects@notes')->name('keterangan.notes');
 	// Doc Tools
 	Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
 
@@ -118,6 +120,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/listprojects', 'Controller_EngineerListProjects@openPage');
 	Route::get('/engineer/listprojects/table', 'Controller_EngineerListProjects@dataTable')->name('engineerlistprojects.table');
 	Route::get('/engineer/listprojects/detail/{id}', 'Controller_EngineerListProjects@detail')->name('engineerlistprojects.detail');
+
 
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
