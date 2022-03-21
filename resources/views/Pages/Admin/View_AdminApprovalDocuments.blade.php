@@ -20,8 +20,7 @@
                             <th class="text-center">No</th>
                             <th class="text-center">Nama Mitra</th>
                             <th class="text-center">Action</th>
-                            <th class="text-center">Added By</th>
-                            <th class="text-center">Modified By</th>                          
+                          
                         </tr>
                     </thead>
                 </table>
