@@ -162,9 +162,13 @@ class Controller_EngineerYourProjects extends Controller
         $project->save();                                                       //save perubahan
     }
 
-    public function notes(Request $request){
+    public function notes($id){
+        $project = $this->getProjectById($id);
+        $notes = $project->pketerangan_note;
 
+        return view('Layouts.FormKeteranganProject', compact('notes'));
     }
+
     public function dataTable(){                                                //generate table di halaman Engineer - Project Own Going (Own Project)
         $userId = auth()->id();                                                 //ambil id user yg lagi login
         $project = $this->getProjectData($userId);                              //ambil data2 projek user yg lagi login

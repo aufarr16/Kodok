@@ -103,7 +103,6 @@ Route::group(['middleware' => 'auth'], function(){
 
 	##Engineer
 	Route::get('/engineer', 'Controller_EngineerYourProjects@openPage');
-	Route::get('/engineer/approval/notes/{id}', 'Controller_EngineerYourProjects@notes')->name('keterangan.notes');
 	// Doc Tools
 	Route::get('/engineer/doctools', 'Controller_EngineerDocumentsTools@openPage');
 
@@ -121,7 +120,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/engineer/listprojects/table', 'Controller_EngineerListProjects@dataTable')->name('engineerlistprojects.table');
 	Route::get('/engineer/listprojects/detail/{id}', 'Controller_EngineerListProjects@detail')->name('engineerlistprojects.detail');
 
-
 	// Search Doc
 	Route::get('/engineer/searchdocs', 'Controller_EngineerSearchDocuments@openPage');
 
@@ -133,6 +131,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('/engineer/projects/updateprogress/{id}', 'Controller_EngineerYourProjects@updatePBN')->name('progress.update');
 	Route::get('/engineer/projects/editpic/{id}', 'Controller_EngineerYourProjects@editBussinessPIC')->name('pic.edit');
 	Route::put('/engineer/projects/updatepic/{id}', 'Controller_EngineerYourProjects@updateBussinessPIC')->name('pic.update');
+	Route::get('/engineer/approval/notes/{id}', 'Controller_EngineerYourProjects@notes')->name('keterangan.notes');
 
 	Route::get('/engineer/history', 'Controller_EngineerHistoryProjects@openPage');
 	Route::get('/engineer/history/table', 'Controller_EngineerHistoryProjects@dataTable')->name('history.table');
