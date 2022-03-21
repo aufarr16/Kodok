@@ -24,6 +24,7 @@ class CreateForeignKeysForProjectsTable extends Migration
             $table->foreign('id_pic_product')->references('id')->on('users');
             $table->foreign('id_pic_am')->references('id')->on('users');
             $table->foreign('id_pic_pm')->references('id')->on('users');
+            $table->foreign('approver_document')->references('id')->on('users');
         });
     }
 
@@ -45,6 +46,7 @@ class CreateForeignKeysForProjectsTable extends Migration
             $table->dropForeign('projects_id_pic_product_foreign');
             $table->dropForeign('projects_id_pic_am_foreign');
             $table->dropForeign('projects_id_pic_pm_foreign');
+            $table->dropForeign('projects_approver_document');
         });
     }
 }

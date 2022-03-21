@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('modified_by', 3)->nullable();
             $table->string('remember_token')->nullable();
             $table->boolean('status_user');
+            $table->integer('beban_approve');
             $table->timestamps();
         });
           
