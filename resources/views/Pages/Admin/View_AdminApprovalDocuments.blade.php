@@ -2,7 +2,7 @@
 @push('styles')
 @endpush
 
-@section('PageTitle','Approval Documents)
+@section('PageTitle','Approval Documents')
 @section('content')
 <title>
 | {Admin} Approval Projects
