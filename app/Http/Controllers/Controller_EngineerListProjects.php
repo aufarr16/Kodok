@@ -38,7 +38,7 @@ class Controller_EngineerListProjects extends Controller
 
         // dd($project);
         
-        return view('Layouts.FormListProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
+        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }
 
     public function dataTable(){                            //generate table untuk halaman Manager - List Project
