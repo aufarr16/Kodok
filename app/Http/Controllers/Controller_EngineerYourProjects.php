@@ -25,7 +25,7 @@ class Controller_EngineerYourProjects extends Controller
     }
 
     public function changeStatus(Request $request){     //ganti status projek
-        $this->authorize('isEngineer', auth()->user());
+        $this->authorize('isEngineer', auth()->user()); 
         
         $id = $request->input('id');                    //nyimpen id projek yg mau diubah statusnya
         $pstat = $request->input('pstat');              //nyimpen statusnya mau diganti jadi apa
@@ -63,7 +63,7 @@ class Controller_EngineerYourProjects extends Controller
             $project->id_pstat = $pstat;                                        //selain pengujian done, projek done, ato drop, maka
             if($project->id_pketerangan != 3 || $project->id_pketerangan != 5){ //kalo approval tidak di decline, maka
                 $project->pketerangan_status = "";                              //keterangan dikosongkan
-                $project->id_pketerangan = "";                                  //keterangan dikosongin
+                $project->id_pketerangan = NULL;                                //id_pketerangan dikosongin. karena statenya tidak approved / declined
             }
         }
 
