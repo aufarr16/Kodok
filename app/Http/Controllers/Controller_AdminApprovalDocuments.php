@@ -60,7 +60,7 @@ class Controller_AdminApprovalDocuments extends Controller
 
     public function dataTable()                                                 //generate table di halaman Manager - Aprroval
     {
-        $userLevel = auth()->user()->id_ulevel;
+        $admin = auth()->user()->id;
         $data = DB::table('projects')
             ->select(DB::raw('projects.id, users.inisial_user, products.nama_product, projects_types.nama_ptype, mitras.nama_mitra, projects.nama_project, DATE(projects.waktu_assign_project) as waktu, projects_stats.id as id_pstat'))
             ->leftjoin('users', 'projects.id_current_pic', '=', 'users.id')
@@ -69,7 +69,7 @@ class Controller_AdminApprovalDocuments extends Controller
             ->leftjoin('projects_stats', 'projects.stats_temp', '=', 'projects_stats.id')
             ->leftjoin('projects_keterangan', 'projects.id_pketerangan', '=', '4')
             ->whereIn('projects.stats_temp', [3,5])
-            ->where('projects.id_current_pic', '!=', $userLevel)
+            ->where('projects.id_current_pic', '!=', $admin)
             ->orderBy('waktu','DESC')
             ->get();                                                            //ngambil data buat di tabel
         return DataTables::of($data)                                            //buat data berdasarkan data yg udh diambil
