@@ -157,7 +157,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/admin/approval" class="nav-link">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <i class="nav-icon fas fa-clipboard-check"></i>
                                 <p>
                                     Approval Document
                                     <i class="fas fa-clipboard-check-left right"></i>
