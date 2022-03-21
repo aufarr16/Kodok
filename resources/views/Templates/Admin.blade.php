@@ -156,6 +156,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/admin/approval" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    Approval Document
+                                    <i class="fas fa-clipboard-list-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/admin/export" class="nav-link">
                                 <i class="nav-icon fas fa-download"></i>
                                 <p>
