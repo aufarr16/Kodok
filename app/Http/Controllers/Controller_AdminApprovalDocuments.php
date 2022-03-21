@@ -32,7 +32,7 @@ class Controller_AdminApprovalDocuments extends Controller
         $pstat = $project->stats_temp;                                          //ambil stats yg mau di approve / decline
         if($type == "Confirm Approval"){                                         //kalo approve, maka
             if($pstat == 3){                                                    //kalo stat tujuannya pengujian done
-                $project->pketerangan_status = "Pengujian Done Approved By Adminn, Menunggu Approval By Manager";       //approved by admin, mennunggu manager
+                $project->pketerangan_status = "Pengujian Done Approved By Admin, Menunggu Approval By Manager";       //approved by admin, mennunggu manager
             }
             else if($pstat == 5){                                               //kalo stat tujuannya projek done
                 $project->pketerangan_status = "Projek Done Approved By Admin, Menunggu Approval By Manager";          //approved by admin, mennunggu manager

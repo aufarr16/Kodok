@@ -164,9 +164,8 @@ class Controller_EngineerYourProjects extends Controller
 
     public function notes($id){
         $project = $this->getProjectById($id);
-        $notes = $project->pketerangan_note;
 
-        return view('Layouts.FormKeteranganProject', compact('notes'));
+        return view('Layouts.FormKeteranganProject', compact('project'));
     }
 
     public function dataTable(){                                                //generate table di halaman Engineer - Project Own Going (Own Project)

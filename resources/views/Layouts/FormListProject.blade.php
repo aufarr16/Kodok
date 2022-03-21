@@ -1,5 +1,5 @@
 {!! Form::model($project, [
-    'route' => ['listprojects.detail', $project->id],
+    'route' => ['adminlistprojects.detail', $project->id],
     'method' => 'GET'
 ]) !!}
 
@@ -9,7 +9,7 @@
         <div class="card card-danger card-outline">
 
             <div class="card-body">
-                <table id="table1" class="table table-bordered table-striped">
+                <table id="table2" class="table table-bordered table-striped">
                     <thead>
                        <tr class="text-center">
                             <th style="width: 150px;">PIC Saat ini</th> 
@@ -48,6 +48,14 @@
                         <tr class="text-center">
                             <th>Notes Project</th>
                             <td>{{ $pbn->notes_project }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Status Approval</th>
+                            <td>{{ $project->pketerangan_status }}</td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Notes Approval</th>
+                            <td>{{ $project->pketerangan_note }}</td>
                         </tr>
                         <tr class="text-center">
                             <th>Bobot Project</th>

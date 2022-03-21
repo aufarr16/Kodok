@@ -44,7 +44,7 @@ class Controller_ManagerListProjects extends Controller
 
         // dd($project);
         
-        return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
+        return view('Layouts.FormListProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }
 
     public function editProject($id){
