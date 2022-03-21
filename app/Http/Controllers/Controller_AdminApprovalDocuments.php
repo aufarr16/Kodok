@@ -13,6 +13,7 @@ class Controller_AdminApprovalDocuments extends Controller
     public function openPage(){             //buka halaman Manager - Approval
         //Autentikasi level user yg boleh msk
         $userLevel = auth()->user()->id_ulevel;
+        $this->authorize('isAdmin', auth()->user());
         if($userLevel == 1 || $userLevel == 5){
             return view('Pages.Admin.View_AdminApprovalDocuments', compact('userLevel'));  
         }
