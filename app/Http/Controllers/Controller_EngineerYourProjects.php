@@ -32,7 +32,7 @@ class Controller_EngineerYourProjects extends Controller
         $project = $this->getProjectById($id);          //ngambil projek yg mau diganti statusnya
 
         if($project->id_pketerangan == 2 || $project->id_pketerangan == 5){
-            if($projects->stats_temp == 3 < $pstat == 5){
+            if($project->stats_temp == 3 && $pstat == 5){
                 return;
             }
         }
