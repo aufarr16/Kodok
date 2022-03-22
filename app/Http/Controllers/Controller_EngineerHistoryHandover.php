@@ -27,7 +27,8 @@ class Controller_EngineerHistoryHandover extends Controller
         return DataTables::of($project)                     //bikin tabel berdasarkan data projek yg sudah diambil
             ->addColumn('keterangan', function($project){   //nambah kolom keterangan
                 return view('Layouts.KeteranganProject',[
-                    'project'=> $project
+                    'project'=> $project,
+                    'url_notes' => route('keterangan.notes', $project->id)
                 ]);
             })
             ->addIndexColumn()
