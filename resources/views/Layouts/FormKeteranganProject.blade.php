@@ -4,7 +4,7 @@
 ]) !!}
 
     <div class="col-md-12">
-        <div class="callout callout-info">
+        <div class="callout callout-info" class="text-center">
             <h5>Alasan : </h5>
             {{ $project->pketerangan_note }}
         </div>    
