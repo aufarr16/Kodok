@@ -51,7 +51,6 @@ class Controller_AdminApprovalDocuments extends Controller
             }
 
             $project->id_pketerangan = 5;                                       //keterangannya dibuat jadi decline
-            $project->stats_temp = NULL;                                            //stat_tempnya dibuat NULL karena sudah digunakan
         }
 
         $project->pketerangan_note = $notes;

@@ -47,6 +47,7 @@ class Controller_ManagerApprovalProjects extends Controller
 
             $project->id_pstat = $project->stats_temp;                          //karena sudah approve statusnya, maka baru diubah statnya disini
             $project->id_pketerangan = 1;                                       //dan keterangannya menjadi approved
+            $project->stats_temp = NULL;
         }
         else if($type == "Decline Approval"){                                   //kalo decline, maka
             if($pstat == 3){                                                    //kalo stat tujuannya pengujian done, maka
@@ -61,7 +62,6 @@ class Controller_ManagerApprovalProjects extends Controller
             $project->id_pketerangan = 3;                                       //keterangannya dibuat jadi decline
         }
 
-        $project->stats_temp = NULL;                                            //stat_tempnya dibuat NULL karena sudah digunakan
         $project->save();                                                       //save semua perubahan yg ada
     }
 
