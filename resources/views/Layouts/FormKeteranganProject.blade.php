@@ -4,8 +4,8 @@
 ]) !!}
 
     <div class="col-md-12">
-        <div class="callout callout-info">
-            <h5><i class="fas fa-info"></i> Alasan:</h5>
+        <div class="callout callout-info" class="text-center">
+            <h5>Alasan : </h5>
             {{ $project->pketerangan_note }}
         </div>    
     </div>

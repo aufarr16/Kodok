@@ -51,7 +51,8 @@ class Controller_EngineerHandoverProjects extends Controller
             })
             ->addColumn('keterangan', function($project){           //nambah kolom buat keterangan projek
                 return view('Layouts.KeteranganProject',[
-                    'project'=> $project
+                    'project'=> $project,
+                    'url_notes' => route('keterangan.notes', $project->id)
                 ]);
             })
             ->addColumn('action', function($project){               //nambah kolom buat action
