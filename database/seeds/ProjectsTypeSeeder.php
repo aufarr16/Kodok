@@ -12,24 +12,6 @@ class ProjectsTypeSeeder extends Seeder
      */
     public function run()
     {
-        $intenaltest = Projects_Type::create([
-        	'nama_ptype' => 'Internal Test'
-        ]);
 
-        $sertifikasi = Projects_Type::create([
-        	'nama_ptype' => 'Sertifikasi'
-        ]);
-
-        $internalproject = Projects_Type::create([
-        	'nama_ptype' => 'Internal Project'
-        ]);
-
-        $uatinternal = Projects_Type::create([
-        	'nama_ptype' => 'UAT Internal'
-        ]);
-
-        $support = Projects_Type::create([
-            'nama_ptype' => 'Support'
-        ]);
     }
 }
