@@ -42,7 +42,7 @@ class CreateProjectsTable extends Migration
             $table->string('no_bako', 51)->nullable();
             $table->string('no_bae', 51)->nullable();
             $table->string('no_bato', 51)->nullable();
-            $table->unsignedBigInteger('approver_document')->nullable();
+            $table->string('approver_document')->nullable();
             $table->dateTime('last_updated')->nullable();
         });
     }

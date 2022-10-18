@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 @endif -->
-                <li class="nav-item dropdown">
+                <li id="rn-dropdown" class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                       <i class="fas fa-th-large"></i>
                       
@@ -84,7 +84,7 @@
                       <a href="/logout" class="dropdown-item">
                         <i class="fas fa-power-off"></i> Logout
                       </a>
-                      @if ($userLevel === 5)
+                      @if ($userLevel === 5 || $userLevel === 11)
                       <div class="dropdown-divider"></div>
                       <a href="/login/choose" class="dropdown-item">
                         <i class="fas fa-share"></i> Switch Role
@@ -117,7 +117,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                         @if ($userLevel === 3 || $userLevel === 5)
+                         @if ($userLevel === 3 || $userLevel === 5 || $userLevel === 11)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>

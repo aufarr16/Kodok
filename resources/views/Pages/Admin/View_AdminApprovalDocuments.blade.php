@@ -21,7 +21,8 @@
                             <th class="text-center">Jenis Project</th>
                             <th class="text-center" style="width: 300px">Nama Project</th>
                             <th class="text-center">Keterangan</th>
-                            <th class="text-center" style="width: 75px">Action</th>                           
+                            <th class="text-center">PIC Approve</th> 
+                            <th class="text-center" style="width: 75px">Action</th> 
                         </tr>
                     </thead>
                 </table>
@@ -52,6 +53,7 @@
       {data: 'nama_ptype', name: 'nama_ptype', class: 'text-center'},
       {data: 'nama_project', name: 'nama_project', class: 'text-center'},
       {data: 'pketerangan_status', name: 'pketerangan_status', class: 'text-center'},
+      {data: 'approver_document', name: 'approver_document', class: 'text-center'},
       // {data: 'docs', name: 'docs'},
       {data: 'action', name: 'action', class: 'text-center'}
     ],

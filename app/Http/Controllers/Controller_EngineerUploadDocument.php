@@ -14,14 +14,12 @@ class Controller_EngineerUploadDocument extends Controller
 {
 	public function openPage($id){         //buka halaman Engineer - Upload Document
         //Autentikasi level user yg boleh msk
+        $this->authorize('isEngineer', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
         $id_project = $id;
-        if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
-            return view('Pages.Engineer.View_EngineerUploadDocument', compact('userLevel', 'id_project'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        
+        return view('Pages.Engineer.View_EngineerUploadDocument', compact('userLevel', 'id_project'));
     }
 
     public function upload(Request $request){

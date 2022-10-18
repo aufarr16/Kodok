@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//import library
 use DataTables;
 use App\Project;
 use App\User;
@@ -14,18 +15,17 @@ class Controller_AdminListProjects extends Controller
 {
     public function openPage(){                     //buka halaman Admin 
         //Autentikasi level user yg boleh msk
+        $this->authorize('isAdmin', auth()->user());
+
+        //melempar variabel yg dibutuhkan pada halaman list project
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 1 || $userLevel == 5){
-            $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
-            $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
-            $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
-            $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
-            $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
-            return view('Pages.Admin.View_AdminListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        $pic = DB::table('users')->select('inisial_user')->whereIn('id_ulevel', [3, 5, 10])->orderBy('id', 'ASC')->get();
+        $prod = DB::table('products')->select('nama_product')->orderBy('nama_product', 'ASC')->get();
+        $ptype = DB::table('projects_types')->select('nama_ptype')->orderBy('nama_ptype', 'ASC')->get();
+        $mitra = DB::table('mitras')->select('nama_mitra')->orderBy('nama_mitra', 'ASC')->get();
+        $pstat = DB::table('projects_stats')->select('id' , 'nama_pstat')->orderBy('id', 'ASC')->get();
+        
+        return view('Pages.Admin.View_AdminListProjects', compact('userLevel', 'pic', 'prod', 'mitra', 'ptype', 'pstat'));
     }
 
       /**
@@ -35,9 +35,9 @@ class Controller_AdminListProjects extends Controller
 	 * @param \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-    public function export(){
+    public function export(){                   
         $this->authorize('isAdmin', auth()->user());
-        return (new ManagerProjectExport)->download('Data All Project.xlsx');
+        return (new ManagerProjectExport)->download('Data All Project.xlsx');           //return objek ManagerProjectExport yang akan mengenerate excel
     }
 
     public function detail($id){                     //buka detail projek
@@ -55,7 +55,8 @@ class Controller_AdminListProjects extends Controller
         return view('Layouts.FormDetailProject', compact('picori', 'piccurrent', 'historypic', 'picproduct', 'picam', 'picpm', 'pbn', 'project'));
     }
 
-    public function dataTable(){                            //generate table untuk halaman Manager - List Project
+
+    public function dataTable(){                            //generate table untuk halaman Admin - List Project
         $data = DB::select("select e.id, a.inisial_user, b.nama_product, c.nama_ptype, d.nama_mitra, e.nama_project, DATE(e.waktu_assign_project) as waktu, f.id as id_pstat from users as a, products as b, projects_types as c, mitras as d, projects as e, projects_stats as f where e.id_current_pic = a.id and e.id_product = b.id and e.id_ptype = c.id and e.id_mitra = d.id and e.id_pstat = f.id order by waktu desc");    //ambil data buat ditempel di table
         return DataTables::of($data)                        //bikin table berdasarkan data yg udh diambi;
             ->addColumn('nama_project', function($data){    //tambah kolom nama project yg bisa diklik
@@ -74,6 +75,7 @@ class Controller_AdminListProjects extends Controller
             ->make(true);
     }
 
+    //function dibawah ini merupakan query untuk mengisi data2 yang diisi di tabel list projectDS
     public function getProjectById($id){
         return Project::where('id', $id)->firstOrFail();
     }

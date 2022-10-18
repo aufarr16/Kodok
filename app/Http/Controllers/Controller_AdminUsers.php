@@ -13,13 +13,10 @@ class Controller_AdminUsers extends Controller
 {
 	public function openPage(){		//buka halaman Admin - User
 		//Autentikasi level user yg boleh msk
+		$this->authorize('isAdmin', auth()->user());
+
 		$userLevel = auth()->user()->id_ulevel;
-		if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminUsers', compact('userLevel'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Admin.View_AdminUsers', compact('userLevel'));
 	}
 
 	  /**
@@ -65,13 +62,19 @@ class Controller_AdminUsers extends Controller
 
 		$added_by = Auth::user()->inisial_user;										//ngambil inisial buat ditambah ke added_by di tabel User
 		$level = Users_Level::where('id', $request->nama_ulevel)->firstOrFail();	//ngambil level yg udh dipilih di form 
-		User::create([																//bikin data user baru
+		$newuser = User::create([													//bikin data user baru
 			'nama_user' => $request->nama_user,
 			'inisial_user' => $request->inisial_user,
 			'id_ulevel' => $level->id,
 			'email_user' => $request->email_user,
 			'added_by' => $added_by,
 		]);
+
+		if($newuser->id_ulevel == 1 || $newuser->id_ulevel == 5){
+			$newuser->beban_approve = 0;
+		}
+
+		$newuser->save();
 		
 		return redirect('/admin/users');
 	}

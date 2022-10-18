@@ -59,7 +59,7 @@
                 </li>
             </ul>
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
+            <ul id="right-navbar"class="navbar-nav ml-auto">
                 <li class="nav-item d-none d-sm-inline-block">
                     <a class="nav-link">Welcome, {{ auth()->user()->nama_user }} &nbsp</a>
                 </li>
@@ -68,10 +68,9 @@
                       <i class="fas fa-power-off"></i>
                     </a>
                 </li> -->
-                <li class="nav-item dropdown">
+                <li id="rn-dropdown" class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                       <i class="fas fa-th-large"></i>
-                      
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                       <span class="dropdown-item dropdown-header">Silahkan Pilih</span>
@@ -107,8 +106,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        @if ($userLevel === 2)
-                        <li class="nav-item">
+                        @if ($userLevel === 2 || $userLevel === 11)
+                        <li id="homepage" class="nav-item">
                             <a href="/manager/home" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
@@ -118,7 +117,7 @@
                             </a>
                         </li>
                         
-                        <li class="nav-item">
+                        <li id="list-page" class="nav-item">
                             <a href="/manager/projects" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
@@ -128,7 +127,7 @@
                             </a>
                         </li>
                        
-                        <li class="nav-item">
+                        <li id="assign-page" class="nav-item">
                             <a href="/manager/assign" class="nav-link">
                                 <i class="nav-icon fas fa-random"></i>
                                 <p>
@@ -137,7 +136,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li id="approve-page" class="nav-item">
                             <a href="/manager/approval" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard-check"></i>
                                 <p>

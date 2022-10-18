@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DataTables;
-use App\Exports\MitrasExport;
+use App\Exports\MitrasExport;                                                                       //import file yg akan mengurus data yg akan mengeksport per Stable
 use App\Exports\ProductsExport;
 use App\Exports\ProjectsExport;
 use App\Exports\ProjectsHandoversExport;
@@ -14,7 +14,7 @@ use App\Exports\UsersExport;
 use App\Exports\UsersLevelsExport;
 use App\Imports\DocumentsExport;
 
-use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Facades\Excel;                                                                //import library untuk mengenerate excel
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
@@ -22,13 +22,15 @@ class Controller_AdminExportData extends Controller
 {
     public function openPage(){
     	$userLevel = auth()->user()->id_ulevel;
-    	if($userLevel == 1 || $userLevel == 5){                                //Autentikasi level user yg boleh msk
+    	if($userLevel == 1 || $userLevel == 5 || $userLevel == 11){                                //Autentikasi level user yg boleh msk
             return view('Pages.Admin.View_AdminExportData', compact('userLevel'));  
         }
         else{
             return redirect('/logout');
         }
     }
+
+    //function untuk mengeksport data ke dalam tabel dipisah per tabel sesuai kebutuhan.
 
     // public function exportDocument(){
     // 	return (new DocumentsExport)->download('[DB Kodok] documents');
@@ -79,7 +81,7 @@ class Controller_AdminExportData extends Controller
     	return (new UsersLevelsExport)->download('[DB Kodok] users_levels.xlsx');
     }
 
-    public function store(Request $request){
+    public function store(Request $request){                                                                    
         $this->authorize('isAdmin', auth()->user());
 
         $file = $request->file('file')->store('Imported Data');

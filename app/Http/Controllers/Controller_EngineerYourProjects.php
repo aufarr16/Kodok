@@ -15,13 +15,10 @@ class Controller_EngineerYourProjects extends Controller
 {
     public function openPage(){         //buka halaman Engineer - Project Own Going (Own Project)
         //Autentikasi level user yg boleh msk
+        $this->authorize('isEngineer', auth()->user());
+        
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
-            return view('Pages.Engineer.View_EngineerYourProjects', compact('userLevel'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Engineer.View_EngineerYourProjects', compact('userLevel'));
     }
 
     public function changeStatus(Request $request){     //ganti status projek
@@ -38,16 +35,28 @@ class Controller_EngineerYourProjects extends Controller
         }
 
         if($pstat == 3){                                                        //kalo statnys mau diganti ke pengujian done, maka
+            $approver = $this->getApproverData(); 
+
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
             $project->id_pstat = 2;
             $project->pketerangan_status = "Menunggu Approval Pengujian Done By Admin";  //ngubah keterangannya
             $project->id_pketerangan = 4;                                       //ubah keterangannya jadi menunggu approval
+            $project->approver_document = $approver->inisial_user;
+            $approver->beban_approve = $approver->beban_approve + 1;
+
+            $approver->save();
         }
         else if($pstat == 5 && ($project->id_pketerangan != 3 || $project->id_pketerangan != 5)){ //kalo statnya mau diganti ke projek done, maka
+            $approver = $this->getApproverData(); 
+
             $project->stats_temp = $pstat;                                      //naro status yg mau digantinya jadi apa ke temp dulu, nunggu di approve manager
             $project->id_pstat = 4;
             $project->pketerangan_status = "Menunggu Approval Projek Done By Admin";     //ngubah keterangannya
             $project->id_pketerangan = 4;                                       //ubah keterangannya jadi menunggu approval
+            $project->approver_document = $approver->inisial_user;
+            $approver->beban_approve = $approver->beban_approve + 1;
+
+            $approver->save();
         }
         else if($pstat == 7){                                                   //kalo statnya mau diganti ke drop, maka
             $project->id_pstat = $pstat;                                        //status langsung diubah ke drop
@@ -191,7 +200,7 @@ class Controller_EngineerYourProjects extends Controller
                 return view('Layouts.ActionProject',[                           //menggunakan layout di file ActionProject
                     'project'=> $project,           
                     'url_pic' => route('pic.edit', $project->id),               //melempar link untuk tombol edit pic beserta id projek yg mau diubah
-                    'url_progress' => route('progress.edit', $project->id),      //melempar link untuk tombol edit progress beserta id projek yg mau diubah
+                    'url_progress' => route('progress.edit', $project->id),     //melempar link untuk tombol edit progress beserta id projek yg mau diubah
                     'url_upload' => route('upload.open', $project->id)
                 ]);
             })
@@ -259,5 +268,14 @@ class Controller_EngineerYourProjects extends Controller
                         ->implode('inisial_user');
 
         $project->direktori_project = 'Documents/' . $year . '/' . $nama_product . '/' . '[' . $inisial_user . '] ' . $nproject;
+    }
+
+    public function getApproverData(){
+        return User::where('beban_approve', '=', function($query){
+            $query->select(DB::raw('min(beban_approve)'))
+                ->from('users');
+        })
+        ->whereIn('id_ulevel', [1,5])
+        ->firstOrFail();
     }
 }

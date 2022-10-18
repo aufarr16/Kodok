@@ -12,13 +12,10 @@ class Controller_AdminProducts extends Controller
 {
     public function openPage(){             //buka halaman Admin - Product
         //Autentikasi level user yg boleh msk
+        $this->authorize('isAdmin', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminProducts', compact('userLevel'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Admin.View_AdminProducts', compact('userLevel'));
     }
 
       /**

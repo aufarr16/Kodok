@@ -79,7 +79,7 @@
           <span class="fas fa-unlock-alt fa-lg" style="position: absolute; color:#A7DCF0; margin-left: -25px"></span>Password
         </label>
       </div>
-    <button class="btn-login" data-hover="GO!" type="submit"><div>Ready to Work?</div></button>
+    <button class="btn-login" data-hover="GO!" type="submit" name="login"><div>Ready to Work?</div></button>
   </form>
 <!-- ./box -->
 </div>

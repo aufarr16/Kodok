@@ -86,7 +86,7 @@
                       <a href="/logout" class="dropdown-item">
                         <i class="fas fa-power-off"></i> Logout
                       </a>
-                      @if ($userLevel === 5)
+                      @if ($userLevel === 5 || $userLevel === 11)
                       <div class="dropdown-divider"></div>
                       <a href="/login/choose" class="dropdown-item">
                         <i class="fas fa-share"></i> Switch Role

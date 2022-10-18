@@ -12,13 +12,10 @@ class Controller_ManagerApprovalProjects extends Controller
 {
     public function openPage(){             //buka halaman Manager - Approval
         //Autentikasi level user yg boleh msk
+        $this->authorize('isManager', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2){
-            return view('Pages.Manager.View_ManagerApprovalProjects', compact('userLevel'));  
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Manager.View_ManagerApprovalProjects', compact('userLevel'));  
     }
 
     public function approvalProject(Request $request){                          //approve / decline project yg perlu approval

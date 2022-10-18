@@ -25,7 +25,7 @@
         @csrf
          <div class="form-group">
             <label for="id_user">PIC</label>
-            <div class="@error('id_user') is-invalid @enderror">
+            <div id="pic-select" class="@error('id_user') is-invalid @enderror">
               <select class="select2 form-control @error ('id_user') is-invalid @enderror" id="id_user" name="id_user" style="width: 100%;">
                 <option value="">PIC</option>
                 @foreach($users as $usr1)
@@ -42,7 +42,7 @@
             @enderror
             </div>
           </div>
-          <div class="form-group">
+          <div id="produk" class="form-group">
             <label for="id_product">Produk</label>
             <div class="@error('id_product') is-invalid @enderror">
               <select class="select2 form-control-border border-width-2 form-control @error ('id_product') is-invalid @enderror" id="id_product" name="id_product" style="width: 100%;">
@@ -113,7 +113,7 @@
       </div>
 
       <!-- HANDOVER -->
-      <div class="tab-pane fade" id="handover" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
+      <div id="handover" class="tab-pane fade" id="handover" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
         <form method="post" action="/manager/newhandover" id="my-handover">
         @csrf
           <div class="form-group">

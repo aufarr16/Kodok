@@ -13,17 +13,15 @@ class Controller_ManagerAssignProjects extends Controller
 {
     public function openPage(){             //buka halaman Manager - Assign
         //Autentikasi level user yg boleh msk
+        $this->authorize('isManager', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 2){
-            $products = DB::select("select * from products order by nama_product asc");     //ngambil data semua product
-            $mitras = DB::select("select * from mitras order by nama_mitra asc");           //ngambil data semua mitra
-            $ptypes = DB::select("select * from projects_types order by nama_ptype asc");   //ngambil data semua project type
-            $users = $this->getUser();                                                      //ngambil data engineer dan adminxengineer
-            return view('Pages.Manager.View_ManagerAssignProjects', compact('userLevel', 'users', 'products','mitras','ptypes'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        $products = DB::select("select * from products order by nama_product asc");     //ngambil data semua product
+        $mitras = DB::select("select * from mitras order by nama_mitra asc");           //ngambil data semua mitra
+        $ptypes = DB::select("select * from projects_types order by nama_ptype asc");   //ngambil data semua project type
+        $users = $this->getUser();                                                      //ngambil data engineer dan adminxengineer
+        
+        return view('Pages.Manager.View_ManagerAssignProjects', compact('userLevel', 'users', 'products','mitras','ptypes'));
     }
 
     public function storeNew(Request $request){                         //tambah data projek baru

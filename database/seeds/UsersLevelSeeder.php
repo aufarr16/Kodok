@@ -51,5 +51,9 @@ class UsersLevelSeeder extends Seeder
         $poh = Users_Level::create([
             'nama_ulevel' => 'Pejabat Operasional Harian (POH)'
         ]);
+
+        $developer = Users_Level::create([
+            'nama_ulevel' => 'Developer'
+        ]);
     }
 }

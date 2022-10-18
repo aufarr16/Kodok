@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function(){
 	##Login
 	//Login Choose
 	Route::get('/login/choose', 'Controller_Login@openChooseLogin');
+	Route::get('/login/developer', 'Controller_Login@openDeveloperHub');
 
 	##Admin
 	Route::get('/admin', 'Controller_AdminUsers@openPage');	
@@ -32,7 +33,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/admin/approval', 'Controller_AdminApprovalDocuments@openPage');
 	Route::get('/admin/approval/table', 'Controller_adminApprovalDocuments@dataTable')->name('approve.table');
 	Route::patch('/admin/approval/choose', 'Controller_AdminApprovalDocuments@approvalDocument');
-
 
 	// Archive
 	Route::get('/admin/archive', 'Controller_AdminArchiveDocuments@openPage');

@@ -12,13 +12,10 @@ class Controller_EngineerHistoryHandover extends Controller
 {
     public function openPage(){         //buka halaman Engineer - Project Done (Handover)
         //Autentikasi level user yg boleh msk
+        $this->authorize('isEngineer', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 3 || $userLevel == 5 || $userLevel == 10){
-            return view('Pages.Engineer.View_EngineerHistoryHandover', compact('userLevel'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Engineer.View_EngineerHistoryHandover', compact('userLevel'));
     }
 
     public function dataTable(){                            //generate table halaman Engineer - Project Done (Handover)

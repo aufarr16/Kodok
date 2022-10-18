@@ -11,15 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class Controller_AdminMitra extends Controller
 {
-    public function openPage(){                     //buka halaman Admin - Mitra
+    public function openPage(){                         //buka halaman Admin - Mitra
         //Autentikasi level user yg boleh msk
+        $this->authorize('isAdmin', auth()->user());
+
         $userLevel = auth()->user()->id_ulevel;
-        if($userLevel == 1 || $userLevel == 5){
-            return view('Pages.Admin.View_AdminMitra', compact('userLevel'));
-        }
-        else{
-            return redirect('/logout');
-        }
+        return view('Pages.Admin.View_AdminMitra', compact('userLevel'));
     }
 
       /**
@@ -30,20 +27,20 @@ class Controller_AdminMitra extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 
-    public function create(){                       //nyiapin form Tambah Mitra
+    public function create(){                           //nyiapin form Tambah Mitra
         $this->authorize('isAdmin', auth()->user());
         
-        $model = new Mitra();                       //menyiapkan variabel mitra baru untuk dilempar dan nantinya diisi di form Tambah Mitra
+        $model = new Mitra();                           //menyiapkan variabel mitra baru untuk dilempar dan nantinya diisi di form Tambah Mitra
         return view('Layouts.FormMitra', compact('model'));
     }
 
-    public function store(Request $request){        //nyimpen data yg udh disubmit dari form Tambah Mitra
+    public function store(Request $request){            //nyimpen data yg udh disubmit dari form Tambah Mitra
         $this->authorize('isAdmin', auth()->user());
         
-        $request->validate([                        //validasi data yg sudah diisi di form Tambah Mitra
+        $request->validate([                            //validasi data yg sudah diisi di form Tambah Mitra
             'nama_mitra' => 'required|unique:mitras|max:51',
         ],
-        $message = [
+        $message = [                                    //menampilkan message jika data yang dimasukkan tidak sesuai
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
                 'nama_mitra.unique' => ' Nama Mitra sudah terdaftar',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',
@@ -90,7 +87,7 @@ class Controller_AdminMitra extends Controller
         $request->validate([
             'nama_mitra' => 'required|unique:mitras|max:51',
         ],
-        $message = [
+        $message = [                                                //menampilkan message jika data yang dimasukkan tidak sesuai
             'nama_mitra.required' => ' Mohon isi Nama Mitra',
                 'nama_mitra.unique' => ' Nama Mitra sudah terdaftar',
                 'nama_mitra.max' => ' Nama Mitra maksimal 51 huruf',

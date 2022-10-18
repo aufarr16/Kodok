@@ -21,13 +21,12 @@ function getHandoverData(id){
 			}
 
 			if(len > 0){
+				//$('#nama_project2').empty();
 				for (var i=0; i<len; i++){
 					var id = response['data'][i].id;
 					var name = response['data'][i].nama_project;
 
-					var option = "<option value='"+id+"'>"+name+"</option>"; 
-
-					$("#nama_project2").append(option);
+					$("#nama_project2").append("<option value='"+id+"'>"+name+"</option>");
 				}
 			}
 		},

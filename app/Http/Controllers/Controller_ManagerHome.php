@@ -11,51 +11,47 @@ use Illuminate\Support\Facades\DB;
 class Controller_ManagerHome extends Controller
 {
     public function openAllDataPage(){                  //Buka halaman home dengan all data
-        $userLevel = auth()->user()->id_ulevel;         
-        if($userLevel == 2 || $userLevel == 9){                            //Autentikasi level user yg boleh msk
-            //YEAR DATA
-            $years = $this->getYears();                 //Ngambil data tahun buat ditampilin di dropdown filter tahun
+        $this->authorize('isManager', auth()->user());
 
-            //HIGHCHARTS DATA
-            //ESSENTIAL COUNTER
-            $products = $this->getProducts();           //Data All Product      
-            $projtypes = $this->getPTypes();            //Data All Project Types
-            $inuser = $this->getInisial();              //Data All Inisial      
+        $userLevel = auth()->user()->id_ulevel;
+        //YEAR DATA
+        $years = $this->getYears();                 //Ngambil data tahun buat ditampilin di dropdown filter tahun
 
-            // CARD DATA
-            $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
-            $ponprogress = $this->allProjectPstat(2);   // 2. Projek On Progress
-            $ppngdone = $this->allProjectPstat(3);      // 3. Pengujian Done
-            $pmonitor = $this->allProjectPstat(4);      // 4. Monitoring
-            $pprjdone = $this->allProjectPstat(5);      // 5. Projek Done
-            $phold = $this->allProjectPstat(6);         // 6. Projek Hold
-            $pdrop = $this->allProjectPstat(7);         // 7. Projek Drop
-            $projects = $this->allProjects();           // 8. Jumlah All Projek
+        //HIGHCHARTS DATA
+        //ESSENTIAL COUNTER
+        $products = $this->getProducts();           //Data All Product      
+        $projtypes = $this->getPTypes();            //Data All Project Types
+        $inuser = $this->getInisial();              //Data All Inisial      
 
-            $percentrsrv = $this->toPercent($preserved, $projects); // 1. Persentase Projek Reserved
-            $percentop = $this->toPercent($ponprogress, $projects); // 2. Persentase Projek On Progress
-            $percentpgdn = $this->toPercent($ppngdone, $projects);  // 3. Persentase Projek Pengujian Done
-            $percentmntr = $this->toPercent($pmonitor, $projects);  // 4. Persentase Projek Monitoring
-            $percentprdn = $this->toPercent($pprjdone, $projects);  // 5. Persentase Projek Projek Done
-            $percenthold = $this->toPercent($phold, $projects);     // 6. Persentase Projek Hold
-            $percentdrop = $this->toPercent($pdrop, $projects);     // 7. Persentase Projek Drop
+        // CARD DATA
+        $preserved = $this->allProjectPstat(1);     // 1. Projek Reserved
+        $ponprogress = $this->allProjectPstat(2);   // 2. Projek On Progress
+        $ppngdone = $this->allProjectPstat(3);      // 3. Pengujian Done
+        $pmonitor = $this->allProjectPstat(4);      // 4. Monitoring
+        $pprjdone = $this->allProjectPstat(5);      // 5. Projek Done
+        $phold = $this->allProjectPstat(6);         // 6. Projek Hold
+        $pdrop = $this->allProjectPstat(7);         // 7. Projek Drop
+        $projects = $this->allProjects();           // 8. Jumlah All Projek
 
-            //GRAPH DATA
-            $pstatperproduct = $this->allPstatProd();               // 1. jumlah p_stat dari masing2 produk
-            $pstatperptype = $this->allPstatPtype();                // 2. jumlah p_stat dari masing2 p_type
-            $projectperproduct = $this->allProjProd();              // 3. total all projek berdasarkan produk
-            $projectperptype =  $this->allProjPtype();              // 4. total all projek berdasarkan p_type
-            $userprojectperpstat = $this->allEngineerPstat();       // 5. total projek per orang berdasarkan p_stat
-            $userprojectperptype = $this->allEngineerPtype();       // 6. total prokek per orang berdasarkan p_type
+        $percentrsrv = $this->toPercent($preserved, $projects); // 1. Persentase Projek Reserved
+        $percentop = $this->toPercent($ponprogress, $projects); // 2. Persentase Projek On Progress
+        $percentpgdn = $this->toPercent($ppngdone, $projects);  // 3. Persentase Projek Pengujian Done
+        $percentmntr = $this->toPercent($pmonitor, $projects);  // 4. Persentase Projek Monitoring
+        $percentprdn = $this->toPercent($pprjdone, $projects);  // 5. Persentase Projek Projek Done
+        $percenthold = $this->toPercent($phold, $projects);     // 6. Persentase Projek Hold
+        $percentdrop = $this->toPercent($pdrop, $projects);     // 7. Persentase Projek Drop
 
-            // dd($inuser);
+        //GRAPH DATA
+        $pstatperproduct = $this->allPstatProd();               // 1. jumlah p_stat dari masing2 produk
+        $pstatperptype = $this->allPstatPtype();                // 2. jumlah p_stat dari masing2 p_type
+        $projectperproduct = $this->allProjProd();              // 3. total all projek berdasarkan produk
+        $projectperptype =  $this->allProjPtype();              // 4. total all projek berdasarkan p_type
+        $userprojectperpstat = $this->allEngineerPstat();       // 5. total projek per orang berdasarkan p_stat
+        $userprojectperptype = $this->allEngineerPtype();       // 6. total prokek per orang berdasarkan p_type
 
-            return view('Pages.Manager.View_ManagerHome', compact('userLevel', 'products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));
-        }
-        else{
-            return redirect('/logout');
-        }
-         	
+        // dd($inuser);
+
+        return view('Pages.Manager.View_ManagerHome', compact('userLevel', 'products', 'projtypes', 'inuser','years', 'preserved', 'ponprogress', 'ppngdone', 'pmonitor', 'pprjdone', 'phold', 'pdrop', 'projects', 'percentrsrv', 'percentop', 'percentpgdn', 'percentmntr', 'percentprdn', 'percenthold', 'percentdrop', 'pstatperproduct', 'pstatperptype', 'projectperproduct', 'projectperptype', 'userprojectperpstat', 'userprojectperptype'));   	
     }
 
     public function getYears(){
