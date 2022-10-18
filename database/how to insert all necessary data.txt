@@ -1,0 +1,7 @@
+1. run php artisan migrate:fresh --seed
+2. open phpmyAdmin
+3. open folder "data (insert manual)"
+4. open each file and copy paste the "INSERT" part to their SQL section in 
+phpmyAdmin on their respective table
+5. run the command
+6. done
